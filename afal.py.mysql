@@ -321,13 +321,18 @@ def str_to_coins(s):
             raise NameError ("invalid text '"+rest+"' in money")
         tmp = rest
     sum = 0
+    myret = {}
     for i in str_to_coins.ret:
         if i not in coins_byname:
             pw(coins_byname, max=80)
             raise NameError("Unknown coin '"+i+"' in money")
+        if 'abbrev' in coins_byname[i]:
+            myret[coins_byname[i]['abbrev']] = int(str_to_coins.ret[i])
+        else:
+            myret[coins_byname[i]['coin']] = int(str_to_coins.ret[i])
         sum += coins_byname[i]['copper_equiv'] * str_to_coins.ret[i]
-    str_to_coins.ret['value_cp'] = sum
-    return str_to_coins.ret
+    myret['value_cp'] = sum
+    return myret
 
 def coins_to_str(s):
     if s is None:
@@ -336,12 +341,15 @@ def coins_to_str(s):
     for i in s:
         if i == 'value_cp':
             continue
+        if not i in coins_byname:
+            pw(coins_byname,max=80)
+            raise ValueError("Unknown coin '"+i+"' in coins")
         n = s[i]
         if int(n) == 1:
             coin=i.format(s='',es='')
         else:
             coin=i.format(s='s',es='es')
-        cpe = coins_byname[coin.lower()]['copper_equiv']
+        cpe = coins_byname[i]['copper_equiv']
         if cpe in tmp:
             tmp[cpe].append([n, coin])
         else:
@@ -420,6 +428,7 @@ def get_coins():
         tmp['common_use'] = i[3]
         if i[4] is not None:
             tmp['abbrev'] = i[4]
+            ret_byname[i[4]] = tmp
             ret_byname[i[4].lower()] = tmp
         if i[5] is not None:
             tmp['note'] = i[5]
@@ -427,6 +436,8 @@ def get_coins():
             ret_bycpe[i[2]].append(tmp)
         else:
             ret_bycpe[i[2]] = [tmp]
+        ret_byname[i[1]] = tmp
+        ret_byname[i[1].lower()] = tmp
         ret_byname[i[1].format(s='', es='').lower()] = tmp
         ret_byname[i[1].format(s='s', es='es').lower()] = tmp
         ret_byid[i[0]] = tmp
@@ -470,7 +481,10 @@ def char_find_money(char, amount_cp):
             n = int(amount_cp/cpe)
         else:
             n = q
-        ret[i['coin']] = n
+        if 'abbrev' in i:
+            ret[i['abbrev']] = n
+        else:
+            ret[i['coin']] = n
         amount_cp -= n * cpe
         if amount_cp == 0:
             break
@@ -568,7 +582,7 @@ def chars_move_cash(i):
             cash = invent_money(amount_cp)
         char_change_money(to, 'get', cash)
     if i.get('journal', True):
-        text = 'gave '+coins_to_str(cash)+' {each}to {to}'
+        text = 'gave {cs}'+coins_to_str(cash)+'{ce} {each}to {to}'
         if i.get('item'):
             text += " for " + i['item']
         if i.get('for'):
@@ -593,10 +607,22 @@ def chars_move_cash(i):
 ######## Shares
 
 
-def share_to_str(share):
-    if share == int(share):
-        return str(int(share))
-    return str(share)
+def share_to_str(s):
+    if float(s) == 1.0:
+        return '1'
+    if float(s) == 0.0:
+        return 'no'
+    if float(s) == 0.5:
+        return '&frac12;'
+    if float(s) == 0.25:
+        return '&frac14;'
+# Shouldn't get here, but who knows?
+    if s == int(float(s)):
+        return str(int(s))
+    s = str(s)
+    if s[0:2] == '0.':
+        s = s[1:]
+    return s
 
 
 ######## Journal entries

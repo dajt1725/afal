@@ -123,11 +123,11 @@ def list_to_txt(l):
     if l is None:
         return None
     elif len(l) == 1:
-            return l[0]
+            return format_character(l[0])
     else:
-        ret = 'and ' + l.pop()
+        ret = 'and ' + format_character(l.pop())
     while len(l):
-        ret = l.pop() + ', ' + ret
+        ret = format_character(l.pop()) + ', ' + ret
     return ret
 
 
@@ -557,12 +557,16 @@ def print_journal(cond, show_sub = False):
         f['by'] = list_to_txt(by)
         f['to'] = list_to_txt(to)
         if afal_config.text:
+            f['cs'] = ''
+            f['ce'] = ''
             f['cash'] = afal.cp_to_str(e['cash_cp'])
             f['virtual'] = afal.cp_to_str(e['virtual_cp'])
         else:
+            f['cs'] = '<font color="blue">'
+            f['ce'] = '</font>'
             f['cash'] = '<font color="blue">{cp}</font>'.format(cp=afal.cp_to_str(e['cash_cp']))
             f['virtual'] = '<font color="orange">{cp}</font>'.format(cp = afal.cp_to_str(e['virtual_cp']))
-        text = e['description'].format(**f)
+        text = munge_html(e['description'].format(**f))
         afal.pw(line.format(sub = sub, by = f['by'], text = text), **fmt)
     if prev_date:
         afal.pw(day_trailer, **fmt)
@@ -762,7 +766,7 @@ else:
             jc = 'All'
         else:
             jc = jc[5:]
-        args.journal = "{o}'starting_on': '{js}', 'up_to': '{je}', 'char': '{jc}'{c}".format(o = '{', js = js, je = je, jc = jc, c = '}')
+        args.journal = "{{'starting_on': '{js}', 'up_to': '{je}', 'char': '{jc}'}}".format(js = js, je = je, jc = jc)
         if jc is not None and jc != 'All':
             title = jc + ' Transaction Journal Report'
         else:

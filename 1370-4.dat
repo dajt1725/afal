@@ -23,7 +23,7 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
 ,dividend;by=Ches-30-1370;amount=1913gp, 80cp
 ,sell;to=Dexter;item=Ebon Fly;cash=5000gp
 ,sell;to=Henkles;item=Poison: Urds Teeth *3;cash=10pp, 5toal, 45gp
-,trade;by=AFAL;to=Darius;cash=2 Gem: Chrysoberyl 100gp;for=4 harbor moons
+,trade;by=Ches-30-1370;to=Darius;cash=2 Gem: Chrysoberyl 100gp;for=4 harbor moons
 date=2 Tarsakh 1370
 ,give;to=Ches-30-1370;item=+1 Ring of Protection  #1
 ,sell
@@ -73,6 +73,7 @@ date=3 Tarsakh 1370
 # I have no idea where these items came from
 ,give;by=Someone;to=Maanamere;cash=2 Gem: Emerald 200gp, 2 Gem: Carnelian 100gp, 1 Gem: Amber 90gp, 1 ring 500gp
 ,pay;by=Maanamere;to=Steve;cash=pair of large opal earrings (750gp together or 300gp each)
+,commit
 ,pay;by=Maanamere;to=Darius;cash=1 platinum necklace 700gp
 ,pay;by=Darius;to=Dexter;cash=1 platinum necklace 700gp
 ,pay;by=Maanamere;to=Misery;cash=1 ring 500gp

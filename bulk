@@ -96,7 +96,7 @@ def do_lend(d):
         check_dict(d, must = ('date', 'to', 'item'), may = ('note', 'part_of'))
         if args.verbose:
             print "lending item", d
-        afal.change_item(date, d['item'], holder=d['to'], part_of = part_of)
+        afal.change_item(date, d['item'], holder=to, part_of = part_of)
         return
     check_dict(d, must=('date', 'to', 'by', 'amount'), may = ('virtual', 'for', 'note', 'part_of', 'journal'))
     if args.verbose:
@@ -127,41 +127,35 @@ even=afal.cp_to_str(even_cp), amount=afal.cp_to_str(amount_cp), even_shares = af
     journ_by = {}
     for by in lenders:
         share = float(lenders[by])
-        if share == 0:
+        if share == 0.0:
             continue
         share_cp = afal.divide_cp(share, amount_cp, shares)
         amount_cp -= share_cp
         shares -= share
         if by == to:
-#            if d.get('journal',True):
-            if True:
-                text = "noted a self-debt of {virtual}"
-                if d.get('item'):
-                    text += " for " + d['item']
-                if d.get('note'):
-                    text += ' ' + d['note']
-                afal.journal(date, by, None, None, share_cp, text, part_of)
-            continue
-
-#        if d.get('journal',True):
-        if True:
+            text = "noted a self-debt of {virtual}"
+            totmp = None
+        else:
             text = "{each}lent {virtual} to {to}"
-            if share != 1.0:
-                text += " for " + afal.share_to_str(share) + " share"
-            if d.get('item'):
-                text += " for " + d['item']
-            if d.get('note'):
-                text += ' ' + d['note']
-            if text in journaled:
-                afal.journal_add_by(journaled[text], by)
-            else:
-                journaled[text] = afal.journal(date, by, to, None, share_cp, text, part_of)
+            totmp = to
+        fer = " for "
+        if share != 1.0:
+            text += fer + afal.share_to_str(share) + " share"
+            fer = " of "
+        if d.get('for'):
+            text += fer + d['for']
+        if d.get('note'):
+            text += ' ' + d['note']
+        if text in journaled:
+            afal.journal_add_by(journaled[text], by)
+        else:
+            journaled[text] = afal.journal(date, by, totmp, None, share_cp, text, part_of)
 
-        afal.insert_debt({'date':date, 'by':by, 'to':to,
+        if totmp is not None:
+            afal.insert_debt({'date':date, 'by':by, 'to':to,
  'amount_cp':share_cp, 'share':share, 'item':d.get('for')})
-        if 'virtual' not in d:
-            afal.chars_move_cash({'date':date, 'by':by, 'to':to, 'amount_cp':share_cp,
- 'part_of':part_of, 'journal': d.get('journal',True), 'journ_by':journ_by})
+            if 'virtual' not in d:
+                afal.chars_move_cash({'date':date, 'by':by, 'to':to, 'amount_cp':share_cp, 'part_of':part_of, 'journal': d.get('journal',True), 'journ_by':journ_by})
 
 
 def do_sell(d):
@@ -269,13 +263,13 @@ def do_pay(d):
         virtual = amount_cp
         text = 'paid {virtual} {each}to {to} with ' + item
     elif coins is not None:
-        cash = None
-        virtual = amount_cp
-        text = 'paid {virtual} {each}to {to} with ' + afal.coins_to_str(coins)
+        cash = amount_cp
+        virtual = None
+        text = 'paid {cash} {each}to {to} with {cs}' + afal.coins_to_str(coins)+'{ce}'
     else:
-        cash = None
-        virtual = amount_cp
-        text = 'paid {virtual} {each}to {to}'
+        cash = amount_cp
+        virtual = None
+        text = 'paid {cash} {each}to {to}'
     note = d.get('note')
     if note:
         text += ' ' + note
@@ -408,7 +402,8 @@ def scale_cash(d,share):
 def do_dividend(d):
     check_dict(d, must=('date','by'), may=('cash', 'amount', 'note', 'part_of'))
     date = d['date']
-    party_data = afal.get_party_data(d['by'])
+    by = d['by']
+    party_data = afal.get_party_data(by)
     part_of = d.get('part_of')
     members = party_data['members']
     shares = float(sum(members.values()))
@@ -424,9 +419,9 @@ def do_dividend(d):
             if even_cp != int(even_cp):
                 even_cp -= shares
             even_cp = int(even_cp)
-            text += " split into {sh} shares of {ea} each".format(sh = afal.share_to_str(shares), ea = afal.cp_to_str(int(even_cp/shares)))
-        if amount_cp != even_cp:
-            text += " with {cp} to the party".format(cp = afal.cp_to_str(amount_cp-even_cp))
+            if amount_cp != even_cp:
+                text += "(and {cp} to the party)".format(cp = afal.cp_to_str(amount_cp-even_cp))
+            text += " split into {sh} shares of {{cs}}{ea}{{ce}} each".format(sh = afal.share_to_str(shares), ea = afal.cp_to_str(int(even_cp/shares)))
         else:
             even_cp = amount_cp
 
@@ -442,7 +437,7 @@ def do_dividend(d):
                     even_coin -= shares
                 even_cash[coin] = int(even_coin/shares)
                 even_cash['value_cp'] += even_cash[coin] * afal.coins_byname[coin]['copper_equiv']
-            text += " split into {sh} shares of {ea} each".format(sh = afal.share_to_str(shares), ea = afal.coins_to_str(even_cash))
+            text += " split into {sh} shares of {{cs}}{ea}{{ce}} each".format(sh = afal.share_to_str(shares), ea = afal.coins_to_str(even_cash))
             even_cp = even_cash['value_cp'] * shares
         else:
             even_cash = cash
@@ -453,7 +448,7 @@ def do_dividend(d):
         text += " among {n} party members".format(n = len(members))
     if d.get('note'):
         text += ' ' + d['note']
-    tmp = afal.journal(date, d['by'], members.keys(), even_cp, None, text, part_of)
+    tmp = afal.journal(date, by, members.keys(), even_cp, None, text, part_of)
     if part_of is None:
         part_of = tmp
     journ_to = {}
@@ -463,13 +458,13 @@ def do_dividend(d):
             continue
         if even_cash:
             afal.chars_move_cash({'date':date, 'cash':scale_cash(even_cash, share),
-'by':afal.party, 'to':char, 'part_of':part_of, 'journ_to': journ_to})
+'by':by, 'to':char, 'part_of':part_of, 'journ_to': journ_to})
         else:
             share_cp = afal.divide_cp(share, even_cp, shares)
             if args.verbose:
                 print afal.cp_to_str(share_cp), "to", char
             afal.chars_move_cash({'date':date, 'amount_cp':share_cp,
-'by':afal.party, 'to':char, 'part_of':part_of, 'journ_to': journ_to})
+'by':by, 'to':char, 'part_of':part_of, 'journ_to': journ_to})
             even_cp -= share_cp
             shares -= share
 
@@ -709,7 +704,7 @@ def do_trade(d):
     if cash['value_cp'] != tradefor['value_cp']:
         raise ValueError("unequal trade {c} != {f}".format(c = cash, f = tradefor))
     print "moving cash", d
-    text = 'exchanged {c1} for {c2} with {{to}}'.format(c1 = d['cash'], c2=d['for'])
+    text = 'exchanged {{cs}}{c1}{{ce}} for {{cs}}{c2}{{ce}} with {{to}}'.format(c1 = afal.coins_to_str(cash), c2=afal.coins_to_str(tradefor))
     afal.journal(date, by, to, None, cash['value_cp'], text, d.get('part_of'))
     afal.chars_move_cash({'date': date, 'by': by, 'to': to, 'cash': cash, 'note': d.get('note'), 'part_of': d.get('part_of'), 'journal': False})
     afal.chars_move_cash({'date': date, 'by': to, 'to': by, 'cash': tradefor, 'note': d.get('note'), 'part_of': d.get('part_of'), 'journal': False})
@@ -803,7 +798,7 @@ def do_cons(d):
                 print "{by_char} consolidate {by_mv} into {wi_mv} with {wi_char}".format(
  by_char = by_char, by_mv = afal.coins_to_str(by_mv),
  wi_char = wi_char, wi_mv = afal.coins_to_str(wi_mv))
-            text = 'traded {c1} for {c2} with {{to}}'.format(c1 = afal.coins_to_str(by_mv), c2 = afal.coins_to_str(wi_mv))
+            text = 'traded {{cs}}{c1}{{ce}} for {{cs}}{c2}{{ce}} with {{to}}'.format(c1 = afal.coins_to_str(by_mv), c2 = afal.coins_to_str(wi_mv))
             afal.journal(date, by_char, wi_char, None, by_mv['value_cp'], text, part_of)
             afal.chars_move_cash({'date': date, 'by': by_char, 'to': wi_char, 'cash': by_mv, 'note': note, 'part_of': part_of, 'journal': False})
             afal.chars_move_cash({'date': date, 'by': wi_char, 'to': by_char, 'cash': wi_mv, 'note': note, 'part_of': part_of, 'journal': False})

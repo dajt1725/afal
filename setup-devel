@@ -11,3 +11,4 @@ ln -s afal_config.py.devel afal_config.py
 ./report > report.devel.out
 ./summary >> report.devel.out
 ./cash >> report.devel.out
+echo Done
