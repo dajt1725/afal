@@ -1,0 +1,84 @@
+#!/usr/bin/python
+import argparse
+import afal
+
+
+parser = argparse.ArgumentParser("Have a character buy an item")
+parser.add_argument("--debt", "-d", type=float, help="debt used to buy item", default=0.0)
+parser.add_argument("--cash", "-c", type=float, help="cash used to buy item", default=0.0)
+parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
+parser.add_argument("date", help="When the transaction takes place")
+parser.add_argument("item", help="The item being purchased")
+parser.add_argument("character", help="The character purchasing the item")
+args = parser.parse_args()
+
+cash = afal.gp_cp_to_cp(float(args.cash), 0)
+debt = afal.gp_cp_to_cp(float(args.debt), 0)
+date = args.date
+try :
+    item_id = int ( args.item )
+    item_name = afal.get_item_name(item_id)
+except :
+    item_id = afal.get_item_id(args.item)
+    item_name = args.item
+
+try :
+    char_id = afal.get_char_id(args.character)
+    char_name = args.character
+except :
+    char_id = int(args.character)
+    char_name = afal.get_char_name(char_id)
+
+seller_id = afal.get_item_owner(item_id)
+if seller_id == None :
+    seller_id = 0
+    seller_name = 'Party'
+else :
+    seller_name = afal.get_char_name(seller_id)
+party_id = afal.change_item_owner(item_id, date, char_id, cash+debt )
+shares = 0.0
+if seller_id == 0 :
+    sellers = afal.get_party_members(party_id)
+    for i in range(len(sellers)) :
+        shares += float(sellers[i][1])
+else :
+    sellers = [ [seller_id, 1 ] ]
+    shares = 1;
+cash_cp = cash
+debt_cp = debt
+for i in sellers :
+    sid = i[0]
+    sshare = float(i[1])
+    sname = afal.get_char_name(sid)
+    if sshare > 0 :
+        if cash_cp > 0 :
+            sh_cp = afal.divide_cp(sshare * cash_cp, shares)
+            sh_gp = afal.cp_to_gp(sh_cp)
+            sh_cp = afal.cp_to_cp_only(sh_cp)
+            if args.verbose :
+                print char_name, "paid", afal.str_cp(sh_cp), "to", sname
+            afal.char_add_cash(sid, sh_cp)
+            afal.journal(date, sid, char_id, sh_cp,
+char_name + " gave " + afal.str_cp(sh_cp) + " to " + sname)
+            cash_cp -= sh_cp
+        if debt_cp > 0 :
+            sh_cp = afal.divide_cp(sshare * debt_cp, shares)
+            if args.verbose :
+                print char_name, "now owes", afal.str_cp(sh_cp), "to", sname
+            afal.insert_debt(date, char_id, sid, sh_cp, share=sshare, item_id=item_id, repay_order=1000)
+            afal.journal(date, sid, char_id, sh_cp,
+char_name + " now owes " + afal.str_cp(sh_cp) + " to " + sname)
+            debt_cp -= sh_cp
+        shares -= sshare
+
+if cash > 0 :
+    afal.journal(date, seller_id, char_id, cash,
+ seller_name + " sold "+ item_name + " #" + str(item_id) + " to " +
+ char_name + " for " + afal.str_cp(cash) + " cash" )
+
+if debt > 0 :
+    afal.journal(date, seller_id, char_id, debt,
+ seller_name + " sold "+ item_name + " #" + str(item_id) + " to "
+ + char_name + " for " + afal.str_cp(debt) + " debt" )
+
+afal.fini()

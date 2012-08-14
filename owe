@@ -1,0 +1,73 @@
+#!/usr/bin/python
+import sys
+import argparse
+import afal
+
+parser = argparse.ArgumentParser("Create a debt from a character to another character or a party")
+parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
+parser.add_argument("date", help="When the transaction takes place")
+parser.add_argument("character", help="Who is becoming the debtor")
+parser.add_argument("party", help="Who is becoming the debtee")
+parser.add_argument("debt", help="The amount being borrowed")
+args = parser.parse_args()
+
+date = args.date
+char = args.character
+party = args.party
+debt_cp = afal.gp_cp_to_cp(float(args.debt), 0)
+try :
+    char_id = afal.get_char_id(char)
+    char_name = char
+except :
+    char_id = int(char)
+    char_name = afal.get_char_name(char_id)
+
+try :
+    party_id = afal.get_party_id(party)
+    party_name = party
+
+except :
+    try :
+        party_name = afal.get_party_name(party)
+        party_id = party
+
+    except :
+# It's neither a party ID or a party name, must be a single character
+        party_id = 0
+        try :
+            lender_id = afal.get_char_id(party)
+            lender_name = party
+        except :
+            try :
+                lender_name = afal.get_char_name(party)
+                lende_id = party
+            except :
+                print "Unknown character or party",party
+                sys.exit(1)
+
+shares = 0.0
+if party_id > 0 :
+    lender_name = party_name
+    lender_id = party_id
+    lenders = afal.get_party_members(party_id)
+    for i in lenders :
+        shares += float(i[1])
+else :
+    lenders = [ [lender_id, 1 ] ]
+    shares = 1;
+
+for i in lenders :
+    lid = i[0]
+    lshare = float(i[1])
+    lname = afal.get_char_name(lid)
+    if lshare > 0 :
+        sh_cp = int(lshare * debt_cp / shares)
+        afal.insert_debt(date, char_id, lid, sh_cp, share=lshare, repay_order=1000 )
+        afal.journal(date, char_id, lid, sh_cp,
+char_name + " now owes " + afal.str_cp(sh_cp) + " to " + lname)
+
+afal.journal(date, lender_id, char_id, debt_cp,
+ lender_name + " lent " + afal.str_cp(debt_cp) + " to "
+ + char_name )
+
+afal.fini()

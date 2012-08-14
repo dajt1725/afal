@@ -1,0 +1,258 @@
+char -g 1000000000 "outside the party" 
+char Party Darius Dexter
+char -g 95 Henkles
+char Steve Maanamere Ursula Stewart Barnabus Thalion Falco Moogh Buffy Devlin
+char Harvee Misery Narthan Cassie Denyae Stalker Staric Deringa Chusnog
+char Ouguch Ag Tristan Brogun
+party 'Mirtul 26 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Barnabus 0
+party 'Kythorn 10 1369' Darius 1 Dexter 1 Henkles 1 Steve 1
+party 'Kythorn 16 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Stewart 0 Thalion 0 Falco 0 Moogh 0 Buffy 0
+party 'Flamerule 23 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Stewart 0 Buffy 0 Devlin 0 Harvee 0
+party 'Eleasias 16 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Stewart 0 Devlin 0 Harvee 0
+party 'Eleasias 18 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Stewart 0 Misery 0 Narthan 0 Cassie 0
+party 'Eleasias 30 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Stewart 0 Misery 0 Narthan 0 Cassie 0
+party 'Elint 19 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Stewart 0 Misery 0 Narthan 0 Cassie 0
+party 'Marpenoth 1 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1
+party 'Marpenoth 12 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1
+party 'Marpenoth 23 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Stewart 0 Misery 0 Narthan 0 Cassie 0
+party 'Marpenoth 26 1369' Darius 1 Dexter 1 Steve 1 Maanamere 1
+party 'Marpenoth 28 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Stewart 0 Misery 0 Narthan 0 Cassie 0
+party 'Uktar 8 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Ursula 1
+party 'Uktar 9 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Ursula 1
+party 'Uktar 12 1369' Darius 1 Dexter 1 Henkles 1 Steve 1 Maanamere 1 Ursula 1
+party 'Nightal 1 1369' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Steve 1 Ursula 1
+party 'Nightal 5 1369' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Maanamere 1 Steve 1 Ursula 1
+party 'Nightal 12 1369' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Maanamere 1 Steve 1 Ursula 1
+party 'Nightal 16 1369' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Steve 1 Cassie 0 Misery 0 Narthan 0 Stalker 0
+party 'Nightal 17 1369' Darius 1 Denyae 0.5 Dexter 1 Steve 1 Cassie 0 Misery 0 Narthan 0 Stalker 0
+party 'Nightal 20 1369' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Maanamere 1 Steve 1
+party 'Nightal 23 1369' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Maanamere 1 Steve 1
+party 'Nightal 24 1369' Darius 1 Dexter 1 Henkles 1 Maanamere 1 Steve 1
+party 'Hammer 9 1370' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Maanamere 1 Steve 1
+party 'Hammer 13 1370' Darius 1 Denyae 0.5 Dexter 1 Henkles 1 Steve 1
+party 'Hammer 20 1370' Darius 1 Denyae 1 Deringa 0.5 Dexter 1 Henkles 1 Staric 0.5 Steve 1 Ursula 1
+party 'Alturiak 29 1370'
+party 'Ches 3 1370' Darius 1 Deringa 0.5 Dexter 1 Henkles 1 Maanamere 1 Staric 0.5 Steve 1 Tristan 1 Chusnog 0 Ouguch 0
+party 'Ches 25 1370' Ag 1 Darius 1 Denyae 1 Deringa 0.5 Dexter 1 Henkles 1 Maanamere 1 Staric 0.5 Steve 1 Tristan 1
+party 'Ches 30 1370' Ag 1 Darius 1 Denyae 1 Deringa 0.5 Dexter 1 Henkles 1 Maanamere 1 Staric 0.5 Steve 1 Tristan 1
+party 'Tarsakh 3 1370' Ag 1 Brogun 1 Darius 1 Denyae 1 Dexter 1 Henkles 1 Maanamere 1 Steve 1 Tristan 1
+item 'Space Heater'				 'Mirtul 26 1369' Party
+item 'Monster: Manual of Golems'		 'Mirtul 26 1369' Party
+item 'Monster: Manual of Bodily Health'		 'Mirtul 26 1369' Party
+item 'Monster: Libram of Gainful Conjuration'	 'Mirtul 26 1369' Party
+item 'Windchimes of Dusk'			 'Mirtul 26 1369' 'outside the party' '(1370,Ches,23)'
+item 'Sproing Ring'				 'Kythorn 10 1369' Henkles '(1370,Tarsakh,2)' -d 5000
+item '5x-1 Oil of Sharpness'			 'Kythorn 16 1369'
+item 'Potion of Heroism (a)'			 'Kythorn 16 1369'
+item 'Potion of Ventriloquism'			 'Kythorn 16 1369'
+item 'Silver Strike'				 'Kythorn 16 1369' Henkles '(1369,Flamerule,24)'
+item  Binky					 'Kythorn 16 1369' Maanamere '(1369,Flamerule,24)'
+item 'Potion of 3d8 extra hit points'		 'Kythorn 16 1369'
+item 'Scroll of Protection from Petrification'	 'Kythorn 16 1369'
+item 'Scroll of Protection from Magic'		 'Kythorn 16 1369'
+item 'Scroll (C) Lighten Load'			 'Kythorn 16 1369'
+item 'Scroll (MU) Slow'				 'Kythorn 16 1369'
+item 'Potion of Delusion (Flying)'		 'Kythorn 16 1369' Party
+item 'Deck of Wonderous Transformation'		 'Flamerule 23 1369' Party
+item 'Glass Sphere of Wall of Force'		 'Flamerule 23 1369'
+item 'Ioun Stone of Protection'			 'Flamerule 23 1369' Darius
+item 'Ring of Magic Missiles'			 'Flamerule 23 1369' Steve
+item 'Scroll (C12) 3x Continual Darkness'	 'Eleasias 16 1369'
+item 'Scroll (C12) Volume of Sweet Air'		 'Eleasias 16 1369'
+item 'Scroll (C) Sanctify to Shar'		 'Eleasias 16 1369' 'outside the party'
+item 'Cooking Pot of Divination'		 'Eleasias 18 1369' Party
+item '3x Potion of Shopping'			 'Eleasias 18 1369'
+item '2x Charged +1 Dagger'			 'Eleasias 18 1369' 'outside the party'
+item '6x Makeup of Disguise'			 'Eleasias 18 1369' 'outside the party'
+item 'Wife'					 'Eleasias 30 1369' Henkles '(1369,Eleasias,30)'
+item '+1/+3(Undead) Large Shield'		 'Eleasias 30 1369' Dexter '(1369,Eleasias,30)'
+item '+2/+3(Large)/+4(Huge+) Purple Chain Mail'	 'Eleasias 30 1369' Misery '(1369,Eleasias,30)'
+item '2x Sheaf Arrow of Holding'		 'Elint 19 1369' Denyae
+item '+2 Shield'				 'Elint 19 1369' 'outside the party'
+item 'Ring of Teleport Adventurer Into Undermountain' 'Elint 19 1369'
+item 'Pots of oil, one magical'			 'Elint 19 1369'
+item 'Perditor Mortua'				 'Marpenoth 1 1369' Dexter '(1370,Tarsakh,1)' -d 5000
+item '+1 Full Plate Armor'			 'Marpenoth 1 1369' Maanamere '(1370,Tarsakh,1)' -d 30000
+item 'Scroll (C) Inflict Moderate Wounds'	 'Marpenoth 1 1369'
+item 'Scroll (C) Aid'				 'Marpenoth 1 1369'
+item 'Potion of Aid'				 'Marpenoth 1 1369'
+item '+1 Studded Leather Armor'			 'Marpenoth 1 1369'
+item 'Potion of Enlarge'			 'Marpenoth 1 1369'
+item 'Potion of Blur'				 'Marpenoth 1 1369'
+item 'Gargoyle Ring'				 'Marpenoth 12 1369' Steve '(1370,Tarsakh,1)' -d 10000
+item '+2/+0(Mages)/-3(Enchanters) Dagger'	 'Marpenoth 23 1369' Cassie
+item 'Scroll (C) Cure Disease'			 'Marpenoth 23 1369' Dexter
+item 'Scroll (C) Heal'				 'Marpenoth 23 1369'
+item 'Scroll (C) Ressurection'			 'Marpenoth 23 1369'
+item 'Scroll of Protection from Possession'	 'Marpenoth 23 1369'
+item 'Glim Gauntlet (a)'			 'Marpenoth 23 1369' Steve
+item 'Crystal of Spellreading'			 'Marpenoth 23 1369' Party
+item 'Potion of Heroism (b)'			 'Marpenoth 23 1369'
+item 'Potion of Delusion (Invisibility)'	 'Marpenoth 23 1369'
+item 'Potion of Sweet Water'			 'Marpenoth 23 1369'
+item '4?x Potion of Stoneskin'			 'Marpenoth 23 1369'
+item 'Kobold Ring'				 'Marpenoth 26 1369' Party
+item 'Potion of Healing in wire-wrapped vial'	 'Marpenoth 26 1369'
+item 'Potion in wire-wrapped vial'		 'Marpenoth 26 1369'
+item 'Potion of Rainbow Hues'			 'Marpenoth 26 1369'
+item 'Magic Empty Bottle (of breaking?)'	 'Marpenoth 26 1369'
+item 'Boots of Elvinkind'			 'Marpenoth 28 1369' 'outside the party'
+item '+1 Scimitar (a)'				 'Marpenoth 28 1369' 'outside the party'
+item 'Elf Hurtr'				 'Marpenoth 28 1369' 'outside the party'
+item '+1/+4(Andarod Gutreaver) Ring of Protection'  'Marpenoth 28 1369' Cassie
+item '+1 Dagger (can glow enough to read a map)' 'Marpenoth 28 1369'
+item 'Potion of Invulnerability'		 'Marpenoth 28 1369'
+item 'Scroll of Protection from Normal Missiles' 'Marpenoth 28 1369'
+item 'Scroll (MU) (a)'				 'Marpenoth 28 1369' -n ' Enchanted Weapon, Magic Mirror, Globe of Invulnerability' 
+item 'Potion of Healing in twisted vial'	 'Marpenoth 28 1369'
+item 'Bracers of Initiative D8'			 'Marpenoth 28 1369' Misery
+item 'Rusty hand axe with enchantment on it'	 'Uktar 8 1369'
+item 'Wand of Small Fires'			 'Uktar 9 1369' Ursula
+item 'Scroll (HM Cleric L4)'			 'Uktar 9 1369' Dexter -n '(used L2 Cure Moderate Wounds), L2 Diminished Rite, L2 Heal Light Wounds'
+item "Tenser's Throw Rug"			 'Uktar 12 1369' Party
+item '+1 Ring of Protection (a)'		 'Uktar 12 1369' Henkles '(1370,Tarsakh,1)' -d 5300
+item 'Fanny Pack of Holding'			 'Uktar 12 1369' Darius '(1370,Tarsakh,1)' -d 9500
+item 'Staff of Phantasmal Fireballs'		 'Uktar 12 1369' Steve
+item '+1(?) Shield with scroll of Summon Mystic Moose' 'Uktar 12 1369' Denyae
+item '4x +2 Flight Arrow'			 'Uktar 12 1369' Denyae
+item 'Flight Arrow of Darkness'			 'Uktar 12 1369' Denyae
+item 'Potion of Heroism (c)'			 'Uktar 12 1369'
+item 'Preserved Green Dragon Breath'		 'Uktar 12 1369' 'outside the party'
+item '2x Scroll'				 'Uktar 12 1369' 'outside the party'
+item "Potion of Murdoch's Insect Ward"		 'Uktar 12 1369'
+item 'Potion of Invisibility (a)'		 'Uktar 12 1369'
+item '+2 Leather Armor'				 'Uktar 12 1369' 'outside the party'
+item '+1 Bastard Sword (a)'			 'Uktar 12 1369' Maanamere
+item 'Dagger of Hurting (a)'			 'Uktar 12 1369' 'outside the party'
+item 'Dagger of Hurting (b)'			 'Uktar 12 1369'
+item 'Dagger of Hurting (c)'			 'Uktar 12 1369'
+item '+1 Ring of Protection (b)'		 'Uktar 12 1369' Narthan
+item '+1 Shield (a)'				 'Uktar 12 1369' 'outside the party'
+item 'Ring of Warmth (a)'			 'Uktar 12 1369' Ursula
+item 'Rod of Caltrops'				 'Uktar 12 1369' Stewart
+item "Scroll (MU) Phesult's Sleep of Ages"	 'Uktar 12 1369' 'outside the party'
+item 'Balthazar Hellspawn of Terror'		 'Uktar 12 1369' Henkles '(1369,Uktar,12)'
+item 'Potion of Undead Control (Skeleton)'	 'Uktar 12 1369'
+item 'Cloak of Elvenkind'			 'Nightal 1 1369' Steve '(1370,Tarsakh,1)' -d 6000
+item 'Amulet of Turning Resistance'		 'Nightal 1 1369'
+item 'Potion of Growth'				 'Nightal 5 1369' 'outside the party'
+item 'Potion of Avian Control'			 'Nightal 5 1369' 'outside the party'
+item 'Ring of Stick'				 'Nightal 5 1369' Stalker
+item 'Green Dragon Hide Armor'			 'Nightal 5 1369' Steve
+item 'Elixer of Health'				 'Nightal 5 1369'
+item 'Philter of Stammering and Stuttering'	 'Nightal 5 1369' 'outside the party'
+item '+1 Dagger (a)'				 'Nightal 12 1369'
+item '+1 Sheaf Arrow'				 'Nightal 12 1369' Denyae
+item 'Potions of Minor Healing and Regeneration' 'Nightal 12 1369'
+item 'Rod of Bash Face'				 'Nightal 16 1369' Moogh
+item 'Scroll (MU) (b)'				 'Nightal 16 1369' Darius -n ' Create Water, Insatiable Thirst, (used Steam Blast), Conjure Water Elemetal, (used Water Bomb)'
+item '+1 Light Crossbow (a)'			 'Nightal 17 1369' Steve '(1370,Tarsakh,1)' -d 2500
+item '+1 Light Crossbow (b)'			 'Nightal 17 1369' Moogh
+item '+1 Scimitar (b)'				 'Nightal 17 1369' Misery
+item '+1 Knife'					 'Nightal 17 1369' Stalker
+item '7x +1 Blowgun Darts'			 'Nightal 17 1369' 'outside the party'
+item 'Buggerer'					 'Nightal 17 1369' 'outside the party'
+item 'Scroll (MU) Death Recall, Delay Death'	 'Nightal 17 1369'
+item 'Eyedrops of the Enchantress'		 'Nightal 20 1369'
+item 'Potion of Gaseous Form'			 'Nightal 20 1369'
+item '+2 Long Sword'				 'Nightal 23 1369' Denyae '(1370,Tarsakh,1)' -d 5400
+item 'Bracers of Defense AC 5 (a)'		 'Nightal 23 1369' Ursula '(1370,Tarsakh,1)' -d 15000
+item 'Bracers of Defense AC 5 (b)'		 'Nightal 23 1369' Darius '(1370,Tarsakh,1)' -d 15000
+item '+1 Chain Mail of Swimming'		 'Nightal 23 1369'
+item '+1 Long Bow'				 'Nightal 23 1369' Dexter
+item 'Ring of Protection (weak)'		 'Nightal 23 1369' Denyae '(1370,Tarsakh,1)' -d 10000
+item '+1/+2(half*)/+3(Humans) Bastard Sword'	 'Nightal 23 1369' Tristan '(1370,Tarsakh,1)' -d 5000
+item 'Necklace of Darkness'			 'Nightal 23 1369' Denyae
+item 'Magical Bottle'				 'Nightal 24 1369'
+item 'Magical Plate Mail'			 'Nightal 24 1369' Dexter
+item 'Scroll (C) (a)'				 'Nightal 24 1369' -n 'Bless, Curse, Putrify Food, Focus'
+item 'Scroll (C) (b)'				 'Nightal 24 1369' -n '2xLocate animals or Plants, Snake Charm, Summon Insects, Call Woodland Being, Animal Summoning 3'
+item 'Scroll (C) Energy Drain'			 'Nightal 24 1369'
+item 'Nonmagic books'				 'Nightal 24 1369'
+item "Rabairnil's Clothes"			 'Nightal 24 1369'
+item 'Writing set'				 'Nightal 24 1369'
+item 'Scroll'					 'Hammer 9 1370'
+item 'Potion (a)'				 'Hammer 9 1370'
+item '+1 Dagger (b)'				 'Hammer 9 1370' 'outside the party'
+item '+1 Dagger (c)'				 'Hammer 9 1370' Misery
+item 'Potion of Healing (a)'			 'Hammer 9 1370'
+item 'Potion (Maybe of Healing)'		 'Hammer 9 1370'
+item 'Potion of Invisibility (b)'		 'Hammer 9 1370'
+item 'Necklace of Light and Darkness'		 'Hammer 9 1370' Henkles
+item '+1 Glaive'				 'Hammer 13 1370'
+item '+1 Banded Mail'				 'Hammer 13 1370'
+item '+1 Shield (b)'				 'Hammer 13 1370' Tristan '(1370,Tarsakh,1)' -d 2500
+item 'Ring of Water Walking'			 'Hammer 13 1370' Steve
+item 'Potion of Healing (b)'			 'Hammer 13 1370'
+item '+2 Whip'					 'Hammer 20 1370'
+item '+1/+3(Cold) Ring of Protection'		 'Hammer 20 1370' Maanamere '(1370,Tarsakh,1)' -d 12500
+item '+1/+2(Lawful) Long Sword'			 'Hammer 20 1370' Steve '(1370,Tarsakh,1)' -d 4050
+item '+1 Plate Mail (Half Elf)'			 'Hammer 20 1370' Tristan '(1370,Tarsakh,1)' -d 5000
+item '+1 Composite Short Bow'			 'Hammer 20 1370'
+item '+1 Dagger (d)'				 'Hammer 20 1370'
+item 'Dagger of Hurting (d)'			 'Hammer 20 1370'
+item 'Glim Gauntlet (b)'			 'Hammer 20 1370' Darius
+item '24x +1 Arrow'				 'Hammer 20 1370' Denyae
+item '6x Sleep Gas Grenade (M)'			 'Hammer 20 1370'
+item 'Bracers of Defense AC 6/5'		 'Hammer 20 1370' Ag '(1370,Tarsakh,1)' -d 12000
+item '+1 Heavy Crossbow'			 'Hammer 20 1370' 'outside the party'
+item '7x Heavy War Horse'			 'Hammer 20 1370'
+item 'Philter of Love'				 'Alturiak 29 1370'
+item 'Travelling Gear'				 'Ches 3 1370'
+item 'Travelling Clothes'			 'Ches 3 1370'
+item 'Magical Stirrer'				 'Ches 3 1370' Party
+item '2 scrolls, comp lang'			 'Ches 3 1370'
+item 'Ring of Warmth (b)'			 'Ches 3 1370'
+item 'Magic Tent'				 'Ches 3 1370' Party
+item 'Magic Cooking Set'			 'Ches 3 1370' Party
+item 'Carpet of Flying 3x5'			 'Ches 3 1370' Denyae
+item 'Gems'					 'Ches 3 1370' 'outside the party' '(1370,Ches,3)'
+item 'Scroll (MU) (c)'				 'Ches 3 1370'
+item 'Scroll (MU) (d)'				 'Ches 3 1370'
+item 'Scroll (MU) (e)'				 'Ches 3 1370'
+item 'Scroll (MU) (f)'				 'Ches 3 1370'
+item 'Scroll (MU) (g)'				 'Ches 3 1370'
+item 'Shameful Tome of Dishonerable Attacks'	 'Ches 3 1370'
+item '3x(1 used) Darts of Human Slaying'	 'Ches 3 1370'
+item 'Wand of Lightning Fan'			 'Ches 3 1370' Darius
+item 'Ioun Stones'				 'Ches 3 1370' 'outside the party' '(1370,Ches,3)'
+item 'Potion of Fire Breathing'			 'Ches 3 1370'
+item 'Potion of Healing (c)'			 'Ches 3 1370' Dexter
+item 'Potion of Healing (d)'			 'Ches 3 1370' Dexter
+item 'Elixier of Youth'				 'Ches 3 1370'
+item 'Potion of Speed'				 'Ches 3 1370'
+item 'Potion of Polymorph Self'			 'Ches 3 1370'
+item 'Potion of Longevitiy'			 'Ches 3 1370'
+item 'Oil of Disenchantment'			 'Ches 3 1370'
+item '13x Potion'				 'Ches 3 1370'
+item 'Six bolts of Silk?'			 'Ches 3 1370'
+item '-1 Cursed Khopesh'			 'Ches 25 1370'
+item '+1 Shield (needs new handle)'		 'Ches 25 1370'
+item 'Ring of Fire Resistance'			 'Ches 30 1370'
+item '+1 Ring of Protection (c)'		 'Ches 30 1370' Ag '(1370,Tarsakh,2)' -d 10000
+item '+1/+? Ring of Protection'			 'Ches 30 1370' Henkles '(1370,Tarsakh,2)' -d 2000
+item '20x +1 Arrow'				 'Ches 30 1370' Denyae
+item '10x Sleep Gas Grenade (M)'		 'Ches 30 1370'
+item '+1 Medium Shield'				 'Ches 30 1370'
+item '+1 Footmans Pick'				 'Ches 30 1370'
+item '+1/+3(Backstab) Long Sword'		 'Ches 30 1370' Ag -n '+10% Hide in Shadows'
+item 'Dagger of Hurting (e)'			 'Ches 30 1370'
+item 'Wand of Hurting'				 'Ches 30 1370' Deringa
+item 'Staff of the Serpent'			 'Ches 30 1370'
+item '+1 Ring of Protection (d)'		 'Ches 30 1370' Steve '(1370,Tarsakh,2)' -d 10000
+item 'Potion (b)'				 'Ches 30 1370'
+item 'Oil of Slipperyness'			 'Ches 30 1370'
+item '3x Urds Teeth Poison'			 'Ches 30 1370'
+item 'Ebon Fly'					 'Ches 30 1370'
+item 'Jeweled Dagger'				 'Tarsakh 3 1370'
+item 'Long Sword'				 'Tarsakh 3 1370'
+item 'Spear'					 'Tarsakh 3 1370'
+
+owe '(1370,Tarsakh,1)' Henkles Dexter 100
+owe '(1370,Tarsakh,2)' Darius 'Ches 30 1370' 10000
+buy '(1370,Tarsakh,2)' '+1 Ring of Protection (a)' Darius
+
+# cancel '(1370,Tarsakh,2)' Ag Darius Denyae Dexter Henkles Maanamere Steve Tristan
+# transfer '(1370,Tarsakh,2)' Darius Denyae Dexter Henkles Maanamere Steve Tristan
+# buy '(1370,Tarsakh,2)' '3x Urds Teeth Poison' Henkles -c 105
+# buy '(1370,Tarsakh,2)' 'Ebon Fly' Dexter -c 5000
