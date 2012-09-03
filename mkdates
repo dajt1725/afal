@@ -1,0 +1,19 @@
+#!/usr/bin/python
+import argparse
+import afal
+
+parser = argparse.ArgumentParser("Create entries in the MySql date table")
+parser.add_argument("--verbose","-v", help="print progress messages", action='store_true', default=False)
+args = parser.parse_args()
+
+for year in range(1368,1371):
+    for mand in (('Hammer',30),('Midwinter Festival',1),('Alturiak',30),
+('Ches',30),('Tarsakh',30),('Greengrass Festival',1),('Mirtul',30),
+('Kythorn',30),('Flamerule',30),('Midsummer Festival',1),('Eleasias',30),
+('Eleint',30),('Higharvestide Festival',1),('Marpenoth',30),('Uktar',30),
+('Moon Festival',1),('Nightal',30)):
+        for day in range(1,mand[1]+1):
+            if args.verbose:
+                print "inserting",year,mand[0],day
+            afal.insert_date(year,mand[0],day)
+afal.fini()

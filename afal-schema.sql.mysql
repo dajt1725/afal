@@ -1,0 +1,54 @@
+create table fr_character (
+    char_id integer unsigned not null primary key auto_increment,
+    char_name varchar(128) not null unique,
+    char_cash integer not null default 0
+);
+create table fr_party (
+    party_id integer unsigned not null primary key auto_increment,
+    party_name varchar(128) unique not null
+);
+create table fr_char_party (
+    char_id integer unsigned not null references fr_character,
+    party_id integer unsigned not null references fr_party,
+    share double unsigned not null default 1.0,
+    primary key(char_id,party_id)
+);
+create table fr_date (
+    date_id integer unsigned not null primary key auto_increment,
+    year integer unsigned not null,
+    month enum ('Hammer','Midwinter Festival','Alturiak','Ches','Tarsakh',
+ 'Greengrass Festival','Mirtul','Kythorn','Flamerule','Midsummer Festival',
+ 'Eleasias','Eleint','Higharvestide Festival','Marpenoth','Uktar',
+ 'Moon Festival','Nightal') not null,
+    day integer unsigned not null
+);
+create table fr_item (
+    item_id integer unsigned not null primary key auto_increment,
+    item_name varchar(128) unique not null,
+    note text,
+    acquired_by integer unsigned not null references fr_party,
+    owned_by integer unsigned references fr_character,
+    value integer unsigned,
+    sale_date integer unsigned references fr_date
+);
+create table fr_debt (
+    debt_id integer unsigned primary key auto_increment,
+    owed_on integer unsigned not null references fr_date,
+    from_char integer unsigned not null references fr_character,
+    to_char   integer unsigned not null references fr_character,
+    repay_order integer unsigned not null default 1,
+    share double unsigned not null default 1.0,
+    item_id integer unsigned references fr_item,
+    initial_cp integer unsigned not null,
+    owed_cp integer unsigned not null
+);
+create table fr_journal (
+    journal_id integer unsigned not null primary key auto_increment,
+    part_of integer unsigned references fr_journal,
+    ourtime timestamp not null default CURRENT_TIMESTAMP,
+    made_on integer unsigned not null not null references fr_date,
+    made_by integer unsigned not null,
+    made_to integer unsigned,
+    amount_cp integer unsigned,
+    description text not null
+);

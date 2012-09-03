@@ -1,0 +1,513 @@
+#!/usr/bin/python
+import sys
+import mysql.connector
+from mysql.connector import errorcode
+import random
+
+############################## begin startup code here
+
+
+config = {
+	'database':'afal', 'user':'afal'
+}
+#try :
+conn = mysql.connector.connect(**config)
+#except :
+#    raise NameError("Database afal or user afal not found")
+cur = conn.cursor()
+
+
+######## Cleanup and misc code
+
+def fini() :
+    """finish things up and close the database"""
+    conn.commit()
+    cur.close()
+    conn.close()
+
+
+######## Date functions
+
+def str_to_date(date):
+    """ turn a human readable date into a date_id"""
+
+    if date == None:
+        return None
+    if date[0] == '(' and date[-1] ==')' and date.count(',') == 2:
+        c1 = date.index(',')
+        c2 = date[c1+1:].index(',')
+        year = date[1:c1]
+        month = date[c1+1:c1+c2+1]
+        day = date[c1+c2+2:-1]
+    else:
+        c1 = date.index(' ')
+        month = date[:c1]
+        if month[-9:] == " Festival":
+            day = 1
+            year = date[c1+1:]
+        else:
+            c2 = date[c1+1:].index(' ')
+            day = date[c1+1:c1+1+c2]
+            year = date[c1+c2+2:]
+    cur.execute("select date_id from fr_date where year = %(year)s and month = %(month)s and day = %(day)s",
+ {'year':year, 'month':month, 'day':day})
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find date " + date)
+    return resp[0][0]
+
+day_names = {
+ 1:'First', 2:'Second', 3:'Third', 4:'Fourth', 5:'Fifth', 6:'Sixth',
+ 7:'Seventh', 8:'Eighth', 9:'Ninth', 10:'Tenth', 11:'Eleventh', 12:'Twelth',
+13:'Thirteenth', 14:'Fourteenth', 15:'Fifteenth', 16:'Sixteenth', 17:'Seventeenth',
+18:'Eighteenth', 19:'Ninteenth', 20:'Twentieth', 21:'Twenty-First', 22:'Twenty-second',
+23:'Twenty-third', 24:'Twenty-fourth', 25:'Twenty-fifth', 26:'Twenty-sixth',
+27:'Twenty-seventh', 28:'Twenty-eighth', 29:'Twenty-ninth', 30:'Thirtyith'}
+
+def date_to_str(date):
+    """return a human-readable form of a date-id"""
+
+    if date == None:
+        return None
+    cur.execute("select year, month, day from fr_date where date_id = %(date)s", {'date':date})
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 3 :
+        raise NameError("Couldn't find date " + str(date))
+#    return '('+str(resp[0][0])+','+resp[0][1]+','+str(resp[0][2])+')'
+    if resp[0][1][-9:] == " Festival":
+        return resp[0][1] + " " + str(resp[0][0])
+    else:
+        return 'the ' + day_names[resp[0][2]] + ' of ' + resp[0][1] + ', ' + str(resp[0][0])
+
+def insert_date(year,month,day):
+    """insert a date entry"""
+
+    cur.execute("insert into fr_date (year, month, day) values (%(year)s, %(month)s, %(day)s)",
+{'year':year,'month':month,'day':day})
+    return cur.lastrowid
+
+######## Copper and Gold piece functions
+
+def cp_to_gp(cp) :
+    """ return the gp portion of a raw cp value"""
+
+    return cp/200
+
+
+def cp_to_cp_only(cp) :
+    """ return the cp portion of a raw cp value"""
+
+    return cp % 200
+
+
+def gp_cp_to_cp(gp, cp) :
+    """ turn gp and cp values into a raw cp value"""
+
+    return int(gp * 200 + cp)
+
+
+def str_gp_cp(gp, cp) :
+    """ pretty-print a gp and cp value for human consumption"""
+
+    if gp > 0 and cp > 0 :
+        return str(gp)+"gp, "+str(cp)+"cp"
+    elif gp > 0 :
+        return str(gp)+"gp"
+    elif cp > 0 :
+        return str(cp)+"cp"
+    else :
+        return "nothing"
+
+
+def str_cp(cp) :
+    """ pretty-print a raw cp value"""
+
+    return str_gp_cp(cp_to_gp(cp), cp_to_cp_only(cp))
+
+
+def str_cp_to_fgp(cp) :
+    """print copper pieces as fractional gold pieces"""
+
+    return str(float(cp)/200.0)
+
+
+def divide_cp(top, bottom) :
+    """Perform an integer division, rounding up randomly"""
+
+    whole = int(top/bottom)
+    fract = (float(top)/float(bottom)) - whole
+    if fract > random.random() :
+        print top,"/",bottom,"=",whole,"fraction",fract,"rounded up"
+        whole += 1
+    return whole
+
+
+######## Journal entries
+
+def journal(date, by, to, amount, description, part_of = None) :
+    """add an entry to the transaction journal, returning an id that may be used for subsequent calls"""
+
+    date = str_to_date(date)
+    cur.execute (
+ "insert into fr_journal ( made_on, made_by, made_to, amount_cp, description, part_of ) "
+ " values ( %(date)s, %(by)s, %(to)s, %(cp)s, %(text)s, %(part_of)s )",
+ { 'date' : date, 'by' : by, 'to' : to, 'cp' : amount, 'text' :
+ description + ".", 'part_of' : part_of } )
+    return cur.lastrowid
+
+
+########## Characters
+
+def insert_char(char_name, cp=0 ) :
+    """ insert a character into the database"""
+
+    cur.execute(
+ "insert into fr_character ( char_name, char_cash ) "
+ " values ( %(char_name)s, %(cp)s )",
+ { 'char_name': char_name, 'cp': cp } )
+
+
+def get_char_id(char_name) :
+    """ given a char_name, return its corresponding char_id"""
+
+    cur.execute("select char_id from fr_character where char_name = %(char_name)s", {'char_name': char_name})
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find char_name " + char_name)
+    return resp[0][0]
+
+
+def get_char_cash(char_id) :
+    """given a char_id, return their cash in cps"""
+
+    cur.execute("select char_cash from fr_character where char_id = %(char_id)s",{'char_id':char_id})
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find char_id " + str(char_id))
+    return resp[0][0]
+
+
+def char_add_cash(char_id, cp):
+    """give a character additional cash"""
+    cur.execute("update fr_character set char_cash = "
+ " char_cash + %(cp)s where char_id = %(char_id)s",
+ { 'cp' : cp, 'char_id' : char_id } )
+
+
+def get_char_name(char_id) :
+    """ given a char_id, return its corresponding char_name """
+
+    cur.execute("select char_name from fr_character where char_id = %(char_id)s", {'char_id':char_id })
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find char_id "+str(char_id))
+    return resp[0][0]
+
+
+def get_characters() :
+    """return a list of all the characters in the database"""
+
+    cur.execute("select char_id, char_name from fr_character where char_id > 3 order by char_name")
+    resp = cur.fetchall()
+    if len(resp) < 1 or len(resp[0]) != 2 :
+        raise NameError("Couldn't find any characters")
+    return resp
+
+
+########## Parties
+
+def get_party_id(party_name) :
+    """given a party_name, return the corresponding party_id"""
+
+    cur.execute("select party_id from fr_party where party_name = %(party_name)s",
+ { 'party_name': party_name })
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find party_name " + party_name)
+    return resp[0][0]
+
+
+def get_party_name(party_id) :
+    """given a party_id, return the corresponding party_name"""
+
+    cur.execute("select party_name from fr_party where party_id = %(party_id)s",
+ { 'party_id': party_id })
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find party_id " + party_id)
+    return resp[0][0]
+
+
+def get_party_members(party_id) :
+    """Given a party, return a list of its members and their shares"""
+
+    cur.execute("select char_id, share from fr_char_party where party_id = %(p)s",
+ { 'p' : party_id } )
+    resp = cur.fetchall()
+    if len(resp) < 1 or len(resp[0]) < 1 :
+        raise NameError("Couldn't find characters for party "+str(party_id))
+    return resp
+
+
+def get_char_parties(char_id) :
+    """Return a list of [party, share] that the character is in"""
+
+    cur.execute("select party_id, share from fr_char_party where char_id = %(char_id)s order by party_id",
+ {'char_id':char_id})
+    resp = cur.fetchall()
+#    if len(resp) < 1 or len(resp[0]) < 1 :
+#        raise NameError("Couldn't find parties for char_id "+str(char_id))
+    return resp
+
+def get_parties():
+    """Return a list of all the parties in the database"""
+
+    cur.execute("select party_id, party_name from fr_party order by party_id")
+    resp = cur.fetchall()
+    if len(resp) < 1 or len(resp[0]) < 1 :
+        raise NameError("Couldn't find any parties")
+    return resp
+
+
+def insert_party(party_name) :
+    """insert a party into the database"""
+
+    cur.execute(
+ "insert into fr_party ( party_name ) values ( %(name)s )",
+ { 'name': party_name } )
+    return cur.lastrowid
+
+
+def insert_char_party(char_id, party_id, share=1.0) :
+    """insert a char_party into the database"""
+
+    cur.execute(
+ "insert into fr_char_party ( char_id, party_id, share ) values ( %(char_id)s, %(party_id)s, %(share)s )",
+ { 'char_id' : char_id, 'party_id' : party_id, 'share' : share })
+
+
+########## Items
+
+def get_item_name(id) :
+    """ given an item_id, return its corresponding item_name"""
+
+    cur.execute("select item_name from fr_item where item_id = %(id)s", {'id':id })
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find item_name for "+str(id))
+    return resp[0][0]
+
+
+def get_item_id(item_name) :
+    """ given an item name, return its corresponding item_id
+
+The database now has a unque constraint on item names, so this can't return
+multiple items."""
+    cur.execute("select item_id from fr_item where item_name = %(name)s",
+ {'name': item_name })
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find a unique item_id for " + item_name)
+    return resp[0][0]
+
+
+def insert_item(item_name, party_id, owner_id=None, value=None, sale_date=None, note=None) :
+    """insert an item into the database"""
+
+
+    sale_date = str_to_date(sale_date)
+    cur.execute(
+ " insert into fr_item(item_name, owned_by, sale_date, value, note, acquired_by)"\
+ " values(%(item_name)s, %(owner_id)s, %(sale_date)s, %(value)s, %(note)s,"\
+ "  %(party_id)s)",
+ {'item_name':item_name, 'owner_id':owner_id, 'sale_date':sale_date,
+  'value':value, 'note':note, 'party_id':party_id})
+    return cur.lastrowid
+
+
+def get_item_owner(item_id) :
+    """Get the owner of an item"""
+
+    cur.execute ( "select owned_by from fr_item where item_id = %(item_id)s",
+ { 'item_id' : item_id } )
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find seller for item id " + str(item_id))
+    return resp[0][0]
+
+
+def get_item_acquired_by(item_id) :
+    """get the party that acquired an item"""
+
+    cur.execute("select acquired_by from fr_item where item_id = %(item_id)s",
+ {'item_id':item_id})
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find acquirer for item id " + str(item_id))
+    return resp[0][0]
+
+
+def change_item_owner(item_id, date, char_id, cp = 0) :
+    """Sell an item to a person, setting its value and owner"""
+
+    date = str_to_date(date)
+    cur.execute("update fr_item set owned_by = %(char_id)s, value = %(cp)s, "
+ " sale_date =  %(date)s where item_id = %(item_id)s",
+ {'char_id':char_id, 'cp':cp, 'date':date, 'item_id':item_id})
+    return get_item_acquired_by(item_id)
+
+
+def get_items_owned_by(char_id) :
+    cur.execute("select item_name, note, value, sale_date from fr_item where owned_by = %(char_id)s order by item_name", {'char_id':char_id})
+    resp = cur.fetchall()
+    if resp == None:
+        return resp
+    ret=[]
+    if len(resp) > 0:
+        for i in range(len(resp)):
+#            print i,ret,resp,resp[i]
+            ret.append(list(resp[i]))
+            if ret[i][3] != None:
+                ret[i][3] = date_to_str(ret[i][3])
+    return ret
+
+
+def get_items_acquired_by(party_id) :
+    cur.execute("select item_name, note, value, owned_by, sale_date from fr_item where acquired_by = %(party_id)s order by item_name", {'party_id':party_id})
+    resp = cur.fetchall()
+    if resp == None:
+        return resp
+    ret=[]
+    if len(resp) > 0:
+        for i in range(len(resp)):
+            ret.append(list(resp[i]))
+            if ret[i][4] != None:
+                ret[i][4] = date_to_str(ret[i][4])
+    return ret
+
+
+def get_party_items() :
+   cur.execute("select item_name, note, value, owned_by from fr_item where sale_date is null order by item_name")
+   resp = cur.fetchall()
+   return resp
+
+
+######## Debts
+
+# 0 debt_id,
+# 1 from_char
+# repay_order
+# 3 amount
+# 4 share
+# 5 date
+# 6 item_id
+# 7 initial_cp
+def get_char_receivable(char_id) :
+    cur.execute (
+ "select debt_id, from_char, repay_order, owed_cp, share, owed_on, item_id, initial_cp "
+ " from fr_debt where to_char = %(id)s order by from_char, repay_order",
+ { 'id' : char_id } )
+    resp = cur.fetchall()
+    ret=[]
+    if len(resp) > 0:
+        for i in range(len(resp)):
+            ret.append(list(resp[i]))
+            if ret[i][5] != None:
+                ret[i][5] = date_to_str(ret[i][5])
+    return ret
+
+
+# 0 debt_id
+# 1 to_char
+# 2 repay_order
+# 3 amount
+# 4 share
+# 5 date
+# 6 item_id
+# 7 initial cp
+def get_char_payable(char_id) :
+    cur.execute ( "select "
+ " debt_id, to_char, repay_order, owed_cp, share, owed_on, item_id, initial_cp "
+ " from fr_debt where from_char = %(id)s order by to_char, repay_order",
+ { 'id' : char_id } )
+    resp = cur.fetchall()
+    ret=[]
+    if len(resp) > 0:
+        for i in range(len(resp)):
+            ret.append(list(resp[i]))
+            if ret[i][5] != None:
+                ret[i][5] = date_to_str(ret[i][5])
+    return ret
+
+
+def get_char_rec_xferable(char_id) :
+    cur.execute (
+ "select tob.debt_id, tob.from_char, tob.repay_order, tob.owed_cp, tob.share "
+ "from fr_debt as tob where tob.to_char = %(char_id)s and tob.repay_order = "
+ " ( select min(froma.repay_order) from debt as froma where froma.from_char = tob.from_char ) order by from_char",
+ { 'char_id' : char_id })
+    return cur.fetchall()
+
+
+def get_char_pay_xferable(char_id) :
+    cur.execute(
+ "select fromb.debt_id, fromb.to_char, fromb.repay_order, fromb.owed_cp, fromb.share, fromb.item_id "
+ "from fr_debt as fromb where fromb.from_char = %(char_id)s and fromb.repay_order = ( select min(toc.repay_order) from fr_debt as toc where toc.from_char = %(char_id)s) order by to_char",
+ {'char_id':char_id})
+    return cur.fetchall()
+
+
+def bump_debt_repay_order(debt_id) :
+    cur.execute ( "update fr_debt set repay_order = repay_order + 1 where debt_id = %(debt_id)s", {'debt_id':debt_id})
+
+
+def delete_debts_from_to(from_id, to_id) :
+    cur.execute ( "delete from fr_debt where "
+ " from_char = %(from_id)s and to_char = %(to_id)s" ,
+ {'from_id' : from_id, 'to_id' : to_id})
+
+
+def get_char_selfdebt(char_id) :
+    cur.execute ( "select debt_id, owed_cp from fr_debt where to_char = %(char_id)s and from_char = %(char_id)s", { 'char_id' : char_id } )
+    return cur.fetchall()
+
+
+def delete_debt(debt_id) :
+    cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s",
+ { 'debt_id' : debt_id } )
+
+
+def reduce_debt(debt_id, amount):
+    """If this would create a 0cp debt, delete it."""
+    cur.execute("select "
+ " owed_cp from fr_debt "
+ " where debt_id = %(debt_id)s", {'debt_id' : debt_id})
+    resp = cur.fetchall()
+    if len(resp) != 1 or len(resp[0]) != 1 :
+        raise NameError("Couldn't find debt #"+str(debt_id))
+    owed = resp[0][0]
+    if amount > owed :
+        print "Amount",amount,"> owed",owed
+        amount = owed
+    if owed == amount :
+	delete_debt(debt_id)
+    else :
+        owed -= amount
+        cur.execute("update fr_debt set owed_cp = "
+ " %(owed_cp)s where debt_id = %(debt_id)s",
+ {'owed_cp':owed, 'debt_id':debt_id})
+
+
+def insert_debt(date, from_char, to_char, amount, share=1.0, item_id=None, repay_order=0) :
+    """insert a debt into the database"""
+    date = str_to_date(date)
+    cur.execute("insert into fr_debt "
+ " (from_char, to_char, repay_order, share, item_id, initial_cp, owed_cp, owed_on) "
+ " values ( %(from_char)s, %(to_char)s, %(repay_order)s, %(share)s, %(item_id)s, "
+ " %(cp)s, %(cp)s, %(date)s)",
+ {'from_char':from_char, 'to_char':to_char, 'repay_order':repay_order,
+   'share':share, 'item_id':item_id,
+   'cp':amount, 'date':date})
+
+
+######## End

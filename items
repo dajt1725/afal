@@ -1,0 +1,19 @@
+#!/usr/bin/python
+import argparse
+import afal
+
+parser = argparse.ArgumentParser('Generate a list of party items')
+parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
+args=parser.parse_args()
+
+items = afal.get_party_items()
+print "items"
+for i in items :
+    n1 = ""
+    if i[1] is not None :
+        n1 = n1+"  Note: "+i[1]
+    if i[3] is not None and i[3] > 0:
+        n1 = n1+"  (Lent to "+afal.get_char_name(i[3])+")"
+    print "     ",i[0]+n1
+
+afal.fini()
