@@ -30,32 +30,122 @@ for char in args.name :
 # receivable holds a list of who owes us money,
     pay_cp = 0
     pay_shares = 0.0
-    for i in range(0,len(payable)) :
-        pay_cp += payable[i][3]
-        pay_shares += payable[i][4]
+    for i in payable :
+        pay_cp += i[3]
+        pay_shares += i[4]
     rec_cp = 0
     rec_shares = 0.0
-    for i in range(0,len(receivable)) :
-        rec_cp += receivable[i][3]
-        rec_shares += receivable[i][4]
+    for i in receivable :
+        rec_cp += i[3]
+        rec_shares += i[4]
     if rec_cp > pay_cp :
+# All payable debts go away
         xfer_cp = pay_cp
+        j1 = 0
+        journal_id = afal.journal(date, char_id, None, xfer_cp,
+ char_name + " transferred all their payable debt, " + afal.str_cp(xfer_cp)
+ + " in " + str(len(payable)) + " debts to " + str(len(receivable)) + " receivable debts")
+        while j1 < len(payable) :
+            j2 = j1
+            this_pay_cp = 0
+            this_pay_share = 0
+            while payable[j2][1] == payable[j1][1] :
+                this_pay_cp += payable[j2][3]
+                this_pay_share += payable[j2][4]
+                j2 =j2 + 1
+
+            afal.journal ( date, char_id, None, this_pay_cp,
+ char_name + " transferred " + str(1+j2-j1) + " payable debts from "
+ + afal.get_char_name(payable[j1][1]), journal_id )
+            i1 = 0
+            tmp_rec_cp = rec_cp
+            while i1 < len(receivable) :
+                i2 = i1
+                this_rec_cp = 0
+                this_rec_share = 0
+                while receivable[i2][1] == receivable[i1][1] :
+                    this_rec_cp += receivable[i][3]
+                    this_rec_share += receivable[i][4]
+                    i2 = i2 + 1
+                this_xfer_cp = afal.divide_cp(this_pay_cp * this_rec_cp, pay_cp)
+                this_xfer_share = this_pay_share  * this_rec_share / pay_shares
+                afal.insert_debt(date, receivable[i1][1], payable[j1][1],
+ this_xfer_cp, this_xfer_share, repay_order=receivable[i1][2])
+                tmp_rec_cp = this_rec_cp
+                for i in range(i1, i2-1) :
+                    this_sub_cp = afal.divide_cp(this_xfer_cp*receivable[i][3], tmp_rec_cp)
+                    afal.bump_debt_repay_order(receivable[i][0])
+                    afal.decrease_debt(receivable[i][0], this_sub_cp)
+                    tmp_rec_cp -= this_sub_cp
+                pay_cp -= this_xfer_cp
+                i1 = i2
+            for j in range(j1, j2-1) :
+                afal.delete_debt(payable[j][0])
+            j1 = j2
 
     else :
+# All receivable debts go away
         xfer_cp = rec_cp
+        journal_id = afal.journal(date, char_id, None, xfer_cp,
+ char_name + " transferred all their receivable debt, " + afal.str_cp(xfer_cp)
+ + " in " + str(len(receivable)) + " debts to " + str(len(payable)) + " payable debts")
+        i1 = 0
+        while i1 < len(receivable) :
+            i2 = i1
+            this_rec_cp = 0
+            this_rec_share = 0
+            while receivable[i2][1] == receivable[i1][1] :
+                this_rec_cp += receivable[i2][3]
+                this_rec_share += receivable[i2][4]
+                i2 = i2 + 1
+                if i2 >= len(receivable) :
+                    break
+            j1 = 0
+            while j1 < len(payable) :
+                j2 = j1
+                this_pay_cp = 0
+                this_pay_share = 0
+                while payable[j1][1] == payable[j2][1] :
+                    this_pay_cp += payable[j2][3]
+                    this_pay_share += payable[j2][4]
+                    j2 = j2 + 1
+                    if j2 >= len(payable) :
+                        break
+                this_xfer_cp = afal.divide_cp(this_pay_cp * this_rec_cp, rec_cp)
+                this_xfer_share = this_pay_share * this_rec_share / rec_shares
+                afal.journal(date, char_id, receivable[i1][1], this_xfer_cp,
+ char_name + " transferred " + afal.str_cp(this_xfer_cp) + " in " + str(1+i2-i1) + " receivable debts from "
+ + afal.get_char_name(receivable[i1][1]) + " to partially cover " + afal.str_cp(this_pay_cp) + " in "
+ + str(1+j2-j1) + " debts to " +  afal.get_char_name(payable[j1][1]), journal_id)
+                afal.insert_debt(date, receivable[i1][1], payable[j1][1],
+ this_xfer_cp, this_xfer_share, repay_order = receivable[i1][2])
+                tmp_pay_cp = this_pay_cp
+                for j in range(j1,j2-1) :
+                    this_sub_cp = afal.divide_cp(this_xfer_cp*payable[j][3], tmp_pay_cp)
+                    afal.decrease_debt(payable[j][0], this_sub_cp)
+                    tmp_pay_cp -= this_sub_cp
+                rec_cp -= this_xfer_cp
+                j1 = j2
+            for i in range(i1,i2-1) :
+                afal.delete_debt(receivable[i][0])
+            i1 = i2
 
-    for i in range ( 0, len(receivable)) :
-        for j in range ( 0, len(payable)) :
-            this_xfer_cp = afal.divide_cp(xfer_cp * receivable[i][3] * payable[j][3], rec_cp * pay_cp)
-            this_xfer_share = payable[j][4] / pay_shares * receivable[i][4]
-            print "transfer", xfer_cp, pay_cp, pay_shares, rec_cp, rec_shares, receivable[i], payable[j], this_xfer_cp, this_xfer_share
-            if this_xfer_cp > 0 and this_xfer_share > 0 :
-                afal.decrease_debt(receivable[i][0], this_xfer_cp)
-                if rec_cp > pay_cp :
-                    afal.adjust_debt_repay_order(receivable[i][0],receivable[i][2]+1)
-                afal.decrease_debt(payable[j][0], this_xfer_cp)
-                afal.insert_debt(date, receivable[i][1], payable[j][1], this_xfer_cp, this_xfer_share, repay_order=receivable[i][2], item_id=payable[j][5])
-                afal.journal(date, char_id, receivable[i][1], this_xfer_cp,
- char_name + " transferred " + afal.str_cp(this_xfer_cp) + " of debt from "
- + afal.get_char_name(payable[j][1]) + " to " + afal.get_char_name(receivable[i][1]) )
+
+
+
+
+
+#    for i in range ( 0, len(receivable)) :
+#        for j in range ( 0, len(payable)) :
+#            this_xfer_cp = afal.divide_cp(xfer_cp * receivable[i][3] * payable[j][3], rec_cp * pay_cp)
+#            this_xfer_share = payable[j][4] / pay_shares * receivable[i][4]
+#            print "transfer", xfer_cp, pay_cp, pay_shares, rec_cp, rec_shares, receivable[i], payable[j], this_xfer_cp, this_xfer_share
+#            if this_xfer_cp > 0 and this_xfer_share > 0 :
+#                afal.decrease_debt(receivable[i][0], this_xfer_cp)
+#                if rec_cp > pay_cp :
+#                afal.decrease_debt(payable[j][0], this_xfer_cp)
+#                afal.insert_debt(date, receivable[i][1], payable[j][1], this_xfer_cp, this_xfer_share, repay_order=receivable[i][2], item_id=payable[j][5])
+#                afal.journal(date, char_id, receivable[i][1], this_xfer_cp,
+# char_name + " transferred " + afal.str_cp(this_xfer_cp) + " of debt from "
+# + afal.get_char_name(payable[j][1]) + " to " + afal.get_char_name(receivable[i][1]) )
 afal.fini()

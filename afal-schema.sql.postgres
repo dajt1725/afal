@@ -17,7 +17,7 @@ create type fr_date as (
 	day integer
 );
 
-create sequence character_char_id_seq minvalue -1 start with -1;
+create sequence character_char_id_seq minvalue -2 start with -2;
 CREATE TABLE character (
     char_id integer PRIMARY KEY default nextval('character_char_id_seq'),
     char_name text NOT NULL unique,
@@ -45,8 +45,8 @@ CREATE TABLE item (
 alter sequence item_item_id_seq owned by item.item_id;
 
 CREATE TABLE char_party (
-    char_id integer references character,
-    party_id integer references party,
+    char_id integer not null references character,
+    party_id integer not null references party,
     share real not null default 1,
 primary key (char_id, party_id)
 );
@@ -56,7 +56,7 @@ CREATE TABLE debt (
     debt_id integer PRIMARY KEY default nextval('debt_debt_id_seq'),
     from_char integer NOT NULL references character,
     to_char integer NOT NULL references character,
-    repay_order integer,
+    repay_order integer not null,
     share real not null default 1,
     item_id integer references item,
     initial fr_cash NOT NULL,
@@ -73,10 +73,11 @@ alter sequence debt_debt_id_seq owned by debt.debt_id;
 create sequence journal_journal_id_seq start with 100000;
 CREATE TABLE journal (
     journal_id integer primary key default nextval('journal_journal_id_seq'),
+    part_of integer references journal,
     ourtime timestamp not null default CURRENT_TIMESTAMP,
     made_on fr_date not null,
     made_by integer not null,
-    made_to integer not null references character,
+    made_to integer,
     amount fr_cash not null,
     description text not null,
     constraint journal_date_ok check ( (made_on).year > 1368 and (made_on).day > 0 and (made_on).day < 31 ),
