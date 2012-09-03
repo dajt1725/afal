@@ -30,15 +30,15 @@ except :
     char_name = afal.get_char_name(char_id)
 
 seller_id = afal.get_item_owner(item_id)
-if seller_id == None :
-    seller_id = 0
+if seller_id is None :
+    seller_id = afal.party
 party_id = afal.change_item_owner(item_id, args.date, char_id, cash+debt )
 shares = 0.0
-if seller_id == -1 :
+if seller_id < afal.party :
     seller_name = "Someone"
     sellers = [ [seller_id, 1 ] ]
     shares = 1;
-elif seller_id == 0 :
+elif seller_id == afal.party :
     seller_name = afal.get_party_name(party_id)
     sellers = afal.get_party_members(party_id)
     for i in sellers :

@@ -12,7 +12,7 @@ for i in items :
     n1 = ""
     if i[1] is not None :
         n1 = n1+"  Note: "+i[1]
-    if i[3] is not None and i[3] > 0:
+    if i[3] is not None and i[3] > afal.party:
         n1 = n1+"  (Lent to "+afal.get_char_name(i[3])+")"
     print "     ",i[0]+n1
 

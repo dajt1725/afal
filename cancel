@@ -33,11 +33,9 @@ for char in args.name :
             afal.delete_debt(i[0])
     receivable = afal.get_char_receivable(char_id)
     payable = afal.get_char_payable(char_id)
-    if len(payable) == 0 or len(receivable) == 0 :
+    if len(payable) == 0 or len(receivable) == 0:
         continue
 
-    if args.verbose :
-        print "payable",payable,"receivable",receivable
 # payable holds a list of of who we owe money to, sorted by who we owe it to
 # receivable holds a list of who owes us money, sorted by who they are
     pay_start = 0

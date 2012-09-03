@@ -16,6 +16,8 @@ conn = mysql.connector.connect(**config)
 #    raise NameError("Database afal or user afal not found")
 cur = conn.cursor()
 
+party = 9
+first_real_char = 10
 
 ######## Cleanup and misc code
 
@@ -207,7 +209,7 @@ def get_char_name(char_id) :
 def get_characters() :
     """return a list of all the characters in the database"""
 
-    cur.execute("select char_id, char_name from fr_character where char_id > 3 order by char_name")
+    cur.execute("select char_id, char_name from fr_character where char_id >= %(first_real_char)s order by char_name",{'first_real_char':first_real_char})
     resp = cur.fetchall()
     if len(resp) < 1 or len(resp[0]) != 2 :
         raise NameError("Couldn't find any characters")

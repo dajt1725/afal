@@ -2,11 +2,11 @@ create table fr_character (
     char_id integer unsigned not null primary key auto_increment,
     char_name varchar(128) not null unique,
     char_cash integer not null default 0
-);
+) auto_increment=6;
 create table fr_party (
     party_id integer unsigned not null primary key auto_increment,
     party_name varchar(128) unique not null
-);
+) auto_increment=100;
 create table fr_char_party (
     char_id integer unsigned not null references fr_character,
     party_id integer unsigned not null references fr_party,
@@ -21,7 +21,7 @@ create table fr_date (
  'Eleasias','Eleint','Higharvestide Festival','Marpenoth','Uktar',
  'Moon Festival','Nightal') not null,
     day integer unsigned not null
-);
+) auto_increment=1000;
 create table fr_item (
     item_id integer unsigned not null primary key auto_increment,
     item_name varchar(128) unique not null,
@@ -30,7 +30,7 @@ create table fr_item (
     owned_by integer unsigned references fr_character,
     value integer unsigned,
     sale_date integer unsigned references fr_date
-);
+) auto_increment=10000;
 create table fr_debt (
     debt_id integer unsigned primary key auto_increment,
     owed_on integer unsigned not null references fr_date,
@@ -41,7 +41,7 @@ create table fr_debt (
     item_id integer unsigned references fr_item,
     initial_cp integer unsigned not null,
     owed_cp integer unsigned not null
-);
+) auto_increment=100000;
 create table fr_journal (
     journal_id integer unsigned not null primary key auto_increment,
     part_of integer unsigned references fr_journal,
@@ -51,4 +51,4 @@ create table fr_journal (
     made_to integer unsigned,
     amount_cp integer unsigned,
     description text not null
-);
+) auto_increment=1000000;
