@@ -97,14 +97,20 @@ for char in args.name :
             for i in range ( pay_start, pay_end + 1 ) :
                 cur_cp = payable[i][3]
                 cxl_cp = afal.divide_cp(pay_cancel_cp * cur_cp, pay_cp)
-                cur_cp -= cxl_cp
                 if args.verbose :
-                    print char_name,"to",pay_name,"was",payable[i][3],"cxl",cxl_cp
-                afal.reduce_debt(payable[i][0], cur_cp)
-                afal.journal(date, char_id, pay_id, cxl_cp,
+                    print char_name,"to",pay_name,"was",cur_cp,"cxl",cxl_cp
+                if cur_cp == cxl_cp:
+                    afal.journal(date, char_id, pay_id, cxl_cp,
+ char_name + " completely cancelled " + afal.str_cp(cxl_cp) + " of debt to "
+ + pay_name, journal_id)
+                    afal.delete_debt(payable[i][0])
+                else:
+                    cur_cp -= cxl_cp
+                    afal.journal(date, char_id, pay_id, cxl_cp,
  char_name + " cancelled " + afal.str_cp(cxl_cp) + " of debt to " + pay_name
  + ", leaving " + afal.str_cp(cur_cp) + " of the "
  + afal.str_cp(payable[i][3]) + "debt", journal_id)
+                    afal.set_debt_owed(payable[i][0], cur_cp)
 		pay_cancel_cp -= cxl_cp
 		pay_cp -= payable[i][3]
         if cancel_cp == rec_cp :
@@ -121,14 +127,20 @@ for char in args.name :
             for i in range ( rec_start, rec_end + 1 ) :
                 cur_cp = receivable[i][3]
                 cxl_cp = afal.divide_cp(rec_cancel_cp * cur_cp, rec_cp)
-                cur_cp -= cxl_cp
                 if args.verbose :
-                    print pay_name,"to",char_name,"was",receivable[i][3],"cxl",cxl_cp
-                afal.reduce_debt(receivable[i][0], cur_cp)
-                afal.journal(date, rec_id, char_id, cxl_cp,
+                    print pay_name,"to",char_name,"was",cur_cp,"cxl",cxl_cp
+                if cur_cp == cxl_cp:
+                    afal.journal(date, rec_id, char_id, cxl_cp,
+ pay_name + " completely cancelled " + afal.str_cp(cxl_cp) + " of debt to "
+ + char_name, journal_id)
+                    afal.delete_debt(receivable[i][0])
+                else:
+                    cur_cp -= cxl_cp
+                    afal.journal(date, rec_id, char_id, cxl_cp,
  pay_name + " cancelled " + afal.str_cp(cxl_cp) + " of debt to " + char_name
  + ", leaving " + afal.str_cp(cur_cp) + " of the "
  + afal.str_cp(receivable[i][3]) + " debt", journal_id)
+                    afal.set_debt_owed(receivable[i][0], cur_cp)
                 rec_cancel_cp -= cxl_cp
                 rec_cp -= receivable[i][3]
 afal.fini()
