@@ -13,15 +13,6 @@ create table fr_char_party (
     share double unsigned not null default 1.0,
     primary key(char_id,party_id)
 );
-create table fr_date (
-    date_id integer unsigned not null primary key auto_increment,
-    year integer unsigned not null,
-    month enum ('Hammer','Midwinter Festival','Alturiak','Ches','Tarsakh',
- 'Greengrass Festival','Mirtul','Kythorn','Flamerule','Midsummer Festival',
- 'Eleasias','Eleint','Higharvestide Festival','Marpenoth','Uktar',
- 'Moon Festival','Nightal') not null,
-    day integer unsigned not null
-) auto_increment=1000;
 create table fr_item (
     item_id integer unsigned not null primary key auto_increment,
     item_name varchar(128) unique not null,
@@ -29,11 +20,11 @@ create table fr_item (
     acquired_by integer unsigned not null references fr_party,
     owned_by integer unsigned references fr_character,
     value integer unsigned,
-    sale_date integer unsigned references fr_date
+    sale_date integer unsigned
 ) auto_increment=10000;
 create table fr_debt (
     debt_id integer unsigned primary key auto_increment,
-    owed_on integer unsigned not null references fr_date,
+    owed_on integer unsigned not null,
     from_char integer unsigned not null references fr_character,
     to_char   integer unsigned not null references fr_character,
     repay_order integer unsigned not null default 1,
@@ -46,7 +37,7 @@ create table fr_journal (
     journal_id integer unsigned not null primary key auto_increment,
     part_of integer unsigned references fr_journal,
     ourtime timestamp not null default CURRENT_TIMESTAMP,
-    made_on integer unsigned not null not null references fr_date,
+    made_on integer unsigned not null not null,
     made_by integer unsigned not null,
     made_to integer unsigned,
     amount_cp integer unsigned,
