@@ -30,8 +30,20 @@ def fini() :
 
 ######## Date functions
 
+month_names = ('Hammer', 'Alturiak', 'Ches', 'Tarsakh', 'Mirtul', 'Kythorn',
+ 'Flamerule', 'Eleasias', 'Eleint', 'Marpenoth', 'Uktar', 'Nightal')
+
+festival_names = ('Midwinter', 'Greengrass', 'Midsummer', 'Higharvestide', 'Moon')
+
+month_offset = { 'Hammer':0, 'Midwinter Festival':30, 'Alturiak':31, 'Ches':61,
+ 'Tarsakh':91, 'Greengrass Festival':121, 'Mirtul':122, 'Kythorn':152,
+ 'Flamerule':182, 'Midsummer Festival':212, 'Eleasias':213, 'Eleint':243,
+ 'Higharvestide Festival':273, 'Marpenoth':274, 'Uktar':304, 'Moon Festival':334,
+ 'Nightal':335}
+
 def str_to_date(date):
-    """ turn a human readable date into a date_id"""
+    """ turn a human readable date (day month year) into a date_id"""
+# 365 * (year-1368) + month_offset[month] + day
 
     if date == None:
         return None
@@ -43,50 +55,55 @@ def str_to_date(date):
         day = date[c1+c2+2:-1]
     else:
         c1 = date.index(' ')
-        month = date[:c1]
-        if month[-9:] == " Festival":
+        c2 = date[c1+1:].index(' ')
+        if date[:c1] in festival_names and date[c1:c1+c2+2] == " Festival ":
+            month = date[:c1+c2+1]
             day = 1
-            year = date[c1+1:]
-        else:
-            c2 = date[c1+1:].index(' ')
-            day = date[c1+1:c1+1+c2]
             year = date[c1+c2+2:]
-    cur.execute("select date_id from fr_date where year = %(year)s and month = %(month)s and day = %(day)s",
- {'year':year, 'month':month, 'day':day})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find date " + date)
-    return resp[0][0]
+        elif date[c1+1:c1+c2+1] in month_names:
+            day = date[:c1]
+            month = date[c1+1:c1+c2+1]
+            year = date[c1+c2+2:]
+        elif date[:c1] in month_names:
+            month = date[:c1]
+            day = date[c1+1:c1+c2+1]
+            year = date[c1+c2+2:]
+        else:
+            raise NameError("Unknown date "+date)
+    ret = 1000 + 365*(int(year)-1368)+month_offset[month]+int(day)-1
+    return ret
 
-day_names = {
- 1:'First', 2:'Second', 3:'Third', 4:'Fourth', 5:'Fifth', 6:'Sixth',
- 7:'Seventh', 8:'Eighth', 9:'Ninth', 10:'Tenth', 11:'Eleventh', 12:'Twelth',
-13:'Thirteenth', 14:'Fourteenth', 15:'Fifteenth', 16:'Sixteenth', 17:'Seventeenth',
-18:'Eighteenth', 19:'Ninteenth', 20:'Twentieth', 21:'Twenty-First', 22:'Twenty-second',
-23:'Twenty-third', 24:'Twenty-fourth', 25:'Twenty-fifth', 26:'Twenty-sixth',
-27:'Twenty-seventh', 28:'Twenty-eighth', 29:'Twenty-ninth', 30:'Thirtyith'}
+#day_names = {
+# 1:'First', 2:'Second', 3:'Third', 4:'Fourth', 5:'Fifth', 6:'Sixth',
+# 7:'Seventh', 8:'Eighth', 9:'Ninth', 10:'Tenth', 11:'Eleventh', 12:'Twelth',
+#13:'Thirteenth', 14:'Fourteenth', 15:'Fifteenth', 16:'Sixteenth', 17:'Seventeenth',
+#18:'Eighteenth', 19:'Ninteenth', 20:'Twentieth', 21:'Twenty-First', 22:'Twenty-second',
+#23:'Twenty-third', 24:'Twenty-fourth', 25:'Twenty-fifth', 26:'Twenty-sixth',
+#27:'Twenty-seventh', 28:'Twenty-eighth', 29:'Twenty-ninth', 30:'Thirtyith'}
+
+off_monthset = ((0,29, 'Hammer'), (30, 30, 'Midwinter Festival'),
+ (31, 60, 'Alturiak'), (61, 90, 'Ches'), (91, 120, 'Tarsakh'),
+ (121, 121, 'Greengrass Festival'), (122, 151, 'Mirtul'), (152, 181, 'Kythorn'),
+ (182, 211, 'Flamerule'), (212, 212, 'Midsummer Festival'), (213, 242, 'Eleasias'),
+ (243, 272, 'Eleint'), (273, 273, 'Higharvestide Festival'), (274, 303, 'Marpenoth'),
+ (304, 333, 'Uktar'), (334, 334, 'Moon Festival'), (335, 364, 'Nightal'))
 
 def date_to_str(date):
     """return a human-readable form of a date-id"""
 
-    if date == None:
+    if date == None or date < 1000:
         return None
-    cur.execute("select year, month, day from fr_date where date_id = %(date)s", {'date':date})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 3 :
-        raise NameError("Couldn't find date " + str(date))
-#    return '('+str(resp[0][0])+','+resp[0][1]+','+str(resp[0][2])+')'
-    if resp[0][1][-9:] == " Festival":
-        return resp[0][1] + " " + str(resp[0][0])
-    else:
-        return 'the ' + day_names[resp[0][2]] + ' of ' + resp[0][1] + ', ' + str(resp[0][0])
-
-def insert_date(year,month,day):
-    """insert a date entry"""
-
-    cur.execute("insert into fr_date (year, month, day) values (%(year)s, %(month)s, %(day)s)",
-{'year':year,'month':month,'day':day})
-    return cur.lastrowid
+    date -= 1000
+    year = 1368 + int(date/365)
+    mo = date % 365
+    for i in off_monthset:
+        if mo >= i[0] and mo <= i[1]:
+            month = i[2]
+            if i[0] == i[1]:
+                return month + ' ' + str(year)
+            day = 1 + mo - i[0]
+            return str(day)+' '+month+' '+str(year)
+    raise NameError("Couldn't find date " + str(date))
 
 ######## Copper and Gold piece functions
 
@@ -146,7 +163,7 @@ def divide_cp(top, bottom) :
 
 ######## Journal entries
 
-def journal(date, by, to, amount, description, part_of = None) :
+def journal(date, by, to, amount, description, part_of = None):
     """add an entry to the transaction journal, returning an id that may be used for subsequent calls"""
 
     date = str_to_date(date)
@@ -157,6 +174,44 @@ def journal(date, by, to, amount, description, part_of = None) :
  description + ".", 'part_of' : part_of } )
     return cur.lastrowid
 
+def get_journal_dates():
+    cur.execute("select distinct made_on from fr_journal order by made_on")
+    resp = cur.fetchall()
+    if resp == None:
+        return resp
+    ret=[]
+    if len(resp) > 0:
+        for i in range(len(resp)):
+            ret.append(list(resp[i]))
+            if ret[i][0] != None:
+                ret[i][0] = date_to_str(ret[i][0])
+    return ret
+    
+def get_journal(d_fm = None, d_to = None):
+    """return entries in the journal"""
+
+    d_fm = str_to_date(d_fm)
+    d_to = str_to_date(d_to)
+    string = ""
+    if d_fm is not None and d_to is not None:
+        string += " where made_on >= %(d_fm)s and made_on <= %(d_to)s "
+    elif d_fm is not None:
+        string += " where made_on >= %(d_fm)s "
+    elif d_to is not None:
+        string += " where made_on <= %(d_to)s "
+    cur.execute("select "
+" journal_id, part_of, ourtime, made_on, made_by, made_to, amount_cp, description from fr_journal "+string+" order by made_on, journal_id",
+{'d_fm':d_fm, 'd_to':d_to})
+    resp = cur.fetchall()
+    if resp == None:
+        return resp
+    ret=[]
+    if len(resp) > 0:
+        for i in range(len(resp)):
+            ret.append(list(resp[i]))
+            if ret[i][3] != None:
+                ret[i][3] = date_to_str(ret[i][3])
+    return ret
 
 ########## Characters
 
@@ -463,12 +518,6 @@ def bump_debt_repay_order(debt_id) :
     cur.execute ( "update fr_debt set repay_order = repay_order + 1 where debt_id = %(debt_id)s", {'debt_id':debt_id})
 
 
-def delete_debts_from_to(from_id, to_id) :
-    cur.execute ( "delete from fr_debt where "
- " from_char = %(from_id)s and to_char = %(to_id)s" ,
- {'from_id' : from_id, 'to_id' : to_id})
-
-
 def get_char_selfdebt(char_id) :
     cur.execute ( "select debt_id, owed_cp from fr_debt where to_char = %(char_id)s and from_char = %(char_id)s", { 'char_id' : char_id } )
     return cur.fetchall()
@@ -479,25 +528,10 @@ def delete_debt(debt_id) :
  { 'debt_id' : debt_id } )
 
 
-def reduce_debt(debt_id, amount):
-    """If this would create a 0cp debt, delete it."""
-    cur.execute("select "
- " owed_cp from fr_debt "
- " where debt_id = %(debt_id)s", {'debt_id' : debt_id})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find debt #"+str(debt_id))
-    owed = resp[0][0]
-    if amount > owed :
-        print "Amount",amount,"> owed",owed
-        amount = owed
-    if owed == amount :
-	delete_debt(debt_id)
-    else :
-        owed -= amount
-        cur.execute("update fr_debt set owed_cp = "
- " %(owed_cp)s where debt_id = %(debt_id)s",
- {'owed_cp':owed, 'debt_id':debt_id})
+def set_debt_owed(debt_id, owed_cp):
+    """Reduce the specified debt by amount.  If this leaves a 0cp debt, delete it"""
+    cur.execute("update fr_debt set owed_cp = %(owed_cp)s "
+ " where debt_id = %(debt_id)s", {'owed_cp':owed_cp, 'debt_id':debt_id})
 
 
 def insert_debt(date, from_char, to_char, amount, share=1.0, item_id=None, repay_order=0) :
