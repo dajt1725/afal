@@ -156,7 +156,7 @@ def divide_cp(top, bottom) :
     whole = int(top/bottom)
     fract = (float(top)/float(bottom)) - whole
     if fract > random.random() :
-        print top,"/",bottom,"=",whole,"fraction",fract,"rounded up"
+#        print top,"/",bottom,"=",whole,"fraction",fract,"rounded up"
         whole += 1
     return whole
 
@@ -175,20 +175,18 @@ def journal(date, by, to, amount, description, part_of = None):
     return cur.lastrowid
 
 def get_journal_dates():
+    """return a list of dates (in text form) of entries in the journal"""
     cur.execute("select distinct made_on from fr_journal order by made_on")
     resp = cur.fetchall()
-    if resp == None:
+    if resp == None or len(resp)==0:
         return resp
     ret=[]
-    if len(resp) > 0:
-        for i in range(len(resp)):
-            ret.append(list(resp[i]))
-            if ret[i][0] != None:
-                ret[i][0] = date_to_str(ret[i][0])
+    for i in resp:
+        ret.append(date_to_str(i[0]))
     return ret
     
 def get_journal(d_fm = None, d_to = None):
-    """return entries in the journal"""
+    """return a list of dicts of entries in the journal"""
 
     d_fm = str_to_date(d_fm)
     d_to = str_to_date(d_to)
@@ -200,17 +198,24 @@ def get_journal(d_fm = None, d_to = None):
     elif d_to is not None:
         string += " where made_on <= %(d_to)s "
     cur.execute("select "
-" journal_id, part_of, ourtime, made_on, made_by, made_to, amount_cp, description from fr_journal "+string+" order by made_on, journal_id",
+" journal_id, part_of, ourtime, made_on, made_by, made_to, amount_cp, description"
+" from fr_journal "+string+" order by made_on, journal_id",
 {'d_fm':d_fm, 'd_to':d_to})
     resp = cur.fetchall()
-    if resp == None:
+    if resp == None or len(resp) == 0:
         return resp
     ret=[]
-    if len(resp) > 0:
-        for i in range(len(resp)):
-            ret.append(list(resp[i]))
-            if ret[i][3] != None:
-                ret[i][3] = date_to_str(ret[i][3])
+    for i in resp:
+        t = {}
+        t['journal_id'] = i[0]
+        t['part_of'] = i[1]
+        t['ourtime'] = i[2]
+        t['made_on'] = date_to_str(i[3])
+        t['made_by'] = i[4]
+        t['made_to'] = i[5]
+        t['amount_cp'] = i[6]
+        t['description'] = i[7]
+        ret.append(t)
     return ret
 
 ########## Characters
@@ -262,7 +267,7 @@ def get_char_name(char_id) :
 
 
 def get_characters() :
-    """return a list of all the characters in the database"""
+    """return a list of [id name] entries for all the characters in the database"""
 
     cur.execute("select char_id, char_name from fr_character where char_id >= %(first_real_char)s order by char_name",{'first_real_char':first_real_char})
     resp = cur.fetchall()
@@ -296,7 +301,7 @@ def get_party_name(party_id) :
 
 
 def get_party_members(party_id) :
-    """Given a party, return a list of its members and their shares"""
+    """Given a party, return a list [id, share] entries for its members"""
 
     cur.execute("select char_id, share from fr_char_party where party_id = %(p)s",
  { 'p' : party_id } )
@@ -307,7 +312,7 @@ def get_party_members(party_id) :
 
 
 def get_char_parties(char_id) :
-    """Return a list of [party, share] that the character is in"""
+    """Return a list of [party_id, share] that the character is in"""
 
     cur.execute("select party_id, share from fr_char_party where char_id = %(char_id)s order by party_id",
  {'char_id':char_id})
@@ -317,7 +322,7 @@ def get_char_parties(char_id) :
     return resp
 
 def get_parties():
-    """Return a list of all the parties in the database"""
+    """Return a list of [id, name] entries for all the parties in the database"""
 
     cur.execute("select party_id, party_name from fr_party order by party_id")
     resp = cur.fetchall()
@@ -405,7 +410,7 @@ def get_item_acquired_by(item_id) :
 
 
 def change_item_owner(item_id, date, char_id, cp = 0) :
-    """Sell an item to a person, setting its value and owner"""
+    """Sell an item to a person, setting its value and owner, return the party that acquired the item"""
 
     date = str_to_date(date)
     cur.execute("update fr_item set owned_by = %(char_id)s, value = %(cp)s, "
@@ -414,32 +419,36 @@ def change_item_owner(item_id, date, char_id, cp = 0) :
     return get_item_acquired_by(item_id)
 
 
-def get_items_owned_by(char_id) :
+def get_items_owned_by(char_id):
     cur.execute("select item_name, note, value, sale_date from fr_item where owned_by = %(char_id)s order by item_name", {'char_id':char_id})
     resp = cur.fetchall()
-    if resp == None:
+    if resp == None or len(resp) == 0:
         return resp
     ret=[]
-    if len(resp) > 0:
-        for i in range(len(resp)):
-#            print i,ret,resp,resp[i]
-            ret.append(list(resp[i]))
-            if ret[i][3] != None:
-                ret[i][3] = date_to_str(ret[i][3])
+    for i in resp:
+        t = {}
+        t['item_name'] = i[0]
+        t['note'] = i[1]
+        t['value'] = i[2]
+        t['sale_date'] = date_to_str(i[3])
+        ret.append(t)
     return ret
 
 
 def get_items_acquired_by(party_id) :
     cur.execute("select item_name, note, value, owned_by, sale_date from fr_item where acquired_by = %(party_id)s order by item_name", {'party_id':party_id})
     resp = cur.fetchall()
-    if resp == None:
+    if resp is None or len(resp) == 0:
         return resp
-    ret=[]
-    if len(resp) > 0:
-        for i in range(len(resp)):
-            ret.append(list(resp[i]))
-            if ret[i][4] != None:
-                ret[i][4] = date_to_str(ret[i][4])
+    ret = []
+    for i in resp:
+        t = {}
+        t['item_name'] = i[0]
+        t['note'] = i[1]
+        t['value'] = i[2]
+        t['owned_by'] = i[3]
+        t['sale_date'] = date_to_str(i[4])
+        ret.append(t)
     return ret
 
 
@@ -451,49 +460,49 @@ def get_party_items() :
 
 ######## Debts
 
-# 0 debt_id,
-# 1 from_char
-# repay_order
-# 3 amount
-# 4 share
-# 5 date
-# 6 item_id
-# 7 initial_cp
 def get_char_receivable(char_id) :
     cur.execute (
  "select debt_id, from_char, repay_order, owed_cp, share, owed_on, item_id, initial_cp "
  " from fr_debt where to_char = %(id)s order by from_char, repay_order",
  { 'id' : char_id } )
     resp = cur.fetchall()
-    ret=[]
-    if len(resp) > 0:
-        for i in range(len(resp)):
-            ret.append(list(resp[i]))
-            if ret[i][5] != None:
-                ret[i][5] = date_to_str(ret[i][5])
+    if resp is None or len(resp) == 0:
+        return resp
+    ret = []
+    for i in resp:
+        t = {}
+        t['debt_id'] = i[0]
+        t['from'] = i[1]
+        t['order'] = i[2]
+        t['owed_cp'] = i[3]
+        t['share'] = i[4]
+        t['date'] = date_to_str(i[5])
+        t['item'] = i[6]
+        t['initial_cp'] = i[7]
+        ret.append(t)
     return ret
 
 
-# 0 debt_id
-# 1 to_char
-# 2 repay_order
-# 3 amount
-# 4 share
-# 5 date
-# 6 item_id
-# 7 initial cp
 def get_char_payable(char_id) :
     cur.execute ( "select "
  " debt_id, to_char, repay_order, owed_cp, share, owed_on, item_id, initial_cp "
  " from fr_debt where from_char = %(id)s order by to_char, repay_order",
  { 'id' : char_id } )
     resp = cur.fetchall()
-    ret=[]
-    if len(resp) > 0:
-        for i in range(len(resp)):
-            ret.append(list(resp[i]))
-            if ret[i][5] != None:
-                ret[i][5] = date_to_str(ret[i][5])
+    if resp is None or len(resp) == 0:
+        return resp
+    ret = []
+    for i in resp:
+        t = {}
+        t['debt_id'] = i[0]
+        t['to'] = i[1]
+        t['order'] = i[2]
+        t['owed_cp'] = i[3]
+        t['share'] = i[4]
+        t['date'] = date_to_str(i[5])
+        t['item'] = i[6]
+        t['initial_cp'] = i[7]
+        ret.append(t)
     return ret
 
 
@@ -503,7 +512,19 @@ def get_char_rec_xferable(char_id) :
  "from fr_debt as tob where tob.to_char = %(char_id)s and tob.repay_order = "
  " ( select min(froma.repay_order) from debt as froma where froma.from_char = tob.from_char ) order by from_char",
  { 'char_id' : char_id })
-    return cur.fetchall()
+    resp = cur.fetchall()
+    if resp is None or len(resp) == 0:
+        return resp
+    ret = []
+    for i in resp:
+        t = {}
+        t['debt_id'] = i[0]
+        t['from'] = i[1]
+        t['order'] = i[2]
+        t['owed_cp'] = i[3]
+        t['share'] = i[4]
+        ret.append(t)
+    return ret
 
 
 def get_char_pay_xferable(char_id) :
@@ -511,25 +532,40 @@ def get_char_pay_xferable(char_id) :
  "select fromb.debt_id, fromb.to_char, fromb.repay_order, fromb.owed_cp, fromb.share, fromb.item_id "
  "from fr_debt as fromb where fromb.from_char = %(char_id)s and fromb.repay_order = ( select min(toc.repay_order) from fr_debt as toc where toc.from_char = %(char_id)s) order by to_char",
  {'char_id':char_id})
-    return cur.fetchall()
-
+    resp = cur.fetchall()
+    if resp is None or len(resp) == 0:
+        return resp
+    ret = []
+    for i in resp:
+        t = {}
+        t['debt_id'] = i[0]
+        t['to'] = i[1]
+        t['order'] = i[2]
+        t['owed_cp'] = i[3]
+        t['share'] = i[4]
+        t['item'] = i[5]
+        ret.append(t)
+    return ret
 
 def bump_debt_repay_order(debt_id) :
+    """increase the repay_order of the specified debt"""
     cur.execute ( "update fr_debt set repay_order = repay_order + 1 where debt_id = %(debt_id)s", {'debt_id':debt_id})
 
 
 def get_char_selfdebt(char_id) :
+    """returns a list of [debt_id, owed] for debts the specified character has to themself"""
     cur.execute ( "select debt_id, owed_cp from fr_debt where to_char = %(char_id)s and from_char = %(char_id)s", { 'char_id' : char_id } )
     return cur.fetchall()
 
 
 def delete_debt(debt_id) :
+    """Deletes the specified debt"""
     cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s",
  { 'debt_id' : debt_id } )
 
 
 def set_debt_owed(debt_id, owed_cp):
-    """Reduce the specified debt by amount.  If this leaves a 0cp debt, delete it"""
+    """Set the amount owed on the specified debt"""
     cur.execute("update fr_debt set owed_cp = %(owed_cp)s "
  " where debt_id = %(debt_id)s", {'owed_cp':owed_cp, 'debt_id':debt_id})
 

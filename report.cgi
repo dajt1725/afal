@@ -1,13 +1,12 @@
 #!/usr/bin/python
+# This can be used as either a cgi program or from the command line
 from __future__ import print_function
 import argparse
-# import sys
-# import subprocess
 import afal
 import cgi
 import cgitb
 
-def print_debt(l,p):
+def print_debt(l, tf, p):
     l1 = len(l)
     s = 0
     d={}
@@ -15,25 +14,25 @@ def print_debt(l,p):
     needshare = False
     needinitial = False
     for i in l:
-        s += i[3]
-        ch = afal.get_char_name(i[1])
+        s += i['owed_cp']
+        ch = afal.get_char_name(i[tf])
         if ch not in d:
             d[ch] = {'sum':0, 'n':0}
-        d[ch]['sum'] += i[3]
+        d[ch]['sum'] += i['owed_cp']
         n = d[ch]['n']
         d[ch][n] = {}
-        d[ch][n]['amount'] = afal.str_cp(i[3])
-        d[ch][n]['date'] = i[5]
-        if i[2] != 0:
-            d[ch][n]['order'] = str(i[2])
+        d[ch][n]['amount'] = afal.str_cp(i['owed_cp'])
+        d[ch][n]['date'] = i['date']
+        if i['order'] != 0:
+            d[ch][n]['order'] = str(i['order'])
             needorder = True
-        if i[4] != 1.0 :
-            d[ch][n]['share'] = str(i[4])
+        if i['share'] != 1.0 :
+            d[ch][n]['share'] = str(i['share'])
             needshare = True
-        if i[6] is not None:
-            d[ch][n]['item'] = afal.get_item_name(i[6])
-        if i[7] != i[3]:
-            d[ch][n]['initial'] = afal.str_cp(i[7])
+        if i['item'] is not None:
+            d[ch][n]['item'] = afal.get_item_name(i['item'])
+        if i['initial_cp'] != i['owed_cp']:
+            d[ch][n]['initial'] = afal.str_cp(i['initial_cp'])
             needinitial = True
         n += 1
         d[ch]['n'] = n
@@ -126,10 +125,7 @@ party_list = []
 for i in tmp:
     party_list.append(i[1])
 
-tmp = afal.get_journal_dates()
-journal_list = []
-for i in tmp:
-    journal_list.append(i[0])
+journal_list = afal.get_journal_dates()
 
 text = args.text
 chars = []
@@ -192,8 +188,6 @@ else:
         print('        <option value="%s">%s</option>' % (i, i))
     print('      </select>')
 
-
-
     print('      <select name="journal_end">')
     print('        <option value="All">All</option>')
     for i in journal_list:
@@ -238,9 +232,9 @@ for char_name in chars:
     receivable = afal.get_char_receivable(char_id)
     if text:
         if cash > 0 :
-            print(char_name,"cash",afal.str_cp(cash)+"\n")
+            print(char_name, " cash ", afal.str_cp(cash), "\n", sep='')
         else :
-            print(char_name+"\n")
+            print(char_name, "\n", sep='')
     else:
         print('<h4>', char_name, '</h4>', sep='')
         if cash > 0:
@@ -267,8 +261,8 @@ for char_name in chars:
                     s1 += ' for ' + str(i[1]) + ' share'
                 comma = ' Items: '
                 for j in pitems:
-                    if j[4] is None and j[3] is None:
-                       s1 += comma + ' ' + j[0]
+                    if j['sale_date'] is None and j['owned_by'] is None:
+                       s1 += comma + ' ' + j['item_name']
                        comma = ','
                 print('    ', afal.get_party_name(i[0]), s1, sep='')
             else:
@@ -282,8 +276,8 @@ for char_name in chars:
                 if len(pitems):
                     print('<ul>')
                     for j in pitems:
-                        if j[4] is None and j[3] is None:
-                            print('<li>', j[0], sep='', end='')
+                        if j['sale_date'] is None and j['owned_by'] is None:
+                            print('<li>', j['item_name'], sep='')
                     print('</ul>')
                 print('</td></tr>')
         if text:
@@ -297,16 +291,16 @@ for char_name in chars:
         else:
             print('<table border="1"><tr><th>', str(len(items)),' Items</th><th>History</th></tr>', sep='')
         for i in items :
-            l1=i[0]
+            l1=i['item_name']
             s1 = ''
-            if i[1] is not None :
-                l1 += "  Note: " + i[1]
-            if i[3] is None :
+            if i['note'] is not None :
+                l1 += "  Note: " + i['note']
+            if i['sale_date'] is None :
                 s1 += "  (Party item)"
-            elif i[2] > 0:
-                s1 += "  bought on " + i[3] + " for " + afal.str_cp(i[2])
+            elif i['value'] > 0:
+                s1 += "  bought on " + i['sale_date'] + " for " + afal.str_cp(i['value'])
             else:
-                s1 += "  given on " + i[3]
+                s1 += "  given on " + i['sale_date']
             if text:
                 print('    ', l1, s1, sep='')
             else:
@@ -317,10 +311,10 @@ for char_name in chars:
             print('</table><br>')
 
     if len(receivable) :
-        print_debt(receivable, 'Receivable')
+        print_debt(receivable, 'from', 'Receivable')
 
     if len(payable) :
-        print_debt(payable, 'Payable')
+        print_debt(payable, 'to', 'Payable')
 
     if text:
         print()
@@ -378,17 +372,17 @@ for party_name in parties:
         else:
             print('<h4><table border="1"><tr><th>Item</th><th>Disposition</th></h4>')
         for i in items :
-            i1 = i[0]
+            i1 = i['item_name']
             s1 = ""
-            if i[1] is not None:
-                i1 += "  Note: " + i[1]
-            if i[4] is not None:
-                if i[2] > 0:
-                    s1 += "  Sold to " + afal.get_char_name(i[3]) + " on " +i[4] + " for " + afal.str_cp(i[2])
+            if i['note'] is not None:
+                i1 += "  Note: " + i['note']
+            if i['sale_date'] is not None:
+                if i['value'] > 0:
+                    s1 += "  Sold to " + afal.get_char_name(i['owned_by']) + " on " +i['sale_date'] + " for " + afal.str_cp(i['value'])
                 else:
-                     s1 += "  Given to " + afal.get_char_name(i[3]) + " on " + i[4]
-            elif i[3] is not None:
-                s1 += "  Lent to " + afal.get_char_name(i[3])
+                     s1 += "  Given to " + afal.get_char_name(i['owned_by']) + " on " + i['sale_date']
+            elif i['owned_by'] is not None:
+                s1 += "  Lent to " + afal.get_char_name(i['owned_by'])
             if text:
                 print('    ', i1, s1, sep = '')
             else:
@@ -408,9 +402,9 @@ if journal_start or journal_end:
     j = afal.get_journal(journal_start, journal_end)
     for e in j:
         if text:
-            print('  ',e[3], '  ', e[7], sep='')
+            print('  ',e['made_on'], '  ', e['description'], sep='')
         else:
-            print("<tr><td>", e[3], "</td><td>", e[7], "</td></tr>", sep='')
+            print("<tr><td>", e['made_on'], "</td><td>", e['description'], "</td></tr>", sep='')
     if not text:
         print("</table><br>")
 

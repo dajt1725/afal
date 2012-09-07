@@ -2,7 +2,7 @@ create table fr_character (
     char_id integer unsigned not null primary key auto_increment,
     char_name varchar(128) not null unique,
     char_cash integer not null default 0
-) auto_increment=6;
+) auto_increment=5;
 create table fr_party (
     party_id integer unsigned not null primary key auto_increment,
     party_name varchar(128) unique not null
