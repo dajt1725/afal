@@ -3,13 +3,33 @@ import argparse
 import afal
 
 parser = argparse.ArgumentParser("Add one or more characters to the database")
+parser.add_argument('--association', '-A', help="character's association, if any, 'AFAL' for party members")
+parser.add_argument('--alignment', '-a', help="alignment, if known")
+parser.add_argument('--characteristics', '-C', help="known characteristics, if any")
+parser.add_argument('--class', '-c', help="character's class, if known", dest='ch_class')
+parser.add_argument('--dm-notes', '-d', help="dm-specific notes, if any")
+parser.add_argument('--equipment', '-e', help="known equipment, if any")
+parser.add_argument('--fullname', '-f', help="character's full name, if known")
+parser.add_argument('--gender', '-G', help="character's gender, if known")
 parser.add_argument("--gold", "-g", type=float, help="starting gold pieces", default=0)
-parser.add_argument("--copper", "-c", type=float, help="starting copper pieces", default=0)
+parser.add_argument('--large-picture-url', '-l', help="URL for large picture, if any")
+parser.add_argument('--notes', '-n', help="notes, if any")
+parser.add_argument('--picture-url', '-P', help="URL for picture, if any")
+parser.add_argument('--player', '-p', help="player's name, if any" )
+parser.add_argument('--race', '-r', help="character's race, if known")
+parser.add_argument('--status', '-s', help="character's status, 'active', or 'inactive'")
 parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
 parser.add_argument("name", help="The name of the character to add", nargs='+')
 args = parser.parse_args()
 for name in args.name :
-    afal.insert_char(name, afal.gp_cp_to_cp(args.gold, args.copper))
+    afal.insert_char(name, fullname = args.fullname,
+ player = args.player, gender = args.gender, race = args.race,
+ ch_class = args.ch_class, alignment = args.alignment,
+picture = args.picture_url,
+ equipment = args.equipment,  characteristics = args.characteristics,
+ notes = args.notes, association = args.association, status = args.status,
+ dm_notes = args.dm_notes, cp = afal.gp_cp_to_cp(args.gold, 0),
+ large_picture = args.large_picture_url)
     if args.verbose :
         print name, "added as", afal.get_char_id(name)
 afal.fini()

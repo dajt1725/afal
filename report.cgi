@@ -5,6 +5,20 @@ import argparse
 import afal
 import cgi
 import cgitb
+import re
+
+def de_html(s):
+    if s is None:
+        return ''
+    ret = s
+    ret = re.sub(r'&frac12;', '1/2 ', ret)
+    ret = re.sub(r'&frac14;', '1/4 ', ret)
+    ret = re.sub(r'&quot;', '"', ret)
+    ret = re.sub(r'</?i>', '', ret)
+    ret = re.sub(r'</?sup>', '', ret)
+    ret = re.sub(r'</?a[^>]*>', '', ret)
+    ret = re.sub(r'<br>', '\n', ret)
+    return ret
 
 def print_debt(l, tf, p):
     l1 = len(l)
@@ -26,7 +40,7 @@ def print_debt(l, tf, p):
         if i['order'] != 0:
             d[ch][n]['order'] = str(i['order'])
             needorder = True
-        if i['share'] != 1.0 :
+        if i['share'] != 1.0:
             d[ch][n]['share'] = str(i['share'])
             needshare = True
         if i['item'] is not None:
@@ -230,21 +244,65 @@ for char_name in chars:
     cparties = afal.get_char_parties(char_id)
     payable = afal.get_char_payable(char_id)
     receivable = afal.get_char_receivable(char_id)
+    data = afal.get_char_data(char_id)
+    a = de_html(data['alignment'])
+    ass = de_html(data['association'])
+    c = de_html(data['class'])
+    fn = data['fullname']
+    if fn is None:
+        fn = data['name']
+    else:
+        fn = de_html(fn)
+    g = de_html(data['gender'])
+    r = de_html(data['race'])
+    s = de_html(data['status'])
+    if data['player'] is None:
+        p = ''
+        b = '/back3l15.gif'
+    else:
+        p = ' ('+data['player']+')'
+        b = '/back3l16.gif'
     if text:
-        if cash > 0 :
-            print(char_name, " cash ", afal.str_cp(cash), "\n", sep='')
-        else :
-            print(char_name, "\n", sep='')
+        print(char_name, "\n", sep='')
+        print('  ', fn, p, '  ', ass, '  ', s, '  ', r, ' ', g, '  ', c, '  ', a, sep='')
+        if data['equipment'] is not None:
+            print('  Equipment:  ', de_html(data['equipment']), sep='')
+        if data['characteristics'] is not None:
+            print('  Characteristics:  ', de_html(data['characteristics']), sep='')
+        if data['notes'] is not None:
+            print('  Notes:  ', de_html(data['notes']), sep='')
+        if cash > 0:
+            print("  Cash ", afal.str_cp(cash), "\n", sep='')
     else:
         print('<h4>', char_name, '</h4>', sep='')
+        print('<table border="border" width="90%" background="', b, '">', sep='')
+        print('   <tr><td width="40%"><a name="', data['name'], '"><b>', fn,'</b></a>', p, '</td>', sep='')
+        print('   <td width="20%">', r, ' ', g, '</td>', sep='')
+        print('   <td width="20%">', c, '</td>', sep='')
+        print('   <td width="20%">', a, '</td></tr>', sep='')
+        if data['equipment'] is not None:
+            print('  <tr><td colspan="3"><u>Equipment:</u>',data['equipment'],'	</td>', sep='')
+            if data['picture_url'] is not None:
+                print('<td colspan="1" rowspan="3" align="center" valign="center" bgcolor="white">')
+                if data['large_picture_url'] is not None:
+                    print('  <a href="/', data['large_picture_url'], '"><img src="/', data['picture_url'], '" alt="',fn,'"</a>', sep='')
+                else:
+                    print('  <img src="/', data['picture_url'], '" alt="', fn, '" alighn="left"></td>', sep='')
+            print('</tr>')
+        if data['characteristics'] is not None:
+            print('  <tr><td colspan="3"><u>Characteristics:</u>', data['characteristics'], '  </td></tr>', sep='')
+        if data['notes'] is not None:
+            print('   <tr><td colspan="3"><u>Notes:</u>', data['notes'],'   </td></tr>', sep='')
+        print('</table><br>')
+
         if cash > 0:
             print('<h5>Cash ', afal.str_cp(cash), '</h5><br>', sep='')
         else:
             print('<br>')
-    if len(cparties) :
+    if len(cparties):
         needshare = False
-        for i in cparties :
-            if i[1] != 1.0 :
+        for i in cparties:
+            if i[1] != 1.0:
                 needshare = True
                 break
         if text:
@@ -253,11 +311,11 @@ for char_name in chars:
             print('<table border=1><tr><th>Party</th><th>Share</th><th>Items</th></tr>')
         else:
             print('<table border=1><tr><th>Party</th><th>Items</th></tr>')
-        for i in cparties :
+        for i in cparties:
             pitems = afal.get_items_acquired_by(i[0])
             if text:
                 s1=''
-                if i[1] != 1.0 :
+                if i[1] != 1.0:
                     s1 += ' for ' + str(i[1]) + ' share'
                 comma = ' Items: '
                 for j in pitems:
@@ -269,7 +327,7 @@ for char_name in chars:
                 print('<tr><td>', afal.get_party_name(i[0]), '</td>', sep='', end='')
                 if needshare:
                     print("<td>", end='')
-                    if i[1] != 1.0 :
+                    if i[1] != 1.0:
                         print(str(i[1]), end='')
                     print("</td>", end='')
                 print('<td>', end='')
@@ -285,17 +343,17 @@ for char_name in chars:
         else:
             print('</table><br>')
 
-    if len(items) :
+    if len(items):
         if text:
             print('  ', str(len(items)), ' Items', sep='')
         else:
             print('<table border="1"><tr><th>', str(len(items)),' Items</th><th>History</th></tr>', sep='')
-        for i in items :
+        for i in items:
             l1=i['item_name']
             s1 = ''
-            if i['note'] is not None :
+            if i['note'] is not None:
                 l1 += "  Note: " + i['note']
-            if i['sale_date'] is None :
+            if i['sale_date'] is None:
                 s1 += "  (Party item)"
             elif i['value'] > 0:
                 s1 += "  bought on " + i['sale_date'] + " for " + afal.str_cp(i['value'])
@@ -310,10 +368,10 @@ for char_name in chars:
         else:
             print('</table><br>')
 
-    if len(receivable) :
+    if len(receivable):
         print_debt(receivable, 'from', 'Receivable')
 
-    if len(payable) :
+    if len(payable):
         print_debt(payable, 'to', 'Payable')
 
     if text:
@@ -335,9 +393,9 @@ for party_name in parties:
     if len(members):
         h = {}
         needshare = False
-        for i in members :
+        for i in members:
             c = afal.get_char_name(i[0])
-            if i[1] != 1.0 :
+            if i[1] != 1.0:
                 h[c] = str(i[1])
                 needshare = True
             else:
@@ -354,7 +412,7 @@ for party_name in parties:
         for i in k:
             n1 = h[i]
             if text:
-                if h[i] != '' :
+                if h[i] != '':
                     n1 = " for " + n1 + " share"
                 print('    ', i, n1, sep='')
             elif needshare:
@@ -371,7 +429,7 @@ for party_name in parties:
             print("  Items")
         else:
             print('<h4><table border="1"><tr><th>Item</th><th>Disposition</th></h4>')
-        for i in items :
+        for i in items:
             i1 = i['item_name']
             s1 = ""
             if i['note'] is not None:

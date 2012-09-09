@@ -1,15 +1,186 @@
+set -e
 mysql --user=afal afal << EOF
 drop database afal;
 create database afal;
 EOF
 mysql --user=afal afal < afal-schema.sql.mysql
-char Auction Sell destroyed
-char -g 1000000000 'outside the party'
-char Party Darius Dexter
-char -g 95 Henkles
-char Moogh Stewart Theo Barnabus Steve Buffy Falco Maanamere Thalion Devlin
-char Harvee Misery Narthan Cassie Ursula Denyae Marcae Stalker Staric Deringa
-char Chusnog Ouguch Ag Tristan Brogun
+char Auction Sell destroyed -s inactive
+char -g 1000000000 'outside the party' -s inactive
+char Party -s inactive
+
+char \
+ -A 'AFAL' \
+ -a 'Chaotic Good' \
+ -C "Clever, quick, short dk-blond hair, reddish beard, grey eyes, 5'9&frac12;&quot;, 160lbs." \
+ -c 'Wild Mage' \
+ -e "Wizardly robe and hat, Bracers of Defense AC5, +1 Ring of Protection, Sling, <i>Urgoth</i> Belt Dagger of Doom, Ioun Stone, Fanny Pack of Holding, Tenser's Throw Rug " \
+ -f 'Darius of Waterdeep' \
+ -G 'Male' \
+ -n 'Some clerical spellcasting ability (lay priest of Mystra), blunt weapon restriction, a phobia of snakes, and tongue-tied around women.  Darius is one of the founding party members.' \
+ -P 'Darius.gif' \
+ --large-picture-url 'Darius_lg.gif' \
+ -p 'Ian' \
+ -r 'Human' \
+ -s active \
+ Darius
+
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C "Green cat's eyes, strong, wise, clever, white hair, 6', 195lbs." \
+ -c 'Ranger/Spec Pr - Selune' \
+ -e '+1 plate mail, +1 shield, <a href="http://www.geocities.com/evan_dnd/items.html"><i>Perditor Mortua</i></a>, Moon'"'"'s Hand Mace, +1 Long Bow, some +1 flight arrows, Scroll of <i>Cure Disease</i>' \
+ -f 'Dexter Melaenarlir' \
+ -G 'Male' \
+ -n 'Can know alignment and detect undead at will multiple times/day, alcoholic, phobia of undead.  Dexter is one of the founding party members.' \
+ -P Dexter.png \
+ --large-picture-url Dexter_lg.png \
+ -p Dina \
+ -r '&frac12;Elf' \
+ -s active \
+ Dexter
+
+char \
+ -A 'AFAL' \
+ -a 'Lawful Neutral' \
+ -C "Very strong and fast, brown hair &amp; eyes, 6'2&quot;, 220lbs." \
+ -c Fighter \
+ -e '+1 Plate mail, +1 Ring of Prot., Ring of Projection, <i>Silver Strike</i> +2/+4 (level draining or negative energy creatures) unique short sword, <a href="Balthazar.wav"><i>Balthazar, Hellspawn of Terror</i></a> (+1 Sh Swd), Ghost-infested short sword, Darts, Orcish War Darts, Darts of Giant Hurting, <i>Ilgoth</i> Belt Dagger of Might, <i>Wife</i> +2/+4 (stone creatures) Spiked Ball on Chain, Necklace of Light and Darkness (Party item)' \
+ -f 'Henkles of Iriaebor' \
+ -G Male \
+ -g 95 \
+ -n "Unwilling to use potions, cannot attract followers at high levels, claims gnomish ancestry which gives him magic-related saving throw bonuses and +1 to hit with short swords. He's a short sword specialist with a side order of crazy.<br> He bought the ghost-infested short sword on <a href="logs/log_Hammer_1_1370.html">Hammer 1, 1370</a> from a seller in the Market.  He had his first nightmare about it three days later, and a second two days later, and a third on the 13th.<br>Henkles is one of the founding party members." \
+ -p Jay \
+ -r 'Human(?)' \
+ -s active \
+ Henkles
+
+char Moogh Stewart -s inactive
+char Theo -s active
+char Barnabus -s inactive
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C "Personable, 5'5&quot;, 121lbs." \
+ -c Bard \
+ -e 'Green Dragon hide armor, Ring of Water Walking, Gargoyle Ring, Cloak of Elvenkind, +1/+2 vs lawful Longsword, trident, javelins, +1 light crossbow, lyre, Staff of Phantasmal Firebals' \
+ -f 'Stephen &quot;Steve&quot; of Neverwinter' \
+ -G Male \
+ -n 'Lacks the usual &frac12;elf bonus vs. sleep or for secret doors.  Steve joined the party somewhere before <a href="logs/log_Mirtul_2_1369.html">Mirtul 2, 1369</a>--the exact date is not captured in the party log.' \
+ -p Fred \
+ -r '&frac12; Elf' \
+ -s active \
+ Steve
+
+char Buffy Falco -s inactive
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C "Very strong, somewhat dim but wise, quick, very attractive, 6'0&quot;, 150lbs.  Maanamere has silver hair and eyes.  His hair is shoulder length and generally worn loose. When adventuring though, he keeps it tied back so as to not cause an obstruction. He has exceptionally good posture and is in great shape." \
+ -c 'Ranger' \
+ -e '+1 Full Plate Mail, +1/+3 vs cold Ring of Prot., +1 Bastard Sword, <i>Binky</i> (unique magic axe), bow, +1 flight arrow' \
+ -f 'Maanamere Palendril' \
+ -G Male \
+ -n 'Fear of heights.  Lacks the typical ranger two-handed fighting bonus, but Binky compensates.  Originally from the Coldwood.  Can cast some spells from the Conjuration/Summoning school.  He joined the party after being rescued on <a href="logs/log_Kythorn_10_1369.html">Kython 10, 1369</a>.' \
+ -p 'Rickland' \
+ -r 'Moon Elf' \
+ -s active \
+ Maanamere 
+
+char Thalion Devlin Harvee -s inactive
+char Misery -s active
+char Narthan Cassie -s inactive
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C "Attractive, long brown hair, 5'9&quot;, 130lbs., badly scarred leg" \
+ -c 'Specialty Mage(Houri)' \
+ -e 'alluring clothing, Bracers of Defense AC 5/6, +2 Ring of Protection, Ring of Warmth, +2 Dagger, Dagger of Hurting, Wand of Small Fires, Horn of Bubbles.' \
+ -f 'Ursula la Bim' \
+ -G Female \
+ -n 'Currently spends a lot of time hanging around Fair Winds.  Ursula joined the party on <a href="logs/log_Uktar_8_1369.html">Uktar 8, 1369</a>.' \
+ -P ursula05.jpg \
+ -p Sue \
+ -r Human \
+ -s active \
+Ursula
+
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C "Stong, clever, very quick, very short, curly brown/dk blonde hair, grey eyes, 5'7&quot;, 137 lbs." \
+ -c 'Fighter' \
+ -e '+1 Plate mail, <i>Thunderbolt</i> (unique bow), +2 longsword, short sword, various magic arrows, Shield inscribed with Scroll of Summon Mystic Moose' \
+ -f 'Denyae Stavefall' \
+ -G Female \
+ -l Denyae_lg.png \
+ -n 'Rescued from minotaur labrynth by AFAL.  Offered to work for party for a &frac14;-share of treasure for &quot;a while&quot; on <a href="logs/log_Uktar_13_1369.html">Uktar 13, 1369</a>.  Hates minotaurs.  Longbow specialist.  Has earned the emnity of the vampire lord Dread William of the South Moors.  Offered full party membership on <a href="logs/log_Ches_21_1370.html">Ches 21, 1370</a>. (?)' \
+ -P Denyae.png \
+ -p Eleah \
+ -r Human \
+ -s active \
+ Denyae
+
+char Marcae Stalker -s inactive
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C "Handsome, quick and athletic, short brown/dk blonde hair, brown eyes, 5'9&quot;, 174 lbs." \
+ -c 'Bard' \
+ -e 'bracers, longsword, longbow, lute, dagger, recorder' \
+ -f 'Staric Ammakyl' \
+ -G Male \
+ -l Staric_lg.png \
+ -n 'The least annoying member of The Shining Sons, Staric was with Dagar Jhansczil when they accidentally used the Helm of Beefy Will to dispell the charms they were under from The <a href="logs/log_Marpenoth_28_1369.html">Reverential</a> <a href="logs/log_Uktar_12_1369.html">Coronet</a> of <a href="logs/log_Hammer_17_1370.html">Extroversion</a>, which Dagar'"'"'s brother Arrikes was using in a plot to take over Waterdeep.  By mutual agreement, Staric used a scroll to wipe Dagar'"'"'s memory of the discovery and contacted A.F.A.L. for help.  When A.F.A.L. arrived in Amphail, he joined up with them as they fled the village on <a href="logs/log_Hammer_17_1370.html">Hammer 17, 1370</a>.' \
+ -P Staric.png \
+ -p Andre \
+ -r Human \
+ -s active \
+ Staric  
+
+char \
+ -A 'AFAL' \
+ -a 'Chaotic Good' \
+ -C "Cute, clever, very quick, very short, short, bleached hair w/purple patch, blue eyes, 5'1&quot;, 102 lbs." \
+ -c 'Rich Kid?  Groupie?' \
+ -e 'expensive clothes, bracers, Dagger, Sling, nose ring, 14 earings (left ear)' \
+ -f 'Deringa Eagleshield' \
+ -G Female \
+ -l Deringa_lg.png \
+ -n 'Childhood friend of Staric Ammakyl, overheard Staric &amp; Dagar Jhansczil discussing the powers of the <a href="logs/log_Marpenoth_28_1369.html">Reverential</a> <a href="logs/log_Uktar_12_1369.html">Coronet</a> of <a href="logs/log_Hammer_17_1370.html">Extroversion</a>, it'"'"'s effect on Dagar'"'"'s brother Arrikes, and Arrikes'"'"'s plot to take over Waterdeep.  Staric couldn'"'"'t wipe her memory like he did for Dagar, so she had to come along.  She joined the party on <a href="logs/log_Hammer_17_1370.html">Hammer 17, 1370</a>.' \
+ -P Deringa.png \
+ -r 'Human(?)' \
+ -s active \
+ Deringa
+
+char Chusnog Ouguch -s inactive
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C "brown hair, blue eyes, 5'7&quot;, 128lbs., wise beyond his years" \
+ -c 'Thief' \
+ -e 'Bracers of defense AC 6 or 5, +1 Ring of Protection, Gloves of Mask, <i>Shadowfang</i> - magically dark longsword, +1/+3 (backstab) Long Sword, picks & tools, many daggers, dark blue cloak' \
+ -G 'Male' \
+ -n 'Joined party in Silverymoon, <a href="logs/log_Alturiak_5_1370.html">Alturiak 5<sup>th</sup></a>, in the Year of the Tankard.' \
+ -p 'Bill' \
+ -r Human \
+ -s active \
+ Ag 
+
+char \
+ -A 'AFAL' \
+ -a 'Neutral Good' \
+ -C 'Not known at this time.' \
+ -c 'Spec Pr - Tempus (BattleForge) / Wizard' \
+ -e '+1 plate mail, +1 shield, +1/+2 (half *)/+3(Humans) Bastard Sword' \
+ -G Male \
+ -n 'Originally Gail'"'"'s character, played by Andrew and now Alex.  Tristan joined the party on <a href="logs/log_Alturiak_5_1370.html">Alturiak 5, 1370</a>.' \
+ -p Alex \
+ -r '&frac12; Elf' \
+ -s active \
+ Tristan 
+
+char Brogun -s active -A 'AFAL'
 party Mirtul-26-1369 Darius 1 Dexter 1 Henkles 1 Steve 1 Barnabus 0 Moogh 0
 party Kythorn-10-1369 Darius 1 Dexter 1 Henkles 1 Steve 1 Barnabus 0 Moogh 0 Buffy 0
 party Kythorn-16-1369 Darius 1 Dexter 1 Henkles 1 Steve 1 Stewart 0 Thalion 0 Falco 0 Moogh 0 Buffy 0

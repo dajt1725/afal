@@ -220,13 +220,26 @@ def get_journal(d_fm = None, d_to = None):
 
 ########## Characters
 
-def insert_char(char_name, cp=0 ) :
+def insert_char(name, player = None, gender = None, race = None,
+ ch_class = None, alignment = None, picture = None, equipment = None,
+ characteristics = None, notes = None, association = None, status = 'active',
+ dm_notes = None, cp = 0, large_picture = None, fullname = None ):
     """ insert a character into the database"""
 
     cur.execute(
- "insert into fr_character ( char_name, char_cash ) "
- " values ( %(char_name)s, %(cp)s )",
- { 'char_name': char_name, 'cp': cp } )
+ "insert into fr_character ( char_name, char_fullname, char_player, "
+ " char_gender, char_race, char_class, char_alignment, char_picture_url, "
+ " char_equipment, char_acteristics, char_notes, char_association, "
+ " char_status, char_cash, char_dm_notes, char_large_picture_url ) "
+ " values ( %(name)s, %(fullname)s, %(player)s, "
+ " %(gender)s, %(race)s, %(class)s, %(alignment)s, %(picture)s, "
+ " %(equipment)s, %(characteristics)s, %(notes)s, %(association)s, "
+ " %(status)s, %(cp)s, %(dm_notes)s, %(large_picture)s )",
+ { 'name':name, 'fullname':fullname, 'player':player, 'gender':gender,
+   'race':race, 'class':ch_class, 'alignment':alignment, 'picture':picture,
+   'equipment':equipment, 'characteristics':characteristics, 'notes':notes,
+   'association':association, 'status':status, 'cp': cp, 'dm_notes':dm_notes,
+   'large_picture':large_picture } )
 
 
 def get_char_id(char_name) :
@@ -269,12 +282,45 @@ def get_char_name(char_id) :
 def get_characters() :
     """return a list of [id name] entries for all the characters in the database"""
 
-    cur.execute("select char_id, char_name from fr_character where char_id >= %(first_real_char)s order by char_name",{'first_real_char':first_real_char})
+    cur.execute("select char_id, char_name from fr_character "
+ " where char_id >= %(first_real_char)s and char_association = 'AFAL' and char_status = 'active' "
+ " order by char_name",
+ {'first_real_char':first_real_char})
     resp = cur.fetchall()
     if len(resp) < 1 or len(resp[0]) != 2 :
         raise NameError("Couldn't find any characters")
     return resp
 
+
+def get_char_data(char_id) :
+    """ given a char_id, return its  """
+
+    cur.execute("select char_name, char_fullname, char_player, char_gender, "
+ " char_race, char_class, char_alignment, char_picture_url, char_equipment, "
+ " char_acteristics, char_notes, char_association, char_status, char_cash, "
+ " char_large_picture_url "
+ " from fr_character where char_id = %(char_id)s", {'char_id':char_id })
+    resp = cur.fetchall()
+    if len(resp) != 1:
+        raise NameError("Couldn't find char_id "+str(char_id))
+    resp = resp[0]
+    ret = {}
+    ret['name'] = resp[0]
+    ret['fullname'] = resp[1]
+    ret['player'] = resp[2]
+    ret['gender'] = resp[3]
+    ret['race'] = resp[4]
+    ret['class'] = resp[5]
+    ret['alignment'] = resp[6]
+    ret['picture_url'] = resp[7]
+    ret['equipment'] = resp[8]
+    ret['characteristics'] = resp[9]
+    ret['notes'] = resp[10]
+    ret['association'] = resp[11]
+    ret['status'] = resp[12]
+    ret['cash'] = resp[13]
+    ret['large_picture_url'] = resp[14]
+    return ret
 
 ########## Parties
 
