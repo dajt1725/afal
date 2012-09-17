@@ -3,14 +3,16 @@ import argparse
 import afal
 
 def create_parties(d):
-#    p_id = afal.insert_party(d['party'],afal.str_to_date(d['date']))
-    p_id = 1
+    if d is None or not 'party' in d or not 'date' in d:
+        return
+    p_id = afal.insert_party(d['party'],afal.str_to_date(d['date']))
+#    p_id = 1
     if args.verbose:
         print "created party",d['party'], "date", d['date'], "with id #", p_id
     for i in d.keys():
         if i == 'party' or i == 'date':
             continue
-#        afal.insert_char_party(afal.get_char_id(i),p_id, d[i])
+        afal.insert_char_party(afal.get_char_id(i),p_id, d[i])
         if args.verbose:
             print "added character",i, "to party with share",d[i]
 

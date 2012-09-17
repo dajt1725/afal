@@ -43,7 +43,7 @@ date=1 Tarsakh 1370
    item=Cloak of Elvenkind;debt=6000
    item=#a  +1 Light Crossbow;debt=2500
    item=+1/+2(Lawful) Long Sword;debt=4050
-   item=+1? Ring of Protection;debt=10000
+   item=#d  +1? Ring of Protection;debt=10000
   buyer=Tristan
    item=#b  +1 Shield;debt=2500
    item=+1/+2(half*)/+3(Humans) Bastard Sword;debt=5000
@@ -51,7 +51,7 @@ date=1 Tarsakh 1370
    item=#d  Dagger of Hurting;debt=1400
   buyer=Ursula;item=#a  Bracers of Defense AC 5;debt=15000
 date=4 Tarsakh 1370;pay;by=Maanamere;virtual
- amount=750;to= Deringa;note=earrings
+ amount=750;to=Deringa;note=earrings
  amount=500;to=Dexter;note=ring
  amount=400;to=Staric;note=2 200gp emeralds
  amount=90;to=Staric;note=amber
@@ -60,7 +60,8 @@ date=4 Tarsakh 1370;pay;by=Maanamere;virtual
  amount=700;to=Darius;note=platinum necklace
  amount=500;to=Henkles;note=Silver Candlesticks
  amount=40;to=Misery;note=8 5gp bloodstones
-date=4 Tarsakh 1370;pay;by=Darius;amount=700to=Dexter;note=Platinum Necklace;virtual
-# ./pay '4 Tarsakh 1370' Henkles 500 -t Dexter -n 'Silver Candlesticks' -V
+date=4 Tarsakh 1370;pay;by=Darius;amount=700;to=Dexter;note=Platinum Necklace;virtual
+#date=4 Tarsakh 1370;pay;by=Henkles;to=Dexter;amount=500;note=Silver Candlesticks;virtual
 date=4 Tarsakh 1370;pay;by=Maanamere;to=outside the party;amount=50;note=three boats, 9 barrels, planks
 date=5 Tarsakh 1370;buy;item=+1 Sling;buyer=Deringa;debt=2500
+date=7 Tarsakh 1370;pay;by=Henkles;to=Staric;amount=111.111

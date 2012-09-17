@@ -13,9 +13,9 @@ def create_object(d):
         d['value_cp'] = cash + debt
     if 'sold_on' in d:
         d['sale_date'] = afal.str_to_date(d['sold_on'])
-#    if args.verbose:
-    print "Creating", d
-#    afal.insert_item(d)
+    if args.verbose:
+        print "Creating", d
+    afal.insert_item(d)
 
 parser = argparse.ArgumentParser("Create parties from parties.dat")
 parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
@@ -23,5 +23,5 @@ parser.add_argument("--file", "-f", help="file to read", default='items.dat')
 args = parser.parse_args()
 
 file = open(args.file)
-afal.parse_files(file, create_object, dict())
+afal.parse_file(file, create_object, dict())
 afal.fini()

@@ -41,6 +41,8 @@ def nextline(f):
         tmp = f.readline()
         if len(tmp) < 1:
             break
+        if tmp[0] == '#':
+            continue
         if tmp[-1] == '\n':
             tmp = tmp[:-1]
             if len(tmp) < 1:
@@ -68,19 +70,25 @@ def peekline(file):
 def add_entries(d,line):
     while line[0] == ' ':
         line = line[1:]
+    h1 = ''
     while len(line) > 0:
-        try:
+        if ';' in line:
             sep = line.index(';')
-            hdr = line[0:sep]
+            if sep > 0 and line[sep-1] == '\\':
+                h1 += line[0:sep-1] + ';'
+                line = line[sep+1:]
+                continue
+            hdr = h1 + line[0:sep]
             line = line[sep+1:]
-        except:
+            h1 = ''
+        else:
             hdr = line
             line = ''
-        try:
+        if '=' in hdr:
             e = hdr.index('=')
             name = hdr[0:e]
             value = hdr[e+1:]
-        except:
+        else:
             name = hdr
             value = True
         d[name] = value
@@ -113,21 +121,32 @@ def compare_indent(l1,l2):
 #   return
 
 def parse_file(file, doit, inherited):
+#    print 'inherited', inherited
     while True:
         line = nextline(file)
         if line == '':
             break
+#        print 'before_add', inherited
         us = add_entries(dict(inherited), line)
+#        print 'inherited', inherited, 'us',us
+        hadsub = False
         while True:
             peek = peekline(file)
+#            print "comparing","'"+line+"'","'"+peek+"'"
             i = compare_indent(line, peek)
             if i > 0:
-                parse_file(file, doit, us)
+#                print 'recurse',us
+                parse_file(file, doit, dict(us))
+                hadsub = True
+                continue
+            if i == 0:
+                if not hadsub:
+                    doit(dict(us))
                 break
-            doit(us)
             if i < 0:
+                if not hadsub:
+                    doit(dict(us))
                 return
-            break
 
 ######## Date functions
 
@@ -204,7 +223,7 @@ def date_to_str(date):
                 return month + ' ' + str(year)
             day = 1 + mo - i[0]
             return str(day)+' '+month+' '+str(year)
-    raise NameError("Couldn't find date " + str(date))
+    raise NameError("Couldn't find date '" + str(date))+"'"
 
 ######## Copper and Gold piece functions
 
@@ -285,7 +304,7 @@ def get_journal_dates():
         ret.append(date_to_str(i[0]))
     return ret
     
-def get_journal(d_fm = None, d_to = None, character = None):
+def get_journal(d_fm = None, d_to = None, character = None, primary = False):
     """return a list of dicts of entries in the journal"""
 
     string = ""
@@ -295,19 +314,25 @@ def get_journal(d_fm = None, d_to = None, character = None):
         string += " where made_on >= %(d_fm)s "
     elif d_to is not None:
         string += " where made_on <= %(d_to)s "
+    if primary:
+        if string != '':
+            s1 = ' and '
+        else:
+            s1 = ' where '
+        string += s1 + 'part_of is NULL'
     if character is not None:
         if string != '':
-            string += " and ("
-            s1 = ')'
+            s1 = " and ( "
+            s2 = ' ) '
         else:
-            string += "where "
-            s1=''
-        string +="made_by = %(character)s or made_to = %(character)s"+s1
+            s1 = " where "
+            s2 = ' '
+        string += s1+" made_by = %(character)s or made_to = %(character)s "+s2
 
     cur.execute("select "
 " journal_id, part_of, ourtime, made_on, made_by, made_to, amount_cp, description"
-" from fr_journal "+string+" order by made_on, journal_id",
-{'d_fm':d_fm, 'd_to':d_to}, 'character':character)
+" from fr_journal " + string + " order by made_on, journal_id",
+{'d_fm':d_fm, 'd_to':d_to, 'character':character})
     resp = cur.fetchall()
     if resp == None or len(resp) == 0:
         return resp
@@ -383,7 +408,7 @@ def get_char_id(char_name) :
     cur.execute("select char_id from fr_character where char_name = %(char_name)s", {'char_name': char_name})
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find char_name " + char_name)
+        raise NameError("Couldn't find char_name '" + char_name+"'")
     return resp[0][0]
 
 
@@ -393,7 +418,7 @@ def get_char_cash(char_id) :
     cur.execute("select char_cash from fr_character where char_id = %(char_id)s",{'char_id':char_id})
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find char_id " + str(char_id))
+        raise NameError("Couldn't find char_id '" + str(char_id)+"'")
     return resp[0][0]
 
 
@@ -430,7 +455,7 @@ def get_char_name(char_id) :
     cur.execute("select char_name from fr_character where char_id = %(char_id)s", {'char_id':char_id })
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find char_id "+str(char_id))
+        raise NameError("Couldn't find char_id '"+str(char_id)+"'")
     return resp[0][0]
 
 
@@ -457,7 +482,7 @@ def get_char_data(char_id) :
  " from fr_character where char_id = %(char_id)s", {'char_id':char_id })
     resp = cur.fetchall()
     if len(resp) != 1:
-        raise NameError("Couldn't find char_id "+str(char_id))
+        raise NameError("Couldn't find char_id '"+str(char_id)+"'")
     resp = resp[0]
     ret = {}
     ret['name'] = resp[0]
@@ -486,7 +511,7 @@ def get_party_id(party_name) :
  { 'party_name': party_name })
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find party_name " + party_name)
+        raise NameError("Couldn't find party_name '" + party_name+"'")
     return resp[0][0]
 
 
@@ -497,7 +522,7 @@ def get_party_name(party_id) :
  { 'party_id': party_id })
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find party_id " + party_id)
+        raise NameError("Couldn't find party_id '" + party_id+"'")
     return resp[0][0]
 
 
@@ -508,18 +533,18 @@ def get_party_members(party_id) :
  { 'p' : party_id } )
     resp = cur.fetchall()
     if len(resp) < 1 or len(resp[0]) < 1 :
-        raise NameError("Couldn't find characters for party "+str(party_id))
+        raise NameError("Couldn't find characters for party '"+str(party_id)+"'")
     return resp
 
 
 def get_char_parties(char_id) :
     """Return a list of [party_id, share] that the character is in"""
 
-    cur.execute("select party_id, share from fr_char_party where char_id = %(char_id)s order by party_id",
+    cur.execute("select fr_char_party.party_id, fr_char_party.share from fr_char_party natural join fr_party where fr_char_party.char_id = %(char_id)s order by fr_party.party_date",
  {'char_id':char_id})
     resp = cur.fetchall()
 #    if len(resp) < 1 or len(resp[0]) < 1 :
-#        raise NameError("Couldn't find parties for char_id "+str(char_id))
+#        raise NameError("Couldn't find parties for char_id '"+str(char_id)+"'")
     return resp
 
 def get_parties():
@@ -537,7 +562,7 @@ def insert_party(party_name,party_date):
 
     cur.execute(
  "insert into fr_party (party_name, party_date) values (%(name)s, %(date)s)",
- {'name':party_name, 'date':date})
+ {'name':party_name, 'date':party_date})
     return cur.lastrowid
 
 
@@ -557,7 +582,7 @@ def get_item_name(id) :
     cur.execute("select item_name from fr_item where item_id = %(id)s", {'id':id })
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find item_name for "+str(id))
+        raise NameError("Couldn't find item_name for '"+str(id)+"'")
     return resp[0][0]
 
 
@@ -570,7 +595,7 @@ multiple items."""
  {'name': item_name })
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find a unique item_id for " + item_name)
+        raise NameError("Couldn't find a unique item_id for '" + item_name+"'")
     return resp[0][0]
 
 
@@ -600,7 +625,7 @@ def get_item_owner(item_id) :
  { 'item_id' : item_id } )
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 2 :
-        raise NameError("Couldn't find seller for item id " + str(item_id))
+        raise NameError("Couldn't find seller for item id '" + str(item_id)+"'")
     if resp[0][1] is None:
         return party
     return resp[0][0]
@@ -613,7 +638,7 @@ def get_item_acquired_by(item_id) :
  {'item_id':item_id})
     resp = cur.fetchall()
     if len(resp) != 1 or len(resp[0]) != 1 :
-        raise NameError("Couldn't find acquirer for item id " + str(item_id))
+        raise NameError("Couldn't find acquirer for item id '" + str(item_id)+"'")
     return resp[0][0]
 
 

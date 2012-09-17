@@ -18,8 +18,8 @@ def de_html(s):
     if s is None:
         return ''
     ret = s
-    ret = re.sub(r'&frac12;', '1/2 ', ret)
-    ret = re.sub(r'&frac14;', '1/4 ', ret)
+    ret = re.sub(r'&frac12;', ' 1/2', ret)
+    ret = re.sub(r'&frac14;', ' 1/4', ret)
     ret = re.sub(r'&quot;', '"', ret)
     ret = re.sub(r'</?i>', '', ret)
     ret = re.sub(r'</?sup>', '', ret)
@@ -127,6 +127,8 @@ parser.add_argument('--text', '-t', help='text, not CGI', action='store_true', d
 parser.add_argument('--all', '-a', help='report on everything', action='store_true', default=False)
 parser.add_argument('--character', '-c', help='report on this character', default=None)
 parser.add_argument('--party', '-p', help='report on this party', default=None)
+parser.add_argument('--journal', '-J', help='journal on this character', action='store_true', default=None)
+parser.add_argument('--journal-char', '-C', help='journal on this character', default=None)
 parser.add_argument('--journal-start', '-j', help='display the transaction journal starting from this date', default=None)
 parser.add_argument('--journal-end', '-k', help='display the transaction journal up to this date', default = None)
 parser.add_argument('--items', '-i', help='display unresolved items', default = False, action='store_true')
@@ -150,29 +152,31 @@ parties = []
 party_name = None
 journal_start = None
 journal_end = None
+journal_character = None
 if text:
     if args.all:
         chars = character_list
         parties = party_list
-        journal_start = journal_list[0]
-        jounal_end = journal_list[-1]
+        args.journal = True
         args.items = True
     elif args.character is not None:
         chars = [args.character]
     elif args.party is not None:
         parties = [args.party]
-    elif args.journal_start is not None:
-        journal_start = args.journal_start
-    elif args.journal_end is not None:
-        journal_end = args.journal_end
+    elif args.journal_start is not None or args.journal_end is not None or args.journal_char is not None:
+        args.journal = True
+        journal_start = afal.str_to_date(args.journal_start)
+        journal_end = afal.str_to_date(args.journal_end)
+        journal_character = afal.get_char_id(args.journal_char)
     elif args.items:
+        pass
+    elif args.journal:
         pass
     else:
         print("Dunno what to do")
         chars = character_list
         parties = party_list
-        journal_start = journal_list[0]
-        jounal_end = journal_list[-1]
+        args.journal = True
         args.items = True
 else:
     cgitb.enable()
@@ -240,20 +244,29 @@ else:
         else:
             parties = [party_name]
     elif todo == 'Journal':
+        args.journal = True
         journal_start = form.getfirst("journal_start","")
         if journal_start == 'All':
-            journal_start = journal_list[0]
+            journal_start = None
+        else:
+            journal_start=afal.str_to_date(journal_start)
         journal_end = form.getfirst("journal_end","")
         if journal_end == 'All':
-            journal_end = journal_list[-1]
+            journal_end = None
+        else:
+            journal_end = afal.str_to_date(journal_end)
         journal_character = form.getfirst("journal_character","")
+        if journal_character == 'All':
+            journal_character = None
+        else:
+            journal_character = afal.get_char_id(journal_character)
     elif todo == 'Items':
         args.items = True
 if len(chars) > 1:
     if text:
-        print('        Characters\n')
+        print('        ', str(len(chars)), ' Characters\n', sep='')
     else:
-        print('<h3>Characters</h3><br>')
+        print('<h1>Characters</h1><br>')
 for char_name in chars:
     char_id = afal.get_char_id(char_name)
     cash = afal.get_char_cash(char_id)
@@ -291,7 +304,7 @@ for char_name in chars:
         if cash > 0:
             print("  Cash ", afal.str_cp(cash), "\n", sep='')
     else:
-        print('<h4>', char_name, '</h4>', sep='')
+        print('<h2><b>', char_name, '</b></h2>', sep='')
         print('<table border="border" width="90%" background="', b, '">', sep='')
         print('   <tr><td width="40%"><a name="', data['name'], '"><b>', fn,'</b></a>', p, '</td>', sep='')
         print('   <td width="20%">', r, ' ', g, '</td>', sep='')
@@ -313,7 +326,7 @@ for char_name in chars:
         print('</table><br>')
 
         if cash > 0:
-            print('<h5>Cash ', afal.str_cp(cash), '</h5><br>', sep='')
+            print('<h3>Cash ', afal.str_cp(cash), '</h3><br>', sep='')
         else:
             print('<br>')
     if len(cparties):
@@ -382,15 +395,15 @@ for char_name in chars:
     if len(payable):
         print_debt(payable, 'to_id', 'Payable')
 
-    j = afal.get_journal(character=char_id)
+    j = afal.get_journal(character=char_id, primary=True)
     if len(j):
         if text:
             print('  ', str(len(j)), ' Journal Entries', sep='')
             for e in j:
-                print('  ',e['made_on'], '  ', e['description'], sep='')
+                print('    ',e['made_on'], '  ', e['description'], sep='')
             print()
         else:
-            print('<table border="1"><tr><th>', str(len(j)),' Date</th><th>Journal Entry</th></tr>', sep='')
+            print('<br><b><h3>', str(len(j)), ' Journal Entries</h3></b><table border="1"><tr><th>Date</th><th>Journal Entry</th></tr>', sep='')
             for e in j:
                 print("<tr><td>", e['made_on'], "</td><td>", e['description'], "</td></tr>", sep='')
             print("</table><br>")
@@ -400,7 +413,7 @@ for char_name in chars:
 
 if len(parties) > 1:
     if text:
-        print("\n        Parties\n")
+        print("\n        ", str(len(parties)), " Parties\n", sep='')
     else:
         print("<br><h3>Parties</h3><br>")
 for party_name in parties:
@@ -479,21 +492,19 @@ for party_name in parties:
     if text:
         print()
 
-if journal_start or journal_end:
+if args.journal:
     if text:
         print("\n        Transaction Journal\n")
     else:
-        print('<h3>Transaction Journal</h3><br><table border = "1"><tr><th>Date</th><th>Entry</th></tr>')
-    if journal_character == 'All':
-        char = None
-    else:
-        char = afal.get_char_id(journal_character):
-    j = afal.get_journal(journal_start, journal_end, character=char)
+        print('<h3>Transaction Journal</h3><br><table border = "1"><tr><th>Date</th><th>Sub</th><th>Entry</th></tr>')
+    j = afal.get_journal(journal_start, journal_end, character=journal_character)
     for e in j:
         if text:
-            print('  ',e['made_on'], '  ', e['description'], sep='')
+            s1 = '    ' if e['part_of'] is None else '      '
+            
+            print(s1, e['made_on'], '  ', e['description'], sep='')
         else:
-            print("<tr><td>", e['made_on'], "</td><td>", e['description'], "</td></tr>", sep='')
+            print('<tr><td>', e['made_on'], '</td><td>', 'No' if e['part_of'] is None else 'Yes', '</td><td>', e['description'], "</td></tr>", sep='')
     if not text:
         print("</table><br>")
 

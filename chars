@@ -5,9 +5,9 @@ import afal
 def create_char(d):
     if d is {} or not 'name' in d:
         return
-#    if args.verbose:
-    print d
-#    afal.insert_char(d)
+    if args.verbose:
+        print d
+    afal.insert_char(d)
 
 parser = argparse.ArgumentParser("Create parties from parties.dat")
 parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)

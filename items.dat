@@ -40,7 +40,7 @@ party=Eleasias-30-1369
  name=+1/+3(Undead) Large Shield;owner=Dexter;sold_on=30 Eleasias 1369;cash=2300
  name=+2/+3(Large)/+4(Huge+) Purple Chain Mail;owner=Misery;sold_on=30 Eleasias 1369;cash=1500
  name=+1 Shield can cast 1d4 healing once/week;owner=Party;sold_on=30 Eleasias 1369;cash=1500
-party=Elint-19-1369
+party=Eleint-19-1369
  name=2x Sheaf Arrow of Holding;owner=Denyae
  name=+2 Shield;owner=Narthan;sold_on=20 Eleint 1369;debt=2100;cash=900
  name=Ring of Teleport Adventurer Into Undermountain
@@ -111,7 +111,7 @@ party=Uktar-12-1369
  name=Preserved Green Dragon Breath;owner=Stewart;note=Blew up with Stewart
  name=2x Scroll;owner=outside the party;sold_on=13 Uktar 1369;cash=3300
  name=Potion of Murdoch's Insect Ward;owner=Auction
- name=#a  Potion of Invisibility;owner=Dexter;sold_on=3 Tarsakh 1370;cash=500
+ name=#a  Potion of Invisibility
  name=Potion of Undead Control (Skeleton);owner=Auction
  name=+2 Leather Armor;owner=outside the party;sold_on=14 Uktar 1369;cash=6000
  name=#a  +1 Bastard Sword;owner=Maanamere;sold_on=14 Uktar 1369;cash=3200
@@ -212,7 +212,7 @@ party=Hammer-20-1370
  name=#b  3x +1 Sheaf Arrow;owner=Henkles
  name=#c  2x Sleep Gas Grenade (M);owner=Tristan
  name=#a  Potion;note=Identify,AgL7Fail
-acquried_by=Alturiak-29-1370;name=Philter of Love;owner=Auction
+party=Alturiak-29-1370;name=Philter of Love;owner=Auction
 party=Ches-3-1370
  name=Carpet of Flying 3x5;owner=Denyae
  name=Wand of Lightning Fan;owner=Darius
@@ -262,7 +262,7 @@ party=Ches-30-1370
  name=Ebon Fly
  name=3x Urds Teeth Poison
  name=#c  +1 Ring of Protection;owner=Ag
- name=+1? Ring of Protection;owner=Steve
+ name=#d  +1? Ring of Protection;owner=Steve
  name=+1/+? Ring of Protection;owner=Henkles
  name=10x +1 Arrow;owner=Denyae
  name=6x +1 Arrow;owner=Dexter
@@ -281,7 +281,6 @@ party=Ches-30-1370
   name=Oil of Slipperyness
  name=+1/+3(Backstab) Long Sword;owner=Ag;note=+10% Hide in Shadows, Identify
  name=#e  Dagger of Hurting;note=Identify
- name=#d  +1? Ring of Protection;owner=Steve
  name=#b  Potion;note=Identify
 party=Tarsakh-3-1370;name=#a  Nonmagic;owner=Sell;note=Jeweled Dagger, Long Sword, Spear
 party=Tarsakh-4-1370

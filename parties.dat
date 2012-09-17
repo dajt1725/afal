@@ -1,7 +1,7 @@
 Darius=1;Dexter=1;Steve=1
  party=Marpenoth-26-1369;date=26 Marpenoth 1369
  party=Nightal-17-1369;date=17 Nightal 1369;Misery=1;Denyae=.5;Cassie=0;Narthan=0;Stalker=0
- Henkes=1
+ Henkles=1
   Barnabus=0;Moogh=0
    party=Mirtul-26-1369;date=26 Kythorn 1369
    party=Kythorn-10-1369;date=10 Kythorn 1369;Buffy=0
@@ -17,13 +17,13 @@ Darius=1;Dexter=1;Steve=1
     party=Eleasias-16-1369;date=16 Eleasias 1369
    Deringa=.5;Staric=.5
     Tristan=1;Chusnog=0;Ouguch=0;
-     party=Alturiak-29-1370;date=29 Alturiak 1370;;Denyae=.5
+     party=Alturiak-29-1370;date=29 Alturiak 1370;Denyae=.5
      party=Ches-3-1370;date=3 Ches 1370
     Ag=1;Tristan=1;Denyae=1
      party=Ches-25-1370;date=25 Ches 1370
      party=Ches-30-1370;date=30 Ches 1370
      party=Tarsakh-7-1370;date=7 Tarsakh 1370;Brogan=1
-   Ag=1;Brogun=1;Tristan=1;Denyae=1
+   Ag=1;Brogan=1;Tristan=1;Denyae=1
     party=Tarsakh-4-1370;date=4 Tarsakh 1370
     party=Tarsakh-3-1370;date=3 Tarsakh 1370
    Misery=1
@@ -41,7 +41,7 @@ Darius=1;Dexter=1;Steve=1
      Cassie=0
       party=Eleasias-18-1369;date=18 Eleasias 1369
       party=Eleasias-30-1369;date=30 Eleasias 1369
-      party=Elint-19-1369;date=19 Elint 1369
+      party=Eleint-19-1369;date=19 Eleint 1369
       party=Marpenoth-23-1369;date=23 Marpenoth 1369
     Stalker=0
      party=Nightal-20-1369;date=20 Nightal 1369;Denyae=.5

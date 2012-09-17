@@ -3,6 +3,8 @@ import argparse
 import afal
 
 def do_transaction(d):
+    if args.verbose:
+        print "doing", d
     date = afal.str_to_date(d['date'])
     if 'buy' in d:
         cash = afal.gp_cp_to_cp(float(d.get('cash','0')), 0)
@@ -46,7 +48,7 @@ def do_transaction(d):
         afal.change_item_owner(item_id, char_id, cash + debt, date)
         journal_id = afal.journal(date, seller_id, char_id, cash + debt, text)
         if args.verbose:
-        print char_name, "bought", item_name
+            print char_name, "bought", item_name
 
         if 'virtual' not in d:
             cash_cp = cash
@@ -90,8 +92,14 @@ def do_transaction(d):
             to_name = 'his debts'
             to_id = None
 
+        note = ' (' + d['note'] + ')' if 'note' in d else ''
         if len(payable) == 0:
-            print from_name, "has no debts to pay"
+            if to_id is None:
+                print from_name, "has no debts to pay"
+                return
+            afal.chars_move_cash({'date':date, 'from_id':from_id,
+ 'to_id':to_id, 'amount':amount_cp, 'from_name':from_name, 'to_name':to_name,
+ 'note':note})
             return
         shares = 0.0
         owed = 0
@@ -101,7 +109,6 @@ def do_transaction(d):
         if amount_cp > owed:
             print from_name, "only owes", afal.str_cp(owed), "not", afal.str_cp(amount_cp)
             return
-        note = ' (' + d['note'] + ')' if 'note' in d else ''
         if len(payable) > 1:
             text = from_name + ' paid ' + afal.str_cp(amount_cp) + ' to ' + to_name + note
             journal_id = afal.journal(date, from_id, to_id, amount_cp, text)
@@ -131,9 +138,51 @@ def do_transaction(d):
             shares -= this_share
 
     elif 'owe' in d:
-    elif 'give' in d:
+        date = afal.str_to_date(d['date'])
+        debt_cp = afal.gp_cp_to_cp(d['amount'], 0)
+        char_id = afal.get_char_id(d['by'])
+        char_name = d['by']
+        shares = 0.0
+        try:
+            party_id = afal.get_party_id(d['to'])
+            party_name = d['to']
+            lender_name = party_name
+            lender_id = party_id
+            lenders = afal.get_party_members(party_id)
+            for i in lenders :
+                shares += float(i[1])
+
+        except:
+            party_id = None
+            lender_id = afal.get_char_id(d['to'])
+            lender_name = d['to']
+            lenders = [ [lender_id, 1 ] ]
+            shares = 1;
+
+        if 'item' in d:
+            item_name = d['item']
+            item_id = afal.get_item_id(item_name)
+            itext = ' for ' + item_name
+        else:
+            item_id = None
+            item_name = None
+            itext = ''
+        journal_id = None
+        if len(lenders) > 1:
+            journal_id = afal.journal(date, lender_id, char_id, debt_cp,
+ lender_name + " lent " + afal.str_cp(debt_cp) + " to " + char_name + itext )
+        for i in lenders :
+            lid = i[0]
+            lshare = float(i[1])
+            lname = afal.get_char_name(lid)
+            if lshare > 0 :
+                sh_cp = int(lshare * debt_cp / shares)
+                afal.insert_debt({'date':date, 'from_id':char_id, 'to_id':lid,
+'amount':sh_cp, 'share':lshare, 'item_id':item_id, 'from_name':char_name,
+ 'to_name':lname, 'item_name':item_name, 'part_of':journal_id})
+
     else:
-        print "Unknown transaction in",d
+        print "Unknown transaction in", d
         return
 
 
@@ -144,5 +193,4 @@ args = parser.parse_args()
 
 file=open(args.file)
 afal.parse_file(file,do_transaction,dict())
-afal.fini()
 afal.fini()
