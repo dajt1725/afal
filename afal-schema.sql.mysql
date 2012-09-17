@@ -19,7 +19,8 @@ create table fr_character (
 ) auto_increment=5;
 create table fr_party (
     party_id integer unsigned not null primary key auto_increment,
-    party_name varchar(128) unique not null
+    party_name varchar(128) unique not null,
+    party_date integer unsigned not null
 ) auto_increment=100;
 create table fr_char_party (
     char_id integer unsigned not null references fr_character,

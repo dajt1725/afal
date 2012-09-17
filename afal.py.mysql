@@ -9,6 +9,7 @@ import random
 
 config = {
 	'database':'afal', 'user':'afal'
+, 'password':'BuffyStewart'
 }
 #try :
 conn = mysql.connector.connect(**config)
@@ -27,6 +28,106 @@ def fini() :
     cur.close()
     conn.close()
 
+
+######## File IO and parsing
+
+def nextline(f):
+    if nextline.line:
+        ret = nextline.line
+        nextline.line = None
+        return ret
+    ret = ''
+    while True:
+        tmp = f.readline()
+        if len(tmp) < 1:
+            break
+        if tmp[-1] == '\n':
+            tmp = tmp[:-1]
+            if len(tmp) < 1:
+                break
+        if tmp[-1] != '\\':
+            ret += tmp
+            break
+        ret += tmp[:-1]
+    return ret
+
+nextline.line = None
+
+def pushline(line):
+    if nextline.line:
+        raise NameError("Line already pushed")
+    nextline.line = line
+
+def peekline(file):
+    line = nextline(file)
+    pushline(line)
+    if line == '':
+        return '\n'
+    return line
+
+def add_entries(d,line):
+    while line[0] == ' ':
+        line = line[1:]
+    while len(line) > 0:
+        try:
+            sep = line.index(';')
+            hdr = line[0:sep]
+            line = line[sep+1:]
+        except:
+            hdr = line
+            line = ''
+        try:
+            e = hdr.index('=')
+            name = hdr[0:e]
+            value = hdr[e+1:]
+        except:
+            name = hdr
+            value = True
+        d[name] = value
+    return d
+
+def compare_indent(l1,l2):
+    len1 = 0
+    while l1[len1] == ' ':
+        len1 += 1
+    len2 = 0
+    while l2[len2] == ' ':
+        len2 += 1
+    return len2 - len1
+
+# aaa:
+#   We read a line
+# bbb:
+#   we create a hash
+#   populate it with the entries we inherited
+#   fill it with the entries for our current line
+#   look at the indentation on the next line
+#   If it's deeper or the same
+#   If it's deeper
+#     recurse, passing the hash
+#     goto bbb
+#   else
+#     Create an object using the hash
+#   If it's the same
+#     goto aaa
+#   return
+
+def parse_file(file, doit, inherited):
+    while True:
+        line = nextline(file)
+        if line == '':
+            break
+        us = add_entries(dict(inherited), line)
+        while True:
+            peek = peekline(file)
+            i = compare_indent(line, peek)
+            if i > 0:
+                parse_file(file, doit, us)
+                break
+            doit(us)
+            if i < 0:
+                return
+            break
 
 ######## Date functions
 
@@ -122,7 +223,7 @@ def cp_to_cp_only(cp) :
 def gp_cp_to_cp(gp, cp) :
     """ turn gp and cp values into a raw cp value"""
 
-    return int(gp * 200 + cp)
+    return int(float(gp) * 200 + float(cp))
 
 
 def str_gp_cp(gp, cp) :
@@ -166,7 +267,6 @@ def divide_cp(top, bottom) :
 def journal(date, by, to, amount, description, part_of = None):
     """add an entry to the transaction journal, returning an id that may be used for subsequent calls"""
 
-    date = str_to_date(date)
     cur.execute (
  "insert into fr_journal ( made_on, made_by, made_to, amount_cp, description, part_of ) "
  " values ( %(date)s, %(by)s, %(to)s, %(cp)s, %(text)s, %(part_of)s )",
@@ -185,11 +285,9 @@ def get_journal_dates():
         ret.append(date_to_str(i[0]))
     return ret
     
-def get_journal(d_fm = None, d_to = None):
+def get_journal(d_fm = None, d_to = None, character = None):
     """return a list of dicts of entries in the journal"""
 
-    d_fm = str_to_date(d_fm)
-    d_to = str_to_date(d_to)
     string = ""
     if d_fm is not None and d_to is not None:
         string += " where made_on >= %(d_fm)s and made_on <= %(d_to)s "
@@ -197,10 +295,19 @@ def get_journal(d_fm = None, d_to = None):
         string += " where made_on >= %(d_fm)s "
     elif d_to is not None:
         string += " where made_on <= %(d_to)s "
+    if character is not None:
+        if string != '':
+            string += " and ("
+            s1 = ')'
+        else:
+            string += "where "
+            s1=''
+        string +="made_by = %(character)s or made_to = %(character)s"+s1
+
     cur.execute("select "
 " journal_id, part_of, ourtime, made_on, made_by, made_to, amount_cp, description"
 " from fr_journal "+string+" order by made_on, journal_id",
-{'d_fm':d_fm, 'd_to':d_to})
+{'d_fm':d_fm, 'd_to':d_to}, 'character':character)
     resp = cur.fetchall()
     if resp == None or len(resp) == 0:
         return resp
@@ -220,27 +327,55 @@ def get_journal(d_fm = None, d_to = None):
 
 ########## Characters
 
-def insert_char(name, player = None, gender = None, race = None,
- ch_class = None, alignment = None, picture = None, equipment = None,
- characteristics = None, notes = None, association = None, status = 'active',
- dm_notes = None, cp = 0, large_picture = None, fullname = None ):
+def in_or_none(k,d):
+    return d[k] if k in d else None
+
+def ins_if_not(d,l):
+    for k in l:
+        if not k in d:
+            d[k] = None
+
+def insert_char(d):
     """ insert a character into the database"""
 
+    ins_if_not(d,('fullname', 'player', 'gender', 'race', 'class', 'alignment',
+ 'picture', 'equipment', 'characteristics', 'notes', 'association', 'dm_notes',
+ 'large_picture'))
+    if 'cp' not in d:
+        d['cp'] = 0
+    if 'gold' in d:
+        d['cp'] = gp_cp_to_cp(d['gold'],d['cp'])
     cur.execute(
- "insert into fr_character ( char_name, char_fullname, char_player, "
- " char_gender, char_race, char_class, char_alignment, char_picture_url, "
- " char_equipment, char_acteristics, char_notes, char_association, "
- " char_status, char_cash, char_dm_notes, char_large_picture_url ) "
- " values ( %(name)s, %(fullname)s, %(player)s, "
- " %(gender)s, %(race)s, %(class)s, %(alignment)s, %(picture)s, "
- " %(equipment)s, %(characteristics)s, %(notes)s, %(association)s, "
- " %(status)s, %(cp)s, %(dm_notes)s, %(large_picture)s )",
- { 'name':name, 'fullname':fullname, 'player':player, 'gender':gender,
-   'race':race, 'class':ch_class, 'alignment':alignment, 'picture':picture,
-   'equipment':equipment, 'characteristics':characteristics, 'notes':notes,
-   'association':association, 'status':status, 'cp': cp, 'dm_notes':dm_notes,
-   'large_picture':large_picture } )
-
+ "insert into fr_character ( char_name, char_status, "
+ " char_alignment, "
+ " char_association, "
+ " char_acteristics, "
+ " char_class, "
+ " char_dm_notes, "
+ " char_equipment, "
+ " char_fullname, "
+ " char_gender, "
+ " char_notes, "
+ " char_player, "
+ " char_race, "
+ " char_cash, "
+ " char_picture_url, "
+ " char_large_picture_url ) "
+ " values ( %(name)s, %(status)s, "
+ " %(alignment)s, "
+ " %(association)s, "
+ " %(characteristics)s, "
+ " %(class)s, "
+ " %(dm_notes)s, "
+ " %(equipment)s, "
+ " %(fullname)s, "
+ " %(gender)s, "
+ " %(notes)s, "
+ " %(player)s, "
+ " %(race)s, "
+ " %(cp)s, "
+ " %(picture)s, "
+ " %(large_picture)s )", d )
 
 def get_char_id(char_name) :
     """ given a char_name, return its corresponding char_id"""
@@ -262,12 +397,32 @@ def get_char_cash(char_id) :
     return resp[0][0]
 
 
-def char_add_cash(char_id, cp):
-    """give a character additional cash"""
-    cur.execute("update fr_character set char_cash = "
- " char_cash + %(cp)s where char_id = %(char_id)s",
- { 'cp' : cp, 'char_id' : char_id } )
+def chars_move_cash(i):
+    """move cash from one character to another, journaling it"""
 
+    if not 'from_name' in i:
+        i['from_name'] = get_char_name(i['from_id'])
+    if not 'to_name' in i:
+        i['to_name'] = get_char_name(i['to_id'])
+    if 'item_id' in i and i['item_id'] and not 'item_name' in i:
+        i['item_name'] = get_item_name(i['item_id'])
+    if not 'part_of' in i:
+        i['part_of'] = None
+
+    if i['to_id'] >= party:
+       cur.execute("update fr_character set char_cash = "
+ " char_cash + %(cp)s where char_id = %(to_id)s",
+ { 'cp' : i['amount'], 'to_id' : i['to_id'] } )
+    if i['from_id'] >= party:
+        cur.execute("update fr_character set char_cash = "
+ " char_cash - %(cp)s where char_id = %(from_id)s",
+ { 'cp' : i['amount'], 'from_id' : i['from_id'] } )
+    text = i['from_name'] + ' gave ' + str_cp(i['amount']) + ' to ' + i['to_name']
+    if 'item_name' in i and i['item_name'] is not None:
+        t_for = " for " + i['item_name']
+    if 'note' in i and i['note'] is not None:
+        text += i['note']
+    journal(i['date'], i['from_id'], i['to_id'], i['amount'], text, i['part_of'])
 
 def get_char_name(char_id) :
     """ given a char_id, return its corresponding char_name """
@@ -370,19 +525,19 @@ def get_char_parties(char_id) :
 def get_parties():
     """Return a list of [id, name] entries for all the parties in the database"""
 
-    cur.execute("select party_id, party_name from fr_party order by party_id")
+    cur.execute("select party_id, party_name from fr_party order by party_date")
     resp = cur.fetchall()
     if len(resp) < 1 or len(resp[0]) < 1 :
         raise NameError("Couldn't find any parties")
     return resp
 
 
-def insert_party(party_name) :
+def insert_party(party_name,party_date):
     """insert a party into the database"""
 
     cur.execute(
- "insert into fr_party ( party_name ) values ( %(name)s )",
- { 'name': party_name } )
+ "insert into fr_party (party_name, party_date) values (%(name)s, %(date)s)",
+ {'name':party_name, 'date':date})
     return cur.lastrowid
 
 
@@ -419,28 +574,35 @@ multiple items."""
     return resp[0][0]
 
 
-def insert_item(item_name, party_id, owner_id=None, value=None, sale_date=None, note=None) :
+def insert_item(d):
     """insert an item into the database"""
 
+    if not 'owner_id' in d:
+        d['owner_id'] = None
+    if not 'sale_date' in d:
+        d['sale_date'] = None
+    if not 'value_cp' in d:
+        d['value_cp'] = None
+    if not 'note' in d:
+        d['note'] = None
 
-    sale_date = str_to_date(sale_date)
     cur.execute(
  " insert into fr_item(item_name, owned_by, sale_date, value, note, acquired_by)"\
- " values(%(item_name)s, %(owner_id)s, %(sale_date)s, %(value)s, %(note)s,"\
- "  %(party_id)s)",
- {'item_name':item_name, 'owner_id':owner_id, 'sale_date':sale_date,
-  'value':value, 'note':note, 'party_id':party_id})
+ " values(%(name)s, %(owner_id)s, %(sale_date)s, %(value_cp)s, %(note)s,"\
+ "  %(party_id)s)", d)
     return cur.lastrowid
 
 
 def get_item_owner(item_id) :
     """Get the owner of an item"""
 
-    cur.execute ( "select owned_by from fr_item where item_id = %(item_id)s",
+    cur.execute ( "select owned_by, sale_date from fr_item where item_id = %(item_id)s",
  { 'item_id' : item_id } )
     resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1 :
+    if len(resp) != 1 or len(resp[0]) != 2 :
         raise NameError("Couldn't find seller for item id " + str(item_id))
+    if resp[0][1] is None:
+        return party
     return resp[0][0]
 
 
@@ -455,14 +617,12 @@ def get_item_acquired_by(item_id) :
     return resp[0][0]
 
 
-def change_item_owner(item_id, date, char_id, cp = 0) :
-    """Sell an item to a person, setting its value and owner, return the party that acquired the item"""
+def change_item_owner(item_id, char_id, value, date):
+    """Change the ownership, transfer date, and value of an item"""
 
-    date = str_to_date(date)
-    cur.execute("update fr_item set owned_by = %(char_id)s, value = %(cp)s, "
+    cur.execute("update fr_item set owned_by = %(char_id)s, value = %(value)s, "
  " sale_date =  %(date)s where item_id = %(item_id)s",
- {'char_id':char_id, 'cp':cp, 'date':date, 'item_id':item_id})
-    return get_item_acquired_by(item_id)
+ {'char_id':char_id, 'value':value, 'date':date, 'item_id':item_id})
 
 
 def get_items_owned_by(char_id):
@@ -503,6 +663,17 @@ def get_party_items() :
    resp = cur.fetchall()
    return resp
 
+def get_unresolved_items():
+    cur.execute("select acquired_by, item_name, note from fr_item where owned_by is NULL")
+    resp = cur.fetchall()
+    ret = []
+    for i in resp:
+        t = {}
+        t['acquired_by'] = get_party_name(i[0])
+        t['item_name'] = i[1]
+        t['note'] = i[2]
+        ret.append(t)
+    return ret
 
 ######## Debts
 
@@ -518,12 +689,13 @@ def get_char_receivable(char_id) :
     for i in resp:
         t = {}
         t['debt_id'] = i[0]
-        t['from'] = i[1]
+        t['to_id'] = char_id
+        t['from_id'] = i[1]
         t['order'] = i[2]
-        t['owed_cp'] = i[3]
+        t['amount'] = i[3]
         t['share'] = i[4]
-        t['date'] = date_to_str(i[5])
-        t['item'] = i[6]
+        t['item_id'] = i[6]
+        t['contracted_on'] = date_to_str(i[5])
         t['initial_cp'] = i[7]
         ret.append(t)
     return ret
@@ -541,12 +713,13 @@ def get_char_payable(char_id) :
     for i in resp:
         t = {}
         t['debt_id'] = i[0]
-        t['to'] = i[1]
+        t['from_id'] = char_id
+        t['to_id'] = i[1]
         t['order'] = i[2]
-        t['owed_cp'] = i[3]
+        t['amount'] = i[3]
         t['share'] = i[4]
-        t['date'] = date_to_str(i[5])
-        t['item'] = i[6]
+        t['contracted_on'] = date_to_str(i[5])
+        t['item_id'] = i[6]
         t['initial_cp'] = i[7]
         ret.append(t)
     return ret
@@ -554,7 +727,7 @@ def get_char_payable(char_id) :
 
 def get_char_rec_xferable(char_id) :
     cur.execute (
- "select tob.debt_id, tob.from_char, tob.repay_order, tob.owed_cp, tob.share "
+ "select tob.debt_id, tob.from_char, tob.repay_order, tob.owed_cp, tob.share, tob.item_id "
  "from fr_debt as tob where tob.to_char = %(char_id)s and tob.repay_order = "
  " ( select min(froma.repay_order) from debt as froma where froma.from_char = tob.from_char ) order by from_char",
  { 'char_id' : char_id })
@@ -565,10 +738,12 @@ def get_char_rec_xferable(char_id) :
     for i in resp:
         t = {}
         t['debt_id'] = i[0]
-        t['from'] = i[1]
+        t['from_id'] = i[1]
+        t['to_id'] = char_id
         t['order'] = i[2]
-        t['owed_cp'] = i[3]
+        t['amount'] = i[3]
         t['share'] = i[4]
+        t['item_id'] = i[5]
         ret.append(t)
     return ret
 
@@ -585,11 +760,12 @@ def get_char_pay_xferable(char_id) :
     for i in resp:
         t = {}
         t['debt_id'] = i[0]
-        t['to'] = i[1]
+        t['from_id'] = char_id
+        t['to_id'] = i[1]
         t['order'] = i[2]
-        t['owed_cp'] = i[3]
+        t['amount'] = i[3]
         t['share'] = i[4]
-        t['item'] = i[5]
+        t['item_id'] = i[5]
         ret.append(t)
     return ret
 
@@ -604,28 +780,83 @@ def get_char_selfdebt(char_id) :
     return cur.fetchall()
 
 
-def delete_debt(debt_id) :
-    """Deletes the specified debt"""
-    cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s",
- { 'debt_id' : debt_id } )
+def delete_debt(d, verb):
+    """Deletes the specified debt and journal it"""
 
+    if not 'from_name' in d:
+        d['from_name'] = get_char_name(d['from_id'])
+    if not 'to_name' in d:
+        d['to_name'] = get_char_name(d['to_id'])
+    if 'item_id' in d and d['item_id'] is not None and not 'item_name' in d:
+        d['item_name'] = get_item_name(d['item_id'])
+    if not 'part_of' in d:
+        d['part_of'] = None
 
-def set_debt_owed(debt_id, owed_cp):
-    """Set the amount owed on the specified debt"""
-    cur.execute("update fr_debt set owed_cp = %(owed_cp)s "
- " where debt_id = %(debt_id)s", {'owed_cp':owed_cp, 'debt_id':debt_id})
+    cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s", d )
+    text = d['from_name'] + verb + 'a ' + str_cp(d['amount']) + ' debt'
+    if d['from_id'] != d['to_id']:
+        text += ' to '+ d['to_name']
+    if 'item_name' in d:
+        text += ' for ' + d['item_name']
+    if 'note' in d and d['note'] is not None:
+        text += d['note']
+    journal(d['date'], d['from_id'], d['to_id'], d['amount'], text, d['part_of'] )
 
+def debt_lower_owed(d, cp, verb):
+    """Lower the amount owed on the specified debt and journal it"""
 
-def insert_debt(date, from_char, to_char, amount, share=1.0, item_id=None, repay_order=0) :
-    """insert a debt into the database"""
-    date = str_to_date(date)
+    if not 'from_name' in d:
+        d['from_name'] = get_char_name(d['from_id'])
+    if not 'to_name' in d:
+        d['to_name'] = get_char_name(d['to_id'])
+    if 'item_id' in d and d['item_id'] is not None and not 'item_name' in d:
+        d['item_name'] = get_item_name(d['item_id'])
+    if not 'part_of' in d:
+        d['part_of'] = None
+
+    new_amount = d['amount'] - cp
+    cur.execute("update fr_debt set owed_cp = %(new_amount)s "
+ " where debt_id = %(debt_id)s", {'new_amount':new_amount, 'debt_id':d['debt_id']})
+    text = d['from_name'] + verb + str_cp(cp) + ' of a ' + str_cp(d['amount']) + ' debt to ' + d['to_name'] + ', leaving ' + str_cp(new_amount)
+    if 'item_name' in d:
+        text += ' for ' + d['item_name']
+    if 'note' in d and d['note'] is not None:
+        text += d['note']
+    journal(d['date'], d['from_id'], d['to_id'], cp, text, d['part_of'])
+
+def insert_debt(d):
+    """insert a debt into the database and journal it"""
+
+    if not 'repay_order' in d:
+        d['repay_order'] = 0
+    if not 'share' in d:
+        d['share'] = 1.0
+    if not 'item_id' in d:
+        d['item_id'] = None
+
+    if not 'from_name' in d:
+        d['from_name'] = get_char_name(d['from_id'])
+    if not 'to_name' in d:
+        d['to_name'] = get_char_name(d['to_id'])
+    if 'item_id' in d and d['item_id'] and not 'item_name' in d:
+        d['item_name'] = get_item_name(d['item_id'])
+    if not 'part_of' in d:
+        d['part_of'] = None
+
     cur.execute("insert into fr_debt "
  " (from_char, to_char, repay_order, share, item_id, initial_cp, owed_cp, owed_on) "
- " values ( %(from_char)s, %(to_char)s, %(repay_order)s, %(share)s, %(item_id)s, "
- " %(cp)s, %(cp)s, %(date)s)",
- {'from_char':from_char, 'to_char':to_char, 'repay_order':repay_order,
-   'share':share, 'item_id':item_id,
-   'cp':amount, 'date':date})
+ " values ( %(from_id)s, %(to_id)s, %(repay_order)s, %(share)s, %(item_id)s, "
+ " %(amount)s, %(amount)s, %(date)s)", d)
 
+    text =  d['from_name'] + " owed " + str_cp(d['amount']) + " to " + d['to_name']
+    if d['repay_order'] != 0:
+        text += " repay order " + str(d['repay_order'])
+    if d['share'] != 1.0:
+        text += " for " + str(d['share']) + " share"
+    if 'item_name' in d and d['item_name'] is not None:
+        text += " for " + d['item_name']
+    if 'note' in d and d['note'] is not None:
+        text += d['note']
+    journal(d['date'], d['from_id'], d['to_id'], d['amount'], text, d['part_of'])
 
 ######## End

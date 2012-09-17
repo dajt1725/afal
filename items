@@ -1,19 +1,27 @@
 #!/usr/bin/python
-import argparse
+
 import afal
+import argparse
 
-parser = argparse.ArgumentParser('Generate a list of party items')
+def create_object(d):
+    if 'owner' in d:
+        d['owner_id'] = afal.get_char_id(d['owner'])
+    d['party_id'] = afal.get_party_id(d['party'])
+    if 'cash' in d or 'debt' in d:
+        cash = afal.gp_cp_to_cp(d['cash'],0) if 'cash' in d else 0
+        debt = afal.gp_cp_to_cp(d['debt'],0) if 'debt' in d else 0
+        d['value_cp'] = cash + debt
+    if 'sold_on' in d:
+        d['sale_date'] = afal.str_to_date(d['sold_on'])
+#    if args.verbose:
+    print "Creating", d
+#    afal.insert_item(d)
+
+parser = argparse.ArgumentParser("Create parties from parties.dat")
 parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
-args=parser.parse_args()
+parser.add_argument("--file", "-f", help="file to read", default='items.dat')
+args = parser.parse_args()
 
-items = afal.get_party_items()
-print "items"
-for i in items :
-    n1 = ""
-    if i[1] is not None :
-        n1 = n1+"  Note: "+i[1]
-    if i[3] is not None and i[3] > afal.party:
-        n1 = n1+"  (Lent to "+afal.get_char_name(i[3])+")"
-    print "     ",i[0]+n1
-
+file = open(args.file)
+afal.parse_files(file, create_object, dict())
 afal.fini()

@@ -12,7 +12,7 @@ parser.add_argument("party", help="Who is becoming the debtee")
 parser.add_argument("debt", help="The amount being borrowed")
 args = parser.parse_args()
 
-date = args.date
+date = afal.str_to_date(args.date)
 debt_cp = afal.gp_cp_to_cp(float(args.debt), 0)
 try :
     char_id = afal.get_char_id(args.character)
@@ -42,12 +42,6 @@ except :
                 print "Unknown character or party", args.party
                 sys.exit(1)
 
-if args.item is not None:
-    item_id = afal.get_item_id(args.item)
-    itext = ' for '+args.item
-else:
-    item_id = None
-    itext = ''
 shares = 0.0
 if party_id > 0 :
     lender_name = party_name
@@ -59,17 +53,28 @@ else :
     lenders = [ [lender_id, 1 ] ]
     shares = 1;
 
-journal_id = afal.journal(date, lender_id, char_id, debt_cp,
+if args.item is not None:
+    item_name = args.item
+    item_id = afal.get_item_id(item_name)
+    itext = ' for ' + item_name
+else:
+    item_id = None
+    item_name = None
+    itext = ''
+if len(lenders) > 1:
+    journal_id = afal.journal(date, lender_id, char_id, debt_cp,
  lender_name + " lent " + afal.str_cp(debt_cp) + " to "
  + char_name + itext )
+else:
+    journal_id = None
 for i in lenders :
     lid = i[0]
     lshare = float(i[1])
     lname = afal.get_char_name(lid)
     if lshare > 0 :
         sh_cp = int(lshare * debt_cp / shares)
-        afal.insert_debt(date, char_id, lid, sh_cp, share=lshare, item_id=item_id )
-        afal.journal(date, char_id, lid, sh_cp,
-char_name + " owed " + afal.str_cp(sh_cp) + " to " + lname + itext, journal_id)
+        afal.insert_debt({'date':date, 'from_id':char_id, 'to_id':lid,
+'amount':sh_cp, 'share':lshare, 'item_id':item_id, 'from_name':char_name,
+ 'to_name':lname, 'item_name':item_name, 'part_of':journal_id})
 
 afal.fini()

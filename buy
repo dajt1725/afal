@@ -29,65 +29,66 @@ except :
     char_id = int(args.character)
     char_name = afal.get_char_name(char_id)
 
+date = afal.str_to_date(args.date)
+
+item_name = afal.get_item_name(item_id)
 seller_id = afal.get_item_owner(item_id)
 if seller_id is None :
     seller_id = afal.party
-party_id = afal.change_item_owner(item_id, args.date, char_id, cash+debt )
-shares = 0.0
-if seller_id < afal.party :
-    seller_name = "Someone"
-    sellers = [ [seller_id, 1 ] ]
-    shares = 1;
-elif seller_id == afal.party :
-    seller_name = afal.get_party_name(party_id)
+if seller_id == afal.party:
+    party_id = afal.get_item_acquired_by(item_id)
+    seller_name = 'Party ' + afal.get_party_name(party_id)
     sellers = afal.get_party_members(party_id)
-    for i in sellers :
-        shares += float(i[1])
-else :
-    seller_name = afal.get_char_name(seller_id)
-    sellers = [ [seller_id, 1 ] ]
-    shares = 1;
-if debt > 0 :
-    if cash > 0 :
-        journal_id = afal.journal(args.date, seller_id, char_id, cash + debt,
- seller_name + " sold "+ item_name + " to " + char_name + " for "
- + afal.str_cp(cash) + " cash and " + afal.str_cp(debt) + " debt"  )
-    else :
-        journal_id = afal.journal(args.date, seller_id, char_id, debt,
- seller_name + " sold " + item_name + " to "
- + char_name + " for " + afal.str_cp(debt) + " debt" )
-elif cash > 0 :
-    journal_id = afal.journal(args.date, seller_id, char_id, cash,
- seller_name + " sold "+ item_name + " to " +
- char_name + " for " + afal.str_cp(cash) + " cash" )
-else :
-    journal_id = afal.journal(args.date, seller_id, char_id, cash,
- seller_name + " gave "+ item_name + " to " + char_name )
+    shares = 0
+    for i in sellers:
+        shares +=i[1]
+else:
+    seller_name = afal.get_char_name(seller_id) if seller_id > afal.party else 'Someone'
+    sellers = [[seller_id, 1]]
+    shares = 1
 
+if debt > 0 and cash > 0:
+    verb = " sold "
+    t_for = " for " + afal.str_cp(cash) + " cash and " + afal.str_cp(debt) + " debt"
+elif debt > 0:
+    verb = " sold "
+    t_for = " for " + afal.str_cp(debt) + " debt"
+elif cash > 0:
+    verb = " sold "
+    t_for = " for " + afal.str_cp(cash) + " cash"
+else:
+    verb = " gave "
+    t_for = ''
+text = seller_name + verb + item_name + " to " + char_name + t_for
 
-if not args.virtual :
+afal.change_item_owner(item_id, char_id, cash + debt, date)
+journal_id = afal.journal(date, seller_id, char_id, cash + debt, text)
+if args.verbose:
+    print char_name, "bought", item_name
+
+if not args.virtual:
     cash_cp = cash
     debt_cp = debt
-    for i in sellers :
+    for i in sellers:
         sid = i[0]
         sshare = float(i[1])
         sname = afal.get_char_name(sid)
         if sshare > 0 :
             if cash_cp > 0 :
                 sh_cp = afal.divide_cp(sshare * cash_cp, shares)
-                if args.verbose :
+                if args.verbose:
                     print char_name, "paid", afal.str_cp(sh_cp), "to", sname
-                afal.char_add_cash(sid, sh_cp)
-                afal.journal(args.date, sid, char_id, sh_cp,
-char_name + " gave " + afal.str_cp(sh_cp) + " to " + sname, journal_id)
+                afal.chars_move_cash({'date':date, 'from_id':char_id,
+ 'to_id':sid, 'amount':sh_cp, 'from_name':char_name, 'to_name':sname,
+ 'item_id':item_id, 'item_name':item_name, 'part_of':journal_id})
                 cash_cp -= sh_cp
             if debt_cp > 0 :
                 sh_cp = afal.divide_cp(sshare * debt_cp, shares)
                 if args.verbose :
                     print char_name, "owed", afal.str_cp(sh_cp), "to", sname
-                afal.insert_debt(args.date, char_id, sid, sh_cp, share=sshare, item_id=item_id)
-                afal.journal(args.date, sid, char_id, sh_cp,
-char_name + " owed " + afal.str_cp(sh_cp) + " to " + sname, journal_id)
+                afal.insert_debt({'date':date, 'from_id':char_id, 'to_id':sid,
+ 'amount':sh_cp, 'share':sshare,'item_id':item_id, 'from_name':char_name,
+ 'to_name':sname, 'item_name':item_name, 'part_of':journal_id})
                 debt_cp -= sh_cp
             shares -= sshare
 

@@ -1,0 +1,19 @@
+#!/usr/bin/python
+import argparse
+import afal
+
+def create_char(d):
+    if d is {} or not 'name' in d:
+        return
+#    if args.verbose:
+    print d
+#    afal.insert_char(d)
+
+parser = argparse.ArgumentParser("Create parties from parties.dat")
+parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
+parser.add_argument("--file", "-f", help="file to read", default='chars.dat')
+args = parser.parse_args()
+
+file = open(args.file)
+afal.parse_file(file, create_char, dict())
+afal.fini()

@@ -1,0 +1,66 @@
+buy;date=30 Eleasias 1369;item=#b  Charged +1 Dagger;buyer=outside the party;cash=500;virtual
+buy;date=12 Uktar 1369;item=+1 Dagger (can glow enough to read a map);buyer=destroyed
+buy;date=14 Uktar 1369;item=#a  +1 Ring of Protection;buyer=Henkles;debt=5350
+buy;date=1 Nightal 1369
+ buyer=outside the party;item=Rod of Caltrops
+ buyer=destroyed
+  item=+1 Shield can cast 1d4 healing once/week
+  item=Preserved Green Dragon Breath
+  item=Potion of Rainbow Hues
+date=1 Tarsakh 1370
+ owe;by=Henkles;to=Dexter;amount=100
+ owe;by=Darius;to=Ches-30-1370;amount=10000;item=#a  +1 Ring of Protection
+ buy
+  buyer=Ag
+   item=Bracers of Defense AC 6/5;debt=12000
+   item=#c  +1 Ring of Protection;debt=10000
+   item=#e  Dagger of Hurting;debt=1400
+  buyer=Darius
+   item=Fanny Pack of Holding;debt=9500
+   item=#b  Bracers of Defense AC 5;debt=15000
+   item=#a  +1 Ring of Protection;debt=10000;virtual
+  buyer=Denyae
+   item=+2 Long Sword;debt=5400                          
+   item=Ring of Protection (weak);debt=10000
+  buyer=Dexter
+   item=Perditor Mortua;debt=5000
+   item=Ring of Fire Resistance;debt=5000
+   item=#b  Ring of Warmth;debt=5000
+   item=#b  Ring of Water Walking;debt=5000
+   item=Ebon Fly;cash=5000
+   item=#a  Potion of Invisibility;cash=500
+  buyer=Henkles
+   item=Sproing Ring;debt=5000
+   item=3x Urds Teeth Poison;cash=105
+   item=+1/+? Ring of Protection;debt=2000
+  buyer=Maanamere
+   item=+1 Full Plate Armor;debt=30000
+   item=+1/+3(Cold) Ring of Protection;debt=12500
+  buyer=Misery
+   item=+2 Whip;debt=3500
+   item=+1 Composite Short Bow;debt=3500
+  buyer=Steve
+   item=Cloak of Elvenkind;debt=6000
+   item=#a  +1 Light Crossbow;debt=2500
+   item=+1/+2(Lawful) Long Sword;debt=4050
+   item=+1? Ring of Protection;debt=10000
+  buyer=Tristan
+   item=#b  +1 Shield;debt=2500
+   item=+1/+2(half*)/+3(Humans) Bastard Sword;debt=5000
+   item=+1 Plate Mail (Half Elf);debt=5000
+   item=#d  Dagger of Hurting;debt=1400
+  buyer=Ursula;item=#a  Bracers of Defense AC 5;debt=15000
+date=4 Tarsakh 1370;pay;by=Maanamere;virtual
+ amount=750;to= Deringa;note=earrings
+ amount=500;to=Dexter;note=ring
+ amount=400;to=Staric;note=2 200gp emeralds
+ amount=90;to=Staric;note=amber
+ amount=200;to=Steve;note=2 100gp carnelians
+ amount=20;to=Steve;note=gold earring
+ amount=700;to=Darius;note=platinum necklace
+ amount=500;to=Henkles;note=Silver Candlesticks
+ amount=40;to=Misery;note=8 5gp bloodstones
+date=4 Tarsakh 1370;pay;by=Darius;amount=700to=Dexter;note=Platinum Necklace;virtual
+# ./pay '4 Tarsakh 1370' Henkles 500 -t Dexter -n 'Silver Candlesticks' -V
+date=4 Tarsakh 1370;pay;by=Maanamere;to=outside the party;amount=50;note=three boats, 9 barrels, planks
+date=5 Tarsakh 1370;buy;item=+1 Sling;buyer=Deringa;debt=2500

@@ -17,19 +17,29 @@ parser.add_argument('--notes', '-n', help="notes, if any")
 parser.add_argument('--picture-url', '-P', help="URL for picture, if any")
 parser.add_argument('--player', '-p', help="player's name, if any" )
 parser.add_argument('--race', '-r', help="character's race, if known")
-parser.add_argument('--status', '-s', help="character's status, 'active', or 'inactive'")
+parser.add_argument('--status', '-s', help="character's status, 'active', or 'inactive'", default='inactive')
 parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
 parser.add_argument("name", help="The name of the character to add", nargs='+')
 args = parser.parse_args()
 for name in args.name :
-    afal.insert_char(name, fullname = args.fullname,
- player = args.player, gender = args.gender, race = args.race,
- ch_class = args.ch_class, alignment = args.alignment,
-picture = args.picture_url,
- equipment = args.equipment,  characteristics = args.characteristics,
- notes = args.notes, association = args.association, status = args.status,
- dm_notes = args.dm_notes, cp = afal.gp_cp_to_cp(args.gold, 0),
- large_picture = args.large_picture_url)
+    d = {}
+    d['name'] = name
+    d['fullname'] = args.fullname
+    d['player'] = args.player
+    d['gender'] = args.gender
+    d['race'] = args.race
+    d['class'] = args.ch_class
+    d['alignment'] = args.alignment
+    d['picture'] = args.picture_url
+    d['equipment'] = args.equipment
+    d['characteristics'] = args.characteristics
+    d['notes'] = args.notes
+    d['association'] = args.association
+    d['status'] = args.status
+    d['dm_notes'] = args.dm_notes
+    d['gold'] = args.gold
+    d['large_picture'] = args.large_picture_url
+    afal.insert_char(d)
     if args.verbose :
         print name, "added as", afal.get_char_id(name)
 afal.fini()

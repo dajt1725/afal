@@ -1,0 +1,27 @@
+#!/usr/bin/python
+import sys
+import argparse
+import afal
+
+parser = argparse.ArgumentParser("Give cash from one character to another")
+parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
+parser.add_argument("date", help="When the debt-transfer(s) happened")
+parser.add_argument("ch_from", help="Character who is paying")
+parser.add_argument("ch_to", help="Character who is receiving")
+parser.add_argument("amount", help="gp being paid", type=float)
+parser.add_argument("--note", "-n", help="Note to add to transaction journal")
+args = parser.parse_args()
+
+date = afal.str_to_date(args.date)
+from_name = args.ch_from
+from_id = afal.get_char_id(from_name)
+to_name = args.ch_to
+to_id = afal.get_char_id(to_name)
+amount_cp = afal.gp_cp_to_cp(args.amount,0)
+
+note = ' (' + args.note + ')' if args.note else ''
+afal.chars_move_cash({'date':date, 'from_id':from_id, 'to_id':to_id,
+ 'amount':amount_cp, 'from_name':from_name, 'to_name':to_name, 'note':note})
+if args.verbose:
+    print from_name, 'paid', afal.str_cp(amount_cp), 'to', to_name, note
+afal.fini()

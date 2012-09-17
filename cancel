@@ -9,7 +9,7 @@ parser.add_argument("date", help="When the debt-cancelling happened")
 parser.add_argument("name", help="Character(s) whose debts will be cancelled", nargs='+')
 args = parser.parse_args()
 
-date = args.date
+date = afal.str_to_date(args.date)
 for char in args.name :
 
     try :
@@ -20,60 +20,72 @@ for char in args.name :
         char_id = afal.get_char_id(char)
         char_name = char
 
+    payable = afal.get_char_payable(char_id)
+    if len(payable) == 0:
+        continue
     journal_id = afal.journal(date, char_id, None, 0,
  char_name + " cancelled debts")
-
-    selfdebt = afal.get_char_selfdebt(char_id)
-    if len(selfdebt) > 0 :
-        for i in selfdebt :
-            if args.verbose :
-                print "Remove selfdebt",i[0],"of",afal.str_cp(i[1])
-            afal.journal(date, char_id, i[0], i[1],
- char_name + " cancelled " + afal.str_cp(i[1]) + " of self-debt", journal_id )
-            afal.delete_debt(i[0])
+    found = False
+    for i in payable:
+        if i['to_id'] == char_id:
+            i['from_name'] = char_name
+            i['to_name'] = char_name
+            i['date'] = date
+            i['part_of'] = journal_id
+            afal.delete_debt(i, ' self-cancelled ')
+            found = True
     receivable = afal.get_char_receivable(char_id)
-    payable = afal.get_char_payable(char_id)
+    if found:
+        payable = afal.get_char_payable(char_id)
     if len(payable) == 0 or len(receivable) == 0:
         continue
 
+    for i in payable:
+        i['date'] = date
+        i['from_name'] = char_name
+        i['part_of'] = journal_id
+    for i in receivable:
+        i['date'] = date
+        i['to_name'] = char_name
+        i['part_of'] = journal_id
 # payable holds a list of of who we owe money to, sorted by who we owe it to
 # receivable holds a list of who owes us money, sorted by who they are
     pay_start = 0
     rec_start = 0
     while pay_start < len(payable) and rec_start < len(receivable) :
-        if payable[pay_start]['to'] < receivable[rec_start]['from'] :
+        if payable[pay_start]['to_id'] < receivable[rec_start]['from_id'] :
             pay_start += 1
             continue
-        if receivable[rec_start]['from'] < payable[pay_start]['to'] :
+        if receivable[rec_start]['from_id'] < payable[pay_start]['to_id'] :
             rec_start += 1
             continue
 
 # When we get here we've found a pair of debts to/from the same person
 # Now figure out how many debts of each type we have with that person
-        pay_id = payable[pay_start]['to']
+        pay_id = payable[pay_start]['to_id']
         pay_order = payable[pay_start]['order']
         pay_end = pay_start
         while pay_end < len(payable) - 1 :
-            if payable[pay_end+1]['to'] != pay_id or payable[pay_end+1]['order'] != pay_order :
+            if payable[pay_end+1]['to_id'] != pay_id or payable[pay_end+1]['order'] != pay_order :
                 break
             pay_end += 1
         pay_cp = 0
         for i in range(pay_start,pay_end+1) :
-            pay_cp += payable[i]['owed_cp']
+            pay_cp += payable[i]['amount']
 
-        rec_id = receivable[rec_start]['from']
+        rec_id = receivable[rec_start]['from_id']
         if rec_id != pay_id :
             print "rec and pay ids don't match",rec_id, pay_id, char_id
             sys.exit(1)
         rec_order = receivable[rec_start]['order']
         rec_end = rec_start
         while rec_end < len(receivable) - 1 :
-            if receivable[rec_end+1]['from'] != rec_id or receivable[rec_end+1]['order'] != rec_order :
+            if receivable[rec_end+1]['from_id'] != rec_id or receivable[rec_end+1]['order'] != rec_order :
                     break
             rec_end += 1
         rec_cp = 0
         for i in range(rec_start,rec_end+1) :
-            rec_cp += receivable[i]['owed_cp']
+            rec_cp += receivable[i]['amount']
 
 # ok, figure out the total debt to be cancelled
         if pay_cp < rec_cp :
@@ -85,62 +97,39 @@ for char in args.name :
             print char_name, pay_name, pay_cp, rec_cp
         if cancel_cp == pay_cp :
             for i in range(pay_start,pay_end+1) :
-                cp = payable[i]['owed_cp']
-                afal.journal(date, char_id, pay_id, cp,
- char_name + " completely cancelled " + afal.str_cp(cp) + " of debt to "
- + pay_name, journal_id)
-                afal.delete_debt(payable[i]['debt_id'])
+                afal.delete_debt(payable[i], ' completely cancelled ')
             pay_start = pay_end + 1
         else :
 # modify all the payable debts appropiaately
             pay_cancel_cp = cancel_cp
             for i in range ( pay_start, pay_end + 1 ) :
-                cur_cp = payable[i]['owed_cp']
+                cur_cp = payable[i]['amount']
                 cxl_cp = afal.divide_cp(pay_cancel_cp * cur_cp, pay_cp)
                 if args.verbose :
                     print char_name,"to",pay_name,"was",cur_cp,"cxl",cxl_cp
                 if cur_cp == cxl_cp:
-                    afal.journal(date, char_id, pay_id, cxl_cp,
- char_name + " completely cancelled " + afal.str_cp(cxl_cp) + " of debt to "
- + pay_name, journal_id)
-                    afal.delete_debt(payable[i]['debt_id'])
+                    afal.delete_debt(payable[i], ' completely cancelled ')
                 else:
-                    cur_cp -= cxl_cp
-                    afal.journal(date, char_id, pay_id, cxl_cp,
- char_name + " cancelled " + afal.str_cp(cxl_cp) + " of debt to " + pay_name
- + ", leaving " + afal.str_cp(cur_cp) + " of the "
- + afal.str_cp(payable[i]['owed_cp']) + ' debt', journal_id)
-                    afal.set_debt_owed(payable[i]['debt_id'], cur_cp)
+                    afal.debt_lower_owed(payable[i], cxl_cp, ' cancelled ')
 		pay_cancel_cp -= cxl_cp
-		pay_cp -= payable[i]['owed_cp']
+		pay_cp -= payable[i]['amount']
         if cancel_cp == rec_cp :
             for i in range(rec_start,rec_end+1) :
-                cp = receivable[i]['owed_cp']
-                afal.journal(date, rec_id, char_id, cp,
- pay_name + " completely cancelled " + afal.str_cp(cp) + " of debt to "
- + char_name, journal_id)
-                afal.delete_debt(receivable[i]['debt_id'])
+                cp = receivable[i]['amount']
+                afal.delete_debt(receivable[i], ' completely cancelled ')
             rec_start = rec_end + 1
         else :
 # modify all the receivable debts appropriately
             rec_cancel_cp = cancel_cp
             for i in range ( rec_start, rec_end + 1 ) :
-                cur_cp = receivable[i]['owed_cp']
+                cur_cp = receivable[i]['amount']
                 cxl_cp = afal.divide_cp(rec_cancel_cp * cur_cp, rec_cp)
                 if args.verbose :
                     print pay_name,"to",char_name,"was",cur_cp,"cxl",cxl_cp
                 if cur_cp == cxl_cp:
-                    afal.journal(date, rec_id, char_id, cxl_cp,
- pay_name + " completely cancelled " + afal.str_cp(cxl_cp) + " of debt to "
- + char_name, journal_id)
-                    afal.delete_debt(receivable[i]['debt_id'])
+                    afal.delete_debt(receivable[i], ' completely cancelled ')
                 else:
-                    cur_cp -= cxl_cp
-                    afal.journal(date, rec_id, char_id, cxl_cp,
- pay_name + " cancelled " + afal.str_cp(cxl_cp) + " of debt to " + char_name
- + ", leaving " + afal.str_cp(cur_cp) + " of the "
- + afal.str_cp(receivable[i]['owed_cp']) + ' debt', journal_id)
-                    afal.set_debt_owed(receivable[i]['debt_id'], cur_cp)
+                    afal.debt_lower_owed(receivable[i], cxl_cp, ' cancelled ')
                 rec_cancel_cp -= cxl_cp
-                rec_cp -= receivable[i]['owed_cp']
+                rec_cp -= receivable[i]['amount']
 afal.fini()
