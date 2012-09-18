@@ -39,7 +39,7 @@ notes=Unwilling to use potions,\
  claims gnomish ancestry which gives him magic-related saving throw bonuses\
  and +1 to hit with short swords.\
  He's a short sword specialist with a side order of crazy.\
- He bought the ghost-infested short sword on <a href="/logs/log_Hammer_1_1370.html">Hammer 1, 1370</a>\
+ He bought the ghost-infested short sword on <d Hammer 1 1370>\
  from a seller in the Market.  He had his first nightmare about it three days\
  later, and a second two days later, and a third on the 13th.\
  Henkles is one of the founding party members.
@@ -51,8 +51,8 @@ notes=Married to Bambi of Moogh (nee Bambino), who is currently at their\
  appartment in Silverymoon. Bambi is pregnant and due on Alturiak 10th.\
  Joined the party in the distant depths of time (Founding Member?\
  Nobody remembers). Moog left the party to spend more time with his family.\
- His last entry in the experience log is around Hammer 24th, 1370.
- name=Stewart;status=inactive;characteristics=Dead
+ His last entry in the experience log is around <d Hammer 24 1370>.
+ name=Stewart;status=dead;characteristics=Dead
  name=Theo;status=active;alignment=Lawful Neutral;\
 class=Spellcaster, Halruaan;\
 fullname=Theophrastus &quot\;Theo&quot\; Philippus Aureolus Bombast von Hohenheim;\
@@ -64,17 +64,16 @@ characteristics=51 year-old male human, somewhat overweight. Pallid complexion,\
  now going a bit frayed and shabby.\
  Talks in a somewhat high-pitched, musical voice.;\
 equipment=Bracers, Magic Ring;\
-notes=Joined the party on Nightal 26, 1369.\
- Theo began teaching on Hammer 20, 1370.\
+notes=Joined the party on <d Nightal 26 1369>.\
+ Theo began teaching on <d Hammer 20 1370>.\
  Although he's left the party to teach full time,\
  Theo is still staying at Fair Winds,\
  and may be willing to help with obscure bits of forgotten lore.
  name=Barnabus;status=inactive;race=Dwarf;gender=Male;class=Cleric;\
 alignment=Unknown;equipment=Long Forgotten.;\
 characteristics=Cranky and hard to put up with;notes=\
-Joined the party sometime before <a href="logs/log_Mirtul_4_1369.html">Mirtul\
- 4, 1369</a>.  Last mentioned in the party log on <a\
- href="logs/log_Mirtul_26_1369.html">Mirtul 26, 1369</a>.
+Joined the party sometime before <d Mirtul 4 1369>.  Last mentioned in the\
+ party log on <d Mirtul 26 1369>.
  name=Steve;status=active;alignment=Neutral Good;\
 class=Bard;fullname=Stephen &quot\;Steve&quot\; of Neverwinter;gender=Male;\
 player=Fred;race=&frac12\; Elf;\
@@ -84,13 +83,12 @@ equipment=Green Dragon hide armor, Ring of Water Walking, Gargoyle Ring,\
  +1 light crossbow, lyre, Staff of Phantasmal Firebals;\
 notes=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
  Steve joined the party somewhere around\
- <a href="/logs/log_Mirtul_2_1369.html">Greengrass Festival, 1369</a>.
- name=Buffy;status=inactive;characteristics=dead
+ <d Greengrass Festival 1369>.
+ name=Buffy;status=dead;characteristics=dead
  name=Falco;status=inactive;player=Tim?;race=Unknown;class=Fighter?/Priest?;\
 alignment=Unknown;equipment=Lost in the depths of time;\
 characteristics=Forgotten;notes=Nobody knows when he joined the party.  Last\
- mentioned in the party log on <a href="logs/log_Flamerule_4_1369.html">\
-Flamerule 4, 1369</a>.
+ mentioned in the party log on <d Flamerule 4 1369>.
  name=Maanamere;status=active;alignment=Neutral Good;\
 class=Ranger;fullname=Maanamere Palendril;gender=Male;\
 player=Rickland;race=Moon Elf;\
@@ -105,37 +103,35 @@ notes=Fear of heights.\
  Lacks the typical ranger two-handed fighting bonus, but Binky compensates.\
  Originally from the Coldwood.\
  Can cast some spells from the Conjuration/Summoning school.\
- He joined the party after being rescued on <a href="/logs/log_Kythorn_10_1369.html">Kython 10, 1369</a>.
+ He joined the party after being rescued on <d Kythorn 10 1369>.
  status=inactive
   name=Thalion
   name=Devlin;player=Kathy;race=Unknown;gender=Male?;alignment=Unknown;\
 class=Specialty Mage (Monitor);equipment=lost in the depths of time, except\
  for his lizard steed, &quot\;Roscoe&quot\;.;characteristics=Forgotten,\
  except for the hard to put up with part.;notes=Joined the party on\
- <a href="logs/log_Kythorn_23_1369.html">Kythorn 23, 1369</a>.\
-  Last mentioned in the party log on <a href="logs/Eleasias_13_1369.html">\
-Eleasias 13, 1369</a>.
+ <d Kythorn 23 1369>.\
+  Last mentioned in the party log on <d Eleasias 13 1369>.
   name=Hahrvee;player=Ross;race=Unknown;gender=Male?;class=Ranger;\
 alignment=Unknown Good?;equipment=Lost in the depths of time;\
-characteristics=Forgotten;notes=Joined the party on <a\
- href="logs/log_Kythorn_23_1369.html">Kythorn 23, 1369</a>.  Last mentioned\
- in the party log on <a href="logs/Eleasias_12_1369.html">Eleasias 12, 1369</a>
+characteristics=Forgotten;notes=Joined the party on <d Kythorn 23 1369>.\
+  Last mentioned in the party log on <d Eleasias 12 1369>
  name=Misery;status=active;fullname=Jan &quot\;Misery&quot\; Jones;\
 player=Iain;race=Human;gender=Male;class=Fighter;alignment=Neutral;\
 equipment=+2/+3/+4 by opponent size (M/L/H) Purple chain mail,\
  long sword, main gauche, +1 short composite bow, +2 Whip;\
 characteristics=Very strong and quick, clever and attractive,\
- ???No appearance!;notes=Joined the party sometime before Eleasias 16, 1369.\
+ ???No appearance!;notes=Joined the party sometime before <d Eleasias 16 1369>.\
  Jan left the party under mysterious circumstances somewhere after\
- Alturiak 6, 1370.
+ <d Alturiak 6 1370>.
  status=inactive
   name=Narthan;fullname=Narthandarkanas nha Kandar;player=Ross;race=Dwarf;\
 gender=Male;class=Spec Pr - Tempus (BattleForge);alignment=Chaotic Neutral;\
 equipment=+2 Shield, +1 Ring of Protection, Dagger of Hurting, some assorted\
  magic arrows;characteristics=Strong, very clever, nimble, 4'5&quot\;, 149lbs.;\
-notes=Joined the party on <a href="logs/log_Eleasias_16_1369.html">Eleasias\
- 16, 1369</a>.  Narthan and Cassie decided they'd had too much of vampires and\
- left for Baldurs Gate on <a href="logs/log_Nightal_26_1369.html">Nightal 26 1369</a>.
+notes=Joined the party on <d Eleasias 16 1369>.  Narthan and Cassie decided\
+ they'd had too much of vampires and left for Baldurs Gate on \
+<d Nightal 26 1369>.
   name=Cassie
  status=active
   name=Ursula;alignment=Neutral Good;\
@@ -147,15 +143,15 @@ equipment=alluring clothing, Bracers of Defense AC 5/6, +2 Ring of Protection,\
  Ring of Warmth, +2 Dagger, Dagger of Hurting, Wand of Small Fires,\
  Horn of Bubbles.;\
 notes=Currently spends a lot of time hanging around Fair Winds.\
- Ursula joined the party on <a href="/logs/log_Uktar_8_1369.html">Uktar 8, 1369</a>.
+ Ursula joined the party on <d Uktar 8 1369>.
   name=Denyae;alignment=Neutral Good;\
 notes=Rescued from minotaur labrynth by AFAL.\
  Offered to work for party for a&frac14\;-share of treasure for &quot\;a\
- while&quot\; on <a href="/logs/log_Uktar_13_1369.html">Uktar 13, 1369</a>.\
+ while&quot\; on <d Uktar 13 1369>.\
  Hates minotaurs.\
  Longbow and longsword specialist.\
  Has earned the emnity of the vampire lord Dread William of the South Moors.\
- Offered full party membership on <a href="/logs/log_Ches_21_1370.html">Ches 21, 1370</a>. (?);\
+ Offered full party membership on <d Ches 21 1370>. (?);\
 class=Fighter;fullname=Denyae Stavefall;gender=Female;\
 large_picture=Denyae_lg.png;picture=Denyae.png;player=Eleah;race=Human;\
 characteristics=Strong, clever, very quick,\
@@ -182,7 +178,7 @@ notes=The least annoying member of The Shining Sons, Staric was with Dagar\
  brother Arrikes was using in a plot to take over Waterdeep.  By mutual\
  agreement, Staric used a scroll to wipe Dagar's memory of the discovery and\
  contacted A.F.A.L. for help.  When A.F.A.L. arrived in Amphail, he joined up\
- with them as they fled the village on <a href="/logs/log_Hammer_17_1370.html">Hammer 17, 1370</a>.
+ with them as they fled the village on <d Hammer 17 1370>.
   name=Deringa;alignment=Chaotic Good;\
 class=Rich Kid?  Groupie?;fullname=Deringa Eagleshield;gender=Female;\
 large_picture=Deringa_lg.png;picture=Deringa.png;race=Human(?);\
@@ -197,7 +193,7 @@ notes=Childhood friend of Staric Ammakyl, overheard Staric &amp\; Dagar\
  <a href="/logs/log_Hammer_17_1370.html">Extroversion</a>, it's effect on\
  Dagar's brother Arrikes, and Arrikes's plot to take over Waterdeep.  Staric\
  couldn't wipe her memory like he did for Dagar, so she had to come along.\
- She joined the party on <a href="/logs/log_Hammer_17_1370.html">Hammer 17, 1370</a>.
+ She joined the party on <d Hammer 17 1370>.
  status=inactive
   name=Chusnog
   name=Ouguch
@@ -209,18 +205,16 @@ characteristics=brown hair, blue eyes, 5'7&quot\;, 128lbs.,\
 equipment=Bracers of defense AC 6 or 5, +1 Ring of Protection, Gloves of Mask,\
  <i>Shadowfang</i> - magically dark longsword, +1/+3 (backstab) Long Sword,\
  picks &amp\; tools, many daggers, dark blue cloak;\
-notes=Joined party in Silverymoon,\
- <a href="/logs/log_Alturiak_5_1370.html">Alturiak 5<sup>th</sup></a>, in the\
- Year of the Tankard.
+notes=Joined party in Silverymoon, <d Alturiak 5 1370>.
   name=Tristan;alignment=Neutral Good;characteristics=Not known at this time.;\
 gender=Male;player=Alex;race=&frac12\; Elf;\
 class=Spec Pr - Tempus (BattleForge) / Wizard;\
 equipment=+1 plate mail, +1 shield, +1/+2 (half *)/+3(Humans) Bastard Sword,\
  <i>Ghoulbreaker</i>, Dagger of Hurting;\
 notes=Originally Gail's character, played by Andrew and now Alex.\
- Tristan joined the party on <a href="/logs/log_Alturiak_5_1370.html">Alturiak 5, 1370</a>.
+ Tristan joined the party on <d Alturiak 5 1370>.
   name=Brogan;alignment=Lawful Good;gender=Male;player=Andrew;race=Hill Dwarf;\
 class=Champion of Moradin;characteristics=Short hair, neat dark beard;\
 equipment=dwarven plate, boots of alacrity, shield of groovy brightness,\
  +1 wern of wind;\
-notes=Joined the party on Tarsakh 1 1370 on the orders of the priests of Selune.
+notes=Joined the party on <d Tarsakh 1 1370> on the orders of the priests of Selune.
