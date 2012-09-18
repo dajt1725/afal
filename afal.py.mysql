@@ -222,7 +222,7 @@ def date_to_str(date):
             if i[0] == i[1]:
                 return month + ' ' + str(year)
             day = 1 + mo - i[0]
-            return str(day)+' '+month+' '+str(year)
+            return month+' '+str(day)+' '+str(year)
     raise NameError("Couldn't find date '" + str(date))+"'"
 
 ######## Copper and Gold piece functions
@@ -230,7 +230,7 @@ def date_to_str(date):
 def cp_to_gp(cp) :
     """ return the gp portion of a raw cp value"""
 
-    return cp/200
+    return int(cp/200)
 
 
 def cp_to_cp_only(cp) :
