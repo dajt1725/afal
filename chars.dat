@@ -118,20 +118,20 @@ equipment=alluring clothing, Bracers of Defense AC 5/6, +2 Ring of Protection,\
 notes=Currently spends a lot of time hanging around Fair Winds.\
  Ursula joined the party on <a href="logs/log_Uktar_8_1369.html">Uktar 8, 1369</a>.
   name=Denyae;alignment=Neutral Good;\
+notes=Rescued from minotaur labrynth by AFAL.\
+ Offered to work for party for a&frac14\;-share of treasure for &quot\;a\
+ while&quot\; on <a href="logs/log_Uktar_13_1369.html">Uktar 13, 1369</a>.\
+ Hates minotaurs.\
+ Longbow and longsword specialist.\
+ Has earned the emnity of the vampire lord Dread William of the South Moors.\
+ Offered full party membership on <a href="logs/log_Ches_21_1370.html">Ches 21, 1370</a>. (?);\
 class=Fighter;fullname=Denyae Stavefall;gender=Female;\
 large_picture=Denyae_lg.png;picture=Denyae.png;player=Eleah;race=Human;\
 characteristics=Stong, clever, very quick,\
  very short, curly brown/dk blonde hair, grey eyes, 5'7&quot\;, 137 lbs.;\
 equipment=+1 Plate mail, Ring of Protection, <i>Thunderbolt</i> (unique bow),\
  +2 longsword, short sword, various magic arrows,\
- Shield inscribed with Scroll of Summon Mystic Moose;\
-notes=Rescued from minotaur labrynth by AFAL.\
- Offered to work for party for a &frac14\;-share of treasure for &quot\;a\
- while&quot\; on <a href="logs/log_Uktar_13_1369.html">Uktar 13, 1369</a>.\
- Hates minotaurs.\
- Longbow and longsword specialist.\
- Has earned the emnity of the vampire lord Dread William of the South Moors.\
- Offered full party membership on <a href="logs/log_Ches_21_1370.html">Ches 21, 1370</a>. (?)
+ Shield inscribed with Scroll of Summon Mystic Moose
  status=inactive
   name=Marcae
   name=Stalker
