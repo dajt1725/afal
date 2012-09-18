@@ -266,7 +266,7 @@ if len(chars) > 1:
     if text:
         print('        ', str(len(chars)), ' Characters\n', sep='')
     else:
-        print('<h1>Characters</h1><br>')
+        print('<hr /><h1>Characters</h1><br>')
 for char_name in chars:
     char_id = afal.get_char_id(char_name)
     cash = afal.get_char_cash(char_id)
@@ -415,7 +415,7 @@ if len(parties) > 1:
     if text:
         print("\n        ", str(len(parties)), " Parties\n", sep='')
     else:
-        print("<br><h3>Parties</h3><br>")
+        print("<br><hr /><h3>Parties</h3><br>")
 for party_name in parties:
     party_id = afal.get_party_id(party_name)
     members = afal.get_party_members(party_id)
@@ -496,7 +496,7 @@ if args.journal:
     if text:
         print("\n        Transaction Journal\n")
     else:
-        print('<h3>Transaction Journal</h3><br><table border = "1"><tr><th>Date</th><th>Sub</th><th>Entry</th></tr>')
+        print('<hr /><h3>Transaction Journal</h3><br><table border = "1"><tr><th>Date</th><th>Sub</th><th>Entry</th></tr>')
     j = afal.get_journal(journal_start, journal_end, character=journal_character)
     for e in j:
         if text:
@@ -512,7 +512,7 @@ if args.items:
     if text:
         print('\n        Unresolved Items\n')
     else:
-        print('<h3>Unresolved Items</h3><br><table border="1"><tr><th>Party</th><th>Item</th></tr>')
+        print('<hr /><h3>Unresolved Items</h3><br><table border="1"><tr><th>Party</th><th>Item</th></tr>')
     items = afal.get_unresolved_items()
     for i in items:
         p = i['acquired_by']
