@@ -46,8 +46,7 @@ notes=Unwilling to use potions,\
  name=Moogh;status=inactive;alignment=Neutral;class=Fighter;\
 fullname=Son of Moogh #44;player=Suzanne;race=Human;\
 characteristics=Very handsome, blonde, 6'8".;\
-equipment=2-h sword, splint mail, magic privy stick, bag of dead animals,\
- mule;\
+equipment=2-h sword, splint mail, magic privy stick, bag of dead animals, mule;\
 notes=Married to Bambi of Moogh (nee Bambino), who is currently at their\
  appartment in Silverymoon. Bambi is pregnant and due on Alturiak 10th.\
  Joined the party in the distant depths of time (Founding Member?\
@@ -56,7 +55,7 @@ notes=Married to Bambi of Moogh (nee Bambino), who is currently at their\
  name=Stewart;status=inactive;characteristics=Dead
  name=Theo;status=active;alignment=Lawful Neutral;\
 class=Spellcaster, Halruaan;\
-fullname=Theophrastus "Theo" Philippus Aureolus Bombast von Hohenheim;\
+fullname=Theophrastus &quot\;Theo&quot\; Philippus Aureolus Bombast von Hohenheim;\
 gender=Male;player=David;race=Human;\
 characteristics=51 year-old male human, somewhat overweight. Pallid complexion,\
  has a small moustache, balding, with his hair combed over.\
@@ -70,7 +69,12 @@ notes=Joined the party on Nightal 26, 1369.\
  Although he's left the party to teach full time,\
  Theo is still staying at Fair Winds,\
  and may be willing to help with obscure bits of forgotten lore.
- name=Barnabus;status=inactive
+ name=Barnabus;status=inactive;race=Dwarf;gender=Male;class=Cleric;\
+alignment=Unknown;equipment=Long Forgotten.;\
+characteristics=Cranky and hard to put up with;notes=\
+Joined the party sometime before <a href="logs/log_Mirtul_4_1369.html">Mirtul\
+ 4, 1369</a>.  Last mentioned in the party log on <a\
+ href="logs/log_Mirtul_26_1369.html">Mirtul 26, 1369</a>.
  name=Steve;status=active;alignment=Neutral Good;\
 class=Bard;fullname=Stephen &quot\;Steve&quot\; of Neverwinter;gender=Male;\
 player=Fred;race=&frac12\; Elf;\
@@ -82,7 +86,11 @@ notes=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
  Steve joined the party somewhere around\
  <a href="logs/log_Mirtul_2_1369.html">Greengrass Festival, 1369</a>.
  name=Buffy;status=inactive;characteristics=dead
- name=Falco;status=inactive
+ name=Falco;status=inactive;player=Tim?;race=Unknown;class=Fighter?/Priest?;\
+alignment=Unknown;equipment=Lost in the depths of time;\
+characteristics=Forgotten;notes=Nobody knows when he joined the party.  Last\
+ mentioned in the party log on <a href="logs/log_Flamerule_4_1369.html">\
+Flamerule 4, 1369</a>.
  name=Maanamere;status=active;alignment=Neutral Good;\
 class=Ranger;fullname=Maanamere Palendril;gender=Male;\
 player=Rickland;race=Moon Elf;\
@@ -100,11 +108,34 @@ notes=Fear of heights.\
  He joined the party after being rescued on <a href="logs/log_Kythorn_10_1369.html">Kython 10, 1369</a>.
  status=inactive
   name=Thalion
-  name=Devlin
-  name=Harvee
- name=Misery;status=active
+  name=Devlin;player=Kathy;race=Unknown;gender=Male?;alignment=Unknown;\
+class=Specialty Mage (Monitor);equipment=lost in the depths of time, except\
+ for his lizard steed, &quot\;Roscoe&quot\;.;characteristics=Forgotten,\
+ except for the hard to put up with part.;notes=Joined the party on\
+ <a href="logs/log_Kythorn_23_1369.html">Kythorn 23, 1369</a>.\
+  Last mentioned in the party log on <a href="logs/Eleasias_13_1369.html">\
+Eleasias 13, 1369</a>.
+  name=Hahrvee;player=Ross;race=Unknown;gender=Male?;class=Ranger;\
+alignment=Unknown Good?;equipment=Lost in the depths of time;\
+characteristics=Forgotten;notes=Joined the party on <a\
+ href="logs/log_Kythorn_23_1369.html">Kythorn 23, 1369</a>.  Last mentioned\
+ in the party log on <a href="logs/Eleasias_12_1369.html">Eleasias 12, 1369</a>
+ name=Misery;status=active;fullname=Jan &quot\;Misery&quot\; Jones;\
+player=Iain;race=Human;gender=Male;class=Fighter;alignment=Neutral;\
+equipment=+2/+3/+4 by opponent size (M/L/H) Purple chain mail,\
+ long sword, main gauche, +1 short composite bow, +2 Whip;\
+characteristics=Very strong and quick, clever and attractive,\
+ ???No appearance!;notes=Joined the party sometime before Eleasias 16, 1369.\
+ Jan left the party under mysterious circumstances somewhere after\
+ Alturiak 6, 1370.
  status=inactive
-  name=Narthan
+  name=Narthan;fullname=Narthandarkanas nha Kandar;player=Ross;race=Dwarf;\
+gender=Male;class=Spec Pr - Tempus (BattleForge);alignment=Chaotic Neutral;\
+equipment=+2 Shield, +1 Ring of Protection, Dagger of Hurting, some assorted\
+ magic arrows;characteristics=Strong, very clever, nimble, 4'5&quot\;, 149lbs.;\
+notes=Joined the party on <a href="logs/log_Eleasias_16_1369.html">Eleasias\
+ 16, 1369</a>.  Narthan and Cassie decided they'd had too much of vampires and\
+ left for Baldurs Gate on <a href="logs/log_Nightal_26_1369.html">Nightal 26 1369</a>.
   name=Cassie
  status=active
   name=Ursula;alignment=Neutral Good;\
