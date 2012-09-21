@@ -71,6 +71,8 @@ party=Marpenoth-23-1369
  name=#b  Potion of Stoneskin;owner=Cassie
  name=#c  Potion of Stoneskin;owner=Dexter
  name=#d  Potion of Stoneskin;owner=Darius
+ name=2x large opal earring 750gp together;owner=Maanamere;sold_on=24 Marpenoth 1369;cash=750
+ name=8x bloodstone 5gp;owner=Maanamere;sold_on=24 Marpenoth 1369;cash=40
 party=Marpenoth-26-1369
  name=Kobold Ring;owner=Darius
  name=#a  Potion of Healing in wire-wrapped vial
@@ -180,6 +182,7 @@ party=Hammer-9-1370
  name=#b  Potion of Invisibility
  name=Necklace of Light and Darkness;owner=Henkles
 party=Hammer-13-1370
+ name=Gold Earring 20gp;owner=Maanamere;sold_on=13 Hammer 1370;cash=20
  name=+1 Glaive;owner=Auction
  name=+1 Banded Mail;owner=Auction
  name=#b  +1 Shield;owner=Tristan
@@ -231,7 +234,7 @@ party=Ches-3-1370
   name=Potion of Longevitiy
   name=Potion of Claraudience
   name=Potion of Lust
-  name=10x Detect Magic powder;note=Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent identify
+  name=10x Detect Magic powder;note=Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
   name=10x Brighten lamps powder;note=Green odorless powder: increases lamp oil light by 20'
  owner=Party;sold_on=3 Ches 1370;cash=0
   name=Magical Stirrer
@@ -254,6 +257,9 @@ party=Ches-3-1370
  name=10x Detect Invisible powder;note=Grey powder black flecks, smells of rain
  name=10x Knockout powder;note=Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
  name=10x Make Insubstantial powder;note=Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
+ name=2x finely made gold chain 130gp;owner=Maanamere;sold_on=23 Ches 1370;cash=260
+ name=platinum necklace 700gp;owner=Maanamere;sold_on=23 Ches 1370;cash=700
+ name=silver candlesticks 500gp;owner=Maanamere;sold_on=23 Ches 1370;cash=500
 party=Ches-25-1370
  name=-1 Cursed Khopesh;owner=Party;sold_on=25 Ches 1370;cash=0
  name=+1 Shield (needs new handle);owner=Auction
@@ -261,8 +267,8 @@ party=Ches-30-1370
  name=Ring of Fire Resistance
  name=Ebon Fly
  name=3x Urds Teeth Poison
- name=#c  +1 Ring of Protection;owner=Ag
- name=#d  +1? Ring of Protection;owner=Steve
+ name=#d  +1? Ring of Protection;owner=Ag
+ name=#c  +1 Ring of Protection;owner=Steve
  name=+1/+? Ring of Protection;owner=Henkles
  name=10x +1 Arrow;owner=Denyae
  name=6x +1 Arrow;owner=Dexter
@@ -274,6 +280,7 @@ party=Ches-30-1370
  name=#g  2x Sleep Gas Grenade (M);owner=Deringa
  name=Wand of Hurting;owner=Deringa
  name=#h  2x Sleep Gas Grenade (M);owner=Staric
+ name=2x 100gp Chrysoberyl
  owner=Auction
   name=+1 Medium Shield
   name=+1 Footmans Pick
@@ -282,7 +289,7 @@ party=Ches-30-1370
  name=+1/+3(Backstab) Long Sword;owner=Ag;note=+10% Hide in Shadows, Identify
  name=#e  Dagger of Hurting;note=Identify
  name=#b  Potion;note=Identify
-party=Tarsakh-3-1370;name=#a  Nonmagic;owner=Sell;note=Jeweled Dagger, Long Sword, Spear
+party=Tarsakh-3-1370;name=#a  Nonmagic;owner=Sell;note=City Guard Breastplate,Jeweled Dagger, Long Sword, Spear
 party=Tarsakh-4-1370
  name=+1 Sling;owner=Deringa
  name=#e  +1 Dagger;owner=Auction

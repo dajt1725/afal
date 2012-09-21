@@ -33,7 +33,7 @@ create table fr_item (
     item_name varchar(128) unique not null,
     note text,
     acquired_by integer unsigned not null references fr_party,
-    owned_by integer unsigned references fr_character,
+    held_by integer unsigned references fr_character,
     value integer unsigned,
     sale_date integer unsigned
 ) auto_increment=10000;

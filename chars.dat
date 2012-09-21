@@ -70,20 +70,20 @@ notes=Joined the party on <d Nightal 26 1369>.\
  Theo is still staying at Fair Winds,\
  and may be willing to help with obscure bits of forgotten lore.
  name=Barnabus;status=inactive;race=Dwarf;gender=Male;class=Cleric;\
-alignment=Unknown;equipment=Long Forgotten.;\
+alignment=Unknown;player=Jonathan;equipment=Long Forgotten.;\
 characteristics=Cranky and hard to put up with;notes=\
 Joined the party sometime before <d Mirtul 4 1369>.  Last mentioned in the\
  party log on <d Mirtul 26 1369>.
  name=Steve;status=active;alignment=Neutral Good;\
+notes=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
+ Steve joined the party somewhere around\
+ <d Greengrass Festival 1369>.;\
 class=Bard;fullname=Stephen &quot\;Steve&quot\; of Neverwinter;gender=Male;\
 player=Fred;race=&frac12\; Elf;\
 characteristics=Personable, 5'5&quot\;, 121lbs.;\
 equipment=Green Dragon hide armor, Ring of Water Walking, Gargoyle Ring,\
  Cloak of Elvenkind, +1/+2 vs lawful Longsword, trident, javelins,\
- +1 light crossbow, lyre, Staff of Phantasmal Firebals;\
-notes=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
- Steve joined the party somewhere around\
- <d Greengrass Festival 1369>.
+ +1 light crossbow, lyre, Staff of Phantasmal Firebals
  name=Buffy;status=dead;characteristics=dead
  name=Falco;status=inactive;player=Tim?;race=Unknown;class=Fighter?/Priest?;\
 alignment=Unknown;equipment=Lost in the depths of time;\
@@ -132,7 +132,7 @@ equipment=+2 Shield, +1 Ring of Protection, Dagger of Hurting, some assorted\
 notes=Joined the party on <d Eleasias 16 1369>.  Narthan and Cassie decided\
  they'd had too much of vampires and left for Baldurs Gate on \
 <d Nightal 26 1369>.
-  name=Cassie
+  name=Cassie;player=Kathy
  status=active
   name=Ursula;alignment=Neutral Good;\
 class=Specialty Mage(Houri);fullname=Ursula la Bim;\
@@ -160,7 +160,7 @@ equipment=+1 Plate mail, Ring of Protection, <i>Thunderbolt</i> (unique bow),\
  +2 longsword, short sword, various magic arrows,\
  Shield inscribed with Scroll of Summon Mystic Moose
  status=inactive
-  name=Marcae
+  name=Marcae;player=Mike
   name=Stalker
  status=active
   name=Staric;alignment=Neutral Good;class=Bard;\
@@ -180,12 +180,6 @@ notes=The least annoying member of The Shining Sons, Staric was with Dagar\
  contacted A.F.A.L. for help.  When A.F.A.L. arrived in Amphail, he joined up\
  with them as they fled the village on <d Hammer 17 1370>.
   name=Deringa;alignment=Chaotic Good;\
-class=Rich Kid?  Groupie?;fullname=Deringa Eagleshield;gender=Female;\
-large_picture=Deringa_lg.png;picture=Deringa.png;race=Human(?);\
-characteristics=Cute, clever, very quick, very short,\
- short, bleached hair w/purple patch, blue eyes, 5'1&quot\;, 102 lbs.;\
-equipment=expensive clothes, bracers, Dagger, +1 Sling,\
- nose ring, 14 earings (left ear);\
 notes=Childhood friend of Staric Ammakyl, overheard Staric &amp\; Dagar\
  Jhansczil discussing the powers of the\
  <a href="/logs/log_Marpenoth_28_1369.html">Reverential</a>\
@@ -193,7 +187,13 @@ notes=Childhood friend of Staric Ammakyl, overheard Staric &amp\; Dagar\
  <a href="/logs/log_Hammer_17_1370.html">Extroversion</a>, it's effect on\
  Dagar's brother Arrikes, and Arrikes's plot to take over Waterdeep.  Staric\
  couldn't wipe her memory like he did for Dagar, so she had to come along.\
- She joined the party on <d Hammer 17 1370>.
+ She joined the party on <d Hammer 17 1370>.;\
+class=Rich Kid?  Groupie?;fullname=Deringa Eagleshield;gender=Female;\
+large_picture=Deringa_lg.png;picture=Deringa.png;race=Human(?);\
+characteristics=Cute, clever, very quick, very short,\
+ short, bleached hair w/purple patch, blue eyes, 5'1&quot\;, 102 lbs.;\
+equipment=expensive clothes, bracers, Dagger, +1 Sling,\
+ nose ring, 14 earings (left ear)
  status=inactive
   name=Chusnog
   name=Ouguch

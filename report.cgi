@@ -7,7 +7,17 @@ import cgi
 import cgitb
 import re
 
-def format_plural(n,s, p = None):
+
+def format_share(s):
+    s = str(s)
+    if len(s) > 2 and s[-2:] == '.0':
+        return s[:-2]
+    return s
+
+def format_plural(n, s, p = None):
+    """if len(n) is 1, return a singular string, else a plural one"""
+
+    n = len(n)
     if n == 1:
         return '1 ' + s
     elif p is None:
@@ -15,18 +25,15 @@ def format_plural(n,s, p = None):
     else:
         return str(n) + ' ' + p
 
-def format_share(s):
-    if s == 1.0:
-        return '1'
-    if s == 0.0:
-        return '0'
-    return str(s)
-
 def format_date(d):
+    if type(d) == int:
+        d = afal.date_to_str(d)
     if args.text:
         return d
     else:
-        return '<a href="/logs/log_'+re.sub(' ', '_', d)+'.html">'+d+'</a>'
+        l = re.sub(' Festival', '', d)
+        l = re.sub(' ', '_', l)
+        return '<a href="/logs/log_' + l + '.html">' + d + '</a>'
 
 def format_party(p):
     if args.text:
@@ -35,11 +42,22 @@ def format_party(p):
         return '<a href="report.cgi?party_name=' + p + '&generate=Party">' + p + '</a>'
 
 def format_character(c):
-    if text:
+    if args.text:
         return c
     else:
         return '<a href="report.cgi?char_name=' + c + '&generate=Character">' + c + '</a>'
 
+def party_to_log(p):
+    return '<a href="logs/log_' + re.sub(r'([^-]*)-([^-]*)-([^-]*)', r'\1_\2_\3', p) + '.html">'
+
+def format_item(i, acquired_by = None, item_id = None):
+    if args.text:
+        return i
+    else:
+        if acquired_by is None:
+            acquired_by = afal.get_item_acquired_by(item_id)
+        party_name = afal.get_party_name(acquired_by)
+        return party_to_log(party_name) + i + '</a>'
 
 def fmt_date(m):
     return format_date(m.group(1))
@@ -56,10 +74,161 @@ def munge_html(s):
         ret = re.sub(r'</?sup>', '', ret)
         ret = re.sub(r'</?a[^>]*>', '', ret)
         ret = re.sub(r'<br>', '\n', ret)
-        ret = re.sub(r'</?d>', '', ret)
-    else:
-        ret = re.sub(r'<d ([^>]*)>', fmt_date, ret)
+    ret = re.sub(r'<d ([^>]*)>', fmt_date, ret)
     return ret
+
+#############################################################################
+
+def print_char(data, verbose = False):
+    al = munge_html(data['alignment'])
+    if al == '':
+        al = 'Unknown Alignment'
+    ass = munge_html(data['association'])
+    cl = munge_html(data['class'])
+    if cl == '':
+        cl = 'Unknown Class'
+    fn = data['fullname']
+    if fn is None:
+        fn = data['name']
+    else:
+        fn = munge_html(fn)
+    gn = munge_html(data['gender'])
+    if gn == '':
+        gn = 'Unknown Gender'
+    ra = munge_html(data['race'])
+    if ra == '':
+        ra = 'Unknown Race'
+    st = munge_html(data['status'])
+    eq = munge_html(data['equipment'])
+    ct = munge_html(data['characteristics'])
+    no = munge_html(data['notes'])
+    if data['player'] is None:
+        pl = ''
+        bg = '/back3l15.gif'
+    else:
+        pl = ' (' + munge_html(data['player']) + ')'
+        bg = '/back3l16.gif'
+    if args.text:
+        a1 = ''
+        c1 = '\n'
+        a2 = '  '
+        c2 = ''
+        e2 = '  ' + ass + '  ' + st + '  '
+        i2 = '  '
+        k2 = '  '
+        m2 = ''
+        a3 = '  Equipment:  '
+        c3 = ''
+        a4 = '  Characteristics:  '
+        c4 = ''
+        a5 = '  Notes:  '
+        c5 = ''
+        a6 = ''
+        a7 = '  Cash '
+        c7 = ''
+        a8 = '\n'
+    else:
+        if verbose:
+            a1 = '<hr /><h2><b>'
+            b1 = data['name']
+            c1 = '</b></h2>'
+        else:
+            a1 = ''
+            b1 = ''
+            c1 = ''
+        c1 += '<table border="border" width="90%" background="' + bg + '">'
+        a2 = '   <tr><td width="40%"><a name="' + data['name'] + '"><b>'
+        c2 = '</b></a>'
+        e2 = '</td><td width="20%">'
+        i2 = '</td><td width="20%">'
+        k2 = '</td><td width="20%">'
+        m2 = '</td></tr>'
+        a3 = '  <tr><td colspan="3"><u>Equipment:</u>  '
+        c3 = '</td>'
+        a4 = '  <tr><td colspan="3"><u>Characteristics:</u>  '
+        c4 = '  </td></tr>'
+        a5 = '   <tr><td colspan="3"><u>Notes:</u>  '
+        c5 = '   </td></tr>'
+        a6 = '</table>'
+        a7 = '<h3>Cash '
+        c7 = '</h3>'
+        a8 = '<br>'
+        if eq == '':
+            eq = 'Unknown'
+        if ct == '':
+            ct = 'Forgotten'
+        if no == '':
+            no = 'None'
+
+    print(a1, b1, c1, sep='')
+    print(a2, fn, c2, pl, e2, ra, ' ', gn, i2, cl, k2, al, m2, sep='')
+    if eq != '':
+        print(a3, eq, c3, sep='')
+    if not args.text:
+        if data['picture_url'] is not None:
+            print('<td colspan="1" rowspan="3" align="center" valign="center" bgcolor="white">')
+            if data['large_picture_url'] is not None:
+                print('  <a href="/', data['large_picture_url'], '"><img src="/', data['picture_url'], '" alt="', fn, '"</a>', sep='')
+            else:
+                print('  <img src="/', data['picture_url'], '" alt="', fn, '" alighn="left"></td>', sep='')
+        print('</tr>')
+
+    if ct != '':
+        print(a4, ct, c4, sep='')
+    if no != '':
+        print(a5, no, c5, sep='')
+    print(a6)
+    if verbose:
+        cash = data['cash']
+        if cash > 0:
+            cash = afal.str_cp(cash)
+            print(a7, cash, c7, sep='')
+        print(a8)
+
+
+def print_parties(parties):
+        needshare = False
+        if args.text:
+            a1 = '  '
+            c1 = ''
+            a2 = ('    ', '   ', '   ')
+            c2 = ''
+            d2a = ' for '
+            d2c = ' share'
+            e2 = ('', '', '\n')
+            a3 = ''
+        else:
+            for i in parties:
+                if i[1] != 1.0:
+                    needshare = True
+                    break
+            a1 = '<hr /><h3>'
+            c1 = '</h3><table border=1><tr>'
+            if needshare:
+                c1 += '<th>Party</th><th>Share</th><th>|</th><th>Party</th><th>Share</th><th>|</th><th>Party</th><th>Share</th>'
+            else:
+                c1 += '<th colspan="3">Party</th>'
+            c1 += '</tr>'
+            a2 = ('<tr><td>', '<td>', '<td>')
+            c2 = '</td>'
+            if needshare:
+                d2a = '<td>'
+                d2c = '</td>'
+                e2 = ('<td>|</td>','<td>|</td>','</tr>\n')
+            else:
+                d2=''
+                e2 = ('','','</tr>\n')
+            a3 = '</table><br>'
+        print(a1, format_plural(parties, 'Party', 'Parties'), c1, sep = '')
+        n = 0
+        for i in parties:
+            if needshare:
+                d2 = d2a + format_share(i[1]) + d2c
+            print(a2[n%3], format_party(afal.get_party_name(i[0])), c2, d2, e2[n%3], sep='', end='')
+            n += 1
+        if n % 3 != 0:
+            print(e2[2], end='')
+        print(a3)
 
 def print_debt(l, tf, p):
     s = 0
@@ -76,7 +245,7 @@ def print_debt(l, tf, p):
         n = d[ch]['n']
         d[ch][n] = {}
         d[ch][n]['amount'] = afal.str_cp(i['amount'])
-        d[ch][n]['date'] = i['contracted_on']
+        d[ch][n]['date'] = format_date(i['contracted_on'])
         d[ch][n]['order'] = str(i['order'])
         if i['order'] != 0:
             needorder = True
@@ -86,20 +255,19 @@ def print_debt(l, tf, p):
         else:
             d[ch][n]['share'] = '1'
         if i['item_id'] is not None:
+            d[ch][n]['item_id'] = i['item_id']
             d[ch][n]['item_name'] = afal.get_item_name(i['item_id'])
-        else:
-            d[ch][n]['item_name'] = None
         d[ch][n]['initial'] = afal.str_cp(i['initial_cp'])
         if i['initial_cp'] != i['amount']:
             needinitial = True
         n += 1
         d[ch]['n'] = n
 
-    s1 = format_plural(len(l), p + ' Debt') + ' (Total ' + afal.str_cp(s) + ')'
-    if text:
-        print('  ', s1, sep='')
+    b1 = format_plural(l, p + ' Debt') + ' (Total ' + afal.str_cp(s) + ')'
+    if args.text:
+        print('  ', b1, sep='')
     else:
-        print('<hr /><h3>', s1, '</h3>', sep='')
+        print('<hr /><h3>', b1, '</h3>', sep='')
         print('<table border="1"><tr><th>Who</th><th>Date</th><th>Amount</th>', end='')
         if needinitial:
             print('<th>Initial</th>',end='')
@@ -111,7 +279,7 @@ def print_debt(l, tf, p):
     k = d.keys()
     k.sort()
     for i in k:
-        if text:
+        if args.text:
             if d[i]['n']>1:
                 print('    ', i, ' Total ', afal.str_cp(d[i]['sum']), sep='')
             else:
@@ -120,7 +288,7 @@ def print_debt(l, tf, p):
                 initial = '' if d[i][j]['initial'] == d[i][j]['amount'] else ' of ' + d[i][j]['initial']
                 order = '' if d[i][j]['order'] == '0' else ' repay order ' + d[i][j]['order']
                 share = '' if d[i][j]['share'] == '1' else ' for ' + d[i][j]['share'] + ' share'
-                item =  '' if d[i][j]['item_name'] is None else ' for ' + d[i][j]['item_name']
+                item = '' if 'item_name' not in d[i][j] else  ' for ' + format_item(d[i][j]['item_name'], item_id = d[i][j]['item_id'])
                 print('      ', d[i][j]['date'], '  ', d[i][j]['amount'], initial, order, share, item, sep='')
         else:
             for j in range(d[i]['n']):
@@ -132,37 +300,315 @@ def print_debt(l, tf, p):
                 else:
                     print('<tr>', end='')
 
-                print('<td>', format_date(d[i][j]['date']), '</td><td>', d[i][j]['amount'], '</td>', sep='', end='')
+                print('<td>', d[i][j]['date'], '</td><td>', d[i][j]['amount'], '</td>', sep='', end='')
                 if needinitial:
                     print('<td>', d[i][j]['initial'], '</td>', sep='', end='')
                 if needshare:
                     print('<td>', d[i][j]['share'], '</td>', sep='', end='')
                 if needorder:
                     print('<td>', d[i][j]['order'], '</td>', sep='', end='')
-                print('<td>', d[i][j]['item_name'], '</td></tr>', sep='', end='')
+                print('<td>', '' if 'item_name' not in d[i][j] else format_item(d[i][j]['item_name'], item_id = d[i][j]['item_id']), '</td></tr>', sep='')
             print('</tr>')
-    if text:
+    if args.text:
         print()
     else:
         print('</table>')
 
+def print_items(items, show_note = True, show_acquired_by = False, show_held_by = False):
+    if args.text:
+        a1 = '  '
+        c1a = ''
+        c1b = ''
+        c1c = ''
+        c1d = ''
+        c1e = ''
 
+        a2 = '    '
+# b2 = i['name']
+        c2a = ', Note:  '
+        c2b = ''
+# d2 = i['note'] or ''
+        e2 = ', Acquired by:  '
+# f2 = i['acquired_by']
+        g2a = ', Held by:  '
+        g2b = ''
+# h2 = i['held_by']
+        i2 = ', History:  '
+# j2 = ...
+        k2 = ''
+
+        a3 = ''
+    else:
+        a1 = '<hr /><h3>'
+        c1a = '</h3><table border="1"><tr><th>Item</th>'
+        c1b = '<th>Note</th>'
+        c1c = '<th>Acquired by</th>'
+        c1d = '<th>Held by</th>'
+        c1e = '<th>History</th></tr>'
+
+        a2 = '<tr><td>'
+# b2 = i['name']
+        c2a = '</td><td>'
+        c2b = '</td><td>'
+# d2 = i['note'] or ''
+        e2 = '</td><td>'
+# f2 = i['acquired_by']
+        g2a = '</td><td>'
+        g2b = '</td><td>'
+# h2 = i['held_by']
+        i2 = '</td><td>'
+
+        k2 = '</tr>'
+
+        a3 = '</table><br>'
+
+    if show_note:
+        found = False
+        for i in items:
+            if i['note'] is not None:
+                found = True
+                break
+        if not found:
+            show_note = False
+
+    if show_held_by:
+        found = False
+        for i in items:
+            if i['held_by'] is not None:
+                found = True
+                break
+        if not found:
+            show_held_by = False
+
+    c1 = c1a
+    if show_note:
+        c1 += c1b
+    else:
+        c2 = ''
+        d2 = ''
+
+    if show_acquired_by:
+        c1 += c1c
+    else:
+        e2 = ''
+        f2 = ''
+
+    if show_held_by:
+        c1 += c1d
+    else:
+        g2 = ''
+        h2 = ''
+
+    c1 += c1e
+    print(a1, format_plural(items, 'Item'), c1, sep = '')
+    for i in items:
+        b2=format_item(i['item_name'], acquired_by = i['acquired_by'])
+        if show_note:
+            if i['note'] is not None:
+                c2 = c2a
+                d2 = i['note']
+            else:
+                c2 = c2b
+                d2 = ''
+        if show_acquired_by:
+            f2 = format_party(afal.get_party_name(i['acquired_by']))
+        if show_held_by:
+            if i['held_by'] is not None:
+                g2 = g2a
+                h2 = format_character(afal.get_char_name(i['held_by']))
+            else:
+                g2 = g2b
+                h2 = ''
+        if i['sale_date'] is None:
+            j2 = "Party item"
+        elif i['value'] > 0:
+            j2 = "Bought on " + format_date(i['sale_date']) + " for " + afal.str_cp(i['value'])
+        else:
+            j2 = "Given on " + format_date(i['sale_date'])
+        print(a2, b2, c2, d2, e2, f2, g2, h2, i2, j2, k2, sep='')
+
+    print(a3)
+
+
+def print_journal(j, show_sub = False):
+    if args.text:
+        a1 = '  '
+        c1a = ''
+        c1b = ''
+        c1c = ''
+        a2 = '    '
+        c2 = '  '
+        d2a = 'Sub'
+        d2b = ''
+        f2 = ''
+        a3 = ''
+    else:
+        a1 = '<hr /><h3>'
+        c1a = '</h3><table border="1"><tr><th>Date</th>'
+        c1c = '<th>Entry</th></tr>'
+        c1b = '<th>Sub</th>'
+        a2 = '<tr><td>'
+        c2 = '</td><td>'
+        d2a = 'No</td><td>'
+        d2b = 'Yes</td><td>'
+
+        f2 = '</td></tr>'
+        a3 = '</table><br>'
+    if show_sub:
+        c1 = c1a + c1b + c1c
+    else:
+        c1 = c1a + c1c
+        d2 = ''
+    print(a1, format_plural(j, 'Transaction Journal Entry', 'Transaction Journal Entries'), c1, sep='')
+
+    for e in j:
+        b2 = format_date(e['made_on'])
+        e2 = e['description']
+        if show_sub:
+            d2 =  d2a if e['part_of'] is None else d2b
+        print(a2, b2, c2, d2, e2, f2, sep='')
+    print(a3)
+
+def print_full_character(c):
+    if len(c) > 1:
+        if args.text:
+            a1 = '        '
+            c1 = '\n'
+        else:
+            a1 = '<hr size="3"/><h1>'
+            c1 = '</h1><br>'
+        print(a1, format_plural(c, 'Character'), c1, sep='')
+    for char_name in c:
+        data = afal.get_char_data(char_name)
+        print_char(data, verbose = True)
+        char_id = afal.get_char_id(char_name)
+        cparties = afal.get_char_parties(char_id)
+        if len(cparties):
+            print_parties(cparties)
+        items = afal.get_items('Owned_by', char_id)
+        if len(items):
+            print_items(items, show_acquired_by = True)
+        receivable = afal.get_char_receivable(char_id)
+        if len(receivable):
+            print_debt(receivable, 'from_id', 'Receivable')
+        payable = afal.get_char_payable(char_id)
+        if len(payable):
+            print_debt(payable, 'to_id', 'Payable')
+        j = afal.get_journal(character=char_id, primary=True)
+        if len(j):
+            print_journal(j)
+
+
+def print_members(members):
+    h = {}
+    needshare = False
+    shares = 0
+    for i in members:
+        share = i[1]
+        h[afal.get_char_name(i[0])] = format_share(share)
+        shares += share
+        if share != 1:
+            needshare = True
+
+    if args.text:
+        a1 = '  '
+        c1 = ''
+        a2 = ('    ','  ','  ')
+        c2a1 = ' for '
+        c2a3 = ' share'
+        c2b = ''
+        d2 = ('', '', '\n')
+        a3 = ''
+    else:
+        a1 = '<h3>'
+        c1 = '</h3><br>'
+        if needshare:
+            c1 += '<table border="1"><tr><th>Member</th><th>Share</th><th>|</th><th>Member</th><th>Share</th><th>|</th><th>Member</th><th>Share</th></tr>'
+        else:
+            c1 += '<table border="1"><tr><th colspan="3">Member</th></tr>'
+        a2 = ('<tr><td>','<td>', '<td>')
+        if needshare:
+            c2a1 = '</td><td>'
+            c2a3 = ''
+            c2b = '</td><td>1'
+            d2 = ('</td><td>|</td>','</td><td>|</td>','</td></tr>')
+        else:
+            c2 = ''
+            d2 = ('</td>','</td>','</td></tr>')
+        a3 = '</table><br>'
+    b1 = format_plural(members, 'Member')
+    if shares != len(members):
+        if shares == 1:
+            b1 += ', ' + '1 Share'
+        else:
+            b1 += ', ' + format_share(shares) + ' Shares'
+
+    print(a1, b1, c1, sep='')
+    k = h.keys()
+    k.sort()
+    n = 0
+    for i in k:
+        if needshare:
+            c2 = h[i]
+            if c2 != 1:
+                c2 = c2a1 + c2 + c2a3
+            else:
+                c2 = c2b
+        print(a2[n%3], format_character(i), c2, d2[n%3], sep='', end='')
+        n += 1
+    if n % 3 != 0:
+        print(d2[2], end='')
+    print(a3)
+
+def print_full_party(p):
+    if len(p) > 1:
+        if args.text:
+            a1 = '\n        '
+            c1 = '\n'
+        else:
+            a1 = '<hr size="3"/><h1>'
+            c1 = '</h1>'
+        print(a1, format_plural(p, 'Party', 'Parties'), c1, sep='')
+    for party_name in p:
+        party_id = afal.get_party_id(party_name)
+        items = afal.get_items('Acquired_by', party_id)
+        if args.text:
+            print(party_name)
+        else:
+            print("<hr /><h2><b>", party_to_log(party_name), party_name, "</a></b></h2><br>", sep='')
+
+        members = afal.get_party_members(party_id)
+        if len(members):
+            print_members(members)
+
+        if len(items):
+            print_items(items, show_acquired_by = False)
+
+def print_people(p):
+    if len(p) > 1:
+        if args.text:
+            a1 = '\n        '
+            c1 = '\n'
+        else:
+            a1 = '<hr size="3"/><h1>'
+            c1 = '</h1>'
+        print(a1, format_plural(p, 'Person', 'People'), c1, sep='')
+    for char_name in p:
+        print_char(afal.get_char_data(char_name), verbose=False)
+
+
+#############################################################################
 parser = argparse.ArgumentParser('Generate a report')
-parser.add_argument('--text', '-t', help='text, not CGI', action='store_true', default=False)
-parser.add_argument('--all', '-a', help='report on everything', action='store_true', default=False)
-parser.add_argument('--character', '-c', help='report on this character', default=None)
-parser.add_argument('--party', '-p', help='report on this party', default=None)
-parser.add_argument('--journal', '-J', help='journal on this character', action='store_true', default=None)
-parser.add_argument('--journal-char', '-C', help='journal on this character', default=None)
-parser.add_argument('--journal-start', '-j', help='display the transaction journal starting from this date', default=None)
-parser.add_argument('--journal-end', '-k', help='display the transaction journal up to this date', default = None)
-parser.add_argument('--items', '-i', help='display unresolved items', default = False, action='store_true')
+parser.add_argument('--text', '-t', action='store_true', default=False, help='text, not CGI')
+parser.add_argument('--all', '-a', action='store_true', default=False, help='report on everything')
+parser.add_argument('--character', '-c', nargs='*', default=None, help='report on these characters')
+parser.add_argument('--party', '-p', nargs='*', default=None, help='report on these parties')
+parser.add_argument('--journal', '-j', nargs=3, default=None, help='journal on this character')
+parser.add_argument('--items', '-i', help='display sepecified item type')
+parser.add_argument('--members', '-m', help='display members of the specified group')
 args=parser.parse_args()
 
-tmp = afal.get_characters(status = 'active', assoc = 'AFAL')
-character_list = []
-for i in tmp:
-    character_list.append(i[1])
+character_list = afal.get_characters('Current')
 
 tmp = afal.get_parties()
 party_list = []
@@ -171,38 +617,22 @@ for i in tmp:
 
 journal_list = afal.get_journal_dates()
 
-text = args.text
-chars = []
-parties = []
-party_name = None
-journal_start = None
-journal_end = None
-journal_character = None
-if text:
+if args.text:
     if args.all:
-        chars = character_list
-        parties = party_list
-        args.journal = True
-        args.items = True
-    elif args.character is not None:
-        chars = [args.character]
-    elif args.party is not None:
-        parties = [args.party]
-    elif args.journal_start is not None or args.journal_end is not None or args.journal_char is not None:
-        args.journal = True
-        journal_start = afal.str_to_date(args.journal_start)
-        journal_end = afal.str_to_date(args.journal_end)
-        journal_character = afal.get_char_id(args.journal_char)
-    elif args.items:
-        pass
-    elif args.journal:
+        args.character = character_list
+        args.party = party_list
+        args.journal = [None, None, None]
+        args.items = 'All'
+        args.members = 'All'
+    elif args.character is not None or args.party is not None or args.items is not None or args.journal is not None or args.members is not None:
         pass
     else:
         print("Dunno what to do")
-        chars = character_list
-        parties = party_list
-        args.journal = True
-        args.items = True
+        args.character = character_list
+        args.party = party_list
+        args.journal = [None, None, None]
+        args.items = 'All'
+        args.members = 'All'
 else:
     cgitb.enable()
     print("""Content-Type: text/html
@@ -211,7 +641,7 @@ else:
 <head><title>AFAL Finance Report</title></head>
 <body background="/back3l07.gif">
   <center>
-    <b>Select a character:</b><br />
+    <b>Select a character:</b>
     <form action="report.cgi" method="GET">
       <select name="char_name">
         <option value="All">All</option>""")
@@ -220,7 +650,7 @@ else:
     print("""      </select>
       <input type="submit" name="generate" value="Character" />
     </form>
-    <br><b>or Select a party:</b><br>
+    <b>or Select a party:</b>
     <form action="report.cgi" method="GET">
       <select name="party_name">
         <option value="All">All</option>""")
@@ -229,7 +659,7 @@ else:
     print("""      </select>
       <input type="submit" name="generate" value="Party" />
     </form>""")
-    print("    <br><b>or select a journal range</b><br>")
+    print("    <b>or Select a journal range</b>")
     print('    <form action="report.cgi" method="GET">')
 
     print('      From <select name="journal_start">')
@@ -251,341 +681,101 @@ else:
     print('      </select>')
 
     print('      <input type="submit" name="generate" value="Journal" />')
-    print("    </form><br><b>or display unresolved items</b><br>")
+    print('       </form>')
+
+    print('    <b>or Select items</b>')
     print('    <form action="report.cgi" method="GET">')
+    print('      <select name="item_type">')
+    print('        <option value="All">All</option>')
+    print('        <option value="Unresolved">Unresolved</option>')
+    print('        <option value="Party">Party</option>')
+    print('        <option value="Sell">to Sell</option>')
+    print('        <option value="Auction">to Auction</option>')
+    print('        <option value="Identify">to Identify</option>')
+    print('        <option value="Lent">Lent out</option>')
+    print('      </select>')
     print('      <input type="submit" name="generate" value="Items"/>')
+    print('</form>')
+
+    print('    <b>or Select a group</b>')
+    print('    <form action="report.cgi" method="GET">')
+    print('      <select name="members">')
+    print('        <option value="All">All</option>')
+    print('        <option value="Current">Current AFAL members</option>')
+    print('        <option value="Former">Former AFAL members</option>')
+    print('        <option value="Dead">Dead AFAL members (in memorium)</option>')
+    print('        <option value="ActiveNPCs">Active NPCs</option>')
+    print('        <option value="InactiveNPCs">Inactive NPCs</option>')
+    print('        <option value="DeadNPCs">NPCs we have kiled</option>')
+    print('      </select>')
+    print('      <input type="submit" name="generate" value="Group"/>')
+    print('</form>')
     form = cgi.FieldStorage()
     todo = form.getfirst("generate","")
     if todo == 'Character':
         char_name = form.getfirst("char_name","")
         if char_name == 'All':
-            chars = character_list
+            args.character = character_list
         else:
-            chars = [char_name]
+            args.character = [char_name]
     elif todo == 'Party':
         party_name = form.getfirst("party_name","")
         if party_name == 'All':
-           parties = party_list
+           args.party = party_list
         else:
-            parties = [party_name]
+            args.party = [party_name]
     elif todo == 'Journal':
-        args.journal = True
-        journal_start = form.getfirst("journal_start","")
-        if journal_start == 'All':
-            journal_start = None
-        else:
-            journal_start=afal.str_to_date(journal_start)
-        journal_end = form.getfirst("journal_end","")
-        if journal_end == 'All':
-            journal_end = None
-        else:
-            journal_end = afal.str_to_date(journal_end)
-        journal_character = form.getfirst("journal_character","")
-        if journal_character == 'All':
-            journal_character = None
-        else:
-            journal_character = afal.get_char_id(journal_character)
+        args.journal = [form.getfirst("journal_start",""), form.getfirst("journal_end",""), form.getfirst("journal_character","")]
     elif todo == 'Items':
-        args.items = True
+        args.items = form.getfirst("item_type","")
+    elif todo == 'Group':
+        args.members = form.getfirst("members","")
     elif args.all:
-        chars = character_list
-        parties = party_list
-        args.journal = True
-        args.items = True
+        args.character = character_list
+        args.party = party_list
+        args.journal = [None, None, None]
+        args.items = 'All'
+        args.members = 'All'
 
-if len(chars) > 1:
-    s1 = format_plural(len(chars), 'Character')
-    if text:
-        print('        ', s1, '\n', sep='')
-    else:
-        print('<hr size="3"/><h1>', s1, '</h1><br>', sep='')
-for char_name in chars:
-    char_id = afal.get_char_id(char_name)
-    items = afal.get_items_owned_by(char_id)
-    cparties = afal.get_char_parties(char_id)
-    payable = afal.get_char_payable(char_id)
-    receivable = afal.get_char_receivable(char_id)
-    data = afal.get_char_data(char_id)
-    cash = data['cash']
-    cash = afal.str_cp(cash) if cash > 0 else ''
-    a = munge_html(data['alignment'])
-    ass = munge_html(data['association'])
-    c = munge_html(data['class'])
-    fn = data['fullname']
-    if fn is None:
-        fn = data['name']
-    else:
-        fn = munge_html(fn)
-    g = munge_html(data['gender'])
-    r = munge_html(data['race'])
-    s = munge_html(data['status'])
-    eq = munge_html(data['equipment'])
-    ct = munge_html(data['characteristics'])
-    no = munge_html(data['notes'])
-    if data['player'] is None:
-        p = ''
-        b = '/back3l15.gif'
-    else:
-        p = ' (' + munge_html(data['player']) + ')'
-        b = '/back3l16.gif'
-    if text:
-        print(char_name, "\n", sep='')
-        print('  ', fn, p, '  ', ass, '  ', s, '  ', r, ' ', g, '  ', c, '  ', a, sep='')
-        if eq != '':
-            print('  Equipment:  ', eq, sep='')
-        if ct != '':
-            print('  Characteristics:  ', ct, sep='')
-        if data['notes'] is not None:
-            print('  Notes:  ', no, sep='')
-        if cash != '':
-            print("  Cash ", cash, "\n", sep='')
-    else:
-        print('<hr /><h2><b>', char_name, '</b></h2>', sep='')
-        print('<table border="border" width="90%" background="', b, '">', sep='')
-        print('   <tr><td width="40%"><a name="', char_name, '"><b>', fn,'</b></a>', p, '</td>', sep='')
-        print('   <td width="20%">', r, ' ', g, '</td>', sep='')
-        print('   <td width="20%">', c, '</td>', sep='')
-        print('   <td width="20%">', a, '</td></tr>', sep='')
-        if eq != '':
-            print('  <tr><td colspan="3"><u>Equipment:</u>  ', eq, '</td>', sep='')
-            if data['picture_url'] is not None:
-                print('<td colspan="1" rowspan="3" align="center" valign="center" bgcolor="white">')
-                if data['large_picture_url'] is not None:
-                    print('  <a href="/', data['large_picture_url'], '"><img src="/', data['picture_url'], '" alt="',fn,'"</a>', sep='')
-                else:
-                    print('  <img src="/', data['picture_url'], '" alt="', fn, '" alighn="left"></td>', sep='')
-            print('</tr>')
-        if ct != '':
-            print('  <tr><td colspan="3"><u>Characteristics:</u>  ', ct, '  </td></tr>', sep='')
-        if no != '':
-            print('   <tr><td colspan="3"><u>Notes:</u>  ', no,'   </td></tr>', sep='')
-        print('</table><br>')
+if args.character is not None:
+    print_full_character(args.character)
 
-        if cash != '':
-            print('<h3>Cash ', cash, '</h3><br>', sep='')
-        else:
-            print('<br>')
-    if len(cparties):
-        needshare = False
-        for i in cparties:
-            if i[1] != 1.0:
-                needshare = True
-                break
-        s1 = format_plural(len(cparties), 'Party', 'Parties')
-        if text:
-            print('  ', s1, sep='')
-        else:
-            print('<h3>', s1, '</h3><br>', sep='')
-            if needshare:
-                print('<table border=1><tr><th>Party</th><th>Share</th><th>Party</th><th>Share</th><th>Party</th><th>Share</th></tr>')
-            else:
-                print('<table border=1><tr><th colspan="3">Party</th></tr>')
-        a1=('<tr>','','')
-        a2=('','','</tr>')
-        n = 0
-        for i in cparties:
-            p = format_party(afal.get_party_name(i[0]))
-            s1=''
-            if text:
-                if i[1] != 1.0:
-                    s1 += ' for ' + format_share(i[1]) + ' share'
-                print('    ',p , s1, sep='')
-            else:
-                if needshare:
-                    s1 = '<td>' + format_share(i[1]) + '</td>'
-                print(a1[n%3], '<td>', p, '</td>', s1, a2[n%3], sep='', end='')
-                n += 1
-        if text:
-            print()
-        else:
-            print('</table><br>')
-
-    if len(items):
-        s1 = format_plural(len(items), 'Item')
-        if text:
-            print('  ', s1, sep='')
-        else:
-            print('<h3>', s1, '</h3><br>', sep='')
-            print('<table border="1"><tr><th>Item</th><th>History</th></tr>', sep='')
-        for i in items:
-            l1=i['item_name']
-            s1 = ''
-            if i['note'] is not None:
-                l1 += "  Note: " + i['note']
-            if i['sale_date'] is None:
-                s1 += "  (Party item)"
-            elif i['value'] > 0:
-                s1 += "  bought on " + format_date(i['sale_date']) + " for " + afal.str_cp(i['value'])
-            else:
-                s1 += "  given on " + format_date(i['sale_date'])
-            if text:
-                print('    ', l1, s1, sep='')
-            else:
-                print('<tr><td>', l1, '</td><td>', s1, '</td></tr>', sep='')
-        if text:
-            print()
-        else:
-            print('</table><br>')
-
-    if len(receivable):
-        print_debt(receivable, 'from_id', 'Receivable')
-
-    if len(payable):
-        print_debt(payable, 'to_id', 'Payable')
-
-    j = afal.get_journal(character=char_id, primary=True)
-    if len(j):
-        s1 = format_plural(len(j), 'Journal Entry', 'Journal Entries')
-        if text:
-            print('  ', s1, sep='')
-            for e in j:
-                print('    ', format_date(e['made_on']), '  ', e['description'], sep='')
-            print()
-        else:
-            print('<br><h3>', s1, '</h3><table border="1"><tr><th>Date</th><th>Entry</th></tr>', sep='')
-            for e in j:
-                print("<tr><td>", format_date(e['made_on']), "</td><td>", e['description'], "</td></tr>", sep='')
-            print("</table><br>")
-
-    if text:
-        print()
-
-if len(parties) > 1:
-    s1 = format_plural(len(parties), 'Party', 'Parties')
-    if text:
-        print("\n        ", s1, '\n', sep='')
-    else:
-        print('<br><hr size="3"/><h1>', s1, '</h1><br>', sep='')
-for party_name in parties:
-    party_id = afal.get_party_id(party_name)
-    members = afal.get_party_members(party_id)
-    items = afal.get_items_acquired_by(party_id)
-    if text:
-        print(party_name)
-    else:
-        print("<hr /><h2>", party_name, "</h2><br>", sep='')
-    if len(members):
-        h = {}
-        needshare = False
-        shares = 0
-        for i in members:
-            c = afal.get_char_name(i[0])
-            if i[1] != 1.0:
-                h[c] = format_share(i[1])
-                needshare = True
-                shares += i[1]
-            else:
-                h[c] = '1'
-                shares += 1
-
-        s1 = format_plural(len(members), 'Member')
-        if shares != len(members):
-            s1 += ', ' + format_plural(shares, 'Share')
-        if text:
-            print("  ", s1, sep='')
-        else:
-            print('<h3>', s1, '</h3><br>', sep='')
-            if needshare:
-                print('<table border="1"><tr><th>Member</th><th>Share</th></tr>')
-            else:
-                print('<table border="1"><tr><th>Member</th></tr>')
-        k = h.keys()
-        k.sort()
-        for i in k:
-            n1 = h[i]
-            if text:
-                if n1 == '1':
-                    n1 = ''
-                else:
-                    n1 = " for " + n1 + " share"
-                print('    ', i, n1, sep='')
-            else:
-                if needshare:
-                    n1 = '</td><td>' + n1
-                else:
-                    n1 = ''
-                print('<tr><td>', format_character(i), n1, '</td></tr>', sep='')
-        if text:
-            print()
-        else:
-            print("</table><br>")
-
-    if len(items):
-        s1 = format_plural(len(items), 'Item')
-        if text:
-            print("  ", s1, sep='')
-        else:
-            print('<h3>', s1, '</h3><br>', sep='')
-            print('<table border="1"><tr><th>Item</th><th>Disposition</th>')
-        for i in items:
-            i1 = i['item_name']
-            if i['note'] is not None:
-                i1 += "  Note: " + i['note']
-            c = ''
-            if i['owned_by'] is not None:
-                c = format_character(afal.get_char_name(i['owned_by']))
-            s1 = ''
-            if i['sale_date'] is not None:
-                d = " on " + format_date(i['sale_date'])
-                if i['value'] > 0:
-                    s1 += "  Sold to " + c + " for " + afal.str_cp(i['value']) + d
-                else:
-                    s1 += "  Given to " + c + d
-            elif i['owned_by'] is not None:
-                s1 += "  Lent to " + c
-            else:
-                s1 += '  Unresolved'
-            if text:
-                print('    ', i1, s1, sep = '')
-            else:
-                print("<tr><td>", i1, "</td><td>", s1, "</td></tr>", sep = '' )
-        if text:
-            print()
-        else:
-            print("</table><br>")
-    if text:
-        print()
+if args.party is not None:
+    print_full_party(args.party)
 
 if args.journal:
-    j = afal.get_journal(journal_start, journal_end, character=journal_character)
-    s1 = format_plural(len(j), 'Transaction Journal Entry', 'Transaction Journal Entries')
-    if text:
-        print('\n        ', s1, '\n', sep='')
-    else:
-        print('<hr size="3"/><h1>', s1, '</h1><br><table border = "1"><tr><th>Date</th><th>Sub</th><th>Entry</th></tr>')
-    for e in j:
-        if text:
-            s1 = '    ' if e['part_of'] is None else '      '
-            
-            print(s1, format_date(e['made_on']), '  ', e['description'], sep='')
-        else:
-            print('<tr><td>', format_date(e['made_on']), '</td><td>', 'No' if e['part_of'] is None else 'Yes', '</td><td>', e['description'], "</td></tr>", sep='')
-    if text:
-        print()
-    else:
-        print("</table><br>")
+    start = args.journal[0]
+    if start == 'All':
+        start = None
+    elif start is not None:
+        start = afal.str_to_date(start)
+    end = args.journal[0]
+    if end == 'All':
+        end = None
+    elif end is not None:
+        end = afal.str_to_date(end)
+    character = args.journal[2]
+    if character == 'All':
+        character = None
+    elif character is not None:
+        character = afal.get_char_id(character)
+    j = afal.get_journal(start, end, character)
+    if len(j) > 0:
+        print_journal(j, show_sub = True)
 
-if args.items:
-    items = afal.get_unresolved_items()
-    s1 = format_plural(len(items), 'Unresolved Item')
-    if text:
-        print('\n        ', s1, '\n', sep = '')
-    else:
-        print('<hr size="3"/><h3>', s1, '</h3><br><table border="1"><tr><th>Party</th><th>Item</th></tr>')
-    for i in items:
-        p = format_party(i['acquired_by'])
-        n = '  Note: ' + i['note'] if 'note' in i and i['note'] is not None else ''
-        iname = i['item_name'] + n
-        if text:
-            print('  ', p, '  ', iname, sep='')
-        else:
-            print('<tr><td>', p, '</td><td>', iname, '</td></tr>', sep='')
-    if text:
-        print()
-    else:
-        print('</table><br>')
+if args.items is not None:
+    items = afal.get_items(args.items)
+    if len(items) > 0:
+        print_items(items, show_acquired_by = True, show_held_by = True)
 
-if not text:
+if args.members is not None:
+    characters = afal.get_characters(args.members)
+    if len(characters) > 0:
+        print_people(characters)
+
+if args.text:
+    print()
+else:
     print("""
   </center>
 </body>

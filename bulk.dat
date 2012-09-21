@@ -1,6 +1,7 @@
 buy;date=30 Eleasias 1369;item=#b  Charged +1 Dagger;buyer=outside the party;cash=500;virtual
 buy;date=12 Uktar 1369;item=+1 Dagger (can glow enough to read a map);buyer=destroyed
 buy;date=14 Uktar 1369;item=#a  +1 Ring of Protection;buyer=Henkles;debt=5350
+owe;date=14 Uktar 1369;by=Henkles;to=Dexter;amount=100
 buy;date=1 Nightal 1369
  buyer=outside the party;item=Rod of Caltrops
  buyer=destroyed
@@ -8,7 +9,10 @@ buy;date=1 Nightal 1369
   item=Preserved Green Dragon Breath
   item=Potion of Rainbow Hues
 date=1 Tarsakh 1370
- owe;by=Henkles;to=Dexter;amount=100
+ buy;buyer=Dexter;item=Ebon Fly;cash=5000
+ buy;buyer=Henkles;item=3x Urds Teeth Poison;cash=105
+ buy;buyer=Darius;item=2x 100gp Chrysoberyl;cash=200;virtual
+date=2 Tarsakh 1370
  owe;by=Darius;to=Ches-30-1370;amount=10000;item=#a  +1 Ring of Protection
  buy
   buyer=Ag
@@ -27,11 +31,9 @@ date=1 Tarsakh 1370
    item=Ring of Fire Resistance;debt=5000
    item=#b  Ring of Warmth;debt=5000
    item=#b  Ring of Water Walking;debt=5000
-   item=Ebon Fly;cash=5000
    item=#a  Potion of Invisibility;cash=500
   buyer=Henkles
    item=Sproing Ring;debt=5000
-   item=3x Urds Teeth Poison;cash=105
    item=+1/+? Ring of Protection;debt=2000
   buyer=Maanamere
    item=+1 Full Plate Armor;debt=30000
@@ -56,11 +58,19 @@ date=4 Tarsakh 1370;pay;by=Maanamere;virtual
  amount=400;to=Staric;note=2 200gp emeralds
  amount=90;to=Staric;note=amber
  amount=200;to=Steve;note=2 100gp carnelians
+ amount=260;to=Steve;note=2 130gp gold chains
  amount=20;to=Steve;note=gold earring
  amount=700;to=Darius;note=platinum necklace
  amount=500;to=Henkles;note=Silver Candlesticks
  amount=40;to=Misery;note=8 5gp bloodstones
 date=4 Tarsakh 1370;pay;by=Darius;amount=700;to=Dexter;note=Platinum Necklace;virtual
+date=4 Tarsakh 1370;buy;buyer=Deringa;item=2x large opal earring 750gp together;cash=0;virtual
+date=4 Tarsakh 1370;buy;buyer=Darius;item=platinum necklace 700gp;cash=0;virtual
+date=4 Tarsakh 1370;buy;buyer=Dexter;item=platinum necklace 700gp;cash=0;virtual
+date=4 Tarsakh 1370;buy;buyer=Henkles;item=silver candlesticks 500gp;cash=0;virtual
+date=4 Tarsakh 1370;buy;buyer=Steve;item=2x finely made gold chain 130gp;cash=0;virtual
+date=4 Tarsakh 1370;buy;buyer=Steve;item=gold earring 20gp;cash=0;virtual
+date=4 Tarsakh 1370;buy;buyer=Misery;item=8x bloodstone 5gp;cash=0;virtual
 #date=4 Tarsakh 1370;pay;by=Henkles;to=Dexter;amount=500;note=Silver Candlesticks;virtual
 date=4 Tarsakh 1370;pay;by=Maanamere;to=outside the party;amount=50;note=three boats, 9 barrels, planks
 date=5 Tarsakh 1370;buy;item=+1 Sling;buyer=Deringa;debt=2500
