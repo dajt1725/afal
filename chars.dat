@@ -325,7 +325,7 @@ characteristics=Strong, unattractive/unpleasant, short black hair,\
 gender=Male;class=Fighter, dwarf-at-arms;alignment=Lawful Neutral;\
 equipment=Scale Mail, shield, Footman's pick (Sp), +1 Composite short bow,\
  Long sword, Battle axe;characteristics=Strong, quick, shoulder-length black\
- hair, brown eyes, 4'1&quot\;, 159 lbs.;Notes=Was aware of the reward being\
+ hair, brown eyes, 4'1&quot\;, 159 lbs.;notes=Was aware of the reward being\
  offered by the brewmaster from the start.  Hired on <d Nightal 4 1369>\
  for 27gp, a bottle of zzar and a 1 bottle or flagon beer per day.\
  <p>Left the party on <d Nightal 6 1369> after the minotaur adventure.
@@ -347,7 +347,7 @@ notes=First encountered on <d Nightal 8 1369>. Also on <d Nightal 11 1369>.\
  We got gifts from her on <d Ches 20 1370>.
 name=Dusty;fullname=Dusty Donnybrook;status=active;association=None known;\
 race=Human?;gender=Male?;class=Thief;alignment=Unknown;equipment=Unknown;\
-characteristics=Forgotten.;Notes=Interviewed on <d Nightal 4 1369>, but he did\
+characteristics=Forgotten.;notes=Interviewed on <d Nightal 4 1369>, but he did\
  so badly in the interview that he left out of embarassment. We hired him on\
  <d Nightal 5 1369> to look into the burglary of Fair Winds.\
  He reported on <d Nightal 12 1369> with the location of the warehouse that the\
