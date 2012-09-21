@@ -86,7 +86,7 @@ def add_entries(d, line):
             line = line[sep+1:]
             h1 = ''
         else:
-            hdr = line
+            hdr = h1+line
             line = ''
         if '=' in hdr:
             e = hdr.index('=')
