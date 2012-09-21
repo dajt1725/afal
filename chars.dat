@@ -17,7 +17,7 @@ notes=Some clerical spellcasting ability (lay priest of Mystra),\
  blunt weapon restriction, a phobia of snakes, and tongue-tied around women.\
  Darius is one of the founding party members.
   name=Dexter;alignment=Neutral Good;class=Ranger/Spec Pr - Selune;\
-fullname=Dexter Melaenarlir;gender=Male;picture=Dexter.png;\
+fullname=Dexter Melaenarlir;gender=Male;picture=Dexter.png;gold=6000;\
 large-picture=Dexter_lg.png;player=Dina;race=&frac12\;Elf;\
 characteristics=Green cat's eyes, strong, wise, clever, white hair, 6', 195lbs.;\
 equipment=+1 plate mail, +1 shield, <i>Perditor Mortua</i>, Moon's Hand Mace,\

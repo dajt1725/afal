@@ -112,6 +112,7 @@ def do_transaction(d):
         text = from_name + ' paid ' + afal.str_cp(amount_cp) + ' to ' + to_name + note
         journal_id = afal.journal(date, from_id, to_id, amount_cp, text)
         note = ''
+        topay = {}
         for i in payable:
             id = i['debt_id']
             this_owed = i['amount']
@@ -119,7 +120,8 @@ def do_transaction(d):
             to_id = i['to_id']
             i['date'] = date
             i['from_name'] = from_name
-            i['to_name'] = afal.get_char_name(to_id)
+            to_name = afal.get_char_name(to_id)
+            i['to_name'] = to_name
             i['part_of'] = journal_id
             i['note'] = note
             this_cp = afal.divide_cp(amount_cp * this_owed, owed)
@@ -128,11 +130,18 @@ def do_transaction(d):
             else:
                 afal.debt_lower_owed(i, this_cp, ' paid ')
             if 'virtual' not in d:
-                i['amount'] = this_cp
-                afal.chars_move_cash(i)
+                if to_name in topay:
+                    topay[to_name]['amount'] += this_cp
+                else:
+                    i['amount'] = this_cp
+                    topay[to_name] = i
             amount_cp -= this_cp
             owed -= this_owed
             shares -= this_share
+
+        if 'virtual' not in d:
+            for i in topay:
+                afal.chars_move_cash(topay[i])
 
     elif 'owe' in d:
         date = afal.str_to_date(d['date'])
