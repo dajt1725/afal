@@ -1,4 +1,4 @@
-name=Auction;status=inactive
+name=Auction;status=inactive;notes=Wombat foo-share glurb &frac12\;-food
 name=Sell;status=inactive
 name=destroyed;status=inactive
 name=outside the party;gold=10000000000;status=inactive
@@ -132,7 +132,14 @@ equipment=+2 Shield, +1 Ring of Protection, Dagger of Hurting, some assorted\
 notes=Joined the party on <d Eleasias 16 1369>.  Narthan and Cassie decided\
  they'd had too much of vampires and left for Baldurs Gate on \
 <d Nightal 26 1369>.
-  name=Cassie;player=Kathy
+  name=Cassie;player=Kathy;fullname=Cassiopeia;race=Human;gender=Female;\
+class=Specialty Mage(Enchantress);alignment=Neutral Good;\
+equipment=Darts, +2/+0(Wizards)/-3(Enchanters) Dagger, +1 Ring of Protection;\
+characteristics=Wise, attractive, mid-length brown hair &amp\; brown eyes,\
+ freckles, 5'3&quot\;, 110lbs., wears natural or neutral colors, nervous smile;\
+notes=She joined the party sometime before <d Eleasias 18 1369>.\
+  Cassie traveled to Baldur's Gate with Narthan on <d Nightal 26 1369>\
+ because they didn't want to deal with the vampires any more.
  status=active
   name=Ursula;alignment=Neutral Good;\
 class=Specialty Mage(Houri);fullname=Ursula la Bim;\
@@ -160,8 +167,41 @@ equipment=+1 Plate mail, Ring of Protection, <i>Thunderbolt</i> (unique bow),\
  +2 longsword, short sword, various magic arrows,\
  Shield inscribed with Scroll of Summon Mystic Moose
  status=inactive
-  name=Marcae;player=Mike
-  name=Stalker
+  name=Marcae;fullname=Marcae Trapper;player=Mike;race=Human;gender=Male;\
+class=&quot\;Battle Mage&quot\;alignment=Neutral;equipment=Staff Sling,\
+ +1 Flame Blade Rapier (possibly other non-weapon powers);\
+characteristics=Clever, quick, long, curly blonde hair, brown eyes,\
+ 6'3&quot\;, 195 lbs.;notes=Silverymoon native, worked for city guards during\
+ Demon War, looking to do some traditional adventuring.<p>  Joined the\
+ party on <d Nightal 4 1369>d for a full share of treasure with a guaranteed\
+ minimum of 85gp.  He was also entitled to a 3/8-share of the reward for\
+ killing the minotaur chieftain.<p>  He left the party on <d Nightal 9 1369>\
+ because he didn't want to be near Denyae.
+  name=Stalker;notes=From &quot\;lotsa places, mostly\
+ da woods&quot\;.  Claims to be a Ranger with some lockpicking and\
+ trap-detecting skills he picked up in his &quot\;misspent youth&quot\;.  Dexter\
+ reports that he does know at least the basics of woodsmanship and tracking.\
+  Henkles reports him to be competent with two weapons at once, but perhaps\
+ <i>too</i> quick with his longsword.  No references.<p> Looking for long-term\
+ arrangement, willing to try one-time with an option to join.  Confused by the\
+ party name.  Not wanted by the law so far as he knows.  <p>&quot\;Well, one\
+ time some friends and I explored a haunted farm in what they're now calling\
+ Luruar.  Real messed up - looked like the whole farm got turned to animated\
+ skeletons that couldn't be turned during the Time o' Troubles.  I picked up\
+ some club training after that.  Ya can always find a club.&quot\; <p>&quot\;A\
+ month ago I tracked down an ogre that was demanding tribute from this village\
+ near Baldur's Gate, 'cept it turned out he wasn't an ogre.  See he kept showing\
+ up for his take whenever their defenses were down and then vanishing into the\
+ woods before the militia could chase him.  So I followed his tracks and it\
+ turned out it was just some wizard changing shape.&quot\;<p> Stalker joined\
+ the party (on <d Nightal 4 1369>) for a full share of treasure and a\
+ &frac14\;-share of the reward for killing the minotaur chieftain.\
+ <p>Stalker chose to stay at the orc village on <d Ches 17 1370>.;\
+fullname=Stalker Jarvis;race=&frac12\; Orc;gender=Male;\
+class=&quot\;Ranger&quot\;;alignment=Neutral;equipment=+1/+3 vs fire Studded\
+ Leather Armor, Longsword, +2 Hand Axe, +1 Long Bow;\
+characteristics=Extremely strong, very quick, somewhat dim, very long black\
+ hair, brown eyes, 5'9&quot\;, 192 lbs.
  status=active
   name=Staric;alignment=Neutral Good;class=Bard;\
 fullname=Staric Ammakyl;gender=Male;large_picture=Staric_lg.png;\
@@ -195,8 +235,29 @@ characteristics=Cute, clever, very quick, very short,\
 equipment=expensive clothes, bracers, Dagger, +1 Sling,\
  nose ring, 14 earings (left ear)
  status=inactive
-  name=Chusnog
-  name=Ouguch
+  name=Chusnog;race=Orc;gender=Male;class=Fighter;alignment=Lawful Evil;\
+equipment=black and red full plate, red cloak, morning star, 2 throwing axes;\
+large_picture=Chusnog_lg.png;picture=Chusnog.png;\
+characteristics=oily black hair, red eyes, many battle scars, large and\
+ heavy-set, cloven hooves, rarely speaks (doesn't speak Common);\
+notes=Chusnog is one of the personal bodyguards of Oscho Skurgorg nuk'Bahgtru,\
+ High Priest of Bahgtru.  Skurgorg assigned him to accompany AFAL when they\
+ used a gate in the temple of Bahgtru in the village of G'Skorgogh Hur-Bahgtru.\
+  He acted as Oguch's bodyguard for the duration.<p> Chusnog and Oguch joined\
+ the party on the <d Midwinter Festival 1370> and returned to their village on\
+ <d Ches 7 1370>.
+  name=Oguch;fullname=Oguch of Bahgtru;race=Orc;gender=Male;\
+class=Priest of Bahgtru;alignment=Lawful Evil;equipment=high collar black robe,\
+ holy symbol, spiked gauntlet of Bahgtru, Morning Star, Sling w/bullets;\
+characteristics=part of nose &amp\; left tusk missing, peircing black eyes,\
+ constantly looks suspicious, keeps hair shaved off, suspicious, obsequious;\
+notes=Oguch is a high-ranking priest of Bahgtru, the orc god of strength,\
+ loyalty, and stupidity.  He was assigned by his High Priest to accompany the\
+ party when they used a gate in the temple of Bahgtru in the village of\
+ G'Skorgogh Hur-Bahgtru.  He is presumably tasked with keeping an eye on the\
+ party and perhaps has other, unknown tasks as well.  <p>They joined the party\
+ on <d Midwinter Festival 1370>. He and Chusnog returned to their village on\
+<d Ches 7 1370>.;large_picture=Oguch_lg.png;picture=Oguch.png
  status=active
   name=Ag;alignment=Neutral Good;class=Thief;gender=Male;\
 player=Bill;race=Human;\
@@ -218,3 +279,79 @@ class=Champion of Moradin;characteristics=Short hair, neat dark beard;\
 equipment=dwarven plate, boots of alacrity, shield of groovy brightness,\
  +1 wern of wind;\
 notes=Joined the party on <d Tarsakh 1 1370> on the orders of the priests of Selune.
+  name=Mrap-M'rap;race=Tressym;gender=Male;class=Cat;alignment=Chaotic Neutral;\
+equipment=Light purple rock in right eye socket.;picture=mrap07.jpg;\
+characteristics=A silver tabby - a common British cat with tortoise-shell\
+ blotches of light and dark gray instead of stripes.  His left ear is half\
+ missing, except for a little scrap of flesh that sort of dangles off of the\
+ remaining half.  Running along the right side of his face are three parallel\
+ scars (probably claw induced, but it was a big claw) that run through where\
+ his right eye used to be.  In the place of his eye is what looks like a pale\
+ purpleish stone, like something you'd find in a riverbed and keep for about an\
+ hour because it was pretty. Pale purple doesn't go with his fur.  Speaking\
+ of it's fur, big patches are missing, exposing red, flaking skin.  His right\
+ front paw is missing, and it obviously healed without medical attention.  His\
+ remaining eye is a bloodshot yellow.  It smells faintly of piss and beer.\
+ If tressym can be judged by wingless cat standards, this one probably counts\
+ as old and scrawny.;notes=He joined the party on <d Kythorn 29 1369>.  He\
+ drinks an amazing amount of booze.
+ status=inactive
+  name=Alril;fullname=Alril Elarorrieth;race=Moon Elf;gender=Male;\
+class=Fighter;alignment=Neutral Evil;equipment=Field plate, partisan,\
+ composite short bow, dagger, +2 magic short sword;large_picture=Alril_lg.png;\
+picture=Alril.png;characteristics=Shoulder-length, curly black hair, blue\
+ eyes, chiseled, 5&apos\;1&quot\;, 112 lbs.  High, Stuttering voice.;\
+notes=A mercenary formerly employed by Silent Travellers, He elected to\
+ change sides instead of being eaten by a giant on <d Hammer 20 1370>.\
+ He was paid off and let go on <d Ches 30 1370>.
+  name=Altilitac;fullname=Altilitac Mithar;race=Human;gender=Male;\
+class=Fighter, man-at-arms;alignment=Lawful Neutral;\
+equipment=+1 Splint Mail, shield Broad sword (Sp), Long bow, +1 Battle axe,\
+ Hand or throwing axe;characteristics=Strong, quick, calm, pleasant,\
+ long red hair, blue eyes, 6'2&quot\;, 180 lbs.;\
+notes=He asked for 10gp/day + expenses + &frac12\;-share, hired for 17gp +\
+ expenses + &frac14\;-share on <d Nightal 4 1369>.  He left the party on\
+ <d Nightal 6 1369> after the completion of the minotaur adventures.
+  name=Etiste;fullname=Etiste Birdstalker;race=Human;gender=Female;\
+class=Fighter, woman-at-arms;alignment=Chaotic Good;\
+equipment=Banded Mail, shield, Scimitar, +1 Sling w/bullets, Warhammer,\
+ Light crossbow, Dagger;\
+characteristics=Strong, unattractive/unpleasant, short black hair,\
+ 5&apos\;3&quot\;, 136lbs;notes=Hired (<d Nightal 3 1369>)\
+ for 8gp/day + equipment replacement (non-magical) + &frac14\;-share of any\
+ treasure found on foray.  Told to be at Fair Winds 1 hour past sunrise, 12/5.\
+ <p>Left the party on <d Nightal 6 1369> after the minotaur adventure.
+  name=Holmain;fullname=Holmain Nephew of Harso Valtac;race=Dwarf;\
+gender=Male;class=Fighter, dwarf-at-arms;alignment=Lawful Neutral;\
+equipment=Scale Mail, shield, Footman's pick (Sp), +1 Composite short bow,\
+ Long sword, Battle axe;characteristics=Strong, quick, shoulder-length black\
+ hair, brown eyes, 4'1&quot\;, 159 lbs.;Notes=Was aware of the reward being\
+ offered by the brewmaster from the start.  Hired on <d Nightal 4 1369>\
+ for 27gp, a bottle of zzar and a 1 bottle or flagon beer per day.\
+ <p>Left the party on <d Nightal 6 1369> after the minotaur adventure.
+  name=Kades;fullname=Kades Thadestidesgar;race=Human;gender=Male;\
+class=Fighter;alignment=Chaotic Neutral;equipment=Banded mail, long bow,\
+ battle axe, knife, bastard sword;large_picture=Kades_lg.png;picture=Kades.png;\
+characteristics=Shoulder-length, curly brown/dk blonde hair, blue eyes,\
+ 5&apos\;11&quot\;, 180 lbs. Deep, accented voice.;notes=Mercenary formerly\
+ employed by Silent Travellers.  Elected to change sides instead of being\
+ eaten by a giant on <d Hammer 20 1370>.  Paid off and let go on\
+ <d Ches 30 1370>.
+name=Arcturagana;status=active;association=lieutenant of Dread William;\
+race=Moon Elf;gender=Female;class=Vampire/Ranger;alignment=Chaotic Evil;\
+equipment=bow, others unknown;\
+characteristics=beautiful, but everything else is forgotten.;\
+notes=First encountered on <d Nightal 8 1369>. Also on <d Nightal 11 1369>.\
+ She visited Fair Winds on <d Nightal 20 1369>.  We attacked her in one of her\
+ lairs on <d Nightal 21 1369>.  She made another attack on <d Hammer 8 1370>.\
+ We got gifts from her on <d Ches 20 1370>.
+name=Dusty;fullname=Dusty Donnybrook;status=active;association=None known;\
+race=Human?;gender=Male?;class=Thief;alignment=Unknown;equipment=Unknown;\
+characteristics=Forgotten.;Notes=Interviewed on <d Nightal 4 1369>, but he did\
+ so badly in the interview that he left out of embarassment. We hired him on\
+ <d Nightal 5 1369> to look into the burglary of Fair Winds.\
+ He reported on <d Nightal 12 1369> with the location of the warehouse that the\
+ thief was working out of, most likely for Rabairnil.  On <d Nightal 17 1369>\
+ we hired him to watch for the return of the Endurance. On <d Nightal 23 1369>\
+ he reported that it had. On <d Hammer 8 1370> we hired him to find out anything\
+ about the Star Chaser.

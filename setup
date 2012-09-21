@@ -6,7 +6,7 @@ drop database afal;
 create database afal;
 EOF
 mysql -uafal -pBuffyStewart afal < afal-schema.sql.mysql
-./chars
+./chars -v
 ./parties
 ./items
 ./bulk
