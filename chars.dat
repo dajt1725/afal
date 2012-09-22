@@ -355,3 +355,92 @@ characteristics=Forgotten.;notes=Interviewed on <d Nightal 4 1369>, but he did\
  we hired him to watch for the return of the Endurance. On <d Nightal 23 1369>\
  he reported that it had. On <d Hammer 8 1370> we hired him to find out anything\
  about the Star Chaser.
+status=dead;association=Silent Travellers
+ name=Gurugh;fullname=Gurugh Brightfire;race=&frac12\;orc;gender=Male;\
+class=Fighter/thief?;alignment=Unknown;\
+equipment=Varies, depending on what we've looted off him.  Initially full plate\
+ armor, magic bastard sword, short bow (I think);\
+characteristics=Forgotten by now.;notes= First met on <d Uktar 12 1369> as the\
+ party was attempting to leave Undermountain with the Shining Sons. Encountered\
+ in the graveyard on <d Uktar 30 1369> by Narthan.  Encountered in a tavern on\
+ <d Nightal 10 1369> by Henkles and Jan.  Encountered at Fair Winds on\
+ <d Nightal 21 1369> by the entire party.  They traded the location of a vampire\
+ lair for one of the Daggers of Hurting.  Encounterd at an auction on\
+ <d Hammer 6 1370>.  Seen (dead) on <d Hammer 20 1370> being cooked by a giant.\
+ Possibly visited Fair Winds on <d Ches 24 1370> in an attempt at urban renewal.\
+ Encountered in Undermountain on <d Ches 30 1370>. His headless body was left on\
+ the second level and his head was tossed into the oil in the cooking room.
+ name=Marraba;fullname=Marraba Minarmas;race=&frac12\;elf;gender=female;\
+class=Mage/Thief;alignment=Unknown;equipment=Varies, depending on what we've\
+ looted off her.  Initially robes, longsword, short bow, rod;\
+characteristics=Forgotten by now.;notes=First met on <d Uktar 12 1369> as the\
+ party was attempting to leave Undermountain with the Shining Sons.\
+ Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
+ a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
+ Winds on <d Nightal 21 1369> by the entire party.  They traded the location\
+ of a vampire lair for one of the Daggers of Hurting. Encounterd at an\
+ auction on <d Hammer 6 1370>. Seen (dead) on <Hammer 20 1370> being cooked\
+ by a giant.  Possibly visited Fair Winds on <d Ches 24 1370> in an attempt\
+ at urban renewal.  Encountered in Undermountain on <d Ches 30 1370>.\
+ Her headless body was left on the second level and her head was tossed into\
+ the oil in the cooking room.
+ name=Mirima;fullname=Mirrima Thadodarin;race=Human;gender=Female;\
+class=Cleric (Pain of Loviatar);alignment=Unknown;equipment=Varies, depending\
+ on what we've looted off her. Initially +2 scale mail, +1 shield,\
+ morning star, whip, sling.characteristics=Forgotten by now.;notes=First met\
+ on <Uktar 12 1369> as the party was attempting to leave Undermountain with\
+ the Shining Sons.  Encountered in the graveyard on <d Uktar 30 1369> by\
+ Narthan. Encountered in a tavern on <d Nightal 10 1369> by Henkles and Jan.\
+ Encountered at Fair Winds on <d Nightal 21 1369> by the entire party.  They\
+ traded the location of a vampire lair for one of the Daggers of Hurting.\
+ Encounterd at an auction on <d Hammer 6 1370>. Seen (dead) on\
+ <d Hammer 20 1370> being cooked by a giant. Possibly visited Fair Winds on\
+ <d Ches 24 1370> in an attempt at urban renewal. Encountered in\
+ Undermountain on <d Ches 30 1370>. Her headless body was left on the second\
+ level and her head was tossed into the oil in the cooking room.
+ name=Relask;fullname=Relask Radon;race=Human;gender=Male;class=Thief;\
+alignment=Unknown;equipment=Varies, depending on what we've looted off him.\
+ Initially +2 leather armor, longsword, magic dagger, short bow.;\
+characteristics=Forgotten by now.;notes=First met on <Uktar 12 1369>\
+ as the party was attempting to leave Undermountain with the Shining Sons.\
+ Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
+ a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
+ Winds on <d Nightal 21 1369> by the entire party.  They traded the location\
+ of a vampire lair for one of the Daggers of Hurting. Encounterd at an\
+ auction on <d Hammer 6 1370>. After AFAL captured him on <d Hammer 20 1370>\
+ he escaped/was released from captivity when when he, Jan, Kades, and Alril\
+ returned to Waterdeep sometime after <d Alturiak 6 1370>. Possibly visited\
+ Fair Winds on <d Ches 24 1370> in an attempt at urban renewal. Encountered\
+ at The Yawning Portal on <d Ches 25 1370> but we were mostly civil to him\
+ and we managed to plant the fact that we have a boat. Encountered in\
+ Undermountain on <d Ches 30 1370>.  His headless body was left on the second\
+ level and his head was tossed into the oil in the cooking room.
+ name=Thadidon;fullname=Thadidon Ramnardaphorask;race=Human;gender=Male;\
+class=Fighter?;alignment=Unknown;equipment=Varies, depending on what we've\
+ looted off him. Initially plate mail, longsword, magic dagger, short bow.;\
+characteristics=Forgotten by now.;notes=First met on <d Uktar 12 1369>\
+ as the party was attempting to leave Undermountain with the Shining Sons.\
+ Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
+ a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
+ Winds on <d Nightal 21 1369> by the entire party.  They traded the location\
+ of a vampire lair for one of the Daggers of Hurting. Encounterd at an\
+ auction on <d Hammer 6 1370>. Seen (dead) on <d Hammer 20 1370> being cooked\
+ by a giant. Possibly visited Fair Winds on <d Ches 24 1370> in an attempt at\
+ urban renewal. Encountered in Undermountain on <d Ches 30 1370>.\
+ His headless body was left on the second level and his head was tossed into\
+ the oil in the cooking room.
+association=Silent Travellers;status=active;name=Marrin;\
+fullname=Marrin Rhaunrenardon;race=Human;gender=Male;class=Fighter?;\
+alignment=Unknown;equipment=Varies, depending on what we've looted off him.\
+ Initially full plate armor,  morning star, magic dagger, short bow (I think).\
+characteristics=Forgotten by now.;notes=First met on <d Uktar 12 1369> as the\
+ party was attempting to leave Undermountain with the Shining Sons.\
+Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
+ a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
+ Winds on <d Nightal 21 1369> by the entire party.  They traded the location\
+ of a vampire lair for one of the Daggers of Hurting. Encounterd at an\
+ auction on <d Hammer 6 1370>. Seen (dead) on <d Hammer 20 1370> being cooked\
+ by a giant. Possibly visited Fair Winds on <d Ches 24 1370> in an attempt at\
+ urban renewal. Encountered in Undermountain on <d Ches 30 1370>. He\
+ surrendered, so he was released in the cooking room, where he fled though\
+ the exit teleport.
