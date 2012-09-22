@@ -48,7 +48,7 @@ def format_character(c):
         return '<a href="report.cgi?char_name=' + c + '&generate=Character">' + c + '</a>'
 
 def party_to_log(p):
-    return '<a href="logs/log_' + re.sub(r'([^-]*)-([^-]*)-([^-]*)', r'\1_\2_\3', p) + '.html">'
+    return '<a href="/logs/log_' + re.sub(r'([^-]*)-([^-]*)-([^-]*)', r'\1_\2_\3', p) + '.html">'
 
 def format_item(i, acquired_by = None, item_id = None):
     if args.text:
