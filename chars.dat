@@ -84,7 +84,8 @@ characteristics=Personable, 5'5&quot\;, 121lbs.;\
 equipment=Green Dragon hide armor, Ring of Water Walking, Gargoyle Ring,\
  Cloak of Elvenkind, +1/+2 vs lawful Longsword, trident, javelins,\
  +1 light crossbow, lyre, Staff of Phantasmal Firebals
- name=Buffy;status=dead;characteristics=dead
+ name=Buffy;fullname=Elizabeth &quot\;Buffy&quot\; Rose;status=dead;\
+characteristics=dead;notes=Joined the party on <d Kythorn 8 1369>, died on <d Flamerule 23 1369>
  name=Falco;status=inactive;player=Tim?;race=Unknown;class=Fighter?/Priest?;\
 alignment=Unknown;equipment=Lost in the depths of time;\
 characteristics=Forgotten;notes=Nobody knows when he joined the party.  Last\
