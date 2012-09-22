@@ -1,37 +1,49 @@
 party=Mirtul-26-1369
- owner=outside the party;sold_on=23 Ches 1370;debt=15000;name=Windchimes of Dusk
+ owner=outside the party;sold_on=23 Ches 1370;debt=15000;name=Windchimes of Dusk;note=Partially identifed by Devlin on <d Kythorn 27 1369>, Buffy on <d Flamerule 5 1369>
  owner=Party;sold_on=26 Mirtul 1369;cash=0
   name=Space Heater
-  name=Monster: Manual of Golems
-  name=Monster: Manual of Bodily Health
-  name=Monster: Libram of Gainful Conjuration
-party=Kythorn-10-1369;name=Sproing Ring;owner=Henkles
+  name=Monster: Manual of Golems;note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
+  name=Monster: Manual of Bodily Health;note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
+  name=Monster: Libram of Gainful Conjuration;note=ESP by Darius on <d Flamerule 16 1369>
+# Devlin partially identifies Urgoth on <d Kythorn 27 1369>, and the 28th.
+# Buffy identifies Dexter's leather thong as a snare
+# Key on Eleasias 1 1369, Eleasias 27
+# Cassie used scroll Eleasias 18
+# Stewart used Chardolyn
+# Eleint 17 5x +1 Flight Arrow: Dexter, Maanamere, Henkles, Misery, Narthan
+# Ditto +1 sling bullet to Darius
+# Net purchased Higharvestide 1369
+# Sewer keys Marpenoth 1 1369
+party=Kythorn-10-1369;name=Sproing Ring;owner=Henkles;\
+note=Partially id by Devlin on <d Kythorn 26 1369>, Darius failed\
+ <d Flamerule 4 1369>, Buffy failed <d Flamerule 5 1369>, Steve Cassie, Darius\
+ failed <d Eleasias 27 1369>, Cassie part id <d Marpenoth 11 1369>
 party=Kythorn-16-1369
  name=5x(1 used) Oil of Sharpness
- name=#a  Potion of Heroism
+ name=#a  Potion of Heroism;note=Devlin failed to identify on <d Kythorn 25 1369>, Buffy failed on <d Kythorn 26 1369>, Buffy id <d Flamerule 5 1369>
  name=Potion of 3d8 extra hit points
  name=Scroll of Protection from Petrification
  name=Scroll of Protection from Magic
  name=Scroll (MU) L3: Slow
- name=Potion of Delusion (Flying);owner=Party;sold_on=16 Kythorn 1369;cash=0
+ name=Potion of Delusion (Flying);owner=Party;sold_on=16 Kythorn 1369;cash=0;note=Identified by Devlin on <d Kythorn 24 1369>.
  sold_on=24 Flamerule 1369;cash=0
-  name=Silver Strike;owner=Henkles
-  name=Binky;owner=Maanamere
+  name=Silver Strike;owner=Henkles;note=Identified on <d Kythorn 24 1369> by Devlin, Buffy failed on <d Kythorn 28 1369>, Darius failed on <d Kythorn 28 1369>, Steve failed on <d Flamerule 4 1369>, Buffy id <d Flamerule 4 1369>
+  name=Binky;owner=Maanamere;note=Devlin failed to identify on <d Kythorn 26 1369>, Buffy failed on <d Kythorn 28 1369>, Darius partially identified on <d Kythorn 28 1369>, Steve partially id on <d Flamerule 4 1369>, Buffy id <Flamerule 4 1369>, Darius id on <Flamerule 4 1369>
  owner=Auction
-  name=Potion of Ventriloquism
+  name=Potion of Ventriloquism;note=Identified by Delin on <d Kythorn 26 1369>
   name=Scroll (C) Lighten Load
 party=Flamerule-23-1369
- name=Deck of Wonderous Transformation;owner=Party;sold_on=23 Flamerule 1369;cash=0
- name=Glass Sphere of Wall of Force
- name=Ioun Stone of Protection;owner=Darius
- name=Ring of Magic Missiles;owner=Steve;note=Used up on or before Hammer 13 1370
+ name=Deck of Wonderous Transformation;owner=Party;sold_on=23 Flamerule 1369;cash=0;note=Devlin id <d Eleasias 1 1369>
+ name=Glass Sphere of Wall of Force;note=Steve id <d Eleasias 1 1369>
+ name=Ioun Stone of Protection;owner=Darius;note=Devlin partially id, Darius, steve failed on <d Eleasias 1 1369>, Steve, Cassie id <d Eleasias 27 1369>
+ name=Ring of Magic Missiles;owner=Steve;note=Devlin, Darius Steve failed id <d Eleasias 1 1.69>, Used up on or before Hammer 13 1370
 party=Eleasias-16-1369
  name=Scroll (C12) Volume of Sweet Air, 2x Flamewalk
  name=Scroll (C12) 3x Continual Darkness;owner=Auction
  name=Scroll (C) Sanctify to Shar;owner=outside the party;sold_on=16 Eleasias 1369;note=to the Moon Knights
 party=Eleasias-18-1369
- name=3x Potion of Shopping
- name=Cooking Pot of Divination;owner=party;sold_on=18 Eleasias 1369;cash=0
+ name=3x Potion of Shopping;note=Steve part id <d Eleasias 26 1369>,
+ name=Cooking Pot of Divination;owner=party;sold_on=18 Eleasias 1369;cash=0;note=Steve part id, Darius id on <d Eleasias 26 1369>
  name=#a  Charged +1 Dagger;owner=outside the party;sold_on=26 Eleasias 1369;cash=500
  name=#b  Charged +1 Dagger;owner=Misery;sold_on=26 Eleasias 1369;cash=500
  name=6x Makeup of Disguise;owner=outside the party;sold_on=26 Eleasias 1369;cash=700
@@ -41,9 +53,9 @@ party=Eleasias-30-1369
  name=+2/+3(Large)/+4(Huge+) Purple Chain Mail;owner=Misery;sold_on=30 Eleasias 1369;cash=1500
  name=+1 Shield can cast 1d4 healing once/week;owner=Party;sold_on=30 Eleasias 1369;cash=1500
 party=Eleint-19-1369
- name=2x Sheaf Arrow of Holding;owner=Denyae
+ name=2x Sheaf Arrow of Holding;owner=Denyae;note=Steve failed, Darius id <d Eleint 20 1369>
  name=+2 Shield;owner=Narthan;sold_on=20 Eleint 1369;debt=2100;cash=900
- name=Ring of Teleport Adventurer Into Undermountain
+ name=Ring of Teleport Adventurer Into Undermountain;note=Steve, Darius part id on <d Eleint 20 1369>;owner=outside the party;sold_on=27 Eleint 1369
  name=Oil of Firey Burning;owner=destroyed;sold_on=12 Uktar 1369;note=by Steve
 party=Marpenoth-1-1369
  name=Perditor Mortua;owner=Dexter
@@ -52,9 +64,9 @@ party=Marpenoth-1-1369
   name=Scroll (C) L3: Inflict Moderate Wounds
   name=+1 Studded Leather Armor
  name=Scroll (C) L1: Aid
- name=Potion of Aid;owner=Maanamere
- name=Potion of Enlarge;owner=Narthan;note=Auction
- name=Potion of Blur;owner=Misery
+ name=Potion of Aid;owner=Maanamere;note=Darius, Steve, Cassie failed id <d Marpenoth 1 1369>, Cassie id <Marpenoth 11 1369>
+ name=Potion of Enlarge;owner=Narthan;note=Auction,Darius id <d Marpenoth 1 1369>
+ name=Potion of Blur;owner=Misery;note=Darius failed, Steve id <d Marpenoth 1 1369>
 party=Marpenoth-12-1369;name=Gargoyle Ring;owner=Steve
 party=Marpenoth-23-1369
  name=+2/+0(Mages)/-3(Enchanters) Dagger;owner=Cassie;sold_on=24 Marpenoth 1369;cash=1250
@@ -62,15 +74,12 @@ party=Marpenoth-23-1369
  name=Scroll (C) Heal;owner=Party
  name=Scroll (C) Ressurection;owner=Party
  name=Scroll of Protection from Possession
- name=#a  Glim Gauntlet;owner=Steve
+ name=#a  Glim Gauntlet;owner=Steve;note=Steve part id, Darius id <d Marpenoth 24 1369>
+ name=#b  Potion of Heroism;owner=Misery;note=Steve id <d Marpenoth 24 1369>
  owner=Party;sold_on=23 Marpenoth 1369;cash=0
-  name=Crystal of Spellreading
-  name=Potion of Delusion (Invisibility)
- name=Potion of Sweet Water;owner=Steve;note=Auction
- name=#a  Potion of Stoneskin;owner=Ursula
- name=#b  Potion of Stoneskin;owner=Cassie
- name=#c  Potion of Stoneskin;owner=Dexter
- name=#d  Potion of Stoneskin;owner=Darius
+  name=Crystal of Spellreading;note=Steve failed, Darius part, then failed <d Marpenoth 24 1369>
+  name=Potion of Delusion (Invisibility);note=Steve id <d Marpenoth 24 1369>
+ name=Potion of Sweet Water;owner=Steve;note=Auction;note=Darius failed id <d Marpenoth 24 1369>
  name=2x large opal earring 750gp together;owner=Maanamere;sold_on=24 Marpenoth 1369;cash=750
  name=8x bloodstone 5gp;owner=Maanamere;sold_on=24 Marpenoth 1369;cash=40
 party=Marpenoth-26-1369
@@ -80,6 +89,10 @@ party=Marpenoth-26-1369
  name=Potion of Rainbow Hues;owner=Stewart
  name=Bottle of Breaking;owner=Auction
 party=Marpenoth-28-1369
+ name=#a  Potion of Stoneskin;owner=Ursula
+ name=#b  Potion of Stoneskin;owner=Cassie
+ name=#c  Potion of Stoneskin;owner=Dexter
+ name=#d  Potion of Stoneskin;owner=Darius
  name=+1/+4(Andarod Gutreaver) Ring of Protection;owner=Cassie;sold_on=14 Uktar 1369;debt=6400;cash=3600
  name=+1 Dagger (can glow enough to read a map);owner=Misery;sold_on=11 Uktar 1369;cash=600
  name=Potion of Invulnerability;owner=destroyed;sold_on=17 Nightal 1369;note=by Cassie
@@ -109,7 +122,7 @@ party=Uktar-12-1369
  name=Shield with scroll of Summon Mystic Moose;owner=Denyae
  name=4x +2 Flight Arrow;owner=Denyae
  name=Flight Arrow of Darkness;owner=Denyae
- name=#c  Potion of Heroism;owner=Misery
+ name=#c  Potion of Heroism
  name=Preserved Green Dragon Breath;owner=Stewart;note=Blew up with Stewart
  name=2x Scroll;owner=outside the party;sold_on=13 Uktar 1369;cash=3300
  name=Potion of Murdoch's Insect Ward;owner=Auction
