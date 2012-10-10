@@ -1,10 +1,22 @@
 date=1 Tarsakh 1370
 ,char;association=AFAL;status=active;name=Brogan;alignment=Lawful Good;\
-gender=Male;player=Andrew;race=Hill Dwarf;\
-class=Champion of Moradin;characteristics=Short hair, neat dark beard;\
-equipment=dwarven plate, boots of alacrity, shield of groovy brightness,\
- +1 wern of wind;joined=Tarsakh 1 1370;\
-note=Joined the party on <d Tarsakh 1 1370> on the orders of the priests of Selune.
+gender=Male;player=Andrew;race=Hill Dwarf;fullname=Brogan Blackroot;\
+picture=Brogan.png;large_picture=Brogan2.jpg;\
+class=Champion of Moradin;characteristics=Wears his hair short and his dark\
+ beard neat. Outfitted as a priest of Moradin and a warrior.;\
+equipment=Granddad'd dwarven plate mail, Boots of Alacrity, Shield of Groovy Brightness,\
+Blessed +1 Wern of Wind;joined=Tarsakh 1 1370;\
+note=Brogan has been assigned by his superiors in the church of Moradin to keep\
+ an eye on AFAL while they complete a quest of some importance to several\
+ dwarven faiths.  He joined the party on <d Tarsakh 1 1370>.\
+<br>Brogan's body doesn't appear in mirrors at all, but when someone would be\
+ able to see his head, they instead see the moon.  If they would be able to\
+ see his face straight on, they see a full moon\; just the back of his head, a\
+ new moon\; from the side, some measure of crescent or gibbous.\
+<br>Brogan can't cross bridges in daylight.  Underground and indoor bridges are\
+ not restricted.  Also, Brogan is compelled to kiss anything he sees that is\
+ composed of silver unless it's on someone's person.  If he fails either\
+ condition, he immediately loses all prepared spells.
 ,dividend;by=Ches-30-1370;amount=1913gp, 80cp
 ,sell;to=Dexter;item=Ebon Fly;cash=5000gp
 ,sell;to=Henkles;item=Poison: Urds Teeth *3;cash=105gp
@@ -95,7 +107,7 @@ date=Tarsakh 7 1370
 ,,name=Gem: Banded Agate 10gp *4
 ,,name=Gem: Moss Agate 25gp *28
 ,,name=Shirt of Tackyness;note=Humanoids int >=7 suffer -2th,Darius id <d Tarsakh 8 1370>,fully id by testing <d Tarsakh 10 1370>
-,,name=Cash;note=Triangular Electrum Piece *23, Gond bell *23;value=12gond bells, 23ep
+,,name=Cash;note=Triangular Electrum Piece *23, Gond bell *12;value=12gond bells, 23ep
 ,,name=Dwarven Battle Tankard *2
 ,,name=Settlestone Hardsilver Mead
 ,,name=Scarf of Warmth;note=Darius id <d Tarsakh 8 1370>, white with silver threads
