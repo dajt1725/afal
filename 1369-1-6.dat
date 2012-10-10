@@ -70,7 +70,7 @@ note=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
  Steve joined the party somewhere around\
  <d Greengrass Festival 1369>.;\
 class=Bard;fullname=Stephen &quot\;Steve&quot\; of Neverwinter;gender=Male;\
-player=Fred;race=&frac12\; Elf;\
+player=Fred;race=&frac12\; Elf;picture=steve.gif;\
 characteristics=Personable, 5'5&quot\;, 121lbs.;\
 equipment=Green Dragon hide armor, Ring of Water Walking, Gargoyle Ring,\
  Cloak of Elvenkind, +1/+2 vs lawful Longsword, trident, javelins,\
@@ -91,7 +91,7 @@ characteristics=dead;note=Joined the party on <d Kythorn 8 1369>, died on <d Fla
 party;type=AFAL;name=Kythorn-10-1369;date=10 Kythorn 1369;Buffy=1;Darius=1;Dexter=1;Henkles=1;Moogh=1;Steve=1;Stewart=1
 find;found=Kythorn-10-1369;name=Ring of Projection;holder=Henkles;note=Devlin part id, fail <d Kythorn 26 1369>, Darius failed <d Flamerule 4 1369>, Buffy failed <d Flamerule 5 1369>, Steve Cassie, Darius failed <d Eleasias 27 1369>, Cassie part id, fail <d Marpenoth 11 1369>
 char;association=AFAL;status=active;name=Maanamere;alignment=Neutral Good;\
-class=Ranger;fullname=Maanamere Palendril;gender=Male;\
+class=Ranger;fullname=Maanamere Palendril;gender=Male;picture=maanamere.jpg;\
 player=Rickland;race=Moon Elf;joined=Kythorn 10 1369;\
 characteristics=Very strong, somewhat dim but wise, quick, very attractive,\
  6'0&quot\;, 150lbs.  Maanamere has silver hair and eyes.\
