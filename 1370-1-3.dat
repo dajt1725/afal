@@ -1,0 +1,227 @@
+party;type=AFAL;name=Hammer-9-1370;date=9 Hammer 1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Stalker=1;Steve=1;Theo=1
+find;found=Hammer-9-1370
+,name=Scroll (MU);note=MU L2: Whirling Blade;holder=Auction
+,name=Potion of Polymorph Self
+,name=+1 Dagger;owner=outside the party;note=Sold
+,name=+1 Dagger;owner=Misery;xfrd=9 Hammer 1369
+,name=Potion of Healing;owner=party
+,name=Potion (Maybe of Healing);note=Identify,AgL7Fail;owner=party
+,name=Potion of Invisibility
+,name=Necklace of Light and Darkness;holder=Henkles;owner=party
+party;type=AFAL;name=Hammer-13-1370;date=13 Hammer 1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Theo=1
+find;found=Hammer-13-1370
+,name=Loot: Gold Earring 20gp;owner=Maanamere;xfrd=13 Hammer 1370;value=20
+,name=+1 Glaive;holder=Auction
+,name=+1 Banded Mail;holder=Auction
+,name=+1 Shield;holder=Tristan
+,name=Ring of Water Walking
+,name=Potion of Healing;owner=party
+#date=Hammer 15 1370;writeoff;Theo
+party;type=AFAL;name=Hammer-15-1370;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Steve=1;Maanamere=1;Stalker=1;Moogh=1
+find;found=Hammer-15-1370;name=Animal: Light War Horse *4;note=1 killed on <d Alturiak 6 1370>, sold for ~68gp, 84cp each
+char;association=AFAL;status=active
+,name=Staric;alignment=Neutral Good;class=Bard;\
+fullname=Staric Ammakyl;gender=Male;large_picture=Staric_lg.png;\
+picture=Staric.png;player=Andre;race=Human;\
+characteristics=Handsome, quick and athletic,\
+ short brown/dk blonde hair, brown eyes, 5'9&quot\;, 174 lbs.;\
+equipment=bracers, longsword, longbow, lute, dagger, recorder;\
+note=The least annoying member of The Shining Sons, Staric was with Dagar\
+ Jhansczil when they accidentally used the Helm of Beefy Will to dispell the\
+ charms they were under from The\
+ <a href="/logs/log_Marpenoth_28_1369.html">Reverential</a>\
+ <a href="/logs/log_Uktar_12_1369.html">Coronet</a> of\
+ <a href="/logs/log_Hammer_17_1370.html">Extroversion</a>, which Dagar's\
+ brother Arrikes was using in a plot to take over Waterdeep.  By mutual\
+ agreement, Staric used a scroll to wipe Dagar's memory of the discovery and\
+ contacted A.F.A.L. for help.  When A.F.A.L. arrived in Amphail, he joined up\
+ with them as they fled the village on <d Hammer 17 1370>.;joined=Hammer 17 1370
+,name=Deringa;alignment=Chaotic Good;\
+note=Childhood friend of Staric Ammakyl, overheard Staric &amp\; Dagar\
+ Jhansczil discussing the powers of the\
+ <a href="/logs/log_Marpenoth_28_1369.html">Reverential</a>\
+ <a href="/logs/log_Uktar_12_1369.html">Coronet</a> of\
+ <a href="/logs/log_Hammer_17_1370.html">Extroversion</a>, it's effect on\
+ Dagar's brother Arrikes, and Arrikes's plot to take over Waterdeep.  Staric\
+ couldn't wipe her memory like he did for Dagar, so she had to come along.\
+ She joined the party on <d Hammer 17 1370>.;\
+class=Rich Kid?  Groupie?;fullname=Deringa Eagleshield;gender=Female;\
+large_picture=Deringa_lg.png;picture=Deringa.png;race=Human(?);\
+characteristics=Cute, clever, very quick, very short,\
+ short, bleached hair w/purple patch, blue eyes, 5'1&quot\;, 102 lbs.;\
+equipment=expensive clothes, bracers, Dagger, +1 Sling,\
+ nose ring, 14 earings (left ear);joined=Hammer 17 1370
+party;type=AFAL;name=Hammer-20-1370;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Staric=.5;Stalker=1;Steve=1
+find;found=Hammer-20-1370
+,name=Dagger of Hurting;holder=Tristan
+,name=Chardalyn;holder=Ag;note=L4MU Snillics Snowball Swarm;owner=party
+,name=Glim Gauntlet;holder=Darius;owner=party
+,name=Animal: Heavy War Horse *7;note=1 killed <d Alturiak 6 1370>, sold for approx 182gp, 91cp each
+,name=Travelling Spell Book;note=L1: Magic Missile, Unseen Servant, Color Spray, Mending, Charm Person, Detect Illusion, L2: Snilloc's SS, Invisibility, Detect Poison
+,name=+1/+2(Lawful) Long Sword;holder=Steve
+,name=+2 Whip;holder=Misery
+,name=+1 Composite Short Bow;holder=Misery
+,name=+1/+3(Cold) Ring of Protection;holder=Maanamere
+,name=Bracers of Defense AC 6;holder=Ursula;note=Fully id'd by testing on <d Tarsakh 10 1370>
+,name=+1 Plate Mail (Half Elf);holder=Tristan
+,holder=Auction
+,,name=+1 Dagger
+,,name=+1 Heavy Crossbow
+,holder=Maanamere;owner=party
+,,name=+1 Arrow (Sheaf) *3
+,,name=Sleep Gas Grenade (M) *2
+,holder=Denyae;owner=party
+,,name=+1 Arrow (Sheaf) *12
+,,name=Sleep Gas Grenade (M) *2
+,name=+1 Light Crossbow;owner=outside the party;xfrd=30 Hammer 1370;note=Given to the orc chieftan
+,name=+1 Arrow (Sheaf) *6;holder=Dexter;owner=party
+,name=+1 Arrow (Sheaf) *3;holder=Henkles;owner=party
+,name=Sleep Gas Grenade (M) *2;holder=Tristan;owner=party
+,name=Potion of Gaseous Form;note=AgL7Fail id, Darius id <d Tarsakh 8 1370>
+char;association=AFAL;status=inactive
+,name=Alril;fullname=Alril Elarorrieth;race=Moon Elf;gender=Male;\
+class=Fighter;alignment=Neutral Evil;equipment=Field plate, partisan,\
+ composite short bow, dagger, +2 magic short sword;large_picture=Alril_lg.png;\
+picture=Alril.png;characteristics=Shoulder-length, curly black hair, blue\
+ eyes, chiseled, 5&apos\;1&quot\;, 112 lbs.  High, Stuttering voice.;\
+note=A mercenary formerly employed by Silent Travellers, He elected to\
+ change sides instead of being eaten by a giant on <d Hammer 20 1370>.\
+ He was paid off and let go on <d Ches 30 1370>.;joined=Hammer 20 1370
+,name=Kades;fullname=Kades Thadestidesgar;race=Human;gender=Male;\
+class=Fighter;alignment=Chaotic Neutral;equipment=Banded mail, long bow,\
+ battle axe, knife, bastard sword;large_picture=Kades_lg.png;picture=Kades.png;\
+characteristics=Shoulder-length, curly brown/dk blonde hair, blue eyes,\
+ 5&apos\;11&quot\;, 180 lbs. Deep, accented voice.;note=Mercenary formerly\
+ employed by Silent Travellers.  Elected to change sides instead of being\
+ eaten by a giant on <d Hammer 20 1370>.  Paid off and let go on\
+ <d Ches 30 1370>.;joined=Hammer 20 1370
+date=Midwinter Festival 1370;writeoff;Moogh
+char;association=AFAL;status=inactive
+,name=Chusnog;race=Orc;gender=Male;class=Fighter;alignment=Lawful Evil;\
+equipment=black and red full plate, red cloak, morning star, 2 throwing axes;\
+large_picture=Chusnog_lg.png;picture=Chusnog.png;\
+characteristics=oily black hair, red eyes, many battle scars, large and\
+ heavy-set, cloven hooves, rarely speaks (doesn't speak Common);\
+note=Chusnog is one of the personal bodyguards of Oscho Skurgorg nuk'Bahgtru,\
+ High Priest of Bahgtru.  Skurgorg assigned him to accompany AFAL when they\
+ used a gate in the temple of Bahgtru in the village of G'Skorgogh Hur-Bahgtru.\
+ He acted as Oguch's bodyguard for the duration.<p> Chusnog and Oguch joined\
+ the party on the <d Midwinter Festival 1370> and returned to their village on\
+ <d Ches 7 1370>.;joined=Midwinter Festival 1370
+,name=Oguch;fullname=Oguch of Bahgtru;race=Orc;gender=Male;\
+class=Priest of Bahgtru;alignment=Lawful Evil;equipment=high collar black robe,\
+ holy symbol, spiked gauntlet of Bahgtru, Morning Star, Sling w/bullets;\
+characteristics=part of nose &amp\; left tusk missing, peircing black eyes,\
+ constantly looks suspicious, keeps hair shaved off, suspicious, obsequious;\
+note=Oguch is a high-ranking priest of Bahgtru, the orc god of strength,\
+ loyalty, and stupidity.  He was assigned by his High Priest to accompany the\
+ party when they used a gate in the temple of Bahgtru in the village of\
+ G'Skorgogh Hur-Bahgtru.  He is presumably tasked with keeping an eye on the\
+ party and perhaps has other, unknown tasks as well.  <p>They joined the party\
+ on <d Midwinter Festival 1370>. He and Chusnog returned to their village on\
+<d Ches 7 1370>.;large_picture=Oguch_lg.png;picture=Oguch.png;joined=Midwinter Festival 1370
+char;association=AFAL;status=active
+,name=Ag;alignment=Neutral Good;class=Thief;gender=Male;\
+player=Bill;race=Human;\
+characteristics=brown hair, blue eyes, 5'7&quot\;, 128lbs.,\
+ wise beyond his years;\
+equipment=Bracers of defense AC 6, +1/+3(Cold) Ring of Protection, Gloves of Mask,\
+ <i>Shadowfang</i> - magically dark longsword, +1/+3(backstab) Long Sword,\
+ picks &amp\; tools, many daggers, dark blue cloak;\
+note=Joined party in Silverymoon, <d Alturiak 5 1370>.;joined=Alturiak 5 1370
+,name=Tristan;alignment=Neutral Good;characteristics=Not known at this time.;\
+gender=Male;player=Alex;race=&frac12\; Elf;\
+class=Spec Pr - Tempus (BattleForge) / Wizard;\
+equipment=+1 plate mail, +1 shield, +1/+2 (half *)/+3(Humans) Bastard Sword,\
+ <i>Ghoulbreaker</i>, Dagger of Hurting;\
+note=Originally Gail's character, played by Andrew and now Alex.\
+ Tristan joined the party on <d Alturiak 5 1370>.;joined=Alturiak 5 1370
+party;type=AFAL;name=Alturiak-29-1370;Chusnog=0;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=0;Staric=.5;Steve=1;Tristan=1
+find;found=Alturiak-29-1370;name=Potion of Love ("Philter");holder=Auction
+date=Ches 3 1370
+,party;type=AFAL;name=Ches-3a-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Stalker=1;Staric=.5;Steve=1;Tristan=1
+,find;found=Ches-3a-1370
+,,name=Loot: silver candlesticks 500gp;owner=Maanamere;xfrd=23 Ches 1370;value=500
+,,name=Loot: finely made gold chain 130gp *2;owner=Maanamere;xfrd=23 Ches 1370;value=260
+,,name=Loot: platinum necklace 700gp;owner=Maanamere;xfrd=23 Ches 1370;value=700
+,,name=Magical Stirrer;owner=Party
+,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
+,find;found=Ches-3b-1370
+,,name=Potion *4;note=Identify
+,,name=Jug of Liquid Magic
+,,holder=Auction
+,,,name=Scroll (MU);note=L1: Unseen Servant *3
+,,,name=Scroll (MU);note=L2: Levatate *4
+,,,name=Scroll (MU);note=L1: Comprehend Languages *3
+,party;type=AFAL;name=Ches-3c-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
+,find;found=Ches-3c-1370
+,,name=Ring of Warmth
+,,name=Carpet of Flying 3x5;holder=Denyae;owner=party
+,,holder=Dexter;owner=party
+,,,name=Potion of Healing
+,,,name=Potion of Healing
+,,holder=Auction
+,,,name=Potion of Youth ("Elixer")
+,,,name=Potion of Longevitiy
+,,,name=Potion of Claraudience
+,,,name=Potion of Lust
+,,,name=Detect Magic powder *10;note=Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
+,,,name=Brighten lamps powder *10;note=Green odorless powder: increases lamp oil light by 20'
+,,name=Scroll (MU);note=5 spells: 5) Zwei's 2nd extension, 6) Sadebreth's reincarnation - id'd, 7) Yong's dissipation, 7) Noanar's delayed fireball - id'd, 8) Lucke's 6th monster summons
+,,name=Scroll (MU);note=2 spells: 3) Nalevac's deep sight, 4) Zwei's 1st extension
+,,name=Scroll (MU);note=4 spells: 3) Gwynn's vampirism, 8) Lucke's 6th monster summons, 8) Kutson's antipathy/sympathy, 10) Proctiv's move mountain
+,,name=Scroll (MU);note=4 spells: 4) Proctiv's dig - id'd, 4) Zwei's 1st extension, 5) Stoca's fauna growth, 7) Toscudlo's bulk invisibility
+,,name=Scroll (MU);note=3 spells: 6) Lucke's 4th monster summons, 8) Anglin's wall, 9) Smolyn's foreseer
+,,name=Scroll (MU);note=2 spells: 7) Toscudlo's bulk invisibility, 10) Mavin's create volcano
+,,name=Potion of Fire Breathing
+,,name=Potion of Speed
+,,name=Potion of Polymorph Self
+,,name=Oil of Disenchantment
+,,name=Potion of Stone Giant Strength
+,,name=Potion *3;note=Identify,TristanL5Fail
+,,name=Detect Invisible powder *10;note=Grey powder black flecks, smells of rain
+,,name=Knockout powder *10;note=Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
+,,name=Make Insubstantial powder *10;note=Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
+,,name=Magic Tent;owner=party;note=Sleeps 8, acts as a Ring of Warmth for the inhabitants
+,,name=Magic Cooking Set;owner=party
+,,name=Gem: lots;owner=outside the party;xfrd=3 Ches 1370;note=Given to Crystalblight
+,,name=Jug of Liquid Magic *2
+,party;type=AFAL;name=Ches-3d-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1
+,find;found=Ches-3d-1370
+,,name=Shameful Tome of Dishonerable Attacks;note=Identify
+,,name=Wand of Lightning Fan;holder=Darius;owner=party
+,,name=Dart of Human Slaying *3(1 used);holder=Henkles;owner=party
+,,name=Ioun Stones;owner=outside the party;xfrd=3 Ches 1370;note=Given to Crystalblight
+date=Ches 7 1370;writeoff;Chusnog;Oguch;Stalker
+party;type=AFAL;name=Ches-25-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
+find;found=Ches-25-1370
+,name=-1 Cursed Khopesh;owner=party;xfrd=25 Ches 1370
+,name=+1 Shield (needs new handle);holder=Auction
+party;type=AFAL;name=Ches-30-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
+find;found=Ches-30-1370
+,name=Ring of Fire Resistance
+,name=Ebon Fly
+,name=Poison: Urds Teeth *3
+,name=+1/+3(Cold) Ring of Protection;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
+,name=+1 Ring of Protection;holder=Ag;note=Fully id by testing <d Tarsakh 10 1370>
+,name=+1/+3(Saves) Ring of Protection;holder=Henkles;note=Fully id by testing <d Tarsakh 10 1370>
+,name=+1 Arrow (Flight) *10;holder=Denyae;owner=party
+,name=+1 Arrow (Flight) *6;holder=Dexter;owner=party
+,name=+1 Arrow (Flight) *2;holder=Maanamere;owner=party
+,name=+1 Arrow (Flight) *2;holder=Henkles;owner=party
+,name=Sleep Gas Grenade (M) *2;owner=party;xfrd=30 Ches 1370
+,name=Sleep Gas Grenade (M) *2;holder=Brogan;owner=party
+,name=Sleep Gas Grenade (M) *2;holder=Dexter;owner=party
+,name=Sleep Gas Grenade (M) *2;holder=Deringa;owner=party
+,name=Wand of Hurting;holder=Deringa;owner=party
+,name=Sleep Gas Grenade (M) *2;holder=Staric;owner=party
+,name=Gem: Chrysoberyl 100gp *2
+,holder=Auction
+,,name=+1 Medium Shield
+,,name=+1 Footmans Pick
+,,name=Staff of the Serpent
+,,name=Oil of Slipperiness
+,name=Oil of Etherialness;note=Darius id <d Tarsakh 8 1370>
+,name=+1/+3(Backstab) Long Sword;holder=Ag;note=+10% Hide in Shadows;owner=party
+,name=Dagger of Hurting
+,name=+1 Bastard Sword

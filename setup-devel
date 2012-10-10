@@ -1,0 +1,8 @@
+set -e
+mysql -uafal -pBuffyStewart afal_devel << EOF
+drop database afal_devel;
+create database afal_devel;
+EOF
+mysql -uafal -pBuffyStewart afal_devel < afal-schema.sql.mysql
+./bulk -v 1369-1-6.dat 1369-7-9.dat 1369-10-12.dat 1370-1-3.dat 1370-4.dat > /tmp/a
+./report -t -a > /tmp/b

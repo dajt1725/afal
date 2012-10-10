@@ -1,0 +1,34 @@
+#!/usr/bin/python
+from __future__ import print_function
+import afal
+import cgi
+import cgitb
+
+cgitb.enable()
+latest = afal.get_journal_dates()[-1]
+characters = afal.get_characters('Current')
+print('Content-Type: text/html\n\n<html>\n <head><title>AFAL Finance Summary\
+</title></head>\n <body background="/back3l07.gif">\n  <center><h1>Anything\
+ For A Laugh</h1><h2>Finance report as of ', afal.date_to_str(latest),
+ '</h2></center><br>\n  <table border="1"><tr><th>Character</th><th>Receivable</th><th>\
+Payable</th><th>Cash</th><th>Net</th></tr>', sep='')
+for char in characters:
+#    print(char, afal.get_char_data(char))
+    c = afal.get_char_data(char)['cash_cp']
+    p = 0
+    for debt in afal.get_char_debts(char, "Payable"):
+        p += debt['amount_cp']
+    r = 0
+    for debt in afal.get_char_debts(char, "Receivable"):
+        r += debt['amount_cp']
+    if c + r > p:
+        n = afal.cp_to_str(c + r - p)
+    elif p > c + r:
+        n = '<font color="red">(' + afal.cp_to_str(p - r - c) + ')</font>'
+    else:
+        n = 'Flat Broke'
+    print('   <tr><td>', char, '</td><td>', afal.cp_to_str(r),
+ '</td><td>', afal.cp_to_str(p), '</td><td>', afal.cp_to_str(c), '</td><td>',
+  n, '</td></tr>\n', sep='')
+print('  </table>\n </body>\n</html>\n')
+afal.fini()

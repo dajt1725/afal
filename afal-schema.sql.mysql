@@ -1,50 +1,51 @@
 create table fr_character (
-    char_id integer unsigned not null primary key auto_increment,
-    char_name varchar(128) not null unique,
-    char_status enum ( 'active', 'inactive', 'dead' ) not null default 'active',
-    char_association text,
-    char_cash integer not null default 0,
-    char_fullname text,
-    char_player text,
-    char_gender text,
-    char_race   text,
-    char_class  text,
-    char_alignment text,
-    char_equipment text,
-    char_picture_url text,
-    char_large_picture_url text,
+    char_name varchar(128) primary key,
+    status enum ( 'active', 'inactive', 'dead', 'dummy' ) not null default 'active',
+    gender enum ( 'Male', 'Female', 'Male?', 'Female?', 'No Gender', 'Herm', 'Unknown Gender') not null default 'Unknown Gender',
+    cash_cp integer not null default 0,
+    association text,
+    fullname text,
+    player text,
+    race   text,
+    class  text,
+    alignment text,
+    equipment text,
+    picture_url text,
+    large_picture_url text,
     char_acteristics text,
-    char_notes text,
-    char_dm_notes text
-) auto_increment=5;
+    note text,
+    hidden_note text
+);
 create table fr_party (
-    party_id integer unsigned not null primary key auto_increment,
-    party_name varchar(128) unique not null,
-    party_date integer unsigned not null
-) auto_increment=100;
+    party_name varchar(128) primary key,
+    type enum ('AFAL', 'Character', 'NPCs', 'Unknown') not null,
+    date integer unsigned,
+    note text
+);
 create table fr_char_party (
-    char_id integer unsigned not null references fr_character,
-    party_id integer unsigned not null references fr_party,
+    char_name varchar(128) not null references fr_character,
+    party_name varchar(128) not null references fr_party,
     share double unsigned not null default 1.0,
-    primary key(char_id,party_id)
+    primary key(char_name, party_name)
 );
 create table fr_item (
-    item_id integer unsigned not null primary key auto_increment,
-    item_name varchar(128) unique not null,
+    item_name varchar(128) primary key,
+    found_by varchar(128) not null,
+    owned_by varchar(128) not null,
+    held_by varchar(128),
+    date_found integer unsigned not null,
+    date_xfrd integer unsigned,
     note text,
-    acquired_by integer unsigned not null references fr_party,
-    held_by integer unsigned references fr_character,
-    value integer unsigned,
-    sale_date integer unsigned
-) auto_increment=10000;
+    value_cp integer unsigned
+);
 create table fr_debt (
     debt_id integer unsigned primary key auto_increment,
-    owed_on integer unsigned not null,
-    from_char integer unsigned not null references fr_character,
-    to_char   integer unsigned not null references fr_character,
-    repay_order integer unsigned not null default 1,
+    date integer unsigned not null,
+    debtor varchar(128) not null references fr_character,
+    debtee varchar(128) not null references fr_character,
+    repay_order integer unsigned not null default 0,
     share double unsigned not null default 1.0,
-    item_id integer unsigned references fr_item,
+    item varchar(128) references fr_item,
     initial_cp integer unsigned not null,
     owed_cp integer unsigned not null
 ) auto_increment=100000;
@@ -52,9 +53,9 @@ create table fr_journal (
     journal_id integer unsigned not null primary key auto_increment,
     part_of integer unsigned references fr_journal,
     ourtime timestamp not null default CURRENT_TIMESTAMP,
-    made_on integer unsigned not null not null,
-    made_by integer unsigned not null,
-    made_to integer unsigned,
+    date integer unsigned not null,
+    made_by varchar(128) not null,
+    made_to varchar(128),
     amount_cp integer unsigned,
     description text not null
 ) auto_increment=1000000;

@@ -3,28 +3,31 @@ import sys
 import mysql.connector
 from mysql.connector import errorcode
 import random
+import re
 
 ############################## begin startup code here
 
 
 config = {
-	'database':'afal', 'user':'afal'
+	'database':'afal_devel', 'user':'afal'
 , 'password':'BuffyStewart'
 }
-#try:
 conn = mysql.connector.connect(**config)
-#except:
-#    raise NameError("Database afal or user afal not found")
+conn.get_warnings = True
 cur = conn.cursor()
 
-auction = 5
-sell = 6
-destroyed = 7
-outside = 8
-party = 9
-first_real_char = 10
+auction = 'Auction'
+sell = 'Sell'
+destroyed = 'destroyed'
+outside = 'outside the party'
+party = 'party'
+special = (auction, sell, destroyed, outside)
 
 ######## Cleanup and misc code
+
+def commit():
+    conn.commit()
+
 
 def fini():
     """finish things up and close the database"""
@@ -33,12 +36,39 @@ def fini():
     conn.close()
 
 
+def _ins_if_not(d, l):
+    for k in l:
+        if k not in d:
+            d[k] = None
+
+
+# if may is None, don't check for extra keys at all
+def _check_dict(d, must = None, may = None):
+    """ dict must contain every element in 'must', and may contain elements in 'may'"""
+
+    if may is not None:
+        for i in d:
+            if i not in must and i not in may:
+                print "\nUnexpected key '" + i + "' found in dict", d, "only expected must=", must, "may=", may, "\n"
+                raise NameError("Unexpected key " + i)
+
+    for i in must:
+	if not i in d:
+            print "\nMissing key '" + i + "' in dict", d, "expected must=", must, "\n"
+            raise NameError("Missing key " + i)
+
+
+def _check_warnings():
+    warnings = cur.fetchwarnings()
+    if warnings:
+        print "\nWarnings!:",warnings,"\n"
+
 ######## File IO and parsing
 
-def nextline(f):
-    if nextline.line:
-        ret = nextline.line
-        nextline.line = None
+def _nextline(f):
+    if _nextline.line:
+        ret = _nextline.line
+        _nextline.line = None
         return ret
     ret = ''
     while True:
@@ -57,22 +87,21 @@ def nextline(f):
         ret += tmp[:-1]
     return ret
 
-nextline.line = None
 
-def pushline(line):
-    if nextline.line:
+_nextline.line = None
+_indent = ' ,'
+
+def _peekline(file):
+    line = _nextline(file)
+    if _nextline.line:
         raise NameError("Line already pushed")
-    nextline.line = line
-
-def peekline(file):
-    line = nextline(file)
-    pushline(line)
+    _nextline.line = line
     if line == '':
         return '\n'
     return line
 
-def add_entries(d, line):
-    while line[0] == ' ':
+def _add_entries(d, line):
+    while line[0] in _indent:
         line = line[1:]
     h1 = ''
     while len(line) > 0:
@@ -95,15 +124,18 @@ def add_entries(d, line):
         else:
             name = hdr
             value = True
+        if name in d:
+            print d
+            raise NameError("Key '"+name+"' is already in dict")
         d[name] = value
     return d
 
-def compare_indent(l1, l2):
+def _compare_indent(l1, l2):
     len1 = 0
-    while l1[len1] == ' ':
+    while l1[len1] in _indent:
         len1 += 1
     len2 = 0
-    while l2[len2] == ' ':
+    while l2[len2] in _indent:
         len2 += 1
     return len2 - len1
 
@@ -125,21 +157,16 @@ def compare_indent(l1, l2):
 #   return
 
 def parse_file(file, doit, inherited):
-#    print 'inherited', inherited
     while True:
-        line = nextline(file)
+        line = _nextline(file)
         if line == '':
             break
-#        print 'before_add', inherited
-        us = add_entries(dict(inherited), line)
-#        print 'inherited', inherited, 'us', us
+        us = _add_entries(dict(inherited), line)
         hadsub = False
         while True:
-            peek = peekline(file)
-#            print "comparing", "'"+line+"'", "'"+peek+"'"
-            i = compare_indent(line, peek)
+            peek = _peekline(file)
+            i = _compare_indent(line, peek)
             if i > 0:
-#                print 'recurse', us
                 parse_file(file, doit, dict(us))
                 hadsub = True
                 continue
@@ -169,8 +196,8 @@ def str_to_date(date):
     """ turn a human readable date (day month year) into a date_id"""
 # 365 * (year-1368) + month_offset[month] + day
 
-    if date == None:
-        return None
+    if date is None or type(date) is int:
+        return date
     if date[0] == '(' and date[-1] ==')' and date.count(',') == 2:
         c1 = date.index(',')
         c2 = date[c1+1:].index(',')
@@ -194,7 +221,7 @@ def str_to_date(date):
             year = date[c1+c2+2:]
         else:
             raise NameError("Unknown date "+date)
-    ret = 1000 + 365*(int(year)-1368)+month_offset[month]+int(day)-1
+    ret = 1000 + 365 * (int(year) - 1368) + month_offset[month] + int(day) - 1
     return ret
 
 #day_names = {
@@ -215,8 +242,12 @@ off_monthset = ((0, 29, 'Hammer'), (30, 30, 'Midwinter Festival'),
 def date_to_str(date):
     """return a human-readable form of a date-id"""
 
-    if date == None or date < 1000:
-        return None
+    try:
+        date = int(date)
+    except:
+        return date
+    if date < 1000:
+        raise NameError("Invalid date " + str(date))
     date -= 1000
     year = 1368 + int(date/365)
     mo = date % 365
@@ -229,49 +260,51 @@ def date_to_str(date):
             return month+' '+str(day)+' '+str(year)
     raise NameError("Couldn't find date '" + str(date))+"'"
 
+def party_to_date(d):
+    return str_to_date(re.sub(r'^([^-]*-)?([^-]+)-(Festival|[0-9]+)[A-Za-z]?-([^-]+)$', r'\2 \3 \4', d))
+
 ######## Copper and Gold piece functions
 
-def cp_to_gp(cp):
-    """ return the gp portion of a raw cp value"""
 
-    return int(cp/200)
+def _or_zero(x):
+    return int(x) if x is not None and len(x) > 0 else 0
 
-
-def cp_to_cp_only(cp):
-    """ return the cp portion of a raw cp value"""
-
-    return cp % 200
-
-
-def gp_cp_to_cp(gp, cp):
-    """ turn gp and cp values into a raw cp value"""
-
-    return int(float(gp) * 200 + float(cp))
-
-
-def str_gp_cp(gp, cp):
-    """ pretty-print a gp and cp value for human consumption"""
-
-    if gp > 0 and cp > 0:
-        return str(gp)+"gp, "+str(cp)+"cp"
-    elif gp > 0:
-        return str(gp)+"gp"
-    elif cp > 0:
-        return str(cp)+"cp"
+def str_to_cp(s):
+    if s is None:
+        return None
+    m = re.match(r'^((\d+)\s*hm,?\s*)?((\d+)\s*gond bells?,?\s*)?((\d+)\s*pp,?\s*)?((\d+)\s*toals?,?\s*)?((\d+)\s*gp,?\s*)?((\d+)\s*ep,?\s*)?((\d+)\s*sp,?\s*)?((\d+)\s*cp)?$', s, re.IGNORECASE)
+    if m:
+        hm = _or_zero(m.group(2))
+	gb = _or_zero(m.group(4))
+	pp = _or_zero(m.group(6))
+	to = _or_zero(m.group(8))
+	gp = _or_zero(m.group(10))
+	ep = _or_zero(m.group(12))
+	sp = _or_zero(m.group(14))
+	cp = _or_zero(m.group(16))
+	return int(hm * 10000 + gb * 2000 + pp * 1000 + to * 400 + gp * 200 \
+ + ep * 100 + sp * 10 + cp)
     else:
-        return "nothing"
+        return int(float(s) * 200)
 
 
-def str_cp(cp):
+def cp_to_str(cp):
     """ pretty-print a raw cp value"""
 
-    return str_gp_cp(cp_to_gp(cp), cp_to_cp_only(cp))
-
-
-def str_cp_to_fgp(cp):
-    """print copper pieces as fractional gold pieces"""
-
-    return str(float(cp)/200.0)
+    if cp is None:
+        return ''
+    if cp == 0:
+        return "nothing"
+    if cp < 0:
+        return "NEGATIVE MONEY " + str(int(-cp/200)) + "gp, " + str(-cp%200) + "cp"
+    gp = int(cp/200)
+    cp = cp % 200
+    if gp > 0 and cp > 0:
+        return str(gp) + "gp, " + str(cp) + "cp"
+    elif gp > 0:
+        return str(gp) + "gp"
+    else:
+        return str(cp) + "cp"
 
 
 def divide_cp(top, bottom):
@@ -280,27 +313,40 @@ def divide_cp(top, bottom):
     whole = int(top/bottom)
     fract = (float(top)/float(bottom)) - whole
     if fract > random.random():
-#        print top, "/", bottom, "=", whole, "fraction", fract, "rounded up"
         whole += 1
     return whole
 
 
+######## Shares
+
+
+def share_to_str(share):
+    if share == int(share):
+        return str(int(share))
+    return str(share)
+
+
 ######## Journal entries
 
-def journal(date, by, to, amount, description, part_of = None):
+def journal(date, by, to, amount_cp, text, part_of = None):
     """add an entry to the transaction journal, returning an id that may be used for subsequent calls"""
 
+    if date is None or by is None or text is None:
+        raise NameError("Missing required field in journal")
+    date = str_to_date(date)
     cur.execute (
- "insert into fr_journal ( made_on, made_by, made_to, amount_cp, description, part_of ) "
+ "insert into fr_journal ( date, made_by, made_to, amount_cp, description, part_of ) "
  " values ( %(date)s, %(by)s, %(to)s, %(cp)s, %(text)s, %(part_of)s )",
- {'date':date, 'by':by, 'to':to, 'cp':amount,
- 'text':description + ".", 'part_of':part_of})
+ {'date':date, 'by':by, 'to':to, 'cp':amount_cp,
+ 'text':text + ".", 'part_of':part_of})
+    _check_warnings()
     return cur.lastrowid
 
 def get_journal_dates():
     """return a list of dates (in text form) of entries in the journal"""
-    cur.execute("select distinct made_on from fr_journal order by made_on")
+    cur.execute("select distinct date from fr_journal order by date")
     resp = cur.fetchall()
+    _check_warnings()
     if resp == None or len(resp)==0:
         return resp
     ret=[]
@@ -312,12 +358,22 @@ def get_journal(d_fm = None, d_to = None, character = None, primary = False):
     """return a list of dicts of entries in the journal"""
 
     string = ""
-    if d_fm is not None and d_to is not None:
-        string += " where made_on >= %(d_fm)s and made_on <= %(d_to)s "
-    elif d_fm is not None:
-        string += " where made_on >= %(d_fm)s "
-    elif d_to is not None:
-        string += " where made_on <= %(d_to)s "
+    if d_fm == 'All':
+        d_fm = None
+    else:
+        d_fm = str_to_date(d_fm)
+    if d_to == 'All':
+        d_to = None
+    else:
+        d_to = str_to_date(d_to)
+    if character == 'All':
+        character = None
+    if d_fm and d_to:
+        string += " where date >= %(d_fm)s and date <= %(d_to)s "
+    elif d_fm:
+        string += " where date >= %(d_fm)s "
+    elif d_to:
+        string += " where date <= %(d_to)s "
     if primary:
         if string != '':
             s1 = ' and '
@@ -334,10 +390,11 @@ def get_journal(d_fm = None, d_to = None, character = None, primary = False):
         string += s1+" made_by = %(character)s or made_to = %(character)s "+s2
 
     cur.execute("select "
-" journal_id, part_of, ourtime, made_on, made_by, made_to, amount_cp, description"
-" from fr_journal " + string + " order by made_on, journal_id",
+" journal_id, part_of, ourtime, date, made_by, made_to, amount_cp, description"
+" from fr_journal " + string + " order by date, journal_id",
 {'d_fm':d_fm, 'd_to':d_to, 'character':character})
     resp = cur.fetchall()
+    _check_warnings()
     if resp == None or len(resp) == 0:
         return resp
     ret=[]
@@ -346,146 +403,99 @@ def get_journal(d_fm = None, d_to = None, character = None, primary = False):
         t['journal_id'] = i[0]
         t['part_of'] = i[1]
         t['ourtime'] = i[2]
-        t['made_on'] = i[3]
+        t['date'] = date_to_str(i[3])
         t['made_by'] = i[4]
         t['made_to'] = i[5]
         t['amount_cp'] = i[6]
-        t['description'] = i[7]
+        t['description'] = i[7].format(by=i[4], to=i[5], amount=cp_to_str(i[6]))
         ret.append(t)
     return ret
 
 ########## Characters
 
-def in_or_none(k, d):
-    return d[k] if k in d else None
 
-def ins_if_not(d, l):
-    for k in l:
-        if k not in d:
-            d[k] = None
-
-def insert_char(d):
+def insert_character(d):
     """ insert a character into the database"""
 
-    ins_if_not(d, ('fullname', 'player', 'gender', 'race', 'class', 'alignment',
- 'picture', 'equipment', 'characteristics', 'notes', 'association', 'dm_notes',
+    _check_dict(d, must=('name', 'status', 'association'), may=(
+ 'alignment', 'characteristics', 'class', 'hidden_note', 'equipment',
+ 'fullname', 'gender', 'note', 'player', 'race', 'cash', 'picture',
  'large_picture'))
-    if 'cp' not in d:
-        d['cp'] = 0
-    if 'gold' in d:
-        d['cp'] = gp_cp_to_cp(d['gold'], d['cp'])
+    _ins_if_not(d, ('alignment', 'association', 'characteristics', 'class',
+ 'equipment', 'fullname', 'hidden_note', 'large_picture', 'note', 'picture',
+'player', 'race'))
+    if 'gender' not in d:
+        d['gender'] = 'Unknown Gender'
+    if 'cash' in d:
+        d['cash_cp'] = str_to_cp(d['cash'])
+    else:
+        d['cash_cp'] = 0
     cur.execute(
- "insert into fr_character ( char_name, char_status, "
- " char_alignment, "
- " char_association, "
- " char_acteristics, "
- " char_class, "
- " char_dm_notes, "
- " char_equipment, "
- " char_fullname, "
- " char_gender, "
- " char_notes, "
- " char_player, "
- " char_race, "
- " char_cash, "
- " char_picture_url, "
- " char_large_picture_url ) "
- " values ( %(name)s, %(status)s, "
- " %(alignment)s, "
- " %(association)s, "
- " %(characteristics)s, "
- " %(class)s, "
- " %(dm_notes)s, "
- " %(equipment)s, "
- " %(fullname)s, "
- " %(gender)s, "
- " %(notes)s, "
- " %(player)s, "
- " %(race)s, "
- " %(cp)s, "
- " %(picture)s, "
- " %(large_picture)s )", d )
+ "insert into fr_character ( "
+ " char_name, status, alignment, association, "
+ " char_acteristics, class, hidden_note, equipment, "
+ " fullname, gender, note, player, "
+ " race, cash_cp, picture_url, large_picture_url ) "
+ " values ( "
+ " %(name)s, %(status)s, %(alignment)s, %(association)s, "
+ " %(characteristics)s, %(class)s, %(hidden_note)s, %(equipment)s, "
+ " %(fullname)s, %(gender)s, %(note)s, %(player)s, "
+ " %(race)s, %(cash_cp)s, %(picture)s, %(large_picture)s )", d )
+    _check_warnings()
 
-def get_char_id(char_name):
-    """ given a char_name, return its corresponding char_id"""
-
-    cur.execute("select char_id from fr_character where char_name = %(char_name)s", {'char_name': char_name})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find char_name '" + char_name+"'")
-    return resp[0][0]
-
-
-def get_char_cash(char_id):
-    """given a char_id, return their cash in cps"""
-
-    cur.execute("select char_cash from fr_character where char_id = %(char_id)s",
- {'char_id':char_id})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find char_id '" + str(char_id)+"'")
-    return resp[0][0]
 
 
 def chars_move_cash(i):
     """move cash from one character to another, journaling it"""
 
-    if 'from_name' not in i:
-        i['from_name'] = get_char_name(i['from_id'])
-    if 'to_name' not in i:
-        i['to_name'] = get_char_name(i['to_id'])
-    if 'item_id' in i and i['item_id'] and 'item_name' not in i:
-        i['item_name'] = get_item_name(i['item_id'])
-    if 'part_of' not in i:
-        i['part_of'] = None
+    _check_dict(i, must=('date', 'by', 'to', 'amount_cp'), may=( 'item', 'for', 'note', 'part_of'))
+    by = i['by']
+    to = i['to']
+    amount_cp = i['amount_cp']
+    if to not in special:
+        cur.execute("update fr_character set cash_cp = "
+ " cash_cp + %(cp)s where char_name = %(to)s",
+ {'cp': amount_cp, 'to': to})
+        _check_warnings()
+    if by not in special:
+        cur.execute("update fr_character set cash_cp = "
+ " cash_cp - %(cp)s where char_name = %(by)s",
+ {'cp': amount_cp, 'by': by})
+        _check_warnings()
+    text = '{by} gave {amount} to {to}'
+    if i.get('item'):
+        t_for = " for " + i['item']
+    if i.get('for'):
+        t_for = " for " + i['for']
+    if i.get('note'):
+      text += ' ' + i.get('note','')
+    journal(str_to_date(i['date']), by, to, amount_cp, text, i.get('part_of'))
 
-    if i['to_id'] >= party:
-       cur.execute("update fr_character set char_cash = "
- " char_cash + %(cp)s where char_id = %(to_id)s",
- {'cp':i['amount'], 'to_id':i['to_id']})
-    if i['from_id'] >= party:
-        cur.execute("update fr_character set char_cash = "
- " char_cash - %(cp)s where char_id = %(from_id)s",
- {'cp':i['amount'], 'from_id':i['from_id']})
-    text = i['from_name'] + ' gave ' + str_cp(i['amount']) + ' to ' + i['to_name']
-    if 'item_name' in i and i['item_name'] is not None:
-        t_for = " for " + i['item_name']
-    if 'note' in i and i['note'] is not None:
-        text += i['note']
-    journal(i['date'], i['from_id'], i['to_id'], i['amount'], text, i['part_of'])
-
-def get_char_name(char_id):
-    """ given a char_id, return its corresponding char_name """
-
-    cur.execute("select char_name from fr_character where char_id = %(char_id)s", {'char_id':char_id})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find char_id '"+str(char_id)+"'")
-    return resp[0][0]
 
 def get_characters(kind, match = None):
     """return a list of name entries for characters in the database"""
 
     clause = ''
     if kind == 'All':
-        pass
+        clause = 'status != "dummy"'
     elif kind == 'Current':
-        clause = 'and char_status = "active" and char_association = "AFAL"'
+        clause = 'status = "active" and association = "AFAL"'
     elif kind == 'Former':
-        clause = 'and char_status = "inactive" and char_association = "AFAL"'
+        clause = 'status = "inactive" and association = "AFAL"'
     elif kind == 'Dead':
-        clause = 'and char_status = "dead" and char_association = "AFAL"'
+        clause = 'status = "dead" and association = "AFAL"'
     elif kind == 'ActiveNPCs':
-        clause = 'and char_status = "active" and char_association != "AFAL"'
-    elif kind == 'InctiveNPCs':
-        clause = 'and char_status = "inactive" and char_association != "AFAL"'
+        clause = 'status = "active" and association != "AFAL"'
+    elif kind == 'InactiveNPCs':
+        clause = 'status = "inactive" and association != "AFAL"'
     elif kind == 'DeadNPCs':
-        clause = 'and char_status = "dead" and char_association != "AFAL"'
-
+        clause = 'status = "dead" and association != "AFAL"'
+    else:
+        raise NameError("Unknown kind " + str(kind))
     cur.execute("select char_name from fr_character "
- " where char_id >= %(first_real_char)s " + clause + " order by char_name",
- {'first_real_char':first_real_char})
+ " where " + clause + " order by char_name")
     resp = cur.fetchall()
+    _check_warnings()
     ret = []
     if len(resp) < 1 or len(resp[0]) != 1:
         return ret
@@ -493,405 +503,340 @@ def get_characters(kind, match = None):
         ret.append(i[0])
     return ret
 
-def get_char_data(char_name):
-    """ given a char_name, return its data """
 
-    cur.execute("select char_id, char_fullname, char_player, char_gender, "
- " char_race, char_class, char_alignment, char_picture_url, char_equipment, "
- " char_acteristics, char_notes, char_association, char_status, char_cash, "
- " char_large_picture_url "
- " from fr_character where char_name = %(char_name)s",
- {'char_name':char_name})
+def get_char_data(char):
+    """ given a char, return its data """
+
+    cur.execute("select fullname, player, gender, "
+ " race, class, alignment, picture_url, equipment, "
+ " char_acteristics, note, association, status, cash_cp, "
+ " large_picture_url "
+ " from fr_character where char_name = %(char)s",
+ {'char':char})
     resp = cur.fetchall()
+    _check_warnings()
     if len(resp) != 1:
-        raise NameError("Couldn't find char_name '" + char_name + "'")
+        raise NameError("Couldn't find char '" + char + "'")
     resp = resp[0]
     ret = {}
-    ret['name'] = char_name
-    ret['id'] = resp[0]
-    ret['fullname'] = resp[1]
-    ret['player'] = resp[2]
-    ret['gender'] = resp[3]
-    ret['race'] = resp[4]
-    ret['class'] = resp[5]
-    ret['alignment'] = resp[6]
-    ret['picture_url'] = resp[7]
-    ret['equipment'] = resp[8]
-    ret['characteristics'] = resp[9]
-    ret['notes'] = resp[10]
-    ret['association'] = resp[11]
-    ret['status'] = resp[12]
-    ret['cash'] = resp[13]
-    ret['large_picture_url'] = resp[14]
+    ret['name'] = char
+    ret['fullname'] = resp[0]
+    ret['player'] = resp[1]
+    ret['gender'] = resp[2]
+    ret['race'] = resp[3]
+    ret['class'] = resp[4]
+    ret['alignment'] = resp[5]
+    ret['picture_url'] = resp[6]
+    ret['equipment'] = resp[7]
+    ret['characteristics'] = resp[8]
+    ret['note'] = resp[9]
+    ret['association'] = resp[10]
+    ret['status'] = resp[11]
+    ret['cash_cp'] = resp[12]
+    ret['large_picture_url'] = resp[13]
     return ret
+
 
 ########## Parties
 
-def get_party_id(party_name):
-    """given a party_name, return the corresponding party_id"""
 
-    cur.execute("select party_id from fr_party where party_name = %(party_name)s",
- {'party_name': party_name})
+def get_party_data(party):
+    """Given a party, return a list [[[name, share]...], shares] of its members"""
+
+    cur.execute("select date, type, note from fr_party where party_name = %(party)s",
+{'party':party})
     resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find party_name '" + party_name+"'")
-    return resp[0][0]
-
-
-def get_party_name(party_id):
-    """given a party_id, return the corresponding party_name"""
-
-    cur.execute("select party_name from fr_party where party_id = %(party_id)s",
- {'party_id': party_id})
+    _check_warnings()
+    if len(resp) != 1 or len(resp[0]) != 3:
+         raise NameError("party not found " + party)
+    ret = {'name': party, 'date': date_to_str(resp[0][0]), 'type': resp[0][1], 'note': resp[0][2], 'members': {}}
+    cur.execute("select char_name, share from fr_char_party where party_name = %(party)s",
+{'party':party})
     resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find party_id '" + party_id+"'")
-    return resp[0][0]
-
-
-def get_party_members(party_id):
-    """Given a party, return a list [id, share] entries for its members"""
-
-    cur.execute("select char_id, share from fr_char_party where party_id = %(p)s",
-{'p':party_id})
-    resp = cur.fetchall()
+    _check_warnings()
     if len(resp) < 1 or len(resp[0]) < 1:
-        raise NameError("Couldn't find characters for party '"+str(party_id)+"'")
-    return resp
+         raise NameError("Members not found " + party)
+    for i in resp:
+        ret['members'][i[0]] = i[1]
+    return ret
 
 
-def get_char_parties(char_id):
-    """Return a list of [party_id, share] that the character is in"""
+def get_char_parties(char):
+    """Return a list of [party, share] that the character is in"""
 
-    cur.execute("select fr_char_party.party_id, fr_char_party.share from fr_char_party natural join fr_party where fr_char_party.char_id = %(char_id)s order by fr_party.party_date",
- {'char_id':char_id})
+    cur.execute("select fr_char_party.party_name, fr_char_party.share from "
+ "fr_char_party natural join fr_party where fr_party.party_name != %(char)s"
+ " and fr_char_party.char_name = %(char)s order by fr_party.date, fr_party.party_name",
+ {'char':char})
     resp = cur.fetchall()
-#    if len(resp) < 1 or len(resp[0]) < 1:
-#        raise NameError("Couldn't find parties for char_id '"+str(char_id)+"'")
+    _check_warnings()
     return resp
+
 
 def get_parties():
-    """Return a list of [id, name] entries for all the parties in the database"""
+    """Return a list of name entries for all the parties in the database"""
 
-    cur.execute("select party_id, party_name from fr_party order by party_date")
+    cur.execute("select party_name from fr_party where type = 'AFAL' order by date, party_name")
     resp = cur.fetchall()
+    _check_warnings()
     if len(resp) < 1 or len(resp[0]) < 1:
-        raise NameError("Couldn't find any parties")
-    return resp
+        return resp
+    ret = []
+    for i in resp:
+        ret.append(i[0])
+    return ret
 
 
-def insert_party(party_name, party_date):
+def insert_party(d):
     """insert a party into the database"""
 
+    _check_dict(d, must=('name', 'date', 'type', 'members'), may=('note',))
+    party = d['name']
+    date = str_to_date(d['date'])
     cur.execute(
- "insert into fr_party (party_name, party_date) values (%(name)s, %(date)s)",
- {'name':party_name, 'date':party_date})
-    return cur.lastrowid
+ "insert into fr_party (party_name, type, date, note) values (%(party)s,"
+ " %(type)s, %(date)s, %(note)s)", {'party':party, 'type':d['type'], 'date':date, 'note':d.get('note')})
+    _check_warnings()
+    for char in d['members'].keys():
+        cur.execute( "insert into fr_char_party (char_name, party_name, share)"
+" values ( %(char)s, %(party)s, %(share)s )",
+ {'char': char, 'party': party, 'share': d['members'][char]})
+        _check_warnings()
 
 
-def insert_char_party(char_id, party_id, share=1.0):
-    """insert a char_party into the database"""
+def char_leave_parties(date, char, note = None):
+    """set the share of the specified character to 0 in all parties they were in"""
 
-    cur.execute(
- "insert into fr_char_party ( char_id, party_id, share ) values ( %(char_id)s, %(party_id)s, %(share)s )",
- {'char_id':char_id, 'party_id':party_id, 'share':share})
+    cur.execute("update fr_char_party set share = 0 where char_name = %(char)s", {'char':char})
+    _check_warnings()
+    text = "{by} left AFAL"
+    if note:
+        text += ' ' + note
+    journal(date, char, None, None, text)
 
 
 ########## Items
-
-def get_item_name(id):
-    """ given an item_id, return its corresponding item_name"""
-
-    cur.execute("select item_name from fr_item where item_id = %(id)s", {'id':id})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find item_name for '"+str(id)+"'")
-    return resp[0][0]
-
-
-def get_item_id(item_name):
-    """ given an item name, return its corresponding item_id
-
-The database now has a unque constraint on item names, so this can't return
-multiple items."""
-    cur.execute("select item_id from fr_item where item_name = %(name)s",
- {'name': item_name})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find a unique item_id for '" + item_name+"'")
-    return resp[0][0]
 
 
 def insert_item(d):
     """insert an item into the database"""
 
-    if 'owner_id' not in d:
-        d['owner_id'] = None
-    if 'sale_date' not in d:
-        d['sale_date'] = None
-    if 'value_cp' not in d:
-        d['value_cp'] = None
-    if 'note' not in d:
-        d['note'] = None
+    _check_dict(d, must=('item', 'finder', 'owner', 'holder', 'note',
+ 'value_cp', 'date_found', 'date_xfrd'), may=())
+    item = d['item']
+    d['date_found'] = str_to_date(d['date_found'])
+    d['date_xfrd'] = str_to_date(d['date_xfrd'])
+    cur.execute ( "select item_name from fr_item where item_name = %(item)s or item_name like %(with)s", {'item': item, 'with':item + '  #%%'})
+    resp = cur.fetchall()
+    _check_warnings()
+    if len(resp) == 1:
+        cur.execute("update fr_item set item_name = %(new)s where item_name = %(old)s",
+ {'new': item + "  #1", 'old':item})
+    if len(resp) > 0:
+        item += "  #" + str(len(resp)+1)
+        print "Warning: renaming item to", item
+        d['item'] = item
 
     cur.execute(
- " insert into fr_item(item_name, held_by, sale_date, value, note, acquired_by)"\
- " values(%(name)s, %(owner_id)s, %(sale_date)s, %(value_cp)s, %(note)s, "\
- "  %(party_id)s)", d)
-    return cur.lastrowid
+ "insert into fr_item(item_name, found_by, owned_by, held_by, note, value_cp, date_found, date_xfrd)"
+ " values(%(item)s, %(finder)s, %(owner)s, %(holder)s, %(note)s, %(value_cp)s, "
+ " %(date_found)s, %(date_xfrd)s)", d)
+    _check_warnings()
 
 
-def get_item_owner(item_id):
-    """Get the owner of an item"""
+def get_item_data(item):
+    """Get the data about an item"""
 
-    cur.execute ( "select held_by, sale_date from fr_item where item_id = %(item_id)s",
- {'item_id':item_id})
+    cur.execute ( "select found_by, owned_by, held_by, date_found, date_xfrd, note, value_cp from fr_item where item_name = %(item)s",
+ {'item':item})
     resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 2:
-        raise NameError("Couldn't find seller for item id '" + str(item_id)+"'")
-    if resp[0][1] is None:
-        return party
-    return resp[0][0]
+    _check_warnings()
+    if resp is None or len(resp) != 1:
+        return resp
+    resp = resp[0]
+    t = {}
+    t['item'] = item
+    t['finder'] = resp[0]
+    t['owner'] = resp[1]
+    t['holder'] = resp[2]
+    t['date_found'] = date_to_str(resp[3])
+    t['date_xfrd'] = date_to_str(resp[4])
+    t['note'] = resp[5]
+    t['value_cp'] = resp[6]
+    return t
 
 
-def get_item_acquired_by(item_id):
-    """get the party that acquired an item"""
+def change_item(date, item, owner=None, holder=None, value_cp = None, part_of = None):
+    """Change the ownership, transfer date, and value_cp of an item"""
 
-    cur.execute("select acquired_by from fr_item where item_id = %(item_id)s",
- {'item_id':item_id})
-    resp = cur.fetchall()
-    if len(resp) != 1 or len(resp[0]) != 1:
-        raise NameError("Couldn't find acquirer for item id '" + str(item_id)+"'")
-    return resp[0][0]
+    date = str_to_date(date)
+    c1 = ''
+    if owner is not None:
+        c1 += ",owned_by=%(owner)s"
+    if holder is not None:
+        c1 += ",held_by=%(holder)s"
+    if value_cp is not None:
+        c1 += ",value_cp=%(value_cp)s"
 
+    cur.execute('update fr_item set date_xfrd=%(date)s' + c1 + ' where item_name=%(item)s',
+ {'date':date, 'item':item, 'owner':owner, 'holder':holder, 'value_cp':value_cp })
+    _check_warnings()
 
-def change_item_owner(item_id, char_id, value, date):
-    """Change the ownership, transfer date, and value of an item"""
-
-    cur.execute("update fr_item set held_by = %(char_id)s, value = %(value)s, "
- " sale_date =  %(date)s where item_id = %(item_id)s",
- {'char_id':char_id, 'value':value, 'date':date, 'item_id':item_id})
 
 def get_items(kind, match = None):
     clause = ''
     if kind == 'Unresolved':
-        clause = 'where held_by is NULL'
+        clause = 'where owned_by = found_by and held_by is NULL'
     elif kind == 'Party':
-        clause = 'where held_by = %(party)s'
+        clause = 'where owned_by = %(party)s'
     elif kind == 'Auction':
         clause = 'where held_by = %(auction)s or note like "%%Auction%%"'
     elif kind == 'Sell':
         clause = 'where held_by = %(sell)s or note like "%%Sell%%"'
     elif kind == 'Lent':
-        clause = 'where sale_date is NULL and held_by > %(party)s'
+        clause = 'where held_by is not NULL and held_by != owned_by'
     elif kind == 'Identify':
         clause = 'where note like "%%Identify%%"'
     elif kind == 'All':
         pass
-    elif kind == 'Acquired_by':
-        clause = 'where acquired_by = %(match)s'
+    elif kind == 'Found_by':
+        clause = 'where found_by = %(match)s'
     elif kind == 'Owned_by':
+        clause = 'where owned_by = %(match)s'
+    elif kind == 'Held_by':
         clause = 'where held_by = %(match)s'
     cur.execute("select "
- "item_id, item_name, note, acquired_by, held_by, value, sale_date "
- "from fr_item " + clause + " order by item_name",
+ " item_name, found_by, owned_by, held_by, date_found, date_xfrd, note, value_cp "
+ " from fr_item " + clause + " order by item_name",
  {'party':party, 'auction':auction, 'sell':sell, 'match':match})
     resp = cur.fetchall()
+    _check_warnings()
     ret = []
     for i in resp:
         t = {}
-        t['item_id'] = i[0]
-        t['item_name'] = i[1]
-        t['note'] = i[2]
-        t['acquired_by'] = i[3]
-        t['held_by'] = i[4]
-        t['value'] = i[5]
-        t['sale_date'] = i[6]
+        t['item'] = i[0]
+        t['finder'] = i[1]
+        t['owner'] = i[2]
+        t['holder'] = i[3]
+        t['date_found'] = date_to_str(i[4])
+        t['date_xfrd'] = date_to_str(i[5])
+        t['note'] = i[6]
+        t['value_cp'] = i[7]
         ret.append(t)
     return ret
+
 
 ######## Debts
 
-def get_char_receivable(char_id):
-    cur.execute (
- "select debt_id, from_char, repay_order, owed_cp, share, owed_on, item_id, initial_cp "
- " from fr_debt where to_char = %(id)s order by from_char, repay_order",
- {'id':char_id})
+
+def get_char_debts(char, type):
+    if type == 'Payable':
+        clause = 'debtor = %(char)s'
+        order = 'debtee'
+    elif type == 'Receivable':
+        clause = 'debtee = %(char)s'
+        order = 'debtor'
+    else:
+        raise NameError("Unknown debt type " + type)
+    text = 'select debt_id, debtor, debtee, repay_order, owed_cp, share, date, item, initial_cp from fr_debt where ' + clause + '  order by ' + order + ', repay_order'
+    cur.execute(text , {'char':char})
     resp = cur.fetchall()
+    _check_warnings()
     if resp is None or len(resp) == 0:
         return resp
     ret = []
     for i in resp:
         t = {}
         t['debt_id'] = i[0]
-        t['to_id'] = char_id
-        t['from_id'] = i[1]
-        t['order'] = i[2]
-        t['amount'] = i[3]
-        t['share'] = i[4]
-        t['item_id'] = i[6]
-        t['contracted_on'] = i[5]
-        t['initial_cp'] = i[7]
+        t['by'] = i[1]
+        t['to'] = i[2]
+        t['order'] = i[3]
+        t['amount_cp'] = i[4]
+        t['share'] = i[5]
+        t['date'] = date_to_str(i[6])
+        t['item'] =  i[7]
+        t['initial_cp'] = i[8]
         ret.append(t)
     return ret
 
-
-def get_char_payable(char_id):
-    cur.execute ( "select "
- " debt_id, to_char, repay_order, owed_cp, share, owed_on, item_id, initial_cp "
- " from fr_debt where from_char = %(id)s order by to_char, repay_order",
- {'id':char_id})
-    resp = cur.fetchall()
-    if resp is None or len(resp) == 0:
-        return resp
-    ret = []
-    for i in resp:
-        t = {}
-        t['debt_id'] = i[0]
-        t['from_id'] = char_id
-        t['to_id'] = i[1]
-        t['order'] = i[2]
-        t['amount'] = i[3]
-        t['share'] = i[4]
-        t['contracted_on'] = i[5]
-        t['item_id'] = i[6]
-        t['initial_cp'] = i[7]
-        ret.append(t)
-    return ret
-
-
-def get_char_rec_xferable(char_id):
-    cur.execute (
- "select tob.debt_id, tob.from_char, tob.repay_order, tob.owed_cp, tob.share, tob.item_id "
- "from fr_debt as tob where tob.to_char = %(char_id)s and tob.repay_order = "
- " ( select min(froma.repay_order) from debt as froma where froma.from_char = tob.from_char ) order by from_char",
- {'char_id':char_id})
-    resp = cur.fetchall()
-    if resp is None or len(resp) == 0:
-        return resp
-    ret = []
-    for i in resp:
-        t = {}
-        t['debt_id'] = i[0]
-        t['from_id'] = i[1]
-        t['to_id'] = char_id
-        t['order'] = i[2]
-        t['amount'] = i[3]
-        t['share'] = i[4]
-        t['item_id'] = i[5]
-        ret.append(t)
-    return ret
-
-
-def get_char_pay_xferable(char_id):
-    cur.execute(
- "select fromb.debt_id, fromb.to_char, fromb.repay_order, fromb.owed_cp, fromb.share, fromb.item_id "
- "from fr_debt as fromb where fromb.from_char = %(char_id)s and fromb.repay_order = ( select min(toc.repay_order) from fr_debt as toc where toc.from_char = %(char_id)s) order by to_char",
- {'char_id':char_id})
-    resp = cur.fetchall()
-    if resp is None or len(resp) == 0:
-        return resp
-    ret = []
-    for i in resp:
-        t = {}
-        t['debt_id'] = i[0]
-        t['from_id'] = char_id
-        t['to_id'] = i[1]
-        t['order'] = i[2]
-        t['amount'] = i[3]
-        t['share'] = i[4]
-        t['item_id'] = i[5]
-        ret.append(t)
-    return ret
 
 def bump_debt_repay_order(debt_id):
     """increase the repay_order of the specified debt"""
     cur.execute ( "update fr_debt set repay_order = repay_order + 1 where debt_id = %(debt_id)s", {'debt_id':debt_id})
+    _check_warnings()
 
 
-def get_char_selfdebt(char_id):
-    """returns a list of [debt_id, owed] for debts the specified character has to themself"""
-    cur.execute ( "select debt_id, owed_cp from fr_debt where to_char = %(char_id)s and from_char = %(char_id)s", {'char_id':char_id})
-    return cur.fetchall()
-
-
-def delete_debt(d, verb):
+def delete_debt(d):
     """Deletes the specified debt and journal it"""
 
-    if 'from_name' not in d:
-        d['from_name'] = get_char_name(d['from_id'])
-    if 'to_name' not in d:
-        d['to_name'] = get_char_name(d['to_id'])
-    if 'item_id' in d and d['item_id'] is not None and 'item_name' not in d:
-        d['item_name'] = get_item_name(d['item_id'])
-    if 'part_of' not in d:
-        d['part_of'] = None
-
+    _check_dict(d, must=('debt_id', 'by', 'to', 'date', 'amount_cp', 'verb' ), may=('item', 'note', 'part_of'))
     cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s", d )
-    text = d['from_name'] + verb + 'a ' + str_cp(d['amount']) + ' debt'
-    if d['from_id'] != d['to_id']:
-        text += ' to '+ d['to_name']
-    if 'item_name' in d:
-        text += ' for ' + d['item_name']
-    if 'note' in d and d['note'] is not None:
-        text += d['note']
-    journal(d['date'], d['from_id'], d['to_id'], d['amount'], text, d['part_of'] )
+    _check_warnings()
+    text = '{by} ' + d['verb'] + ' a {amount} debt'
+    if d['by'] != d['to']:
+        text += ' to {to}'
+    if d.get('item'):
+        text += ' for ' + d['item']
+    if d.get('note'):
+        text += ' ' + d['note']
+    journal(d['date'], d['by'], d['to'], d['amount_cp'], text, d.get('part_of'))
 
-def debt_lower_owed(d, cp, verb):
+def debt_lower_owed(d):
     """Lower the amount owed on the specified debt and journal it"""
 
-    if 'from_name' not in d:
-        d['from_name'] = get_char_name(d['from_id'])
-    if 'to_name' not in d:
-        d['to_name'] = get_char_name(d['to_id'])
-    if 'item_id' in d and d['item_id'] is not None and 'item_name' not in d:
-        d['item_name'] = get_item_name(d['item_id'])
-    if 'part_of' not in d:
-        d['part_of'] = None
+    _check_dict(d, must=('date', 'by','to', 'amount_cp', 'debt_id', 'lower_cp', 'verb'), may=('item', 'note', 'part_of'))
+    cur.execute("update fr_debt set owed_cp = owed_cp - %(lower_cp)s "
+ " where debt_id = %(debt_id)s", {'lower_cp':d['lower_cp'], 'debt_id':d['debt_id']})
+    _check_warnings()
+    text = '{by} ' + d['verb'] + ' {amount} of a ' + cp_to_str(d['amount_cp']) + ' debt to {to}'
+    if d.get('item'):
+        text += ' for ' + d['item']
+    text += ', leaving ' + cp_to_str(d['amount_cp'] - d['lower_cp'])
+    if d.get('note'):
+        text += ' ' + d['note']
+    journal(d['date'], d['by'], d['to'], d['lower_cp'], text, d.get('part_of'))
 
-    new_amount = d['amount'] - cp
-    cur.execute("update fr_debt set owed_cp = %(new_amount)s "
- " where debt_id = %(debt_id)s", {'new_amount':new_amount, 'debt_id':d['debt_id']})
-    text = d['from_name'] + verb + str_cp(cp) + ' of a ' + str_cp(d['amount']) + ' debt to ' + d['to_name'] + ', leaving ' + str_cp(new_amount)
-    if 'item_name' in d:
-        text += ' for ' + d['item_name']
-    if 'note' in d and d['note'] is not None:
-        text += d['note']
-    journal(d['date'], d['from_id'], d['to_id'], cp, text, d['part_of'])
 
 def insert_debt(d):
     """insert a debt into the database and journal it"""
 
+    _check_dict(d, must=('date', 'by', 'to', 'amount_cp'), may=('repay_order','share','part_of', 'item', 'note'))
     if 'repay_order' not in d:
         d['repay_order'] = 0
     if 'share' not in d:
         d['share'] = 1.0
-    if 'item_id' not in d:
-        d['item_id'] = None
-
-    if 'from_name' not in d:
-        d['from_name'] = get_char_name(d['from_id'])
-    if 'to_name' not in d:
-        d['to_name'] = get_char_name(d['to_id'])
-    if 'item_id' in d and d['item_id'] and 'item_name' not in d:
-        d['item_name'] = get_item_name(d['item_id'])
     if 'part_of' not in d:
         d['part_of'] = None
+    if 'item' not in d:
+        d['item'] = None
+
+    by = d['by']
+    to = d['to']
+    d['date'] = str_to_date(d['date'])
+    if by == to:
+        text = "{by} noted a self-debt of {amount}"
+        if d.get('item'):
+            text += " for " + d['item']
+        if d.get('note'):
+            text += ' ' + d['note']
+        journal(d['date'], by, None, d['amount_cp'], text, d['part_of'])
+        return
 
     cur.execute("insert into fr_debt "
- " (from_char, to_char, repay_order, share, item_id, initial_cp, owed_cp, owed_on) "
- " values ( %(from_id)s, %(to_id)s, %(repay_order)s, %(share)s, %(item_id)s, "
- " %(amount)s, %(amount)s, %(date)s)", d)
+ " (date,debtee,debtor,repay_order,share,item,initial_cp,owed_cp) "
+ " values(%(date)s, %(by)s, %(to)s, %(repay_order)s, %(share)s, %(item)s, "
+ " %(amount_cp)s, %(amount_cp)s)", d)
+    _check_warnings()
 
-    text =  d['from_name'] + " owed " + str_cp(d['amount']) + " to " + d['to_name']
+    text = "{by} lent {amount} to {to}"
     if d['repay_order'] != 0:
         text += " repay order " + str(d['repay_order'])
     if d['share'] != 1.0:
-        text += " for " + str(d['share']) + " share"
-    if 'item_name' in d and d['item_name'] is not None:
-        text += " for " + d['item_name']
-    if 'note' in d and d['note'] is not None:
-        text += d['note']
-    journal(d['date'], d['from_id'], d['to_id'], d['amount'], text, d['part_of'])
+        text += " for " + share_to_str(d['share']) + " share"
+    if d.get('item'):
+        text += " for " + d['item']
+    if d.get('note'):
+        text += ' ' + d['note']
+    journal(d['date'], by, to, d['amount_cp'], text, d['part_of'])
 
 ######## End

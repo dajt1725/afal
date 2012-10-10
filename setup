@@ -1,13 +1,7 @@
 set -e
-#set -x
-#set -v
 mysql -uafal -pBuffyStewart afal << EOF
 drop database afal;
 create database afal;
 EOF
 mysql -uafal -pBuffyStewart afal < afal-schema.sql.mysql
-./chars -v
-./parties
-./items
-./bulk
-./cancel '6 Tarsakh 1370' Ag Darius Denyae Deringa Dexter Henkles Maanamere Steve Tristan Misery Ursula
+./bulk -v chars.dat parties.dat items.dat bulk.dat

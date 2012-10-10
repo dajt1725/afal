@@ -1,193 +1,568 @@
 #!/usr/bin/python
 import argparse
 import afal
+import os
 
-def do_transaction(d):
+# if may is None, don't check for extra keys at all
+def check_dict(d, must = None, may = None):
+    """ dict must contain every element in 'must', and may contain elements in 'may'"""
+
+    if may is not None:
+        for i in d:
+            if i not in must and i not in may:
+                print "\nUnexpected key", i, "found in dict", d, "only expected", must, may, "\n"
+                raise NameError("Unexpected key")
+
+    for i in must:
+        if not i in d:
+            print "\nMissing key", i, "in dict", d, "expected", must, "\n"
+            raise NameError("Missing key")
+
+
+
+def do_char(d):
+    check_dict(d, must=('name','status'), may=('alignment', 'association',
+'characteristics', 'class', 'hidden_note', 'equipment', 'fullname', 'note',
+ 'player', 'race', 'picture', 'large_picture', 'cash', 'gender', 'joined', 'date'))
+    e = {}
+    for i in ('name', 'status', 'alignment', 'association', 'characteristics',
+ 'class', 'hidden_note', 'equipment', 'fullname', 'note', 'player',
+ 'race', 'picture', 'large_picture'):
+        e[i] = d.get(i)
+    e['cash'] = d.get('cash', '0')
+    e['gender'] = d.get('gender','Unknown Gender')
+    if args.verbose:
+        print "Creating character", e
+    afal.insert_character(e)
+# Every character is in a party of just themselves
+    if 'date' in d:
+        date = d['date']
+    elif 'joined' in d:
+        date = d['joined']
+    else:
+        date = None
+    afal.insert_party({'name':d['name'], 'type': 'Character', 'date': date, 'members':{d['name']:1}})
+
+
+def do_party(d):
+    check_dict(d, must=('name','type'))
+    e = {}
+    e['name'] = d.pop('name')
+    e['type'] = d.pop('type')
+    if 'date' in d:
+        e['date'] = d.pop('date', None)
+    else:
+        e['date'] = afal.party_to_date(e['name'])
+    if 'note' in d:
+        e['note'] = d.pop('note')
+    e['members'] = {}
+    for c in d:
+        e['members'][c] = d[c]
+    if args.verbose:
+        print "creating party", e
+    afal.insert_party(e)
+
+
+def do_give(d):
+    # Two possibilities from=, amount= to move cash
+    # or item= to give an item
+    if 'item' in d:
+        check_dict(d, must = ('date', 'to', 'item'), may=('note', 'part_of'))
+        afal.change_item(d['date'], d['item'], owner = d['to'], holder = d['to'], part_of = d.get('part_of'))
+    elif 'by' in d and 'amount' in d:
+        check_dict(d, must=('date', 'to', 'by', 'amount'), may=('for', 'note', 'part_of'))
+        party_data = afal.get_party_data(d['to'])
+        if party_data['type'] == 'AFAL':
+            d['to'] = afal.party
+        d['amount_cp'] = afal.str_to_cp(d['amount'])
+        del d['amount']
+        afal.chars_move_cash(d)
+    else:
+        print "\nIgnoring invalid give command", d, "\n"
+
+
+def do_lend(d):
+    date=d['date']
+    to = d['to']
+    part_of = d.get('part_of')
+    if 'item' in d:
+        check_dict(d, must = ('date', 'to', 'item'), may = ('note', 'part_of'))
+        afal.change_item(date, d['item'], holder=d['to'], part_of = part_of)
+    elif 'by' in d and 'amount' in d:
+        check_dict(d, must=('date', 'to', 'by', 'amount'), may = ('virtual', 'for', 'note', 'part_of', 'no_journal'))
+        by = d['by']
+        amount_cp = afal.str_to_cp(d['amount'])
+        party_data = afal.get_party_data(by)
+        lenders = party_data['members']
+        shares = sum(lenders.values())
+        if len(lenders) > 1 and 'no_journal' not in d:
+            text = "{by} lent {amount} to {to}"
+            if d.get('note'):
+                text += ' ' + d['note']
+            tmp = afal.journal(date, by, to, amount_cp, text, part_of )
+            if part_of is None:
+                part_of = tmp
+        for by in lenders:
+            share = float(lenders[by])
+            if share > 0:
+                share_cp = afal.divide_cp(share * amount_cp, shares)
+                afal.insert_debt({'date':date,
+ 'amount_cp':share_cp, 'share':share, 'by':by,
+ 'to':to, 'note':d.get('note'), 'item':d.get('for'), 'part_of':part_of})
+                if 'virtual' not in d:
+                    afal.chars_move_cash({'date':date, 'amount_cp':share_cp,
+'by':by, 'to':to, 'part_of':part_of})
+                amount_cp -= share_cp
+                shares -= share
+    else:
+        print "\nIgnoring invalid lend command",d,"\n"
+
+
+def do_sell(d):
+    check_dict(d, must=('date', 'to', 'item'), may=('cash', 'debt', 'note', 'part_of', 'virtual'))
+    date = d['date']
+    to = d['to']
+    cash_cp = afal.str_to_cp(d.get('cash','0'))
+    debt_cp = afal.str_to_cp(d.get('debt','0'))
+    item = d['item']
+    item_data = afal.get_item_data(item)
+    note = d.get('note','')
+    part_of = d.get('part_of')
+    if len(item_data) < 2 or (cash_cp == 0 and debt_cp == 0):
+        print "\nIgnoring invalid sell command", d, "\n"
+        return
+    seller = item_data['owner']
+    t_for = ' for '
+    t_and = ''
+    if cash_cp > 0:
+        t_for += afal.cp_to_str(cash_cp) + ' cash'
+        t_and = ' and '
+    if debt_cp > 0:
+        t_for += t_and + afal.cp_to_str(debt_cp) + ' debt'
+    text = '{by} sold ' + item + ' to {to}' + t_for + note
+    tmp = afal.journal(date, seller, to, cash_cp + debt_cp, text, part_of)
+    if part_of is None:
+        part_of = tmp
+    afal.change_item(date, item, owner = to, holder = to, value_cp = cash_cp + debt_cp, part_of = part_of )
+
+    if debt_cp > 0:
+        do_lend({'by':seller, 'to':to, 'amount': afal.cp_to_str(debt_cp), 'date':date, 'for':item, 'part_of':part_of, 'note':note, 'virtual':True, 'no_journal':True})
+    if 'virtual' not in d and cash_cp > 0:
+        do_give({'by':to, 'to':seller, 'amount': afal.cp_to_str(cash_cp), 'date':date, 'for':item, 'part_of':part_of, 'note':note})
+
+
+def do_pay(d):
+    inexact = False
+    if 'item' in d:
+        check_dict(d, must=('date', 'to', 'item'), may=('note','part_of'))
+        item = d['item']
+        item_data=afal.get_item_data(item)
+        by = item_data['owner']
+        amount_cp = item_data['value_cp']
+    elif 'by' in d:
+        check_dict(d, must=('date', 'by'), may=('to', 'amount_cp', 'amount', 'virtual', 'note', 'part_of'))
+        by = d['by']
+        if 'amount_cp' in d:
+            amount_cp = d['amount_cp']
+        elif 'amount' in d:
+            amount_cp = afal.str_to_cp(d['amount'])
+        else:
+            amount_cp = afal.get_char_data(by)['cash_cp']
+            inexact = True
+        item = None
+    else:
+        print "\nIgnoring invalid pay command",d,"\n"
+        return
+    payable = afal.get_char_debts(by, 'Payable')
+    if len(payable) == 0:
+        print "\n",by,"has not debts to pay\n"
+        return
+    if 'to' in d:
+        to = d['to']
+        ptmp = []
+        for i in payable:
+            if i['to'] == to:
+                ptmp.append(i)
+        payable = ptmp
+    else:
+        to = payable[0]['to']
+        for debt in payable[1:]:
+           if debt['to'] != to:
+               to = 'debts'
+               break
+
+    date = d['date']
+    shares = 0.0
+    owed = 0
+    for i in payable:
+        shares += i['share']
+        owed += i['amount_cp']
+    if amount_cp > owed:
+        if not inexact:
+            if amount_cp - owed < 3:
+                print "\nWARNING: lost track of a cp or two: ", by, to, amount_cp - owed, "\n"
+            else:
+                print "\nWARNING:", by, "only owes", afal.cp_to_str(owed), "not", afal.cp_to_str(amount_cp),"\n"
+        amount_cp = owed
+    text = '{by} paid {amount} to {to}'
+    if item:
+        text += ' with ' + item
+    note = d.get('note')
+    if note:
+        text += ' ' + note
+    part_of = d.get('part_of')
+    tmp = afal.journal(date, by, to, amount_cp, text, part_of)
+    if part_of is None:
+        part_of = tmp
+    topay = {}
+    for i in payable:
+        this_owed = i['amount_cp']
+        this_share = i['share']
+        to = i['to']
+        this_cp = afal.divide_cp(amount_cp * this_owed, owed)
+        if abs(this_cp - this_owed) < 3:
+            if this_cp != this_owed:
+                print "\nWARNING: lost track of a cp or two: ", i['by'], i['to'], this_cp-this_owed, "\n"
+            afal.delete_debt({'date':date, 'debt_id':i['debt_id'], 'by':i['by'], 'to':i['to'], 'amount_cp':i['amount_cp'], 'item':i.get('item'), 'part_of':part_of, 'note':note, 'verb': 'paid off'})
+        else:
+            afal.debt_lower_owed({'date':date, 'debt_id': i['debt_id'], 'by':i['by'], 'to': i['to'], 'amount_cp': i['amount_cp'],
+'item': i.get('item'), 'part_of': part_of, 'note': note, 'lower_cp': this_cp, 'verb': 'paid'})
+        if item is None and 'virtual' not in d:
+            if to in topay:
+                topay[to]['amount_cp'] += this_cp
+            else:
+                topay[to] = {'date': date, 'by': by, 'to': to,
+ 'amount_cp': this_cp, 'item': i.get('item'), 'for': i.get('for'),
+ 'note': note, 'part_of': part_of}
+        amount_cp -= this_cp
+        owed -= this_owed
+        shares -= this_share
+
+    if item is not None:
+        afal.change_item(date, item, owner = to, holder = to, part_of = part_of)
+    elif 'virtual' not in d:
+        for i in topay:
+            afal.chars_move_cash(topay[i])
+
+
+def do_writeoff(d):
+    check_dict(d, must=('date',))
+    date = d.pop('date')
+    part_of_main = d.pop('part_of', None)
+    note = d.pop('note', None)
+    for char in d:
+        payable = afal.get_char_debts(char, 'Payable')
+        receivable = afal.get_char_debts(char, 'Receivable')
+        if len(payable) > 0 or len(receivable)>0:
+            pay_cp = 0
+            for debt in payable:
+                pay_cp += debt['amount_cp']
+            rec_cp = 0
+            for debt in receivable:
+                rec_cp += debt['amount_cp']
+            if pay_cp > 0 and rec_cp > 0:
+                text = '{by} cancelled '+afal.cp_to_str(rec_cp)+' and welshed on '+afal.cp_to_str(pay_cp)+' of debts'
+            elif pay_cp > 0:
+                text = '{by} welshed on '+afal.cp_to_str(pay_cp)+' of debt'
+            else:
+                text = '{by} cancelled ' + afal.cp_to_str(rec_cp) + ' of debt'
+            tmp = afal.journal(date, char, None, pay_cp + rec_cp, text, part_of_main)
+            part_of = tmp if part_of_main is None else part_of_main
+            for debt in payable:
+                afal.delete_debt({'date':date, 'debt_id':debt['debt_id'], 'by':char, 'to':debt['to'], 'amount_cp':debt['amount_cp'], 'item':debt.get('item'), 'part_of':part_of, 'note':note, 'verb': 'welshed on'})
+            for debt in receivable:
+                afal.delete_debt({'date':date, 'debt_id':debt['debt_id'], 'by':debt['by'], 'to':char, 'amount_cp':debt['amount_cp'], 'item':debt.get('item'), 'part_of':part_of, 'note':note, 'verb': 'cancelled'})
+        afal.char_leave_parties(date, char, note)
+
+
+def do_dividend(d):
+    check_dict(d, must=('date','by', 'amount'), may=('note', 'part_of'))
+    date = d['date']
+    party_data = afal.get_party_data(d['by'])
+    amount_cp = afal.str_to_cp(d['amount'])
+    part_of = d.get('part_of')
+    members = party_data['members']
+    shares = float(sum(members.values()))
+    text = "{by} paid a dividend of {amount}"
+    if shares > 1:
+        even_cp = shares * int(amount_cp/shares)
+        if even_cp != int(even_cp):
+            even_cp -= shares
+        even_cp = int(even_cp)
+        text += " split into " + afal.share_to_str(shares) + " shares of " + afal.cp_to_str(int(even_cp/shares)) + " each"
+    else:
+        even_cp = amount_cp
+    if shares != len(members):
+        text += " among " + str(len(members)) + " party members"
+    if amount_cp != even_cp:
+        text += " with " + afal.cp_to_str(amount_cp-even_cp) +" to the party"
+    if d.get('note'):
+        text += ' ' + d['note']
+    amount_cp = even_cp
+    tmp = afal.journal(date, d['by'], None, amount_cp, text, part_of)
+    if part_of is None:
+        part_of = tmp
+    for char in members:
+        share = members[char]
+        if share:
+            share_cp = afal.divide_cp(share * amount_cp, shares)
+            if args.verbose:
+                print afal.cp_to_str(share_cp), "to", char
+            afal.chars_move_cash({'date':date, 'amount_cp':share_cp,
+'by':afal.party, 'to':char, 'part_of':part_of})
+            amount_cp -= share_cp
+            shares -= share
+
+
+def do_cancel(d):
+    check_dict(d, must=('date',))
+    date = d.pop('date')
+    note = d.pop('note', None)
+    for char in d:
+        payable = afal.get_char_debts(char, 'Payable')
+        if len(payable) == 0:
+            continue
+        part_of = afal.journal(date, char, None, 0, "{by} cancelled debts")
+        found = False
+        for i in payable:
+            if i['to'] == char:
+                afal.delete_debt({'date': date, 'debt_id':i['debt_id'], 'by': char, 'to': char, 'amount_cp':i['amount_cp'], 'part_of': part_of, 'note': note, 'item': i['item'], 'verb': 'self-cancelled'})
+                found = True
+        receivable = afal.get_char_debts(char, 'Receivable')
+        if found:
+            payable = afal.get_char_debts(char, 'Payable')
+        if len(payable) == 0 or len(receivable) == 0:
+            continue
+
+        for i in payable:
+            i['date'] = date
+            i['part_of'] = part_of
+            i['note'] = note
+        for i in receivable:
+            i['date'] = date
+            i['part_of'] = part_of
+            i['note'] = note
+# payable holds a list of of who we owe money to, sorted by who we owe it to
+# receivable holds a list of who owes us money, sorted by who they are
+        pay_start = 0
+        rec_start = 0
+        while pay_start < len(payable) and rec_start < len(receivable):
+            if payable[pay_start]['to'] < receivable[rec_start]['by']:
+                pay_start += 1
+                continue
+            if receivable[rec_start]['by'] < payable[pay_start]['to']:
+                rec_start += 1
+                continue
+# if we get here we've found a pair of debts to/from the same person
+# Now figure out how many debts of each type we have with that person
+            pay = payable[pay_start]['to']
+            pay_order = payable[pay_start]['order']
+            pay_end = pay_start
+            while pay_end < len(payable) - 1:
+                if payable[pay_end+1]['to'] != pay or payable[pay_end+1]['order'] != pay_order:
+                    break
+                pay_end += 1
+            pay_cp = 0
+            for i in range(pay_start,pay_end+1):
+                pay_cp += payable[i]['amount_cp']
+
+            rec = receivable[rec_start]['by']
+            if rec != pay:
+                print "\n ERROR rec and pay ids don't match", rec, pay, char,"\n"
+                return
+            rec_order = receivable[rec_start]['order']
+            rec_end = rec_start
+            while rec_end < len(receivable) - 1:
+                if receivable[rec_end+1]['by'] != rec or receivable[rec_end+1]['order'] != rec_order:
+                    break
+                rec_end += 1
+            rec_cp = 0
+            for i in range(rec_start,rec_end+1):
+                rec_cp += receivable[i]['amount_cp']
+
+# ok, figure out the total debt to be cancelled
+            if pay_cp < rec_cp:
+                cancel_cp = pay_cp
+            else:
+                cancel_cp = rec_cp
+            if args.verbose:
+                print char, pay, pay_cp, rec_cp
+# modify all the payable debts appropiaately
+            pay_cancel_cp = cancel_cp
+            for i in range ( pay_start, pay_end + 1 ):
+                tmp = payable[i]
+                cur_cp = tmp['amount_cp']
+                cxl_cp = afal.divide_cp(pay_cancel_cp * cur_cp, pay_cp)
+                if args.verbose:
+                    print char,"to",pay,"was",cur_cp,"cxl",cxl_cp
+                if abs(cur_cp - cxl_cp) < 3:
+                    if cur_cp != cxl_cp:
+                        print "\nWARNING losing track of a copper or two", char,pay, cur_cp-cxl_cp, "\n"
+                    afal.delete_debt( {'date': date, 'debt_id':tmp['debt_id'], 'by': char, 'to': pay, 'amount_cp':cur_cp, 'part_of': part_of, 'note':note, 'item':tmp.get('item'), 'verb': 'completely cancelled'})
+                    if i == pay_start:
+                        pay_start += 1
+                    else:
+                        print "\nWARNING deleting a debt in the middle\n"
+                else:
+                    afal.debt_lower_owed({'date':date, 'debt_id': tmp['debt_id'], 'by': char, 'to': pay, 'amount_cp': cur_cp,
+'item': tmp.get('item'), 'part_of': part_of, 'note': note, 'lower_cp': cxl_cp, 'verb': 'cancelled'})
+                pay_cancel_cp -= cxl_cp
+                tmp['amount_cp'] -= cxl_cp
+                pay_cp -= cur_cp
+# modify all the receivable debts appropriately
+            rec_cancel_cp = cancel_cp
+            for i in range ( rec_start, rec_end + 1 ):
+                tmp = receivable[i]
+                cur_cp = tmp['amount_cp']
+                cxl_cp = afal.divide_cp(rec_cancel_cp * cur_cp, rec_cp)
+                if args.verbose:
+                    print pay,"to",char,"was",cur_cp,"cxl",cxl_cp
+                if abs(cur_cp - cxl_cp) < 3:
+                    if cur_cp != cxl_cp:
+                        print "\nWARNING losing track of a copper or two:", pay, char, cur_cp-cxl_cp, "\n"
+                    afal.delete_debt({'date': date, 'debt_id': tmp['debt_id'], 'to': char, 'by': pay, 'amount_cp':cur_cp, 'part_of': part_of, 'note':note, 'item': tmp['item'], 'verb': 'completely cancelled'})
+                    if i == rec_start:
+                        rec_start += 1
+                    else:
+                        print "\nWARNING deleting a debt in the middle\n"
+                else:
+                    afal.debt_lower_owed({'date':date, 'debt_id': tmp['debt_id'], 'by': pay, 'to': char, 'amount_cp': cur_cp,
+'item': tmp.get('item'), 'part_of': part_of, 'note': note, 'lower_cp': cxl_cp, 'verb': 'cancelled'})
+                rec_cancel_cp -= cxl_cp
+                tmp['amount_cp'] -= cxl_cp
+                rec_cp -= cur_cp
+
+
+def do_find(d):
+    check_dict(d, must=('name', 'found'), may = ('owner', 'holder', 'note',
+ 'value', 'date_found', 'date', 'xfrd'))
+    e = {}
+    e['item'] = d['name']
+    e['finder'] = d['found']
+    if 'owner' in d:
+        e['owner'] = d['owner']
+        if 'holder' in d:
+            e['holder'] = d['holder']
+        else:
+            e['holder'] = e['owner']
+    else:
+        e['owner'] = e['finder']
+        e['holder'] = d.get('holder')
+    e['note'] = d.get('note')
+    e['value_cp'] = afal.str_to_cp(d.get('value'))
+    if 'date_found' in d:
+        e['date_found'] = d['date_found']
+    elif 'date' in d:
+        e['date_found'] = d['date']
+    else:
+        e['date_found'] = afal.party_to_date(d['found'])
+    if 'date_xfrd' in d:
+        e['date_xfrd'] = d['date_xfrd']
+    else:
+        e['date_xfrd'] = d.get('xfrd')
+    if args.verbose:
+        print "Creating item", e
+    afal.insert_item(e)
+
+
+def do_leave(d):
+    check_dict(d, must=('date',))
+    date = d.pop('date')
+    note = d.pop('note',None)
+    for char in d:
+        afal.char_leave_parties(date, char, note)
+
+
+def do_journal(d):
+    check_dict(d, must=('date','by','note'), may=('to','amount','part_of'))
+    afal.journal(d['date'], d['by'], d.get('to'), afal.str_to_cp(d.get('amount')), d['note'], d.get('part_of'))
+
+
+def _check_loop(chars, char, color):
+    if char not in chars:
+        chars[char] = {'debts':{}}
+        for debt in afal.get_char_debts(char, 'Payable'):
+            to = debt['to']
+            if to in chars[char]['debts']:
+                chars[char]['debts'][to] += debt['amount_cp']
+            else:
+                chars[char]['debts'][to] = debt['amount_cp']
+    for to in chars[char]['debts'].keys():
+        if to in chars and 'color' in chars[to] and chars[to]['color'] == color:
+            return [[char, chars[char]['debts'][to], to]]
+        oc = chars[char].get('color')
+        chars[char]['color'] = color
+        ret = _check_loop(chars, to, color)
+        if oc:
+            chars[char]['color'] = oc
+        else:
+            del chars[char]['color']
+        if ret:
+           if ret[0][0] != ret[-1][2]:
+               ret = [[char, chars[char]['debts'][to], to]] + ret
+           return ret
+    return None
+
+
+def do_loop(d):
+    check_dict(d, must=('date',), may=('note',))
+    date = d['date']
+    if 'note' in d:
+        note = d['note'] + ' with a pebble'
+    else:
+        note = 'with a pebble'
+    cur_color = 1
+    chars = {}
+    for char in afal.get_characters('Current'):
+        loop = _check_loop(chars, char, cur_color)
+        if loop:
+            m = loop[0][1]
+            for i in loop:
+                if i[1] < m:
+                    m = i[1]
+            print "loop: ", afal.cp_to_str(m)
+            for i in loop:
+                print " ", i[0], 'owes', afal.cp_to_str(i[1]), 'to', i[2]
+                if chars[i[0]]['debts'][i[2]] == m:
+                   del chars[i[0]]['debts'][i[2]]
+                else:
+                   chars[i[0]]['debts'][i[2]] -= m
+                do_pay({'date': date, 'by': i[0], 'to': i[2], 'amount_cp': m, 'virtual': True, 'note': note})
+        cur_color += 1
+
+
+def do_something(d):
     if args.verbose:
         print "doing", d
-    date = afal.str_to_date(d['date'])
-    if 'buy' in d:
-        cash = afal.gp_cp_to_cp(float(d.get('cash','0')), 0)
-        debt = afal.gp_cp_to_cp(float(d.get('debt','0')), 0)
-        item_id = afal.get_item_id(d['item'])
-        item_name=d['item']
-        char_id = afal.get_char_id(d['buyer'])
-        char_name = d['buyer']
-        char_name = afal.get_char_name(char_id)
-        date = afal.str_to_date(d['date'])
-
-        seller_id = afal.get_item_owner(item_id)
-        if seller_id is None :
-            seller_id = afal.party
-        if seller_id == afal.party:
-            party_id = afal.get_item_acquired_by(item_id)
-            seller_name = 'Party ' + afal.get_party_name(party_id)
-            sellers = afal.get_party_members(party_id)
-            shares = 0
-            for i in sellers:
-                shares +=i[1]
-        else:
-            seller_name = afal.get_char_name(seller_id) if seller_id > afal.party else 'Someone'
-            sellers = [[seller_id, 1]]
-            shares = 1
-
-        if debt > 0 and cash > 0:
-            verb = " sold "
-            t_for = " for " + afal.str_cp(cash) + " cash and " + afal.str_cp(debt) + " debt"
-        elif debt > 0:
-            verb = " sold "
-            t_for = " for " + afal.str_cp(debt) + " debt"
-        elif cash > 0:
-            verb = " sold "
-            t_for = " for " + afal.str_cp(cash) + " cash"
-        else:
-            verb = " gave "
-            t_for = ''
-        text = seller_name + verb + item_name + " to " + char_name + t_for
-
-        afal.change_item_owner(item_id, char_id, cash + debt, date)
-        journal_id = afal.journal(date, seller_id, char_id, cash + debt, text)
-        if args.verbose:
-            print char_name, "bought", item_name
-
-        if 'virtual' not in d:
-            cash_cp = cash
-            debt_cp = debt
-            for i in sellers:
-                sid = i[0]
-                sshare = float(i[1])
-                sname = afal.get_char_name(sid)
-                if sshare > 0 :
-                    if cash_cp > 0 :
-                        sh_cp = afal.divide_cp(sshare * cash_cp, shares)
-                        if args.verbose:
-                            print char_name, "paid", afal.str_cp(sh_cp), "to", sname
-                        afal.chars_move_cash({'date':date, 'from_id':char_id,
- 'to_id':sid, 'amount':sh_cp, 'from_name':char_name, 'to_name':sname,
- 'item_id':item_id, 'item_name':item_name, 'part_of':journal_id})
-                        cash_cp -= sh_cp
-                    if debt_cp > 0 :
-                        sh_cp = afal.divide_cp(sshare * debt_cp, shares)
-                        if args.verbose :
-                            print char_name, "owed", afal.str_cp(sh_cp), "to", sname
-                        afal.insert_debt({'date':date, 'from_id':char_id, 'to_id':sid,
- 'amount':sh_cp, 'share':sshare,'item_id':item_id, 'from_name':char_name,
- 'to_name':sname, 'item_name':item_name, 'part_of':journal_id})
-                        debt_cp -= sh_cp
-                    shares -= sshare
-    elif 'pay' in d:
-        amount_cp = afal.gp_cp_to_cp(d['amount'],0)
-        from_name = d['by']
-        from_id = afal.get_char_id(from_name)
-        payable = afal.get_char_payable(from_id)
-        if 'to' in d:
-            to_name = d['to']
-            to_id = afal.get_char_id(to_name)
-            ptmp = []
-            for i in payable:
-                if i['to_id'] == to_id:
-                    ptmp.append(i)
-            payable = ptmp
-        else:
-            to_name = 'his debts'
-            to_id = None
-
-        note = ' (' + d['note'] + ')' if 'note' in d else ''
-        if len(payable) == 0:
-            if to_id is None:
-                print from_name, "has no debts to pay"
-                return
-            afal.chars_move_cash({'date':date, 'from_id':from_id,
- 'to_id':to_id, 'amount':amount_cp, 'from_name':from_name, 'to_name':to_name,
- 'note':note})
-            return
-        shares = 0.0
-        owed = 0
-        for i in payable:
-            shares += i['share']
-            owed += i['amount']
-        if amount_cp > owed:
-            print from_name, "only owes", afal.str_cp(owed), "not", afal.str_cp(amount_cp)
-            return
-        text = from_name + ' paid ' + afal.str_cp(amount_cp) + ' to ' + to_name + note
-        journal_id = afal.journal(date, from_id, to_id, amount_cp, text)
-        note = ''
-        for i in payable:
-            id = i['debt_id']
-            this_owed = i['amount']
-            this_share = i['share']
-            to_id = i['to_id']
-            i['date'] = date
-            i['from_name'] = from_name
-            i['to_name'] = afal.get_char_name(to_id)
-            i['part_of'] = journal_id
-            i['note'] = note
-            this_cp = afal.divide_cp(amount_cp * this_owed, owed)
-            if this_cp == this_owed:
-                afal.delete_debt(i, ' paid off ')
-            else:
-                afal.debt_lower_owed(i, this_cp, ' paid ')
-            if 'virtual' not in d:
-                i['amount'] = this_cp
-                afal.chars_move_cash(i)
-            amount_cp -= this_cp
-            owed -= this_owed
-            shares -= this_share
-
-    elif 'owe' in d:
-        date = afal.str_to_date(d['date'])
-        debt_cp = afal.gp_cp_to_cp(d['amount'], 0)
-        char_id = afal.get_char_id(d['by'])
-        char_name = d['by']
-        shares = 0.0
-        try:
-            party_id = afal.get_party_id(d['to'])
-            party_name = d['to']
-            lender_name = party_name
-            lender_id = party_id
-            lenders = afal.get_party_members(party_id)
-            for i in lenders :
-                shares += float(i[1])
-
-        except:
-            party_id = None
-            lender_id = afal.get_char_id(d['to'])
-            lender_name = d['to']
-            lenders = [ [lender_id, 1 ] ]
-            shares = 1;
-
-        if 'item' in d:
-            item_name = d['item']
-            item_id = afal.get_item_id(item_name)
-            itext = ' for ' + item_name
-        else:
-            item_id = None
-            item_name = None
-            itext = ''
-        journal_id = None
-        if len(lenders) > 1:
-            journal_id = afal.journal(date, lender_id, char_id, debt_cp,
- lender_name + " lent " + afal.str_cp(debt_cp) + " to " + char_name + itext )
-        for i in lenders :
-            lid = i[0]
-            lshare = float(i[1])
-            lname = afal.get_char_name(lid)
-            if lshare > 0 :
-                sh_cp = int(lshare * debt_cp / shares)
-                afal.insert_debt({'date':date, 'from_id':char_id, 'to_id':lid,
-'amount':sh_cp, 'share':lshare, 'item_id':item_id, 'from_name':char_name,
- 'to_name':lname, 'item_name':item_name, 'part_of':journal_id})
-
-    else:
-        print "Unknown transaction in", d
+    doable =  set(d.keys()) & can_do_set
+    if len(doable) != 1:
+        print "\nUnknown todo in ", d, "\n"
         return
 
+    date = d.get('date')
+    if date:
+        date = afal.str_to_date(date)
+        if do_something.last_date and date < do_something.last_date:
+            print "\nWARNING dates not in chronological order:", date, do_something.last_date, d, "\n"
+        do_something.last_date = date
+    todo = doable.pop()
+    del d[todo]
+    can_do[todo](d)
+
+do_something.last_date = None
+
+can_do = {'char': do_char, 'party': do_party, 'give':do_give, 'lend':do_lend,
+ 'sell':do_sell, 'pay': do_pay, 'writeoff':do_writeoff,
+ 'dividend': do_dividend, 'cancel': do_cancel, 'find': do_find,
+ 'leave': do_leave, 'journal': do_journal, 'loop': do_loop}
+
+can_do_set = frozenset(can_do.keys())
 
 parser = argparse.ArgumentParser("read transactions from a file and do them")
 parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
-parser.add_argument("--file", "-f", help="file to read", default="bulk.dat")
+parser.add_argument("file", help="file to read", nargs='*', default=["bulk.dat"])
 args = parser.parse_args()
 
-file=open(args.file)
-afal.parse_file(file,do_transaction,dict())
+for filename in args.file:
+    afal.parse_file(open(filename), do_something, dict())
 afal.fini()
