@@ -4,7 +4,7 @@ find;found=Flamerule-23-1369
 ,name=Deck of Wonderous Transformation;owner=party;note=Devlin id <d Eleasias 1 1369>
 ,name=Glass Sphere of Wall of Force;note=Steve id <d Eleasias 1 1369>
 ,name=Ioun Stone of Protection;holder=Darius;note=Devlin partially id, Darius, Steve failed <d Eleasias 1 1369>, Steve, Cassie id <d Eleasias 27 1369>
-,name=Ring of Magic Missiles;holder=Steve;note=Devlin, Darius Steve failed id <d Eleasias 1 1369>, Cassie id <d Marpenoth 28 1369>, Used up on or before <d Hammer 13 1370>;owner=Party
+,name=Ring of Magic Missiles;holder=Steve;note=Devlin, Darius Steve failed id <d Eleasias 1 1369>, Cassie id <d Marpenoth 28 1369>, Used up on or before <d Hammer 13 1370>;owner=party
 ,name=Key (Magic);note=Darius, Steve fail id <d Eleasias 1 1369>, Steve, Cassie, Darius fail on <d Eleasias 27 1369>
 date=Flamerule 23 1369;Buffy;writeoff
 char;association=afal

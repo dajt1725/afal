@@ -144,7 +144,7 @@ date=Ches 3 1370
 ,,name=Loot: silver candlesticks 500gp;owner=Maanamere;xfrd=23 Ches 1370;value=500
 ,,name=Loot: finely made gold chain 130gp *2;owner=Maanamere;xfrd=23 Ches 1370;value=260
 ,,name=Loot: platinum necklace 700gp;owner=Maanamere;xfrd=23 Ches 1370;value=700
-,,name=Magical Stirrer;owner=Party
+,,name=Magical Stirrer;owner=party
 ,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3b-1370
 ,,name=Potion *4;note=Identify
