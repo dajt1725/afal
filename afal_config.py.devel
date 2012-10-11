@@ -1,0 +1,6 @@
+#!/usr/bin/python
+# this is the development config
+config = {
+	'database':'afal_devel', 'user':'afal'
+, 'password':'BuffyStewart'
+}

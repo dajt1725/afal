@@ -11,9 +11,9 @@ class=Wild Mage;alignment=Chaotic Good;picture=Darius.gif;\
 large_picture=Darius_lg.gif;\
 characteristics=Clever, quick, short dk-blond hair, reddish beard, grey eyes,\
  5'9&frac12\;&quot\;, 160lbs.;\
-equipment=Wizardly robe and hat, Bracers of Defense AC5, +1 Ring of Protection,\
+equipment=Wizardly robe and hat, Bracers of Defense AC5, +2 Ring of Protection,\
  Sling, <i>Urgoth</i> Belt Dagger of Doom, Ioun Stone, Fanny Pack of Holding,\
- Tenser's Throw Rug;\
+ Tenser's Throw Rug, Ring of Kobolds;\
 note=Some clerical spellcasting ability (lay priest of Mystra),\
  blunt weapon restriction, a phobia of snakes, and tongue-tied around women.\
  Darius is one of the founding party members.
@@ -22,7 +22,8 @@ fullname=Dexter Melaenarlir;gender=Male;picture=Dexter.png;cash=6000gp;\
 large_picture=Dexter_lg.png;player=Dina;race=&frac12\;Elf;\
 characteristics=Green cat's eyes, strong, wise, clever, white hair, 6', 195lbs.;\
 equipment=+1 plate mail, +1 shield, <i>Perditor Mortua</i>, Moon's Hand Mace,\
- +1 Long Bow, some +1 flight arrows, Scroll of <i>Cure Disease</i>;\
+ +1 Long Bow, some +1 arrows, Rings of Water Walking, Warmth and Fire Resistance,\
+ Ebon Fly, Scroll of <i>Cure Disease</i>;\
 note=Can know alignment and detect undead at will multiple times/day,\
  alcoholic, phobia of undead.  Dexter is one of the founding party members.
 ,name=Henkles;status=active;alignment=Lawful Neutral;class=Fighter;\

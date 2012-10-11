@@ -1,0 +1,6 @@
+#!/usr/bin/python
+# this is the production config
+config = {
+	'database':'afal', 'user':'afal'
+, 'password':'BuffyStewart'
+}

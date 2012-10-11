@@ -17,6 +17,7 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
  not restricted.  Also, Brogan is compelled to kiss anything he sees that is\
  composed of silver unless it's on someone's person.  If he fails either\
  condition, he immediately loses all prepared spells.
+,sell;to=outside the party;item=Nonmagic;cash=1913gp, 80cp
 ,dividend;by=Ches-30-1370;amount=1913gp, 80cp
 ,sell;to=Dexter;item=Ebon Fly;cash=5000gp
 ,sell;to=Henkles;item=Poison: Urds Teeth *3;cash=105gp
@@ -69,7 +70,7 @@ date=4 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-4-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
 ,find;found=Tarsakh-4-1370
 ,,name=+1 Sling;holder=Deringa
-,,name=+1 Dagger;holder=Auction
+,,name=+1 Dagger;holder=Auction;value=1400gp
 ,,name=Nonmagic;holder=Sell;note=Glaive, Broadsword, Short Bow, Chainmail, Shield
 ,,name=Cash;note=17 sp, 42 ep, 1 gp, 7 taoul, 2 harbor moons;value=2hm, 7toals, 1gp, 42ep, 17sp
 ,,name=Gem: Pearl 100gp *2
@@ -80,16 +81,19 @@ date=4 Tarsakh 1370
 ,find;found=Maanamere;name=Gem: Amber 90gp;value=90gp
 ,pay
 ,,to=Steve;item=Loot: large opal earring (*2, 750gp together, 300gp ea)
+,,to=Steve;item=Loot: finely made gold chain 130gp *2
+,,to=Steve;item=Loot: Gold Earring 20gp
 ,,to=Darius;item=Loot: platinum necklace 700gp
 ,,to=Dexter;item=Loot: platinum necklace 700gp
 ,,to=Henkles;item=Loot: silver candlesticks 500gp
 ,,to=Misery;item=Loot: ring 500gp
-,,to=Henkles;item=Gem: Emerald 200gp *2
-,,to=Steve;item=Loot: finely made gold chain 130gp *2
-,,to=Henkles;item=Gem: Carnelian 100gp *2
 ,,to=Misery;item=Gem: Amber 90gp
 ,,to=Misery;item=Gem: Bloodstone 5gp *8
-,,to=Steve;item=Loot: Gold Earring 20gp
+,,to=Henkles;item=Loot: ring 500gp
+,,to=Henkles;item=Gem: Emerald 200gp *2
+,,to=Henkles;item=Gem: Carnelian 100gp *2
+,,to=Henkles;item=Gem: Amber 90gp
+,,to=Henkles;item=Gem: Bloodstone 5gp *8
 ,give;by=Maanamere;to=outside the party;amount=50gp;note=three boats, 9 barrels, planks
 date=5 Tarsakh 1370
 ,sell;to=Deringa;item=+1 Sling;debt=2500gp
@@ -114,10 +118,10 @@ date=Tarsakh 7 1370
 ,,name=Droplets of Sobriety;owner=party;note=6 droplets, Darius id <d Tarsakh 8 1370>
 ,,name=+2/+4 (level draining or negative plane) Mace
 ,,name=Nonmagic;note=Dagger *2;holder=Sell
-,sell;to=outside the party;item=Nonmagic  #1;cash=257gp, 125cp
-,sell;to=outside the party;item=Nonmagic  #2;cash=46toals
-,sell;to=outside the party;item=Nonmagic  #3;cash=5hm, 180cp
-,sell;to=outside the party;item=Nonmagic  #4;cash=1gp
+,sell;to=outside the party;item=Nonmagic  #2;cash=257gp, 125cp
+,sell;to=outside the party;item=Nonmagic  #3;cash=46toals
+,sell;to=outside the party;item=Nonmagic  #4;cash=5hm, 180cp
+,sell;to=outside the party;item=Nonmagic  #5;cash=1gp
 ,sell;to=outside the party;item=Cash  #1;cash=2hm, 7toals, 1gp, 42ep, 17sp
 ,sell;to=outside the party;item=Cash  #2;cash=9toals, 6ep, 16sp, 27cp
 ,sell;to=outside the party;item=Cash  #3;cash=12gond bells, 23ep
@@ -130,6 +134,7 @@ date=8 Tarsakh 1370
 ,dividend;by=Hammer-15-1370;amount=205gp, 51cp;note=from Light War Horses
 ,dividend;by=Hammer-20-1370;amount=1094gp, 146cp;note=from Heavy War Horses
 ,dividend;by=Ches-30-1370;amount=5305gp;note=from Ebon Fly, Urds Teeth Poison, and 2x Gems
+,dividend;by=Tarsakh-3-1370;amount=257gp, 125cp;note=from Nonmagic
 ,dividend;by=Tarsakh-4-1370;amount=228gp, 170cp;note=from Nonmagic and Cash
 ,dividend;by=Tarsakh-7-1370;amount=403gp, 467cp;note=from Nonmagic and Cash
 # Deringa and Henkles pays off their debts
@@ -146,13 +151,13 @@ date=8 Tarsakh 1370
 ,find;found=Darius;name=Loot: Letter of Credit 500gp;value=500gp
 ,pay;to=Misery;item=Loot: Letter of Credit 500gp  #1
 ,pay;to=Misery;item=Loot: Letter of Credit 500gp  #2
+,pay;to=Henkles;item=Loot: Letter of Credit 500gp  #1
+,pay;to=Staric;item=Loot: Letter of Credit 500gp  #2
+,pay;to=Staric;item=Loot: large opal earring (*2, 750gp together, 300gp ea)
 ,pay;by=Darius
 ,pay;by=Denyae
 ,pay;by=Dexter
-,pay;to=Staric;item=Loot: large opal earring (*2, 750gp together, 300gp ea)
 ,pay;by=Steve
-,pay;to=Henkles;item=Loot: Letter of Credit 500gp  #1
-,pay;to=Staric;item=Loot: Letter of Credit 500gp  #2
 ,pay;by=Misery
 ,lend;to=Staric;item=Wand of Lightning Fan
 ,loop

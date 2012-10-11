@@ -10,9 +10,9 @@ find;found=Hammer-9-1370
 ,name=Necklace of Light and Darkness;holder=Henkles;owner=party
 party;type=AFAL;name=Hammer-13-1370;date=13 Hammer 1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Theo=1
 find;found=Hammer-13-1370
-,name=Loot: Gold Earring 20gp;owner=Maanamere;xfrd=13 Hammer 1370;value=20
-,name=+1 Glaive;holder=Auction
-,name=+1 Banded Mail;holder=Auction
+,name=Loot: Gold Earring 20gp;owner=Maanamere;xfrd=13 Hammer 1370;value=20gp
+,name=+1 Glaive;holder=Auction;note=6gp, 8#, 1-6/1-10/L/S/speed 8;value=2700gp
+,name=+1 Banded Mail;holder=Auction;value=4000gp
 ,name=+1 Shield;holder=Tristan
 ,name=Ring of Water Walking
 ,name=Potion of Healing;owner=party
@@ -65,8 +65,8 @@ find;found=Hammer-20-1370
 ,name=Bracers of Defense AC 6;holder=Ursula;note=Fully id'd by testing on <d Tarsakh 10 1370>
 ,name=+1 Plate Mail (Half Elf);holder=Tristan
 ,holder=Auction
-,,name=+1 Dagger
-,,name=+1 Heavy Crossbow
+,,name=+1 Dagger;value=1400gp
+,,name=+1 Heavy Crossbow;note=bolts:1sp,.1#,dmg 1-10/1-10,S,P\; bow: 50gp, 14#, M, speed 11, RoF 1/2, Range 8/16/24;value=2700gp
 ,holder=Maanamere;owner=party
 ,,name=+1 Arrow (Sheaf) *3
 ,,name=Sleep Gas Grenade (M) *2
@@ -125,7 +125,7 @@ char;association=AFAL;status=active
 player=Bill;race=Human;picture=ag.jpg;\
 characteristics=brown hair, blue eyes, 5'7&quot\;, 128lbs.,\
  wise beyond his years;\
-equipment=Bracers of defense AC 6, +1/+3(Cold) Ring of Protection, Gloves of Mask,\
+equipment=Bracers of defense AC 5, +1 Ring of Protection, Gloves of Mask,\
  <i>Shadowfang</i> - magically dark longsword, +1/+3(backstab) Long Sword,\
  picks &amp\; tools, many daggers, dark blue cloak;\
 note=Joined party in Silverymoon, <d Alturiak 5 1370>.;joined=Alturiak 5 1370
@@ -137,7 +137,7 @@ equipment=+1 plate mail, +1 shield, +1/+2 (half *)/+3(Humans) Bastard Sword,\
 note=Originally Gail's character, played by Andrew and now Alex.\
  Tristan joined the party on <d Alturiak 5 1370>.;joined=Alturiak 5 1370
 party;type=AFAL;name=Alturiak-29-1370;Chusnog=0;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=0;Staric=.5;Steve=1;Tristan=1
-find;found=Alturiak-29-1370;name=Potion of Love ("Philter");holder=Auction
+find;found=Alturiak-29-1370;name=Potion of Love ("Philter");holder=Auction;value=300gp
 date=Ches 3 1370
 ,party;type=AFAL;name=Ches-3a-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Stalker=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Ches-3a-1370
@@ -161,9 +161,9 @@ date=Ches 3 1370
 ,,,name=Potion of Healing
 ,,,name=Potion of Healing
 ,,holder=Auction
-,,,name=Potion of Youth ("Elixer")
-,,,name=Potion of Longevitiy
-,,,name=Potion of Claraudience
+,,,name=Potion of Youth ("Elixer");value=10000gp
+,,,name=Potion of Longevitiy;value=1000gp
+,,,name=Potion of Claraudience;value=400gp
 ,,,name=Potion of Lust
 ,,,name=Detect Magic powder *10;note=Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
 ,,,name=Brighten lamps powder *10;note=Green odorless powder: increases lamp oil light by 20'
@@ -196,9 +196,10 @@ date=Ches 7 1370;writeoff;Chusnog;Oguch;Stalker
 party;type=AFAL;name=Ches-25-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 find;found=Ches-25-1370
 ,name=-1 Cursed Khopesh;owner=party;xfrd=25 Ches 1370
-,name=+1 Shield (needs new handle);holder=Auction
+,name=+1 Shield (needs new handle);holder=Auction;note=10gp?, 10#;value=2500gp
 party;type=AFAL;name=Ches-30-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 find;found=Ches-30-1370
+,name=Nonmagic;note=too much to list here
 ,name=Ring of Fire Resistance
 ,name=Ebon Fly
 ,name=Poison: Urds Teeth *3
@@ -217,10 +218,10 @@ find;found=Ches-30-1370
 ,name=Sleep Gas Grenade (M) *2;holder=Staric;owner=party
 ,name=Gem: Chrysoberyl 100gp *2
 ,holder=Auction
-,,name=+1 Medium Shield
-,,name=+1 Footmans Pick
-,,name=Staff of the Serpent
-,,name=Oil of Slipperiness
+,,name=+1 Medium Shield;note=10gp?, 10#;value=2500gp
+,,name=+1 Footmans Pick;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp
+,,name=Staff of the Serpent;value=35000gp
+,,name=Oil of Slipperiness;value=750gp
 ,name=Oil of Etherialness;note=Darius id <d Tarsakh 8 1370>
 ,name=+1/+3(Backstab) Long Sword;holder=Ag;note=+10% Hide in Shadows;owner=party
 ,name=Dagger of Hurting

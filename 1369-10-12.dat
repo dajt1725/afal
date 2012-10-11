@@ -4,7 +4,7 @@ find;found=Marpenoth-1-1369
 ,name=+1 Full Plate Armor;holder=Maanamere;note=Narthan id <d Marpenoth 1 1369>
 ,holder=Auction
 ,,name=Scroll (C);note=L3: Inflict Moderate Wounds
-,,name=+1 Studded Leather Armor
+,,name=+1 Studded Leather Armor;value=2500gp
 ,name=Scroll (C);note=L1: Aid
 ,name=Potion of Aid;holder=Maanamere;note=Darius, Steve, Cassie failed id <d Marpenoth 1 1369>, Cassie id <Marpenoth 11 1369>;owner=party
 ,name=Potion of Enlarge;holder=Narthan;note=Auction,Darius id <d Marpenoth 1 1369>
@@ -27,7 +27,7 @@ date=23 Marpenoth 1369
 ,,owner=party
 ,,,name=Crystal of Spellreading;note=Steve failed, Darius part &amp\; failed <d Marpenoth 24 1369>
 ,,,name=Potion of Delusion (Invisibility);note=Steve id <d Marpenoth 24 1369>
-,,name=Potion of Sweet Water;holder=Steve;note=Auction, Darius failed id <d Marpenoth 24 1369>, Cassie id <d Marpenoth 27 1369>
+,,name=Potion of Sweet Water;holder=Steve;note=Auction, Darius failed id <d Marpenoth 24 1369>, Cassie id <d Marpenoth 27 1369>;value=250gp
 ,,name=Loot: large opal earring (*2, 750gp together, 300gp ea);owner=Maanamere;xfrd=24 Marpenoth 1369;value=750gp
 ,,name=Gem: bloodstone 5gp *8;owner=Maanamere;xfrd=24 Marpenoth 1369;value=40gp
 date=26 Marpenoth 1369
@@ -66,7 +66,7 @@ class=Specialty Mage(Houri);fullname=Ursula la Bim;\
 gender=Female;picture=ursula05.jpg;player=Sue;race=Human;\
 characteristics=Attractive, long brown hair, 5'9&quot\;, 130lbs.,\
  badly scarred leg;\
-equipment=alluring clothing, Bracers of Defense AC 5/6, +2 Ring of Protection,\
+equipment=alluring clothing, Bracers of Defense AC 6, +2 Ring of Protection,\
  Ring of Warmth, +2 Dagger, Dagger of Hurting, Wand of Small Fires,\
  Horn of Bubbles.;\
 note=Currently spends a lot of time hanging around Fair Winds.\
@@ -102,7 +102,7 @@ date=12 Uktar 1369;
 ,,name=Scroll (C) *2;owner=outside the party;xfrd=13 Uktar 1369;value=3300gp
 ,,name=Potion of Murdoch's Insect Ward;holder=Auction
 ,,name=Potion of Invisibility
-,,name=Potion of Undead Control (Skeleton);holder=Auction
+,,name=Potion of Undead Control (Skeleton);holder=Auction;value=2500gp
 ,party;type=AFAL;name=Uktar-12C-1369;Misery=1;Stewart=1;Maanamere=1;Henkles=1;Darius=1;Dexter=1;Steve=1;Narthan=1;Gomsha=0;note=Up to "At this point, Narthan, Gomsha, Maanamere and Steve joined Cassie"...
 ,party;type=AFAL;name=Uktar-12D-1369;Darius=1;Dexter=1;Henkles=1;Misery=1;Stewart=1;Ursula=1;note=Up to "Somewhere around this point, Maanamere came forward"...
 ,party;type=AFAL;name=Uktar-12E-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Stewart=1;Ursula=1;note=Up to"At this point, Dexter and Ursula switched to deep rear guard"...
@@ -228,7 +228,8 @@ characteristics=Strong, clever, very quick,\
  very short, curly brown/dk blonde hair, grey eyes, 5'7&quot\;, 137 lbs.;\
 equipment=+1 Plate mail, Ring of Protection, <i>Thunderbolt</i> (unique bow),\
  +2 longsword, short sword, various magic arrows,\
- Shield inscribed with Scroll of Summon Mystic Moose
+ Shield inscribed with Scroll of Summon Mystic Moose, Carpet of Flying (Party item),\
+ Necklace of Darkness (Party item)
 ,find;found=party;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius cast Fireball <d Uktar 24 1369>
 ,find;found=party;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius cast Snilloc's Snowball Swarm on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
 ,find;found=party;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius (mis)cast Snilloc's Snowball Swarm (actually Reduce) on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
@@ -345,7 +346,7 @@ note=First encountered on <d Nightal 8 1369>. Also on <d Nightal 11 1369>.\
 date=Nightal 9 1369;writeoff;Marcae
 party;type=AFAL;name=Nightal-12-1369;date=12 Nightal 1369;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 find;found=Nightal-12-1369
-,name=+1 Dagger;note=From Staros, Auction
+,name=+1 Dagger;note=From Staros;holder=Auction;value=1400gp
 ,name=+1 Arrow (Sheaf);holder=Denyae;note=From Staros;owner=party
 ,name=Potions of Minor Healing and Regeneration
 party;type=AFAL;name=Nightal-16-1369;date=16 Nightal 1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Narthan=1;Stalker=1;Steve=1

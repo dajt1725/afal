@@ -1,7 +1,0 @@
-set -e
-mysql -uafal -pBuffyStewart afal << EOF
-drop database afal;
-create database afal;
-EOF
-mysql -uafal -pBuffyStewart afal < afal-schema.sql.mysql
-./bulk -v chars.dat parties.dat items.dat bulk.dat

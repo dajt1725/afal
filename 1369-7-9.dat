@@ -64,4 +64,4 @@ find;found=Eleint-19-1369
   name=Ring of Teleport Adventurer Into Undermountain;note=Steve, Darius part id on <d Eleint 20 1369>;owner=outside the party;xfrd=27 Eleint 1369
   name=Oil of Firey Burning;owner=destroyed;xfrd=12 Uktar 1369;note=Used by Steve, Temple id <d Eleint 27 1369>
 sell;to=Narthan;item=+2 Shield;date=Eleint 20 1369;debt=2100gp;cash=900gp;virtual
-find;found=Stewart;name=Chardalyn-headed Mace;value=42gp;date_found=Eleint 25 1369
+find;found=Stewart;holder=Stewart;name=Chardalyn-headed Mace;value=42gp;date_found=Eleint 25 1369

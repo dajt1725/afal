@@ -4,15 +4,12 @@ import mysql.connector
 from mysql.connector import errorcode
 import random
 import re
+import afal_config
 
 ############################## begin startup code here
 
 
-config = {
-	'database':'afal_devel', 'user':'afal'
-, 'password':'BuffyStewart'
-}
-conn = mysql.connector.connect(**config)
+conn = mysql.connector.connect(**afal_config.config)
 conn.get_warnings = True
 cur = conn.cursor()
 
