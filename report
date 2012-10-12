@@ -611,22 +611,40 @@ else:
     form = cgi.FieldStorage()
     todo = form.getfirst('generate', None)
     if todo == 'Character':
-        hdr_type = 'Character Report'
         args.character = form.getlist('char')
+        if len(args.character) > 1 or args.character[0] == 'All':
+            hdr_type = 'AFAL Multi-Character Report'
+        else:
+            hdr_type = args.character[0]
     elif todo == 'Party':
-        hdr_type = 'Party Report'
         args.party = form.getlist('party')
+        if len(args.party) > 1 or args.party[0] == 'All':
+            hdr_type = 'AFAL Multi-Party Report'
+        else:
+            hdr_type = args.party[0]
     elif todo == 'Journal':
-        hdr_type = 'Transaction Journal Report'
         args.journal = [form.getfirst('journal_start'), form.getfirst('journal_end'), form.getfirst('journal_character')]
+        if args.journal[2] is not None and args.journal[2] != 'All':
+            hdr_type = args.journal[2]+' Transaction Journal Report'
+        else:
+            hdr_type = 'Transaction Journal Report'
     elif todo == 'Items':
-        hdr_type = 'List of Items'
         args.items = form.getlist('item_type')
+        if len(args.items) == 1 and args.items[0] != 'All':
+            hdr_type = args.items[0] + ' Items'
+        else:
+            hdr_type = 'Items'
     elif todo == 'Group':
-        hdr_type = 'List of People'
         args.members = form.getlist('members')
+        if len(args.members) == 1 and args.members[0] != 'All':
+            hdr_type = {'Current': 'Current AFAL Members',
+ 'Former': 'Former AFAL Members', 'Dead': 'Deceased AFAL Members',
+ 'ActiveNPCs': 'NPCs We May Meet Again', 'InactiveNPCs': 'NPCs We Are Unlikely To Meet Again',
+ 'DeadNPCs': 'NPCs We Have Killed'}[args.members[0]]
+        else:
+            hdr_type = 'People'
     elif args.all:
-        hdr_type = 'Report on Everything'
+        hdr_type = 'Everything'
         args.character = character_list
         args.party = party_list
         args.journal = [None, None, None]
@@ -638,7 +656,7 @@ else:
  'Content-Type: text/html\n'
  '\n'
  '<html>\n'
- ' <head><title>AFAL {hdr_type}</title></head>\n'
+ ' <head><title>{hdr_type}</title></head>\n'
  ' <body background="/back3l07.gif">\n'
  '  <center>\n'
  '    <b>Select a character:</b>\n'
