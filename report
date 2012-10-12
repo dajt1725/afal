@@ -148,11 +148,11 @@ gn=gn, cl=cl, al=al ))
         print(f['equipment'].format(eq = eq))
     if not args.text:
         if pu:
-            print('<td colspan="1" rowspan="3" align="center" valign="center" bgcolor="white">')
+            print('<td colspan="1" rowspan="3" align="center" valign="center" background="{bg}">'.format(bg=bg))
             if data['large_picture_url'] is not None:
-                print('  <a href="/', data['large_picture_url'], '"><img src="/', pu, '" alt="', fn, '"</a>', sep='')
+                print('  <a href="/{lp}"><img src="/{pu}" alt="{fn}"</a>'.format(lp = data['large_picture_url'], pu=pu, fn=fn))
             else:
-                print('  <img src="/', pu, '" alt="', fn, '" alighn="left"></td>', sep='')
+                print('  <img src="/{pu}" alt="{fn}" align="left"></td>'.format(pu = pu, fn=fn))
         print('</tr>')
 
     if ct != '':
@@ -415,34 +415,31 @@ def print_items(items, verb, show_note = False, show_finder = False, show_owner 
 
 def print_journal(j, show_sub = False):
     sub_hdr = ''
+    sub = ''
     if args.text:
         header = '  {text}'
-        line = '    {date} {sub_line} {text}'
-        sub_line_pri_pre = '  '
-        sub_line_sub_pre = ' ^'
-        sub_line_suf = ' '
+        line = '    {date} {sub} {text}'
+        pri_fmt = ' {pri:>4}      '
+        sub_fmt = ' {pri:>4}^{sub:<4} '
         trailer = ''
     else:
         header = '<hr /><h3>{text}</h3><table border="1"><tr><th>Date</th>{sub_hdr}<th>Entry</th></tr>'
         if show_sub:
             sub_hdr = '<th>Sub</th>'
-        line = '<tr><td>{date}</td>{sub_line}<td>{text}</td></tr>'
-        sub_line_pri_pre = '<td>Pri '
-        sub_line_sub_pre = '<td>Sub '
-        sub_line_suf = '</td>'
+        line = '<tr><td>{date}</td>{sub}<td>{text}</td></tr>'
+        pri_fmt = '<td>{pri:>}</td>'
+        sub_fmt = '<td>{pri:>}:<font color="green">{sub:<}</font></td>'
         trailer = '</table><br>'
 
-    if not show_sub:
-        sub_line = ''
     print(header.format(text = format_plural(j, 'Transaction Journal Entry',
  'Transaction Journal Entries'), sub_hdr = sub_hdr))
     for e in j:
         if show_sub:
             if e['part_of'] is None:
-                sub_line = sub_line_pri_pre + str(e['journal_id']-1000000) + sub_line_suf
+                sub = pri_fmt.format(pri= str(e['journal_id']-1000000))
             else:
-                sub_line = sub_line_sub_pre + str(e['part_of']-1000000) + sub_line_suf
-        print(line.format(date = format_date(e['date']), text=e['description'], sub_line = sub_line))
+                sub = sub_fmt.format(sub =  str(e['journal_id']-1000000), pri = str(e['part_of']-1000000))
+        print(line.format(date = format_date(e['date']), text=e['description'], sub = sub))
     print(trailer)
 
 def print_full_character(c):
@@ -608,97 +605,109 @@ if args.text:
         args.journal = [None, None, None]
         args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
         args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs']
+    trailer = ''
 else:
     cgitb.enable()
-    print("""Content-Type: text/html
-
-<html>
-<head><title>AFAL Finance Report</title></head>
-<body background="/back3l07.gif">
-  <center>
-    <b>Select a character:</b>
-    <form action="report.cgi" method="GET">
-      <select name="char">
-        <option value="All">All</option>""")
-    for i in character_list:
-        print('        <option value="%s">%s</option>' % (i, i))
-    print("""      </select>
-      <input type="submit" name="generate" value="Character" />
-    </form>
-    <b>or Select a party:</b>
-    <form action="report.cgi" method="GET">
-      <select name="party">
-        <option value="All">All</option>""")
-    for i in party_list:
-        print('        <option value="%s">%s</option>' % (i, i))
-    print("""      </select>
-      <input type="submit" name="generate" value="Party" />
-    </form>""")
-    print("    <b>or Select a journal range</b>")
-    print('    <form action="report.cgi" method="GET">')
-    print('      From <select name="journal_start">')
-    print('        <option value="All">All</option>')
-    for i in journal_list:
-        print('        <option value="%s">%s</option>' % (i, i))
-    print('      </select>')
-    print('      to <select name="journal_end">')
-    print('        <option value="All">All</option>')
-    for i in journal_list:
-        print('        <option value="%s">%s</option>' % (i, i))
-    print('      </select>')
-    print('      involving <select name="journal_character">')
-    print('        <option value="All">All</option>')
-    for i in character_list:
-        print('        <option value="%s">%s</option>' % (i, i))
-    print('      </select>')
-    print('      <input type="submit" name="generate" value="Journal" />')
-    print('       </form>')
-    print('    <b>or Select items</b>')
-    print('    <form action="report.cgi" method="GET">')
-    print('      <select name="item_type">')
-    print('        <option value="All">All</option>')
-    print('        <option value="Unresolved">Unresolved</option>')
-    print('        <option value="Party">Party</option>')
-    print('        <option value="Sell">to Sell</option>')
-    print('        <option value="Auction">to Auction</option>')
-    print('        <option value="Identify">to Identify</option>')
-    print('        <option value="Lent">Lent out</option>')
-    print('      </select>')
-    print('      <input type="submit" name="generate" value="Items"/>')
-    print('</form>')
-    print('    <b>or Select a group</b>')
-    print('    <form action="report.cgi" method="GET">')
-    print('      <select name="members">')
-    print('        <option value="All">All</option>')
-    print('        <option value="Current">Current AFAL members</option>')
-    print('        <option value="Former">Former AFAL members</option>')
-    print('        <option value="Dead">Dead AFAL members (in memorium)</option>')
-    print('        <option value="ActiveNPCs">Active NPCs</option>')
-    print('        <option value="InactiveNPCs">Inactive NPCs</option>')
-    print('        <option value="DeadNPCs">NPCs we have kiled</option>')
-    print('      </select>')
-    print('      <input type="submit" name="generate" value="Group"/>')
-    print('</form>')
     form = cgi.FieldStorage()
-    todo = form.getfirst("generate","")
+    todo = form.getfirst('generate', None)
     if todo == 'Character':
-        char = form.getfirst("char","")
-        args.character = [char]
+        hdr_type = 'Character Report'
+        args.character = form.getlist('char')
     elif todo == 'Party':
-        party = form.getfirst("party","")
-        args.party = [party]
+        hdr_type = 'Party Report'
+        args.party = form.getlist('party')
     elif todo == 'Journal':
-        args.journal = [form.getfirst("journal_start",""), form.getfirst("journal_end",""), form.getfirst("journal_character","")]
+        hdr_type = 'Transaction Journal Report'
+        args.journal = [form.getfirst('journal_start'), form.getfirst('journal_end'), form.getfirst('journal_character')]
     elif todo == 'Items':
-        args.items = [form.getfirst("item_type","")]
+        hdr_type = 'List of Items'
+        args.items = form.getlist('item_type')
     elif todo == 'Group':
-        args.members = [form.getfirst("members","")]
+        hdr_type = 'List of People'
+        args.members = form.getlist('members')
     elif args.all:
+        hdr_type = 'Report on Everything'
         args.character = character_list
         args.party = party_list
         args.journal = [None, None, None]
         args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
         args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs']
+    else:
+        hdr_type = 'Report Menu'
+    print(
+ 'Content-Type: text/html\n'
+ '\n'
+ '<html>\n'
+ ' <head><title>AFAL {hdr_type}</title></head>\n'
+ ' <body background="/back3l07.gif">\n'
+ '  <center>\n'
+ '    <b>Select a character:</b>\n'
+ '    <form action="report.cgi" method="GET">\n'
+ '      <select name="char">\n'
+ '        <option value="All">All</option>'.format(hdr_type = hdr_type))
+    for i in character_list:
+        print('        <option value="{i}">{i}</option>'.format(i = i))
+    print('      </select>\n      <input type="submit" name="generate" value="Character" />\n'
+ '    </form>\n    <b>or Select a party:</b>\n    <form action="report.cgi" method="GET">\n'
+ '      <select name="party">\n        <option value="All">All</option>')
+    for i in party_list:
+        print('        <option value="{i}">{i}</option>'.format(i = i))
+    print(
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Party" />\n'
+ '    </form>\n    <b>or Select a journal range</b>\n'
+ '    <form action="report.cgi" method="GET">\n'
+ '      From <select name="journal_start">\n'
+ '        <option value="All">All</option>')
+    for i in journal_list:
+        print('        <option value="{i}">{i}</option>'.format(i = i))
+    print(
+ '      </select>\n'
+ '      to <select name="journal_end">\n'
+ '        <option value="All">All</option>')
+    for i in journal_list:
+        print('        <option value="{i}">{i}</option>'.format(i = i))
+    print(
+ '      </select>\n'
+ '      involving <select name="journal_character">\n'
+ '        <option value="All">All</option>')
+    for i in character_list:
+        print('        <option value="{i}">{i}</option>'.format(i = i))
+    print(
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Journal" />\n'
+ '       </form>\n'
+ '    <b>or Select items</b>\n'
+ '    <form action="report.cgi" method="GET">\n'
+ '      <select name="item_type">\n'
+ '        <option value="All">All</option>\n'
+ '        <option value="Unresolved">Unresolved</option>\n'
+ '        <option value="Party">Party</option>\n'
+ '        <option value="Sell">to Sell</option>\n'
+ '        <option value="Auction">to Auction</option>\n'
+ '        <option value="Identify">to Identify</option>\n'
+ '        <option value="Lent">Lent out</option>\n'
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Items"/>\n'
+ '    </form>\n'
+ '    <b>or Select a group</b>\n'
+ '    <form action="report.cgi" method="GET">\n'
+ '      <select name="members">\n'
+ '        <option value="All">All</option>\n'
+ '        <option value="Current">Current AFAL members</option>\n'
+ '        <option value="Former">Former AFAL members</option>\n'
+ '        <option value="Dead">Dead AFAL members (in memorium)</option>\n'
+ '        <option value="ActiveNPCs">Active NPCs</option>\n'
+ '        <option value="InactiveNPCs">Inactive NPCs</option>\n'
+ '        <option value="DeadNPCs">NPCs we have kiled</option>\n'
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Group"/>\n'
+ '    </form>')
+    trailer = \
+ '  </center>\n'\
+ ' </body>\n'\
+ '</html>\n'
+
 
 if args.character:
     print_full_character(args.character)
@@ -721,13 +730,5 @@ if args.members:
     for i in args.members:
         print_people(i)
 
-if args.text:
-    print()
-else:
-    print("""
-  </center>
-</body>
-</html>
-""")
-
+print(trailer)
 afal.fini()
