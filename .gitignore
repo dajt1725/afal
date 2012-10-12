@@ -3,3 +3,5 @@ afal_config.py
 afal_config.pyc
 bulk.devel.out
 report.devel.out
+report.prod.out
+bulk.prod.out
