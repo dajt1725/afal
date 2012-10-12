@@ -1,6 +1,14 @@
 #!/usr/bin/python
 # this is the development config
 config = {
-	'database':'afal_devel', 'user':'afal'
-, 'password':'BuffyStewart'
+    'database':'afal_devel',
+    'user':'afal',
+    'password':'BuffyStewart'
 }
+background = '/back3l07.gif'
+background_pc = '/back3l15.gif'
+background_npc = '/back3l16.gif'
+logs = "/logs/log_"
+summary = '/summary_devel.cgi'
+report = '/report_devel.cgi'
+menu = '/menu_devel.cgi'

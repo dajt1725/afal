@@ -1,6 +1,11 @@
 #!/usr/bin/python
 # this is the production config
 config = {
-	'database':'afal', 'user':'afal'
-, 'password':'BuffyStewart'
+    'database':'afal',
+    'user':'afal',
+    'password':'BuffyStewart'
 }
+background = '/back3l07.gif'
+summary = '/summary.cgi'
+report = '/report.cgi'
+menu = '/menu.cgi'

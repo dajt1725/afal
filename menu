@@ -1,0 +1,95 @@
+#!/usr/bin/python
+# This can be used as either a cgi program or from the command line
+from __future__ import print_function
+import afal_config
+import afal
+import cgi
+import cgitb
+
+title = 'Report Menu'
+option = '        <option value="{i}">{i}</option>'
+
+cgitb.enable()
+
+character_list = afal.get_characters('Current')
+party_list = afal.get_parties()
+journal_list = afal.get_journal_dates()
+
+print(
+ 'Content-Type: text/html\n'
+ '\n'
+ '<html>\n'
+ ' <head><title>AFAL {title}</title></head>\n'
+ ' <body background="{background}">\n'
+ '  <center>\n'
+ '    <b><a href="{summary}">See the Party Finance Summary</a></b><br>\n'
+ '    <b>Select a character:</b>\n'
+ '    <form action="{report}" method="GET">\n'
+ '      <select name="char">\n'
+ '        <option value="All">All</option>'.format(title = title,
+ report = afal_config.report, background = afal_config.background,
+ summary = afal_config.summary))
+for i in character_list:
+    print(option.format(i = i))
+print('      </select>\n      <input type="submit" name="generate" '
+ 'value="Character" />\n'
+ '    </form>\n    <b>or Select a party:</b>\n    <form action="{report}"'
+ ' method="GET">\n'
+ '      <select name="party">\n        <option value="All">All</option>'.format(
+ report = afal_config.report))
+for i in party_list:
+    print(option.format(i = i))
+print(
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Party" />\n'
+ '    </form>\n    <b>or Select a journal range</b>\n'
+ '    <form action="{report}" method="GET">\n'
+ '      From <select name="journal_start">\n'
+ '        <option value="All">All</option>'.format(report = afal_config.report))
+for i in journal_list:
+    print(option.format(i = i))
+print(
+ '      </select>\n'
+ '      to <select name="journal_end">\n'
+ '        <option value="All">All</option>')
+for i in journal_list:
+    print(option.format(i = i))
+print(
+ '      </select>\n'
+ '      involving <select name="journal_character">\n'
+ '        <option value="All">All</option>')
+for i in character_list:
+    print(option.format(i = i))
+print(
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Journal" />\n'
+ '       </form>\n'
+ '    <b>or Select items</b>\n'
+ '    <form action="{report}" method="GET">\n'
+ '      <select name="item_type">\n'
+ '        <option value="All">All</option>\n'
+ '        <option value="Unresolved">Unresolved</option>\n'
+ '        <option value="Party">Party</option>\n'
+ '        <option value="Sell">to Sell</option>\n'
+ '        <option value="Auction">to Auction</option>\n'
+ '        <option value="Identify">to Identify</option>\n'
+ '        <option value="Lent">Lent out</option>\n'
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Items"/>\n'
+ '    </form>\n'
+ '    <b>or Select a group</b>\n'
+ '    <form action="{report}" method="GET">\n'
+ '      <select name="members">\n'
+ '        <option value="All">All</option>\n'
+ '        <option value="Current">Current AFAL members</option>\n'
+ '        <option value="Former">Former AFAL members</option>\n'
+ '        <option value="Dead">Dead AFAL members (in memorium)</option>\n'
+ '        <option value="ActiveNPCs">Active NPCs</option>\n'
+ '        <option value="InactiveNPCs">Inactive NPCs</option>\n'
+ '        <option value="DeadNPCs">NPCs we have kiled</option>\n'
+ '      </select>\n'
+ '      <input type="submit" name="generate" value="Group"/>\n'
+ '    </form>\n'
+ '  </center>\n'
+ ' </body>\n'
+ '</html>\n'.format(report = afal_config.report))

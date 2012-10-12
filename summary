@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from __future__ import print_function
+import afal_config
 import afal
 import cgi
 import cgitb
@@ -7,11 +8,18 @@ import cgitb
 cgitb.enable()
 latest = afal.get_journal_dates()[-1]
 characters = afal.get_characters('Current')
-print('Content-Type: text/html\n\n<html>\n <head><title>AFAL Finance Summary\
-</title></head>\n <body background="/back3l07.gif">\n  <center><h1>Anything\
- For A Laugh</h1><h2>Finance report as of ', afal.date_to_str(latest),
- '</h2></center><br>\n  <table border="1"><tr><th>Character</th><th>Receivable</th><th>\
-Payable</th><th>Cash</th><th>Net</th></tr>', sep='')
+print(
+ 'Content-Type: text/html\n'
+ '\n'
+ '<html>\n'
+ ' <head><title>AFAL Finance Summary</title></head>\n'
+ ' <body background="{background}">\n'
+ '  <center><h1>Anything For A Laugh</h1><h2>Finance report as of {date}</h2>'
+ '</center><br>\n'
+ '  <b><a href="{menu}">Return to Menu</a></b><br>\n'
+ '  <table border="1"><tr><th>Character</th><th>Receivable</th><th>'
+ 'Payable</th><th>Cash</th><th>Net</th></tr>'.format(menu = afal_config.menu,
+ background = afal_config.background, date = afal.date_to_str(latest)))
 for char in characters:
 #    print(char, afal.get_char_data(char))
     c = afal.get_char_data(char)['cash_cp']
@@ -29,6 +37,10 @@ for char in characters:
         n = 'Flat Broke'
     print('   <tr><td>', char, '</td><td>', afal.cp_to_str(r),
  '</td><td>', afal.cp_to_str(p), '</td><td>', afal.cp_to_str(c), '</td><td>',
-  n, '</td></tr>\n', sep='')
-print('  </table>\n </body>\n</html>\n')
+  n, '</td></tr>', sep='')
+print(
+ '  </table>\n'
+ '  <br><b><a href="{menu}">Return to Menu</a></b>\n'
+ ' </body>\n'
+ '</html>\n'.format(menu=afal_config.menu))
 afal.fini()
