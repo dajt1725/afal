@@ -1,0 +1,82 @@
+#!/usr/bin/python
+import sys
+import argparse
+import afal
+
+parser = argparse.ArgumentParser("make a payment by a character, either to everyone they owe money to, or just one ")
+parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
+parser.add_argument("--virtual", "-V", help="don't update characters' cash",action='store_true', default=False)
+parser.add_argument("--to", "-t", help="make payment to this character")
+parser.add_argument("--note", "-n", help="Note to add to transaction journal")
+parser.add_argument("date", help="When the debt-transfer(s) happened")
+parser.add_argument("name", help="Character who is paying")
+parser.add_argument("amount", help="gp being paid", type=float)
+args = parser.parse_args()
+
+date = afal.str_to_date(args.date)
+from_name = args.name
+amount_cp = afal.gp_cp_to_cp(args.amount,0)
+from_id = afal.get_char_id(from_name)
+payable = afal.get_char_payable(from_id)
+if args.to:
+    to_name = args.to
+    to_id = afal.get_char_id(args.to)
+    ptmp = []
+    for i in payable:
+        if i['to_id'] == to_id:
+            ptmp.append(i)
+    payable = ptmp
+else:
+    to_name = 'his debts'
+    to_id = None
+
+if len(payable) == 0:
+    print from_name, "has no debts to pay"
+    sys.exit(1)
+shares = 0.0
+owed = 0
+for i in payable:
+    shares += i['share']
+    owed += i['amount']
+if amount_cp > owed:
+    print from_name, "only owes", afal.str_cp(owed), "not", afal.str_cp(amount_cp)
+    sys.exit(1)
+
+note = ' (' + args.note + ')' if args.note else ''
+if len(payable) > 1:
+    text = from_name + ' paid ' + afal.str_cp(amount_cp) + ' to ' + to_name + note
+    journal_id = afal.journal(date, from_id, to_id, amount_cp, text)
+    note = ''
+else:
+    journal_id = None
+topay = {}
+for i in payable:
+    id = i['debt_id']
+    this_owed = i['amount']
+    this_share = i['share']
+    to_id = i['to_id']
+    i['date'] = date
+    i['from_name'] = from_name
+    to_name = afal.get_char_name(to_id)
+    i['to_name'] = to_name
+    i['part_of'] = journal_id
+    i['note'] = note
+    this_cp = afal.divide_cp(amount_cp * this_owed, owed)
+    if this_cp == this_owed:
+        afal.delete_debt(i, ' paid off ')
+    else:
+        afal.debt_lower_owed(i, this_cp, ' paid ')
+    if not args.virtual:
+        if to_name in topay:
+            topay[to_name]['amount'] += this_cp
+        else:
+            i['amount'] = this_cp
+            topay[to_name] = i
+    amount_cp -= this_cp
+    owed -= this_owed
+    shares -= this_share
+for i in topay.keys():
+    afal.chars_move_cash(topay[i])
+
+
+afal.fini()

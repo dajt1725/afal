@@ -73,7 +73,7 @@ date=4 Tarsakh 1370
 ,,name=+1 Dagger;holder=Auction;value=1400gp
 ,,name=Nonmagic;holder=Sell;note=Glaive, Broadsword, Short Bow, Chainmail, Shield
 ,,name=Cash;note=17 sp, 42 ep, 1 gp, 7 taoul, 2 harbor moons;value=2hm, 7toals, 1gp, 42ep, 17sp
-,,name=Gem: Pearl 100gp *2
+,,name=Gem: Pearl 100gp *2;value=200gp
 # I have no idea where these items came from
 ,find;found=Maanamere;name=Loot: ring 500gp;value=500gp
 ,find;found=Maanamere;name=Gem: Emerald 200gp *2;value=400gp
@@ -106,10 +106,10 @@ date=Tarsakh 7 1370
 ,,name=Nonmagic;holder=Sell;note=6 composite short bows, 6 spears, arrows
 ,,name=Poison: (Sleep), Pot of;note=2 round onset, 5-10 rounds duration, expires around the 17th or so
 ,,name=Cash;note=27 cp, 16sp, 6ep, 9 taouls;value=9toals, 6ep, 16sp, 27cp
-,,name=Gem: Satan Spar 10gp *3
-,,name=Gem: Corstal 45gp *1
-,,name=Gem: Banded Agate 10gp *4
-,,name=Gem: Moss Agate 25gp *28
+,,name=Gem: Satan Spar 10gp *3;value=30gp
+,,name=Gem: Corstal 45gp *1;value=45gp
+,,name=Gem: Banded Agate 10gp *4;value=40gp
+,,name=Gem: Moss Agate 25gp *28;value=700gp
 ,,name=Shirt of Tackyness;note=Humanoids int >=7 suffer -2th,Darius id <d Tarsakh 8 1370>,fully id by testing <d Tarsakh 10 1370>
 ,,name=Cash;note=Triangular Electrum Piece *23, Gond bell *12;value=12gond bells, 23ep
 ,,name=Dwarven Battle Tankard *2
@@ -129,14 +129,20 @@ date=8 Tarsakh 1370
 # The party sells the horses
 ,sell;to=outside the party;item=Animal: Light War Horse *4;cash=205gp, 53cp
 ,sell;to=outside the party;item=Animal: Heavy War Horse *7;cash=1092gp, 547cp
+# Henkles buys all the gems
+,sell;to=Henkles;item=Gem: Banded Agate 10gp *4;cash=40gp
+,sell;to=Henkles;item=Gem: Corstal 45gp *1;cash=45gp
+,sell;to=Henkles;item=Gem: Moss Agate 25gp *28;cash=700gp
+,sell;to=Henkles;item=Gem: Pearl 100gp *2;cash=200gp
+,sell;to=Henkles;item=Gem: Satan Spar 10gp *3;cash=30gp
 # And we give out some of the money
 ,dividend;by=Uktar-12B-1369;amount=500gp;note=from Potion of Invisibility
 ,dividend;by=Hammer-15-1370;amount=205gp, 51cp;note=from Light War Horses
 ,dividend;by=Hammer-20-1370;amount=1094gp, 146cp;note=from Heavy War Horses
 ,dividend;by=Ches-30-1370;amount=5305gp;note=from Ebon Fly, Urds Teeth Poison, and 2x Gems
 ,dividend;by=Tarsakh-3-1370;amount=257gp, 125cp;note=from Nonmagic
-,dividend;by=Tarsakh-4-1370;amount=228gp, 170cp;note=from Nonmagic and Cash
-,dividend;by=Tarsakh-7-1370;amount=403gp, 467cp;note=from Nonmagic and Cash
+,dividend;by=Tarsakh-4-1370;amount=428gp, 170cp;note=from Nonmagic,gems and Cash
+,dividend;by=Tarsakh-7-1370;amount=1218gp, 467cp;note=from Nonmagic and Cash
 # Deringa and Henkles pays off their debts
 ,pay;by=Deringa
 ,pay;to=Staric;item=Gem: Carnelian 100gp *2

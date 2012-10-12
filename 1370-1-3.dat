@@ -216,7 +216,7 @@ find;found=Ches-30-1370
 ,name=Sleep Gas Grenade (M) *2;holder=Deringa;owner=party
 ,name=Wand of Hurting;holder=Deringa;owner=party
 ,name=Sleep Gas Grenade (M) *2;holder=Staric;owner=party
-,name=Gem: Chrysoberyl 100gp *2
+,name=Gem: Chrysoberyl 100gp *2;value=200gp
 ,holder=Auction
 ,,name=+1 Medium Shield;note=10gp?, 10#;value=2500gp
 ,,name=+1 Footmans Pick;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp
