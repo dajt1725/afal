@@ -1,0 +1,166 @@
+<html>
+ <head><title>AFAL Report Menu</title></head>
+ <body background="/back3l07.gif">
+  <center>
+   <form action="/summary.cgi" method="GET">
+    <input type="submit" name="go" value="Summary" />
+    of party finances.
+   </form>
+   <form action="/report.cgi" method="GET">
+    <input type="submit" name="generate" value="Show"/>
+    <select name="todo">
+     <option selected label="Everything" value="All">Everything</option>
+     <option value="char.All">All Characters</option>
+     <optgroup label="Character">
+      <option value="char.Ag">Ag</option>
+      <option value="char.Brogan">Brogan</option>
+      <option value="char.Darius">Darius</option>
+      <option value="char.Denyae">Denyae</option>
+      <option value="char.Deringa">Deringa</option>
+      <option value="char.Dexter">Dexter</option>
+      <option value="char.Henkles">Henkles</option>
+      <option value="char.Maanamere">Maanamere</option>
+      <option value="char.Misery">Misery</option>
+      <option value="char.Mrap-M'rap">Mrap-M'rap</option>
+      <option value="char.Staric">Staric</option>
+      <option value="char.Steve">Steve</option>
+      <option value="char.Theo">Theo</option>
+      <option value="char.Tristan">Tristan</option>
+      <option value="char.Ursula">Ursula</option>
+     </optgroup>
+     <option value="party.All">All Parties</option>
+     <optgroup label="Party">
+      <option value="party.Mirtul-26-1369">Mirtul-26-1369</option>
+      <option value="party.Kythorn-10-1369">Kythorn-10-1369</option>
+      <option value="party.Kythorn-16-1369">Kythorn-16-1369</option>
+      <option value="party.Flamerule-23-1369">Flamerule-23-1369</option>
+      <option value="party.Eleasias-16-1369">Eleasias-16-1369</option>
+      <option value="party.Eleasias-18-1369">Eleasias-18-1369</option>
+      <option value="Eleint-19-1369">Eleint-19-1369</option>
+      <option value="Marpenoth-1-1369">Marpenoth-1-1369</option>
+      <option value="Marpenoth-12-1369">Marpenoth-12-1369</option>
+      <option value="Marpenoth-23-1369">Marpenoth-23-1369</option>
+      <option value="Marpenoth-26-1369">Marpenoth-26-1369</option>
+      <option value="Marpenoth-28A-1369">Marpenoth-28A-1369</option>
+      <option value="Marpenoth-28B-1369">Marpenoth-28B-1369</option>
+      <option value="Marpenoth-28C-1369">Marpenoth-28C-1369</option>
+      <option value="Uktar-8-1369">Uktar-8-1369</option>
+      <option value="Uktar-9-1369">Uktar-9-1369</option>
+      <option value="Uktar-11-1369">Uktar-11-1369</option>
+      <option value="Uktar-12A-1369">Uktar-12A-1369</option>
+      <option value="Uktar-12B-1369">Uktar-12B-1369</option>
+      <option value="Uktar-12C-1369">Uktar-12C-1369</option>
+      <option value="Uktar-12D-1369">Uktar-12D-1369</option>
+      <option value="Uktar-12E-1369">Uktar-12E-1369</option>
+      <option value="Uktar-12F-1369">Uktar-12F-1369</option>
+      <option value="Uktar-12G-1369">Uktar-12G-1369</option>
+      <option value="Uktar-12H-1369">Uktar-12H-1369</option>
+      <option value="Nightal-1-1369">Nightal-1-1369</option>
+      <option value="Nightal-3-1369">Nightal-3-1369</option>
+      <option value="Nightal-5-1369">Nightal-5-1369</option>
+      <option value="Nightal-12-1369">Nightal-12-1369</option>
+      <option value="Nightal-16-1369">Nightal-16-1369</option>
+      <option value="Nightal-17-1369">Nightal-17-1369</option>
+      <option value="Nightal-20-1369">Nightal-20-1369</option>
+      <option value="Nightal-23-1369">Nightal-23-1369</option>
+      <option value="Nightal-24-1369">Nightal-24-1369</option>
+      <option value="Hammer-9-1370">Hammer-9-1370</option>
+      <option value="Hammer-13-1370">Hammer-13-1370</option>
+      <option value="Hammer-15-1370">Hammer-15-1370</option>
+      <option value="Hammer-20-1370">Hammer-20-1370</option>
+      <option value="Alturiak-29-1370">Alturiak-29-1370</option>
+      <option value="Ches-3a-1370">Ches-3a-1370</option>
+      <option value="Ches-3b-1370">Ches-3b-1370</option>
+      <option value="Ches-3c-1370">Ches-3c-1370</option>
+      <option value="Ches-3d-1370">Ches-3d-1370</option>
+      <option value="Ches-25-1370">Ches-25-1370</option>
+      <option value="Ches-30-1370">Ches-30-1370</option>
+      <option value="Tarsakh-3-1370">Tarsakh-3-1370</option>
+      <option value="Tarsakh-4-1370">Tarsakh-4-1370</option>
+      <option value="Tarsakh-7-1370">Tarsakh-7-1370</option>
+     </optgroup>
+     <option value="items.All">All Items</option>
+     <optgroup label="Items">
+      <option value="items.Unresolved">Unresolved Items</option>
+      <option value="items.Party">Party Items</option>
+      <option value="items.Sell">Items to Sell</option>
+      <option value="items.Auction">Items to Auction</option>
+      <option value="items.Identify">Items to Identify</option>
+      <option value="items.Lent">Items lent out</option>
+     </optgroup>
+     <option value="people.All">All People</option>
+     <optgroup label="People">
+      <option value="people.Current">Current AFAL members</option>
+      <option value="people.Former">Former AFAL members</option>
+      <option value="people.Dead">Dead AFAL members (in memorium)</option>
+      <option value="people.ActiveNPCs">Active NPCs</option>
+      <option value="people.InactiveNPCs">Inactive NPCs</option>
+      <option value="people.DeadNPCs">Dead NPCs (who might stay that way)</option>
+     </optgroup>
+    </select>
+   </form>
+   <form action="/report.cgi" method="GET">
+    Show <input type="submit" name="generate" value="Journal" />
+    From <select name="journal_start">
+     <option value="All">All</option>
+     <option value="Mirtul 27 1369">Mirtul 27 1369</option>
+     <option value="Kythorn 16 1369">Kythorn 16 1369</option>
+     <option value="Flamerule 23 1369">Flamerule 23 1369</option>
+     <option value="Eleasias 18 1369">Eleasias 18 1369</option>
+     <option value="Eleasias 30 1369">Eleasias 30 1369</option>
+     <option value="Eleint 20 1369">Eleint 20 1369</option>
+     <option value="Uktar 14 1369">Uktar 14 1369</option>
+     <option value="Nightal 1 1369">Nightal 1 1369</option>
+     <option value="Nightal 9 1369">Nightal 9 1369</option>
+     <option value="Nightal 26 1369">Nightal 26 1369</option>
+     <option value="Midwinter Festival 1370">Midwinter Festival 1370</option>
+     <option value="Ches 7 1370">Ches 7 1370</option>
+     <option value="Tarsakh 1 1370">Tarsakh 1 1370</option>
+     <option value="Tarsakh 2 1370">Tarsakh 2 1370</option>
+     <option value="Tarsakh 4 1370">Tarsakh 4 1370</option>
+     <option value="Tarsakh 5 1370">Tarsakh 5 1370</option>
+     <option value="Tarsakh 7 1370">Tarsakh 7 1370</option>
+     <option value="Tarsakh 8 1370">Tarsakh 8 1370</option>
+    </select> to <select name="journal_end">
+     <option value="All">All</option>
+     <option value="Mirtul 27 1369">Mirtul 27 1369</option>
+     <option value="Kythorn 16 1369">Kythorn 16 1369</option>
+     <option value="Flamerule 23 1369">Flamerule 23 1369</option>
+     <option value="Eleasias 18 1369">Eleasias 18 1369</option>
+     <option value="Eleasias 30 1369">Eleasias 30 1369</option>
+     <option value="Eleint 20 1369">Eleint 20 1369</option>
+     <option value="Uktar 14 1369">Uktar 14 1369</option>
+     <option value="Nightal 1 1369">Nightal 1 1369</option>
+     <option value="Nightal 9 1369">Nightal 9 1369</option>
+     <option value="Nightal 26 1369">Nightal 26 1369</option>
+     <option value="Midwinter Festival 1370">Midwinter Festival 1370</option>
+     <option value="Ches 7 1370">Ches 7 1370</option>
+     <option value="Tarsakh 1 1370">Tarsakh 1 1370</option>
+     <option value="Tarsakh 2 1370">Tarsakh 2 1370</option>
+     <option value="Tarsakh 4 1370">Tarsakh 4 1370</option>
+     <option value="Tarsakh 5 1370">Tarsakh 5 1370</option>
+     <option value="Tarsakh 7 1370">Tarsakh 7 1370</option>
+     <option value="Tarsakh 8 1370">Tarsakh 8 1370</option>
+    </select> involving <select name="journal_character">
+     <option value="All">All</option>
+     <option value="Ag">Ag</option>
+     <option value="Brogan">Brogan</option>
+     <option value="Darius">Darius</option>
+     <option value="Denyae">Denyae</option>
+     <option value="Deringa">Deringa</option>
+     <option value="Dexter">Dexter</option>
+     <option value="Henkles">Henkles</option>
+     <option value="Maanamere">Maanamere</option>
+     <option value="Misery">Misery</option>
+     <option value="Mrap-M'rap">Mrap-M'rap</option>
+     <option value="Staric">Staric</option>
+     <option value="Steve">Steve</option>
+     <option value="Theo">Theo</option>
+     <option value="Tristan">Tristan</option>
+     <option value="Ursula">Ursula</option>
+    </select>
+   </form>
+  </center>
+ </body>
+</html>
+
