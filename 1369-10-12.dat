@@ -1,20 +1,22 @@
-party;type=AFAL;name=Marpenoth-1-1369;date=1 Marpenoth 1369;Darius=1;Dexter=1;Steve=1;Henkles=1;Maanamere=1;Misery=1
-find;found=Marpenoth-1-1369
-,name=Weapon: Perditor Mortua;holder=Dexter;note=Narthan id <d Marpenoth 1 1369>
-,name=+1 Full Plate Armor;holder=Maanamere;note=Narthan id <d Marpenoth 1 1369>
-,holder=Auction
-,,name=Scroll (C);note=L3: Inflict Moderate Wounds
-,,name=+1 Studded Leather Armor;value=2500gp
-,name=Scroll (C);note=L1: Aid
-,name=Potion of Aid;holder=Maanamere;note=Darius, Steve, Cassie failed id <d Marpenoth 1 1369>, Cassie id <Marpenoth 11 1369>;owner=party
-,name=Potion of Enlarge;holder=Narthan;note=Auction,Darius id <d Marpenoth 1 1369>
-,name=Potion of Blur;holder=Misery;note=Darius failed, Steve id <d Marpenoth 1 1369>;owner=party
-party;type=AFAL;name=Marpenoth-12-1369;date=12 Marpenoth 1369;Darius=1;Dexter=1;Steve=1;Henkles=1;Maanamere=1;Misery=1
-find;found=Marpenoth-12-1369;name=Ring of Gargoyles;holder=Steve;note=Cassie part id <d Marpenoth 27 1369>, Steve part, Darius, Cassie part and failed id <d Nightal 6 1369>, Cassie part and failed id on <d Nightal 16 1369>;owner=party
+date=1 Marpenoth 1369
+,party;type=AFAL;name=Marpenoth-1-1369;Darius=1;Dexter=1;Steve=1;Henkles=1;Maanamere=1;Misery=1
+,find;found=Marpenoth-1-1369
+,,name=Weapon: Perditor Mortua;holder=Dexter;note=Narthan id <d Marpenoth 1 1369>
+,,name=+1 Full Plate Armor;holder=Maanamere;note=Narthan id <d Marpenoth 1 1369>
+,,holder=Auction
+,,,name=Scroll (C);note=L3: Inflict Moderate Wounds
+,,,name=+1 Studded Leather Armor;value=2500gp
+,,name=Scroll (C);note=L1: Aid
+,,name=Potion of Aid;holder=Maanamere;note=Darius, Steve, Cassie failed id <d Marpenoth 1 1369>, Cassie id <Marpenoth 11 1369>;owner=party
+,,name=Potion of Enlarge;holder=Narthan;note=Auction,Darius id <d Marpenoth 1 1369>
+,,name=Potion of Blur;holder=Misery;note=Darius failed, Steve id <d Marpenoth 1 1369>;owner=party
+date=12 Marpenoth 1369
+,party;type=AFAL;name=Marpenoth-12-1369;Darius=1;Dexter=1;Steve=1;Henkles=1;Maanamere=1;Misery=1
+,find;found=Marpenoth-12-1369;name=Ring of Gargoyles;holder=Steve;note=Cassie part id <d Marpenoth 27 1369>, Steve part, Darius, Cassie part and failed id <d Nightal 6 1369>, Cassie part and failed id on <d Nightal 16 1369>;owner=party
 date=23 Marpenoth 1369
 ,party;type=AFAL;name=Marpenoth-23-1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=1;Steve=1;Stewart=1
 ,find;found=Marpenoth-23-1369
-,,name=+2/+0(Mages)/-3(Enchanters) Dagger;owner=Cassie;xfrd=24 Marpenoth 1369;value=1250;note=Narthan id
+,,name=+2/+0(Mages)/-3(Enchanters) Dagger;owner=Cassie;xfrd=24 Marpenoth 1369;value=1250gp;note=Narthan id
 ,,name=Gem: Serpentine 45gp, 75gp, 115gp, 260gp, 500gp (5*);owner=Darius;xfrd=24 Marpenoth 1369;value=995gp
 ,,name=Gem: Smokey Quartz 35gp, 50gp, 60gp*2, 85gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=290gp
 ,,name=Gem: Amber 75gp, 90gp, 100gp*2, 120gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=485gp
@@ -40,11 +42,11 @@ date=26 Marpenoth 1369
 ,,name=Bottle of Breaking;holder=Auction;note=Steve part id <d Marpenoth 27 1369>
 date=28 Marpenoth 1369
 ,party;type=AFAL;name=Marpenoth-28A-1369;Darius=1;Maanamere=1;Steve=1;Dexter=1;Stewart=1;Henkles=1;Narthan=1
-,find;found=Marpenoth-28A-1369;owner=party
-,,name=Potion of Stoneskin;holder=Ursula
-,,name=Potion of Stoneskin;holder=Cassie
-,,name=Potion of Stoneskin;holder=Dexter
-,,name=Potion of Stoneskin;holder=Darius
+,find;found=Marpenoth-28A-1369
+,,name=Potion of Stoneskin;owner=destroyed;xfrd=17 Nightal 1369;note=Used by Cassie
+,,name=Potion of Stoneskin;holder=Ursula;owner=party
+,,name=Potion of Stoneskin;holder=Dexter;owner=party
+,,name=Potion of Stoneskin;holder=Darius;owner=party
 ,party;type=AFAL;name=Marpenoth-28B-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Stewart=1
 ,find;found=Marpenoth-28B-1369
 ,,name=Bracers of Initiative D8;holder=Misery;note=Darius failed, Cassie id <d Marpenoth 28 1369>
@@ -55,21 +57,21 @@ date=28 Marpenoth 1369
 ,party;type=AFAL;name=Marpenoth-28C-1369;Darius=1;Dexter=1;Henkles=1;Steve=1;Stewart=1
 ,find;found=Marpenoth-28C-1369
 ,,name=+1/+4(Andarod Gutreaver) Ring of Protection;holder=Cassie;note=Cassie failed id <d Marpenoth 28 1369>, Darius id <d Uktar 10 1369>
-,,name=+1 Dagger (can glow enough to read a map);owner=Misery;xfrd=11 Uktar 1369;value=600
-,,name=Potion of Invulnerability;owner=destroyed;xfrd=17 Nightal 1369;note=Cassie failed id <d Marpenoth 28 1369>, Used by Cassie
+,,name=+1 Dagger (can glow enough to read a map);owner=Misery;xfrd=11 Uktar 1369;value=600gp
+,,name=Potion of Invulnerability;holder=Dexter;note=Cassie failed id <d Marpenoth 28 1369>
 ,,name=Scroll of Protection from Normal Missiles;holder=Darius;owner=party
 ,,name=Scroll (MU);note=Enchanted Weapon, Magic Mirror, Globe of Invulnerability
 ,,name=Potion of Healing in twisted vial;note=Darius id <d Marpenoth 28 1369>;holder=Misery;owner=party
 date=Uktar 8 1369
-,char;association=AFAL;status=active;name=Ursula;alignment=Neutral Good;\
-class=Specialty Mage(Houri);fullname=Ursula la Bim;\
-gender=Female;picture=ursula05.jpg;player=Sue;race=Human;\
-characteristics=Attractive, long brown hair, 5'9&quot\;, 130lbs.,\
- badly scarred leg;\
-equipment=alluring clothing, Bracers of Defense AC 6, +2 Ring of Protection,\
- Ring of Warmth, +2 Dagger, Dagger of Hurting, Wand of Small Fires,\
- Horn of Bubbles.;\
-note=Currently spends a lot of time hanging around Fair Winds.\
+,meet;association=AFAL;status=active;name=Ursula;fullname=Ursula la Bim\
+;player=Sue;race=Human;gender=Female;class=Specialty Mage(Houri);alignment=Neutral Good\
+;picture=ursula05.jpg;cash=23cp\
+;characteristics=Attractive, long brown hair, 5'9&quot\;, 130lbs.,\
+ badly scarred leg\
+;equipment=alluring clothing, Bracers of Defense AC 6, +2 Ring of Protection,\
+ Ring of Warmth, +2 Dagger, Dagger of Hurting, Wand of Small Fires\
+ (Party Item), Horn of Bubbles.\
+;note=Currently spends a lot of time hanging around Fair Winds.\
  Ursula joined the party on <d Uktar 8 1369>.
 ,party;type=AFAL;name=Uktar-8-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Uktar-8-1369;name=Rusty hand axe with Magic Aura on it;owner=party
@@ -88,6 +90,11 @@ date=11 Uktar 1369
 ,,name=Potion of Healing;holder=Dexter;owner=party
 ,,name=Potion of Healing;holder=Darius;owner=party
 date=12 Uktar 1369;
+,meet;name=Marraba Jhansczil;association=House Jhansczil\
+;race=Human;gender=Female;status=active\
+;characteristics=Haughty, self-assured, in her 30s, short dark blonde hair\
+;equipment=Robe with expensive jewelry, Wand case, Dagger of Hurting\
+;note=Met on <d Uktar 12 1369>.  Also <d Uktar 20 1369>.
 ,party;type=AFAL;name=Uktar-12A-1369;;Ursula=1;Misery=1;Stewart=1;Darius=1;Dexter=1;Steve=1;Narthan=1;Cassie=1;Gomsha=0;note=Start of the day up to "At this point Henkles and Maanamere "...
 ,party;type=AFAL;name=Uktar-12B-1369;Ursula=1;Misery=1;Stewart=1;Maanamere=1;Henkles=1;Darius=1;Dexter=1;Steve=1;Narthan=1;Cassie=1;Gomsha=0;note=Up to "Ursula and Cassie assumed responsibility for the ladies"...
 ,find;found=Uktar-12B-1369
@@ -118,14 +125,14 @@ date=12 Uktar 1369;
 ,,name=+1 Shield;owner=outside the party;xfrd=13 Uktar 1369;note=Given to Dagar
 ,,name=Ring of Warmth;holder=Ursula
 ,,name=Rod of Caltrops;owner=Stewart;xfrd=14 Uktar 1369;value=2500gp
-,,name=Scroll (MU);note=L9: Phesult's Sleep of Ages;owner=outside the party;xfrd=13 Uktar 1369;value=2700
+,,name=Scroll (MU);note=L9: Phesult's Sleep of Ages;owner=outside the party;xfrd=13 Uktar 1369;value=2700gp
 ,,name=Ring of Water Walking;owner=Steve;xfrd=14 Uktar 1369;value=5000gp
-,char;status=dead;association=Silent Travellers
-,,name=Gurugh;fullname=Gurugh Brightfire;race=&frac12\;orc;gender=Male;\
-class=Fighter/thief?;alignment=Unknown;\
-equipment=Varies, depending on what we've looted off him.  Initially full plate\
- armor, magic bastard sword, short bow (I think);\
-characteristics=Forgotten by now.;note= First met on <d Uktar 12 1369> as the\
+,meet;status=dead;association=Silent Travellers
+,,name=Gurugh;fullname=Gurugh Brightfire;race=&frac12\;orc;gender=Male\
+;class=Fighter/thief?;alignment=Unknown\
+;equipment=Varies, depending on what we've looted off him.  Initially full plate\
+ armor, magic bastard sword, short bow (I think)\
+;characteristics=Forgotten by now.;note= First met on <d Uktar 12 1369> as the\
  party was attempting to leave Undermountain with the Shining Sons. Encountered\
  in the graveyard on <d Uktar 30 1369> by Narthan.  Encountered in a tavern on\
  <d Nightal 10 1369> by Henkles and Jan.  Encountered at Fair Winds on\
@@ -135,10 +142,10 @@ characteristics=Forgotten by now.;note= First met on <d Uktar 12 1369> as the\
  Possibly visited Fair Winds on <d Ches 24 1370> in an attempt at urban renewal.\
  Encountered in Undermountain on <d Ches 30 1370>. His headless body was left on\
  the second level and his head was tossed into the oil in the cooking room.
-,,name=Marraba;fullname=Marraba Minarmas;race=&frac12\;elf;gender=female;\
-class=Mage/Thief;alignment=Unknown;equipment=Varies, depending on what we've\
- looted off her.  Initially robes, longsword, short bow, rod;\
-characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369> as the\
+,,name=Marraba Minarmas;race=&frac12\;elf;gender=female\
+;class=Mage/Thief;alignment=Unknown;equipment=Varies, depending on what we've\
+ looted off her.  Initially robes, longsword, short bow, rod\
+;characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369> as the\
  party was attempting to leave Undermountain with the Shining Sons.\
  Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
  a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
@@ -149,10 +156,10 @@ characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369> as the\
  at urban renewal.  Encountered in Undermountain on <d Ches 30 1370>.\
  Her headless body was left on the second level and her head was tossed into\
  the oil in the cooking room.
-,,name=Mirima;fullname=Mirrima Thadodarin;race=Human;gender=Female;\
-class=Cleric (Pain of Loviatar);alignment=Unknown;equipment=Varies, depending\
+,,name=Mirima;fullname=Mirrima Thadodarin;race=Human;gender=Female\
+;class=Cleric (Pain of Loviatar);alignment=Unknown;equipment=Varies, depending\
  on what we've looted off her. Initially +2 scale mail, +1 shield,\
- morning star, whip, sling.characteristics=Forgotten by now.;note=First met\
+ morning star, whip, sling;characteristics=Forgotten by now.;note=First met\
  on <Uktar 12 1369> as the party was attempting to leave Undermountain with\
  the Shining Sons.  Encountered in the graveyard on <d Uktar 30 1369> by\
  Narthan. Encountered in a tavern on <d Nightal 10 1369> by Henkles and Jan.\
@@ -163,10 +170,10 @@ class=Cleric (Pain of Loviatar);alignment=Unknown;equipment=Varies, depending\
  <d Ches 24 1370> in an attempt at urban renewal. Encountered in\
  Undermountain on <d Ches 30 1370>. Her headless body was left on the second\
  level and her head was tossed into the oil in the cooking room.
-,,name=Relask;fullname=Relask Radon;race=Human;gender=Male;class=Thief;\
-alignment=Unknown;equipment=Varies, depending on what we've looted off him.\
- Initially +2 leather armor, longsword, magic dagger, short bow.;\
-characteristics=Forgotten by now.;note=First met on <Uktar 12 1369>\
+,,name=Relask;fullname=Relask Radon;race=Human;gender=Male;class=Thief\
+;alignment=Unknown;equipment=Varies, depending on what we've looted off him.\
+ Initially +2 leather armor, longsword, magic dagger, short bow.\
+;characteristics=Forgotten by now.;note=First met on <Uktar 12 1369>\
  as the party was attempting to leave Undermountain with the Shining Sons.\
  Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
  a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
@@ -180,10 +187,10 @@ characteristics=Forgotten by now.;note=First met on <Uktar 12 1369>\
  and we managed to plant the fact that we have a boat. Encountered in\
  Undermountain on <d Ches 30 1370>.  His headless body was left on the second\
  level and his head was tossed into the oil in the cooking room.
-,,name=Thadidon;fullname=Thadidon Ramnardaphorask;race=Human;gender=Male;\
-class=Fighter?;alignment=Unknown;equipment=Varies, depending on what we've\
- looted off him. Initially plate mail, longsword, magic dagger, short bow.;\
-characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369>\
+,,name=Thadidon;fullname=Thadidon Ramnardaphorask;race=Human;gender=Male\
+;class=Fighter?;alignment=Unknown;equipment=Varies, depending on what we've\
+ looted off him. Initially plate mail, longsword, magic dagger, short bow.\
+;characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369>\
  as the party was attempting to leave Undermountain with the Shining Sons.\
  Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
  a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
@@ -194,13 +201,13 @@ characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369>\
  urban renewal. Encountered in Undermountain on <d Ches 30 1370>.\
  His headless body was left on the second level and his head was tossed into\
  the oil in the cooking room.
-,char;association=Silent Travellers;status=active;name=Marrin;\
-fullname=Marrin Rhaunrenardon;race=Human;gender=Male;class=Fighter?;\
-alignment=Unknown;equipment=Varies, depending on what we've looted off him.\
+,meet;association=Silent Travellers;status=active;name=Marrin\
+;fullname=Marrin Rhaunrenardon;race=Human;gender=Male;class=Fighter?\
+;alignment=Unknown;equipment=Varies, depending on what we've looted off him.\
  Initially full plate armor,  morning star, magic dagger, short bow (I think).\
-characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369> as the\
+;characteristics=Forgotten by now.;note=First met on <d Uktar 12 1369> as the\
  party was attempting to leave Undermountain with the Shining Sons.\
-Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
+ Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
  a tavern on <d Nightal 10 1369> by Henkles and Jan. Encountered at Fair\
  Winds on <d Nightal 21 1369> by the entire party.  They traded the location\
  of a vampire lair for one of the Daggers of Hurting. Encounterd at an\
@@ -213,32 +220,45 @@ Encountered in the graveyard on <d Uktar 30 1369> by Narthan. Encountered in\
 ,party;type=AFAL;name=Uktar-12G-1369;Darius=1;Henkles=1;Misery=1;Stewart=1;note=Up to "After that the rest of the party came through without incident and Dexter came off deep rear guard"
 ,party;type=AFAL;name=Uktar-12H-1369;Darius=1;Dexter=1;Henkles=1;Misery=1;Stewart=1
 date=Uktar 13 1369
-,find;found=Henkles;holder=Henkles;name=Weapon: Balthazar Hellspawn of Terror;xfrd=13 Uktar 1369;value=4000gp
-,char;association=AFAL;status=active;name=Denyae;alignment=Neutral Good;\
-class=Fighter;fullname=Denyae Stavefall;gender=Female;\
-large_picture=Denyae_lg.png;picture=Denyae.png;player=Eleah;race=Human;\
-note=Rescued from minotaur labrynth by AFAL.\
+,meet;status=inactive;name=Tamna;fullname=Tamna Rhaundurask;gender=Female\
+;note=Rescued from Minotaurs on <d Uktar 13, 1369> and turned her over to\
+ the temple of Chaunteau the same day.
+,meet;association=AFAL;status=active;name=Denyae;fullname=Denyae Stavefall\
+;player=Eleah;race=Human;gender=Female;class=Fighter;alignment=Neutral Good\
+;picture=Denyae.png;large_picture=Denyae_lg.png;cash=1cp\
+;characteristics=Strong, clever, very quick,\
+ very short, curly brown/dk blonde hair, grey eyes, 5'7&quot\;, 137 lbs.\
+;equipment=+1 Plate mail, +1 Ring of Protection, <i>Thunderbolt</i> (unique bow),\
+ longsword, short sword, various magic arrows,\
+ Shield inscribed with Scroll of Summon Mystic Moose, Carpet of Flying (Party item),\
+ Necklace of Darkness (Party item)\
+;note=Rescued from minotaur labrynth by AFAL.\
  Offered to work for party for a&frac14\;-share of treasure for &quot\;a\
  while&quot\; on <d Uktar 13 1369>.\
  Hates minotaurs.\
  Longbow and longsword specialist.\
  Has earned the emnity of the vampire lord Dread William of the South Moors.\
- Offered full party membership on <d Ches 21 1370>. (?);\
-characteristics=Strong, clever, very quick,\
- very short, curly brown/dk blonde hair, grey eyes, 5'7&quot\;, 137 lbs.;\
-equipment=+1 Plate mail, Ring of Protection, <i>Thunderbolt</i> (unique bow),\
- +2 longsword, short sword, various magic arrows,\
- Shield inscribed with Scroll of Summon Mystic Moose, Carpet of Flying (Party item),\
- Necklace of Darkness (Party item)
+ Offered full party membership on <d Ches 21 1370>.
+,find;found=Henkles;holder=Henkles;name=Weapon: Balthazar Hellspawn of Terror;xfrd=13 Uktar 1369;value=4000gp
 ,find;found=party;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius cast Fireball <d Uktar 24 1369>
 ,find;found=party;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius cast Snilloc's Snowball Swarm on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
 ,find;found=party;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius (mis)cast Snilloc's Snowball Swarm (actually Reduce) on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
 date=Uktar 14 1369
-,sell;to=Cassie;item=+1/+4(Andarod Gutreaver) Ring of Protection;debt=1500;cash=3500;virtual
-,sell;to=Narthan;item=+1 Ring of Protection  #2;cash=3750;debt=1250;virtual
+,meet;name=Razaar;fullname=Razaar Slissin;association=Guildmaster of Vintners,\
+ Distillers and Brewers guild;race=Human;gender=Male;status=active\
+;note=First met on <d Uktar 14, 1369>, when we returned his niece who had\
+ been kidnapped by minotaurs.  We delivered minotaur horns to him on\
+ <d Nightal 5, 1369>, and he delivered a reward to us <d the next day>.
+,sell;to=Cassie;item=+1/+4(Andarod Gutreaver) Ring of Protection;debt=1500gp;cash=3500gp;virtual
+,sell;to=Narthan;item=+1 Ring of Protection  #2;cash=3750gp;debt=1250gp;virtual
 ,sell;to=Henkles;item=+1 Ring of Protection  #1;debt=350gp;cash=4650gp;virtual
 ,lend;by=Dexter;to=Henkles;amount=100gp;virtual
-find;found=Denyae;holder=Denyae;date_found=Uktar 29 1369;name=Weapon: Thunderbolt
+date=Uktar 20 1369
+,meet;name=Salierna;fullname=Salierna Longtresses;status=active\
+;association=Guildmadam of the Elegant Order;race=Human;gender=Female\
+;class=Houri?;note=Talked to Ursula on <d Uktar 20, 1369>.
+date=Uktar 29 1369
+,find;found=Denyae;holder=Denyae;name=Weapon: Thunderbolt
 date=Nightal 1 1369
 ,party;type=AFAL;name=Nightal-1-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Stewart=1;Ursula=1
 ,find;found=Nightal-1-1369;name=Cloak of Elvenkind;holder=Steve
@@ -249,73 +269,79 @@ date=Nightal 1 1369
 ,,,item=+1 Shield can cast 1d4 healing once/week
 ,,,item=Preserved Green Dragon Breath
 ,,,item=Potion of Rainbow Hues
-party;type=AFAL;name=Nightal-3-1369;date=3 Nightal 1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
-find;found=Nightal-3-1369;name=Amulet of Turning Resistance;holder=Auction
-char;association=AFAL;status=inactive
-,name=Marcae;fullname=Marcae Trapper;player=Mike;race=Human;gender=Male;\
-class=&quot\;Battle Mage&quot\;alignment=Neutral;equipment=Staff Sling,\
- +1 Flame Blade Rapier (possibly other non-weapon powers);\
-characteristics=Clever, quick, long, curly blonde hair, brown eyes,\
- 6'3&quot\;, 195 lbs.;note=Silverymoon native, worked for city guards during\
- Demon War, looking to do some traditional adventuring.<p>  Joined the\
- party on <d Nightal 4 1369>d for a full share of treasure with a guaranteed\
- minimum of 85gp.  He was also entitled to a 3/8-share of the reward for\
- killing the minotaur chieftain.<p>  He left the party on <d Nightal 9 1369>\
- because he didn't want to be near Denyae.;joined=Nightal 4 1369
-char;association=AFAL;status=inactive
-,name=Stalker;fullname=Stalker Jarvis;race=&frac12\;Orc;gender=Male;\
-note=From &quot\;lotsa places, mostly\
+date=3 Nightal 1369
+,party;type=AFAL;name=Nightal-3-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
+,find;found=Nightal-3-1369;name=Amulet of Turning Resistance;holder=Auction
+date=Nightal 4 1369
+,meet;association=AFAL;status=inactive
+,,name=Marcae;fullname=Marcae Trapper;player=Mike;race=Human;gender=Male\
+;class=&quot\;Battle Mage&quot\;;alignment=Neutral;joined=Nightal 4 1369\
+;characteristics=Clever, quick, long, curly blonde hair, brown eyes,\
+ 6'3&quot\;, 195 lbs.\
+;equipment=Staff Sling, +1 Flame Blade Rapier (possibly other non-weapon\
+ powers)\
+;note=<p>Silverymoon native, worked for city guards during Demon War, looking to\
+ do some traditional adventuring.</p><p>Joined the party on <d Nightal 4 1369>\
+ for a full share of treasure with a guaranteed minimum of 85gp.  He was also\
+ entitled to a 3/8-share of the reward for killing the minotaur chieftain.</p><p>\
+ He left the party on <d Nightal 9 1369> because he didn't want to be near Denyae.</p>
+,,name=Stalker;fullname=Stalker Jarvis;race=&frac12\;Orc;gender=Male\
+;note=<p> From &quot\;lotsa places, mostly\
  da woods&quot\;.  Claims to be a Ranger with some lockpicking and\
  trap-detecting skills he picked up in his &quot\;misspent youth&quot\;.  Dexter\
  reports that he does know at least the basics of woodsmanship and tracking.\
   Henkles reports him to be competent with two weapons at once, but perhaps\
- <i>too</i> quick with his longsword.  No references.<p> Looking for long-term\
+ <i>too</i> quick with his longsword.  No references.</p><p>Looking for long-term\
  arrangement, willing to try one-time with an option to join.  Confused by the\
- party name.  Not wanted by the law so far as he knows.  <p>&quot\;Well, one\
+ party name.  Not wanted by the law so far as he knows.</p><p>&quot\;Well, one\
  time some friends and I explored a haunted farm in what they're now calling\
  Luruar.  Real messed up - looked like the whole farm got turned to animated\
  skeletons that couldn't be turned during the Time o' Troubles.  I picked up\
- some club training after that.  Ya can always find a club.&quot\; <p>&quot\;A\
+ some club training after that.  Ya can always find a club.&quot\;</p><p>&quot\;A\
  month ago I tracked down an ogre that was demanding tribute from this village\
  near Baldur's Gate, 'cept it turned out he wasn't an ogre.  See he kept showing\
  up for his take whenever their defenses were down and then vanishing into the\
  woods before the militia could chase him.  So I followed his tracks and it\
- turned out it was just some wizard changing shape.&quot\;<p> Stalker joined\
+ turned out it was just some wizard changing shape.&quot\;</p><p>Stalker joined\
  the party (on <d Nightal 4 1369>) for a full share of treasure and a\
- &frac14\;-share of the reward for killing the minotaur chieftain.\
- <p>Stalker chose to stay at the orc village on <d Ches 17 1370>.;\
-class=&quot\;Ranger&quot\;;alignment=Neutral;equipment=+1/+3 vs fire Studded\
- Leather Armor, Longsword, +2 Hand Axe, +1 Long Bow;\
-characteristics=Extremely strong, very quick, somewhat dim, very long black\
+ &frac14\;-share of the reward for killing the minotaur chieftain.</p>\
+ <p>Stalker chose to stay at the orc village on <d Ches 17 1370>.</p>\
+;class=&quot\;Ranger&quot\;;alignment=Neutral;equipment=+1/+3 vs fire Studded\
+ Leather Armor, Longsword, +2 Hand Axe, +1 Long Bow\
+;characteristics=Extremely strong, very quick, somewhat dim, very long black\
  hair, brown eyes, 5'9&quot\;, 192 lbs.;joined=Nightal 4 1369
-,name=Altilitac;fullname=Altilitac Mithar;race=Human;gender=Male;\
-class=Fighter, man-at-arms;alignment=Lawful Neutral;\
-equipment=+1 Splint Mail, shield Broad sword (Sp), Long bow, +1 Battle axe,\
+,,name=Altilitac;fullname=Altilitac Mithar;race=Human;gender=Male\
+;class=Fighter, man-at-arms;alignment=Lawful Neutral\
+;equipment=+1 Splint Mail, shield Broad sword (Sp), Long bow, +1 Battle axe,\
  Hand or throwing axe;characteristics=Strong, quick, calm, pleasant,\
- long red hair, blue eyes, 6'2&quot\;, 180 lbs.;joined=Nightal 4 1369;\
-note=He asked for 10gp/day + expenses + &frac12\;-share, hired for 17gp +\
+ long red hair, blue eyes, 6'2&quot\;, 180 lbs.;joined=Nightal 4 1369\
+;note=He asked for 10gp/day + expenses + &frac12\;-share, hired for 17gp +\
  expenses + &frac14\;-share on <d Nightal 4 1369>.  He left the party on\
  <d Nightal 6 1369> after the completion of the minotaur adventures.
-,name=Etiste;fullname=Etiste Birdstalker;race=Human;gender=Female;\
-class=Fighter, woman-at-arms;alignment=Chaotic Good;\
-equipment=Banded Mail, shield, Scimitar, +1 Sling w/bullets, Warhammer,\
- Light crossbow, Dagger;\
-characteristics=Strong, unattractive/unpleasant, short black hair,\
- 5&apos\;3&quot\;, 136lbs;note=Hired (<d Nightal 3 1369>)\
+,,name=Etiste;fullname=Etiste Birdstalker;race=Human;gender=Female;\
+class=Fighter, woman-at-arms;alignment=Chaotic Good;joined=Nightal 3 1369\
+;characteristics=Strong, unattractive/unpleasant, short black hair,\
+ 5&apos\;3&quot\;, 136lbs\
+;equipment=Banded Mail, shield, Scimitar, +1 Sling w/bullets, Warhammer,\
+ Light crossbow, Dagger\
+;note=<p>Hired (<d Nightal 3 1369>)\
  for 8gp/day + equipment replacement (non-magical) + &frac14\;-share of any\
  treasure found on foray.  Told to be at Fair Winds 1 hour past sunrise, 12/5.\
- <p>Left the party on <d Nightal 6 1369> after the minotaur adventure.;joined=Nightal 3 1369
-,name=Holmain;fullname=Holmain Nephew of Harso Valtac;race=Dwarf;\
-gender=Male;class=Fighter, dwarf-at-arms;alignment=Lawful Neutral;\
-equipment=Scale Mail, shield, Footman's pick (Sp), +1 Composite short bow,\
- Long sword, Battle axe;characteristics=Strong, quick, shoulder-length black\
- hair, brown eyes, 4'1&quot\;, 159 lbs.;note=Was aware of the reward being\
- offered by the brewmaster from the start.  Hired on <d Nightal 4 1369>\
- for 27gp, a bottle of zzar and a 1 bottle or flagon beer per day.\
- <p>Left the party on <d Nightal 6 1369> after the minotaur adventure.;joined=Nightal 4 1369
-char;association=None known;status=active;name=Dusty;fullname=Dusty Donnybrook;\
-race=Human?;gender=Male?;class=Thief;alignment=Unknown;equipment=Unknown;\
-characteristics=Forgotten.;note=Interviewed on <d Nightal 4 1369>, but he did\
+ </p><p>Left the party on <d Nightal 6 1369> after the minotaur adventure.</p>
+,,name=Holmain;fullname=Holmain Nephew of Harso Valtac;race=Dwarf\
+;gender=Male;class=Fighter, dwarf-at-arms;alignment=Lawful Neutral\
+;joined=Nightal 4 1369\
+;characteristics=Strong, quick, shoulder-length black hair, brown eyes,\
+ 4'1&quot\;, 159 lbs.\
+;equipment=Scale Mail, shield, Footman's pick (Sp), +1 Composite short bow,\
+ Long sword, Battle axe\
+;note=<p>Was aware of the reward being offered by the brewmaster from the start.\
+ Hired on <d Nightal 4 1369> for 27gp, a bottle of zzar and a 1 bottle or\
+ flagon beer per day.</p><p>Left the party on <d Nightal 6 1369> after the\
+ minotaur adventure.</p>
+,meet;status=active;name=Dusty;fullname=Dusty Donnybrook\
+;race=Human?;gender=Male?;class=Thief\
+;characteristics=Forgotten.;note=Interviewed on <d Nightal 4 1369>, but he did\
  so badly in the interview that he left out of embarassment. We hired him on\
  <d Nightal 5 1369> to look into the burglary of Fair Winds.\
  He reported on <d Nightal 12 1369> with the location of the warehouse that the\
@@ -323,81 +349,94 @@ characteristics=Forgotten.;note=Interviewed on <d Nightal 4 1369>, but he did\
  we hired him to watch for the return of the Endurance. On <d Nightal 23 1369>\
  he reported that it had. On <d Hammer 8 1370> we hired him to find out anything\
  about the Star Chaser.
-party;type=AFAL;name=Nightal-5-1369;date=5 Nightal 1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Marcae=1;Misery=1;Stalker=1;Steve=1;Ursula=1
-find;found=Nightal-5-1369
-,name=Potion of Stammering and Stuttering ("Philter");owner=outside the party;xfrd=12 Nightal 1369;note=Steve id <d Nightal 6 1369>, Sold to the potion dealer in Undermountain
-,owner=outside the party;xfrd=6 Nightal 1369
-,,name=Potion of Growth;note=Steve failed, Darius id <d Nightal 6 1369>
-,,name=Potion of Avian Control;note=Steve id <d Nightal 6 1369>
-,name=Ring of Stick;owner=Stalker;value=500;note=Steve, Darius failed, Cassie part and failed id <d Nightal 6 1369>
-,name=Green Dragon Hide Armor;owner=Steve;value=1800
-,name=Potion of Health ("Elixer");owner=party;value=2000
-,name=Black Dragon Hide Boots;owner=Misery
-,name=Black Dragon Hide Boots;owner=Dexter
-char;association=lieutenant of Dread William;status=active;name=Arcturagana;\
-race=Moon Elf;gender=Female;class=Vampire/Ranger;alignment=Chaotic Evil;\
-equipment=bow, others unknown;\
-characteristics=beautiful, but everything else is forgotten.  Can turn into\
- a swan at will.;\
-note=First encountered on <d Nightal 8 1369>. Also on <d Nightal 11 1369>.\
+,meet;name=Silian;fullname=Silian Sinirion;gender=Male;class=Thief\
+;status=inactive;note=Interviewed on <d Nightal 4, 1369>, but we did not\
+ offer him a position in the party.
+date=5 Nightal 1369
+,party;type=AFAL;name=Nightal-5-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Marcae=1;Misery=1;Stalker=1;Steve=1;Ursula=1
+,find;found=Nightal-5-1369
+,,name=Potion of Stammering and Stuttering ("Philter");owner=outside the party;xfrd=12 Nightal 1369;note=Steve id <d Nightal 6 1369>, Sold to the potion dealer in Undermountain
+,,owner=outside the party;xfrd=6 Nightal 1369
+,,,name=Potion of Growth;note=Steve failed, Darius id <d Nightal 6 1369>
+,,,name=Potion of Avian Control;note=Steve id <d Nightal 6 1369>
+,,name=Ring of Stick;owner=Stalker;value=500gp;note=Steve, Darius failed, Cassie part and failed id <d Nightal 6 1369>
+,,name=Green Dragon Hide Armor;owner=Steve;value=1800gp
+,,name=Potion of Health ("Elixer");owner=party;value=2000gp
+,,name=Black Dragon Hide Boots;owner=Misery
+,,name=Black Dragon Hide Boots;owner=Dexter
+date=Nightal 8 1369
+,meet;association=lieutenant of Dread William;status=active;name=Arcturagana\
+;race=Moon Elf;gender=Female;class=Vampire/Ranger;alignment=Chaotic Evil\
+;equipment=bow, magic sword and dagger, others unknown\
+;characteristics=beautiful, but everything else is forgotten.  Can turn into\
+ a swan at will.\
+;note=First encountered on <d Nightal 8 1369>. Also on <d Nightal 11 1369>.\
  She visited Fair Winds on <d Nightal 20 1369>.  We attacked her in one of her\
  lairs on <d Nightal 21 1369>.  She made another attack on <d Hammer 8 1370>.\
  We got gifts from her on <d Ches 20 1370>.
-date=Nightal 9 1369;writeoff;Marcae
-party;type=AFAL;name=Nightal-12-1369;date=12 Nightal 1369;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
-find;found=Nightal-12-1369
-,name=+1 Dagger;note=From Staros;holder=Auction;value=1400gp
-,name=+1 Arrow (Sheaf);holder=Denyae;note=From Staros;owner=party
-,name=Potions of Minor Healing and Regeneration
-party;type=AFAL;name=Nightal-16-1369;date=16 Nightal 1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Narthan=1;Stalker=1;Steve=1
-find;found=Nightal-16-1369
-,name=Rod of Bash Face;holder=Moogh;note=Cassie part and failed id <d Nightal 16 1369>
-,name=Scroll (MU);holder=Darius;note=(used Create Water), (used Insatiable Thirst), (used Steam Blast), L5: Conjure Water Elemetal, (used Water Bomb);owner=party
-party;type=AFAL;name=Nightal-17-1369;date=17 Nightal 1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Misery=1;Narthan=1;Stalker=1;Steve=1
-find;found=Nightal-17-1369
-,name=+1 Light Crossbow;holder=Steve
-,name=+1 Light Crossbow;holder=Moogh
-,name=+1 Scimitar;holder=Misery
-,name=+1 Knife;owner=Stalker
-,name=+1 Blowgun Dart *7;owner=outside the party;xfrd=18 Nightal 1369;value=1
-,name=Weapon: Buggerer;owner=outside the party;xfrd=20 Hammer 1370;note=Stolen by Moogh's ogre when he ran off
-,name=Scroll (MU);note=(used Death Recall), Delay Death;holder=Auction
-party;type=AFAL;name=Nightal-20-1369;date=20 Nightal 1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Stalker=1;Steve=1
-find;found=Nightal-20-1369
-,name=Eyedrops of the Enchantress;owner=party;xfrd=20 Nightal 1369
-,name=Potion of Gaseous Form;owner=destroyed;xfrd=21 Nightal 1369;note=by Jan
-party;type=AFAL;name=Nightal-23-1369;date=23 Nightal 1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Steve=1
-find;found=Nightal-23-1369
-,name=+1 Chain Mail of Swimming
-,name=Necklace of Darkness;holder=Denyae;owner=party
-,name=+2 Long Sword;holder=Denyae
-,name=+1/+2(half*)/+3(Humans) Bastard Sword;holder=Tristan
-,name=+2 Ring of Protection;holder=Denyae;note=Fully id by testing <d Tarsakh 10 1370>
-,name=Bracers of Defense AC 5;holder=Ursula;note=Fully id by testing <d Tarsakh 10 1370>
-,name=Bracers of Defense AC 5;holder=Darius;note=Fully id by testing <d Tarsakh 10 1370>
-,name=+1 Long Bow;owner=Dexter;xfrd=23 Nightal 1369;value=3500
+date=Nightal 9 1369
+,writeoff;Marcae
+date=12 Nightal 1369
+,party;type=AFAL;name=Nightal-12-1369;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
+,find;found=Nightal-12-1369
+,,name=+1 Dagger;note=From Staros;holder=Auction;value=1400gp
+,,name=+1 Arrow (Sheaf);holder=Denyae;note=From Staros;owner=party
+,,name=Potions of Minor Healing and Regeneration
+date=16 Nightal 1369
+,party;type=AFAL;name=Nightal-16-1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Narthan=1;Stalker=1;Steve=1
+,find;found=Nightal-16-1369
+,,name=Rod of Bash Face;holder=Moogh;note=Cassie part and failed id <d Nightal 16 1369>
+,,name=Scroll (MU);holder=Darius;note=(used Create Water), (used Insatiable Thirst), (used Steam Blast), L5: Conjure Water Elemetal, (used Water Bomb);owner=party
+date=17 Nightal 1369
+,party;type=AFAL;name=Nightal-17-1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Misery=1;Narthan=1;Stalker=1;Steve=1
+,find;found=Nightal-17-1369
+,,name=+1 Light Crossbow;holder=Steve
+,,name=+1 Light Crossbow;holder=Moogh
+,,name=+1 Scimitar;holder=Misery
+,,name=+1 Knife;owner=Stalker
+,,name=+1 Blowgun Dart *7;owner=outside the party;xfrd=18 Nightal 1369;value=1gp
+,,name=Weapon: Buggerer;owner=outside the party;xfrd=20 Hammer 1370;note=Stolen by Moogh's ogre when he ran off
+,,name=Scroll (MU);note=(used Death Recall), Delay Death;holder=Auction
+date=20 Nightal 1369
+,,party;type=AFAL;name=Nightal-20-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Stalker=1;Steve=1
+,find;found=Nightal-20-1369
+,,name=Eyedrops of the Enchantress;owner=party;xfrd=20 Nightal 1369
+,,name=Potion of Gaseous Form;owner=destroyed;xfrd=21 Nightal 1369;note=by Jan
+date=23 Nightal 1369
+,party;type=AFAL;name=Nightal-23-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Steve=1
+,find;found=Nightal-23-1369
+,,name=+1 Chain Mail of Swimming
+,,name=Necklace of Darkness;holder=Denyae;owner=party
+,,name=+2 Long Sword;holder=Maanamere;owner=Maanamere
+,,name=+1/+2(half*)/+3(Humans) Bastard Sword;holder=Tristan
+,,name=+2 Ring of Protection;holder=Denyae;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=Bracers of Defense AC 5;holder=Ursula;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=Bracers of Defense AC 5;holder=Darius;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=+1 Long Bow;owner=Dexter;xfrd=23 Nightal 1369;value=3500gp
 # Nightal 19 Darius uses a Chardalyn
 # Party acquires 3 sapphires 2500gp each
-party;type=AFAL;name=Nightal-24-1369;date=24 Nightal 1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Stalker=1;Steve=1
-find;found=Nightal-24-1369
-,name=Potion of Water Breathing
-,name=Scroll (C);note=Energy Drain
-,name=+1/+3(Fire) Plate Mail;owner=Dexter;xfrd=24 Nightal 1369;value=5000gp
-,name=Scroll (C);holder=Auction;note=Bless, Curse, Putrify Food, Focus
-,name=Scroll (C);holder=Auction;note=Locate Animals or Plants *2, Snake Charm, Summon Insects, Call Woodland Being, Animal Summoning 3
-date=Nightal 26 1369;writeoff;Narthan;Cassie
-char;association=AFAL;status=active;name=Theo;alignment=Lawful Neutral;\
-gender=Male;player=David;race=Human;\
-class=Spellcaster, Halruaan;joined=Nightal 26 1369;\
-fullname=Theophrastus &quot\;Theo&quot\; Philippus Aureolus Bombast von Hohenheim;\
-characteristics=51 year-old male human, somewhat overweight. Pallid complexion,\
- has a small moustache, balding, with his hair combed over.\
+date=24 Nightal 1369
+,party;type=AFAL;name=Nightal-24-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Stalker=1;Steve=1
+,find;found=Nightal-24-1369
+,,name=Potion of Water Breathing
+,,name=Scroll (C);note=Energy Drain
+,,name=+1/+3(Fire) Plate Mail;owner=Dexter;xfrd=24 Nightal 1369;value=5000gp
+,,name=Scroll (C);holder=Auction;note=Bless, Curse, Putrify Food, Focus
+,,name=Scroll (C);holder=Auction;note=Locate Animals or Plants *2, Snake Charm, Summon Insects, Call Woodland Being, Animal Summoning 3
+date=Nightal 26 1369
+,writeoff;Narthan;Cassie
+,meet;status=active;association=AFAL;name=Theo;fullname=Theophrastus\
+ &quot\;Theo&quot\; Philippus Aureolus Bombast von Hohenheim\
+;player=David;race=Human;gender=Male;class=Spellcaster, Halruaan\
+;alignment=Lawful Neutral;joined=Nightal 26 1369;cash=1cp\
+;characteristics=51 year-old male human, somewhat overweight. Pallid\
+ complexion, has a small moustache, balding, with his hair combed over.\
  Scented (wearing perfume), and with some makeup.\
  Takes snuff from time to time. Wears robes that once were fine,\
  now going a bit frayed and shabby.\
- Talks in a somewhat high-pitched, musical voice.;\
-equipment=Bracers, Magic Ring;\
-note=Joined the party on <d Nightal 26 1369>.\
+ Talks in a somewhat high-pitched, musical voice.\
+;equipment=Bracers, Magic Ring\
+;note=Joined the party on <d Nightal 26 1369>.\
  Theo began teaching on <d Hammer 15 1370>.\
  Although he's left the party to teach full time,\
  Theo is still staying at Fair Winds,\

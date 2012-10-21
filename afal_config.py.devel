@@ -1,6 +1,19 @@
 #!/usr/bin/python
 # this is the development config
+import os
+
 config = {
-	'database':'afal_devel', 'user':'afal'
-, 'password':'BuffyStewart'
+    'database':'afal_devel',
+    'user':'afal',
+    'password':'BuffyStewart'
 }
+background = '/devel/mw-escher.gif'
+background_pc = '/back3l15.gif'
+background_npc = '/back3l16.gif'
+logs = "/logs/log_"
+summary = '/devel/summary.cgi'
+cash = '/devel/cash.cgi'
+report = '/devel/report.cgi'
+menu_url = '/devel/menu.cgi'
+text = 'QUERY_STRING' not in os.environ
+

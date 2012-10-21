@@ -1,61 +1,76 @@
 create table fr_character (
-    char_name varchar(128) primary key,
-    status enum ( 'active', 'inactive', 'dead', 'dummy' ) not null default 'active',
-    gender enum ( 'Male', 'Female', 'Male?', 'Female?', 'No Gender', 'Herm', 'Unknown Gender') not null default 'Unknown Gender',
-    cash_cp integer not null default 0,
-    association text,
-    fullname text,
-    player text,
-    race   text,
-    class  text,
-    alignment text,
-    equipment text,
-    picture_url text,
-    large_picture_url text,
-    char_acteristics text,
-    note text,
-    hidden_note text
+	char_name varchar(128) primary key,
+	status enum ( 'active', 'inactive', 'dead', 'dummy' ) not null default 'active',
+	association text,
+	fullname text,
+	player text,
+	race   text,
+	gender enum ( 'Male', 'Female', 'Herm', 'Male?', 'Female?', 'No Gender'),
+	class  text,
+	alignment text,
+	picture_url text,
+	large_picture_url text,
+	equipment text,
+	char_acteristics text,
+	note text,
+	hidden_note text,
+	cash_cp integer
 );
 create table fr_party (
-    party_name varchar(128) primary key,
-    type enum ('AFAL', 'Character', 'NPCs', 'Unknown') not null,
-    date integer unsigned,
-    note text
+	party_name varchar(128) primary key,
+	type enum ('AFAL', 'Character', 'NPCs', 'Unknown') not null,
+	date integer unsigned,
+	note text
 );
 create table fr_char_party (
-    char_name varchar(128) not null references fr_character,
-    party_name varchar(128) not null references fr_party,
-    share double unsigned not null default 1.0,
-    primary key(char_name, party_name)
+	char_name varchar(128) not null references fr_character,
+	party_name varchar(128) not null references fr_party,
+	share double unsigned not null default 1.0,
+	primary key(char_name, party_name)
 );
 create table fr_item (
-    item_name varchar(128) primary key,
-    found_by varchar(128) not null,
-    owned_by varchar(128) not null,
-    held_by varchar(128),
-    date_found integer unsigned not null,
-    date_xfrd integer unsigned,
-    note text,
-    value_cp integer unsigned
+	item_name varchar(128) primary key,
+	found_by varchar(128) not null,
+	owned_by varchar(128) not null,
+	held_by varchar(128),
+	date_found integer unsigned not null,
+	date_xfrd integer unsigned,
+	note text,
+	value_cp integer unsigned
 );
 create table fr_debt (
-    debt_id integer unsigned primary key auto_increment,
-    date integer unsigned not null,
-    debtor varchar(128) not null references fr_character,
-    debtee varchar(128) not null references fr_character,
-    repay_order integer unsigned not null default 0,
-    share double unsigned not null default 1.0,
-    item varchar(128) references fr_item,
-    initial_cp integer unsigned not null,
-    owed_cp integer unsigned not null
+	debt_id integer unsigned primary key auto_increment,
+	date integer unsigned not null,
+	debtor varchar(128) not null references fr_character,
+	debtee varchar(128) not null references fr_character,
+	repay_order integer unsigned not null default 0,
+	share double unsigned not null default 1.0,
+	item varchar(128) references fr_item,
+	initial_cp integer unsigned not null,
+	owed_cp integer unsigned not null
 ) auto_increment=100000;
 create table fr_journal (
-    journal_id integer unsigned not null primary key auto_increment,
-    part_of integer unsigned references fr_journal,
-    ourtime timestamp not null default CURRENT_TIMESTAMP,
-    date integer unsigned not null,
-    made_by varchar(128) not null,
-    made_to varchar(128),
-    amount_cp integer unsigned,
-    description text not null
+	journal_id integer unsigned not null primary key auto_increment,
+	part_of integer unsigned references fr_journal,
+	ourtime timestamp not null default CURRENT_TIMESTAMP,
+	date integer unsigned not null,
+	made_by varchar(128) not null,
+	made_to varchar(128),
+	cash_cp integer unsigned,
+	virtual_cp integer unsigned,
+	description text not null
 ) auto_increment=1000000;
+create table fr_money_type (
+	money_id integer unsigned not null primary key auto_increment,
+	coin varchar(128) unique not null,
+	copper_equiv integer unsigned not null,
+	common_use boolean not null,
+	abbrev text,
+	note text
+) auto_increment=10000000;
+create table fr_char_money (
+	owner varchar(128) not null,
+	money_id integer unsigned not null references money_type,
+	quantity integer unsigned not null,
+	primary key(owner,money_id)
+);

@@ -43,22 +43,24 @@ def _ins_if_not(d, l):
 def _check_dict(d, must = None, may = None):
     """ dict must contain every element in 'must', and may contain elements in 'may'"""
 
+    if must is None:
+        must = {}
     if may is not None:
         for i in d:
             if i not in must and i not in may:
-                print "\nUnexpected key '" + i + "' found in dict", d, "only expected must=", must, "may=", may, "\n"
+                sys.stderr.write("\nUnexpected key '{i}' found in dict {d} only expected must={must}, may={may}\n".format(i=i,d=d,must=must,may=may))
                 raise NameError("Unexpected key " + i)
 
     for i in must:
 	if not i in d:
-            print "\nMissing key '" + i + "' in dict", d, "expected must=", must, "\n"
+            sys.stderr.write("\nMissing key '{i}' in dict {d} expected must={must}\n".format(i=i,d=d,must=must))
             raise NameError("Missing key " + i)
 
 
 def _check_warnings():
     warnings = cur.fetchwarnings()
     if warnings:
-        print "\nWarnings!:",warnings,"\n"
+        sys.stderr.write("\nWarnings!: {warnings}\n".format(warnings=warnings))
 
 ######## File IO and parsing
 
@@ -122,7 +124,7 @@ def _add_entries(d, line):
             name = hdr
             value = True
         if name in d:
-            print d
+            sys.stderr.write("\nKey {name} already in {d}\n".format(name=name,d=d))
             raise NameError("Key '"+name+"' is already in dict")
         d[name] = value
     return d
@@ -266,24 +268,49 @@ def party_to_date(d):
 def _or_zero(x):
     return int(x) if x is not None and len(x) > 0 else 0
 
+def _find_coin(m):
+#    print m.group(1), m.group(2) ...
+    coin = m.group(2)
+    if coin[-1] == 's':
+        coin = coin[:-1]
+    str_to_coins.ret[coin] = m.group(1)
+    return ''
+
+def str_to_coins(s):
+    if s is None:
+        return None
+    str_to_coins.ret = {}
+    rest = re.sub(r'\s*(\d+)x?\s*([a-zA-Z :]+[a-zA-Z: 0-9]*)(,|$)', _find_coin, s.lower())
+    if rest != '':
+        raise NameError ("invalid text '"+rest+"' in money")
+    sum = 0
+    for i in str_to_coins.ret:
+        cur.execute("select copper_equiv from fr_money_type where coin = %(name)s or abbrev = %(name)s", { 'name': i })
+        resp = cur.fetchall()
+        _check_warnings()
+        if len(resp) != 1 or len(resp[0]) != 1:
+            raise NameError("Unknown coin '"+i+"' in money")
+        sum += int(resp[0][0]) * int(str_to_coins.ret[i])
+    str_to_coins.ret['value_cp'] = sum
+    return str_to_coins.ret
+
+def coins_to_str(s):
+    if s is None:
+        return ''
+    ret = ''
+    sep = ''
+    nsep = ', '
+    for i in s:
+        if i == 'value_cp':
+            continue
+        ret += '{sep}{n} {coin}'.format(sep=sep, n=s[i], coin=i)
+        sep = nsep
+    return ret
+
 def str_to_cp(s):
     if s is None:
         return None
-    m = re.match(r'^((\d+)\s*hm,?\s*)?((\d+)\s*gond bells?,?\s*)?((\d+)\s*pp,?\s*)?((\d+)\s*toals?,?\s*)?((\d+)\s*gp,?\s*)?((\d+)\s*ep,?\s*)?((\d+)\s*sp,?\s*)?((\d+)\s*cp)?$', s, re.IGNORECASE)
-    if m:
-        hm = _or_zero(m.group(2))
-	gb = _or_zero(m.group(4))
-	pp = _or_zero(m.group(6))
-	to = _or_zero(m.group(8))
-	gp = _or_zero(m.group(10))
-	ep = _or_zero(m.group(12))
-	sp = _or_zero(m.group(14))
-	cp = _or_zero(m.group(16))
-	return int(hm * 10000 + gb * 2000 + pp * 1000 + to * 400 + gp * 200 \
- + ep * 100 + sp * 10 + cp)
-    else:
-        return int(float(s) * 200)
-
+    return str_to_coins(s)['value_cp']
 
 def cp_to_str(cp):
     """ pretty-print a raw cp value"""
@@ -309,9 +336,163 @@ def divide_cp(top, bottom):
 
     whole = int(top/bottom)
     fract = (float(top)/float(bottom)) - whole
-    if fract > random.random():
+    if fract >= 0.5000:
         whole += 1
     return whole
+#    if float(int(top/bottom)) != float(top)/float(bottom):
+#        return 1 + int(top/bottom)
+#    return int(top/bottom)
+
+def insert_coin(coin, abbrev, copper_equiv, common=True, note = None):
+    cur.execute(
+ ' insert into fr_money_type (coin, abbrev, copper_equiv, common_use, note) '
+ ' values ( %(coin)s, %(abbrev)s, %(copper_equiv)s, %(common)s, %(note)s)',
+ { 'coin': coin, 'abbrev': abbrev, 'copper_equiv': copper_equiv, 'common': common, 'note': note})
+    _check_warnings()
+    return cur.lastrowid
+
+
+def get_coins():
+    cur.execute('select coin, abbrev, copper_equiv from fr_money_type order by copper_equiv desc')
+    resp = cur.fetchall()
+    ret = {}
+    for i in resp:
+        cpe = i[2]
+        if i[1]:
+            ret[i[1]] = cpe
+        else:
+            ret[i[0]] = cpe
+    return ret;
+
+
+
+def get_char_money(char):
+    cur.execute('select t.money_id, t.coin, t.abbrev, t.copper_equiv, m.quantity from '
+ ' fr_char_money as m natural join fr_money_type as t where m.owner = %(char)s order by t.copper_equiv desc', {'char':char})
+    resp = cur.fetchall()
+    _check_warnings()
+    ret = []
+    for i in resp:
+        t = {}
+        t['money_id'] = i[0]
+        t['coin'] = i[1]
+        t['abbrev'] = i[2]
+        t['copper_equiv'] = int(i[3])
+        t['quantity'] = int(i[4])
+        ret.append(t)
+    return ret
+
+
+def char_find_money(char, amount_cp):
+    x = get_char_money(char)
+    ret = {'value_cp': amount_cp}
+    for i in x:
+        cpe = i['copper_equiv']
+        if cpe > amount_cp:
+            continue
+        q = i['quantity']
+        if cpe * q > amount_cp:
+            n = int(amount_cp/cpe)
+        else:
+            n = q
+        ret[i['coin']] = n
+        amount_cp -= n * cpe
+        if amount_cp == 0:
+            break;
+    if amount_cp:
+        raise ValueError("Char {char} needs change {amount_cp} {orig} {x} got {ret}".format(char=char, amount_cp=amount_cp, orig = ret['value_cp'], x=x, ret = ret))
+    return ret
+
+def invent_money(amount_cp):
+    if amount_cp is None or amount_cp == 0:
+        return None
+    cur.execute('select coin, copper_equiv from fr_char_money where common_use = True order by copper_equiv desc')
+    resp = cur.fetchall()
+    ret = {'value_cp': amount_cp}
+    for i in resp:
+        cpe = i[1]
+        if cpe > amount_cp:
+            continue;
+        n = int(amount_cp / cpe)
+        ret[i[0]] = n
+        amount_cp -= n
+        if amount_cp == 0:
+            break;
+    return ret;
+
+
+def char_change_money(char, dir, i):
+    i.pop('value_cp',None)
+    if dir == 'give':
+        sign = -1
+    elif dir == 'get':
+        sign = 1
+    else:
+        raise ValueError("Dir isn't 'give' or 'get': '"+dir+"'")
+    total = 0
+    for coin in i:
+        amount = sign * int(i[coin])
+        cur.execute('select t.money_id, t.copper_equiv, m.quantity from '
+ ' fr_char_money as m natural join fr_money_type as t where m.owner = %(char)s'
+ ' and (t.coin = %(coin)s or t.abbrev = %(coin)s)', {'char':char, 'coin':coin})
+        resp = cur.fetchall()
+        _check_warnings()
+        if len(resp) > 0:
+            q = int(resp[0][2])
+            if  q+amount < 0:
+                raise ValueError("Negative money not allowed "+str(amount)+' '+str(resp[0][2]))
+            cpe = int(resp[0][1])
+            if q+amount == 0:
+                cur.execute("delete from fr_char_money where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':resp[0][0]})
+            else:
+                cur.execute("update fr_char_money set quantity = quantity + %(amount)s where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':resp[0][0], 'amount':amount})
+        else:
+            if amount < 0:
+                raise ValueError("Can't create negative money "+coin+" "+str(amount))
+            if amount == 0:
+                raise ValueError("Can't create zero money " + coin)
+            cur.execute("select money_id, copper_equiv from fr_money_type where coin = %(coin)s or abbrev = %(coin)s", {'coin':coin})
+            resp = cur.fetchall()
+            _check_warnings()
+            if len(resp) != 1 or len(resp[0]) != 2:
+                raise NameError("Money type '"+coin+"' not found")
+            cpe = int(resp[0][1])
+            cur.execute("insert into fr_char_money (owner, money_id, quantity) values (%(char)s, %(id)s, %(amount)s)", {'char':char, 'id':resp[0][0], 'amount':amount})
+        _check_warnings()
+        total += int(amount) * int(cpe)
+    cur.execute("update fr_character set cash_cp = cash_cp + %(amount_cp)s where char_name = %(char)s",
+ {'amount_cp': total, 'char': char})
+    _check_warnings()
+
+
+def chars_move_cash(i):
+    """move cash from one character to another, journaling it"""
+
+    _check_dict(i, must=('date', 'by', 'to'), may=('cash', 'amount_cp', 'item', 'for', 'note', 'part_of'))
+    by = i['by']
+    to = i['to']
+    if 'cash' in i:
+        cash = i['cash']
+        amount_cp = cash['value_cp']
+    else:
+        cash = None
+        amount_cp = i['amount_cp']
+    if by not in special:
+        if cash is None:
+            cash = char_find_money(by, amount_cp)
+        char_change_money(by, 'give', cash)
+    if to not in special:
+        if cash is None:
+            cash = invent_money(amount_cp)
+        char_change_money(to, 'get', cash)
+    text = 'gave '+coins_to_str(cash)+' to {to}'
+    if i.get('item'):
+        t_for = " for " + i['item']
+    if i.get('for'):
+        t_for = " for " + i['for']
+    if i.get('note'):
+      text += ' ' + i.get('note','')
+    return journal(str_to_date(i['date']), by, to, amount_cp, None, text, i.get('part_of'))
 
 
 ######## Shares
@@ -325,23 +506,29 @@ def share_to_str(share):
 
 ######## Journal entries
 
-def journal(date, by, to, amount_cp, text, part_of = None):
+def journal(date, by, to, cash_cp, virtual_cp, text, part_of = None):
     """add an entry to the transaction journal, returning an id that may be used for subsequent calls"""
 
     if date is None or by is None or text is None:
         raise NameError("Missing required field in journal")
     date = str_to_date(date)
     cur.execute (
- "insert into fr_journal ( date, made_by, made_to, amount_cp, description, part_of ) "
- " values ( %(date)s, %(by)s, %(to)s, %(cp)s, %(text)s, %(part_of)s )",
- {'date':date, 'by':by, 'to':to, 'cp':amount_cp,
+ "insert into fr_journal ( date, made_by, made_to, cash_cp, virtual_cp, description, part_of ) "
+ " values ( %(date)s, %(by)s, %(to)s, %(cash)s, %(virtual)s, %(text)s, %(part_of)s )",
+ {'date':date, 'by':by, 'to':to, 'cash':cash_cp, 'virtual': virtual_cp,
  'text':text + ".", 'part_of':part_of})
     _check_warnings()
     return cur.lastrowid
 
-def get_journal_dates():
+
+def get_journal_dates(char = None):
     """return a list of dates (in text form) of entries in the journal"""
-    cur.execute("select distinct date from fr_journal order by date")
+
+    if char:
+        clause = "where made_by = %(char)s or made_to = %(char)s"
+    else:
+        clause = ""
+    cur.execute('select distinct date from fr_journal {clause} order by date'.format(clause = clause), {'char': char})
     resp = cur.fetchall()
     _check_warnings()
     if resp == None or len(resp)==0:
@@ -350,46 +537,60 @@ def get_journal_dates():
     for i in resp:
         ret.append(date_to_str(i[0]))
     return ret
+
     
-def get_journal(d_fm = None, d_to = None, character = None, primary = False):
+def get_journal(cond = None):
     """return a list of dicts of entries in the journal"""
 
-    string = ""
-    if d_fm == 'All':
-        d_fm = None
-    else:
-        d_fm = str_to_date(d_fm)
-    if d_to == 'All':
-        d_to = None
-    else:
-        d_to = str_to_date(d_to)
-    if character == 'All':
-        character = None
-    if d_fm and d_to:
-        string += " where date >= %(d_fm)s and date <= %(d_to)s "
-    elif d_fm:
-        string += " where date >= %(d_fm)s "
-    elif d_to:
-        string += " where date <= %(d_to)s "
-    if primary:
-        if string != '':
-            s1 = ' and '
-        else:
-            s1 = ' where '
-        string += s1 + 'part_of is NULL'
-    if character is not None:
-        if string != '':
-            s1 = " and ( "
-            s2 = ' ) '
-        else:
-            s1 = " where "
-            s2 = ' '
-        string += s1+" made_by = %(character)s or made_to = %(character)s "+s2
+    if cond is None:
+        cond = {}
+    _check_dict(cond, must=None, may=('char', 'primary', 'latest', 'on', 'starting_on', 'up_to', 'cash'))
+    clause = ''
+    pre = ' where '
+    npre = ' and '
+    date1 = None
+    date2 = None
+    char = None
+    char_clause = ''
+    if 'char' in cond and cond['char'] != 'All':
+        tmp = '(made_by = %(char)s or made_to = %(char)s)'
+        clause += pre + tmp
+        char_clause = ' where ' + tmp
+        pre = npre
+        char = cond['char']
+    if 'primary' in cond:
+        clause += pre + ' part_of is NULL '
+        pre = npre
+    if 'on' in cond and cond['on'] != 'All':
+        clause += pre + ' date = %(date1)s '
+        pre = npre
+        date1 = cond['on']
+    if 'latest' in cond:
+        if 'on' in cond:
+            raise KeyError("Can't have both 'latest' and 'on' in condition")
+        clause += pre + ' date = (select max(date) from fr_journal {char_clause}) '.format(char_clause = char_clause)
+        pre = npre
+    if 'starting_on' in cond and cond['starting_on'] != 'All':
+        if 'on' in cond or 'latest' in cond:
+            raise KeyError("Can't have both 'starting_on' and 'latest' or 'on' in condition")
+        clause += pre + ' date >= %(date1)s '
+        date1 = cond['starting_on']
+        pre = npre
+    if 'up_to' in cond and cond['up_to'] != 'All':
+        if 'on' in cond or 'latest' in cond:
+            raise KeyError("Can't have both 'up_to' and 'latest' or 'on' in condition")
+        clause += pre + ' date <= %(date2)s '
+        date2 = cond['up_to']
+        pre = npre
 
-    cur.execute("select "
-" journal_id, part_of, ourtime, date, made_by, made_to, amount_cp, description"
-" from fr_journal " + string + " order by date, journal_id",
-{'d_fm':d_fm, 'd_to':d_to, 'character':character})
+    if 'cash' in cond:
+        clause += pre + ' cash_cp > 0 '
+        pre = npre
+
+    cmd = 'select '\
+' journal_id, part_of, ourtime, date, made_by, made_to, cash_cp, virtual_cp, description'\
+' from fr_journal {clause} order by date, journal_id'.format(clause = clause)
+    cur.execute(cmd, {'date1': str_to_date(date1), 'date2': str_to_date(date2), 'char': char})
     resp = cur.fetchall()
     _check_warnings()
     if resp == None or len(resp) == 0:
@@ -401,10 +602,11 @@ def get_journal(d_fm = None, d_to = None, character = None, primary = False):
         t['part_of'] = i[1]
         t['ourtime'] = i[2]
         t['date'] = date_to_str(i[3])
-        t['made_by'] = i[4]
-        t['made_to'] = i[5]
-        t['amount_cp'] = i[6]
-        t['description'] = i[7].format(by=i[4], to=i[5], amount=cp_to_str(i[6]))
+        t['by'] = i[4]
+        t['to'] = i[5]
+        t['cash_cp'] = i[6]
+        t['virtual_cp'] = i[7]
+        t['description'] = i[8].format(to=i[5], cash=cp_to_str(i[6]), virtual=cp_to_str(i[7]))
         ret.append(t)
     return ret
 
@@ -424,9 +626,9 @@ def insert_character(d):
     if 'gender' not in d:
         d['gender'] = 'Unknown Gender'
     if 'cash' in d:
-        d['cash_cp'] = str_to_cp(d['cash'])
-    else:
         d['cash_cp'] = 0
+    else:
+        d['cash_cp'] = None
     cur.execute(
  "insert into fr_character ( "
  " char_name, status, alignment, association, "
@@ -442,33 +644,6 @@ def insert_character(d):
 
 
 
-def chars_move_cash(i):
-    """move cash from one character to another, journaling it"""
-
-    _check_dict(i, must=('date', 'by', 'to', 'amount_cp'), may=( 'item', 'for', 'note', 'part_of'))
-    by = i['by']
-    to = i['to']
-    amount_cp = i['amount_cp']
-    if to not in special:
-        cur.execute("update fr_character set cash_cp = "
- " cash_cp + %(cp)s where char_name = %(to)s",
- {'cp': amount_cp, 'to': to})
-        _check_warnings()
-    if by not in special:
-        cur.execute("update fr_character set cash_cp = "
- " cash_cp - %(cp)s where char_name = %(by)s",
- {'cp': amount_cp, 'by': by})
-        _check_warnings()
-    text = '{by} gave {amount} to {to}'
-    if i.get('item'):
-        t_for = " for " + i['item']
-    if i.get('for'):
-        t_for = " for " + i['for']
-    if i.get('note'):
-      text += ' ' + i.get('note','')
-    journal(str_to_date(i['date']), by, to, amount_cp, text, i.get('part_of'))
-
-
 def get_characters(kind, match = None):
     """return a list of name entries for characters in the database"""
 
@@ -482,11 +657,11 @@ def get_characters(kind, match = None):
     elif kind == 'Dead':
         clause = 'status = "dead" and association = "AFAL"'
     elif kind == 'ActiveNPCs':
-        clause = 'status = "active" and association != "AFAL"'
+        clause = 'status = "active" and ( association is NULL or association != "AFAL")'
     elif kind == 'InactiveNPCs':
-        clause = 'status = "inactive" and association != "AFAL"'
+        clause = 'status = "inactive" and ( association is NULL or association != "AFAL")'
     elif kind == 'DeadNPCs':
-        clause = 'status = "dead" and association != "AFAL"'
+        clause = 'status = "dead" and (association is NULL or association != "AFAL")'
     else:
         raise NameError("Unknown kind " + str(kind))
     cur.execute("select char_name from fr_character "
@@ -531,6 +706,7 @@ def get_char_data(char):
     ret['status'] = resp[11]
     ret['cash_cp'] = resp[12]
     ret['large_picture_url'] = resp[13]
+    ret['coins'] = get_char_money(char)
     return ret
 
 
@@ -606,10 +782,10 @@ def char_leave_parties(date, char, note = None):
 
     cur.execute("update fr_char_party set share = 0 where char_name = %(char)s", {'char':char})
     _check_warnings()
-    text = "{by} left AFAL"
+    text = "left AFAL"
     if note:
         text += ' ' + note
-    journal(date, char, None, None, text)
+    journal(date, char, None, None, None, text)
 
 
 ########## Items
@@ -631,7 +807,7 @@ def insert_item(d):
  {'new': item + "  #1", 'old':item})
     if len(resp) > 0:
         item += "  #" + str(len(resp)+1)
-        print "Warning: renaming item to", item
+        sys.stderr.write("Warning: renaming item to {item}\n".format(item = item))
         d['item'] = item
 
     cur.execute(
@@ -678,7 +854,7 @@ def change_item(date, item, owner=None, holder=None, value_cp = None, part_of = 
     cur.execute('update fr_item set date_xfrd=%(date)s' + c1 + ' where item_name=%(item)s',
  {'date':date, 'item':item, 'owner':owner, 'holder':holder, 'value_cp':value_cp })
     _check_warnings()
-
+    return part_of
 
 def get_items(kind, match = None):
     clause = ''
@@ -769,14 +945,14 @@ def delete_debt(d):
     _check_dict(d, must=('debt_id', 'by', 'to', 'date', 'amount_cp', 'verb' ), may=('item', 'note', 'part_of'))
     cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s", d )
     _check_warnings()
-    text = '{by} ' + d['verb'] + ' a {amount} debt'
+    text = d['verb'] + ' a {virtual} debt'
     if d['by'] != d['to']:
         text += ' to {to}'
     if d.get('item'):
         text += ' for ' + d['item']
     if d.get('note'):
         text += ' ' + d['note']
-    journal(d['date'], d['by'], d['to'], d['amount_cp'], text, d.get('part_of'))
+    journal(d['date'], d['by'], d['to'], None, d['amount_cp'], text, d.get('part_of'))
 
 def debt_lower_owed(d):
     """Lower the amount owed on the specified debt and journal it"""
@@ -785,13 +961,13 @@ def debt_lower_owed(d):
     cur.execute("update fr_debt set owed_cp = owed_cp - %(lower_cp)s "
  " where debt_id = %(debt_id)s", {'lower_cp':d['lower_cp'], 'debt_id':d['debt_id']})
     _check_warnings()
-    text = '{by} ' + d['verb'] + ' {amount} of a ' + cp_to_str(d['amount_cp']) + ' debt to {to}'
+    text = d['verb'] + ' {virtual} of a ' + cp_to_str(d['amount_cp']) + ' debt to {to}'
     if d.get('item'):
         text += ' for ' + d['item']
     text += ', leaving ' + cp_to_str(d['amount_cp'] - d['lower_cp'])
     if d.get('note'):
         text += ' ' + d['note']
-    journal(d['date'], d['by'], d['to'], d['lower_cp'], text, d.get('part_of'))
+    journal(d['date'], d['by'], d['to'], None, d['lower_cp'], text, d.get('part_of'))
 
 
 def insert_debt(d):
@@ -811,12 +987,12 @@ def insert_debt(d):
     to = d['to']
     d['date'] = str_to_date(d['date'])
     if by == to:
-        text = "{by} noted a self-debt of {amount}"
+        text = "noted a self-debt of {virtual}"
         if d.get('item'):
             text += " for " + d['item']
         if d.get('note'):
             text += ' ' + d['note']
-        journal(d['date'], by, None, d['amount_cp'], text, d['part_of'])
+        journal(d['date'], by, None, None, d['amount_cp'], text, d['part_of'])
         return
 
     cur.execute("insert into fr_debt "
@@ -825,7 +1001,7 @@ def insert_debt(d):
  " %(amount_cp)s, %(amount_cp)s)", d)
     _check_warnings()
 
-    text = "{by} lent {amount} to {to}"
+    text = "lent {virtual} to {to}"
     if d['repay_order'] != 0:
         text += " repay order " + str(d['repay_order'])
     if d['share'] != 1.0:
@@ -834,6 +1010,90 @@ def insert_debt(d):
         text += " for " + d['item']
     if d.get('note'):
         text += ' ' + d['note']
-    journal(d['date'], by, to, d['amount_cp'], text, d['part_of'])
+    journal(d['date'], by, to, None, d['amount_cp'], text, d['part_of'])
+
+#############################################################################
+
+character_list = get_characters('Current')
+party_list = get_parties()
+date_list = get_journal_dates()
+items_values = ('Unresolved','Party','Auction','Sell','Lent','Identify')
+items_texts = ('Unresolved Items', 'Party Items', 'Items to Auction', 'Items to Sell', 'Items Lent Out', 'Items to Identify')
+people_values = ('Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs')
+people_texts = ('Current AFAL Members', 'Former AFAL Members', 'Dead AFAL Members', 'People We Might Meet', "People We Probably Won't Meet", 'People We Have Killed')
+
+def _format_group(name_singular, name_plural, val_pre, values, texts):
+    ret = \
+ '     <option value="{vp}All">All {np}</option>\n'\
+ '      <optgroup label="{ns}">\n'.format(vp = val_pre,
+ ns = name_singular, np = name_plural)
+    for v,t in zip(values,texts):
+        ret += '      <option value="{vp}{v}">{t}</option>'.format(vp = val_pre, v=v, t=t)
+    ret += '     </optgroup>'
+    return ret
+
+menu_html = (
+ '  <center>\n'
+ '   <table>\n'
+ '    <tr>\n'
+ '     <td>\n'
+ '      <form action="{summary}" method="GET">\n'
+ '       <input type="submit" name="go" value="Debt Summary" />\n'
+ '      </form>\n'
+ '     </td>\n'
+ '     <td>\n'
+ '      <form action="{cash}" method="GET">\n'
+ '       <input type="submit" name="go" value="Cash Summary" />\n'
+ '      </form>\n'
+ '     </td>\n'
+ '     <td>\n'
+ '      <form action="{report}" method="GET">\n'
+ '       <label>or\n'
+ '        <input type="submit" name="generate" value="Show"/>\n'
+ '       </label>\n'
+ '       <select name="todo">\n'
+ '        <option selected label="Everything" value="All">Everything</option>\n'
+ '{char_group}\n'
+ '{party_group}\n'
+ '{items_group}\n'
+ '{people_group}\n'
+ '       </select>\n'
+ '      </form>\n'
+ '     </td>\n'
+ '    </tr>\n'
+ '    <tr>\n'
+ '     <td colspan="7">\n'
+ '      <form action="{report}" method="GET">\n'
+ '       <label>or\n'
+ '        <input type="submit" name="journal" value="Show" />\n'
+ '       Journal</label>&nbsp;&nbsp;\n'
+ '       <label for="start">From</label>\n'
+ '       <select name="start">\n'
+ '{dates_group}\n'
+ '       </select>\n'
+ '       <label for="end">to</label>\n'
+ '       <select name="end">\n'
+ '{dates_group}\n'
+ '       </select>\n'
+ '       <label for="char">involving</label>\n'
+ '       <select name="char">\n'
+ '{char_group}\n'
+ '       </select>\n'
+ '      </form>\n'
+ '     </td>\n'
+ '    </tr>\n'
+ '   </table>\n'
+ '  </center>\n'
+ '  <hr />'
+.format(
+ background = afal_config.background,
+ summary = afal_config.summary,
+ cash = afal_config.cash,
+ report = afal_config.report,
+ char_group = _format_group('Character','Characters','char.',character_list, character_list),
+ party_group = _format_group('Party','Parties', 'party.', party_list, party_list),
+ items_group = _format_group('Items','Items','items.', items_values, items_texts),
+ people_group = _format_group('Groups','Groups', 'people.', people_values, people_texts),
+ dates_group = _format_group('Date','Dates','date.',date_list,date_list)))
 
 ######## End

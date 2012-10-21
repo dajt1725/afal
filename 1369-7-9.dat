@@ -1,36 +1,41 @@
 # ? Moogh?
-party;type=AFAL;name=Flamerule-23-1369;date=23 Flamerule 1369;Buffy=1;Darius=1;Devlin=1;Dexter=1;Hahrvee=1;Henkles=1;Maanamer=1;Steve=1;Stewart=1
+party;type=AFAL;name=Flamerule-23-1369;date=23 Flamerule 1369;Buffy=1;Darius=1;Devlin=1;Dexter=1;Hahrvee=1;Henkles=1;Maanamere=1;Steve=1;Stewart=1
 find;found=Flamerule-23-1369
 ,name=Deck of Wonderous Transformation;owner=party;note=Devlin id <d Eleasias 1 1369>
 ,name=Glass Sphere of Wall of Force;note=Steve id <d Eleasias 1 1369>
 ,name=Ioun Stone of Protection;holder=Darius;note=Devlin partially id, Darius, Steve failed <d Eleasias 1 1369>, Steve, Cassie id <d Eleasias 27 1369>
 ,name=Ring of Magic Missiles;holder=Steve;note=Devlin, Darius Steve failed id <d Eleasias 1 1369>, Cassie id <d Marpenoth 28 1369>, Used up on or before <d Hammer 13 1370>;owner=party
 ,name=Key (Magic);note=Darius, Steve fail id <d Eleasias 1 1369>, Steve, Cassie, Darius fail on <d Eleasias 27 1369>
-date=Flamerule 23 1369;Buffy;writeoff
-char;association=afal
-,name=Misery;status=active;fullname=Jan &quot\;Misery&quot\; Jones;\
-player=Iain;race=Human;gender=Male;class=Fighter;alignment=Neutral;\
-equipment=+2/+3/+4 by opponent size (M/L/H) Purple chain mail,\
- long sword, main gauche, +1 short composite bow, +2 Whip;\
-characteristics=Very strong and quick, clever and attractive,\
- ???No appearance!;note=Joined the party sometime before <d Eleasias 16 1369>.\
- Jan has been hanging out at Fair Winds ever since <d Alturiak 6 1370>.;joined=Eleasias 16 1369
-,status=inactive;name=Narthan;fullname=Narthandarkanas nha Kandar;player=Ross;race=Dwarf;\
-gender=Male;class=Spec Pr - Tempus (BattleForge);alignment=Chaotic Neutral;\
-equipment=+2 Shield, +1 Ring of Protection, Dagger of Hurting, some assorted\
- magic arrows;characteristics=Strong, very clever, nimble, 4'5&quot\;, 149lbs.;\
-note=Joined the party on <d Eleasias 16 1369>.  Narthan and Cassie decided\
- they'd had too much of vampires and left for Baldurs Gate on \
-<d Nightal 26 1369>.;joined=Eleasias 16 1369
-,status=inactive;name=Cassie;player=Kathy;fullname=Cassiopeia;race=Human;gender=Female;\
-class=Specialty Mage(Enchantress);alignment=Neutral Good;\
-equipment=Darts, +2/+0(Wizards)/-3(Enchanters) Dagger, +1 Ring of Protection;\
-characteristics=Wise, attractive, mid-length brown hair &amp\; brown eyes,\
- freckles, 5'3&quot\;, 110lbs., wears natural or neutral colors, nervous smile;\
-note=She joined the party sometime before <d Eleasias 18 1369>.\
+date=Flamerule 23 1369;Buffy;writeoff;note=Died when a statue exploded
+date=Eleasias 16 1369;meet;association=AFAL
+,status=active;name=Misery;fullname=Jan &quot\;Misery&quot\; Jones\
+;player=Iain;race=Human;gender=Male;class=Fighter;alignment=Neutral;cash=21cp\
+;characteristics=Very strong and quick, clever and attractive,\
+ ???No appearance!\
+;equipment=+2/+3/+4 by opponent size (M/L/H) Purple chain mail,\
+ long sword, main gauche, +1 short composite bow, +2 Whip, +1 Bastard Sword,\
+ Bracers of Inititive D8\
+;note=Joined the party sometime before <d Eleasias 16 1369>.\
+ Jan has been hanging out at Fair Winds ever since <d Alturiak 6 1370>.
+,status=inactive;name=Narthan;fullname=Narthandarkanas nha Kandar;player=Ross\
+;race=Dwarf;gender=Male;class=Spec Pr - Tempus (BattleForge)\
+;alignment=Chaotic Neutral\
+;characteristics=Strong, very clever, nimble, 4'5&quot\;, 149lbs.\
+;equipment=+2 Shield, +1 Ring of Protection, Dagger of Hurting, some assorted\
+ magic arrows\
+;note=Joined the party on <d Eleasias 16 1369>.  Narthan and Cassie decided\
+ they'd had too much of vampires and left for Baldurs Gate on\
+ <d Nightal 26 1369>.
+,status=inactive;name=Cassie;player=Kathy;fullname=Cassiopeia;race=Human\
+;gender=Female;class=Specialty Mage(Enchantress);alignment=Neutral Good\
+;cash=1cp\
+;characteristics=Wise, attractive, mid-length brown hair &amp\; brown eyes,\
+ freckles, 5'3&quot\;, 110lbs., wears natural or neutral colors, nervous smile\
+;equipment=Darts, +2/+0(Wizards)/-3(Enchanters) Dagger, +1 Ring of Protection\
+;note=She joined the party sometime before <d Eleasias 18 1369>.\
   Cassie traveled to Baldur's Gate with Narthan on <d Nightal 26 1369>\
- because they didn't want to deal with the vampires any more.;joined=Eleasias 16 1369
-party;type=AFAL;name=Eleasias-16-1369;date=16 Eleasias 1369;Darius=1;Devlin=1;Dexter=1;Hahrvee=1;Henkles=1;Maanamere=1;Steve=1;Stewart=1
+ because they didn't want to deal with the vampires any more.
+party;type=AFAL;name=Eleasias-16-1369;Darius=1;Devlin=1;Dexter=1;Hahrvee=1;Henkles=1;Maanamere=1;Steve=1;Stewart=1
 find;found=Eleasias-16-1369
 ,name=Scroll (C12) Volume of Sweet Air, Flamewalk *2
 ,name=Scroll (C12) Continual Darkness *3;holder=Auction

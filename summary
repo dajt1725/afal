@@ -1,24 +1,47 @@
 #!/usr/bin/python
 from __future__ import print_function
+import afal_config
 import afal
 import cgi
 import cgitb
 
 cgitb.enable()
-latest = afal.get_journal_dates()[-1]
+date = afal.date_to_str(afal.get_journal_dates()[-1])
 characters = afal.get_characters('Current')
-print(
- 'Content-Type: text/html\n'
- '\n'
- '<html>\n'
- ' <head><title>AFAL Finance Summary</title></head>\n'
- ' <body background="/back3l07.gif">\n'
- '  <center><h1>Anything For A Laugh</h1><h2>Finance report as of ',
-  afal.date_to_str(latest), '</h2></center><br>\n'
- '  <table border="1"><tr><th>Character</th><th>Receivable</th><th>'
- 'Payable</th><th>Cash</th><th>Net</th></tr>', sep='')
+
+if afal_config.text:
+    header = \
+'Debt summary as of {date}\n' \
+'Character  Receivable     Payable        Cash           Net'
+    neg = '({v})'
+    line = '{char:10} {r:14} {p:14} {c:14} {n:14}'
+    trailer = ''
+else:
+    header = \
+ 'Content-Type: text/html\n' \
+ '\n' \
+ '<html>\n' \
+ ' <head><title>AFAL Debt Summary</title></head>\n' \
+ ' <body background="{background}">\n' \
+ '  {menu_html}' \
+ '  <center><h1>Anything For A Laugh</h1>\n' \
+ '   <h2>Debt Summary Report as of {date}</h2>\n' \
+ '  <table border="1"><tr><th>Character</th><th>Receivable</th><th>' \
+ 'Payable</th><th>Cash</th><th>Net</th></tr>'
+    neg = '<font color="red">({v})</font>'
+    line = \
+ '   <tr><td><a href="{report}?char={char}&generate=Character">' \
+ '{char}</a></td><td>{r}</td><td>{p}</td><td>{c}</td><td>{n}</td></tr>'
+    trailer = \
+ '  </table>\n' \
+ '  <br><a href="{menu_url}"><b>Return to Menu</b></a></center>\n' \
+ ' </body>\n' \
+ '</html>\n'
+
+
+print(header.format(menu_url = afal_config.menu_url,
+ background = afal_config.background, date = date, menu_html = afal.menu_html))
 for char in characters:
-#    print(char, afal.get_char_data(char))
     c = afal.get_char_data(char)['cash_cp']
     p = 0
     for debt in afal.get_char_debts(char, "Payable"):
@@ -29,12 +52,13 @@ for char in characters:
     if c + r > p:
         n = afal.cp_to_str(c + r - p)
     elif p > c + r:
-        n = '<font color="red">(' + afal.cp_to_str(p - r - c) + ')</font>'
+        n = neg.format(v = afal.cp_to_str(p - r - c))
     else:
         n = 'Flat Broke'
-    print('   <tr><td><a href="/report.cgi?char={char}&generate=Character">'
- '{char}</a></td><td>{r}</td><td>{p}</td><td>{c}</td><td>{n}</td></tr>'.format(
+    if p == 0 and r == 0 and c == 0:
+        continue
+    print(line.format(
  char = char, r = afal.cp_to_str(r), p = afal.cp_to_str(p),
- c = afal.cp_to_str(c), n = n))
-print('  </table>\n </body>\n</html>\n')
+ c = afal.cp_to_str(c), n = n, report = afal_config.report))
+print(trailer.format(menu_url=afal_config.menu_url))
 afal.fini()

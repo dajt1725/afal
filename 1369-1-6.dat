@@ -1,43 +1,75 @@
 # Hammer-1 through Kythorn-30, incl Midinter and Greengrass
-char;status=dummy
+coin;name=copper piece;abbrev=cp;copper_equiv=1;common
+coin;name=silver piece;abbrev=sp;copper_equiv=10;common
+coin;name=electrum piece;abbrev=ep;copper_equiv=100;common
+coin;name=gold piece;abbrev=gp;copper_equiv=200;common
+coin;name=toal;copper_equiv=400;note=waterdeep only;common
+coin;name=platinum piece;abbrev=pp;copper_equiv=1000;common
+coin;name=harbor moon;copper_equiv=10000;common;note=only worth half as much outside waterdeep
+coin;name=sembian steel piece;copper_equiv=1
+coin;name=triangular electrum piece;copper_equiv=100
+coin;name=gem: bloodstone 5gp;copper_equiv=1000
+coin;name=gem: satan spar 10gp;copper_equiv=2000
+coin;name=gem: banded agate 10gp;copper_equiv=2000
+coin;name=gond bell;copper_equiv=2000;note=worth twice as much at a temple of gond
+coin;name=loot: gold earring 20gp;copper_equiv=4000
+coin;name=gem: moss agate 25gp;copper_equiv=5000
+coin;name=gem: corstal 45gp;copper_equiv=9000
+coin;name=gem: moonstone 50gp;copper_equiv=10000
+coin;name=gem: amber 90gp;copper_equiv=18000
+coin;name=gem: pearl 100gp;copper_equiv=20000
+coin;name=gem: chrysoberyl 100gp;copper_equiv=20000
+coin;name=gem: carnelian 100gp;copper_equiv=20000
+coin:name=loot: finely made gold chain 130gp;copper_equiv=26000
+coin;name=gem: emerald 200gp;copper_equiv=40000
+coin;name=loot: ring 500gp;copper_equiv=100000
+coin;name=loot: silver candlesticks (set) 500gp;copper_equiv=100000
+coin;name=loot: letter of credit 500gp;copper_equiv=100000
+coin;name=loot: platinum necklace 700gp;copper_equiv=140000
+coin;name=loot: large opal earrings *2 (750gp together, 300gp each);copper_equiv=150000
+meet;status=dummy
 ,name=Auction
 ,name=Sell
 ,name=destroyed
 ,name=outside the party;cash=1000000gp
-,name=party
-date=Ches 1 1369;char;association=AFAL
-,name=Darius;status=active;fullname=Darius of Waterdeep;player=Ian;gender=Male;race=Human;\
-class=Wild Mage;alignment=Chaotic Good;picture=Darius.gif;\
-large_picture=Darius_lg.gif;\
-characteristics=Clever, quick, short dk-blond hair, reddish beard, grey eyes,\
- 5'9&frac12\;&quot\;, 160lbs.;\
-equipment=Wizardly robe and hat, Bracers of Defense AC5, +2 Ring of Protection,\
- Sling, <i>Urgoth</i> Belt Dagger of Doom, Ioun Stone, Fanny Pack of Holding,\
- Tenser's Throw Rug, Ring of Kobolds;\
-note=Some clerical spellcasting ability (lay priest of Mystra),\
+,name=party;cash=3 sembian steel pieces, 36cp, 48sp, 8ep, 114gp, 81pp, 3 gond bells, 32 harbor moons, 6 Gem: Moonstone 50gp
+date=Ches 1 1369;meet;association=AFAL
+,status=active;name=Darius;fullname=Darius of Waterdeep;player=Ian;race=Human\
+;gender=Male;class=Wild Mage;alignment=Chaotic Good;picture=Darius.gif\
+;large_picture=Darius_lg.gif;cash=19cp\
+;characteristics=Clever, quick, short dk-blond hair, reddish beard, grey eyes,\
+ 5'9&frac12\;&quot\;, 160lbs.\
+;equipment=Wizardly robe and hat, Bracers of Defense AC5, +2 Ring of\
+ Protection, Sling, <i>Urgoth</i> Belt Dagger of Doom, Fanny Pack of Holding,\
+ Tenser's Throw Rug, Ring of Kobolds\
+;note=Some clerical spellcasting ability (lay priest of Mystra),\
  blunt weapon restriction, a phobia of snakes, and tongue-tied around women.\
  Darius is one of the founding party members.
-,name=Dexter;status=active;alignment=Neutral Good;class=Ranger/Spec Pr - Selune;\
-fullname=Dexter Melaenarlir;gender=Male;picture=Dexter.png;cash=6000gp;\
-large_picture=Dexter_lg.png;player=Dina;race=&frac12\;Elf;\
-characteristics=Green cat's eyes, strong, wise, clever, white hair, 6', 195lbs.;\
-equipment=+1 plate mail, +1 shield, <i>Perditor Mortua</i>, Moon's Hand Mace,\
- +1 Long Bow, some +1 arrows, Rings of Water Walking, Warmth and Fire Resistance,\
- Ebon Fly, Scroll of <i>Cure Disease</i>;\
-note=Can know alignment and detect undead at will multiple times/day,\
+,status=active;name=Dexter;fullname=Dexter Melaenarlir;player=Dina\
+;race=&frac12\;Elf;gender=Male;class=Ranger/Spec Pr - Selune\
+;alignment=Neutral Good\
+;picture=Dexter.png;large_picture=Dexter_lg.png;cash=6000gp, 20cp\
+;characteristics=Green cat's eyes, strong, wise, clever, white hair, 6', 195lbs.\
+;equipment=+1 plate mail, +1 shield, <i>Perditor Mortua</i>, Moon's Hand Mace,\
+ +2/+4(negative plane/energy draining creatures) Mace, +1 Long Bow,\
+ some +1 arrows, Rings of Water Walking, Warmth and Fire Resistance,\
+ Ebony Fly, Scroll of <i>Cure Disease</i>\
+;note=Can know alignment and detect undead at will multiple times/day,\
  alcoholic, phobia of undead.  Dexter is one of the founding party members.
-,name=Henkles;status=active;alignment=Lawful Neutral;class=Fighter;\
-picture=henkles.jpg;fullname=Henkles of Iriaebor;gender=Male;cash=95gp;\
-player=Jay;race=Human(?);large_picture=henkles_lg.jpg;\
-characteristics=Very strong and fast, brown hair &amp\; eyes, 6'2&quot\;, 220lbs.;\
-equipment=+1 Plate mail, +1/+3(Saves) Ring of Prot., Ring of Projection,\
- <i>Silver Strike</i> +2/+4 (level draining or negative energy creatures) unique short sword,\
+,status=active;name=Henkles;fullname=Henkles of Iriaebor;player=Jay\
+;race=Human(?);gender=Male;class=Fighter;alignment=Lawful Neutral\
+;picture=henkles.jpg;large_picture=henkles_lg.jpg\
+;cash=11pp, 6 toals, 95 gp, 6SPs, 20 copper pieces\
+;characteristics=Very strong and fast, brown hair &amp\; eyes, 6'2&quot\;, 220#\
+;equipment=+1 Plate mail, +1/+3(Saves) Ring of Prot., Ring of Projection,\
+ Ioun Stone of Protection, White Scarf of Warmth, <i>Silver Strike</i>\
+ +2/+4(level draining or negative energy creatures) unique short sword,\
  <a href="/Balthazar.wav"><i>Balthazar, Hellspawn of Terror</i></a> (+1 Sh Swd),\
  Ghost-infested short sword, Darts, Orcish War Darts, Darts of Giant Hurting,\
  <i>Ilgoth</i> Belt Dagger of Might,\
  <i>Wife</i> +2/+4 (stone creatures) Spiked Ball on Chain,\
- Necklace of Light and Darkness (Party item);\
-note=Unwilling to use potions, oils or scrolls,\
+ Necklace of Light and Darkness (Party item)\
+;note=Unwilling to use potions, oils or scrolls,\
  cannot attract followers at high levels,\
  claims gnomish ancestry which gives him magic-related saving throw bonuses\
  and +1 to hit with short swords.\
@@ -46,101 +78,122 @@ note=Unwilling to use potions, oils or scrolls,\
  from a seller in the Market.  He had his first nightmare about it three days\
  later, and a second two days later, and a third on the 13th.\
  Henkles is one of the founding party members.
-,name=Moogh;status=inactive;alignment=Neutral;class=Fighter;\
-fullname=Son of Moogh #44;player=Suzanne;race=Human;\
-characteristics=Very handsome, blonde, 6'8".;joined=Ches 1 1369;\
-equipment=2-h sword, splint mail, magic privy stick, bag of dead animals, mule;\
-note=Married to Bambi of Moogh (nee Bambino), who is currently at their\
+,status=inactive;name=Moogh;fullname=Son of Moogh #44;player=Suzanne\
+;race=Human;gender=Male;class=Fighter;alignment=Neutral\
+;characteristics=Very handsome, blonde, 6'8".\
+;equipment=2-h sword, splint mail, magic privy stick, bag of dead animals, mule\
+;note=Married to Bambi of Moogh (nee Bambino), who is currently at their\
  appartment in Silverymoon. Bambi is pregnant and due on Alturiak 10th.\
  Joined the party in the distant depths of time (Founding Member?\
  Nobody remembers). Moog left the party to spend more time with his family.\
  His last entry in the experience log is around <d Hammer 24 1370>.
-,name=Stewart;status=dead;characteristics=Dead;joined=Ches 1 1369;gender=Male;\
-race=Halfling;class=Cleric/Thief
-,name=Falco;status=inactive;player=Tim?;race=Unknown;class=Fighter?/Priest?;\
-alignment=Unknown;equipment=Lost in the depths of time;\
-characteristics=Forgotten;note=Nobody knows when he joined the party.  Last\
- mentioned in the party log on <d Flamerule 4 1369>.;joined=Mirtul 4 1369
-,name=Barnabus;status=inactive;race=Dwarf;gender=Male;class=Cleric;\
-alignment=Unknown;player=Jonathan;equipment=Long Forgotten.;\
-characteristics=Cranky and hard to put up with;note=\
-Joined the party sometime before <d Mirtul 4 1369>.  Last mentioned in the\
- party log on <d Mirtul 26 1369>.;joined=Mirtul 4 1369
-date=Greengrass Festival 1369;char;association=AFAL
-,name=Steve;status=active;alignment=Neutral Good;\
-note=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
+,status=dead;name=Stewart;player=Mike;gender=Male;race=Halfling\
+;class=Cleric/Thief\
+;characteristics=Dead
+,status=inactive;name=Falco;player=Tim?;gender=Male;class=Fighter?/Priest?\
+;note=Nobody knows when he joined the party.  Last\
+ mentioned in the party log on <d Flamerule 4 1369>.
+date=Greengrass Festival 1369;meet;association=AFAL
+,status=active;name=Steve;fullname=Stephen &quot\;Steve&quot\; of Neverwinter\
+;player=Fred;race=&frac12\; Elf;gender=Male;class=Bard;alignment=Neutral Good\
+;picture=Steve.png;large_picture=Steve_lg.png;cash=41cp\
+;characteristics=Personable, 5'5&quot\;, 121lbs.\
+;equipment=Green Dragon hide armor, +1/+3(cold) Ring of Protection, Ring of\
+ Missiles (Party Item), Ring of Water Walking, Ring of Gargoyles (Party Item),\
+ Cloak of Elvenkind, +1/+2(lawful) Longsword, trident, javelins,\
+ +1 light crossbow, lyre, Staff of Phantasmal Firebals (Party Item)\
+;note=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
  Steve joined the party somewhere around\
- <d Greengrass Festival 1369>.;\
-class=Bard;fullname=Stephen &quot\;Steve&quot\; of Neverwinter;gender=Male;\
-player=Fred;race=&frac12\; Elf;picture=steve.gif;\
-characteristics=Personable, 5'5&quot\;, 121lbs.;\
-equipment=Green Dragon hide armor, +1/+3(cold) Ring of Protection, Ring of Missiles,\
- Ring of Water Walking, Gargoyle Ring,\
- Cloak of Elvenkind, +1/+2 vs lawful Longsword, trident, javelins,\
- +1 light crossbow, lyre, Staff of Phantasmal Firebals
-party;type=AFAL;name=Mirtul-26-1369;date=26 Mirtul 1369;Barnabus=1;Darius=1;Dexter=1;Henkles=1;Moogh=1;Steve=1;Stewart=1
-date=Mirtul 26 1369;find;found=Mirtul-26-1369
-,owner=outside the party;xfrd=23 Ches 1370;value=15000gp;name=Windchimes of Dusk;note=Devlin part id, fail <d Kythorn 27 1369>, Buffy id <d Flamerule 5 1369>
-,owner=party
-,,name=Space Heater
-,,name=Animal: "Manual of Golems";note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
-,,name=Animal: "Manual of Bodily Health";note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
-,,name=Animal: "Libram of Gainful Conjuration";note=ESP by Darius on <d Flamerule 16 1369>
+ <d Greengrass Festival 1369>.
+date=Mirtul 4 1369;meet;association=AFAL;status=inactive\
+;name=Barnabus;player=Jonathan;race=Dwarf;gender=Male;class=Cleric\
+;characteristics=Cranky and hard to put up with\
+;note=Joined the party sometime before <d Mirtul 4 1369>.  Last\
+ mentioned in the party log on <d Mirtul 26 1369>.
+date=Mirtul 8 1369;meet;status=dead;name=Rabairnil;race=Human;gender=Male\
+;class=Mage (Necromancer);equipment=(when killed) magic Bracers, magic\
+ Bastard Sword, Necklace of Darkness\
+;note=Rabairnil was a mage we first encountered in Everlund on\
+ <d Mirtul 8, 1369> after we saw one of his couriers attacked by a group of\
+ rogues.  We did some business with him and he sounded us out about possibly\
+ doing some work for him.<br>On <d Mirtul 26, 1369> the party recovered the\
+ Windchimes of Dusk from a group of ghouls who were using them to rob the\
+ Everlund cemetary. Rabairnil's makers mark was found on them.<br> On\
+ <d Uktar 24, 1369> the party's rented home (Fair Winds) was attacked by an\
+ exploding skeleton holding a note demanding the Wind Chimes of Dusk.  We had\
+ several encounters with his creations over the next few days.<br> On\
+ <d Nightal 3, 1369> his minions made another attack on Fair Winds.<br>\
+ He was killed by the party on <d Nightal 23 1369>. His body was given to\
+ the city watch for questioning.
+date=Mirtul 26 1369
+,party;type=AFAL;name=Mirtul-26-1369;Barnabus=1;Darius=1;Dexter=1;Henkles=1;Moogh=1;Steve=1;Stewart=1
+,find;found=Mirtul-26-1369
+,,owner=outside the party;xfrd=23 Ches 1370;value=15000gp;name=Windchimes of Dusk;note=Devlin part id, fail <d Kythorn 27 1369>, Buffy id <d Flamerule 5 1369>
+,,owner=party
+,,,name=Space Heater
+,,,name=Animal: "Manual of Golems";note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
+,,,name=Animal: "Manual of Bodily Health";note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
+,,,name=Animal: "Libram of Gainful Conjuration";note=ESP by Darius on <d Flamerule 16 1369>
 date=Mirtul 27 1369;writeoff;Barnabus
 # Kythorn 4: Stuart, Falco, Elizabeth, Steve, Dexter, Darius (Henkles)
-char;association=AFAL;status=dead;name=Buffy;fullname=Elizabeth &quot\;Buffy&quot\; Rose;\
-joined=Kythorn 8 1369;gender=Female;race=Human;class=Mage(Enchanter);\
-characteristics=dead;note=Joined the party on <d Kythorn 8 1369>, died on <d Flamerule 23 1369>
-party;type=AFAL;name=Kythorn-10-1369;date=10 Kythorn 1369;Buffy=1;Darius=1;Dexter=1;Henkles=1;Moogh=1;Steve=1;Stewart=1
-find;found=Kythorn-10-1369;name=Ring of Projection;holder=Henkles;note=Devlin part id, fail <d Kythorn 26 1369>, Darius failed <d Flamerule 4 1369>, Buffy failed <d Flamerule 5 1369>, Steve Cassie, Darius failed <d Eleasias 27 1369>, Cassie part id, fail <d Marpenoth 11 1369>
-char;association=AFAL;status=active;name=Maanamere;alignment=Neutral Good;\
-class=Ranger;fullname=Maanamere Palendril;gender=Male;picture=maanamere.jpg;\
-player=Rickland;race=Moon Elf;joined=Kythorn 10 1369;\
-characteristics=Very strong, somewhat dim but wise, quick, very attractive,\
+date=Kythorn 8 1369;meet;association=AFAL;status=dead;name=Buffy\
+;fullname=Elizabeth &quot\;Buffy&quot\; Rose;player=Iain\
+;gender=Female;race=Human;class=Mage(Enchanter)\
+;characteristics=dead;note=Joined the party on <d Kythorn 8 1369>, died on\
+ <d Flamerule 23 1369>
+date=10 Kythorn 1369
+,party;type=AFAL;name=Kythorn-10-1369;Buffy=1;Darius=1;Dexter=1;Henkles=1;Moogh=1;Steve=1;Stewart=1
+,find;found=Kythorn-10-1369;name=Ring of Projection;holder=Henkles;note=Devlin part id, fail <d Kythorn 26 1369>, Darius failed <d Flamerule 4 1369>, Buffy failed <d Flamerule 5 1369>, Steve Cassie, Darius failed <d Eleasias 27 1369>, Cassie part id, fail <d Marpenoth 11 1369>
+,meet;association=AFAL;status=active;name=Maanamere;fullname=Maanamere Palendril\
+;player=Rickland;race=Moon Elf;gender=Male;class=Ranger;alignment=Neutral Good\
+;picture=maanamere.jpg;joined=Kythorn 10 1369;cash=21cp\
+;characteristics=Very strong, somewhat dim but wise, quick, very attractive,\
  6'0&quot\;, 150lbs.  Maanamere has silver hair and eyes.\
  His hair is shoulder length and generally worn loose.\
  When adventuring though, he keeps it tied back so as to not cause an\
- obstruction. He has exceptionally good posture and is in great shape.;\
-equipment=+1 Full Plate Mail, +1/+3 vs cold Ring of Prot., +1 Bastard Sword,\
- <i>Binky</i> (unique magic axe), bow, some +1 arrows;\
-note=Fear of heights.\
+ obstruction. He has exceptionally good posture and is in great shape.\
+;equipment=+1 Full Plate Mail, +1/+3(cold) Ring of Prot., +2 Long Sword,\
+ <i>Binky</i> (unique magic axe), bow, some +1 arrows\
+;note=Fear of heights.\
  Lacks the typical ranger two-handed fighting bonus, but Binky compensates.\
  Originally from the Coldwood.\
  Can cast some spells from the Conjuration/Summoning school.\
  He joined the party after being rescued on <d Kythorn 10 1369>.
-char;association=AFAL;status=inactive;name=Thalion;joined=Kythorn 16 1369;race=Elf;gender=Male;class=Cleric/Mage;alignment=Chaotic Good
-party;type=AFAL;name=Kythorn-16-1369;date=16 Kythorn 1369;Buffy=1;Darius=1;Dexter=1;Falco=1;Henkles=1;Moogh=1;Steve=1;Stewart=1;Thalion=1
-find;found=Kythorn-16-1369
-,name=Oil of Sharpness 5* (1 used)
-,name=Potion of Heroism;note=Devlin failed id <d Kythorn 25 1369>, Buffy failed id <d Kythorn 26 1369>, Buffy id <d Flamerule 5 1369>
-,name=Potion of 3d8 extra hit points
-,name=Scroll of Protection from Petrification
-,name=Scroll of Protection from Magic
-,name=Scroll (MU);note=L3: Slow
-,name=Potion of Delusion (Flying);owner=party;note=Devlin id <d Kythorn 24 1369>.
-,xfrd=24 Flamerule 1369
-,,name=Weapon: Silver Strike;owner=Henkles;note=Devlin part id, fail <d Kythorn 24 1369>, Buffy, Darius failed id <d Kythorn 28 1369>, Steve failed, Buffy id <d Flamerule 4 1369>
-,,name=Weapon: Binky;owner=Maanamere;note=Devlin failed id <d Kythorn 26 1369>, Buffy failed, Darius part id, fail <d Kythorn 28 1369>, Steve, Buffy, Darius part id and fail on <d Flamerule 4 1369>
-,holder=Auction
-,,name=Potion of Ventriloquism;note=Devlin id <d Kythorn 26 1369>
-,,name=Scroll (C);note=Lighten Load
+date=16 Kythorn 1369
+,meet;association=AFAL;status=inactive;name=Thalion;joined=Kythorn 16 1369;race=Elf;gender=Male;class=Cleric/Mage;alignment=Chaotic Good
+,party;type=AFAL;name=Kythorn-16-1369;Buffy=1;Darius=1;Dexter=1;Falco=1;Henkles=1;Moogh=1;Steve=1;Stewart=1;Thalion=1
+,find;found=Kythorn-16-1369
+,,name=Oil of Sharpness 5* (1 used)
+,,name=Potion of Heroism;note=Devlin failed id <d Kythorn 25 1369>, Buffy failed id <d Kythorn 26 1369>, Buffy id <d Flamerule 5 1369>
+,,name=Potion of 3d8 extra hit points
+,,name=Scroll of Protection from Petrification
+,,name=Scroll of Protection from Magic
+,,name=Scroll (MU);note=L3: Slow
+,,name=Potion of Delusion (Flying);owner=party;note=Devlin id <d Kythorn 24 1369>.
+,,xfrd=24 Flamerule 1369
+,,,name=Weapon: Silver Strike;owner=Henkles;note=Devlin part id, fail <d Kythorn 24 1369>, Buffy, Darius failed id <d Kythorn 28 1369>, Steve failed, Buffy id <d Flamerule 4 1369>
+,,,name=Weapon: Binky;owner=Maanamere;note=Devlin failed id <d Kythorn 26 1369>, Buffy failed, Darius part id, fail <d Kythorn 28 1369>, Steve, Buffy, Darius part id and fail on <d Flamerule 4 1369>
+,,holder=Auction
+,,,name=Potion of Ventriloquism;note=Devlin id <d Kythorn 26 1369>
+,,,name=Scroll (C);note=Lighten Load
 date=Kythorn 16 1369;writeoff;Thalion;Falco
-char;association=AFAL;status=inactive;
-,name=Devlin;player=Kathy;race=Unknown;gender=Male?;alignment=Unknown;\
-class=Specialty Mage (Monitor);equipment=lost in the depths of time, except\
+date=Kythorn 23 1369;meet;association=AFAL;status=inactive;
+,name=Devlin;player=Kathy;race=Unknown;gender=Male?;alignment=Unknown\
+;class=Specialty Mage (Monitor);equipment=lost in the depths of time, except\
  for his lizard steed, &quot\;Roscoe&quot\;.;characteristics=Forgotten,\
  except for the hard to put up with part.;note=Joined the party on\
- <d Kythorn 23 1369>.Last mentioned in the party log on <d Eleasias 13 1369>.;\
-joined=Kythorn 23 1369
-,name=Hahrvee;player=Ross;race=Unknown;gender=Male?;class=Ranger;\
-alignment=Unknown Good?;equipment=Lost in the depths of time;\
-characteristics=Forgotten;note=Joined the party on <d Kythorn 23 1369>.\
-  Last mentioned in the party log on <d Eleasias 12 1369>;\
-joined=Kythorn 23 1369
-char;association=AFAL;status=active;name=Mrap-M'rap;race=Tressym;gender=Male;\
-class=Cat;alignment=Chaotic Neutral;joined=Kythorn 29 1369;\
-equipment=Light purple rock in right eye socket.;picture=mrap07.jpg;\
-characteristics=A silver tabby - a common British cat with tortoise-shell\
+ <d Kythorn 23 1369>.Last mentioned in the party log on <d Eleasias 13 1369>.\
+;joined=Kythorn 23 1369
+,name=Hahrvee;player=Ross;race=Unknown;gender=Male?;class=Ranger\
+;alignment=Unknown Good?;equipment=Lost in the depths of time\
+;characteristics=Forgotten;note=Joined the party on <d Kythorn 23 1369>.\
+  Last mentioned in the party log on <d Eleasias 12 1369>\
+;joined=Kythorn 23 1369
+date=Kythorn 29 1369
+,meet;association=AFAL;status=active;name=Mrap-M'rap;race=Tressym;gender=Male\
+;class=Cat;alignment=Chaotic Neutral;joined=Kythorn 29 1369\
+;equipment=Light purple rock in right eye socket.;picture=mrap07.jpg\
+;characteristics=A silver tabby - a common British cat with tortoise-shell\
  blotches of light and dark gray instead of stripes.  His left ear is half\
  missing, except for a little scrap of flesh that sort of dangles off of the\
  remaining half.  Running along the right side of his face are three parallel\

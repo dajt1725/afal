@@ -1,6 +1,18 @@
 #!/usr/bin/python
 # this is the production config
+import os
+
 config = {
-	'database':'afal', 'user':'afal'
-, 'password':'BuffyStewart'
+    'database':'afal',
+    'user':'afal',
+    'password':'BuffyStewart'
 }
+background = '/back3l07.gif'
+background_pc = '/back3l15.gif'
+background_npc = '/back3l16.gif'
+logs = "/logs/log_"
+summary = '/summary.cgi'
+report = '/report.cgi'
+menu = '/menu.cgi'
+
+text = 'QUERY_STRING' not in os.environ
