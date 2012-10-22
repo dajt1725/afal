@@ -2,12 +2,10 @@
 from __future__ import print_function
 import afal_config
 import afal
-import cgi
 import cgitb
 
 cgitb.enable()
-date = afal.date_to_str(afal.get_journal_dates()[-1])
-characters = afal.get_characters('Current')
+date = afal.date_to_str(afal.date_list[-1])
 
 if afal_config.text:
     header = \
@@ -41,8 +39,10 @@ else:
 
 print(header.format(menu_url = afal_config.menu_url,
  background = afal_config.background, date = date, menu_html = afal.menu_html))
-for char in characters:
+for char in afal.character_list:
     c = afal.get_char_data(char)['cash_cp']
+    if c is None:
+        continue
     p = 0
     for debt in afal.get_char_debts(char, "Payable"):
         p += debt['amount_cp']

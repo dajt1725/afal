@@ -17,9 +17,9 @@ date=23 Marpenoth 1369
 ,party;type=AFAL;name=Marpenoth-23-1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=1;Steve=1;Stewart=1
 ,find;found=Marpenoth-23-1369
 ,,name=+2/+0(Mages)/-3(Enchanters) Dagger;owner=Cassie;xfrd=24 Marpenoth 1369;value=1250gp;note=Narthan id
-,,name=Gem: Serpentine 45gp, 75gp, 115gp, 260gp, 500gp (5*);owner=Darius;xfrd=24 Marpenoth 1369;value=995gp
-,,name=Gem: Smokey Quartz 35gp, 50gp, 60gp*2, 85gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=290gp
-,,name=Gem: Amber 75gp, 90gp, 100gp*2, 120gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=485gp
+,,name=Gems: Serpentine 45gp, 75gp, 115gp, 260gp, 500gp (5*);owner=Darius;xfrd=24 Marpenoth 1369;value=995gp
+,,name=Gems: Smokey Quartz 35gp, 50gp, 60gp*2, 85gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=290gp
+,,name=Gems: Amber 75gp, 90gp, 100gp*2, 120gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=485gp
 ,,name=Scroll (C);note=L3: Cure Disease;holder=Dexter;owner=party
 ,,name=Scroll (C);note=Heal;owner=party
 ,,name=Scroll (C);note=Ressurection;owner=party
@@ -30,8 +30,7 @@ date=23 Marpenoth 1369
 ,,,name=Crystal of Spellreading;note=Steve failed, Darius part &amp\; failed <d Marpenoth 24 1369>
 ,,,name=Potion of Delusion (Invisibility);note=Steve id <d Marpenoth 24 1369>
 ,,name=Potion of Sweet Water;holder=Steve;note=Auction, Darius failed id <d Marpenoth 24 1369>, Cassie id <d Marpenoth 27 1369>;value=250gp
-,,name=Loot: large opal earring (*2, 750gp together, 300gp ea);owner=Maanamere;xfrd=24 Marpenoth 1369;value=750gp
-,,name=Gem: bloodstone 5gp *8;owner=Maanamere;xfrd=24 Marpenoth 1369;value=40gp
+,give;by=outside the party;to=Maanamere;cash=8 Gem: Bloodstone 5gp,loot: pair of large opal earrings (750gp together or 300gp each)
 date=26 Marpenoth 1369
 ,party;type=AFAL;name=Marpenoth-26-1369;Darius=1;Dexter=1;Steve=1
 ,find;found=Marpenoth-26-1369

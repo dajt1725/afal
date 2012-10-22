@@ -1,37 +1,44 @@
 # Hammer-1 through Kythorn-30, incl Midinter and Greengrass
-coin;name=copper piece;abbrev=cp;copper_equiv=1;common
-coin;name=silver piece;abbrev=sp;copper_equiv=10;common
-coin;name=electrum piece;abbrev=ep;copper_equiv=100;common
-coin;name=gold piece;abbrev=gp;copper_equiv=200;common
-coin;name=toal;copper_equiv=400;note=waterdeep only;common
-coin;name=platinum piece;abbrev=pp;copper_equiv=1000;common
-coin;name=harbor moon;copper_equiv=10000;common;note=only worth half as much outside waterdeep
-coin;name=sembian steel piece;copper_equiv=1
-coin;name=triangular electrum piece;copper_equiv=100
-coin;name=gem: bloodstone 5gp;copper_equiv=1000
-coin;name=gem: satan spar 10gp;copper_equiv=2000
-coin;name=gem: banded agate 10gp;copper_equiv=2000
-coin;name=gond bell;copper_equiv=2000;note=worth twice as much at a temple of gond
-coin;name=loot: gold earring 20gp;copper_equiv=4000
-coin;name=gem: moss agate 25gp;copper_equiv=5000
-coin;name=gem: corstal 45gp;copper_equiv=9000
-coin;name=gem: moonstone 50gp;copper_equiv=10000
-coin;name=gem: amber 90gp;copper_equiv=18000
-coin;name=gem: pearl 100gp;copper_equiv=20000
-coin;name=gem: chrysoberyl 100gp;copper_equiv=20000
-coin;name=gem: carnelian 100gp;copper_equiv=20000
-coin:name=loot: finely made gold chain 130gp;copper_equiv=26000
-coin;name=gem: emerald 200gp;copper_equiv=40000
-coin;name=loot: ring 500gp;copper_equiv=100000
-coin;name=loot: silver candlesticks (set) 500gp;copper_equiv=100000
-coin;name=loot: letter of credit 500gp;copper_equiv=100000
-coin;name=loot: platinum necklace 700gp;copper_equiv=140000
-coin;name=loot: large opal earrings *2 (750gp together, 300gp each);copper_equiv=150000
+coin;name=copper piece{s};abbrev=cp;copper_equiv=1;common
+coin;name=silver piece{s};abbrev=sp;copper_equiv=10;common
+coin;name=electrum piece{s};abbrev=ep;copper_equiv=100;common
+coin;name=gold piece{s};abbrev=gp;copper_equiv=200;common
+coin;name=toal{s};copper_equiv=400;note=waterdeep only;common
+coin;name=platinum piece{s};abbrev=pp;copper_equiv=1000;common
+coin;name=harbor moon{s};copper_equiv=10000;common;note=only worth half as much outside waterdeep
+coin;name=sembian steel piece{s};copper_equiv=1
+coin;name=triangular electrum piece{s};copper_equiv=100;note=found in Undermountain
+coin;name=gem{s}: bloodstone 5gp;copper_equiv=1000
+coin;name=gem{s}: satan spar 10gp;copper_equiv=2000
+coin;name=gem{s}: banded agate 10gp;copper_equiv=2000
+coin;name=gond bell{s};copper_equiv=2000;note=worth twice as much at a temple of gond
+coin;name=loot: gold earring{s} 20gp;copper_equiv=4000
+coin;name=gem{s}: moss agate 25gp;copper_equiv=5000
+coin;name=gem{s}: corstal 45gp;copper_equiv=9000
+coin;name=gem{s}: moonstone 50gp;copper_equiv=10000
+coin;name=gem{s}: carnelian 50gp;copper_equiv=10000;note=orange, pear-shaped cut
+coin;name=gem{s}: sardonyx 50gp;copper_equiv=10000;note=banded red and white, step cut
+coin;name=gem{s}: moonstone 55gp;copper_equiv=11000;note=white with pale blue hue and "glow" reflection, table cut
+coin;name=gem{s}: zircon 65gp;copper_equiv=13000;note=large, clear pale aqua, scissors cut
+coin;name=gem{s}: citrine 75gp;copper_equiv=15000;note=large, pale yellow-brown, cabochon cut
+coin;name=gem{s}: amber 90gp;copper_equiv=18000
+coin;name=gem{s}: pearl 100gp;copper_equiv=20000
+coin;name=gem{s}: chrysoberyl 100gp;copper_equiv=20000
+coin;name=gem{s}: carnelian 100gp;copper_equiv=20000
+coin;name=loot: finely made gold chain{s} 130gp;copper_equiv=26000
+coin;name=gem{s}: emerald 200gp;copper_equiv=40000
+coin;name=gem{s}: garnet 500gp;copper_equiv=100000;note=violet, navette cut
+coin;name=gem{s}: spinel 500gp;copper_equiv=100000;note=deep blue, briolette cut
+coin;name=loot: ring{s} 500gp;copper_equiv=100000
+coin;name=loot: set{s} silver candlesticks 500gp;copper_equiv=100000
+coin;name=loot: letter{s} of credit 500gp;copper_equiv=100000
+coin;name=loot: platinum necklace{s} 700gp;copper_equiv=140000
+coin;name=loot: pair{s} of large opal earrings (750gp together or 300gp each);copper_equiv=150000
 meet;status=dummy
 ,name=Auction
 ,name=Sell
 ,name=destroyed
-,name=outside the party;cash=1000000gp
+,name=outside the party
 ,name=party;cash=3 sembian steel pieces, 36cp, 48sp, 8ep, 114gp, 81pp, 3 gond bells, 32 harbor moons, 6 Gem: Moonstone 50gp
 date=Ches 1 1369;meet;association=AFAL
 ,status=active;name=Darius;fullname=Darius of Waterdeep;player=Ian;race=Human\
@@ -59,7 +66,7 @@ date=Ches 1 1369;meet;association=AFAL
 ,status=active;name=Henkles;fullname=Henkles of Iriaebor;player=Jay\
 ;race=Human(?);gender=Male;class=Fighter;alignment=Lawful Neutral\
 ;picture=henkles.jpg;large_picture=henkles_lg.jpg\
-;cash=11pp, 6 toals, 95 gp, 6SPs, 20 copper pieces\
+;cash=11pp, 6 toals, 95 gp, 6SP, 20 copper pieces\
 ;characteristics=Very strong and fast, brown hair &amp\; eyes, 6'2&quot\;, 220#\
 ;equipment=+1 Plate mail, +1/+3(Saves) Ring of Prot., Ring of Projection,\
  Ioun Stone of Protection, White Scarf of Warmth, <i>Silver Strike</i>\

@@ -22,7 +22,7 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
 ,dividend;by=Ches-30-1370;amount=1913gp, 80cp
 ,sell;to=Dexter;item=Ebon Fly;cash=5000gp
 ,sell;to=Henkles;item=Poison: Urds Teeth *3;cash=10pp, 5toal, 45gp
-,sell;to=Darius;item=Gem: Chrysoberyl 100gp *2;cash=4 harbor moon
+,trade;by=party;to=Darius;cash=2 Gem: Chrysoberyl 100gp;for=4 harbor moons
 date=2 Tarsakh 1370
 ,give;to=Ches-30-1370;item=+1 Ring of Protection  #1
 ,sell
@@ -70,21 +70,18 @@ date=3 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-3-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
 ,find;found=Tarsakh-3-1370;name=Nonmagic;holder=Sell;note=City Guard Breastplate,Jeweled Dagger, Long Sword, Spear
 # I have no idea where these items came from
-,find;found=Maanamere;name=Loot: ring 500gp;value=500gp
-,find;found=Maanamere;name=Gem: Emerald 200gp *2;value=400gp
-,find;found=Maanamere;name=Gem: Carnelian 100gp *2;value=200gp
-,find;found=Maanamere;name=Gem: Amber 90gp;value=90gp
-,pay;to=Steve;item=Loot: large opal earring (*2, 750gp together, 300gp ea)
-,pay;to=Darius;item=Loot: platinum necklace 700gp
-,pay;to=Dexter;item=Loot: platinum necklace 700gp
-,pay;to=Misery;item=Loot: ring 500gp
-,pay;to=Steve;item=Loot: silver candlesticks 500gp
-,pay;to=Steve;item=Gem: Emerald 200gp *2
-,pay;to=Henkles;item=Loot: finely made gold chain 130gp *2
-,pay;to=Steve;item=Gem: Carnelian 100gp *2
-,pay;to=Misery;item=Gem: Amber 90gp
-,pay;to=Steve;item=Gem: Bloodstone 5gp *8
-,pay;to=Misery;item=Loot: Gold Earring 20gp
+,give;by=outside the party;to=Maanamere;cash=2 Gem: Emerald 200gp, 2 Gem: Carnelian 100gp, 1 Gem: Amber 90gp, 1 Loot: ring 500gp
+,pay;by=Maanamere;to=Steve;cash=loot: pair of large opal earrings (750gp together or 300gp each)
+,pay;by=Maanamere;to=Darius;cash=1 Loot: platinum necklace 700gp
+,pay;by=Darius;to=Dexter;cash=1 Loot: platinum necklace 700gp
+,pay;by=Maanamere;to=Misery;cash=1 Loot: ring 500gp
+,pay;by=Maanamere;to=Steve;cash=1 Loot: set silver candlesticks 500gp
+,pay;by=Maanamere;to=Steve;cash=2 Gem: Emerald 200gp
+,pay;by=Maanamere;to=Henkles;cash=2 Loot: finely made gold chain 130gp
+,pay;by=Maanamere;to=Steve;cash=2 Gem: Carnelian 100gp
+,pay;by=Maanamere;to=Misery;cash=Gem: Amber 90gp
+,pay;by=Maanamere;to=Steve;cash=8 Gem: Bloodstone 5gp
+,pay;by=Maanamere;to=Misery;cash=1 Loot: Gold Earring 20gp
 date=4 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-4-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
 ,find;found=Maanamere;name=Suit of Ship Captain-ness;holder=Maanamere
@@ -92,8 +89,7 @@ date=4 Tarsakh 1370
 ,,name=+1 Sling;holder=Deringa
 ,,name=+1 Dagger;holder=Auction;value=1400gp
 ,,name=Nonmagic;holder=Sell;note=Glaive, Broadsword, Short Bow, Chainmail, Shield
-,,name=Gem: Pearl 100gp *2;value=200gp
-,give;by=outside the party;to=Tarsakh-4-1370;cash=17sp,42ep,1gp,7toal,2 harbor moon
+,give;by=outside the party;to=Tarsakh-4-1370;cash=17sp,42ep,1gp,7toal,2 harbor moon,2 Gem: Pearl 100gp
 ,give;by=Maanamere;to=outside the party;cash=1 harbor moon;note=three boats, 9 barrels, planks
 date=5 Tarsakh 1370
 ,sell;to=outside the party;item=Loot: 20yd bolt of fine silk *6;cash=20 harbor moon
@@ -109,10 +105,6 @@ Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Tarsakh-7-1370
 ,,name=Nonmagic;holder=Sell;note=6 composite short bows, 6 spears, arrows
 ,,name=Poison: (Sleep), Pot of;note=2 round onset, 5-10 rounds duration, expires around the 17th or so
-,,name=Gem: Satan Spar 10gp *3;value=30gp
-,,name=Gem: Corstal 45gp *1;value=45gp
-,,name=Gem: Banded Agate 10gp *4;value=40gp
-,,name=Gem: Moss Agate 25gp *28;value=700gp
 ,,name=Shirt of Tackyness;note=Humanoids int >=7 suffer -2th,Darius id <d Tarsakh 8 1370>,fully id by testing <d Tarsakh 10 1370>
 ,,name=Dwarven Battle Tankard *2;value=20gp
 ,,name=Settlestone Hardsilver Mead;value=30gp
@@ -120,8 +112,8 @@ Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,,name=Droplets of Sobriety;owner=party;note=6 droplets, Darius id <d Tarsakh 8 1370>
 ,,name=+2/+4 (level draining or negative plane) Mace
 ,,name=Nonmagic;note=Dagger *2;holder=Sell
-,give;by=outside the party;to=Tarsakh-7-1370;cash=27cp,16sp,6ep,9toals
-,give;by=outside the party;to=Tarsakh-7-1370;cash=23 Triangular Electrum Piece, 12 Gond bell
+,give;by=outside the party;to=Tarsakh-7-1370;cash=27cp,16sp,6ep,9toals,3 Gem: Satan Spar 10gp,1 Gem: Corstal 45gp,4 Gem: Banded Agate 10gp
+,give;by=outside the party;to=Tarsakh-7-1370;cash=23 Triangular Electrum Piece, 12 Gond bell,28 Gem: Moss Agate 25gp
 ,sell;to=outside the party;item=Nonmagic  #2;cash=247gp, 2325cp
 ,sell;to=outside the party;item=Nonmagic  #3;cash=46toals
 ,sell;to=outside the party;item=Nonmagic  #4;cash=5harbor moons, 180cp
@@ -133,12 +125,10 @@ date=8 Tarsakh 1370
 ,give;to=party;by=outside the party;cash=26 harbor moon
 ,give;by=party;to=outside the party;cash=20 harbor moon;note=for augury sticks
 ## Darius pays two 500gp letters of Credit to Misery
-,find;found=Darius;name=Loot: Letter of Credit 500gp;value=500gp
-,find;found=Darius;name=Loot: Letter of Credit 500gp;value=500gp
-,pay;to=Misery;item=Loot: Letter of Credit 500gp  #1
-,pay;to=Misery;item=Loot: Letter of Credit 500gp  #2
-,pay;to=Staric;item=Loot: Letter of Credit 500gp  #1
-,pay;to=Henkles;item=Loot: Letter of Credit 500gp  #2
+,give;by=outside the party;to=Darius;cash=2 Loot: Letter of Credit 500gp
+,pay;by=Darius;to=Misery;cash=2 Loot: Letter of Credit 500gp
+,pay;by=Misery;to=Staric;cash=1 Loot: Letter of Credit 500gp
+,pay;by=Misery;to=Henkles;cash=1 Loot: Letter of Credit 500gp
 ,lend;to=Staric;item=Wand of Lightning Fan
 date=11 Tarsakh 1370
 ,sell;to=Henkles;item=Ioun Stone of Protection;debt=6000gp
@@ -151,25 +141,10 @@ date=11 Tarsakh 1370
 ,dividend;by=Uktar-12B-1369;amount=500gp;note=from Potion of Invisibility
 ,dividend;by=Hammer-15-1370;amount=205gp, 51cp;note=from Light War Horses
 ,dividend;by=Hammer-20-1370;amount=1094gp, 146cp;note=from Heavy War Horses
-,dividend;by=Ches-30-1370;amount=5305gp;note=from Ebon Fly, Urds Teeth Poison, and 2x Gems
+,dividend;by=Ches-30-1370;amount=5305gp;note=from Ebony Fly, Urds Teeth Poison, and 2x Gems
 ,dividend;by=Tarsakh-3-1370;amount=257gp, 125cp;note=from Nonmagic
-,trade;by=Henkles;to=party;cash=200cp;for=1gp
-#,trade;by=Maanamere;to=party;cash=100cp;for=1ep
-#,trade;by=Steve;to=party;cash=100cp;for=1ep
-#,trade;by=Darius;to=party;cash=100cp;for=1ep
-#,trade;by=Denyae;to=party;cash=100cp;for=1ep
-,commit
 ,dividend;by=Tarsakh-4-1370;amount=228gp, 170cp;note=from Nonmagic and Cash (92gp nonmagic and 136gp, 170cp cash)
-,commit
 ,dividend;by=Tarsakh-7-1370;amount=403gp, 467cp;note=from Nonmagic and Cash (250gp, 180cp and 1gp and 21 gp, 187cp and 131gp 100cp)
-,commit
-coin;name=gem: carnelian 50gp;copper_equiv=10000;note=orange, pear-shaped cut
-coin;name=gem: citrine 75gp;copper_equiv=15000;note=large, pale yellow-brown, cabochon cut
-coin;name=gem: moonstone 55gp;copper_equiv=11000;note=white with pale blue hue and "glow" reflection, table cut
-coin;name=gem: sardonyx 50gp;copper_equiv=10000;note=banded red and white, step cut
-coin;name=gem: zircon 65gp;copper_equiv=13000;note=large, clear pale aqua, scissors cut
-coin;name=gem: garnet 500gp;copper_equiv=100000;note=violet, navette cut
-coin;name=gem: spinel 500gp;copper_equiv=100000;note=deep blue, briolette cut
 date=12 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-12-1370;Darius=1;Denyae=1;Deringa=.5;Dexter=1;\
 Henkles=1;Maanamere=1;Staric=.5
@@ -186,79 +161,82 @@ Henkles=1;Maanamere=1;Staric=.5
 ,,name=Wyvern scales
 ,give;by=party;to=outside the party;cash=119gp;note=7x in/out undermountain, 5gp extra for giant snake corpse, 100gp neut poison on Henkles
 ,give;by=outside the party;to=party;cash=20gp;note=for giant snake
-,dividend;by=Tarsakh-12-1370;amount=26 gem: carnelian 50gp,\
- 4 gem: citrine 75gp, 18 gem: moonstone 55gp, 33 gem: sardonyx 50gp,\
- 24 gem: zircon 65gp, 12 gem: garnet 500gp, 7 gem: spinel 500gp;
-,pay;to=Henkles;item=Loot: ring 500gp
-,pay;to=Henkles;item=Gem: Amber 90gp
-,pay;to=Henkles;item=Loot: Gold Earring 20gp
-,pay;to=Steve;item=Loot: Letter of Credit 500gp  #2
-,pay;to=Steve;item=Loot: ring 500gp
-,pay;to=Steve;item=Loot: finely made gold chain 130gp *2
-,pay;to=Staric;item=Gem: Amber 90gp
-,pay;to=Staric;item=Loot: Gold Earring 20gp
-,pay;to=Denyae;item=Gem: Carnelian 100gp *2
-,pay;to=Steve;item=Gem: Chrysoberyl 100gp *2
-,pay;to=Staric;item=Gem: Carnelian 100gp *2
-#,pay;to=Denyae;item=Loot: large opal earring (*2, 750gp together, 300gp ea)
-,pay;to=Denyae;item=Loot: finely made gold chain 130gp *2
+#,dividend;by=Tarsakh-12-1370;amount=26 gem: carnelian 50gp,\
+# 4 gem: citrine 75gp, 18 gem: moonstone 55gp, 33 gem: sardonyx 50gp,\
+# 24 gem: zircon 65gp, 12 gem: garnet 500gp, 7 gem: spinel 500gp;
+,pay;by=Misery;to=Henkles;cash=Loot: ring 500gp, Gem: Amber 90gp, Loot: Gold Earring 20gp
+,pay;by=Henkles;to=Steve;cash=Loot: ring 500gp,2 Loot: finely made gold chain 130gp, Loot: Letter of Credit 500gp
+,pay;by=Henkles;to=Staric;cash=Gem: Amber 90gp, Loot: Gold Earring 20gp
+,pay;by=Steve;to=Denyae;cash=2 Gem: Carnelian 100gp
+,pay;by=Denyae;to=Staric;cash=2 Gem: Carnelian 100gp
+,pay;by=Darius;to=Steve;cash=2 Gem: Chrysoberyl 100gp
+#,pay;to=Denyae;cash=loot: pair of large opal earrings (750gp together or 300gp each)
+,pay;by=Steve;to=Denyae;cash=2 Loot: finely made gold chain 130gp
 #,pay;to=Staric;item=Loot: silver candlesticks 500gp
 #,pay;to=Deringa;item=Loot: ring 500gp
 # People pay down/off some debts
 # Maanamere puts 75% of his money toward debts
 ,pay;by=Deringa
-#,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
-,cons;with=Ag;rev
+,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;with=Ag
 ,commit
 ,pay;by=Ag;percent=90
-#,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Ag
-,cons;with=Tristan;rev
+,cons;with=Tristan
 ,commit
 ,pay;by=Tristan;percent=90
-#,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
-,trade;by=Deringa;to=party;cash=200cp;for=1gp
-,trade;by=Denyae;to=party;cash=300cp;for=1gp,1ep
+,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Tristan
-,cons;with=Ursula;rev
+,cons;with=Ursula
 ,commit
 ,pay;by=Ursula;percent=90
-#,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Ursula
-,cons;with=Maanamere;rev
+,cons;with=Maanamere
 ,commit
 ,pay;by=Maanamere;percent=75
-#,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Maanamere
-,cons;with=Darius;rev
+,cons;with=Darius
 ,commit
 ,pay;by=Darius;percent=90
-#,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Darius;Staric
-,cons;with=Misery;rev
+,cons;with=Misery
 ,commit
 ,pay;by=Misery;percent=90
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
-,cons;with=Henkles;rev
+,cons;with=Henkles
 ,commit
 ,pay;by=Henkles;percent=95
-#,cons;Ag;Brogan;Darius;Denyae;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;Ag;Brogan;Darius;Denyae;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Henkles
-,cons;with=Dexter;rev
+,cons;with=Dexter
 ,commit
-,pay;by=Dexter;percent=90
-#,cons;Ag;Brogan;Darius;Dexter;Denyae;Deringa;Henkles;Maanamere;Misery;Staric;Theo;Tristan;Ursula
+,pay;by=Dexter;percent=75
+,cons;Ag;Brogan;Darius;Dexter;Denyae;Deringa;Henkles;Maanamere;Misery;Staric;Theo;Tristan;Ursula
 ,cons;Dexter
-,cons;with=Steve;rev
+,cons;with=Steve
 ,pay;by=Steve
-#,cons;Ag;Brogan;Darius;Dexter;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;Ag;Brogan;Darius;Dexter;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Steve
-,cons;with=Denyae;rev
+,cons;with=Denyae
 ,commit
 ,pay;by=Denyae
-#,cons;Ag;Brogan;Darius;Denyae;Dexter;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
+,cons;Ag;Brogan;Darius;Denyae;Dexter;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Denyae;Staric
 ,give;by=party;to=outside the party;cash=16gp;note=2people at Dacer's Inn for the night
 date=13 Tarsakh 1370
 ,commit
 ,sell;to=Brogan;item=Dwarven Battle Tankard *2;cash=20gp
+# Has to be done by hand at the moment
+,give;by=Tarsakh-12-1370;to=Darius;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
+,give;by=Tarsakh-12-1370;to=Denyae;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
+,give;by=Tarsakh-12-1370;to=Dexter;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
+,give;by=Tarsakh-12-1370;to=Henkles;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
+,give;by=Tarsakh-12-1370;to=Maanamere;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
+,give;by=Tarsakh-12-1370;to=Deringa;cash=2 gem: carnelian 50gp, 1 gem: moonstone 55gp, 2 gem: sardonyx 50gp, 2 gem: zircon 65gp, 1 gem: garnet 500gp
+,give;by=Tarsakh-12-1370;to=Staric;cash=2 gem: carnelian 50gp, 1 gem: moonstone 55gp, 2 gem: sardonyx 50gp, 2 gem: zircon 65gp, 1 gem: garnet 500gp
+,pay;by=Maanamere;to=Misery;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
+,pay;by=Darius;to=Misery;cash=4 gem: zircon 65gp, 2 gem: garnet 500gp

@@ -269,28 +269,29 @@ def _or_zero(x):
     return int(x) if x is not None and len(x) > 0 else 0
 
 def _find_coin(m):
-#    print m.group(1), m.group(2) ...
-    coin = m.group(2)
-    if coin[-1] == 's':
-        coin = coin[:-1]
-    str_to_coins.ret[coin] = m.group(1)
+    q = m.group(2)
+    if q is None:
+        q = 1
+    str_to_coins.ret[m.group(3)] = int(q)
     return ''
 
 def str_to_coins(s):
+    global coins_byname
     if s is None:
         return None
     str_to_coins.ret = {}
-    rest = re.sub(r'\s*(\d+)x?\s*([a-zA-Z :]+[a-zA-Z: 0-9]*)(,|$)', _find_coin, s.lower())
-    if rest != '':
-        raise NameError ("invalid text '"+rest+"' in money")
+    tmp = s.lower()
+    while len(tmp)>0:
+        rest = re.sub(r'^\s*((\d+)[\*x]?)?\s*([^0-9,]+[^,]*)(,|$)', _find_coin, tmp)
+        if rest == tmp:
+            raise NameError ("invalid text '"+rest+"' in money")
+        tmp = rest
     sum = 0
     for i in str_to_coins.ret:
-        cur.execute("select copper_equiv from fr_money_type where coin = %(name)s or abbrev = %(name)s", { 'name': i })
-        resp = cur.fetchall()
-        _check_warnings()
-        if len(resp) != 1 or len(resp[0]) != 1:
+        if i not in coins_byname:
+            print coins_byname
             raise NameError("Unknown coin '"+i+"' in money")
-        sum += int(resp[0][0]) * int(str_to_coins.ret[i])
+        sum += coins_byname[i]['copper_equiv'] * str_to_coins.ret[i]
     str_to_coins.ret['value_cp'] = sum
     return str_to_coins.ret
 
@@ -303,11 +304,17 @@ def coins_to_str(s):
     for i in s:
         if i == 'value_cp':
             continue
-        ret += '{sep}{n} {coin}'.format(sep=sep, n=s[i], coin=i)
+        n = s[i]
+        if n == 1:
+            coin=i.format(s='',es='')
+        else:
+            coin=i.format(s='s',es='es')
+        ret += '{sep}{n} {coin}'.format(sep=sep, n=n, coin = coin)
         sep = nsep
     return ret
 
 def str_to_cp(s):
+    global coins_byname
     if s is None:
         return None
     return str_to_coins(s)['value_cp']
@@ -344,49 +351,72 @@ def divide_cp(top, bottom):
 #    return int(top/bottom)
 
 def insert_coin(coin, abbrev, copper_equiv, common=True, note = None):
+    global coins_byname,coins_bycpe,coins_byid
     cur.execute(
  ' insert into fr_money_type (coin, abbrev, copper_equiv, common_use, note) '
  ' values ( %(coin)s, %(abbrev)s, %(copper_equiv)s, %(common)s, %(note)s)',
  { 'coin': coin, 'abbrev': abbrev, 'copper_equiv': copper_equiv, 'common': common, 'note': note})
     _check_warnings()
-    return cur.lastrowid
-
+    ret = cur.lastrowid
+    (coins_byname, coins_bycpe, coins_byid) = get_coins()
+    return ret
 
 def get_coins():
-    cur.execute('select coin, abbrev, copper_equiv from fr_money_type order by copper_equiv desc')
+    cur.execute('select money_id, coin, copper_equiv, common_use, abbrev, note from fr_money_type order by copper_equiv desc')
     resp = cur.fetchall()
-    ret = {}
+    ret_byname = {}
+    ret_bycpe = {}
+    ret_byid = {}
     for i in resp:
-        cpe = i[2]
-        if i[1]:
-            ret[i[1]] = cpe
+        tmp = {}
+        tmp['money_id'] = i[0]
+        tmp['coin'] = i[1]
+        tmp['copper_equiv'] = i[2]
+        tmp['common_use'] = i[3]
+        if i[4] is not None:
+            tmp['abbrev'] = i[4]
+            ret_byname[i[4].lower()] = tmp
+        if i[5] is not None:
+            tmp['note'] = i[5]
+        if i[2] in ret_bycpe:
+            ret_bycpe[i[2]].append(tmp)
         else:
-            ret[i[0]] = cpe
-    return ret;
-
+            ret_bycpe[i[2]] = [tmp]
+        ret_byname[i[1].format(s='', es='').lower()] = tmp
+        ret_byname[i[1].format(s='s', es='es').lower()] = tmp
+        ret_byid[i[0]] = tmp
+    return (ret_byname, ret_bycpe, ret_byid)
 
 
 def get_char_money(char):
-    cur.execute('select t.money_id, t.coin, t.abbrev, t.copper_equiv, m.quantity from '
- ' fr_char_money as m natural join fr_money_type as t where m.owner = %(char)s order by t.copper_equiv desc', {'char':char})
+    cur.execute('select m.money_id, m.quantity from '
+ ' fr_char_money as m natural join fr_money_type as t where m.owner = %(char)s order by t.copper_equiv desc, t.coin', {'char':char})
     resp = cur.fetchall()
     _check_warnings()
     ret = []
     for i in resp:
-        t = {}
-        t['money_id'] = i[0]
-        t['coin'] = i[1]
-        t['abbrev'] = i[2]
-        t['copper_equiv'] = int(i[3])
-        t['quantity'] = int(i[4])
-        ret.append(t)
+        id = i[0]
+        t = coins_byid[id]
+        tmp = {}
+        tmp['money_id'] = id
+        tmp['coin'] = t['coin']
+        tmp['copper_equiv'] = t['copper_equiv']
+        tmp['common_use'] = t['common_use']
+        if 'abbrev' in t:
+            tmp['abbrev'] = t['abbrev']
+        if 'note' in t:
+            tmp['note'] = t['note']
+        tmp['quantity'] = int(i[1])
+        ret.append(tmp)
     return ret
 
 
 def char_find_money(char, amount_cp):
-    x = get_char_money(char)
     ret = {'value_cp': amount_cp}
+    x = get_char_money(char)
     for i in x:
+        if not i['common_use']:
+            continue
         cpe = i['copper_equiv']
         if cpe > amount_cp:
             continue
@@ -398,7 +428,7 @@ def char_find_money(char, amount_cp):
         ret[i['coin']] = n
         amount_cp -= n * cpe
         if amount_cp == 0:
-            break;
+            break
     if amount_cp:
         raise ValueError("Char {char} needs change {amount_cp} {orig} {x} got {ret}".format(char=char, amount_cp=amount_cp, orig = ret['value_cp'], x=x, ret = ret))
     return ret
@@ -406,23 +436,24 @@ def char_find_money(char, amount_cp):
 def invent_money(amount_cp):
     if amount_cp is None or amount_cp == 0:
         return None
-    cur.execute('select coin, copper_equiv from fr_char_money where common_use = True order by copper_equiv desc')
-    resp = cur.fetchall()
     ret = {'value_cp': amount_cp}
-    for i in resp:
-        cpe = i[1]
+    for i in coins_bycpe.keys().sort().reverse():
+        if not i['common_use']:
+            continue
+        cpe = i['copper_equiv']
         if cpe > amount_cp:
-            continue;
+            continue
         n = int(amount_cp / cpe)
-        ret[i[0]] = n
+        ret[i['name']] = n
         amount_cp -= n
         if amount_cp == 0:
-            break;
-    return ret;
+            break
+    return ret
 
 
-def char_change_money(char, dir, i):
-    i.pop('value_cp',None)
+def char_change_money(char, dir, d):
+    global coins_byname
+    d.pop('value_cp',None)
     if dir == 'give':
         sign = -1
     elif dir == 'get':
@@ -430,34 +461,33 @@ def char_change_money(char, dir, i):
     else:
         raise ValueError("Dir isn't 'give' or 'get': '"+dir+"'")
     total = 0
-    for coin in i:
-        amount = sign * int(i[coin])
-        cur.execute('select t.money_id, t.copper_equiv, m.quantity from '
- ' fr_char_money as m natural join fr_money_type as t where m.owner = %(char)s'
- ' and (t.coin = %(coin)s or t.abbrev = %(coin)s)', {'char':char, 'coin':coin})
-        resp = cur.fetchall()
-        _check_warnings()
-        if len(resp) > 0:
-            q = int(resp[0][2])
-            if  q+amount < 0:
-                raise ValueError("Negative money not allowed "+str(amount)+' '+str(resp[0][2]))
-            cpe = int(resp[0][1])
-            if q+amount == 0:
-                cur.execute("delete from fr_char_money where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':resp[0][0]})
-            else:
-                cur.execute("update fr_char_money set quantity = quantity + %(amount)s where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':resp[0][0], 'amount':amount})
-        else:
+    coins = get_char_money(char)
+    for coin in d:
+        amount = sign * int(d[coin])
+        coin = coin.format(s='', es='')
+        cc = None
+        for i in coins:
+            if coin == i['coin'].format(s='', es='') or coin == i['coin'].format(s='s', es='es') or ( 'abbrev' in i and coin == i['abbrev']):
+                cc = i
+                break
+        if cc is None:
             if amount < 0:
-                raise ValueError("Can't create negative money "+coin+" "+str(amount))
+                raise ValueError("{char} can't be given {n} {coin} ".format(char = char,n = amount,coin = coin))
             if amount == 0:
-                raise ValueError("Can't create zero money " + coin)
-            cur.execute("select money_id, copper_equiv from fr_money_type where coin = %(coin)s or abbrev = %(coin)s", {'coin':coin})
-            resp = cur.fetchall()
-            _check_warnings()
-            if len(resp) != 1 or len(resp[0]) != 2:
-                raise NameError("Money type '"+coin+"' not found")
-            cpe = int(resp[0][1])
-            cur.execute("insert into fr_char_money (owner, money_id, quantity) values (%(char)s, %(id)s, %(amount)s)", {'char':char, 'id':resp[0][0], 'amount':amount})
+                raise ValueError("{char} can't be given zero {coin}".format(char = char, coin = coin))
+            if coin not in coins_byname:
+                raise NameError("{char} invalid coin {coin}".format(char=char, coin=coin))
+            cur.execute("insert into fr_char_money (owner, money_id, quantity) values (%(char)s, %(id)s, %(amount)s)", {'char':char, 'id':coins_byname[coin]['money_id'], 'amount':amount})
+            cpe = int(coins_byname[coin]['copper_equiv'])
+        else:
+            q = cc['quantity']
+            if  q+amount < 0:
+                raise ValueError("{char} only has {q} {coin}, needs {n}".format(char=char, q=q, coin=cc['coin'], n= -amount))
+            elif q+amount == 0:
+                cur.execute("delete from fr_char_money where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':cc['money_id']})
+            else:
+                cur.execute("update fr_char_money set quantity = quantity + %(amount)s where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':cc['money_id'], 'amount':amount})
+            cpe = cc['copper_equiv']
         _check_warnings()
         total += int(amount) * int(cpe)
     cur.execute("update fr_character set cash_cp = cash_cp + %(amount_cp)s where char_name = %(char)s",
@@ -616,6 +646,7 @@ def get_journal(cond = None):
 def insert_character(d):
     """ insert a character into the database"""
 
+    global coins_byname
     _check_dict(d, must=('name', 'status', 'association'), may=(
  'alignment', 'characteristics', 'class', 'hidden_note', 'equipment',
  'fullname', 'gender', 'note', 'player', 'race', 'cash', 'picture',
@@ -641,7 +672,8 @@ def insert_character(d):
  " %(fullname)s, %(gender)s, %(note)s, %(player)s, "
  " %(race)s, %(cash_cp)s, %(picture)s, %(large_picture)s )", d )
     _check_warnings()
-
+    if 'cash' in d:
+        char_change_money(d['name'], 'get', str_to_coins(d['cash']))
 
 
 def get_characters(kind, match = None):
@@ -1014,6 +1046,8 @@ def insert_debt(d):
 
 #############################################################################
 
+global coins_byname,coins_bycpe,coins_byid
+(coins_byname, coins_bycpe, coins_byid) = get_coins()
 character_list = get_characters('Current')
 party_list = get_parties()
 date_list = get_journal_dates()

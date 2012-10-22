@@ -28,20 +28,16 @@ def do_meet(d):
     e = {}
     for i in ('name', 'status', 'alignment', 'association', 'characteristics',
  'class', 'hidden_note', 'equipment', 'fullname', 'note', 'player',
- 'race', 'picture', 'large_picture'):
+ 'race', 'picture', 'large_picture', 'gender'):
         e[i] = d.get(i)
-    e['cash'] = d.get('cash')
-    e['gender'] = d.get('gender')
+    if 'cash' in d:
+        e['cash'] = d['cash']
     if args.verbose:
         print "Creating character", e
     afal.insert_character(e)
-    coins = d.get('cash')
-    if coins is not None:
-        sys.stderr.write('name {name} coins: {coins}\n'.format(name=d['name'], coins = coins))
-        coins = afal.str_to_coins(coins)
-        sys.stderr.write('name {name} coins: {coins}\n'.format(name=d['name'], coins = coins))
-        afal.char_change_money(d['name'], 'get', coins)
 # Every character is in a party of just themselves
+# This is primarily to prevent someone accidentally creating a party and a
+# character with the same names
     if 'date' in d:
         date = d['date']
     elif 'joined' in d:
@@ -79,13 +75,25 @@ def do_give(d):
             print "giving item", d
         afal.change_item(d['date'], d['item'], owner = d['to'], holder = d['to'], part_of = d.get('part_of'))
         return
-    check_dict(d, must=('date', 'to', 'by', 'cash'), may=('for', 'note', 'part_of'))
+    if 'cash' in d:
+        check_dict(d, must=('date', 'to', 'by', 'cash'), may=('for', 'note', 'part_of'))
+        if args.verbose:
+            print "giving cash", d
+        if afal.get_party_data(d['by'])['type'] == 'AFAL':
+            d['by'] = afal.party
+        if afal.get_party_data(d['to'])['type'] == 'AFAL':
+            d['to'] = afal.party
+        d['cash'] = afal.str_to_coins(d['cash'])
+        afal.chars_move_cash(d)
+        return
+    check_dict(d, must=('date', 'to', 'by', 'amount'), may=('for', 'note', 'part_of'))
     if args.verbose:
-        print "giving cash", d
+        print "giving money", d
+    if afal.get_party_data(d['by'])['type'] == 'AFAL':
+        d['by'] = afal.party
     if afal.get_party_data(d['to'])['type'] == 'AFAL':
         d['to'] = afal.party
-    d['cash'] = afal.str_to_coins(d['cash'])
-    print "moving cash", d
+    d['amount_cp'] = afal.str_to_cp(d.pop('amount'))
     afal.chars_move_cash(d)
 
 
@@ -177,14 +185,21 @@ def do_sell(d):
 
 def do_pay(d):
     inexact = False
+    item = None
+    coins = None
     if 'item' in d:
         check_dict(d, must=('date', 'to', 'item'), may=('note','part_of'))
         item = d['item']
         item_data=afal.get_item_data(item)
         by = item_data['owner']
         amount_cp = item_data['value_cp']
-    elif 'by' in d:
-        check_dict(d, must=('date', 'by'), may=('to', 'amount_cp', 'amount', 'percent', 'virtual', 'note', 'part_of'))
+    elif 'cash' in d:
+        check_dict(d, must=('date', 'by', 'cash', 'to'), may=('note', 'part_of'))
+        by = d['by']
+        coins = afal.str_to_coins(d['cash'])
+        amount_cp = coins['value_cp']
+    elif 'by' in d:        
+        check_dict(d, must=('date', 'by'), may=('amount_cp', 'amount', 'percent', 'virtual', 'to', 'note', 'part_of'))
         by = d['by']
         if d.get('amount_cp'):
             amount_cp = d['amount_cp']
@@ -196,7 +211,6 @@ def do_pay(d):
         else:
             amount_cp = afal.get_char_data(by)['cash_cp']
             inexact = True
-        item = None
     else:
         sys.stderr.write("\nIgnoring invalid pay command {d}\n".format(d = d))
         return
@@ -235,6 +249,10 @@ def do_pay(d):
         cash = None
         virtual = amount_cp
         text = 'paid {virtual} to {to} with ' + item
+    elif coins is not None:
+        cash = None
+        virtual = amount_cp
+        text = 'paid {virtual} to {to} with ' + afal.coins_to_str(coins)
     else:
         cash = None
         virtual = amount_cp
@@ -273,9 +291,19 @@ def do_pay(d):
             if to in topay:
                 topay[to]['amount_cp'] += this_cp
             else:
-                topay[to] = {'date': date, 'by': by, 'to': to,
- 'amount_cp': this_cp, 'item': i.get('item'), 'for': i.get('for'),
- 'note': note, 'part_of': part_of}
+                tmp = {'date': date, 'by': by, 'to': to,
+ 'amount_cp': this_cp }
+                if coins is not None:
+                    tmp['cash'] = coins
+                if part_of is not None:
+                    tmp['part_of'] = part_of
+                if note is not None:
+                    tmp['note'] = note
+                if 'item' in i:
+                    tmp['item'] = i['item']
+                if 'for' in i:
+                    tmp['for'] = i['for']
+                topay[to] = tmp
         amount_cp -= this_cp
         owed -= this_owed
         shares -= this_share
@@ -617,109 +645,116 @@ def do_trade(d):
     check_dict(d, must=('date', 'to', 'by', 'cash', 'for'), may=('for', 'note', 'part_of'))
     if args.verbose:
         print "giving cash", d
+    by = d['by']
+    if afal.get_party_data(by)['type'] == 'AFAL':
+        by = afal.party
     to = d['to']
     if afal.get_party_data(to)['type'] == 'AFAL':
         to = afal.party
     cash = afal.str_to_coins(d['cash'])
-    tradefor = afal.str_to_coins(d.pop('for'))
+    tradefor = afal.str_to_coins(d['for'])
     if cash['value_cp'] != tradefor['value_cp']:
         raise ValueError("unequal trade {c} != {f}".format(c = cash, f = tradefor))
     print "moving cash", d
-    afal.chars_move_cash({'date': d['date'], 'by': d['by'], 'to': to, 'cash': cash, 'note': d.get('note'), 'part_of': d.get('part_of')})
-    afal.chars_move_cash({'date': d['date'], 'by': to, 'to': d['by'], 'cash': tradefor, 'note': d.get('note'), 'part_of': d.get('part_of')})
+    afal.chars_move_cash({'date': d['date'], 'by': by, 'to': to, 'cash': cash, 'note': d.get('note'), 'part_of': d.get('part_of')})
+    afal.chars_move_cash({'date': d['date'], 'by': to, 'to': by, 'cash': tradefor, 'note': d.get('note'), 'part_of': d.get('part_of')})
 
 
 def do_cons(d):
     check_dict(d, must=('date',))
     date = d.pop('date')
-    ch_with = d.pop('with','party')
+    wi_char = d.pop('with', afal.party)
     note = d.pop('note',None)
     part_of = d.pop('part_of', None)
-    coins = afal.get_coins()
-    if 'rev' in d:
-        d = {'party': True}
-    for char in d:
-        w_q = {}
-        for i in afal.get_char_money(ch_with):
-            name = i['abbrev'] if i['abbrev'] else i['coin']
-            w_q[name] = i['quantity']
-        money = afal.get_char_money(char)
-        print char, money
-        print ch_with, w_q
-        a_r = {'value_cp': 0}
-        b_r = {'value_cp': 0}
+    if len(d) == 0 and wi_char != afal.party:
+        d = {afal.party: True}
+    for by_char in d:
+        wi_coins = afal.get_char_money(wi_char)
+        wi_q_table = {}
+        for i in wi_coins:
+            if i['common_use']:
+                wi_q_table[i['coin'].format(s='', es='')] = i['quantity']
+        by_coins = afal.get_char_money(by_char)
+        print "by",by_char, by_coins
+        print "with",wi_char, wi_coins, wi_q_table
+        by_mv = {'value_cp': 0}
+        wi_mv = {'value_cp': 0}
         did = True
         while did:
             did = False
             nxt = []
-            print 'start',money
-            while len(money) > 0:
-                coin = money.pop()
-                a_name = coin['abbrev'] if coin['abbrev'] else coin['coin']
-                a_cpe = coin['copper_equiv']
-                a_q = coin['quantity']
-                if a_name in b_r:
-                    a_q += b_r[a_name]
-                b_name = None
-                b_cpe = 0
-                b_q = None
-                for i in coins:
-                    tmp_cpe = coins[i]
-                    if tmp_cpe <= a_cpe or tmp_cpe % a_cpe != 0 or i not in w_q or a_cpe * a_q < tmp_cpe:
+            print 'start',by_coins
+            while len(by_coins) > 0:
+                by_coin = by_coins.pop()
+                if not by_coin['common_use']:
+                    continue
+                by_name = by_coin['coin'].format(s='', es='')
+                by_cpe = by_coin['copper_equiv']
+                by_q = by_coin['quantity']
+                if by_name in wi_mv:
+                    by_q += wi_mv[by_name]
+                wi_name = None
+                wi_cpe = 0
+                wi_q = 0
+                for tmp_cpe in afal.coins_bycpe:
+                    if tmp_cpe <= by_cpe or tmp_cpe % by_cpe != 0 or by_cpe * by_q < tmp_cpe:
                         continue
-                    if tmp_cpe > b_cpe:
-                        b_cpe = tmp_cpe
-                        b_name = i
-                        b_q = w_q[i]
-                if b_cpe == 0:
-                    nxt.append(coin)
+                    for j in afal.coins_bycpe[tmp_cpe]:
+                        name = j['coin'].format(s='', es='')
+                        if name in wi_q_table and (tmp_cpe > wi_cpe or (tmp_cpe == wi_cpe and wi_q_table[name] > wi_q)):
+                            wi_cpe = tmp_cpe
+                            wi_name = name
+                            wi_q = wi_q_table[name]
+                if wi_cpe == 0:
+                    nxt.append(by_coin)
                     continue
                 did = True
-                print 'has', a_name, a_q, a_cpe, 'for', b_name, b_q, b_cpe
-                b_n = min(b_q, int((a_cpe * a_q) / b_cpe))
-                a_n = int(b_n * (b_cpe / a_cpe))
-                if b_n * b_cpe != a_n * a_cpe:
+                wi_n = min(wi_q, int((by_cpe * by_q) / wi_cpe))
+                by_n = int(wi_n * (wi_cpe / by_cpe))
+                if wi_n * wi_cpe != by_n * by_cpe:
                     raise ValueError("Huh?  What?")
-                print 'a', a_n, 'b', b_n
-                b_r['value_cp'] += b_n * b_cpe
-                if a_name in w_q:
-                    w_q[a_name] += a_n
+                print 'has', by_n, by_name, by_q, by_cpe, 'for', wi_n, wi_name, wi_q, wi_cpe
+                wi_mv['value_cp'] += wi_n * wi_cpe
+                if by_name in wi_q_table:
+                    wi_q_table[by_name] += by_n
                 else:
-                    w_q[a_name] = a_n
-                if w_q[b_name] == b_n:
-                    del w_q[b_name]
+                    wi_q_table[by_name] = by_n
+                if wi_q_table[wi_name] == wi_n:
+                    del wi_q_table[wi_name]
                 else:
-                    w_q[b_name] -= b_n
-                if b_name in b_r:
-                    b_r[b_name] += b_n
+                    wi_q_table[wi_name] -= wi_n
+                if wi_name in wi_mv:
+                    wi_mv[wi_name] += wi_n
                 else:
-                    b_r[b_name] = b_n
-                if a_name in b_r:
-                    tmp = min(a_n, b_r[a_name])
-                    b_r['value_cp'] -= tmp * a_cpe
-                    if b_r[a_name] == tmp:
-                        del b_r[a_name]
+                    wi_mv[wi_name] = wi_n
+                if by_name in wi_mv:
+                    tmp = min(by_n, wi_mv[by_name])
+                    wi_mv['value_cp'] -= tmp * by_cpe
+                    if wi_mv[by_name] == tmp:
+                        del wi_mv[by_name]
                     else:
-                        b_r[a_name] -= tmp
-                    a_n -= tmp
-                if a_n:
-                    a_r['value_cp'] += a_n * a_cpe
-                    if a_name in a_r:
-                        a_r[a_name] += a_n
+                        wi_mv[by_name] -= tmp
+                    by_n -= tmp
+                if by_n:
+                    by_mv['value_cp'] += by_n * by_cpe
+                    if by_name in by_mv:
+                        by_mv[by_name] += by_n
                     else:
-                        a_r[a_name] = a_n
-                    if coin['quantity'] > a_n:
-                        coin['quantity'] -= a_n
-                        money.append(coin)
-            print "looping",nxt,did,w_q
-            money = nxt
-        if args.verbose:
-            print "{char} consolidate {a_r} into {b_r}".format(char=char,a_r=a_r,b_r=b_r)
-        if a_r['value_cp'] != b_r['value_cp']:
+                        by_mv[by_name] = by_n
+                    if by_coin['quantity'] > by_n:
+                        by_coin['quantity'] -= by_n
+                        by_coins.append(by_coin)
+            print "looping",nxt,did,wi_q_table
+            by_coins = nxt
+        if by_mv['value_cp'] != wi_mv['value_cp']:
             raise ValueError("What's wrong?")
-        if a_r['value_cp'] > 0:
-            afal.chars_move_cash({'date': date, 'by': char, 'to': ch_with, 'cash': a_r, 'note': note, 'part_of': part_of})
-            afal.chars_move_cash({'date': date, 'by': ch_with, 'to': char, 'cash': b_r, 'note': note, 'part_of': part_of})
+        if by_mv['value_cp'] > 0:
+            if args.verbose:
+                print "{by_char} consolidate {by_mv} into {wi_mv} with {wi_char}".format(
+ by_char = by_char, by_mv = afal.coins_to_str(by_mv),
+ wi_char = wi_char, wi_mv = afal.coins_to_str(wi_mv))
+            afal.chars_move_cash({'date': date, 'by': by_char, 'to': wi_char, 'cash': by_mv, 'note': note, 'part_of': part_of})
+            afal.chars_move_cash({'date': date, 'by': wi_char, 'to': by_char, 'cash': wi_mv, 'note': note, 'part_of': part_of})
 
 def do_something(d):
     if args.verbose:

@@ -2,14 +2,11 @@
 from __future__ import print_function
 import afal_config
 import afal
-import cgi
 import cgitb
-import os
 
 cgitb.enable()
-date = afal.date_to_str(afal.get_journal_dates()[-1])
-characters = afal.get_characters('Current')
-characters.insert(0,'party')
+date = afal.date_to_str(afal.date_list[-1])
+afal.character_list.insert(0,afal.party)
 if afal_config.text:
     header = 'Cash Summary as of {date}'
     line = '{char:10} {v:14} {c}'
@@ -39,19 +36,22 @@ else:
 
 print(header.format(menu_html = afal.menu_html, menu_url = afal_config.menu_url,
  background = afal_config.background, date = date))
-for char in characters:
+for char in afal.character_list:
     m = afal.get_char_money(char)
     value_cp = 0
     coins = ''
     pre = ''
     npre = ', '
     for i in m:
-        value_cp += i['quantity'] * i['copper_equiv']
-        if i['abbrev']:
+        n=i['quantity']
+        value_cp += n * i['copper_equiv']
+        if 'abbrev' in i:
             text = i['abbrev']
+        elif n == 1:
+            text = i['coin'].format(s='', es='')
         else:
-            text = i['coin']
-        coins += '{p}{n} {t}'.format(p=pre, n=i['quantity'], t=text)
+            text = i['coin'].format(s='s', es='es')
+        coins += '{p}{n} {t}'.format(p=pre, n=n, t=text)
         pre = npre
 
     if value_cp > 0:

@@ -12,10 +12,7 @@ import re
 def format_share(s):
     if s == int(float(s)):
         return str(int(s))
-    s = str(s)
-    if len(s) > 2 and s[-2:] == '.0':
-        return s[:-2]
-    return s
+    return str(s)
 
 def format_plural(n, s, p = None):
     """if len(n) is 1, return a singular string, else a plural one"""
@@ -30,7 +27,7 @@ def format_plural(n, s, p = None):
         f = '{n} {p}'
     return f.format(n = n, s = s, p = p)
 
-def format_date(d):
+def format_date_log(d):
     if d is None:
         return None
     if type(d) == int:
@@ -43,18 +40,36 @@ def format_date(d):
         return '<a href="{logs}{l}.html">{d}</a>'.format(logs = afal_config.logs,
  l = l, d = d)
 
+def format_date(d):
+    if d is None:
+        return None
+    if type(d) == int:
+        d = afal.date_to_str(d)
+    if afal_config.text:
+        return d
+    if d in afal.date_list:
+        return '<a href="{report}?journal=Show&start=date.{d}&end=date.{d}">{d}</a>'.format(
+ report = afal_config.report, d = d)
+    l = re.sub(' Festival', '', d)
+    l = re.sub(' ', '_', l)
+    return '<a href="{logs}{l}.html">{d}</a>'.format(logs = afal_config.logs,
+ l = l, d = d)
+
 def format_party(p):
     if afal_config.text:
         return p
+    elif afal.get_party_data(p)['type'] == 'Character':
+        return '<a href="{report}?generate=Show&todo=char.{p}">{p}</a>'.format(
+ report = afal_config.report, p = p)
     else:
-        return '<a href="{report}?party={p}&generate=Party">{p}</a>'.format(
+        return '<a href="{report}?generate=Show&todo=party.{p}">{p}</a>'.format(
  report = afal_config.report, p = p)
 
 def format_character(c):
     if afal_config.text:
         return c
     else:
-        return '<a href="{report}?char={c}&generate=Character">{c}</a>'.format(
+        return '<a href="{report}?generate=Show&todo=char.{c}">{c}</a>'.format(
  report = afal_config.report, c = c)
 
 def party_to_log(p):
@@ -196,7 +211,7 @@ def print_char(char, verbose = False):
         if 'coins' in d:
             sep = f[7]
             for i in d['coins']:
-                name = i['abbrev'] if i['abbrev'] else i['coin']
+                name = i['abbrev'] if 'abbrev' in i else i['coin']
                 print(sep.format(n = i['quantity'], name = name), end='')
                 sep = f[8]
             print(f[9])
@@ -450,34 +465,47 @@ def print_journal(j, show_sub = False):
     sub = ''
     if afal_config.text:
         header = '  {text}'
-        line = '    {date} {sub} {by} {text}'
+        day_header = '      {date}'
+        line = '    {sub} {by} {text}'
         pri_fmt = ' {pri:>4}      '
         sub_fmt = ' {sub:>4}^{pri:<4} '
+        day_trailer = ''
         trailer = ''
     else:
-        header = '<h3>{text}</h3><table border="1"><tr><th>Date</th>{sub_hdr}<th>Entry</th></tr>'
+        header = '<h3>{text}</h3>'
+        day_header = '<table width="100%" border="1"><tr>{sub_hdr}<th>{date}</th></tr>'
         if show_sub:
-            sub_hdr = '<th>Sub</th>'
-        line = '<tr><td>{date}</td>{sub}<td>{by} {text}</td></tr>'
-        pri_fmt = '<td>{pri:>}</td>'
-        sub_fmt = '<td>{sub:>}:<font color="green">{pri:<}</font></td>'
-        trailer = '</table><hr />'
+            sub_hdr = '<th width="8%">Sub</th>'
+        line = '<tr>{sub}<td>{by} {text}</td></tr>'
+        pri_fmt = '<td width="8%">{pri:>}</td>'
+        sub_fmt = '<td width="8%">{sub:>}:<font color="green">{pri:<}</font></td>'
+        day_trailer = '</table><hr />'
+        trailer = ''
 
     print(header.format(text = format_plural(j, 'Transaction Journal Entry',
- 'Transaction Journal Entries'), sub_hdr = sub_hdr))
+ 'Transaction Journal Entries')))
+    prev_date = None
     for e in j:
+        date = e['date']
+        if date != prev_date:
+            if prev_date:
+                print(day_trailer)
+            print(day_header.format(date=format_date_log(date), sub_hdr = sub_hdr))
+            prev_date = date
         if show_sub:
             if e['part_of'] is None:
-                sub = pri_fmt.format(pri= str(e['journal_id']-1000000))
+                sub = pri_fmt.format(pri = str(e['journal_id']-1000000))
             else:
                 sub = sub_fmt.format(sub =  str(e['journal_id']-1000000), pri = str(e['part_of']-1000000))
-        print(line.format(by = e['by'], date = format_date(e['date']), text=e['description'], sub = sub))
+        print(line.format(by = e['by'], text=e['description'], sub = sub))
+    if prev_date:
+        print(day_trailer)
     print(trailer)
 
 
 def print_full_character(c):
     if c == ['All']:
-        c = character_list
+        c = afal.character_list
     if len(c) > 1:
         if afal_config.text:
             header = '        {characters}\n'
@@ -569,7 +597,7 @@ def print_members(members):
 
 def print_full_party(p):
     if p == ['All']:
-        p = party_list
+        p = afal.party_list
     if len(p) > 1:
         if afal_config.text:
             header = '\n        {text}\n'
@@ -622,10 +650,6 @@ parser.add_argument('--note', '-n', default = False, action='store_true', help='
 parser.add_argument('--party', '-p', nargs='*', default = [], help='report on these parties')
 args = parser.parse_args()
 
-character_list = afal.get_characters('Current')
-party_list = afal.get_parties()
-journal_list = afal.get_journal_dates()
-
 if afal_config.text:
     title = ''
     if args.character is not None or args.party is not None or \
@@ -643,20 +667,21 @@ if afal_config.text:
 else:
     cgitb.enable()
     form = cgi.FieldStorage()
+    title = "Who knows what?"
     tmp = form.getlist('journal')
     if len(tmp) > 0:
         js = form.getfirst('start')
-        if len(js) < 5 or js[0:5] != 'date.':
+        if js is None or len(js) < 5 or js[0:5] != 'date.':
             js = 'All'
         else:
             js = js[5:]
         je = form.getfirst('end')
-        if len(je) < 5 or je[0:5] != 'date.':
+        if je is None or len(je) < 5 or je[0:5] != 'date.':
             je = 'All'
         else:
             je = je[5:]
         jc = form.getfirst('char')
-        if len(jc) < 5 or jc[0:5] != 'char.':
+        if jc is None or len(jc) < 5 or jc[0:5] != 'char.':
             jc = 'All'
         else:
             jc = jc[5:]
@@ -700,8 +725,8 @@ else:
                 title = 'People'
         else:
             title = 'Everything'
-            args.character = character_list
-            args.party = party_list
+            args.character = afal.character_list
+            args.party = afal.party_list
             args.journal = '{}'
             args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
             args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs']

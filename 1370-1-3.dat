@@ -11,8 +11,8 @@ date=9 Hammer 1370
 ,,name=Necklace of Light and Darkness;holder=Henkles;owner=party
 date=13 Hammer 1370
 ,party;type=AFAL;name=Hammer-13-1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Theo=1
+,give;by=outside the party;to=Maanamere;cash=1 Loot: Gold Earring 20gp
 ,find;found=Hammer-13-1370
-,,name=Loot: Gold Earring 20gp;owner=Maanamere;xfrd=13 Hammer 1370;value=20gp
 ,,name=+1 Glaive;holder=Auction;note=6gp, 8#, 1-6/1-10/L/S/speed 8;value=2700gp
 ,,name=+1 Banded Mail;holder=Auction;value=4000gp
 ,,name=+1 Shield;holder=Tristan
@@ -164,11 +164,9 @@ date=Alturiak 29 1370
 ,find;found=Alturiak-29-1370;name=Potion of Love ("Philter");holder=Auction;value=300gp
 date=Ches 3 1370
 ,party;type=AFAL;name=Ches-3a-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Stalker=1;Staric=.5;Steve=1;Tristan=1
-,find;found=Ches-3a-1370
-,,name=Loot: silver candlesticks 500gp;owner=Maanamere;xfrd=23 Ches 1370;value=500gp
-,,name=Loot: finely made gold chain 130gp *2;owner=Maanamere;xfrd=23 Ches 1370;value=260gp
-,,name=Loot: platinum necklace 700gp;owner=Maanamere;xfrd=23 Ches 1370;value=700gp
-,,name=Magical Stirrer;owner=party
+,find;found=Ches-3a-1370;name=Magical Stirrer;owner=party
+,give;by=outside the party;to=Maanamere;cash=Loot: set silver candlesticks 500gp, 2 loot: finely made gold chain\
+ 130gp, Loot: platinum necklace 700gp
 ,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3b-1370
 ,,name=Potion *4;note=Identify
@@ -226,6 +224,7 @@ date=Ches 25 1370
 ,,name=+1 Shield (needs new handle);holder=Auction;note=10gp?, 10#;value=2500gp
 date=Ches 30 1370
 ,party;type=AFAL;name=Ches-30-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
+,give;to=Ches-30-1370;by=outside the party;cash=2 Gem: Chrysoberyl 100gp
 ,find;found=Ches-30-1370
 ,,name=Nonmagic;note=too much to list here
 ,,name=Ring of Fire Resistance
@@ -244,7 +243,6 @@ date=Ches 30 1370
 ,,name=Sleep Gas Grenade (M) *2;holder=Deringa;owner=party
 ,,name=Wand of Hurting;holder=Deringa;owner=party
 ,,name=Sleep Gas Grenade (M) *2;holder=Staric;owner=party
-,,name=Gem: Chrysoberyl 100gp *2;value=200gp
 ,,holder=Auction
 ,,,name=+1 Medium Shield;note=10gp?, 10#;value=2500gp
 ,,,name=+1 Footmans Pick;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp
