@@ -179,41 +179,33 @@ Henkles=1;Maanamere=1;Staric=.5
 ,pay;by=Deringa
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;with=Ag
-,commit
 ,pay;by=Ag;percent=90
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Ag
 ,cons;with=Tristan
-,commit
 ,pay;by=Tristan;percent=90
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Tristan
 ,cons;with=Ursula
-,commit
 ,pay;by=Ursula;percent=90
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Ursula
 ,cons;with=Maanamere
-,commit
 ,pay;by=Maanamere;percent=75
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Maanamere
 ,cons;with=Darius
-,commit
 ,pay;by=Darius;percent=90
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Darius;Staric
 ,cons;with=Misery
-,commit
 ,pay;by=Misery;percent=90
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Dexter;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;with=Henkles
-,commit
 ,pay;by=Henkles;percent=95
 ,cons;Ag;Brogan;Darius;Denyae;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Henkles
 ,cons;with=Dexter
-,commit
 ,pay;by=Dexter;percent=75
 ,cons;Ag;Brogan;Darius;Dexter;Denyae;Deringa;Henkles;Maanamere;Misery;Staric;Theo;Tristan;Ursula
 ,cons;Dexter
@@ -222,13 +214,11 @@ Henkles=1;Maanamere=1;Staric=.5
 ,cons;Ag;Brogan;Darius;Dexter;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Steve
 ,cons;with=Denyae
-,commit
 ,pay;by=Denyae
 ,cons;Ag;Brogan;Darius;Denyae;Dexter;Deringa;Henkles;Maanamere;Misery;Staric;Steve;Theo;Tristan;Ursula
 ,cons;Denyae;Staric
 ,give;by=party;to=outside the party;cash=16gp;note=2people at Dacer's Inn for the night
 date=13 Tarsakh 1370
-,commit
 ,sell;to=Brogan;item=Dwarven Battle Tankard *2;cash=20gp
 # Has to be done by hand at the moment
 ,give;by=Tarsakh-12-1370;to=Darius;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
@@ -239,4 +229,23 @@ date=13 Tarsakh 1370
 ,give;by=Tarsakh-12-1370;to=Deringa;cash=2 gem: carnelian 50gp, 1 gem: moonstone 55gp, 2 gem: sardonyx 50gp, 2 gem: zircon 65gp, 1 gem: garnet 500gp
 ,give;by=Tarsakh-12-1370;to=Staric;cash=2 gem: carnelian 50gp, 1 gem: moonstone 55gp, 2 gem: sardonyx 50gp, 2 gem: zircon 65gp, 1 gem: garnet 500gp
 ,pay;by=Maanamere;to=Misery;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
-,pay;by=Darius;to=Misery;cash=4 gem: zircon 65gp, 2 gem: garnet 500gp
+,pay;by=Darius;to=Misery;cash=2 gems: moonstone 55gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
+,pay;by=Darius;to=Dexter;cash=4 gems: carnelian 50gp, 4 gems: sardonyx 50gp
+,pay;by=Misery;to=Denyae;cash=Gem: Garnet 500gp, Gem: Zircon 65gp
+,pay;by=Misery;to=Deringa;cash=Gem: Garnet 500gp, Gem: Zircon 65gp
+,pay;by=Misery;to=Dexter;cash=2 Gem: Garnet 500gp, 2 Gem: Zircon 65gp
+,pay;by=Misery;to=Henkles;cash=4 Gems: Zircon 65gp, 4 gems: moonstone 55gp, 4 gems: carnelian 50gp, 4 gems: sardonyx 50gp
+,pay;by=Henkles;to=Brogan;cash=4 Gems: Zircon 65gp, gem: moonstone 55gp, 1pp, 4gp
+,pay;by=Henkles;to=Denyae;cash=4 Gems: Zircon 65gp, Gem: moonstone 55gp, 1pp, 4gp
+,pay;by=Henkles;to=Deringa;cash=2 Gems: Moonstone 55gp, Gem: Carnelian 50gp, 2gp
+,pay;by=Henkles;to=Dexter;cash=2 Gems: Moonstone 55gp,3 Gem: Carnelian 50gp, 4pp, 7gp
+,pay;by=Henkles;to=Staric;cash=4 Gem: Carnelian 50gp, 1pp, 2ep
+,pay;by=Henkles;to=Steve;cash=4pp, 1gp
+,pay;by=Dexter;to=Brogan;cash=2 Gems: Moonstone 55gp, Gem: Carnelian 50gp, 3 toals
+,pay;by=Dexter;to=Denyae;cash=6 Gems: Zircon 65gp, 2gp
+,pay;by=Dexter;to=Deringa;cash=Gem: Moonstone 55gp, 6 pp, 3gp
+,commit
+,pay;by=Dexter;to=Staric;cash=5 Gems: Carnelian 50gp, 10 toals
+,pay;by=Dexter;to=Steve;cash=3 harbor moons
+,pay;by=Dexter;to=Theo;cash=4 Gems: Sardonyx 50gp, Gem: Carnelian 50gp
+#,pay;by=Henkles

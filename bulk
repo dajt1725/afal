@@ -689,10 +689,12 @@ def do_cons(d):
                 if not by_coin['common_use']:
                     continue
                 by_name = by_coin['coin'].format(s='', es='')
-                by_cpe = by_coin['copper_equiv']
                 by_q = by_coin['quantity']
                 if by_name in wi_mv:
                     by_q += wi_mv[by_name]
+                if by_q <= 20:
+                    continue
+                by_cpe = by_coin['copper_equiv']
                 wi_name = None
                 wi_cpe = 0
                 wi_q = 0

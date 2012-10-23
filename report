@@ -212,7 +212,12 @@ def print_char(char, verbose = False):
             sep = f[7]
             for i in d['coins']:
                 name = i['abbrev'] if 'abbrev' in i else i['coin']
-                print(sep.format(n = i['quantity'], name = name), end='')
+                n = i['quantity']
+                if n == 1:
+                    name = name.format(s='', es='')
+                else:
+                    name = name.format(s='s', es='es')
+                print(sep.format(n = n, name = name), end='')
                 sep = f[8]
             print(f[9])
 
@@ -652,11 +657,9 @@ args = parser.parse_args()
 
 if afal_config.text:
     title = ''
-    if args.character is not None or args.party is not None or \
- args.items is  not None or args.journal is not None or \
- args.members is not None:
-        pass
-    else:
+    if len(args.character) == 0 and len(args.party) == 0 and \
+ len(args.items) == 0 and args.journal is None and \
+ len(args.members) == 0:
         args.character = ['All']
         args.party = ['All']
         args.journal = '{}'
