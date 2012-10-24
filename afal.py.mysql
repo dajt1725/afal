@@ -62,6 +62,41 @@ def _check_warnings():
     if warnings:
         sys.stderr.write("\nWarnings!: {warnings}\n".format(warnings=warnings))
 
+######## Formatted output
+
+def pw(*args, **kwargs):
+    """print-wrapped, which is like print, except linewrapps as appropriate"""
+
+    
+    eol = kwargs.get('end', '\n')
+    asep = kwargs.get('sep', ' ')
+    m = kwargs.get('max','')
+    indent = kwargs['indent'] * ' ' if 'indent' in kwargs else ''
+    prefix = kwargs['prefix'] * ' ' if 'prefix' in kwargs else ''
+    pad = kwargs.get('pad')
+    ret = ''
+    sep = ''
+    for i in args:
+        ret += sep + str(i)
+        sep = asep
+    while m is not None and len(ret) > m:
+        n = ret[0:m].rfind(' ')
+        if n < m / 2:
+            n = m
+        sys.stdout.write(prefix)
+        sys.stdout.write(ret[0:n])
+        sys.stdout.write(eol)
+        ret = ret[n+1:]
+        if indent != prefix:
+            m -= len(indent)
+            prefix = indent
+    sys.stdout.write(prefix)
+    sys.stdout.write(ret)
+    if pad and len(ret) < pad and ret.rfind('\n') < 0:
+        sys.stdout.write((pad - len(ret) ) * ' ')
+    sys.stdout.write(eol)
+
+
 ######## File IO and parsing
 
 def _nextline(f):
@@ -289,7 +324,7 @@ def str_to_coins(s):
     sum = 0
     for i in str_to_coins.ret:
         if i not in coins_byname:
-            print coins_byname
+            pw(coins_byname, max=80)
             raise NameError("Unknown coin '"+i+"' in money")
         sum += coins_byname[i]['copper_equiv'] * str_to_coins.ret[i]
     str_to_coins.ret['value_cp'] = sum
@@ -305,7 +340,7 @@ def coins_to_str(s):
         if i == 'value_cp':
             continue
         n = s[i]
-        if n == 1:
+        if int(n) == 1:
             coin=i.format(s='',es='')
         else:
             coin=i.format(s='s',es='es')

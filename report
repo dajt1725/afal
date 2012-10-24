@@ -12,7 +12,10 @@ import re
 def format_share(s):
     if s == int(float(s)):
         return str(int(s))
-    return str(s)
+    s = str(s)
+    if s[0:2] == '0.':
+        s = s[1:]
+    return s
 
 def format_plural(n, s, p = None):
     """if len(n) is 1, return a singular string, else a plural one"""
@@ -132,16 +135,17 @@ def print_char(char, verbose = False):
 
     if afal_config.text:
         f = (
- '\n\n{na}\n',
- '  {pl}  {as}  {st}  {ra} {ge}  {cl}  {al}',
- '  Characteristics:  {ch}',
- '  Equipment:  {eq}',
- '  Note:  {no}',
- '',
- '  Cash: {ca}',
- '  Coins: {n} {name}',
+ '\n                {na}\n',
+ '{pl}  {as}  {st}  {ra} {ge}  {cl}  {al}',
+ 'Characteristics:  {ch}',
+ 'Equipment:  {eq}',
+ 'Note:  {no}',
+ None,
+ 'Cash: {ca}',
+ 'Coins: {n} {name}',
  ', {n} {name}',
- '\n' )
+ '\n',
+ '' )
     else:
         f= (
  '  <h2><b>{na}</b></h2>',
@@ -156,7 +160,8 @@ def print_char(char, verbose = False):
  '<h3>Cash {ca}</h3>',
  '<h4>Coins: {n} {name}',
  ', {n} {name}',
- '</h4><hr />')
+ '</h4><hr />',
+ '')
         if d['eq'] == '':
             d['eq'] = 'Unknown'
         if d['ch'] == '':
@@ -195,19 +200,20 @@ def print_char(char, verbose = False):
             d['as'] = '<td width="{mw}%">{as}</td>'.format(**d)
 
     if verbose:
-        print(f[0].format(**d))
-    print(f[1].format(**d))
+        afal.pw(f[0].format(**d),**fmt)
+    afal.pw(f[1].format(**d), **fmt)
     if d['ch'] != '':
-        print(f[2].format(**d))
+        afal.pw(f[2].format(**d), **fmt)
     if d['eq'] != '':
-        print(f[3].format(**d))
+        afal.pw(f[3].format(**d), **fmt)
     if d['no'] != '':
-        print(f[4].format(**d))
-    print(f[5])
+        afal.pw(f[4].format(**d), **fmt)
+    if f[5]:
+        afal.pw(f[5], **fmt)
     if verbose:
         cash = d['cash_cp']
         if cash:
-            print(f[6].format(ca = afal.cp_to_str(cash)))
+            afal.pw(f[6].format(ca = afal.cp_to_str(cash)), **fmt)
         if 'coins' in d:
             sep = f[7]
             for i in d['coins']:
@@ -217,9 +223,10 @@ def print_char(char, verbose = False):
                     name = name.format(s='', es='')
                 else:
                     name = name.format(s='s', es='es')
-                print(sep.format(n = n, name = name), end='')
+                afal.pw(sep.format(n = n, name = name), **fmt_neol)
                 sep = f[8]
-            print(f[9])
+            afal.pw(f[9], **fmt)
+    afal.pw(f[10], **fmt)
 
 def print_parties(parties):
     needshare = False
@@ -228,9 +235,8 @@ def print_parties(parties):
             needshare = True
             break
     if afal_config.text:
-        header = '  {text}'
-        lines = ('    {text}{share}', '   {text}{share}', '   {text}{share}', '   {text}{share}\n')
-        nlines = len(lines)
+        header = '{text}'
+        lines = ('{text}{share}', '{text}{share}', '{text}{share}', '{text}{share}\n')
         line_share_1 = ''
         line_share_n = ' for {share} share'
         trailer = ''
@@ -241,35 +247,37 @@ def print_parties(parties):
         lines = ('<tr><td>{text}</td><td>{share}</td><td><b>|</b></td>',
  '<td>{text}</td><td>{share}</td><td><b>|</b></td>',
  '<td>{text}</td><td>{share}</td></tr>\n')
-        nlines = len(lines)
         header = '<h3>{text}</h3><table border=1><tr>' + \
- (nlines-1) * '<th>Party</th><th>Share</th><th>|</th>' + '<th>Party</th><th>Share</th></tr>'
+ (len(lines)-1) * '<th>Party</th><th>Share</th><th>|</th>' + '<th>Party</th><th>Share</th></tr>'
         trailer = '</table><hr />'
     else:
         lines = ('<tr><td>{text}</td>',
  '<td>{text}</td>',
  '<td>{text}</td>',
  '<td>{text}</td></tr>\n')
-        nlines = len(lines)
         header = '<h3>{text}</h3><table border=1><tr><th colspan="{nlines}">Party</th></tr>'
         trailer = '</table><hr />'
         share = ''
-    print(header.format(text = format_plural(parties, 'Party', 'Parties'), nlines = nlines))
+    nlines = len(lines)
+    afal.pw(header.format(text = format_plural(parties, 'Party', 'Parties'), nlines = nlines), **fmt_group_header)
     n = 0
     for i in parties:
         if needshare:
+            share = format_share(i[1])
             if i[1] == 1:
-                share = line_share_1.format(share = format_share(i[1]))
+                share = line_share_1.format(share = share)
             else:
-                share = line_share_n.format(share = format_share(i[1]))
-        line = lines[n%nlines]
-        print(line.format(text = format_party(i[0]), share = share), end = '')
+                share = line_share_n.format(share = share)
+        afal.pw(lines[n].format(text = format_party(i[0]), share = share), **fmt_neol_pad20)
         n += 1
-    while n % nlines != 0:
-        line = lines[n%nlines]
-        print(line.format(text='', share=''), end='')
+        if n == nlines:
+            n = 0
+    while n != 0:
+        afal.pw(lines[n].format(text='', share=''), **fmt_neol)
         n += 1
-    print(trailer)
+        if n == nlines:
+            break
+    afal.pw(trailer, **fmt)
 
 
 def print_debt(l, tf, p):
@@ -308,64 +316,76 @@ def print_debt(l, tf, p):
     hdr_share = ''
     hdr_order = ''
     if afal_config.text:
-        header = '  {text}'
+        header = '{text}'
+        ch_1 = '{char}\n'
+        ch_n = '{char} Total {total}\n'
+        initial_fmt = ' of {initial}'
+        share_fmt = ' for {share} share'
+        order_fmt = ' repay order {order}'
+        item_fmt = ' for {item}'
+        line = '{ch_txt}  {date:20} {amount}{initial}{share}{order}{item}'
+
         trailer = ''
     else:
         header = '<h3>{text}</h3><table border="1"><tr><th>Who</th><th>Date</th><th>Amount</th>{hdr_initial}{hdr_share}{hdr_order}<th>Item</th></tr>'
-        trailer = '</table><hr />'
         if needinitial:
             hdr_initial = '<th>Initial</th>'
         if needshare:
             hdr_share = '<th>Share</th>'
         if needorder:
             hdr_order = '<th>Order</th>'
-    text = format_plural(l, p + ' Debt') + ' (Total ' + afal.cp_to_str(s) + ')'
-    print(header.format(text = text, hdr_initial = hdr_initial, hdr_share = hdr_share, hdr_order = hdr_order))
+        ch_1 = '<td>{char}</td>'
+        ch_n = '<td rowspan="{n}">{char} ({n} Total {total})</td>'
+        initial_fmt = '<td>{initial}</td>'
+        share_fmt = '<td>{share}</td>'
+        order_fmt = '<td>{order}</td>'
+        item_fmt = '{item}'
+        line = '<tr>{ch_txt}<td>{date}</td><td>{amount}</td>{initial}{share}{order}<td>{item}</td></tr>'
+        trailer = '</table><hr />'
+    text = format_plural(l, p + ' Debt')
+    if len(l) != 1:
+        text += ' (Total ' + afal.cp_to_str(s) + ')'
+    afal.pw(header.format(text = text, hdr_initial = hdr_initial, hdr_share = hdr_share, hdr_order = hdr_order), **fmt_group_header)
     k = d.keys()
     k.sort()
-    for i in k:
-        if afal_config.text:
-            if d[i]['n']>1:
-                print('    ', i, ' Total ', afal.cp_to_str(d[i]['sum']), sep='')
-            else:
-                print('    ', i, sep='')
-            for j in range(d[i]['n']):
-                initial = '' if d[i][j]['initial_cp'] == d[i][j]['amount_cp'] else ' of ' + d[i][j]['initial_cp']
-                order = '' if d[i][j]['order'] == '0' else ' repay order ' + d[i][j]['order']
-                share = '' if d[i][j]['share'] == '1' else ' for ' + d[i][j]['share'] + ' share'
-                item = '' if 'item' not in d[i][j] else  ' for ' + format_item(d[i][j]['item'])
-                print('      ', d[i][j]['date'], '  ', d[i][j]['amount_cp'], initial, order, share, item, sep='')
+    for ch in k:
+        char = format_character(ch)
+        if d[ch]['n'] > 1:
+            ch_txt = ch_n.format(char = char, total = afal.cp_to_str(d[ch]['sum']), n = d[ch]['n'])
         else:
-            initial = ''
-            share = ''
-            order = ''
-            for j in range(d[i]['n']):
-                if d[i]['n'] > 1 and j == 0:
-                    char = '<td rowspan="{n}">{char} ({n} Total {total})</td>'.format(n=d[i]['n'], char = format_character(i), total = afal.cp_to_str(d[i]['sum']))
-                elif j == 0:
-                    char = '<td>{char}</td>'.format(char =  format_character(i))
-                else:
-                    char = ''
-                date = d[i][j]['date']
-                amount = d[i][j]['amount_cp']
-                if needinitial:
-                    initial = '<td>{initial}</td>'.format(initial = d[i][j]['initial_cp'])
-                if needshare:
-                    share = '<td>{share}</td>'.format(share = d[i][j]['share'])
-                if needorder:
-                    order = '<td>{order}</td>'.format(order = d[i][j]['order'])
-                item = format_item(d[i][j]['item']) if 'item' in d[i][j] else ''
-                print('<tr>{char}<td>{date}</td><td>{amount}</td>{initial}{share}{order}<td>{item}</td></tr>'.format(
-char = char, date = date, amount = amount, initial = initial, share = share, order = order, item = item))
-    print(trailer)
+            ch_txt = ch_1.format(char = char)
+        for j in range(d[ch]['n']):
+            date = d[ch][j]['date']
+            amount = d[ch][j]['amount_cp']
+            item = ''
+            if needinitial and (not afal_config.text or d[ch][j]['initial_cp'] != amount):
+                initial = initial_fmt.format(initial = d[ch][j]['initial_cp'])
+            else:
+                initial = ''
+            if needshare and (not afal_config.text or d[ch][j]['share'] != '1'):
+                share = share_fmt.format(share = d[ch][j]['share'])
+            else:
+                share = ''
+            if needorder and (not afal_config.text or d[ch][j]['order'] != '0'):
+                order = order_fmt.format(order = d[ch][j]['order'])
+            else:
+                order = ''
+            if 'item' in d[ch][j]:
+                item = item_fmt.format(item = format_item(d[ch][j]['item']))
+            else:
+                item = ''
+            afal.pw(line.format(ch_txt = ch_txt, date = date, amount = amount,
+ initial = initial, share = share, order = order, item = item), **fmt)
+            ch_txt = ''
+    afal.pw(trailer, **fmt)
 
 
 def get_item_entry(ind, i, f, func):
     var = i.get(ind)
     if var:
-        return (func(var), f[ind+'_pre_pos'])
+        return f[ind+'_pos'].format(v=func(var))
     else:
-        return ('', f[ind+'_pre_neg'])
+        return f[ind+'_neg']
 
 
 def print_items(items, verb, show_note = False, show_finder = False, show_owner = False,
@@ -383,95 +403,88 @@ def print_items(items, verb, show_note = False, show_finder = False, show_owner 
     show_date_xfrd = 'date_xfrd' in k
 
     if afal_config.text:
-        f = {'header_pre': '  ',
- 'item_hdr':      '',      'item_pre': '    ',
- 'note_hdr':      '',      'note_pre_pos': ',  Note ','note_pre_neg': '',
- 'value_hdr':     '',     'value_cp_pre_pos': ',  Value ', 'value_cp_pre_neg': '',
- 'finder_hdr':    '',    'finder_pre_pos': ',  Found by ','finder_pre_neg': '',
- 'owner_hdr':     '',     'owner_pre_pos': ',  Owned by ','owner_pre_neg': '',
- 'holder_hdr':    '',    'holder_pre_pos': ',  Held by ','holder_pre_neg': '',
- 'date_xfrd_hdr': '', 'date_xfrd_pre_pos': ',  Transferred on ','date_xfrd_pre_neg': '',
- 'header_suf': '',
- 'entry_suf': '', 'trailer': ''}
+        group_hdr = '{text}'
+        table_hdr = ''
+        line = '{item}{note}{value}{finder}{owner}{holder}{date}'
+        f = {
+ 'note_hdr': '', 'value_hdr': '', 'finder_hdr': '', 'owner_hdr': '', 'holder_hdr': '', 'date_hdr': '',
+ 'note_pos': ',  Note {v}', 'note_neg': '',
+ 'value_cp_pos': ',  Value {v}', 'value_cp_neg': '',
+ 'finder_pos': ',  Found by {v}', 'finder_neg': '',
+ 'owner_pos': ',  Owned by {v}',  'owner_neg': '',
+ 'holder_pos': ',  Held by {v}',  'holder_neg': '',
+ 'date_xfrd_pos': ',  Transferred on {v}','date_xfrd_neg': ''
+ }
+        trailer = ''
     else:
-        f = {'header_pre': '<h3>',
- 'item_hdr':      '</h3><table border="1"><tr><th>Item</th>', 'item_pre':'<tr><td>',
- 'note_hdr':      '<th>Note</th>',             'note_pre_pos':      '</td><td>','note_pre_neg':      '</td><td>',
- 'value_hdr':     '<th>Value</th>',            'value_cp_pre_pos': '</td><td>','value_cp_pre_neg': '</td><td>',
- 'finder_hdr':    '<th>Found by</th>',         'finder_pre_pos':    '</td><td>','finder_pre_neg':    '</td><td>',
- 'owner_hdr':     '<th>Owned by</th>',         'owner_pre_pos':     '</td><td>','owner_pre_neg':     '</td><td>',
- 'holder_hdr':    '<th>Held by</th>',          'holder_pre_pos':    '</td><td>','holder_pre_neg':    '</td><td>',
- 'date_xfrd_hdr': '<th>Date Transferred</th>', 'date_xfrd_pre_pos': '</td><td>', 'date_xfrd_pre_neg': '</td><td>',
- 'header_suf': '</tr>',
- 'entry_suf': '</td></tr>',
- 'trailer': '</table><hr />'}
+        group_hdr = '<h3>{text}</h3>'
+        table_hdr = '<table border="1"><tr><th>Item</th>{note_hdr}{value_hdr}{finder_hdr}{owner_hdr}{holder_hdr}{date_hdr}</tr>\n'
+        line = '<tr><td>{item}</td>{note}{value}{finder}{owner}{holder}{date}</tr>'
+        f = {
+ 'note_hdr':   '<th>Note</th>',         'note_pos':   '<td>{v}</td>','note_neg':'<td></td>',
+ 'value_hdr':  '<th>Value</th>',        'value_cp_pos':  '<td>{v}</td>','value_cp_neg': '<td></td>',
+ 'finder_hdr': '<th>Found by</th>',     'finder_pos': '<td>{v}</td>','finder_neg':'<td></td>',
+ 'owner_hdr':  '<th>Owned by</th>',     'owner_pos':  '<td>{v}</td>','owner_neg': '<td></td>',
+ 'holder_hdr': '<th>Held by</th>',      'holder_pos': '<td>{v}</td>','holder_neg': '<td></td>',
+ 'date_hdr':   '<th>Date Transferred</th>', 'date_xfrd_pos': '<td>{v}</td>', 'date_xfrd_neg': '<td></td>'
+ }
+        trailer = '</table><hr />'
 
     if not show_note:
         f['note_hdr'] = ''
-        f['note_pre'] = ''
         f['note'] = ''
     if not show_value:
         f['value_hdr'] = ''
-        f['value_pre'] = ''
         f['value'] = ''
     if not show_finder:
         f['finder_hdr'] = ''
-        f['finder_pre'] = ''
         f['finder'] = ''
     if not show_owner:
         f['owner_hdr'] = ''
-        f['owner_pre'] = ''
         f['owner'] = ''
     if not show_holder:
         f['holder_hdr'] = ''
-        f['holder_pre'] = ''
         f['holder'] = ''
     if not show_date_xfrd:
-        f['date_xfrd_hdr'] = ''
-        f['date_xfrd_pre'] = ''
-        f['date_xfrd'] = ''
+        f['date_hdr'] = ''
+        f['date'] = ''
     if verb == 'All' or verb == '':
         verb = 'Item'
     elif verb != '':
         verb += ' Item'
-    f['items'] = format_plural(items, verb)
-    print('{header_pre}{items}{item_hdr}{note_hdr}{value_hdr}{finder_hdr}'\
- '{owner_hdr}{holder_hdr}{date_xfrd_hdr}{header_suf}'.format(**f))
+    afal.pw(group_hdr.format(text=format_plural(items, verb)), **fmt_group_header)
+    afal.pw(table_hdr.format(**f), **fmt_neol)
     for i in items:
         f['item'] = format_item(i['item'], party = i['finder'])
         if show_note:
-            (f['note'], f['note_pre']) = get_item_entry('note', i, f, munge_html)
+            f['note'] = get_item_entry('note', i, f, munge_html)
         if show_value:
-            (f['value'], f['value_pre']) = get_item_entry('value_cp', i, f, afal.cp_to_str)
+            f['value'] = get_item_entry('value_cp', i, f, afal.cp_to_str)
         if show_finder:
-            (f['finder'], f['finder_pre']) = get_item_entry('finder', i, f, format_party)
+            f['finder'] = get_item_entry('finder', i, f, format_party)
         if show_owner:
-            if afal_config.text and i['finder'] == i['owner']:
+            if afal_config.text and (i['finder'] == i['owner'] or i['holder'] == i['owner']):
                 f['owner'] = ''
-                f['owner_pre'] = ''
             else:
-                (f['owner'], f['owner_pre']) = get_item_entry('owner', i, f, format_party)
+                f['owner'] = get_item_entry('owner', i, f, format_party)
         if show_holder:
             if afal_config.text and i['owner'] == i['holder']:
                 f['holder'] = ''
-                f['holder_pre'] = ''
             else:
-                (f['holder'], f['holder_pre']) = get_item_entry('holder', i, f, format_character)
+                f['holder'] = get_item_entry('holder', i, f, format_character)
         if show_date_xfrd:
-            (f['date_xfrd'], f['date_xfrd_pre']) = get_item_entry('date_xfrd', i, f, format_date)
-        print('{item_pre}{item}{note_pre}{note}{value_pre}{value}' \
- '{finder_pre}{finder}{owner_pre}{owner}{holder_pre}{holder}' \
- '{date_xfrd_pre}{date_xfrd}{entry_suf}'.format(**f))
-    print(f['trailer'])
+            f['date'] = get_item_entry('date_xfrd', i, f, format_date)
+        afal.pw(line.format(**f), **fmt)
+    afal.pw(trailer, **fmt)
 
 
 def print_journal(j, show_sub = False):
     sub_hdr = ''
     sub = ''
     if afal_config.text:
-        header = '  {text}'
-        day_header = '      {date}'
-        line = '    {sub} {by} {text}'
+        header = '{text}'
+        day_header = '{date}'
+        line = '{sub} {by} {text}'
         pri_fmt = ' {pri:>4}      '
         sub_fmt = ' {sub:>4}^{pri:<4} '
         day_trailer = ''
@@ -480,32 +493,32 @@ def print_journal(j, show_sub = False):
         header = '<h3>{text}</h3>'
         day_header = '<table width="100%" border="1"><tr>{sub_hdr}<th>{date}</th></tr>'
         if show_sub:
-            sub_hdr = '<th width="8%">Sub</th>'
+            sub_hdr = '<th width="8%">Seq</th>'
         line = '<tr>{sub}<td>{by} {text}</td></tr>'
         pri_fmt = '<td width="8%">{pri:>}</td>'
         sub_fmt = '<td width="8%">{sub:>}:<font color="green">{pri:<}</font></td>'
-        day_trailer = '</table><hr />'
-        trailer = ''
+        day_trailer = '</table>'
+        trailer = '<hr />'
 
-    print(header.format(text = format_plural(j, 'Transaction Journal Entry',
- 'Transaction Journal Entries')))
+    afal.pw(header.format(text = format_plural(j, 'Transaction Journal Entry',
+ 'Transaction Journal Entries')), **fmt_section_header)
     prev_date = None
     for e in j:
         date = e['date']
         if date != prev_date:
             if prev_date:
-                print(day_trailer)
-            print(day_header.format(date=format_date_log(date), sub_hdr = sub_hdr))
+                afal.pw(day_trailer, **fmt)
+            afal.pw(day_header.format(date=format_date_log(date), sub_hdr = sub_hdr), **fmt_group_header)
             prev_date = date
         if show_sub:
             if e['part_of'] is None:
                 sub = pri_fmt.format(pri = str(e['journal_id']-1000000))
             else:
                 sub = sub_fmt.format(sub =  str(e['journal_id']-1000000), pri = str(e['part_of']-1000000))
-        print(line.format(by = e['by'], text=e['description'], sub = sub))
+        afal.pw(line.format(by = e['by'], text=e['description'], sub = sub), **fmt)
     if prev_date:
-        print(day_trailer)
-    print(trailer)
+        afal.pw(day_trailer, **fmt)
+    afal.pw(trailer, **fmt)
 
 
 def print_full_character(c):
@@ -513,10 +526,10 @@ def print_full_character(c):
         c = afal.character_list
     if len(c) > 1:
         if afal_config.text:
-            header = '        {characters}\n'
+            header = '{characters}\n'
         else:
             header = '<h1>{characters}</h1><br>'
-        print(header.format(characters = format_plural(c, 'Character')))
+        afal.pw(header.format(characters = format_plural(c, 'Character')),**fmt_section_header)
     for char in c:
         print_char(char, verbose = True)
         cparties = afal.get_char_parties(char)
@@ -550,7 +563,6 @@ def print_members(members):
     if afal_config.text:
         header = '  {text}{shares}'
         lines = ('    {text}{share}', '  {text}{share}', '  {text}{share}', '  {text}{share}\n')
-        nlines = len(lines)
         share_text = ' for {share} share'
         noshare_text = ''
         trailer = ''
@@ -571,33 +583,35 @@ def print_members(members):
  '<td>{text}</td>',
  '<td>{text}</td>',
  '<td>{text}</td></tr>\n')
-        nlines = len(lines)
         trailer = '</table><hr />'
 
+    nlines = len(lines)
     if shares != len(members):
         shares = ', ' + format_plural(format_share(shares), 'Share')
     else:
         shares = ''
 
-    print(header.format(text = format_plural(members, 'Member'), shares = shares, nlines = nlines))
+    afal.pw(header.format(text = format_plural(members, 'Member'), shares = shares, nlines = nlines), **fmt)
     k = h.keys()
     k.sort()
     n = 0
     for i in k:
-        line = lines[n%nlines]
         if needshare:
             share = h[i]
             if share != 1:
                 share = share_text.format(share = share)
             else:
                 share = noshare_text
-        print(line.format(text = format_character(i), share=share), end='')
+        afal.pw(lines[n].format(text = format_character(i), share=share), **fmt_neol_pad20)
         n += 1
-    while n % nlines != 0:
-        line = lines[n%nlines]
-        print(line.format(text='', share=''), end='')
+        if n == nlines:
+            n = 0
+    while n != 0:
+        afal.pw(lines[n].format(text='', share=''), **fmt_neol)
         n += 1
-    print(trailer)
+        if n == nlines:
+            break
+    afal.pw(trailer, **fmt)
 
 
 def print_full_party(p):
@@ -608,18 +622,18 @@ def print_full_party(p):
             header = '\n        {text}\n'
         else:
             header = '<h1>{text}</h1>'
-        print(header.format(text = format_plural(p, 'Party', 'Parties')))
+        afal.pw(header.format(text = format_plural(p, 'Party', 'Parties')), **fmt)
     for party in p:
         data = afal.get_party_data(party)
         note = data.get('note')
         if not note:
             note = ''
         if afal_config.text:
-            print(party)
-            print(data['type'], afal.date_to_str(data['date']), note)
+            afal.pw(party, **fmt)
+            afal.pw(data['type'], afal.date_to_str(data['date']), note, **fmt)
         else:
-            print("<h2><b>", party_to_log(party), party, "</a></b></h2><br>", sep='')
-            print(data['type'], format_date(afal.date_to_str(data['date'])), note, '<hr />')
+            afal.pw("<h2><b>", party_to_log(party), party, "</a></b></h2><br>", **fmt_nsep)
+            afal.pw(data['type'], format_date(afal.date_to_str(data['date'])), note, '<hr />', **fmt)
 
         members = data['members']
         if len(members):
@@ -639,10 +653,10 @@ def print_people(p):
         else:
             header = '<h1>{text}</h1>'
             trailer = '<hr />'
-        print(header.format(text = format_plural(people, p + ' Person', p + ' People')))
+        afal.pw(header.format(text = format_plural(people, p + ' Person', p + ' People')), **fmt)
     for char in people:
         print_char(char, verbose=False)
-    print(trailer)
+    afal.pw(trailer, **fmt)
 
 
 #############################################################################
@@ -656,6 +670,12 @@ parser.add_argument('--party', '-p', nargs='*', default = [], help='report on th
 args = parser.parse_args()
 
 if afal_config.text:
+    fmt = { 'max': 130, 'indent': 4 }
+    fmt_neol = { 'max': 130, 'indent': 4, 'end':'' }
+    fmt_neol_pad20 = { 'max': 130, 'indent': 0, 'pad': 20, 'end':'' }
+    fmt_nsep = { 'max': 130, 'indent': 4, 'sep':'' }
+    fmt_section_header = { 'max': 130, 'prefix': 30, 'sep':'' }
+    fmt_group_header = { 'max': 130, 'prefix': 12, 'sep':'' }
     title = ''
     if len(args.character) == 0 and len(args.party) == 0 and \
  len(args.items) == 0 and args.journal is None and \
@@ -668,6 +688,12 @@ if afal_config.text:
  'InactiveNPCs', 'DeadNPCs']
     trailer = ''
 else:
+    fmt = { }
+    fmt_neol = { 'end': '' }
+    fmt_neol_pad20 = { 'end': '' }
+    fmt_nsep = { 'sep': '' }
+    fmt_section_header = { 'sep':'' }
+    fmt_group_header = { 'sep':'' }
     cgitb.enable()
     form = cgi.FieldStorage()
     title = "Who knows what?"
@@ -733,7 +759,7 @@ else:
             args.journal = '{}'
             args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
             args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs']
-    print('Content-Type: text/html\n'
+    afal.pw('Content-Type: text/html\n'
  '\n'
  '<html>\n'
  ' <head><title>{title}</title></head>\n'
@@ -743,7 +769,7 @@ else:
  title = title,
  background = afal_config.background,
  menu_url = afal_config.menu_url,
- menu_html = afal.menu_html))
+ menu_html = afal.menu_html), **fmt)
     trailer = \
  '   <br><b><a href="{menu_url}">Return to Menu</a></b><br>\n'\
  '  </center>\n'\
@@ -772,5 +798,5 @@ if args.members:
     for i in args.members:
         print_people(i)
 
-print(trailer.format(menu_url = afal_config.menu_url))
+afal.pw(trailer.format(menu_url = afal_config.menu_url), **fmt)
 afal.fini()

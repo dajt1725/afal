@@ -689,9 +689,10 @@ def do_cons(d):
                 if not by_coin['common_use']:
                     continue
                 by_name = by_coin['coin'].format(s='', es='')
+                by_fname = by_coin['coin']
                 by_q = by_coin['quantity']
-                if by_name in wi_mv:
-                    by_q += wi_mv[by_name]
+                if by_fname in wi_mv:
+                    by_q += wi_mv[by_fname]
                 if by_q <= 20:
                     continue
                 by_cpe = by_coin['copper_equiv']
@@ -706,6 +707,7 @@ def do_cons(d):
                         if name in wi_q_table and (tmp_cpe > wi_cpe or (tmp_cpe == wi_cpe and wi_q_table[name] > wi_q)):
                             wi_cpe = tmp_cpe
                             wi_name = name
+                            wi_fname = j['coin']
                             wi_q = wi_q_table[name]
                 if wi_cpe == 0:
                     nxt.append(by_coin)
@@ -715,34 +717,25 @@ def do_cons(d):
                 by_n = int(wi_n * (wi_cpe / by_cpe))
                 if wi_n * wi_cpe != by_n * by_cpe:
                     raise ValueError("Huh?  What?")
-                print 'has', by_n, by_name, by_q, by_cpe, 'for', wi_n, wi_name, wi_q, wi_cpe
+                print 'has', by_n, by_name, "out of ", by_q, "at", by_cpe, 'for', wi_n, wi_name, "out of", wi_q, "at", wi_cpe
                 wi_mv['value_cp'] += wi_n * wi_cpe
-                if by_name in wi_q_table:
-                    wi_q_table[by_name] += by_n
-                else:
-                    wi_q_table[by_name] = by_n
+                wi_q_table[by_name] = by_n + wi_q_table.get(by_name,0)
                 if wi_q_table[wi_name] == wi_n:
                     del wi_q_table[wi_name]
                 else:
                     wi_q_table[wi_name] -= wi_n
-                if wi_name in wi_mv:
-                    wi_mv[wi_name] += wi_n
-                else:
-                    wi_mv[wi_name] = wi_n
-                if by_name in wi_mv:
-                    tmp = min(by_n, wi_mv[by_name])
+                wi_mv[wi_fname] = wi_n + wi_mv.get(wi_fname,0)
+                if by_fname in wi_mv:
+                    tmp = min(by_n, wi_mv[by_fname])
                     wi_mv['value_cp'] -= tmp * by_cpe
-                    if wi_mv[by_name] == tmp:
-                        del wi_mv[by_name]
+                    if wi_mv[by_fname] == tmp:
+                        del wi_mv[by_fname]
                     else:
-                        wi_mv[by_name] -= tmp
+                        wi_mv[by_fname] -= tmp
                     by_n -= tmp
                 if by_n:
                     by_mv['value_cp'] += by_n * by_cpe
-                    if by_name in by_mv:
-                        by_mv[by_name] += by_n
-                    else:
-                        by_mv[by_name] = by_n
+                    by_mv[by_fname] = by_n + by_mv.get(by_fname,0)
                     if by_coin['quantity'] > by_n:
                         by_coin['quantity'] -= by_n
                         by_coins.append(by_coin)

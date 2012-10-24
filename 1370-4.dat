@@ -231,21 +231,21 @@ date=13 Tarsakh 1370
 ,pay;by=Maanamere;to=Misery;cash=4 gem: carnelian 50gp, 2 gem: moonstone 55gp, 4 gem: sardonyx 50gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
 ,pay;by=Darius;to=Misery;cash=2 gems: moonstone 55gp, 4 gem: zircon 65gp, 2 gem: garnet 500gp
 ,pay;by=Darius;to=Dexter;cash=4 gems: carnelian 50gp, 4 gems: sardonyx 50gp
-,pay;by=Misery;to=Denyae;cash=Gem: Garnet 500gp, Gem: Zircon 65gp
-,pay;by=Misery;to=Deringa;cash=Gem: Garnet 500gp, Gem: Zircon 65gp
-,pay;by=Misery;to=Dexter;cash=2 Gem: Garnet 500gp, 2 Gem: Zircon 65gp
+,pay;by=Misery;to=Denyae;cash=Gem: Garnet 500gp, Gem: Zircon 65gp, 2gp, 4sp, 6cp
+,pay;by=Misery;to=Deringa;cash=Gem: Garnet 500gp, Gem: Zircon 65gp, 2gp, 4sp, 6cp
+,pay;by=Misery;to=Dexter;cash=2 Gem: Garnet 500gp, 2 Gem: Zircon 65gp, 2gp, 3sp, 6cp
 ,pay;by=Misery;to=Henkles;cash=4 Gems: Zircon 65gp, 4 gems: moonstone 55gp, 4 gems: carnelian 50gp, 4 gems: sardonyx 50gp
-,pay;by=Henkles;to=Brogan;cash=4 Gems: Zircon 65gp, gem: moonstone 55gp, 1pp, 4gp
-,pay;by=Henkles;to=Denyae;cash=4 Gems: Zircon 65gp, Gem: moonstone 55gp, 1pp, 4gp
-,pay;by=Henkles;to=Deringa;cash=2 Gems: Moonstone 55gp, Gem: Carnelian 50gp, 2gp
-,pay;by=Henkles;to=Dexter;cash=2 Gems: Moonstone 55gp,3 Gem: Carnelian 50gp, 4pp, 7gp
-,pay;by=Henkles;to=Staric;cash=4 Gem: Carnelian 50gp, 1pp, 2ep
-,pay;by=Henkles;to=Steve;cash=4pp, 1gp
-,pay;by=Dexter;to=Brogan;cash=2 Gems: Moonstone 55gp, Gem: Carnelian 50gp, 3 toals
-,pay;by=Dexter;to=Denyae;cash=6 Gems: Zircon 65gp, 2gp
-,pay;by=Dexter;to=Deringa;cash=Gem: Moonstone 55gp, 6 pp, 3gp
-,commit
+,trade;by=Henkles;to=party;cash=2pp;for=700cp, 6gp, 1ep
+,pay;by=Henkles;to=Brogan;cash=4 Gems: Zircon 65gp, gem: moonstone 55gp, 1pp, 4gp, 124cp
+,pay;by=Henkles;to=Denyae;cash=4 Gems: Zircon 65gp, Gem: moonstone 55gp, 1pp, 4gp, 124cp
+,pay;by=Henkles;to=Deringa;cash=2 Gems: Moonstone 55gp, Gem: Carnelian 50gp, 2gp, 62cp
+,pay;by=Henkles;to=Dexter;cash=2 Gems: Moonstone 55gp,3 Gem: Carnelian 50gp, 4pp, 7gp, 157cp
+,pay;by=Henkles;to=Staric;cash=4 Gem: Carnelian 50gp, 5pp, 4gp, 2ep, 77cp
+,pay;by=Henkles;to=Steve;cash=4pp, 1gp, 85cp
+,pay;by=Dexter;to=Brogan;cash=2 Gems: Moonstone 55gp, Gem: Carnelian 50gp, 3 toals, 1ep, 1sp
+,pay;by=Dexter;to=Denyae;cash=6 Gems: Zircon 65gp, 2gp,1ep,2sp,7cp
+,pay;by=Dexter;to=Deringa;cash=Gem: Moonstone 55gp, 6 pp, 3gp,1ep,4sp,4cp
 ,pay;by=Dexter;to=Staric;cash=5 Gems: Carnelian 50gp, 10 toals
 ,pay;by=Dexter;to=Steve;cash=3 harbor moons
-,pay;by=Dexter;to=Theo;cash=4 Gems: Sardonyx 50gp, Gem: Carnelian 50gp
+,pay;by=Dexter;to=Theo;cash=4 Gems: Sardonyx 50gp, Gem: Carnelian 50gp, 2 toals, 2gp, 46cp
 #,pay;by=Henkles

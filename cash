@@ -11,6 +11,7 @@ if afal_config.text:
     header = 'Cash Summary as of {date}'
     line = '{char:10} {v:14} {c}'
     trailer = ''
+    wmax = 80
 else:
     header = \
  'Content-Type: text/html\n'\
@@ -33,9 +34,10 @@ else:
  '  <br><center><a href="{menu_url}"><b>Return to Menu</b></a></center>\n'\
  ' </body>\n'\
  '</html>\n'
+    wmax = None
 
-print(header.format(menu_html = afal.menu_html, menu_url = afal_config.menu_url,
- background = afal_config.background, date = date))
+afal.pw(header.format(menu_html = afal.menu_html, menu_url = afal_config.menu_url,
+ background = afal_config.background, date = date), max=wmax, indent=4)
 for char in afal.character_list:
     m = afal.get_char_money(char)
     value_cp = 0
@@ -55,7 +57,7 @@ for char in afal.character_list:
         pre = npre
 
     if value_cp > 0:
-        print(line.format(
- char = char, v = afal.cp_to_str(value_cp), c = coins, report = afal_config.report))
-print(trailer.format(menu_url=afal_config.menu_url))
+        afal.pw(line.format(
+ char = char, v = afal.cp_to_str(value_cp), c = coins, report = afal_config.report), max = wmax, indent=4)
+afal.pw(trailer.format(menu_url = afal_config.menu_url), max = wmax, indent = 4)
 afal.fini()
