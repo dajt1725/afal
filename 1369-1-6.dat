@@ -1,39 +1,39 @@
 # Hammer-1 through Kythorn-30, incl Midinter and Greengrass
-coin;name=copper piece{s};abbrev=cp;copper_equiv=1;common
-coin;name=silver piece{s};abbrev=sp;copper_equiv=10;common
-coin;name=electrum piece{s};abbrev=ep;copper_equiv=100;common
-coin;name=gold piece{s};abbrev=gp;copper_equiv=200;common
-coin;name=toal{s};copper_equiv=400;note=waterdeep only;common
-coin;name=platinum piece{s};abbrev=pp;copper_equiv=1000;common
-coin;name=harbor moon{s};copper_equiv=10000;common;note=only worth half as much outside waterdeep
-coin;name=sembian steel piece{s};copper_equiv=1
-coin;name=triangular electrum piece{s};copper_equiv=100;note=found in Undermountain
-coin;name=gem{s}: bloodstone 5gp;copper_equiv=1000
-coin;name=gem{s}: satan spar 10gp;copper_equiv=2000
-coin;name=gem{s}: banded agate 10gp;copper_equiv=2000
-coin;name=gond bell{s};copper_equiv=2000;note=worth twice as much at a temple of gond
-coin;name=loot: gold earring{s} 20gp;copper_equiv=4000
-coin;name=gem{s}: moss agate 25gp;copper_equiv=5000
-coin;name=gem{s}: corstal 45gp;copper_equiv=9000
-coin;name=gem{s}: moonstone 50gp;copper_equiv=10000
-coin;name=gem{s}: carnelian 50gp;copper_equiv=10000;note=orange, pear-shaped cut
-coin;name=gem{s}: sardonyx 50gp;copper_equiv=10000;note=banded red and white, step cut
-coin;name=gem{s}: moonstone 55gp;copper_equiv=11000;note=white with pale blue hue and "glow" reflection, table cut
-coin;name=gem{s}: zircon 65gp;copper_equiv=13000;note=large, clear pale aqua, scissors cut
-coin;name=gem{s}: citrine 75gp;copper_equiv=15000;note=large, pale yellow-brown, cabochon cut
-coin;name=gem{s}: amber 90gp;copper_equiv=18000
-coin;name=gem{s}: pearl 100gp;copper_equiv=20000
-coin;name=gem{s}: chrysoberyl 100gp;copper_equiv=20000
-coin;name=gem{s}: carnelian 100gp;copper_equiv=20000
-coin;name=loot: finely made gold chain{s} 130gp;copper_equiv=26000
-coin;name=gem{s}: emerald 200gp;copper_equiv=40000
-coin;name=gem{s}: garnet 500gp;copper_equiv=100000;note=violet, navette cut
-coin;name=gem{s}: spinel 500gp;copper_equiv=100000;note=deep blue, briolette cut
-coin;name=loot: ring{s} 500gp;copper_equiv=100000
-coin;name=loot: set{s} silver candlesticks 500gp;copper_equiv=100000
-coin;name=loot: letter{s} of credit 500gp;copper_equiv=100000
-coin;name=loot: platinum necklace{s} 700gp;copper_equiv=140000
-coin;name=loot: pair{s} of large opal earrings (750gp together or 300gp each);copper_equiv=150000
+coin;name=Copper piece{s};abbrev=cp;copper_equiv=1;common
+coin;name=Silver piece{s};abbrev=sp;copper_equiv=10;common
+coin;name=Electrum piece{s};abbrev=ep;copper_equiv=100;common
+coin;name=Gold piece{s};abbrev=gp;copper_equiv=200;common
+coin;name=Toal{s};copper_equiv=400;note=waterdeep only;common
+coin;name=Platinum piece{s};abbrev=pp;copper_equiv=1000;common
+coin;name=Harbor Moon{s};copper_equiv=10000;common;note=only worth half as much outside waterdeep
+coin;name=Sembian Steel piece{s};copper_equiv=1
+coin;name=triangular Electrum piece{s};copper_equiv=100;note=found in Undermountain
+coin;name=Gem{s}: Bloodstone 5gp;copper_equiv=1000
+coin;name=Gem{s}: Satan Spar 10gp;copper_equiv=2000
+coin;name=Gem{s}: Banded Agate 10gp;copper_equiv=2000
+coin;name=Gond bell{s};copper_equiv=2000;note=worth twice as much at a temple of gond
+coin;name=Gold Earring{s} 20gp;copper_equiv=4000
+coin;name=Gem{s}: Moss Agate 25gp;copper_equiv=5000
+coin;name=Gem{s}: Corstal 45gp;copper_equiv=9000
+coin;name=Gem{s}: Moonstone 50gp;copper_equiv=10000
+coin;name=Gem{s}: Carnelian 50gp;copper_equiv=10000;note=orange, pear-shaped cut
+coin;name=Gem{s}: Sardonyx 50gp;copper_equiv=10000;note=banded red and white, step cut
+coin;name=Gem{s}: Moonstone 55gp;copper_equiv=11000;note=white with pale blue hue and "glow" reflection, table cut
+coin;name=Gem{s}: Zircon 65gp;copper_equiv=13000;note=large, clear pale aqua, scissors cut
+coin;name=Gem{s}: Citrine 75gp;copper_equiv=15000;note=large, pale yellow-brown, cabochon cut
+coin;name=Gem{s}: Amber 90gp;copper_equiv=18000
+coin;name=Gem{s}: Pearl 100gp;copper_equiv=20000
+coin;name=Gem{s}: Chrysoberyl 100gp;copper_equiv=20000
+coin;name=Gem{s}: Carnelian 100gp;copper_equiv=20000
+coin;name=Finely Made Gold Chain{s} 130gp;copper_equiv=26000
+coin;name=Gem{s}: Emerald 200gp;copper_equiv=40000
+coin;name=Gem{s}: Garnet 500gp;copper_equiv=100000;note=violet, navette cut
+coin;name=Gem{s}: Spinel 500gp;copper_equiv=100000;note=deep blue, briolette cut
+coin;name=Ring{s} 500gp;copper_equiv=100000
+coin;name=Set{s} Silver Candlesticks 500gp;copper_equiv=100000
+coin;name=Letter{s} of Credit 500gp;copper_equiv=100000
+coin;name=Platinum Necklace{s} 700gp;copper_equiv=140000
+coin;name=Pair{s} of Large Opal Earrings (750gp together or 300gp each);copper_equiv=150000
 meet;status=dummy
 ,name=Auction
 ,name=Sell

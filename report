@@ -142,9 +142,7 @@ def print_char(char, verbose = False):
  'Note:  {no}',
  None,
  'Cash: {ca}',
- 'Coins: {n} {name}',
- ', {n} {name}',
- '\n',
+ 'Coins: {text}\n',
  '' )
     else:
         f= (
@@ -158,9 +156,7 @@ def print_char(char, verbose = False):
  '   <tr><td colspan="{n}"><u>Notes:</u>  {no}   </td></tr>',
  '  </table>',
  '<h3>Cash {ca}</h3>',
- '<h4>Coins: {n} {name}',
- ', {n} {name}',
- '</h4><hr />',
+ '<h4>Coins: {text}</h4><hr />',
  '')
         if d['eq'] == '':
             d['eq'] = 'Unknown'
@@ -215,7 +211,8 @@ def print_char(char, verbose = False):
         if cash:
             afal.pw(f[6].format(ca = afal.cp_to_str(cash)), **fmt)
         if 'coins' in d:
-            sep = f[7]
+            sep = '{n} {name}'
+            text = ''
             for i in d['coins']:
                 name = i['abbrev'] if 'abbrev' in i else i['coin']
                 n = i['quantity']
@@ -223,10 +220,10 @@ def print_char(char, verbose = False):
                     name = name.format(s='', es='')
                 else:
                     name = name.format(s='s', es='es')
-                afal.pw(sep.format(n = n, name = name), **fmt_neol)
-                sep = f[8]
-            afal.pw(f[9], **fmt)
-    afal.pw(f[10], **fmt)
+                text += sep.format(n = n, name = name);
+                sep = ', {n} {name}'
+            afal.pw(f[7].format(text=text), **fmt)
+    afal.pw(f[8], **fmt)
 
 def print_parties(parties):
     needshare = False
@@ -396,9 +393,12 @@ def print_items(items, verb, show_note = False, show_finder = False, show_owner 
             if i[j] is not None:
                k |= set([j])
     show_note = 'note' in k if show_note else False
-#    show_finder = 'finder' in k if show_finder else False
-    show_holder = 'holder' in k if show_holder else False
-    show_owner = 'owner' in k if show_owner else False
+    if show_finder and 'finder' not in k:
+        show_finder = False
+    if show_holder and 'holder' not in k:
+        show_holder = False
+    if show_owner and 'owner' not in k:
+        show_owner = False
     show_value = 'value_cp' in k
     show_date_xfrd = 'date_xfrd' in k
 
@@ -460,18 +460,27 @@ def print_items(items, verb, show_note = False, show_finder = False, show_owner 
             f['note'] = get_item_entry('note', i, f, munge_html)
         if show_value:
             f['value'] = get_item_entry('value_cp', i, f, afal.cp_to_str)
-        if show_finder:
+        if show_finder and (not afal_config.text or show_finder != i['finder']):
             f['finder'] = get_item_entry('finder', i, f, format_party)
-        if show_owner:
-            if afal_config.text and (i['finder'] == i['owner'] or i['holder'] == i['owner']):
-                f['owner'] = ''
-            else:
-                f['owner'] = get_item_entry('owner', i, f, format_party)
-        if show_holder:
-            if afal_config.text and i['owner'] == i['holder']:
-                f['holder'] = ''
-            else:
-                f['holder'] = get_item_entry('holder', i, f, format_character)
+        else:
+            f['finder'] = ''
+        if show_owner and (not afal_config.text or not show_finder or (i['owner'] != show_owner and i['owner'] != i['finder'])):
+            f['owner'] = get_item_entry('owner', i, f, format_party)
+        else:
+            f['owner'] = ''
+# We don't print the holder if
+#    we weren't asked to
+# OR       we're in text mode
+#     AND     the holder is the one we were asked not to print
+#         OR we've printed the same data as either the finder or the owner
+# so we DO print the holder if
+# We were asked to, AND (we're not in text mode OR...
+        if not show_holder or (afal_config.text and \
+ (i['holder'] == show_holder or ( show_owner and \
+ i['holder'] == i['owner'] ) or (show_finder and i['holder'] == i['finder']))):
+            f['holder'] = ''
+        else:
+            f['holder'] = get_item_entry('holder', i, f, format_character)
         if show_date_xfrd:
             f['date'] = get_item_entry('date_xfrd', i, f, format_date)
         afal.pw(line.format(**f), **fmt)
@@ -537,7 +546,7 @@ def print_full_character(c):
             print_parties(cparties)
         items = afal.get_items('Held_by', char)
         if len(items):
-            print_items(items, '', show_note = args.note, show_finder = True, show_owner = True)
+            print_items(items, '', show_note = args.note, show_finder = char, show_owner = char)
         receivable = afal.get_char_debts(char, 'Receivable')
         if len(receivable):
             print_debt(receivable, 'by', 'Receivable')
@@ -561,8 +570,8 @@ def print_members(members):
         h[char] = format_share(share)
 
     if afal_config.text:
-        header = '  {text}{shares}'
-        lines = ('    {text}{share}', '  {text}{share}', '  {text}{share}', '  {text}{share}\n')
+        header = '{text}{shares}'
+        lines = ('{text}{share}', '{text}{share}', '{text}{share}', '{text}{share}\n')
         share_text = ' for {share} share'
         noshare_text = ''
         trailer = ''
@@ -591,14 +600,14 @@ def print_members(members):
     else:
         shares = ''
 
-    afal.pw(header.format(text = format_plural(members, 'Member'), shares = shares, nlines = nlines), **fmt)
+    afal.pw(header.format(text = format_plural(members, 'Member'), shares = shares, nlines = nlines), **fmt_group_header)
     k = h.keys()
     k.sort()
     n = 0
     for i in k:
         if needshare:
             share = h[i]
-            if share != 1:
+            if share != '1':
                 share = share_text.format(share = share)
             else:
                 share = noshare_text
@@ -617,23 +626,26 @@ def print_members(members):
 def print_full_party(p):
     if p == ['All']:
         p = afal.party_list
+    if afal_config.text:
+        header = '{text}\n'
+        header_pname = '{party}'
+        header_data = '{type}  {date}  {note}'
+    else:
+        header = '<h1>{text}</h1>'
+        header_pname = '<h2><b>{log}{party}</a></b></h2><br>'
+        header_data = '{type}&nbsp;&nbsp;{date}&nbsp;&nbsp;{note}<hr />'
     if len(p) > 1:
-        if afal_config.text:
-            header = '\n        {text}\n'
-        else:
-            header = '<h1>{text}</h1>'
-        afal.pw(header.format(text = format_plural(p, 'Party', 'Parties')), **fmt)
+        afal.pw(header.format(text = format_plural(p, 'Party', 'Parties')), **fmt_section_header)
     for party in p:
         data = afal.get_party_data(party)
         note = data.get('note')
         if not note:
             note = ''
-        if afal_config.text:
-            afal.pw(party, **fmt)
-            afal.pw(data['type'], afal.date_to_str(data['date']), note, **fmt)
-        else:
-            afal.pw("<h2><b>", party_to_log(party), party, "</a></b></h2><br>", **fmt_nsep)
-            afal.pw(data['type'], format_date(afal.date_to_str(data['date'])), note, '<hr />', **fmt)
+        type = data['type']
+#        if type == 'AFAL':
+#            type = ''
+        afal.pw(header_pname.format(party = party, log = party_to_log(party)), **fmt_group_header)
+        afal.pw(header_data.format(type = type, date = format_date(afal.date_to_str(data['date'])), note = note), **fmt_group_header)
 
         members = data['members']
         if len(members):
@@ -641,7 +653,7 @@ def print_full_party(p):
 
         items = afal.get_items('Found_by', party)
         if len(items):
-            print_items(items, 'Found', show_note = True, show_finder = False, show_holder = True, show_owner = True)
+            print_items(items, 'Found', show_note = True, show_finder = False, show_holder = party, show_owner = party)
 
 
 def print_people(p):
@@ -672,7 +684,7 @@ args = parser.parse_args()
 if afal_config.text:
     fmt = { 'max': 130, 'indent': 4 }
     fmt_neol = { 'max': 130, 'indent': 4, 'end':'' }
-    fmt_neol_pad20 = { 'max': 130, 'indent': 0, 'pad': 20, 'end':'' }
+    fmt_neol_pad20 = { 'max': 130, 'indent': 0, 'pad': 25, 'end':'' }
     fmt_nsep = { 'max': 130, 'indent': 4, 'sep':'' }
     fmt_section_header = { 'max': 130, 'prefix': 30, 'sep':'' }
     fmt_group_header = { 'max': 130, 'prefix': 12, 'sep':'' }

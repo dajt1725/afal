@@ -92,8 +92,11 @@ def pw(*args, **kwargs):
             prefix = indent
     sys.stdout.write(prefix)
     sys.stdout.write(ret)
-    if pad and len(ret) < pad and ret.rfind('\n') < 0:
-        sys.stdout.write((pad - len(ret) ) * ' ')
+    if pad and ret.rfind('\n') < 0:
+        if len(ret) < pad:
+            sys.stdout.write((pad - len(ret) ) * ' ')
+        else:
+            sys.stdout.write(' ')
     sys.stdout.write(eol)
 
 
@@ -499,10 +502,10 @@ def char_change_money(char, dir, d):
     coins = get_char_money(char)
     for coin in d:
         amount = sign * int(d[coin])
-        coin = coin.format(s='', es='')
+        coin = coin.format(s='', es='').lower()
         cc = None
         for i in coins:
-            if coin == i['coin'].format(s='', es='') or coin == i['coin'].format(s='s', es='es') or ( 'abbrev' in i and coin == i['abbrev']):
+            if coin == i['coin'].format(s='', es='').lower() or coin == i['coin'].format(s='s', es='es').lower() or ( 'abbrev' in i and coin == i['abbrev'].lower()):
                 cc = i
                 break
         if cc is None:

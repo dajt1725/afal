@@ -18,6 +18,7 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
  composed of silver unless it's on someone's person.  If he fails either\
  condition, he immediately loses all prepared spells.
 ,sell;to=outside the party;item=Nonmagic;cash=1913gp, 80cp
+,commit
 ,give;by=party;to=outside the party;cash=6 harbor moons;note=pearls for Identify
 ,dividend;by=Ches-30-1370;amount=1913gp, 80cp
 ,sell;to=Dexter;item=Ebon Fly;cash=5000gp
@@ -70,18 +71,18 @@ date=3 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-3-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
 ,find;found=Tarsakh-3-1370;name=Nonmagic;holder=Sell;note=City Guard Breastplate,Jeweled Dagger, Long Sword, Spear
 # I have no idea where these items came from
-,give;by=outside the party;to=Maanamere;cash=2 Gem: Emerald 200gp, 2 Gem: Carnelian 100gp, 1 Gem: Amber 90gp, 1 Loot: ring 500gp
-,pay;by=Maanamere;to=Steve;cash=loot: pair of large opal earrings (750gp together or 300gp each)
-,pay;by=Maanamere;to=Darius;cash=1 Loot: platinum necklace 700gp
-,pay;by=Darius;to=Dexter;cash=1 Loot: platinum necklace 700gp
-,pay;by=Maanamere;to=Misery;cash=1 Loot: ring 500gp
-,pay;by=Maanamere;to=Steve;cash=1 Loot: set silver candlesticks 500gp
+,give;by=outside the party;to=Maanamere;cash=2 Gem: Emerald 200gp, 2 Gem: Carnelian 100gp, 1 Gem: Amber 90gp, 1 ring 500gp
+,pay;by=Maanamere;to=Steve;cash=pair of large opal earrings (750gp together or 300gp each)
+,pay;by=Maanamere;to=Darius;cash=1 platinum necklace 700gp
+,pay;by=Darius;to=Dexter;cash=1 platinum necklace 700gp
+,pay;by=Maanamere;to=Misery;cash=1 ring 500gp
+,pay;by=Maanamere;to=Steve;cash=1 set silver candlesticks 500gp
 ,pay;by=Maanamere;to=Steve;cash=2 Gem: Emerald 200gp
-,pay;by=Maanamere;to=Henkles;cash=2 Loot: finely made gold chain 130gp
+,pay;by=Maanamere;to=Henkles;cash=2 finely made gold chain 130gp
 ,pay;by=Maanamere;to=Steve;cash=2 Gem: Carnelian 100gp
 ,pay;by=Maanamere;to=Misery;cash=Gem: Amber 90gp
 ,pay;by=Maanamere;to=Steve;cash=8 Gem: Bloodstone 5gp
-,pay;by=Maanamere;to=Misery;cash=1 Loot: Gold Earring 20gp
+,pay;by=Maanamere;to=Misery;cash=1 Gold Earring 20gp
 date=4 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-4-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
 ,find;found=Maanamere;name=Suit of Ship Captain-ness;holder=Maanamere
@@ -92,7 +93,7 @@ date=4 Tarsakh 1370
 ,give;by=outside the party;to=Tarsakh-4-1370;cash=17sp,42ep,1gp,7toal,2 harbor moon,2 Gem: Pearl 100gp
 ,give;by=Maanamere;to=outside the party;cash=1 harbor moon;note=three boats, 9 barrels, planks
 date=5 Tarsakh 1370
-,sell;to=outside the party;item=Loot: 20yd bolt of fine silk *6;cash=20 harbor moon
+,sell;to=outside the party;item=20yd bolt of fine silk *6;cash=20 harbor moon
 ,give;by=party;to=outside the party;cash=6 harbor moons;note=pearls for Identify
 ,sell;to=Deringa;item=+1 Sling;cash=5cp;debt=2499gp, 195cp
 ,cancel;Deringa
@@ -125,10 +126,10 @@ date=8 Tarsakh 1370
 ,give;to=party;by=outside the party;cash=26 harbor moon
 ,give;by=party;to=outside the party;cash=20 harbor moon;note=for augury sticks
 ## Darius pays two 500gp letters of Credit to Misery
-,give;by=outside the party;to=Darius;cash=2 Loot: Letter of Credit 500gp
-,pay;by=Darius;to=Misery;cash=2 Loot: Letter of Credit 500gp
-,pay;by=Misery;to=Staric;cash=1 Loot: Letter of Credit 500gp
-,pay;by=Misery;to=Henkles;cash=1 Loot: Letter of Credit 500gp
+,give;by=outside the party;to=Darius;cash=2 Letter of Credit 500gp
+,pay;by=Darius;to=Misery;cash=2 Letter of Credit 500gp
+,pay;by=Misery;to=Staric;cash=1 Letter of Credit 500gp
+,pay;by=Misery;to=Henkles;cash=1 Letter of Credit 500gp
 ,lend;to=Staric;item=Wand of Lightning Fan
 date=11 Tarsakh 1370
 ,sell;to=Henkles;item=Ioun Stone of Protection;debt=6000gp
@@ -164,16 +165,16 @@ Henkles=1;Maanamere=1;Staric=.5
 #,dividend;by=Tarsakh-12-1370;amount=26 gem: carnelian 50gp,\
 # 4 gem: citrine 75gp, 18 gem: moonstone 55gp, 33 gem: sardonyx 50gp,\
 # 24 gem: zircon 65gp, 12 gem: garnet 500gp, 7 gem: spinel 500gp;
-,pay;by=Misery;to=Henkles;cash=Loot: ring 500gp, Gem: Amber 90gp, Loot: Gold Earring 20gp
-,pay;by=Henkles;to=Steve;cash=Loot: ring 500gp,2 Loot: finely made gold chain 130gp, Loot: Letter of Credit 500gp
-,pay;by=Henkles;to=Staric;cash=Gem: Amber 90gp, Loot: Gold Earring 20gp
+,pay;by=Misery;to=Henkles;cash=ring 500gp, Gem: Amber 90gp, Gold Earring 20gp
+,pay;by=Henkles;to=Steve;cash=ring 500gp,2 finely made gold chain 130gp, Letter of Credit 500gp
+,pay;by=Henkles;to=Staric;cash=Gem: Amber 90gp, Gold Earring 20gp
 ,pay;by=Steve;to=Denyae;cash=2 Gem: Carnelian 100gp
 ,pay;by=Denyae;to=Staric;cash=2 Gem: Carnelian 100gp
 ,pay;by=Darius;to=Steve;cash=2 Gem: Chrysoberyl 100gp
-#,pay;to=Denyae;cash=loot: pair of large opal earrings (750gp together or 300gp each)
-,pay;by=Steve;to=Denyae;cash=2 Loot: finely made gold chain 130gp
-#,pay;to=Staric;item=Loot: silver candlesticks 500gp
-#,pay;to=Deringa;item=Loot: ring 500gp
+#,pay;to=Denyae;cash=pair of large opal earrings (750gp together or 300gp each)
+,pay;by=Steve;to=Denyae;cash=2 finely made gold chain 130gp
+#,pay;to=Staric;item=silver candlesticks 500gp
+#,pay;to=Deringa;item=ring 500gp
 # People pay down/off some debts
 # Maanamere puts 75% of his money toward debts
 ,pay;by=Deringa

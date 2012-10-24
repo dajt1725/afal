@@ -30,7 +30,7 @@ date=23 Marpenoth 1369
 ,,,name=Crystal of Spellreading;note=Steve failed, Darius part &amp\; failed <d Marpenoth 24 1369>
 ,,,name=Potion of Delusion (Invisibility);note=Steve id <d Marpenoth 24 1369>
 ,,name=Potion of Sweet Water;holder=Steve;note=Auction, Darius failed id <d Marpenoth 24 1369>, Cassie id <d Marpenoth 27 1369>;value=250gp
-,give;by=outside the party;to=Maanamere;cash=8 Gem: Bloodstone 5gp,loot: pair of large opal earrings (750gp together or 300gp each)
+,give;by=outside the party;to=Maanamere;cash=8 Gem: Bloodstone 5gp,pair of large opal earrings (750gp together or 300gp each)
 date=26 Marpenoth 1369
 ,party;type=AFAL;name=Marpenoth-26-1369;Darius=1;Dexter=1;Steve=1
 ,find;found=Marpenoth-26-1369
@@ -57,9 +57,9 @@ date=28 Marpenoth 1369
 ,find;found=Marpenoth-28C-1369
 ,,name=+1/+4(Andarod Gutreaver) Ring of Protection;holder=Cassie;note=Cassie failed id <d Marpenoth 28 1369>, Darius id <d Uktar 10 1369>
 ,,name=+1 Dagger (can glow enough to read a map);owner=Misery;xfrd=11 Uktar 1369;value=600gp
-,,name=Potion of Invulnerability;holder=Dexter;note=Cassie failed id <d Marpenoth 28 1369>
+,,name=Potion of Invulnerability;holder=Dexter;owner=party;note=Cassie failed id <d Marpenoth 28 1369>
 ,,name=Scroll of Protection from Normal Missiles;holder=Darius;owner=party
-,,name=Scroll (MU);note=Enchanted Weapon, Magic Mirror, Globe of Invulnerability
+,,name=Scroll (MU);note=Enchanted Weapon, Magic Mirror, Globe of Invulnerability;owner=party
 ,,name=Potion of Healing in twisted vial;note=Darius id <d Marpenoth 28 1369>;holder=Misery;owner=party
 date=Uktar 8 1369
 ,meet;association=AFAL;status=active;name=Ursula;fullname=Ursula la Bim\
@@ -406,7 +406,7 @@ date=23 Nightal 1369
 ,find;found=Nightal-23-1369
 ,,name=+1 Chain Mail of Swimming
 ,,name=Necklace of Darkness;holder=Denyae;owner=party
-,,name=+2 Long Sword;holder=Maanamere;owner=Maanamere
+,,name=+2 Long Sword
 ,,name=+1/+2(half*)/+3(Humans) Bastard Sword;holder=Tristan
 ,,name=+2 Ring of Protection;holder=Denyae;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=Bracers of Defense AC 5;holder=Ursula;note=Fully id by testing <d Tarsakh 10 1370>
@@ -422,8 +422,10 @@ date=24 Nightal 1369
 ,,name=+1/+3(Fire) Plate Mail;owner=Dexter;xfrd=24 Nightal 1369;value=5000gp
 ,,name=Scroll (C);holder=Auction;note=Bless, Curse, Putrify Food, Focus
 ,,name=Scroll (C);holder=Auction;note=Locate Animals or Plants *2, Snake Charm, Summon Insects, Call Woodland Being, Animal Summoning 3
+,give;to=Misery;item=+1 Bastard Sword
+,give;to=Maanamere;item=+2 Long Sword
 date=Nightal 26 1369
-,writeoff;Narthan;Cassie
+,writeoff;Narthan;Cassie;note=and ran away from the vampires
 ,meet;status=active;association=AFAL;name=Theo;fullname=Theophrastus\
  &quot\;Theo&quot\; Philippus Aureolus Bombast von Hohenheim\
 ;player=David;race=Human;gender=Male;class=Spellcaster, Halruaan\

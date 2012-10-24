@@ -11,7 +11,7 @@ date=9 Hammer 1370
 ,,name=Necklace of Light and Darkness;holder=Henkles;owner=party
 date=13 Hammer 1370
 ,party;type=AFAL;name=Hammer-13-1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Theo=1
-,give;by=outside the party;to=Maanamere;cash=1 Loot: Gold Earring 20gp
+,give;by=outside the party;to=Maanamere;cash=1 Gold Earring 20gp
 ,find;found=Hammer-13-1370
 ,,name=+1 Glaive;holder=Auction;note=6gp, 8#, 1-6/1-10/L/S/speed 8;value=2700gp
 ,,name=+1 Banded Mail;holder=Auction;value=4000gp
@@ -165,8 +165,8 @@ date=Alturiak 29 1370
 date=Ches 3 1370
 ,party;type=AFAL;name=Ches-3a-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Stalker=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Ches-3a-1370;name=Magical Stirrer;owner=party
-,give;by=outside the party;to=Maanamere;cash=Loot: set silver candlesticks 500gp, 2 loot: finely made gold chain\
- 130gp, Loot: platinum necklace 700gp
+,give;by=outside the party;to=Maanamere;cash=set silver candlesticks 500gp, 2 finely made gold chain\
+ 130gp, platinum necklace 700gp
 ,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3b-1370
 ,,name=Potion *4;note=Identify
@@ -177,7 +177,7 @@ date=Ches 3 1370
 ,,,name=Scroll (MU);note=L1: Comprehend Languages *3
 ,party;type=AFAL;name=Ches-3c-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3c-1370
-,,name=Loot: 20yd bolt of fine silk *6
+,,name=20yd bolt of fine silk *6
 ,,name=Ring of Warmth
 ,,name=Carpet of Flying 3x5;holder=Denyae;owner=party
 ,,holder=Dexter;owner=party
