@@ -27,7 +27,7 @@ else:
  '  <table border="1"><tr><th>Character</th><th>Total</th><th>'\
  'Coins</th></tr>'
     line = \
- '   <tr><td><a href="{report}?char={char}&generate=Character">' \
+ '   <tr><td><a href="{report}?todo=char.{char}">' \
  '{char}</a></td><td>{v}</td><td>{c}</td></tr>'
     trailer = \
  '  </table>\n'\

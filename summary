@@ -28,7 +28,7 @@ else:
  'Payable</th><th>Cash</th><th>Net</th></tr>'
     neg = '<font color="red">({v})</font>'
     line = \
- '   <tr><td><a href="{report}?char={char}&generate=Character">' \
+ '   <tr><td><a href="{report}?todo=char.{char}">' \
  '{char}</a></td><td>{r}</td><td>{p}</td><td>{c}</td><td>{n}</td></tr>'
     trailer = \
  '  </table>\n' \
