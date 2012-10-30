@@ -11,7 +11,7 @@ if afal_config.text:
     header = 'Cash Summary as of {date}'
     line = '{char:10} {v:14} {c}'
     trailer = ''
-    wmax = 80
+    wmax = 130
 else:
     header = \
  'Content-Type: text/html\n'\

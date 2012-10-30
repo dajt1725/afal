@@ -3,21 +3,21 @@ date=9 Hammer 1370
 ,find;found=Hammer-9-1370
 ,,name=Scroll (MU);note=MU L2: Whirling Blade;holder=Auction
 ,,name=Potion of Polymorph Self
-,,name=+1 Dagger;owner=outside the party;note=Sold
+,,name=+1 Dagger;owner=Someone;note=Sold
 ,,name=+1 Dagger;owner=Misery;xfrd=9 Hammer 1369
-,,name=Potion of Healing;owner=party
-,,name=Potion (Maybe of Healing);note=Identify,AgL7Fail;owner=party
+,,name=Potion of Healing;owner=AFAL
+,,name=Potion (Maybe of Healing);note=Identify,AgL7Fail;owner=AFAL
 ,,name=Potion of Invisibility
-,,name=Necklace of Light and Darkness;holder=Henkles;owner=party
+,,name=Necklace of Light and Darkness;holder=Henkles;owner=AFAL
 date=13 Hammer 1370
 ,party;type=AFAL;name=Hammer-13-1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Theo=1
-,give;by=outside the party;to=Maanamere;cash=1 Gold Earring 20gp
+,give;by=Someone;to=Maanamere;cash=1 Gold Earring 20gp
 ,find;found=Hammer-13-1370
 ,,name=+1 Glaive;holder=Auction;note=6gp, 8#, 1-6/1-10/L/S/speed 8;value=2700gp
 ,,name=+1 Banded Mail;holder=Auction;value=4000gp
 ,,name=+1 Shield;holder=Tristan
 ,,name=Ring of Water Walking
-,,name=Potion of Healing;owner=party
+,,name=Potion of Healing;owner=AFAL
 date=Hammer 15 1370
 #,writeoff;Theo
 ,party;type=AFAL;name=Hammer-15-1370;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Steve=1;Maanamere=1;Stalker=1;Moogh=1
@@ -60,8 +60,8 @@ date=Hammer 20 1370
 ,party;type=AFAL;name=Hammer-20-1370;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Staric=.5;Stalker=1;Steve=1
 ,find;found=Hammer-20-1370
 ,,name=Dagger of Hurting;holder=Tristan
-,,name=Chardalyn;holder=Ag;note=L4MU Snillics Snowball Swarm;owner=party
-,,name=Glim Gauntlet;holder=Darius;owner=party
+,,name=Chardalyn;holder=Ag;note=L4MU Snillics Snowball Swarm;owner=AFAL
+,,name=Glim Gauntlet;holder=Darius;owner=AFAL
 ,,name=Animal: Heavy War Horse *7;note=1 killed <d Alturiak 6 1370>, sold for approx 182gp, 91cp each
 ,,name=Travelling Spell Book;note=L1: Magic Missile, Unseen Servant, Color Spray, Mending, Charm Person, Detect Illusion, L2: Snilloc's SS, Invisibility, Detect Poison
 ,,name=+1/+2(Lawful) Long Sword;holder=Steve
@@ -73,16 +73,16 @@ date=Hammer 20 1370
 ,,holder=Auction
 ,,,name=+1 Dagger;value=1400gp
 ,,,name=+1 Heavy Crossbow;note=bolts:1sp,.1#,dmg 1-10/1-10,S,P\; bow: 50gp, 14#, M, speed 11, RoF 1/2, Range 8/16/24;value=2700gp
-,,holder=Maanamere;owner=party
+,,holder=Maanamere;owner=AFAL
 ,,,name=+1 Arrow (Sheaf) *3
 ,,,name=Sleep Gas Grenade (M) *2
-,,holder=Denyae;owner=party
+,,holder=Denyae;owner=AFAL
 ,,,name=+1 Arrow (Sheaf) *12
 ,,,name=Sleep Gas Grenade (M) *2
-,,name=+1 Light Crossbow;owner=outside the party;xfrd=30 Hammer 1370;note=Given to the orc chieftan
-,,name=+1 Arrow (Sheaf) *6;holder=Dexter;owner=party
-,,name=+1 Arrow (Sheaf) *3;holder=Henkles;owner=party
-,,name=Sleep Gas Grenade (M) *2;holder=Tristan;owner=party
+,,name=+1 Light Crossbow;owner=Someone;xfrd=30 Hammer 1370;note=Given to the orc chieftan
+,,name=+1 Arrow (Sheaf) *6;holder=Dexter;owner=AFAL
+,,name=+1 Arrow (Sheaf) *3;holder=Henkles;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2;holder=Tristan;owner=AFAL
 ,,name=Potion of Gaseous Form;note=AgL7Fail id, Darius id <d Tarsakh 8 1370>
 ,meet;association=AFAL;status=inactive
 ,,name=Alril;fullname=Alril Elarorrieth;race=Moon Elf;gender=Male\
@@ -164,8 +164,8 @@ date=Alturiak 29 1370
 ,find;found=Alturiak-29-1370;name=Potion of Love ("Philter");holder=Auction;value=300gp
 date=Ches 3 1370
 ,party;type=AFAL;name=Ches-3a-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Stalker=1;Staric=.5;Steve=1;Tristan=1
-,find;found=Ches-3a-1370;name=Magical Stirrer;owner=party
-,give;by=outside the party;to=Maanamere;cash=set silver candlesticks 500gp, 2 finely made gold chain\
+,find;found=Ches-3a-1370;name=Magical Stirrer;owner=AFAL
+,give;by=Someone;to=Maanamere;cash=set silver candlesticks 500gp, 2 finely made gold chain\
  130gp, platinum necklace 700gp
 ,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3b-1370
@@ -179,8 +179,8 @@ date=Ches 3 1370
 ,find;found=Ches-3c-1370
 ,,name=20yd bolt of fine silk *6
 ,,name=Ring of Warmth
-,,name=Carpet of Flying 3x5;holder=Denyae;owner=party
-,,holder=Dexter;owner=party
+,,name=Carpet of Flying 3x5;holder=Denyae;owner=AFAL
+,,holder=Dexter;owner=AFAL
 ,,,name=Potion of Healing
 ,,,name=Potion of Healing
 ,,holder=Auction
@@ -205,26 +205,26 @@ date=Ches 3 1370
 ,,name=Detect Invisible powder *10;note=Grey powder black flecks, smells of rain
 ,,name=Knockout powder *10;note=Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
 ,,name=Make Insubstantial powder *10;note=Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
-,,name=Magic Tent;owner=party;note=Sleeps 8, acts as a Ring of Warmth for the inhabitants
-,,name=Magic Cooking Set;owner=party
-,,name=Gem: lots;owner=outside the party;xfrd=3 Ches 1370;note=Given to Crystalblight
+,,name=Magic Tent;owner=AFAL;note=Sleeps 8, acts as a Ring of Warmth for the inhabitants
+,,name=Magic Cooking Set;owner=AFAL
+,,name=Gem: lots;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 ,,name=Jug of Liquid Magic *2
 ,party;type=AFAL;name=Ches-3d-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1
 ,find;found=Ches-3d-1370
 ,,name=Shameful Tome of Dishonerable Attacks;note=Identify
-,,name=Wand of Lightning Fan;holder=Darius;owner=party
-,,name=Dart of Human Slaying *3(1 used);holder=Henkles;owner=party
-,,name=Ioun Stones;owner=outside the party;xfrd=3 Ches 1370;note=Given to Crystalblight
+,,name=Wand of Lightning Fan;holder=Darius;owner=AFAL
+,,name=Dart of Human Slaying *3(1 used);holder=Henkles;owner=AFAL
+,,name=Ioun Stones;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 date=Ches 7 1370
 ,writeoff;Chusnog;Oguch;Stalker
 date=Ches 25 1370
 ,party;type=AFAL;name=Ches-25-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Ches-25-1370
-,,name=-1 Cursed Khopesh;owner=party;xfrd=25 Ches 1370
+,,name=-1 Cursed Khopesh;owner=AFAL;xfrd=25 Ches 1370
 ,,name=+1 Shield (needs new handle);holder=Auction;note=10gp?, 10#;value=2500gp
 date=Ches 30 1370
 ,party;type=AFAL;name=Ches-30-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
-,give;to=Ches-30-1370;by=outside the party;cash=2 Gem: Chrysoberyl 100gp
+,give;to=Ches-30-1370;by=Someone;cash=2 Gem: Chrysoberyl 100gp
 ,find;found=Ches-30-1370
 ,,name=Nonmagic;note=too much to list here
 ,,name=Ring of Fire Resistance
@@ -233,16 +233,16 @@ date=Ches 30 1370
 ,,name=+1/+3(Cold) Ring of Protection;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1 Ring of Protection;holder=Ag;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1/+3(Saves) Ring of Protection;holder=Henkles;note=Fully id by testing <d Tarsakh 10 1370>
-,,name=+1 Arrow (Flight) *10;holder=Denyae;owner=party
-,,name=+1 Arrow (Flight) *6;holder=Dexter;owner=party
-,,name=+1 Arrow (Flight) *2;holder=Maanamere;owner=party
-,,name=+1 Arrow (Flight) *2;holder=Henkles;owner=party
-,,name=Sleep Gas Grenade (M) *2;owner=party;xfrd=30 Ches 1370
-,,name=Sleep Gas Grenade (M) *2;holder=Brogan;owner=party
-,,name=Sleep Gas Grenade (M) *2;holder=Dexter;owner=party
-,,name=Sleep Gas Grenade (M) *2;holder=Deringa;owner=party
-,,name=Wand of Hurting;holder=Deringa;owner=party
-,,name=Sleep Gas Grenade (M) *2;holder=Staric;owner=party
+,,name=+1 Arrow (Flight) *10;holder=Denyae;owner=AFAL
+,,name=+1 Arrow (Flight) *6;holder=Dexter;owner=AFAL
+,,name=+1 Arrow (Flight) *2;holder=Maanamere;owner=AFAL
+,,name=+1 Arrow (Flight) *2;holder=Henkles;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2;owner=AFAL;xfrd=30 Ches 1370
+,,name=Sleep Gas Grenade (M) *2;holder=Brogan;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2;holder=Dexter;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2;holder=Deringa;owner=AFAL
+,,name=Wand of Hurting;holder=Deringa;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2;holder=Staric;owner=AFAL
 ,,holder=Auction
 ,,,name=+1 Medium Shield;note=10gp?, 10#;value=2500gp
 ,,,name=+1 Footmans Pick;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp
@@ -250,5 +250,5 @@ date=Ches 30 1370
 ,,,name=Oil of Slipperiness;value=750gp
 ,,,name=+1 Bastard Sword;value=3200gp
 ,,name=Oil of Etherialness;note=Darius id <d Tarsakh 8 1370>
-,,name=+1/+3(Backstab) Long Sword;holder=Ag;note=+10% Hide in Shadows;owner=party
+,,name=+1/+3(Backstab) Long Sword;holder=Ag;note=+10% Hide in Shadows;owner=AFAL
 ,,name=Dagger of Hurting

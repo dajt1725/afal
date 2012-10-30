@@ -16,8 +16,8 @@ cur = conn.cursor()
 auction = 'Auction'
 sell = 'Sell'
 destroyed = 'destroyed'
-outside = 'outside the party'
-party = 'party'
+outside = 'Someone'
+party = 'AFAL'
 special = (auction, sell, destroyed, outside)
 
 ######## Cleanup and misc code
@@ -302,10 +302,6 @@ def party_to_date(d):
 
 ######## Copper and Gold piece functions
 
-
-def _or_zero(x):
-    return int(x) if x is not None and len(x) > 0 else 0
-
 def _find_coin(m):
     q = m.group(2)
     if q is None:
@@ -336,9 +332,7 @@ def str_to_coins(s):
 def coins_to_str(s):
     if s is None:
         return ''
-    ret = ''
-    sep = ''
-    nsep = ', '
+    tmp = {}
     for i in s:
         if i == 'value_cp':
             continue
@@ -347,8 +341,21 @@ def coins_to_str(s):
             coin=i.format(s='',es='')
         else:
             coin=i.format(s='s',es='es')
-        ret += '{sep}{n} {coin}'.format(sep=sep, n=n, coin = coin)
-        sep = nsep
+        cpe = coins_byname[coin.lower()]['copper_equiv']
+        if cpe in tmp:
+            tmp[cpe].append([n, coin])
+        else:
+            tmp[cpe] = [[n, coin]]
+    ret = ''
+    sep = ''
+    nsep = ', '
+    l=tmp.keys()
+    l.sort()
+    l.reverse()
+    for i in l:
+        for j in tmp[i]:
+            ret += '{sep}{n} {coin}'.format(sep=sep, n=j[0], coin = j[1])
+            sep = nsep
     return ret
 
 def str_to_cp(s):
@@ -376,11 +383,11 @@ def cp_to_str(cp):
         return str(cp) + "cp"
 
 
-def divide_cp(top, bottom):
-    """Perform an integer division, rounding up randomly"""
+def divide_cp(share, total, shares):
+    """Perform an integer division, rounding up"""
 
-    whole = int(top/bottom)
-    fract = (float(top)/float(bottom)) - whole
+    whole = int((share * total)/shares)
+    fract = (float(share * total)/float(shares)) - whole
     if fract >= 0.5000:
         whole += 1
     return whole
@@ -536,11 +543,18 @@ def char_change_money(char, dir, d):
 def chars_move_cash(i):
     """move cash from one character to another, journaling it"""
 
-    _check_dict(i, must=('date', 'by', 'to'), may=('cash', 'amount_cp', 'item', 'for', 'note', 'part_of'))
+    _check_dict(i, must=('date', 'by', 'to'), may=('cash', 'amount_cp', 'journal', 'item', 'for', 'note', 'part_of', 'journ_by', 'journ_to'))
     by = i['by']
     to = i['to']
+    if get_party_data(by)['type'] == 'AFAL':
+        by = party
+    if get_party_data(to)['type'] == 'AFAL':
+        to = party
     if 'cash' in i:
         cash = i['cash']
+        if not 'value_cp' in cash:
+            print i
+            raise ValueError("invalid cash")
         amount_cp = cash['value_cp']
     else:
         cash = None
@@ -553,15 +567,28 @@ def chars_move_cash(i):
         if cash is None:
             cash = invent_money(amount_cp)
         char_change_money(to, 'get', cash)
-    text = 'gave '+coins_to_str(cash)+' to {to}'
-    if i.get('item'):
-        t_for = " for " + i['item']
-    if i.get('for'):
-        t_for = " for " + i['for']
-    if i.get('note'):
-      text += ' ' + i.get('note','')
-    return journal(str_to_date(i['date']), by, to, amount_cp, None, text, i.get('part_of'))
-
+    if i.get('journal', True):
+        text = 'gave '+coins_to_str(cash)+' {each}to {to}'
+        if i.get('item'):
+            text += " for " + i['item']
+        if i.get('for'):
+            text += " for " + i['for']
+        if i.get('note'):
+          text += ' ' + i['note']
+        if 'journ_by' in i and text in i['journ_by']:
+            ret = i['journ_by'][text]
+            journal_add_by(ret, i['by'])
+        elif 'journ_to' in i and text in i['journ_to']:
+            ret = i['journ_to'][text]
+            journal_add_to(ret, i['to'])
+        else:
+            ret = journal(str_to_date(i['date']), i['by'], i['to'], amount_cp, None, text, i.get('part_of'))
+            if 'journ_by' in i:
+                i['journ_by'][text] = ret
+            if 'journ_to' in i:
+                i['journ_to'][text] = ret
+        return ret
+    return i.get('part_of')
 
 ######## Shares
 
@@ -581,22 +608,47 @@ def journal(date, by, to, cash_cp, virtual_cp, text, part_of = None):
         raise NameError("Missing required field in journal")
     date = str_to_date(date)
     cur.execute (
- "insert into fr_journal ( date, made_by, made_to, cash_cp, virtual_cp, description, part_of ) "
- " values ( %(date)s, %(by)s, %(to)s, %(cash)s, %(virtual)s, %(text)s, %(part_of)s )",
- {'date':date, 'by':by, 'to':to, 'cash':cash_cp, 'virtual': virtual_cp,
+ "insert into fr_journal ( date, cash_cp, virtual_cp, description, part_of ) "
+ " values ( %(date)s, %(cash)s, %(virtual)s, %(text)s, %(part_of)s )",
+ {'date':date, 'cash':cash_cp, 'virtual': virtual_cp,
  'text':text + ".", 'part_of':part_of})
     _check_warnings()
-    return cur.lastrowid
+    id = cur.lastrowid
+    if type(by) is list:
+        for i in by:
+            cur.execute("insert into fr_journ_by ( journal_id, made_by ) value ( %(id)s, %(i)s )", { 'id': id, 'i': i })
+            _check_warnings()
+    else:
+        cur.execute("insert into fr_journ_by ( journal_id, made_by ) value ( %(id)s, %(i)s )", { 'id': id, 'i': by })
+        _check_warnings()
+    if type(to) is list:
+        for i in to:
+            cur.execute("insert into fr_journ_to ( journal_id, made_to ) value ( %(id)s, %(i)s )", { 'id': id, 'i': i })
+            _check_warnings()
+    elif to:
+        cur.execute("insert into fr_journ_to ( journal_id, made_to ) value ( %(id)s, %(i)s )", { 'id': id, 'i': to })
+        _check_warnings()
+    return id
+
+
+def journal_add_by(id, by):
+    cur.execute("insert into fr_journ_by(journal_id, made_by) values(%(id)s, %(by)s)", {'id': id, 'by': by})
+    _check_warnings()
+
+
+def journal_add_to(id, to):
+    cur.execute("insert into fr_journ_to(journal_id, made_to) values(%(id)s, %(to)s)", {'id': id, 'to': to})
+    _check_warnings()
 
 
 def get_journal_dates(char = None):
     """return a list of dates (in text form) of entries in the journal"""
 
     if char:
-        clause = "where made_by = %(char)s or made_to = %(char)s"
+        clause = "natural join fr_journ_by natural join fr_journ_to where fr_journ_by.made_by = %(char)s or fr_journ_to.made_to = %(char)s"
     else:
         clause = ""
-    cur.execute('select distinct date from fr_journal {clause} order by date'.format(clause = clause), {'char': char})
+    cur.execute('select distinct fr_journal.date from fr_journal {clause} order by date'.format(clause = clause), {'char': char})
     resp = cur.fetchall()
     _check_warnings()
     if resp == None or len(resp)==0:
@@ -621,7 +673,7 @@ def get_journal(cond = None):
     char = None
     char_clause = ''
     if 'char' in cond and cond['char'] != 'All':
-        tmp = '(made_by = %(char)s or made_to = %(char)s)'
+        tmp = '(journal_id in (select journal_id from fr_journ_by where made_by = %(char)s) or journal_id in (select journal_id from fr_journ_to where made_to = %(char)s))'
         clause += pre + tmp
         char_clause = ' where ' + tmp
         pre = npre
@@ -656,25 +708,55 @@ def get_journal(cond = None):
         pre = npre
 
     cmd = 'select '\
-' journal_id, part_of, ourtime, date, made_by, made_to, cash_cp, virtual_cp, description'\
+' journal_id, part_of, ourtime, date, cash_cp, virtual_cp, description'\
 ' from fr_journal {clause} order by date, journal_id'.format(clause = clause)
     cur.execute(cmd, {'date1': str_to_date(date1), 'date2': str_to_date(date2), 'char': char})
     resp = cur.fetchall()
     _check_warnings()
     if resp == None or len(resp) == 0:
         return resp
+    ids = []
+    for i in resp:
+        ids.append(i[0])
+    if len(ids) == 1:
+        ids = '({id})'.format(id=ids[0])
+    elif len(ids) > 1:
+        ids = str(tuple(ids))
+    by_map = {}
+    to_map = {}
+    if len(ids) > 0:
+        text = 'select journal_id, made_by from fr_journ_by where journal_id in '+ids
+        cur.execute(text)
+        by_tmp = cur.fetchall()
+        _check_warnings()
+        for i in by_tmp:
+            if i[0] in by_map:
+                by_map[i[0]].append(i[1])
+            else:
+                by_map[i[0]] = [i[1]]
+        text = 'select journal_id, made_to from fr_journ_to where journal_id in '+ids
+        cur.execute(text)
+        to_tmp = cur.fetchall()
+        _check_warnings()
+        for i in to_tmp:
+            if i[0] in to_map:
+                to_map[i[0]].append(i[1])
+            else:
+                to_map[i[0]] = [i[1]]
     ret=[]
     for i in resp:
+        id = i[0]
+        to_list = to_map.get(id)
         t = {}
-        t['journal_id'] = i[0]
+        t['journal_id'] = id
+        t['by'] = by_map[i[0]]
+        t['to'] = to_list
         t['part_of'] = i[1]
         t['ourtime'] = i[2]
         t['date'] = date_to_str(i[3])
-        t['by'] = i[4]
-        t['to'] = i[5]
-        t['cash_cp'] = i[6]
-        t['virtual_cp'] = i[7]
-        t['description'] = i[8].format(to=i[5], cash=cp_to_str(i[6]), virtual=cp_to_str(i[7]))
+        t['cash_cp'] = i[4]
+        t['virtual_cp'] = i[5]
+        t['description'] = i[6]
         ret.append(t)
     return ret
 
@@ -1012,17 +1094,21 @@ def bump_debt_repay_order(debt_id):
 def delete_debt(d):
     """Deletes the specified debt and journal it"""
 
-    _check_dict(d, must=('debt_id', 'by', 'to', 'date', 'amount_cp', 'verb' ), may=('item', 'note', 'part_of'))
-    cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s", d )
+    _check_dict(d, must=('debt_id', 'by', 'to', 'date', 'amount_cp', 'verb' ), may=('item', 'note', 'journaled', 'journal', 'part_of'))
+    cur.execute ( "delete from fr_debt where debt_id = %(debt_id)s", {'debt_id': d['debt_id']} )
     _check_warnings()
-    text = d['verb'] + ' a {virtual} debt'
-    if d['by'] != d['to']:
-        text += ' to {to}'
-    if d.get('item'):
-        text += ' for ' + d['item']
-    if d.get('note'):
-        text += ' ' + d['note']
-    journal(d['date'], d['by'], d['to'], None, d['amount_cp'], text, d.get('part_of'))
+    if d.get('journal',True):
+        text = d['verb'] + ' {a}debt{s} of {virtual} {each}to {to}'
+        if d.get('item'):
+            text += ' for ' + d['item']
+        if d.get('note'):
+            text += ' ' + d['note']
+        if 'journaled' in d and text in d['journaled']:
+            journal_add_to(d['journaled'][text], d['to'])
+        else:
+            journal_id = journal(d['date'], d['by'], d['to'], None, d['amount_cp'], text, d.get('part_of'))
+            if 'journaled' in d:
+                d['journaled'][text] = journal_id
 
 def debt_lower_owed(d):
     """Lower the amount owed on the specified debt and journal it"""
@@ -1031,56 +1117,34 @@ def debt_lower_owed(d):
     cur.execute("update fr_debt set owed_cp = owed_cp - %(lower_cp)s "
  " where debt_id = %(debt_id)s", {'lower_cp':d['lower_cp'], 'debt_id':d['debt_id']})
     _check_warnings()
-    text = d['verb'] + ' {virtual} of a ' + cp_to_str(d['amount_cp']) + ' debt to {to}'
     if d.get('item'):
-        text += ' for ' + d['item']
-    text += ', leaving ' + cp_to_str(d['amount_cp'] - d['lower_cp'])
+        fer = ' for ' + d['item']
+    else:
+        fer = ''
     if d.get('note'):
-        text += ' ' + d['note']
+        note = ' ' + d['note']
+    else:
+        note = ''
+    text = '{verb} {{virtual}} of a {old} debt to {{to}}{fer} leaving {new}{note}'.format(verb=d['verb'], old = cp_to_str(d['amount_cp']),fer=fer, new=cp_to_str(d['amount_cp'] - d['lower_cp']), note=note)
     journal(d['date'], d['by'], d['to'], None, d['lower_cp'], text, d.get('part_of'))
 
 
 def insert_debt(d):
-    """insert a debt into the database and journal it"""
+    """insert a debt into the database"""
 
-    _check_dict(d, must=('date', 'by', 'to', 'amount_cp'), may=('repay_order','share','part_of', 'item', 'note'))
-    if 'repay_order' not in d:
-        d['repay_order'] = 0
-    if 'share' not in d:
-        d['share'] = 1.0
-    if 'part_of' not in d:
-        d['part_of'] = None
-    if 'item' not in d:
-        d['item'] = None
-
+    _check_dict(d, must=('date', 'by', 'to', 'amount_cp'), may=('repay_order','share', 'item'))
     by = d['by']
     to = d['to']
-    d['date'] = str_to_date(d['date'])
     if by == to:
-        text = "noted a self-debt of {virtual}"
-        if d.get('item'):
-            text += " for " + d['item']
-        if d.get('note'):
-            text += ' ' + d['note']
-        journal(d['date'], by, None, None, d['amount_cp'], text, d['part_of'])
-        return
+        raise ValueError("Can't insert a self-debt {by}".format(by=by))
+    e = { 'by': by, 'to': to, 'amount_cp': d['amount_cp'], 'date': str_to_date(d['date']),
+ 'repay_order': d.get('repay_order',0), 'share': d.get('share',1.0), 'item': d.get('item')}
 
     cur.execute("insert into fr_debt "
  " (date,debtee,debtor,repay_order,share,item,initial_cp,owed_cp) "
  " values(%(date)s, %(by)s, %(to)s, %(repay_order)s, %(share)s, %(item)s, "
- " %(amount_cp)s, %(amount_cp)s)", d)
+ " %(amount_cp)s, %(amount_cp)s)", e)
     _check_warnings()
-
-    text = "lent {virtual} to {to}"
-    if d['repay_order'] != 0:
-        text += " repay order " + str(d['repay_order'])
-    if d['share'] != 1.0:
-        text += " for " + share_to_str(d['share']) + " share"
-    if d.get('item'):
-        text += " for " + d['item']
-    if d.get('note'):
-        text += ' ' + d['note']
-    journal(d['date'], by, to, None, d['amount_cp'], text, d['part_of'])
 
 #############################################################################
 

@@ -10,6 +10,16 @@ import re
 
 
 def format_share(s):
+    if float(s) == 1.0:
+        return '1'
+    if float(s) == 0.0:
+        return 'no'
+    if not afal_config.text:
+        if float(s) == 0.5:
+            return '&frac12;'
+        if float(s) == 0.25:
+            return '&frac14;'
+# Shouldn't get here, but who knows?
     if s == int(float(s)):
         return str(int(s))
     s = str(s)
@@ -107,6 +117,19 @@ def munge_html(s):
         ret = re.sub(r'<br>', '\n  ', ret)
     ret = re.sub(r'<d ([^>]*)>', fmt_date, ret)
     return ret
+
+
+def list_to_txt(l):
+    if l is None:
+        return None
+    elif len(l) == 1:
+            return l[0]
+    else:
+        ret = 'and ' + l.pop()
+    while len(l):
+        ret = l.pop() + ', ' + ret
+    return ret
+
 
 #############################################################################
 
@@ -296,11 +319,9 @@ def print_debt(l, tf, p):
         d[ch][n]['order'] = str(i['order'])
         if i['order'] != 0:
             needorder = True
-        if i['share'] != 1.0:
+        d[ch][n]['share'] = format_share(i['share'])
+        if float(i['share']) != 1.0:
             needshare = True
-            d[ch][n]['share'] = format_share(i['share'])
-        else:
-            d[ch][n]['share'] = '1'
         if i['item'] is not None:
             d[ch][n]['item'] = i['item']
         d[ch][n]['initial_cp'] = afal.cp_to_str(i['initial_cp'])
@@ -487,7 +508,10 @@ def print_items(items, verb, show_note = False, show_finder = False, show_owner 
     afal.pw(trailer, **fmt)
 
 
-def print_journal(j, show_sub = False):
+def print_journal(cond, show_sub = False):
+    j = afal.get_journal(cond)
+    if len(j) < 1:
+        return
     sub_hdr = ''
     sub = ''
     if afal_config.text:
@@ -524,7 +548,22 @@ def print_journal(j, show_sub = False):
                 sub = pri_fmt.format(pri = str(e['journal_id']-1000000))
             else:
                 sub = sub_fmt.format(sub =  str(e['journal_id']-1000000), pri = str(e['part_of']-1000000))
-        afal.pw(line.format(by = e['by'], text=e['description'], sub = sub), **fmt)
+        by = e['by']
+        to = e.get('to')
+        if len(by) > 1 or (to is not None and len(to) > 1):
+            f = {'each': 'each ', 'a': '', 's': 's'}
+        else:
+            f = {'each': '', 'a': 'a ', 's': ''}
+        f['by'] = list_to_txt(by)
+        f['to'] = list_to_txt(to)
+        if afal_config.text:
+            f['cash'] = afal.cp_to_str(e['cash_cp'])
+            f['virtual'] = afal.cp_to_str(e['virtual_cp'])
+        else:
+            f['cash'] = '<font color="blue">{cp}</font>'.format(cp=afal.cp_to_str(e['cash_cp']))
+            f['virtual'] = '<font color="orange">{cp}</font>'.format(cp = afal.cp_to_str(e['virtual_cp']))
+        text = e['description'].format(**f)
+        afal.pw(line.format(sub = sub, by = f['by'], text = text), **fmt)
     if prev_date:
         afal.pw(day_trailer, **fmt)
     afal.pw(trailer, **fmt)
@@ -554,9 +593,7 @@ def print_full_character(c):
         if len(payable):
             print_debt(payable, 'to', 'Payable')
 # was primary=True
-        j = afal.get_journal({'latest': True, 'char': char})
-        if len(j):
-            print_journal(j)
+        print_journal({'latest': True, 'char': char})
 
 
 def print_members(members):
@@ -650,11 +687,10 @@ def print_full_party(p):
         members = data['members']
         if len(members):
             print_members(members)
-
         items = afal.get_items('Found_by', party)
         if len(items):
             print_items(items, 'Found', show_note = True, show_finder = False, show_holder = party, show_owner = party)
-
+        print_journal({'char': party})
 
 def print_people(p):
     people = afal.get_characters(p)
@@ -796,9 +832,7 @@ if args.party:
     print_full_party(args.party)
 
 if args.journal:
-    j = afal.get_journal(eval(args.journal))
-    if len(j) > 0:
-        print_journal(j, show_sub = True)
+    print_journal(eval(args.journal), show_sub = True)
 
 if args.items:
     for i in args.items:

@@ -9,3 +9,5 @@ rm afal_config.py
 ln -s afal_config.py.devel afal_config.py
 ./bulk -v 1369-1-6.dat 1369-7-9.dat 1369-10-12.dat 1370-1-3.dat 1370-4.dat > bulk.devel.out 2> bulk.devel.err
 ./report > report.devel.out
+./summary >> report.devel.out
+./cash >> report.devel.out

@@ -1,12 +1,12 @@
 # ? Moogh?
 party;type=AFAL;name=Flamerule-23-1369;date=23 Flamerule 1369;Buffy=1;Darius=1;Devlin=1;Dexter=1;Hahrvee=1;Henkles=1;Maanamere=1;Steve=1;Stewart=1
 find;found=Flamerule-23-1369
-,name=Deck of Wonderous Transformation;owner=party;note=Devlin id <d Eleasias 1 1369>
+,name=Deck of Wonderous Transformation;owner=AFAL;note=Devlin id <d Eleasias 1 1369>
 ,name=Glass Sphere of Wall of Force;note=Steve id <d Eleasias 1 1369>
 ,name=Ioun Stone of Protection;holder=Darius;note=Devlin partially id, Darius, Steve failed <d Eleasias 1 1369>, Steve, Cassie id <d Eleasias 27 1369>
-,name=Ring of Magic Missiles;holder=Steve;note=Devlin, Darius Steve failed id <d Eleasias 1 1369>, Cassie id <d Marpenoth 28 1369>, Used up on or before <d Hammer 13 1370>;owner=party
+,name=Ring of Magic Missiles;holder=Steve;note=Devlin, Darius Steve failed id <d Eleasias 1 1369>, Cassie id <d Marpenoth 28 1369>, Used up on or before <d Hammer 13 1370>;owner=AFAL
 ,name=Key (Magic);note=Darius, Steve fail id <d Eleasias 1 1369>, Steve, Cassie, Darius fail on <d Eleasias 27 1369>
-date=Flamerule 23 1369;Buffy;writeoff;note=Died when a statue exploded
+date=Flamerule 23 1369;Buffy;writeoff;note=by dying when a statue exploded
 date=Eleasias 16 1369;meet;association=AFAL
 ,status=active;name=Misery;fullname=Jan &quot\;Misery&quot\; Jones\
 ;player=Iain;race=Human;gender=Male;class=Fighter;alignment=Neutral;cash=21cp\
@@ -39,23 +39,23 @@ party;type=AFAL;name=Eleasias-16-1369;Darius=1;Devlin=1;Dexter=1;Hahrvee=1;Henkl
 find;found=Eleasias-16-1369
 ,name=Scroll (C12) Volume of Sweet Air, Flamewalk *2
 ,name=Scroll (C12) Continual Darkness *3;holder=Auction
-,name=Scroll (C) Sanctify to Shar;owner=outside the party;xfrd=16 Eleasias 1369;note=to the Moon Knights
+,name=Scroll (C) Sanctify to Shar;owner=Someone;xfrd=16 Eleasias 1369;note=to the Moon Knights
 date=Eleasias 18 1369;writeoff;Devlin;Hahrvee
 party;type=AFAL;name=Eleasias-18-1369;date=18 Eleasias 1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=1;Steve=1;Stewart=1
 find;found=Eleasias-18-1369
   name=Potion of Shopping *3;note=Steve part id <d Eleasias 26 1369>,
-  name=Cooking Pot of Divination;owner=party;note=Steve part id, Darius id <d Eleasias 26 1369>
-  name=+1 Dagger (Charged, 50 charges);owner=outside the party;xfrd=26 Eleasias 1369;value=500gp
+  name=Cooking Pot of Divination;owner=AFAL;note=Steve part id, Darius id <d Eleasias 26 1369>
+  name=+1 Dagger (Charged, 50 charges);owner=Someone;xfrd=26 Eleasias 1369;value=500gp
   name=+1 Dagger (Charged, 50 charges);owner=Misery;xfrd=26 Eleasias 1369;value=500gp
-  name=Makeup of Disguise *6;owner=outside the party;xfrd=26 Eleasias 1369;value=700gp;note=Cassie fail, Steve, Darius id <d Eleasias 27 1369>
-sell;date=30 Eleasias 1369;to=outside the party;item=+1 Dagger (Charged, 50 charges)  #2;cash=500gp;virtual
+  name=Makeup of Disguise *6;owner=Someone;xfrd=26 Eleasias 1369;value=700gp;note=Cassie fail, Steve, Darius id <d Eleasias 27 1369>
+sell;date=30 Eleasias 1369;to=Someone;item=+1 Dagger (Charged, 50 charges)  #2;cash=500gp;virtual
 #party;type=AFAL;name=Eleasias-30-1369;date=30 Eleasias 1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=1;Steve=1;Stewart=1
 find;date_found=Eleasias 30 1369
   name=Weapon: Wife;found=Henkles;holder=Henkles;xfrd=30 Eleasias 1369;value=1200gp;note=Identify in Undermountain?, Narthan id <d 30 Eleasias 1369>
   name=+1/+3(Undead) Large Shield;found=Dexter;holder=Dexter;xfrd=30 Eleasias 1369;value=2300gp;note=Narthan id <d 30 Eleasias 1369>
   name=+2/+3(Large)/+4(Huge+) Purple Chain Mail;found=Misery;holder=Misery;xfrd=30 Eleasias 1369;value=1500gp;note=Narthan id <d 30 Eleasias 1369>
-  name=+1 Shield can cast 1d4 healing once/week;found=party;xfrd=30 Eleasias 1369;value=1500gp;note=Narthan id <d 30 Eleasias 1369>
-find;found=party;date_found=Eleint 17 1369
+  name=+1 Shield can cast 1d4 healing once/week;found=AFAL;xfrd=30 Eleasias 1369;value=1500gp;note=Narthan id <d 30 Eleasias 1369>
+find;found=AFAL;date_found=Eleint 17 1369
   name=+1 Arrow (Flight);holder=Dexter
   name=+1 Arrow (Flight);holder=Maanamere
   name=+1 Arrow (Flight);holder=Misery
@@ -64,9 +64,9 @@ find;found=party;date_found=Eleint 17 1369
   name=+1 Sling Bullet;holder=Darius;note=Name is Bullwinkle
 party;type=AFAL;name=Eleint-19-1369;date=19 Eleint 1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=0;Steve=1;Stewart=1
 find;found=Eleint-19-1369
-  name=Arrow (Sheaf) of Holding *2;holder=Denyae;note=Steve failed, Darius id <d Eleint 20 1369>;owner=party
+  name=Arrow (Sheaf) of Holding *2;holder=Denyae;note=Steve failed, Darius id <d Eleint 20 1369>;owner=AFAL
   name=+2 Shield;holder=Narthan;note=Narthan id <d Eleint 19 1369>
-  name=Ring of Teleport Adventurer Into Undermountain;note=Steve, Darius part id on <d Eleint 20 1369>;owner=outside the party;xfrd=27 Eleint 1369
+  name=Ring of Teleport Adventurer Into Undermountain;note=Steve, Darius part id on <d Eleint 20 1369>;owner=Someone;xfrd=27 Eleint 1369
   name=Oil of Firey Burning;owner=destroyed;xfrd=12 Uktar 1369;note=Used by Steve, Temple id <d Eleint 27 1369>
 sell;to=Narthan;item=+2 Shield;date=Eleint 20 1369;debt=2100gp;cash=900gp;virtual
 find;found=Stewart;holder=Stewart;name=Chardalyn-headed Mace;value=42gp;date_found=Eleint 25 1369

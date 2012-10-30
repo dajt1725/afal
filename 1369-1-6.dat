@@ -38,8 +38,8 @@ meet;status=dummy
 ,name=Auction
 ,name=Sell
 ,name=destroyed
-,name=outside the party
-,name=party;cash=3 sembian steel pieces, 36cp, 48sp, 8ep, 114gp, 81pp, 3 gond bells, 32 harbor moons, 6 Gem: Moonstone 50gp
+,name=Someone
+,name=AFAL;cash=3 sembian steel pieces, 36cp, 48sp, 8ep, 114gp, 81pp, 3 gond bells, 32 harbor moons, 6 Gem: Moonstone 50gp
 date=Ches 1 1369;meet;association=AFAL
 ,status=active;name=Darius;fullname=Darius of Waterdeep;player=Ian;race=Human\
 ;gender=Male;class=Wild Mage;alignment=Chaotic Good;picture=Darius.gif\
@@ -135,8 +135,8 @@ date=Mirtul 8 1369;meet;status=dead;name=Rabairnil;race=Human;gender=Male\
 date=Mirtul 26 1369
 ,party;type=AFAL;name=Mirtul-26-1369;Barnabus=1;Darius=1;Dexter=1;Henkles=1;Moogh=1;Steve=1;Stewart=1
 ,find;found=Mirtul-26-1369
-,,owner=outside the party;xfrd=23 Ches 1370;value=15000gp;name=Windchimes of Dusk;note=Devlin part id, fail <d Kythorn 27 1369>, Buffy id <d Flamerule 5 1369>
-,,owner=party
+,,owner=Someone;xfrd=23 Ches 1370;value=15000gp;name=Windchimes of Dusk;note=Devlin part id, fail <d Kythorn 27 1369>, Buffy id <d Flamerule 5 1369>
+,,owner=AFAL
 ,,,name=Space Heater
 ,,,name=Animal: "Manual of Golems";note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
 ,,,name=Animal: "Manual of Bodily Health";note=ESP by Darius and Know Alignment by Stewart on <d Flamerule 16 1369>
@@ -176,7 +176,7 @@ date=16 Kythorn 1369
 ,,name=Scroll of Protection from Petrification
 ,,name=Scroll of Protection from Magic
 ,,name=Scroll (MU);note=L3: Slow
-,,name=Potion of Delusion (Flying);owner=party;note=Devlin id <d Kythorn 24 1369>.
+,,name=Potion of Delusion (Flying);owner=AFAL;note=Devlin id <d Kythorn 24 1369>.
 ,,xfrd=24 Flamerule 1369
 ,,,name=Weapon: Silver Strike;owner=Henkles;note=Devlin part id, fail <d Kythorn 24 1369>, Buffy, Darius failed id <d Kythorn 28 1369>, Steve failed, Buffy id <d Flamerule 4 1369>
 ,,,name=Weapon: Binky;owner=Maanamere;note=Devlin failed id <d Kythorn 26 1369>, Buffy failed, Darius part id, fail <d Kythorn 28 1369>, Steve, Buffy, Darius part id and fail on <d Flamerule 4 1369>
@@ -192,8 +192,7 @@ date=Kythorn 23 1369;meet;association=AFAL;status=inactive;
  <d Kythorn 23 1369>.Last mentioned in the party log on <d Eleasias 13 1369>.\
 ;joined=Kythorn 23 1369
 ,name=Hahrvee;player=Ross;race=Unknown;gender=Male?;class=Ranger\
-;alignment=Unknown Good?;equipment=Lost in the depths of time\
-;characteristics=Forgotten;note=Joined the party on <d Kythorn 23 1369>.\
+;alignment=Unknown Good?;note=Joined the party on <d Kythorn 23 1369>.\
   Last mentioned in the party log on <d Eleasias 12 1369>\
 ;joined=Kythorn 23 1369
 date=Kythorn 29 1369

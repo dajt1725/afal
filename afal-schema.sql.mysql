@@ -54,12 +54,20 @@ create table fr_journal (
 	part_of integer unsigned references fr_journal,
 	ourtime timestamp not null default CURRENT_TIMESTAMP,
 	date integer unsigned not null,
-	made_by varchar(128) not null,
-	made_to varchar(128),
 	cash_cp integer unsigned,
 	virtual_cp integer unsigned,
 	description text not null
 ) auto_increment=1000000;
+create table fr_journ_by (
+	made_by varchar(128) not null references fr_party,
+        journal_id integer unsigned not null references fr_journal,
+        primary key(made_by, journal_id)
+);
+create table fr_journ_to (
+	made_to varchar(128) not null references fr_party,
+	journal_id integer unsigned references fr_journal,
+	primary key(made_to, journal_id)
+);
 create table fr_money_type (
 	money_id integer unsigned not null primary key auto_increment,
 	coin varchar(128) unique not null,
