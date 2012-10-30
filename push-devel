@@ -1,0 +1,6 @@
+cp afal.py.mysql /var/www/cgi-bin/afal-devel.py
+cp afal_config.py.devel /var/www/cgi-bin/afal_config-devel.py
+cp cash /var/www/cgi-bin/cash-devel.cgi
+cp menu /var/www/cgi-bin/menu-devel.cgi
+cp report /var/www/cgi-bin/report-devel.cgi
+cp summary /var/www/cgi-bin/summary-devel.cgi
