@@ -106,16 +106,18 @@ def do_lend(d):
     party_data = afal.get_party_data(by)
     lenders = party_data['members']
     shares = sum(lenders.values())
-    if shares > 1:
-        even_cp = shares * int(amount_cp/shares)
-        if even_cp != int(even_cp):
-            even_cp -= shares
+    if shares == 1:
+        even_cp = amount_cp
+    else:
+        share_mult = 1
+        for share in lenders.values():
+            if share > 0 and 1/share > share_mult:
+                share_mult = int(1/share)
+        even_cp = shares * share_mult * int(amount_cp/(shares*share_mult))
         even_cp = int(even_cp)
         if even_cp != amount_cp:
            sys.stderr.write("Even shares would be lending {even} not {amount} for shares of {even_shares} with {leftover} unaccounted for in {d}\n".format(
 even=afal.cp_to_str(even_cp), amount=afal.cp_to_str(amount_cp), even_shares = afal.cp_to_str(int(even_cp/shares)), leftover = afal.cp_to_str(amount_cp-even_cp),d=d))
-    else:
-        even_cp = amount_cp
     if len(lenders) > 1 and d.get('journal',True):
         text = "{each}lent {virtual} to {to}"
         if d.get('note'):
@@ -394,7 +396,7 @@ def scale_cash(d,share):
     ret = {}
     for i in d:
         if d[i] * share != int(d[i] * share):
-            raise ValueError("cash doesn't scale")
+            raise ValueError("cash {n} {i} doesn't scale by {share}".format(n=d[i],i=i,share=share))
         ret[i] = int(d[i] * share)
 #    print "scale cash", d, "to", ret, "by", share
     return ret
@@ -407,6 +409,10 @@ def do_dividend(d):
     part_of = d.get('part_of')
     members = party_data['members']
     shares = float(sum(members.values()))
+    share_mult = 1
+    for share in members.values():
+        if share > 0 and 1/share > share_mult:
+            share_mult = int(1/share)
     text = "paid a dividend of {cash}"
     if 'amount' in d:
         if 'cash' in d:
@@ -414,34 +420,35 @@ def do_dividend(d):
         amount_cp = afal.str_to_cp(d['amount'])
         cash = None
         even_cash = None
-        if shares > 1:
-            even_cp = shares * int(amount_cp/shares)
-            if even_cp != int(even_cp):
-                even_cp -= shares
+        if shares == 1:
+            even_cp = amount_cp
+        else:
+            even_cp = shares * share_mult * int(amount_cp/(share_mult * shares))
             even_cp = int(even_cp)
             if amount_cp != even_cp:
                 text += "(and {cp} to the party)".format(cp = afal.cp_to_str(amount_cp-even_cp))
             text += " split into {sh} shares of {{cs}}{ea}{{ce}} each".format(sh = afal.share_to_str(shares), ea = afal.cp_to_str(int(even_cp/shares)))
-        else:
-            even_cp = amount_cp
-
     elif 'cash' in d:
         cash = afal.str_to_coins(d['cash'])
-        if shares > 1:
+        if shares == 1:
+            even_cash = cash
+            even_cp = cash['value_cp']
+        else:
 	    even_cash = {'value_cp': 0}
+            rem_cash = {'value_cp': 0}
             for coin in cash:
                 if coin == 'value_cp':
                     continue
-                even_coin = shares * int(cash[coin]/shares)
-                if even_coin != int(even_coin):
-                    even_coin -= shares
+                even_coin = int(shares * share_mult * int(cash[coin]/(shares*share_mult)))
                 even_cash[coin] = int(even_coin/shares)
+                if cash[coin] != even_coin:
+                    rem_cash[coin] = cash[coin] - even_coin
+                    rem_cash['value_cp'] += rem_cash[coin] * afal.coins_byname[coin]['copper_equiv']
                 even_cash['value_cp'] += even_cash[coin] * afal.coins_byname[coin]['copper_equiv']
+            if rem_cash['value_cp'] > 0:
+                text += "(and {cash} to the party)".format(cash=afal.coins_to_str(rem_cash))
             text += " split into {sh} shares of {{cs}}{ea}{{ce}} each".format(sh = afal.share_to_str(shares), ea = afal.coins_to_str(even_cash))
             even_cp = even_cash['value_cp'] * shares
-        else:
-            even_cash = cash
-            even_cp = cash['value_cp']
     else:
         raise ValueError("Need either cash or amount")
     if shares != len(members):
@@ -803,6 +810,12 @@ def do_cons(d):
             afal.chars_move_cash({'date': date, 'by': by_char, 'to': wi_char, 'cash': by_mv, 'note': note, 'part_of': part_of, 'journal': False})
             afal.chars_move_cash({'date': date, 'by': wi_char, 'to': by_char, 'cash': wi_mv, 'note': note, 'part_of': part_of, 'journal': False})
 
+
+def do_break(d):
+    afal.fini()
+    sys.exit(1)
+
+
 def do_something(d):
     if args.verbose:
         print "doing", d
@@ -824,6 +837,7 @@ def do_something(d):
 do_something.last_date = None
 
 can_do = {
+ 'break' : do_break,
  'cancel': do_cancel,
  'coin': do_coin,
  'commit': do_commit,

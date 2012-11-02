@@ -1,17 +1,21 @@
 #!/usr/bin/python
 from __future__ import print_function
+import argparse
+import cgitb
 import afal_config
 import afal
-import cgitb
 
 cgitb.enable()
 date = afal.date_to_str(afal.date_list[-1])
 afal.character_list.insert(0,afal.party)
 if afal_config.text:
+    parser = argparse.ArgumentParser('Generate a cash summary')
+    parser.add_argument('--width', '-w', type=int, default=130, help='width to wrap at')
+    args = parser.parse_args()
     header = 'Cash Summary as of {date}'
     line = '{char:10} {v:14} {c}'
     trailer = ''
-    wmax = 130
+    wmax = args.width
 else:
     header = \
  'Content-Type: text/html\n'\

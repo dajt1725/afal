@@ -14,11 +14,10 @@ def format_share(s):
         return '1'
     if float(s) == 0.0:
         return 'no'
-    if not afal_config.text:
-        if float(s) == 0.5:
-            return '&frac12;'
-        if float(s) == 0.25:
-            return '&frac14;'
+    if float(s) == 0.5:
+        return '&frac12;'
+    if float(s) == 0.25:
+        return '&frac14;'
 # Shouldn't get here, but who knows?
     if s == int(float(s)):
         return str(int(s))
@@ -26,6 +25,7 @@ def format_share(s):
     if s[0:2] == '0.':
         s = s[1:]
     return s
+
 
 def format_plural(n, s, p = None):
     """if len(n) is 1, return a singular string, else a plural one"""
@@ -40,6 +40,7 @@ def format_plural(n, s, p = None):
         f = '{n} {p}'
     return f.format(n = n, s = s, p = p)
 
+
 def format_date_log(d):
     if d is None:
         return None
@@ -52,6 +53,7 @@ def format_date_log(d):
         l = re.sub(' ', '_', l)
         return '<a href="{logs}{l}.html">{d}</a>'.format(logs = afal_config.logs,
  l = l, d = d)
+
 
 def format_date(d):
     if d is None:
@@ -68,22 +70,24 @@ def format_date(d):
     return '<a href="{logs}{l}.html">{d}</a>'.format(logs = afal_config.logs,
  l = l, d = d)
 
-def format_party(p):
-    if afal_config.text:
-        return p
-    elif afal.get_party_data(p)['type'] == 'Character':
-        return '<a href="{report}?generate=Show&todo=char.{p}">{p}</a>'.format(
- report = afal_config.report, p = p)
-    else:
-        return '<a href="{report}?generate=Show&todo=party.{p}">{p}</a>'.format(
- report = afal_config.report, p = p)
 
 def format_character(c):
-    if afal_config.text:
+    if afal_config.text or c not in afal.character_list:
         return c
     else:
         return '<a href="{report}?generate=Show&todo=char.{c}">{c}</a>'.format(
  report = afal_config.report, c = c)
+
+
+def format_party(p):
+    if afal_config.text:
+        return p
+    elif p in afal.party_list:
+        return '<a href="{report}?generate=Show&todo=party.{p}">{p}</a>'.format(
+ report = afal_config.report, p = p)
+    else:
+        return format_character(p)
+
 
 def party_to_log(p):
     return '<a href="{logs}{l}.html">'.format(logs = afal_config.logs, l = re.sub(r'([^-]*-)?([^-]+)-(Festival|[0-9]+)[A-Za-z]?-([^-]+)', r'\2_\3_\4', p))
@@ -97,16 +101,18 @@ def format_item(i, party = None):
             party = tmp['finder']
         return party_to_log(party) + i + '</a>'
 
+
 def fmt_date(m):
     return format_date(m.group(1))
+
 
 def munge_html(s):
     if s is None:
         return ''
     ret = s
     if afal_config.text:
-        ret = re.sub(r'&frac12;', r' 1/2', ret)
-        ret = re.sub(r'&frac14;', r' 1/4', ret)
+        ret = re.sub(r'&frac12;', r'1/2', ret)
+        ret = re.sub(r'&frac14;', r'1/4', ret)
         ret = re.sub(r'&quot;', r'"', ret)
         ret = re.sub(r'&apos;', r"'", ret)
         ret = re.sub(r'&amp;', r'&', ret)
@@ -123,15 +129,16 @@ def list_to_txt(l):
     if l is None:
         return None
     elif len(l) == 1:
-            return format_character(l[0])
+            return format_party(l[0])
     else:
-        ret = 'and ' + format_character(l.pop())
+        ret = 'and ' + format_party(l.pop())
     while len(l):
-        ret = format_character(l.pop()) + ', ' + ret
+        ret = format_party(l.pop()) + ', ' + ret
     return ret
 
 
 #############################################################################
+
 
 def print_char(char, verbose = False):
     d = afal.get_char_data(char)
@@ -288,7 +295,7 @@ def print_parties(parties):
                 share = line_share_1.format(share = share)
             else:
                 share = line_share_n.format(share = share)
-        afal.pw(lines[n].format(text = format_party(i[0]), share = share), **fmt_neol_pad20)
+        afal.pw(munge_html(lines[n].format(text = format_party(i[0]), share = share)), **fmt_neol_pad20)
         n += 1
         if n == nlines:
             n = 0
@@ -341,11 +348,12 @@ def print_debt(l, tf, p):
         share_fmt = ' for {share} share'
         order_fmt = ' repay order {order}'
         item_fmt = ' for {item}'
-        line = '{ch_txt}  {date:20} {amount}{initial}{share}{order}{item}'
+        item_sh_fmt = ' of {item}'
+        line = '{ch_txt}  {date:20} {amount}{initial}{order}{share}{item}'
 
         trailer = ''
     else:
-        header = '<h3>{text}</h3><table border="1"><tr><th>Who</th><th>Date</th><th>Amount</th>{hdr_initial}{hdr_share}{hdr_order}<th>Item</th></tr>'
+        header = '<h3>{text}</h3><table border="1"><tr><th>Who</th><th>Date</th><th>Amount</th>{hdr_initial}{hdr_order}{hdr_share}<th>Item</th></tr>'
         if needinitial:
             hdr_initial = '<th>Initial</th>'
         if needshare:
@@ -358,7 +366,8 @@ def print_debt(l, tf, p):
         share_fmt = '<td>{share}</td>'
         order_fmt = '<td>{order}</td>'
         item_fmt = '{item}'
-        line = '<tr>{ch_txt}<td>{date}</td><td>{amount}</td>{initial}{share}{order}<td>{item}</td></tr>'
+        item_sh_fmt = item_fmt
+        line = '<tr>{ch_txt}<td>{date}</td><td>{amount}</td>{initial}{order}{share}<td>{item}</td></tr>'
         trailer = '</table><hr />'
     text = format_plural(l, p + ' Debt')
     if len(l) != 1:
@@ -381,7 +390,8 @@ def print_debt(l, tf, p):
             else:
                 initial = ''
             if needshare and (not afal_config.text or d[ch][j]['share'] != '1'):
-                share = share_fmt.format(share = d[ch][j]['share'])
+                share = munge_html(share_fmt.format(share = d[ch][j]['share']))
+                item_fmt = item_sh_fmt
             else:
                 share = ''
             if needorder and (not afal_config.text or d[ch][j]['order'] != '0'):
@@ -501,7 +511,7 @@ def print_items(items, verb, show_note = False, show_finder = False, show_owner 
  i['holder'] == i['owner'] ) or (show_finder and i['holder'] == i['finder']))):
             f['holder'] = ''
         else:
-            f['holder'] = get_item_entry('holder', i, f, format_character)
+            f['holder'] = get_item_entry('holder', i, f, format_party)
         if show_date_xfrd:
             f['date'] = get_item_entry('date_xfrd', i, f, format_date)
         afal.pw(line.format(**f), **fmt)
@@ -652,7 +662,7 @@ def print_members(members):
                 share = share_text.format(share = share)
             else:
                 share = noshare_text
-        afal.pw(lines[n].format(text = format_character(i), share=share), **fmt_neol_pad20)
+        afal.pw(munge_html(lines[n].format(text = format_character(i), share=share)), **fmt_neol_pad20)
         n += 1
         if n == nlines:
             n = 0
@@ -696,6 +706,7 @@ def print_full_party(p):
             print_items(items, 'Found', show_note = True, show_finder = False, show_holder = party, show_owner = party)
         print_journal({'char': party})
 
+
 def print_people(p):
     people = afal.get_characters(p)
     if len(people) > 1:
@@ -712,6 +723,8 @@ def print_people(p):
 
 
 #############################################################################
+
+
 parser = argparse.ArgumentParser('Generate a report')
 parser.add_argument('--character', '-c', nargs='*', default=[], help='report on these characters')
 parser.add_argument('--items', '-i', nargs='*', default = [], help='display sepecified item type(s)')
@@ -719,15 +732,16 @@ parser.add_argument('--journal', '-j', default=None, help='journal on this chara
 parser.add_argument('--members', '-m', nargs='*', default = [], help='display members of the specified group(s)')
 parser.add_argument('--note', '-n', default = False, action='store_true', help='display note entries for items')
 parser.add_argument('--party', '-p', nargs='*', default = [], help='report on these parties')
+parser.add_argument('--width', '-w', type=int, default=130, help='width to wrap at')
 args = parser.parse_args()
 
 if afal_config.text:
-    fmt = { 'max': 130, 'indent': 4 }
-    fmt_neol = { 'max': 130, 'indent': 4, 'end':'' }
-    fmt_neol_pad20 = { 'max': 130, 'indent': 0, 'pad': 25, 'end':'' }
-    fmt_nsep = { 'max': 130, 'indent': 4, 'sep':'' }
-    fmt_section_header = { 'max': 130, 'prefix': 30, 'sep':'' }
-    fmt_group_header = { 'max': 130, 'prefix': 12, 'sep':'' }
+    fmt = { 'max': args.width, 'indent': 4 }
+    fmt_neol = { 'max': args.width, 'indent': 4, 'end':'' }
+    fmt_neol_pad20 = { 'max': args.width, 'indent': 0, 'pad': 25, 'end':'' }
+    fmt_nsep = { 'max': args.width, 'indent': 4, 'sep':'' }
+    fmt_section_header = { 'max': args.width, 'prefix': 30, 'sep':'' }
+    fmt_group_header = { 'max': args.width, 'prefix': 12, 'sep':'' }
     title = ''
     if len(args.character) == 0 and len(args.party) == 0 and \
  len(args.items) == 0 and args.journal is None and \

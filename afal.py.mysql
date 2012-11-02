@@ -344,8 +344,8 @@ def coins_to_str(s):
         if not i in coins_byname:
             pw(coins_byname,max=80)
             raise ValueError("Unknown coin '"+i+"' in coins")
-        n = s[i]
-        if int(n) == 1:
+        n = int(s[i])
+        if n == 1:
             coin=i.format(s='',es='')
         else:
             coin=i.format(s='s',es='es')
