@@ -107,7 +107,7 @@ equipment=Field plate, partisan,\
  eaten by a giant on <d Hammer 20 1370>.  Paid off and let go on\
  <d Ches 30 1370>.
 date=Midwinter Festival 1370
-,writeoff;Moogh
+,writeoff;Moogh;note=and went home to his family
 ,meet;association=AFAL;status=inactive
 ,,name=Chusnog;race=Orc;gender=Male;class=Fighter;alignment=Lawful Evil\
 ;joined=Midwinter Festival 1370;large_picture=Chusnog_lg.png;picture=Chusnog.png\
@@ -216,7 +216,7 @@ date=Ches 3 1370
 ,,name=Dart of Human Slaying *3(1 used);holder=Henkles;owner=AFAL
 ,,name=Ioun Stones;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 date=Ches 7 1370
-,writeoff;Chusnog;Oguch;Stalker
+,writeoff;Chusnog;Oguch;Stalker;note=because the orc village is nice this time of year
 date=Ches 25 1370
 ,party;type=AFAL;name=Ches-25-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Ches-25-1370
@@ -228,7 +228,7 @@ date=Ches 30 1370
 ,find;found=Ches-30-1370
 ,,name=Nonmagic;note=too much to list here
 ,,name=Ring of Fire Resistance
-,,name=Ebon Fly
+,,name=Ebony Fly
 ,,name=Poison: Urds Teeth *3
 ,,name=+1/+3(Cold) Ring of Protection;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1 Ring of Protection;holder=Ag;note=Fully id by testing <d Tarsakh 10 1370>

@@ -20,7 +20,7 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
 ,sell;to=Someone;item=Nonmagic;cash=1908gp, 108sp
 ,give;by=AFAL;to=Someone;cash=6 harbor moons;note=pearls for Identify
 ,dividend;by=Ches-30-1370;cash=1908gp, 108sp
-,sell;to=Dexter;item=Ebon Fly;cash=5000gp
+,sell;to=Dexter;item=Ebony Fly;cash=5000gp
 ,sell;to=Henkles;item=Poison: Urds Teeth *3;cash=105gp
 ,trade;by=Ches-30-1370;to=Darius;cash=2 Gem: Chrysoberyl 100gp;for=200gp
 date=2 Tarsakh 1370

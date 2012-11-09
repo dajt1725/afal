@@ -77,7 +77,7 @@ date=Uktar 8 1369
 date=Uktar 9 1369
 ,party;type=AFAL;name=Uktar-9-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Uktar-9-1369
-,,name=Chardalyn *3
+,,name=Chardalyn *3;owner=AFAL
 ,,name=Wand of Small Fires;holder=Ursula;owner=AFAL
 ,,name=Scroll (HM Cleric L4);holder=Dexter;note=(used L2 Cure Moderate Wounds), L2 Diminished Rite, L2 Heal Light Wounds;owner=AFAL
 date=11 Uktar 1369
@@ -107,7 +107,7 @@ date=12 Uktar 1369;
 ,,name=Potion of Heroism;owner=AFAL
 ,,name=Scroll (C) *2;owner=Someone;xfrd=13 Uktar 1369;value=3300gp
 ,,name=Potion of Murdoch's Insect Ward;holder=Auction
-,,name=Potion of Invisibility
+,,name=Potion of Invisibility;owner=AFAL
 ,,name=Potion of Undead Control (Skeleton);holder=Auction;value=2500gp
 ,party;type=AFAL;name=Uktar-12C-1369;Misery=1;Stewart=1;Maanamere=1;Henkles=1;Darius=1;Dexter=1;Steve=1;Narthan=1;Gomsha=0;note=Up to "At this point, Narthan, Gomsha, Maanamere and Steve joined Cassie"...
 ,party;type=AFAL;name=Uktar-12D-1369;Darius=1;Dexter=1;Henkles=1;Misery=1;Stewart=1;Ursula=1;note=Up to "Somewhere around this point, Maanamere came forward"...
@@ -374,7 +374,7 @@ date=Nightal 8 1369
  lairs on <d Nightal 21 1369>.  She made another attack on <d Hammer 8 1370>.\
  We got gifts from her on <d Ches 20 1370>.
 date=Nightal 9 1369
-,writeoff;Marcae
+,writeoff;Marcae;note=because vampires are *scary*
 date=12 Nightal 1369
 ,party;type=AFAL;name=Nightal-12-1369;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Nightal-12-1369
@@ -407,7 +407,7 @@ date=23 Nightal 1369
 ,,name=+1 Chain Mail of Swimming
 ,,name=Necklace of Darkness;holder=Denyae;owner=AFAL
 ,,name=+2 Long Sword
-,,name=+1/+2(half*)/+3(Humans) Bastard Sword;holder=Tristan
+,,name=+1/+2(half*)/+3(Humans) Bastard Sword;holder=Moogh
 ,,name=+2 Ring of Protection;holder=Denyae;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=Bracers of Defense AC 5;holder=Ursula;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=Bracers of Defense AC 5;holder=Darius;note=Fully id by testing <d Tarsakh 10 1370>
