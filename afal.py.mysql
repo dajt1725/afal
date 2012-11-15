@@ -70,9 +70,9 @@ def pw(*args, **kwargs):
     
     eol = kwargs.get('end', '\n')
     asep = kwargs.get('sep', ' ')
-    m = kwargs.get('max','')
-    indent = kwargs['indent'] * ' ' if 'indent' in kwargs else ''
-    prefix = kwargs['prefix'] * ' ' if 'prefix' in kwargs else ''
+    m = kwargs.get('max',None)
+    indent = kwargs.get('indent',0) * ' '
+    prefix = kwargs.get('prefix',0) * ' '
     pad = kwargs.get('pad')
     ret = ''
     sep = ''
@@ -96,7 +96,7 @@ def pw(*args, **kwargs):
         if len(ret) < pad:
             sys.stdout.write((pad - len(ret) ) * ' ')
         else:
-            sys.stdout.write(' ')
+            sys.stdout.write('  ')
     sys.stdout.write(eol)
 
 
@@ -306,37 +306,31 @@ def _find_coin(m):
     q = m.group(2)
     if q is None:
         q = 1
-    str_to_coins.ret[m.group(3)] = int(q)
+    str_to_coins.coins[m.group(3)] = int(q)
     return ''
 
-def str_to_coins(s):
-    global coins_byname
-    if s is None:
-        return None
-    str_to_coins.ret = {}
-    tmp = s.lower()
-    while len(tmp)>0:
-        rest = re.sub(r'^\s*((\d+)[\*x]?)?\s*([^0-9,]+[^,]*)(,|$)', _find_coin, tmp)
-        if rest == tmp:
-            raise NameError ("invalid text '"+rest+"' in money")
-        tmp = rest
-    sum = 0
-    myret = {}
-    for i in str_to_coins.ret:
-        if i not in coins_byname:
-            pw(coins_byname, max=80)
-            raise NameError("Unknown coin '"+i+"' in money")
-        if 'abbrev' in coins_byname[i]:
-            myret[coins_byname[i]['abbrev']] = int(str_to_coins.ret[i])
-        else:
-            myret[coins_byname[i]['coin']] = int(str_to_coins.ret[i])
-        sum += coins_byname[i]['copper_equiv'] * str_to_coins.ret[i]
-    myret['value_cp'] = sum
-    return myret
 
-def coins_to_str(s):
-    if s is None:
-        return ''
+def coins_add(c, coin, n):
+    if coin not in coins_byname:
+        raise NameError("Unknown coin '"+coin+"' in money")
+    if n == 0:
+        return c
+    c['value_cp'] += n * coins_byname[coin]['copper_equiv']
+    if 'abbrev' in coins_byname[coin]:
+        name = coins_byname[coin]['abbrev']
+    else:
+        name = coins_byname[coin]['coin']
+    if name in c:
+        if c[name] == n:
+            del c[name]
+        else:
+            c[name] += n
+    else:
+        c[name] = n
+    return c
+
+
+def coins_by_cpe(s):
     tmp = {}
     for i in s:
         if i == 'value_cp':
@@ -345,32 +339,66 @@ def coins_to_str(s):
             pw(coins_byname,max=80)
             raise ValueError("Unknown coin '"+i+"' in coins")
         n = int(s[i])
-        if n == 1:
-            coin=i.format(s='',es='')
-        else:
-            coin=i.format(s='s',es='es')
+        if n == 0:
+            continue
         cpe = coins_byname[i]['copper_equiv']
-        if cpe in tmp:
-            tmp[cpe].append([n, coin])
-        else:
-            tmp[cpe] = [[n, coin]]
+        if cpe not in tmp:
+            tmp[cpe] = {}
+        tmp[cpe][i] = n
+    ret = []
+    l = tmp.keys()
+    l.sort(reverse = True)
+    for i in l:
+        tmp_ret = []
+        m = tmp[i].keys()
+        m.sort()
+        for j in m:
+            tmp_ret.append([tmp[i][j], j])
+        ret.append(tmp_ret)
+    return ret
+
+
+def str_to_coins(s):
+    global coins_byname
+    if s is None:
+        return None
+    str_to_coins.coins = {}
+    tmp = s.lower()
+    while len(tmp)>0:
+        rest = re.sub(r'^\s*((\d+)[\*x]?)?\s*([^0-9,]+[^,]*)(,|$)', _find_coin, tmp)
+        if rest == tmp:
+            raise NameError ("invalid text '"+rest+"' in money")
+        tmp = rest
+    myret = {'value_cp': 0}
+    for i in str_to_coins.coins:
+        myret = coins_add(myret, i, int(str_to_coins.coins[i]))
+    return myret
+
+
+def coins_to_str(s):
+    if s is None:
+        return ''
     ret = ''
     sep = ''
     nsep = ', '
-    l=tmp.keys()
-    l.sort()
-    l.reverse()
-    for i in l:
-        for j in tmp[i]:
-            ret += '{sep}{n} {coin}'.format(sep=sep, n=j[0], coin = j[1])
+    for i in coins_by_cpe(s):
+        for j in i:
+            n = j[0]
+            if n == 1:
+                coin = j[1].format(s='', es='')
+            else:
+                coin = j[1].format(s='s', es='es')
+            ret += '{sep}{n} {coin}'.format(sep = sep, n = n, coin = coin)
             sep = nsep
     return ret
+
 
 def str_to_cp(s):
     global coins_byname
     if s is None:
         return None
     return str_to_coins(s)['value_cp']
+
 
 def cp_to_str(cp):
     """ pretty-print a raw cp value"""
@@ -446,7 +474,8 @@ def get_coins():
 
 def get_char_money(char):
     cur.execute('select m.money_id, m.quantity from '
- ' fr_char_money as m natural join fr_money_type as t where m.owner = %(char)s order by t.copper_equiv desc, t.coin', {'char':char})
+ ' fr_char_money as m natural join fr_money_type as t where m.owner ='
+ ' %(char)s order by t.copper_equiv desc, t.coin', {'char':char})
     resp = cur.fetchall()
     _check_warnings()
     ret = []
@@ -471,6 +500,10 @@ def char_find_money(char, amount_cp):
     ret = {'value_cp': amount_cp}
     x = get_char_money(char)
     for i in x:
+        if 'abbrev' in i:
+            name = i['abbrev']
+        else:
+            name = i['coin']
         if not i['common_use']:
             continue
         cpe = i['copper_equiv']
@@ -481,38 +514,45 @@ def char_find_money(char, amount_cp):
             n = int(amount_cp/cpe)
         else:
             n = q
-        if 'abbrev' in i:
-            ret[i['abbrev']] = n
-        else:
-            ret[i['coin']] = n
+        if n == 0:
+            continue
+        ret[name] = n
         amount_cp -= n * cpe
         if amount_cp == 0:
             break
     if amount_cp:
-        raise ValueError("Char {char} needs change {amount_cp} {orig} {x} got {ret}".format(char=char, amount_cp=amount_cp, orig = ret['value_cp'], x=x, ret = ret))
+        pw("Error: getting {a} ({l} left) from {x} got {r}".format(a = ret['value_cp'], l = amount_cp, x = x, r = ret), max = 130)
+        raise ValueError("Char {char} needs {amount_cp} change".\
+format(char = char, amount_cp = amount_cp))
     return ret
 
 def invent_money(amount_cp):
     if amount_cp is None or amount_cp == 0:
         return None
     ret = {'value_cp': amount_cp}
-    for i in coins_bycpe.keys().sort().reverse():
+    l = coins_bycpe.keys()
+    l.sort(reverse = True)
+    for i in l:
         if not i['common_use']:
             continue
         cpe = i['copper_equiv']
         if cpe > amount_cp:
             continue
         n = int(amount_cp / cpe)
-        ret[i['name']] = n
+        if 'abbrev' in i:
+            ret[i['abbrev']] = n
+        else:
+            ret[i['coin']] = n
         amount_cp -= n
         if amount_cp == 0:
             break
+    if amount_cp > 0:
+        raise ValueError("Can't Happen")
     return ret
 
 
 def char_change_money(char, dir, d):
     global coins_byname
-    d.pop('value_cp',None)
     if dir == 'give':
         sign = -1
     elif dir == 'get':
@@ -522,35 +562,37 @@ def char_change_money(char, dir, d):
     total = 0
     coins = get_char_money(char)
     for coin in d:
-        amount = sign * int(d[coin])
-        coin = coin.format(s='', es='').lower()
+        if coin == 'value_cp':
+            continue
+        if coin not in coins_byname:
+            raise NameError("{char} invalid coin {coin}".format(char=char, coin=coin))
+        amount = int(sign * int(d[coin]))
+        if amount == 0:
+            continue
+        coin = coins_byname[coin]
         cc = None
         for i in coins:
-            if coin == i['coin'].format(s='', es='').lower() or coin == i['coin'].format(s='s', es='es').lower() or ( 'abbrev' in i and coin == i['abbrev'].lower()):
-                cc = i
+            if coin['coin'] == i['coin']:
+                cc = i['quantity']
                 break
         if cc is None:
             if amount < 0:
-                raise ValueError("{char} can't be given {n} {coin} ".format(char = char,n = amount,coin = coin))
-            if amount == 0:
-                raise ValueError("{char} can't be given zero {coin}".format(char = char, coin = coin))
-            if coin not in coins_byname:
-                raise NameError("{char} invalid coin {coin}".format(char=char, coin=coin))
-            cur.execute("insert into fr_char_money (owner, money_id, quantity) values (%(char)s, %(id)s, %(amount)s)", {'char':char, 'id':coins_byname[coin]['money_id'], 'amount':amount})
-            cpe = int(coins_byname[coin]['copper_equiv'])
+                raise ValueError("{char} has no {coin}, needs {n}".format(char = char, coin = coin['coin'], n = -amount))
+            cur.execute("insert into fr_char_money (owner, money_id, quantity)"
+" values (%(char)s, %(id)s, %(amount)s)",
+ {'char': char, 'id': coin['money_id'], 'amount': amount})
+        elif cc + amount < 0:
+            raise ValueError("{char} only has {cc} {coin}, needs {n}".format(char=char, cc = cc, coin = coin['coin'], n = -amount))
+        elif cc + amount == 0:
+            cur.execute("delete from fr_char_money where owner=%(char)s and money_id = %(id)s",
+ {'char': char, 'id': coin['money_id']})
         else:
-            q = cc['quantity']
-            if  q+amount < 0:
-                raise ValueError("{char} only has {q} {coin}, needs {n}".format(char=char, q=q, coin=cc['coin'], n= -amount))
-            elif q+amount == 0:
-                cur.execute("delete from fr_char_money where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':cc['money_id']})
-            else:
-                cur.execute("update fr_char_money set quantity = quantity + %(amount)s where owner=%(char)s and money_id = %(id)s", {'char':char, 'id':cc['money_id'], 'amount':amount})
-            cpe = cc['copper_equiv']
+            cur.execute("update fr_char_money set quantity = %(amount)s where owner=%(char)s and money_id = %(id)s",
+ {'char': char, 'id': coin['money_id'], 'amount': cc + amount})
         _check_warnings()
-        total += int(amount) * int(cpe)
-    cur.execute("update fr_character set cash_cp = cash_cp + %(amount_cp)s where char_name = %(char)s",
- {'amount_cp': total, 'char': char})
+        total += amount * coin['copper_equiv']
+    cur.execute("update fr_character set cash_cp = cash_cp + %(total)s where char_name = %(char)s",
+ {'char': char, 'total': total})
     _check_warnings()
 
 
@@ -985,7 +1027,7 @@ def insert_item(d):
  {'new': item + "  #1", 'old':item})
     if len(resp) > 0:
         item += "  #" + str(len(resp)+1)
-        sys.stderr.write("Warning: renaming item to {item}\n".format(item = item))
+        sys.stdout.write("Note: renaming item to {item}\n".format(item = item))
         d['item'] = item
 
     cur.execute(
@@ -1013,12 +1055,12 @@ def get_item_data(item):
     t['date_found'] = date_to_str(resp[3])
     t['date_xfrd'] = date_to_str(resp[4])
     t['note'] = resp[5]
-    t['value_cp'] = resp[6]
+    t['value_cp'] = None if resp[6] is None else int(resp[6])
     return t
 
 
 def change_item(date, item, owner=None, holder=None, value_cp = None, part_of = None):
-    """Change the ownership, transfer date, and value_cp of an item"""
+    """Change the ownership, transfer date, and/or value_cp of an item"""
 
     date = str_to_date(date)
     c1 = ''
@@ -1072,7 +1114,7 @@ def get_items(kind, match = None):
         t['date_found'] = date_to_str(i[4])
         t['date_xfrd'] = date_to_str(i[5])
         t['note'] = i[6]
-        t['value_cp'] = i[7]
+        t['value_cp'] = None if i[7] is None else int(i[7])
         ret.append(t)
     return ret
 

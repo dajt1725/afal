@@ -1,3 +1,5 @@
+cp mw-escher.gif /var/www/html/devel/
+cp *.png *.jpg /var/www/html/
 cp afal.py.mysql /var/www/cgi-bin/afal-devel.py
 cp afal_config.py.devel /var/www/cgi-bin/afal_config-devel.py
 cp cash /var/www/cgi-bin/cash-devel.cgi
