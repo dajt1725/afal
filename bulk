@@ -77,13 +77,9 @@ def do_give(d):
         return
     if 'cash' in d:
         check_dict(d, must=('date', 'to', 'by', 'cash'), may=('for', 'note', 'part_of'))
-        if args.verbose:
-            afal.pw("giving cash", d, max=130)
         d['cash'] = afal.str_to_coins(d['cash'])
     else:
         check_dict(d, must=('date', 'to', 'by', 'amount'), may=('for', 'note', 'part_of'))
-        if args.verbose:
-            afal.pw("giving money", d, max=130)
         d['amount_cp'] = afal.str_to_cp(d.pop('amount'))
     afal.chars_move_cash(d)
 
@@ -476,12 +472,24 @@ def do_dividend(d):
 
 # Divy is like dividend, except that you can specify both cash= and amount=
 # and specify specific coins to be given to specific characters
+# And it uses a completely different algorithm
+# It divides characters into pools by how much they're owed
+# then divides up the coins from "cash" so that members of each pool get
+# the same number of coins.  To maximize convergance, pools are processed
+# in the order of the number of members they have.  If there are leftover
+# coins that can't be allocated into a pool, an error is raised.
+# Then, the rest of what each pool is owed is filled out of the party's cash
+# So, each pool is a dict, containing 'members' a list of character names,
+# 'amount_cp', the amount each character is owed, and 'coins', a dict
+# of coins.  During creation, they are kept in lists (for different 'coins')
+# in a dict by share amount
+# which is then flattened into a list sorted by len('members')
 def do_divy(d):
     check_dict(d, must=('date','by'))
-    memb_coins = {}
     text = 'paid a dividend of {cash}'
     share_mult = 1
     journ_to = {}
+    pools_by_share = {}
     odd_cp = 0
     s = 'divided '
 
@@ -493,17 +501,33 @@ def do_divy(d):
     amount = d.pop('amount', None)
 
     members = afal.get_party_data(by)['members']
+    n_members = len(members)
     shares = float(sum(members.values()))
     for share in members.values():
-        if share > 0 and 1/share > share_mult:
+        if share == 0:
+            continue
+        if 1/share > share_mult:
             share_mult = int(1/share)
+        if share not in pools_by_share:
+            pools_by_share[share] = []
     for char in members:
+        share = members[char]
+        if share == 0:
+            continue
         if char in d:
-            memb_coins[char] = afal.str_to_coins(d.pop(char))
-        elif members[char] > 0:
-            memb_coins[char] = {'value_cp': 0}
+            tmp = afal.str_to_coins(d.pop(char))
+        else:
+            tmp = {'value_cp': 0}
+        for i in pools_by_share[share]:
+            if i['coins'] == tmp:
+                i['members'].append(char)
+                char = None
+                break
+        if char:
+            pools_by_share[share].append({'members': [char], 'coins': tmp})
+    print "Debug: pools_by_share",pools_by_share
     if len(d) > 0:
-        raise ValueError("Character(s) not in party")
+        raise ValueError("Character(s) {d} not in party".format(d = d.keys()))
     if cash:
         coins = afal.str_to_coins(cash)
     else:
@@ -514,20 +538,31 @@ def do_divy(d):
         amount_cp = coins['value_cp']
     if amount_cp == 0:
         raise ValueError("Need either cash or amount")
-# FIXME: move entries from coins to memb_coins here according to shares
 
-    if shares != len(members):
-        text += " {s}among {n} party members".format(n = len(members), s = s)
+    if shares != n_members:
+        text += " {s}among {n} party members".format(n = n_members, s = s)
         s = ''
-    if shares != 1:
-        even_cp = share_mult * int(amount_cp / (share_mult * shares))
-        text += " {s}into {sh} shares of {{cs}}{ea}{{ce}} each".format(s = s,
+    if shares <= 1:
+        raise ValueError("Less than two shares?  Unpossible!")
+
+    even_cp = share_mult * int(amount_cp / (share_mult * shares))
+    text += " {s}into {sh} shares of {{cs}}{ea}{{ce}} each".format(s = s,
  sh = afal.share_to_str(shares), ea = afal.cp_to_str(even_cp))
-        even_cp *= shares
-        if even_cp != amount_cp:
-            odd_cp = int(amount_cp - even_cp)
-            text += " and {n} for the party".format(n = afal.cp_to_str(odd_cp))
-            amount_cp = int(even_cp)
+    even_cp *= shares
+    if even_cp != amount_cp:
+        odd_cp = int(amount_cp - even_cp)
+        text += " and {{cs}}{n}{{ce}} for the party".format(n = afal.cp_to_str(odd_cp))
+        amount_cp = int(even_cp)
+    for share in pools_by_share:
+        for i in pools_by_share[share]:
+            tmp = share * amount_cp / shares
+            if tmp != float(int(tmp)):
+                raise ValueError("Share didn't come out even")
+            tmp = int(tmp) - i['coins']['value_cp']
+            if tmp < 0:
+                raise ValueError("Share Too large!")
+            i['amount_cp'] = tmp
+
     if note:
         text += ' ' + note
     tmp = afal.journal(date, by, members.keys(), amount_cp + odd_cp, None, text, part_of)
@@ -539,64 +574,88 @@ def do_divy(d):
         name = i.get('abbrev', i['coin'])
         if name in coins:
             i['quantity'] -= coins[name]
+        for j in pools_by_share:
+            for k in pools_by_share[j]:
+                for l in k['coins']:
+                    if l == 'amount_cp':
+                        continue
+                    if l == name:
+                        i['quantity'] -= k['coins'][l]
 
-    a = amount_cp
-    s = shares
-    for char in memb_coins:
-        cc = memb_coins[char]
-        share = members[char]
-        share_cp = afal.divide_cp(share, a, s)
-        c = share_cp
-        for i in cc:
-            if i == 'value_cp':
+    pools_by_size = {}
+    for i in pools_by_share:
+        for j in pools_by_share[i]:
+            tmp = len(j['members'])
+            if tmp in pools_by_size:
+                pools_by_size[tmp].append(j)
+            else:
+                pools_by_size[tmp] = [j]
+
+    pools = []
+    l = pools_by_size.keys()
+    l.sort(reverse = True)
+    for i in l:
+        for j in pools_by_size[i]:
+            print "Debug: appending ", j
+            pools.append(j)
+
+    print "Debug: pools", pools
+    for i in coins:
+        if i == 'value_cp':
+            continue
+        cpe = afal.coins_byname[i]['copper_equiv']
+        for j in pools:
+            a = j['amount_cp']
+            if cpe > a:
                 continue
-            c -= cc[i] * afal.coins_byname[i]['copper_equiv']
-        if c < 0:
-            raise ValueError("{ch} share {c} too big by {n}".format(ch=char,c=afal.coins_to_str(cc), n=afal.cp_to_str(-c)))
-        for i in coins:
-            if i == 'value_cp':
-                continue
-            cpe = afal.coins_byname[i]['copper_equiv']
-            if cpe > c:
-                continue
-            n = afal.divide_cp(share, coins[i], s)
+            tmp = len(j['members'])
+            n = int(coins[i] / tmp)
             if n == 0:
                 continue
-            if n * cpe > c:
-                n = int(c/cpe)
-            if i in cc:
-                cc[i] += n
+            if n * cpe > a:
+                n = int(a/cpe)
+            if i in j['coins']:
+                j['coins'][i] += n
             else:
-                cc[i] = n
-            coins[i] -= n
-            coins['value_cp'] -= n * cpe
-            cc['value_cp'] += n * cpe
-            c -= n * cpe
-        for i in bank:
-            if c == 0:
-                break
-            cpe = i['copper_equiv']
-            if not i['common_use'] or cpe > c:
+                j['coins'][i] = n
+            coins[i] -= tmp * n
+            j['coins']['value_cp'] += tmp * n * cpe
+            j['amount_cp'] -= n * cpe
+        if coins[i]:
+            raise ValueError("coins didn't divide evenly")
+
+    for i in bank:
+        cpe = i['copper_equiv']
+        if not i['common_use']:
+            continue
+        for j in pools:
+            a = j['amount_cp']
+            if cpe > a:
                 continue
-            n = afal.divide_cp(share, i['quantity'], s)
+            tmp = len(j['members'])
+            n = int(i['quantity'] / tmp)
             if n == 0:
                 continue
-            if n * cpe > c:
-                n = int(c/cpe)
-            name = i.get('abbrev', i['coin'])
-            if name in cc:
-                cc[name] += n
+            if n * cpe > a:
+                n = int(a/cpe)
+            name = i.get('abbrev',i['coin'])
+            if name in j['coins']:
+                j['coins'][name] += n
             else:
-                cc[name] = n
-            i['quantity'] -= n
-            cc['value_cp'] += n * cpe
-            c -= n * cpe
-        if args.verbose:
-            afal.pw(afal.coins_to_str(cc), "to", char, max=130)
-        afal.chars_move_cash({'date':date, 'cash':cc,
+                j['coins'][name] = n
+            i['quantity'] -= tmp * n
+            j['coins']['value_cp'] += tmp * n * cpe
+            j['amount_cp'] -= n * cpe
+
+    for i in pools:
+        if i['amount_cp']:
+            raise ValueError("Need more money: {i} undistributed to {c} after {n}".format(i = afal.cp_to_str(i['amount_cp']), c = i['members'], n = afal.coins_to_str(i['coins'])))
+        tmp = afal.coins_to_str(i['coins'])
+        for char in i['members']:
+            if args.verbose:
+                afal.pw(tmp, "to", char, max=130)
+            afal.chars_move_cash({'date':date, 'cash':i['coins'],
 'by':by, 'to':char, 'part_of':part_of, 'journ_to': journ_to})
-        a -= share_cp
-        s -= share
 
 
 def do_cancel(d):
@@ -807,34 +866,42 @@ def do_coin(d):
     afal.insert_coin(d['name'], d.get('abbrev'), d['copper_equiv'], d.get('common',False), d.get('note'))
 
 
-def do_commit(d):
-    afal.commit()
-
-
 def do_trade(d):
-    # Two possibilities from=, amount= to move cash
+    # Two possibilities cash=, for= to move cash
     # or item=, for= to exchange items
+    part_of = d.get('part_of')
     if 'item' in d:
         check_dict(d, must = ('date', 'item', 'for'), may=('note', 'part_of'))
         raise ValueError("trade items not implemented")
 #        if args.verbose:
 #            print "giving item", d
-#        afal.change_item(d['date'], d['item'], owner = d['to'], holder = d['to'], part_of = d.get('part_of'))
+#        afal.change_item(d['date'], d['item'], owner = d['to'], holder = d['to'], part_of = part_of)
         return
-    check_dict(d, must=('date', 'to', 'by', 'cash', 'for'), may=('for', 'note', 'part_of'))
-    if args.verbose:
-        afal.pw("giving cash", d, max=130)
+    check_dict(d, must=('date', 'to', 'by'), may=('cash', 'for', 'note', 'part_of'))
     date = d['date']
     by = d['by']
     to = d['to']
-    cash = afal.str_to_coins(d['cash'])
-    tradefor = afal.str_to_coins(d['for'])
+    if 'cash' not in d and 'for' not in d:
+        raise ValueError("Need cash or for")
+    if 'cash' in d:
+        cash = afal.str_to_coins(d['cash'])
+        if 'for' not in d:
+            tradefor = afal.char_find_money(to, cash['value_cp'])
+    if 'for' in d:
+        tradefor = afal.str_to_coins(d['for'])
+        if 'cash' not in d:
+            cash = afal.char_find_money(by, tradefor['value_cp'])
+
     if cash['value_cp'] != tradefor['value_cp']:
         raise ValueError("unequal trade {c} != {f}".format(c = cash, f = tradefor))
+    if args.verbose:
+        print "{by} traded {c} for {f} with {to}".format(by=by, c=afal.coins_to_str(cash),f=afal.coins_to_str(tradefor),to=to)
     text = 'exchanged {{cs}}{c1}{{ce}} for {{cs}}{c2}{{ce}} with {{to}}'.format(c1 = afal.coins_to_str(cash), c2=afal.coins_to_str(tradefor))
-    afal.journal(date, by, to, None, cash['value_cp'], text, d.get('part_of'))
-    afal.chars_move_cash({'date': date, 'by': by, 'to': to, 'cash': cash, 'note': d.get('note'), 'part_of': d.get('part_of'), 'journal': False})
-    afal.chars_move_cash({'date': date, 'by': to, 'to': by, 'cash': tradefor, 'note': d.get('note'), 'part_of': d.get('part_of'), 'journal': False})
+    tmp = afal.journal(date, by, to, None, cash['value_cp'], text, part_of)
+    if not part_of:
+        part_of = tmp
+    afal.chars_move_cash({'date': date, 'by': by, 'to': to, 'cash': cash, 'note': d.get('note'), 'part_of': part_of, 'journal': False})
+    afal.chars_move_cash({'date': date, 'by': to, 'to': by, 'cash': tradefor, 'note': d.get('note'), 'part_of': part_of, 'journal': False})
 
 
 def do_cons(d):
@@ -946,8 +1013,21 @@ def do_something(d):
     todo = doable.pop()
     del d[todo]
     can_do[todo](d)
+    if do_something.commit:
+        afal.commit()
+
+
+def do_commit(d):
+    if 'on' in d:
+        do_something.commit = True
+    elif 'off' in d:
+        do_something.commit = False
+    else:
+        afal.commit()
+
 
 do_something.last_date = None
+do_something.commit = False
 
 can_do = {
  'break' : do_break,
