@@ -3,6 +3,7 @@ import argparse
 import afal
 import os
 import sys
+from cStringIO import StringIO
 
 # if may is None, don't check for extra keys at all
 def check_dict(d, must = None, may = None):
@@ -996,6 +997,13 @@ def do_break(d):
     sys.exit(1)
 
 
+def do_system(d):
+    check_dict(d, must=('cmd',), may=('date',))
+    afal.commit()
+    sys.stdout.flush()
+    os.system(d['cmd'])
+
+
 def do_something(d):
     if args.verbose:
         afal.pw("doing", d, max=130)
@@ -1047,6 +1055,7 @@ can_do = {
  'party': do_party,
  'pay': do_pay,
  'sell': do_sell,
+ 'system': do_system,
  'trade': do_trade,
  'writeoff':do_writeoff }
 
@@ -1054,8 +1063,12 @@ can_do_set = frozenset(can_do.keys())
 
 parser = argparse.ArgumentParser("read transactions from a file and do them")
 parser.add_argument("--verbose", "-v", help="print progress messages", action='store_true', default=False)
-parser.add_argument("file", help="file to read", nargs='*', default=["bulk.dat"])
+parser.add_argument("--command", '-c', help="single command", default=None)
+parser.add_argument("file", help="file to read", nargs='*', default=[])
 args = parser.parse_args()
+
+if args.command:
+    afal.parse_file(StringIO(args.command), do_something, dict())
 
 for filename in args.file:
     afal.parse_file(open(filename), do_something, dict())
