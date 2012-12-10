@@ -22,8 +22,8 @@ date=Hammer 15 1370
 #,writeoff;Theo
 ,party;type=AFAL;name=Hammer-15-1370;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Steve=1;Maanamere=1;Stalker=1;Moogh=1
 ,find;found=Hammer-15-1370;name=Animal: Light War Horse *4;note=1 killed on <d Alturiak 6 1370>, sold for ~68gp, 84cp each
-,meet;association=AFAL;status=active
-,,name=Staric;fullname=Staric Ammakyl;player=Andre;race=Human;gender=Male\
+date=Hammer 17 1370;meet;association=AFAL;status=active
+,name=Staric;fullname=Staric Ammakyl;player=Andre;race=Human;gender=Male\
 ;class=Bard;alignment=Neutral Good;picture=Staric.png\
 ;large_picture=Staric_lg.png;cash=1cp\
 ;characteristics=Handsome, quick and athletic,\
@@ -39,15 +39,14 @@ date=Hammer 15 1370
  brother Arrikes was using in a plot to take over Waterdeep.  By mutual\
  agreement, Staric used a scroll to wipe Dagar's memory of the discovery and\
  contacted A.F.A.L. for help.  When A.F.A.L. arrived in Amphail, he joined up\
- with them as they fled the village on <d Hammer 17 1370>.;joined=Hammer 17 1370
-,,name=Deringa;fullname=Deringa Eagleshield;race=Human(?);gender=Female\
+ with them as they fled the village on <d Hammer 17 1370>.
+,name=Deringa;fullname=Deringa Eagleshield;race=Human(?);gender=Female\
 ;class=Rich Kid?  Groupie?;alignment=Chaotic Good;cash=21cp\
 ;picture=Deringa.png;large_picture=Deringa_lg.png\
 ;characteristics=Cute, clever, very quick, very short,\
  short, bleached hair w/purple patch, blue eyes, 5'1&quot\;, 102 lbs.\
 ;equipment=expensive clothes, bracers, Dagger, +1 Sling,\
- nose ring, 14 earings (left ear), Wand of Hurting (Party Item);joined=Hammer\
- 17 1370\
+ nose ring, 14 earings (left ear), Wand of Hurting (Party Item)\
 ;note=Childhood friend of Staric Ammakyl, overheard Staric &amp\; Dagar\
  Jhansczil discussing the powers of the\
  <a href="/logs/log_Marpenoth_28_1369.html">Reverential</a>\
@@ -87,7 +86,7 @@ date=Hammer 20 1370
 ,meet;association=AFAL;status=inactive
 ,,name=Alril;fullname=Alril Elarorrieth;race=Moon Elf;gender=Male\
 ;class=Fighter;alignment=Neutral Evil;picture=Alril.png\
-;large_picture=Alril_lg.png;joined=Hammer 20 1370\
+;large_picture=Alril_lg.png\
 ;characteristics=Shoulder-length, curly black hair, blue\
  eyes, chiseled, 5&apos\;1&quot\;, 112 lbs.  High, Stuttering voice.\
 equipment=Field plate, partisan,\
@@ -96,7 +95,7 @@ equipment=Field plate, partisan,\
  change sides instead of being eaten by a giant on <d Hammer 20 1370>.\
  He was paid off and let go on <d Ches 30 1370>.
 ,,name=Kades;fullname=Kades Thadestidesgar;race=Human;gender=Male\
-;class=Fighter;alignment=Chaotic Neutral;joined=Hammer 20 1370\
+;class=Fighter;alignment=Chaotic Neutral\
 ;picture=Kades.png;large_picture=Kades_lg.png\
 ;characteristics=Shoulder-length, curly brown/dk blonde hair, blue eyes,\
  5&apos\;11&quot\;, 180 lbs. Deep, accented voice.\
@@ -110,7 +109,7 @@ date=Midwinter Festival 1370
 ,writeoff;Moogh;note=and went home to his family
 ,meet;association=AFAL;status=inactive
 ,,name=Chusnog;race=Orc;gender=Male;class=Fighter;alignment=Lawful Evil\
-;joined=Midwinter Festival 1370;large_picture=Chusnog_lg.png;picture=Chusnog.png\
+;large_picture=Chusnog_lg.png;picture=Chusnog.png\
 ;characteristics=oily black hair, red eyes, many battle scars, large and\
  heavy-set, cloven hooves, rarely speaks (doesn't speak Common)\
 ;equipment=black and red full plate, red cloak, morning star, 2 throwing axes\
@@ -122,7 +121,7 @@ date=Midwinter Festival 1370
  <d Ches 7 1370>.
 ,,name=Oguch;fullname=Oguch of Bahgtru;race=Orc;gender=Male\
 ;class=Priest of Bahgtru;alignment=Lawful Evil\
-;large_picture=Oguch_lg.png;picture=Oguch.png;joined=Midwinter Festival 1370\
+;large_picture=Oguch_lg.png;picture=Oguch.png\
 ;characteristics=part of nose &amp\; left tusk missing, peircing black eyes,\
  constantly looks suspicious, keeps hair shaved off, suspicious, obsequious\
 ;equipment=high collar black robe, holy symbol, spiked gauntlet of Bahgtru,\
@@ -140,7 +139,7 @@ date=Alturiak 5 1370
  <d Alturiak 5 1370> Has a boyfriend, Fred, who has a younger brother George.
 ,meet;association=AFAL;status=active
 ,,name=Ag;player=Bill;race=Human;gender=Male;class=Thief;alignment=Neutral Good\
-;picture=ag.jpg;joined=Alturiak 5 1370;cash=5cp\
+;picture=ag.jpg;cash=5cp\
 ;characteristics=brown hair, blue eyes, 5'7&quot\;, 128lbs.,\
  wise beyond his years\
 ;equipment=Bracers of defense AC 5, +1 Ring of Protection, Gloves of Mask,\
@@ -149,7 +148,7 @@ date=Alturiak 5 1370
 ;note=Joined party in Silverymoon, <d Alturiak 5 1370>.
 ,,name=Tristan;player=Alex;race=&frac12\; Elf;gender=Male\
 ;class=Spec Pr - Tempus (BattleForge) / Wizard;alignment=Chaotic Good\
-;joined=Alturiak 5 1370;cash=21cp\
+;cash=21cp\
 ;characteristics=Not known at this time.\
 ;equipment=+1 plate mail, +1 shield, +1/+2 (half *)/+3(Humans) Bastard Sword,\
  <i>Ghoulbreaker</i>, Dagger of Hurting\
@@ -217,6 +216,14 @@ date=Ches 3 1370
 ,,name=Ioun Stones;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 date=Ches 7 1370
 ,writeoff;Chusnog;Oguch;Stalker;note=because the orc village is nice this time of year
+date=Ches 21 1370;meet;name=Ethraren Gulphogar;status=active\
+;association=Skundelrunskuntunrun &amp\; Gulphogar - Independant Brokers\
+;race=Human;gender=Male;equipment=Conservative dress\
+;characteristics=Short, graying, dark hair and brown eyes\
+;note=Encountered on <d Ches 21 1370>, when AFAL discussed selling the\
+ Windchimes of Dusk back to their co-creator.  AFAL sold the windchimes to\
+ him on <d Ches 23 1370>, and discussed setting up a magic item auction at a\
+ future date
 date=Ches 25 1370
 ,party;type=AFAL;name=Ches-25-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Ches-25-1370

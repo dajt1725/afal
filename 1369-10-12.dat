@@ -75,6 +75,38 @@ date=Uktar 8 1369
 ,party;type=AFAL;name=Uktar-8-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Uktar-8-1369;name=Rusty hand axe with Magic Aura on it;owner=AFAL
 date=Uktar 9 1369
+,meet;name=Gomsha;association=AFAL;status=dead;race=Orc;gender=Female\
+;fullname=Gomsha of Other Tusk Mountain;picture=skull250o.png\
+;characteristics=9/4/1357 - 12/1/1369;note=\
+<p>A Mountain Orc of the Other Tusk Clan, Gomsha was most noted amoung her\
+ community for the interesting patterns she would make from loose rocks when\
+ the males weren't around to kick them apart and being of child-bearing age.</p>\
+\
+<p>Gomsha's life took an unexpected turn in early Uktar in the Year of the\
+ Gauntlet.  While being escorted to her betrothal ceremony, her party\
+ inadvertently triggered a gate created by Halaster, the Mad Mage of\
+ Undermountain, that trapped them all within that dungeon.  After wandering\
+ the halls of Undermountain for several days and several unfortunate\
+ confrontations with other denizens of the dungeon, the band was set upon by\
+ a stronger band of goblins who slew the rest of her party and captured\
+ Gomsha for a ritual sacrifice. Fortunately for Gomsha, those Goblins were\
+ then attacked by AFAL, who slew the goblins and rescued Gomsha. Gomsha was\
+ quite taken by Narthandarkanas, a priest of Tempus, and was taken in by the\
+ party that had rescued her.</p>\
+\
+<p>Gomsha's life ended abruptly on <d Nightal 1 1369> when AFAL encountered a\
+ band of ogres, minotaurs, and st. elmo's hounds.  The combined breath attacks\
+ from the three hounds proved too much for her and she died moments before her\
+ comrade in arms, Stewart of Selune, also perished.  Gomsha's remains were\
+ buried in the back yard of Fair Winds and a brief ceremony was performed by\
+ Narthan.</p>\
+\
+<p>Gomsha is survived by her fianc&eacute\;, Kurgh of Small Tusk Mountain,\
+ twelve of her brothers, Grum, Gack, Urgh, Gurarhrg, Churgh, Breghulg,\
+ Nurkhul, G'ack, Gack-ack, Grack, Urghul, and Murgh, seven of her sisters (all\
+ Gomsha), her lover, Narthandarkanas nha Kandar of Tempus, and four of her\
+ potential fathers, Manghan, Muk, Mugh and Charlagh.  She had three children,\
+ none of whom survived to their naming ceremony.</p>
 ,party;type=AFAL;name=Uktar-9-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Uktar-9-1369
 ,,name=Chardalyn *3;owner=AFAL
@@ -247,7 +279,7 @@ date=Uktar 14 1369
  Distillers and Brewers guild;race=Human;gender=Male;status=active\
 ;note=First met on <d Uktar 14, 1369>, when we returned his niece who had\
  been kidnapped by minotaurs.  We delivered minotaur horns to him on\
- <d Nightal 5, 1369>, and he delivered a reward to us <d the next day>.
+ <d Nightal 5, 1369>, and he delivered a reward to us the next day, <d Nightal 6 1369>.
 ,sell;to=Cassie;item=+1/+4(Andarod Gutreaver) Ring of Protection;debt=1500gp;cash=3500gp;virtual
 ,sell;to=Narthan;item=+1 Ring of Protection  #2;cash=3750gp;debt=1250gp;virtual
 ,sell;to=Henkles;item=+1 Ring of Protection  #1;debt=350gp;cash=4650gp;virtual
@@ -271,10 +303,26 @@ date=Nightal 1 1369
 date=3 Nightal 1369
 ,party;type=AFAL;name=Nightal-3-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Nightal-3-1369;name=Amulet of Turning Resistance;holder=Auction
+,meet;association=AFAL;status=inactive\
+;name=Etiste;fullname=Etiste Birdstalker;race=Human;gender=Female\
+;class=Fighter, woman-at-arms;alignment=Chaotic Good\
+;characteristics=Strong, unattractive/unpleasant, short black hair,\
+ 5&apos\;3&quot\;, 136lbs\
+;equipment=Banded Mail, shield, Scimitar, +1 Sling w/bullets, Warhammer,\
+ Light crossbow, Dagger\
+;note=<p>Hired (<d Nightal 3 1369>)\
+ for 8gp/day + equipment replacement (non-magical) + &frac14\;-share of any\
+ treasure found on foray.  Told to be at Fair Winds 1 hour past sunrise, 12/5.\
+ </p><p>Left the party on <d Nightal 6 1369> after the minotaur adventure.</p>
 date=Nightal 4 1369
+,meet;association=none;name=&quot\;Five Fingered&quot\; Randybuck;\
+gender=Female;race=?forgotten?;class=Thief;status=active;note=\
+Interviewed on <d Nightal 4 1369>. But we declined to have her join the\
+ party. We discussed the possibility of hiring her for some security work in\
+ the future, and she went out for drinks with Narthan. 
 ,meet;association=AFAL;status=inactive
 ,,name=Marcae;fullname=Marcae Trapper;player=Mike;race=Human;gender=Male\
-;class=&quot\;Battle Mage&quot\;;alignment=Neutral;joined=Nightal 4 1369\
+;class=&quot\;Battle Mage&quot\;;alignment=Neutral\
 ;characteristics=Clever, quick, long, curly blonde hair, brown eyes,\
  6'3&quot\;, 195 lbs.\
 ;equipment=Staff Sling, +1 Flame Blade Rapier (possibly other non-weapon\
@@ -308,28 +356,17 @@ date=Nightal 4 1369
 ;class=&quot\;Ranger&quot\;;alignment=Neutral;equipment=+1/+3 vs fire Studded\
  Leather Armor, Longsword, +2 Hand Axe, +1 Long Bow\
 ;characteristics=Extremely strong, very quick, somewhat dim, very long black\
- hair, brown eyes, 5'9&quot\;, 192 lbs.;joined=Nightal 4 1369
+ hair, brown eyes, 5'9&quot\;, 192 lbs.
 ,,name=Altilitac;fullname=Altilitac Mithar;race=Human;gender=Male\
 ;class=Fighter, man-at-arms;alignment=Lawful Neutral\
 ;equipment=+1 Splint Mail, shield Broad sword (Sp), Long bow, +1 Battle axe,\
  Hand or throwing axe;characteristics=Strong, quick, calm, pleasant,\
- long red hair, blue eyes, 6'2&quot\;, 180 lbs.;joined=Nightal 4 1369\
+ long red hair, blue eyes, 6'2&quot\;, 180 lbs.\
 ;note=He asked for 10gp/day + expenses + &frac12\;-share, hired for 17gp +\
  expenses + &frac14\;-share on <d Nightal 4 1369>.  He left the party on\
  <d Nightal 6 1369> after the completion of the minotaur adventures.
-,,name=Etiste;fullname=Etiste Birdstalker;race=Human;gender=Female;\
-class=Fighter, woman-at-arms;alignment=Chaotic Good;joined=Nightal 3 1369\
-;characteristics=Strong, unattractive/unpleasant, short black hair,\
- 5&apos\;3&quot\;, 136lbs\
-;equipment=Banded Mail, shield, Scimitar, +1 Sling w/bullets, Warhammer,\
- Light crossbow, Dagger\
-;note=<p>Hired (<d Nightal 3 1369>)\
- for 8gp/day + equipment replacement (non-magical) + &frac14\;-share of any\
- treasure found on foray.  Told to be at Fair Winds 1 hour past sunrise, 12/5.\
- </p><p>Left the party on <d Nightal 6 1369> after the minotaur adventure.</p>
 ,,name=Holmain;fullname=Holmain Nephew of Harso Valtac;race=Dwarf\
 ;gender=Male;class=Fighter, dwarf-at-arms;alignment=Lawful Neutral\
-;joined=Nightal 4 1369\
 ;characteristics=Strong, quick, shoulder-length black hair, brown eyes,\
  4'1&quot\;, 159 lbs.\
 ;equipment=Scale Mail, shield, Footman's pick (Sp), +1 Composite short bow,\
@@ -381,6 +418,14 @@ date=12 Nightal 1369
 ,,name=+1 Dagger;note=From Staros;holder=Auction;value=1400gp
 ,,name=+1 Arrow (Sheaf);holder=Denyae;note=From Staros;owner=AFAL
 ,,name=Potions of Minor Healing and Regeneration
+date=Nightal 13 1369;meet;name=Lin;status=active\
+;fullname=Linlenasni &quot\;Lin&quot\; Rineireirael;association=The Blue Dolphin Bar\
+race=Gold Elf;gender=Male;class=Bartender/Undead Hunter\
+;characteristics=Handsome, 5x10y with a ruddy complexion, shoulder length silver hair, and a piercing violet eyes.\
+;note=First encountered on <d Nightal 13 1369>. Encountered on <d Nightal 19\
+ 1369>, where he told me he had found one of Acturagana's lairs, and on\
+ <d Nightal 21 1369>, when we dealt with another lair. Encountered on <d Ches\
+ 25 1370>, where he told us about his research into Acturagana
 date=16 Nightal 1369
 ,party;type=AFAL;name=Nightal-16-1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Narthan=1;Stalker=1;Steve=1
 ,find;found=Nightal-16-1369
@@ -429,7 +474,7 @@ date=Nightal 26 1369
 ,meet;status=active;association=AFAL;name=Theo;fullname=Theophrastus\
  &quot\;Theo&quot\; Philippus Aureolus Bombast von Hohenheim\
 ;player=David;race=Human;gender=Male;class=Spellcaster, Halruaan\
-;alignment=Lawful Neutral;joined=Nightal 26 1369;cash=1cp\
+;alignment=Lawful Neutral;cash=1cp\
 ;characteristics=51 year-old male human, somewhat overweight. Pallid\
  complexion, has a small moustache, balding, with his hair combed over.\
  Scented (wearing perfume), and with some makeup.\

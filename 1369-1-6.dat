@@ -34,7 +34,7 @@ coin;name=Set{s} Silver Candlesticks 500gp;copper_equiv=100000
 coin;name=Letter{s} of Credit 500gp;copper_equiv=100000
 coin;name=Platinum Necklace{s} 700gp;copper_equiv=140000
 coin;name=Pair{s} of Large Opal Earrings (750gp together or 300gp each);copper_equiv=150000
-meet;status=dummy
+meet;status=dummy;date=Ches 1 1369
 ,name=Auction
 ,name=Sell
 ,name=destroyed
@@ -95,8 +95,29 @@ date=Ches 1 1369;meet;association=AFAL
  Nobody remembers). Moog left the party to spend more time with his family.\
  His last entry in the experience log is around <d Hammer 24 1370>.
 ,status=dead;name=Stewart;player=Mike;gender=Male;race=Halfling\
-;class=Cleric/Thief\
-;characteristics=Dead
+;class=Moon Night of Selune;picture=skull250.png\
+;characteristics=1/6/1335 - 12/1/1369;note=\
+<p>When he completed his training as a Moon Knight, Stewart of Selune, as he\
+ was now known, resumed the wandering that had brought him to the church in the\
+ first place, this time to preach the word of Selune in the Savage North.  It\
+ was in the North, while travelling through Everlund that he met his fellow\
+ priest, Dexter of Selune, and with him became one of the founding members of\
+ AFAL.  Stewart was a major contributor to AFAL and continued to serve Selune\
+ faithfully, accomplishing the desecration of several temples and shrines of\
+ Shar and other evil dieties.  Stewart is perhaps best remembered for his\
+ unique charm, his legendary capacity for drink, and his daring confrontation\
+ with flying wererats while dangling at the end of a rope on <d Kythorn 15 1369>.</p>\
+\
+<p>Stewart died in battle in Undermountain on <d Nightal 1 1369>, during an\
+ attempt to avenge the honor of a young lady.  Already badly wounded from a\
+ brave attack on a demon, Stewart insisted on maintaining his position at the\
+ head of the party, where he was felled by the combined breath of three St.\
+ Elmo's Hounds and the detonation of the many offensive magic items he bore.\
+ His remains were intered at the House of the Moon in Waterdeep and a memorial\
+ service was performed on his behalf by his comrade Dexter of Selune.</p>\
+\
+<p>Nothing is known of Stewart's familly, but he left 1cp each to two\
+ Halflings, Reginald and Featherdown Nimblytoes, in his will.</p>
 ,status=inactive;name=Falco;player=Tim?;gender=Male;class=Fighter?/Priest?\
 ;note=Nobody knows when he joined the party.  Last\
  mentioned in the party log on <d Flamerule 4 1369>.
@@ -144,16 +165,37 @@ date=Mirtul 26 1369
 date=Mirtul 27 1369;writeoff;Barnabus
 # Kythorn 4: Stuart, Falco, Elizabeth, Steve, Dexter, Darius (Henkles)
 date=Kythorn 8 1369;meet;association=AFAL;status=dead;name=Buffy\
-;fullname=Elizabeth &quot\;Buffy&quot\; Rose;player=Iain\
-;gender=Female;race=Human;class=Mage(Enchanter)\
-;characteristics=dead;note=Joined the party on <d Kythorn 8 1369>, died on\
- <d Flamerule 23 1369>
+;fullname=Elizabeth Rose &quot\;Buffy&quot\; Bambino;player=Iain\
+;gender=Female;race=Human;class=Mage(Enchanter);picture=skull250i.png\
+;characteristics=d/16/1349 - 7/23/1369;note=\
+<p>The third child of a well-to-do merchant familly in Sundabar,\
+ &quot\;Buffy&quot\;, as her familly called her, stood out amoung her siblings\
+ at an early age by virtue of both her beauty and her exceptional intelligence.\
+ Although a rift existed between Elizabeth Rose and her father from her early\
+ childhood, he nevertheless arranged for her to be apprenticed with the talented\
+ enchantress Madame Seluria, where she learned her trade.</p>\
+\
+<p>At the start of spring in the Year of the Gauntlet, Elizabeth Rose left\
+ home in search of her sister Bambi, who had disappeared the year before. At\
+ the end of Mirtul she found her sister and met AFAL, whom she decided to join\
+ to look after Bambi.</p>\
+\
+<p>Buffy met her end in a forgotten temple of Shar on <d Flamerule 23 1369>,\
+ which her party was exploring. While trying to antagonize a piece of\
+ statuary that he believed to be a monster, Henkles inadvertently set off an\
+ explosion that injured half party and killed Elizabeth Rose instantly. Her\
+ body was recovered and a moonlight funeral service was performed by Dexter\
+ of Selune on <d Eleasias 4 1369>.</p>\
+\
+<p>Buffy is survived by her father, Bruno, her mother, Betty, her three\
+ brothers, Billy Bob, Bart and Bruce, her two sisters Rebecka &quot\;Becky&quot\;\
+ Iris and Bambi, and her brother-in-law Son of Moogh.
 date=10 Kythorn 1369
 ,party;type=AFAL;name=Kythorn-10-1369;Buffy=1;Darius=1;Dexter=1;Henkles=1;Moogh=1;Steve=1;Stewart=1
 ,find;found=Kythorn-10-1369;name=Ring of Projection;holder=Henkles;note=Devlin part id, fail <d Kythorn 26 1369>, Darius failed <d Flamerule 4 1369>, Buffy failed <d Flamerule 5 1369>, Steve Cassie, Darius failed <d Eleasias 27 1369>, Cassie part id, fail <d Marpenoth 11 1369>
 ,meet;association=AFAL;status=active;name=Maanamere;fullname=Maanamere Palendril\
 ;player=Rickland;race=Moon Elf;gender=Male;class=Ranger;alignment=Neutral Good\
-;picture=maanamere.jpg;joined=Kythorn 10 1369;cash=21cp\
+;picture=maanamere.jpg;cash=21cp\
 ;characteristics=Very strong, somewhat dim but wise, quick, very attractive,\
  6'0&quot\;, 150lbs.  Maanamere has silver hair and eyes.\
  His hair is shoulder length and generally worn loose.\
@@ -167,7 +209,7 @@ date=10 Kythorn 1369
  Can cast some spells from the Conjuration/Summoning school.\
  He joined the party after being rescued on <d Kythorn 10 1369>.
 date=16 Kythorn 1369
-,meet;association=AFAL;status=inactive;name=Thalion;joined=Kythorn 16 1369;race=Elf;gender=Male;class=Cleric/Mage;alignment=Chaotic Good
+,meet;association=AFAL;status=inactive;name=Thalion;race=Elf;gender=Male;class=Cleric/Mage;alignment=Chaotic Good
 ,party;type=AFAL;name=Kythorn-16-1369;Buffy=1;Darius=1;Dexter=1;Falco=1;Henkles=1;Moogh=1;Steve=1;Stewart=1;Thalion=1
 ,find;found=Kythorn-16-1369
 ,,name=Oil of Sharpness 5* (1 used)
@@ -189,15 +231,13 @@ date=Kythorn 23 1369;meet;association=AFAL;status=inactive;
 ;class=Specialty Mage (Monitor);equipment=lost in the depths of time, except\
  for his lizard steed, &quot\;Roscoe&quot\;.;characteristics=Forgotten,\
  except for the hard to put up with part.;note=Joined the party on\
- <d Kythorn 23 1369>.Last mentioned in the party log on <d Eleasias 13 1369>.\
-;joined=Kythorn 23 1369
+ <d Kythorn 23 1369>.Last mentioned in the party log on <d Eleasias 13 1369>
 ,name=Hahrvee;player=Ross;race=Unknown;gender=Male?;class=Ranger\
 ;alignment=Unknown Good?;note=Joined the party on <d Kythorn 23 1369>.\
-  Last mentioned in the party log on <d Eleasias 12 1369>\
-;joined=Kythorn 23 1369
+  Last mentioned in the party log on <d Eleasias 12 1369>
 date=Kythorn 29 1369
 ,meet;association=AFAL;status=active;name=Mrap-M'rap;race=Tressym;gender=Male\
-;class=Cat;alignment=Chaotic Neutral;joined=Kythorn 29 1369\
+;class=Cat;alignment=Chaotic Neutral\
 ;equipment=Light purple rock in right eye socket.;picture=mrap07.jpg\
 ;characteristics=A silver tabby - a common British cat with tortoise-shell\
  blotches of light and dark gray instead of stripes.  His left ear is half\

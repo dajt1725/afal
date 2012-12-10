@@ -218,16 +218,30 @@ def parse_file(file, doit, inherited):
 
 ######## Date functions
 
-month_names = ('Hammer', 'Alturiak', 'Ches', 'Tarsakh', 'Mirtul', 'Kythorn',
- 'Flamerule', 'Eleasias', 'Eleint', 'Marpenoth', 'Uktar', 'Nightal')
+month_names = (
+ 'Hammer',    'Alturiak', 'Ches',   'Tarsakh',   'Mirtul', 'Kythorn',
+ 'Flamerule', 'Eleasias', 'Eleint', 'Marpenoth', 'Uktar',  'Nightal')
 
 festival_names = ('Midwinter', 'Greengrass', 'Midsummer', 'Higharvestide', 'Moon')
 
-month_offset = {'Hammer':0, 'Midwinter Festival':30, 'Alturiak':31, 'Ches':61,
- 'Tarsakh':91, 'Greengrass Festival':121, 'Mirtul':122, 'Kythorn':152,
- 'Flamerule':182, 'Midsummer Festival':212, 'Eleasias':213, 'Eleint':243,
- 'Higharvestide Festival':273, 'Marpenoth':274, 'Uktar':304, 'Moon Festival':334,
- 'Nightal':335}
+month_offset = {
+ 'Hammer':0,      'Midwinter Festival':30,      'Alturiak':31,   'Ches':61,
+ 'Tarsakh':91,    'Greengrass Festival':121,    'Mirtul':122,    'Kythorn':152,
+ 'Flamerule':182, 'Midsummer Festival':212,     'Eleasias':213,  'Eleint':243,
+                  'Higharvestide Festival':273, 'Marpenoth':274, 'Uktar':304,
+                  'Moon Festival':334,          'Nightal':335}
+
+_day_names = (
+ 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th', 'th',
+ 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th',
+ 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th', 'th')
+
+def _make_date(year, month, day):
+    year = int(year)
+    day = int(day)
+    if year < 1369 or year > 1370 or day < 1 or day > 30 or month not in month_offset:
+        raise ValueError("Invalid date {y} {m} {d}".format(y=year, m=month, d=day))
+    return 1000 + 365 * (year - 1368) + month_offset[month] + day - 1
 
 def str_to_date(date):
     """ turn a human readable date (day month year) into a date_id"""
@@ -235,31 +249,27 @@ def str_to_date(date):
 
     if date is None or type(date) is int:
         return date
-    if date[0] == '(' and date[-1] ==')' and date.count(',') == 2:
-        c1 = date.index(',')
-        c2 = date[c1+1:].index(',')
-        year = date[1:c1]
-        month = date[c1+1:c1+c2+1]
-        day = date[c1+c2+2:-1]
-    else:
-        c1 = date.index(' ')
-        c2 = date[c1+1:].index(' ')
-        if date[:c1] in festival_names and date[c1:c1+c2+2] == " Festival ":
-            month = date[:c1+c2+1]
-            day = 1
-            year = date[c1+c2+2:]
-        elif date[c1+1:c1+c2+1] in month_names:
-            day = date[:c1]
-            month = date[c1+1:c1+c2+1]
-            year = date[c1+c2+2:]
-        elif date[:c1] in month_names:
-            month = date[:c1]
-            day = date[c1+1:c1+c2+1]
-            year = date[c1+c2+2:]
-        else:
-            raise NameError("Unknown date "+date)
-    ret = 1000 + 365 * (int(year) - 1368) + month_offset[month] + int(day) - 1
-    return ret
+    r = re.match(r'(\d+)\s+(\w+),?\s+(\d+)$', date)
+    if r:
+        return _make_date(r.group(3), r.group(2), r.group(1))
+    r = re.match(r'(\w+)\s+Festival,?\s+(\d+)$', date)
+    if r:
+        return _make_date(r.group(2), r.group(1)+' Festival', 1)
+    r = re.match(r'\((\d+),\s+(\w+),\s+(\d+)\)',date)
+    if r:
+        return _make_date(r.group(1), r.group(2), r.group(3))
+    r = re.match(r'(\d+)\s+([a-zA-Z]+),?\s+(\d+)', date)
+    if r:
+        return _make_date(r.group(3), r.group(2), r.group(1))
+    r = re.match(r'([a-zA-Z]+)\s+(\d+),?\s+(\d+)', date)
+    if r:
+        return _make_date(r.group(3), r.group(1), r.group(2))
+    r = re.match(r'([a-zA-Z]+)\s+(\d+)([a-zA-Z]+),?\s+(\d+)', date)
+    if r:
+	day = r.group(2)
+        if _day_names[day] == r.group(3):
+            return _make_date(r.group(4), r.group(1), day)
+    raise NameError("Unknown date "+date)
 
 #day_names = {
 # 1:'First', 2:'Second', 3:'Third', 4:'Fourth', 5:'Fifth', 6:'Sixth',
@@ -276,12 +286,13 @@ off_monthset = ((0, 29, 'Hammer'), (30, 30, 'Midwinter Festival'),
  (243, 272, 'Eleint'), (273, 273, 'Higharvestide Festival'), (274, 303, 'Marpenoth'),
  (304, 333, 'Uktar'), (334, 334, 'Moon Festival'), (335, 364, 'Nightal'))
 
-def date_to_str(date):
+def date_to_str(date, is_html = True):
     """return a human-readable form of a date-id"""
 
     try:
         date = int(date)
     except:
+        sys.stderr.write("\ndate {d} already a string\n".format(d=date))
         return date
     if date < 1000:
         raise NameError("Invalid date " + str(date))
@@ -294,8 +305,10 @@ def date_to_str(date):
             if i[0] == i[1]:
                 return month + ' ' + str(year)
             day = 1 + mo - i[0]
-            return month+' '+str(day)+' '+str(year)
-    raise NameError("Couldn't find date '" + str(date))+"'"
+            if is_html:
+                return month+' '+str(day)+'<font size="-1"><sup>'+_day_names[day-1]+'</sup></font> '+str(year)
+            return month+' '+str(day)+_day_names[day-1]+' '+str(year)
+    raise NameError("Couldn't find date '" + repr(date))+"'"
 
 def party_to_date(d):
     return str_to_date(re.sub(r'^([^-]*-)?([^-]+)-(Festival|[0-9]+)[A-Za-z]?-([^-]+)$', r'\2 \3 \4', d))
@@ -723,7 +736,7 @@ def get_journal_dates(char = None):
         return resp
     ret=[]
     for i in resp:
-        ret.append(date_to_str(i[0]))
+        ret.append(date_to_str(i[0], False))
     return ret
 
     
@@ -821,7 +834,7 @@ def get_journal(cond = None):
         t['to'] = to_list
         t['part_of'] = i[1]
         t['ourtime'] = i[2]
-        t['date'] = date_to_str(i[3])
+        t['date'] = i[3]
         t['cash_cp'] = i[4]
         t['virtual_cp'] = i[5]
         t['description'] = i[6]
@@ -942,7 +955,7 @@ def get_party_data(party):
     _check_warnings()
     if len(resp) != 1 or len(resp[0]) != 3:
          raise NameError("party not found " + party)
-    ret = {'name': party, 'date': date_to_str(resp[0][0]), 'type': resp[0][1], 'note': resp[0][2], 'members': {}}
+    ret = {'name': party, 'date': resp[0][0], 'type': resp[0][1], 'note': resp[0][2], 'members': {}}
     cur.execute("select char_name, share from fr_char_party where party_name = %(party)s",
 {'party':party})
     resp = cur.fetchall()
@@ -1052,8 +1065,8 @@ def get_item_data(item):
     t['finder'] = resp[0]
     t['owner'] = resp[1]
     t['holder'] = resp[2]
-    t['date_found'] = date_to_str(resp[3])
-    t['date_xfrd'] = date_to_str(resp[4])
+    t['date_found'] = resp[3]
+    t['date_xfrd'] = resp[4]
     t['note'] = resp[5]
     t['value_cp'] = None if resp[6] is None else int(resp[6])
     return t
@@ -1111,8 +1124,8 @@ def get_items(kind, match = None):
         t['finder'] = i[1]
         t['owner'] = i[2]
         t['holder'] = i[3]
-        t['date_found'] = date_to_str(i[4])
-        t['date_xfrd'] = date_to_str(i[5])
+        t['date_found'] = i[4]
+        t['date_xfrd'] = i[5]
         t['note'] = i[6]
         t['value_cp'] = None if i[7] is None else int(i[7])
         ret.append(t)
@@ -1146,7 +1159,7 @@ def get_char_debts(char, type):
         t['order'] = i[3]
         t['amount_cp'] = i[4]
         t['share'] = i[5]
-        t['date'] = date_to_str(i[6])
+        t['date'] = i[6]
         t['item'] =  i[7]
         t['initial_cp'] = i[8]
         ret.append(t)

@@ -44,31 +44,25 @@ def format_plural(n, s, p = None):
 def format_date_log(d):
     if d is None:
         return None
-    if type(d) == int:
-        d = afal.date_to_str(d)
+    df = afal.date_to_str(d, False)
     if afal_config.text:
-        return d
-    else:
-        l = re.sub(' Festival', '', d)
-        l = re.sub(' ', '_', l)
-        return '<a href="{logs}{l}.html">{d}</a>'.format(logs = afal_config.logs,
- l = l, d = d)
+        return df
+    return '<a href="{logs}{l}.html">{dt}</a>'.format(logs = afal_config.logs,
+ l = re.sub(' ', '_', re.sub(' Festival', '', df)), dt = afal.date_to_str(d, True))
 
 
 def format_date(d):
     if d is None:
         return None
-    if type(d) == int:
-        d = afal.date_to_str(d)
+    df = afal.date_to_str(d, False)
     if afal_config.text:
-        return d
-    if d in afal.date_list:
-        return '<a href="{report}?journal=Show&start=date.{d}&end=date.{d}">{d}</a>'.format(
- report = afal_config.report, d = d)
-    l = re.sub(' Festival', '', d)
-    l = re.sub(' ', '_', l)
-    return '<a href="{logs}{l}.html">{d}</a>'.format(logs = afal_config.logs,
- l = l, d = d)
+        return df
+    dt = afal.date_to_str(d, True)
+    if df in afal.date_list:
+        return '<a href="{report}?journal=Show&start=date.{df}&end=date.{df}">{dt}</a>'.format(
+ report = afal_config.report, df = df, dt = dt)
+    return '<a href="{logs}{l}.html">{dt}</a>'.format(logs = afal_config.logs,
+ l = re.sub(' ', '_', re.sub(' Festival', '', df)), dt = dt)
 
 
 def format_character(c):
@@ -103,7 +97,7 @@ def format_item(i, party = None):
 
 
 def fmt_date(m):
-    return format_date(m.group(1))
+    return format_date(afal.str_to_date(m.group(1)))
 
 
 def munge_html(s):
@@ -116,6 +110,7 @@ def munge_html(s):
         ret = re.sub(r'&quot;', r'"', ret)
         ret = re.sub(r'&apos;', r"'", ret)
         ret = re.sub(r'&amp;', r'&', ret)
+        ret = re.sub(r'&eacute;', r'ee', ret)
         ret = re.sub(r'<p>(.*?)</p>', '\\1\n  ', ret)
         ret = re.sub(r'</?i>', r'', ret)
         ret = re.sub(r'</?sup>', r'', ret)
@@ -572,10 +567,10 @@ def print_journal(cond, show_sub = False):
             f['cash'] = afal.cp_to_str(e['cash_cp'])
             f['virtual'] = afal.cp_to_str(e['virtual_cp'])
         else:
-            f['cs'] = '<font color="blue">'
+            f['cs'] = '<font color="purple">'
             f['ce'] = '</font>'
-            f['cash'] = '<font color="blue">{cp}</font>'.format(cp=afal.cp_to_str(e['cash_cp']))
-            f['virtual'] = '<font color="orange">{cp}</font>'.format(cp = afal.cp_to_str(e['virtual_cp']))
+            f['cash'] = '<font color="purple">{cp}</font>'.format(cp=afal.cp_to_str(e['cash_cp']))
+            f['virtual'] = '<font color="green">{cp}</font>'.format(cp = afal.cp_to_str(e['virtual_cp']))
         text = munge_html(e['description'].format(**f))
         afal.pw(line.format(sub = sub, by = f['by'], text = text), **fmt)
     if prev_date:
@@ -696,7 +691,7 @@ def print_full_party(p):
 #        if type == 'AFAL':
 #            type = ''
         afal.pw(header_pname.format(party = party, log = party_to_log(party)), **fmt_group_header)
-        afal.pw(header_data.format(type = type, date = format_date(afal.date_to_str(data['date'])), note = note), **fmt_group_header)
+        afal.pw(header_data.format(type = type, date = format_date(data['date']), note = note), **fmt_group_header)
 
         members = data['members']
         if len(members):
@@ -708,18 +703,30 @@ def print_full_party(p):
 
 
 def print_people(p):
+    names = {
+ 'Current': 'Current members of AFAL',
+ 'Former': 'Former members of AFAL',
+ 'Dead': 'AFAL members deceased in the line of duty',
+ 'ActiveNPCs': 'People active in the campaign',
+ 'InactiveNPCs': 'People who no longer interact with AFAL',
+ 'DeadNPCs': 'People who died and might stay that way' }
     people = afal.get_characters(p)
     if len(people) > 1:
+        if p in names:
+            text = names[p]
+        else:
+            text = "People"
         if afal_config.text:
-            header = '\n        {text}\n'
+            header = '\n        {n} {text}\n'
             trailer = ''
         else:
-            header = '<h1>{text}</h1>'
+            header = '<h1>{n} {text}</h1>'
             trailer = '<hr />'
-        afal.pw(header.format(text = format_plural(people, p + ' Person', p + ' People')), **fmt)
+        afal.pw(header.format(n = len(people), text = text), **fmt)
     for char in people:
-        print_char(char, verbose=False)
-    afal.pw(trailer, **fmt)
+        print_char(char, verbose = False)
+    if len(people) > 1:
+        afal.pw(trailer, **fmt)
 
 
 #############################################################################
