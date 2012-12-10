@@ -6,7 +6,7 @@ import afal_config
 import afal
 
 cgitb.enable()
-date = afal.date_to_str(afal.date_list[-1])
+date = afal.date_list[-1]
 afal.character_list.insert(0,afal.party)
 if afal_config.text:
     parser = argparse.ArgumentParser('Generate a cash summary')

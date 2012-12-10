@@ -5,7 +5,7 @@ import afal
 import cgitb
 
 cgitb.enable()
-date = afal.date_to_str(afal.date_list[-1])
+date = afal.date_list[-1]
 
 if afal_config.text:
     header = \
