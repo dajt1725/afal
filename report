@@ -48,7 +48,7 @@ def format_date_log(d):
     if afal_config.text:
         return df
     return '<a href="{logs}{l}.html">{dt}</a>'.format(logs = afal_config.logs,
- l = re.sub(' ', '_', re.sub(' Festival', '', df)), dt = afal.date_to_str(d, True))
+ l = re.sub(' ', '_', re.sub(' Festival|[a-z]*,', '', df)), dt = afal.date_to_str(d, True))
 
 
 def format_date(d):
@@ -62,7 +62,7 @@ def format_date(d):
         return '<a href="{report}?journal=Show&start=date.{df}&end=date.{df}">{dt}</a>'.format(
  report = afal_config.report, df = df, dt = dt)
     return '<a href="{logs}{l}.html">{dt}</a>'.format(logs = afal_config.logs,
- l = re.sub(' ', '_', re.sub(' Festival', '', df)), dt = dt)
+ l = re.sub(' ', '_', re.sub(' Festival|[a-z]*,', '', df)), dt = dt)
 
 
 def format_character(c):
@@ -115,6 +115,7 @@ def munge_html(s):
         ret = re.sub(r'</?i>', r'', ret)
         ret = re.sub(r'</?sup>', r'', ret)
         ret = re.sub(r'</?a[^>]*>', r'', ret)
+        ret = re.sub(r'</?font[^>]*>', r'', ret)
         ret = re.sub(r'<br>', '\n  ', ret)
     ret = re.sub(r'<d ([^>]*)>', fmt_date, ret)
     return ret

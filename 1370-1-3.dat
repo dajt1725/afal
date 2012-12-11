@@ -22,25 +22,8 @@ date=Hammer 15 1370
 #,writeoff;Theo
 ,party;type=AFAL;name=Hammer-15-1370;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Steve=1;Maanamere=1;Stalker=1;Moogh=1
 ,find;found=Hammer-15-1370;name=Animal: Light War Horse *4;note=1 killed on <d Alturiak 6 1370>, sold for ~68gp, 84cp each
-date=Hammer 17 1370;meet;association=AFAL;status=active
-,name=Staric;fullname=Staric Ammakyl;player=Andre;race=Human;gender=Male\
-;class=Bard;alignment=Neutral Good;picture=Staric.png\
-;large_picture=Staric_lg.png;cash=1cp\
-;characteristics=Handsome, quick and athletic,\
- short brown/dk blonde hair, brown eyes, 5'9&quot\;, 174 lbs.\
-;equipment=bracers, longsword, longbow, lute, dagger, recorder, Wand of\
- Lightning Fan (party item)\
-;note=The least annoying member of The Shining Sons, Staric was with Dagar\
- Jhansczil when they accidentally used the Helm of Beefy Will to dispell the\
- charms they were under from The\
- <a href="/logs/log_Marpenoth_28_1369.html">Reverential</a>\
- <a href="/logs/log_Uktar_12_1369.html">Coronet</a> of\
- <a href="/logs/log_Hammer_17_1370.html">Extroversion</a>, which Dagar's\
- brother Arrikes was using in a plot to take over Waterdeep.  By mutual\
- agreement, Staric used a scroll to wipe Dagar's memory of the discovery and\
- contacted A.F.A.L. for help.  When A.F.A.L. arrived in Amphail, he joined up\
- with them as they fled the village on <d Hammer 17 1370>.
-,name=Deringa;fullname=Deringa Eagleshield;race=Human(?);gender=Female\
+date=Hammer 17 1370;meet;association=AFAL;status=active\
+;name=Deringa;fullname=Deringa Eagleshield;race=Human(?);gender=Female\
 ;class=Rich Kid?  Groupie?;alignment=Chaotic Good;cash=21cp\
 ;picture=Deringa.png;large_picture=Deringa_lg.png\
 ;characteristics=Cute, clever, very quick, very short,\
@@ -155,6 +138,13 @@ date=Alturiak 5 1370
 ;note=Originally Gail's character, played by Andrew and now Alex.\
  Tristan joined the party on <d Alturiak 5 1370>.
 date=Alturiak 6 1370
+,meet;name=Morgath the Stable;status=active\
+;association=Miresk&apos\;s school of Thaumaturgy;race=Human?;gender=Male\
+;class=Enchanter?;note=Henkles visited his office on <d Alturiak 6, 1370> to\
+ return Silver Strike to him. On <d Ches 26, 1370> he sent a package to\
+ Henkles containing the fully enchanted Silver Strike with a note asking for\
+ reports on how it performs under field conditions.  Henkles sent him notes on\
+ <d Ches 26 1370>.
 ,meet;name=Miss Mireria;race=Human?;gender=Female;status=inactive\
 ;alignment=Very Chaotic Evil;note=Met on <d Alturiak 6 1370>, and again on\
  <d Alturiak 17 1370> when we raided her house looking for missing puppies.
@@ -216,7 +206,11 @@ date=Ches 3 1370
 ,,name=Ioun Stones;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 date=Ches 7 1370
 ,writeoff;Chusnog;Oguch;Stalker;note=because the orc village is nice this time of year
-date=Ches 21 1370;meet;name=Ethraren Gulphogar;status=active\
+date=Ches 21 1370
+,meet;name=Ormos Whitestorm;status=active;association=The Star Chaser\
+;race=Zombie;gender=Male;class=2<font size="-1"><sup>nd</sup></font> mate\
+;characteristics=Undead;note=First encountered on <d Ches 21, 1370>
+,meet;name=Ethraren Gulphogar;status=active\
 ;association=Skundelrunskuntunrun &amp\; Gulphogar - Independant Brokers\
 ;race=Human;gender=Male;equipment=Conservative dress\
 ;characteristics=Short, graying, dark hair and brown eyes\

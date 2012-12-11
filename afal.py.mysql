@@ -264,10 +264,10 @@ def str_to_date(date):
     r = re.match(r'([a-zA-Z]+)\s+(\d+),?\s+(\d+)', date)
     if r:
         return _make_date(r.group(3), r.group(1), r.group(2))
-    r = re.match(r'([a-zA-Z]+)\s+(\d+)([a-zA-Z]+),?\s+(\d+)', date)
+    r = re.match(r'([a-zA-Z]+)\s+(\d+)([a-zA-Z]+?),?\s+(\d+)', date)
     if r:
-	day = r.group(2)
-        if _day_names[day] == r.group(3):
+	day = int(r.group(2))
+        if _day_names[day-1] == r.group(3):
             return _make_date(r.group(4), r.group(1), day)
     raise NameError("Unknown date "+date)
 
@@ -306,8 +306,8 @@ def date_to_str(date, is_html = True):
                 return month + ' ' + str(year)
             day = 1 + mo - i[0]
             if is_html:
-                return month+' '+str(day)+'<font size="-1"><sup>'+_day_names[day-1]+'</sup></font> '+str(year)
-            return month+' '+str(day)+_day_names[day-1]+' '+str(year)
+                return month+' '+str(day)+'<font size="-1"><sup>'+_day_names[day-1]+'</sup></font>, '+str(year)
+            return month+' '+str(day)+_day_names[day-1]+', '+str(year)
     raise NameError("Couldn't find date '" + repr(date))+"'"
 
 def party_to_date(d):
