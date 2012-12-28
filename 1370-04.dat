@@ -189,10 +189,10 @@ date=12 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-12-1370;Darius=1;Denyae=1;Deringa=.5;Dexter=1;\
 Henkles=1;Maanamere=1;Staric=.5
 ,find;found=Tarsakh-12-1370
-,,name=Magic Ring;note=Identify
+,,name=Ring of Shocking Grasp;value=5000gp
 ,,name=Plain Brass Ring *2
 ,,name=Brass Key
-,,name=Magic Brass Scepter;note=Identify
+,,name=Scepter of Entrapment
 ,,name=Glowing Glass Orb, 2.5' diamater
 ,,name=Wyvern head
 ,,name=Wyvern scales
@@ -296,3 +296,8 @@ date=13 Tarsakh 1370
 ,,by=Deringa;cash=3 Harbor Moons, 4 Toals;for=158gp
 ,,by=Theo;cash=1 Harbor Moon;for=50gp
 ,,by=Steve;cash=3 Harbor Moons;for=150gp
+,lend;to=Maanamare;item=Ring of Shocking Grasp
+,lend;to=Denyae;item=Scepter of Entrapment
+,give;item=Potion of Shopping  #1;to=Destroyed;note=used by Brogan
+,give;by=Brogan;to=Someone;cash=1 Gem: Spinel 500gp
+,give;by=Brogan;to=Someone;cash=12gp
