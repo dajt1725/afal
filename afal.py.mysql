@@ -848,7 +848,7 @@ def insert_character(d):
     """ insert a character into the database"""
 
     global coins_byname
-    _check_dict(d, must=('name', 'status', 'association'), may=(
+    _check_dict(d, must=('name', 'status', 'association', 'date'), may=(
  'alignment', 'characteristics', 'class', 'hidden_note', 'equipment',
  'fullname', 'gender', 'note', 'player', 'race', 'cash', 'picture',
  'large_picture'))
@@ -873,6 +873,10 @@ def insert_character(d):
  " %(fullname)s, %(gender)s, %(note)s, %(player)s, "
  " %(race)s, %(cash_cp)s, %(picture)s, %(large_picture)s )", d )
     _check_warnings()
+# Every character is in a party of just themselves
+# This is primarily to prevent someone accidentally creating a party and a
+# character with the same names
+    insert_party({'name': d['name'], 'type': 'Character', 'date': d['date'], 'members': {d['name']: 1}})
     if 'cash' in d:
         char_change_money(d['name'], 'get', str_to_coins(d['cash']))
 

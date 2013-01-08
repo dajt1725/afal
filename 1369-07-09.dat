@@ -46,12 +46,12 @@ date=Eleasias 18 1369
 ,writeoff;Devlin;Hahrvee
 ,party;type=AFAL;name=Eleasias-18-1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=1;Steve=1;Stewart=1
 ,find;found=Eleasias-18-1369
-,,name=Potion of Shopping;note=Steve part id <d Eleasias 26 1369>,
-,,name=Potion of Shopping;note=Steve part id <d Eleasias 26 1369>,
-,,name=Potion of Shopping;note=Steve part id <d Eleasias 26 1369>,
+,,name=Potion of Shopping  #1;note=Steve part id <d Eleasias 26 1369>,
+,,name=Potion of Shopping  #2;note=Steve part id <d Eleasias 26 1369>,
+,,name=Potion of Shopping  #3;note=Steve part id <d Eleasias 26 1369>,
 ,,name=Cooking Pot of Divination;owner=AFAL;note=Steve part id, Darius id <d Eleasias 26 1369>
-,,name=+1 Dagger (Charged, 50 charges);owner=Someone;xfrd=26 Eleasias 1369;value=500gp
-,,name=+1 Dagger (Charged, 50 charges);owner=Misery;xfrd=26 Eleasias 1369;value=500gp
+,,name=+1 Dagger (Charged, 50 charges)  #1;owner=Someone;xfrd=26 Eleasias 1369;value=500gp
+,,name=+1 Dagger (Charged, 50 charges)  #2;owner=Misery;xfrd=26 Eleasias 1369;value=500gp
 ,,name=Makeup of Disguise *6;owner=Someone;xfrd=26 Eleasias 1369;value=700gp;note=Cassie fail, Steve, Darius id <d Eleasias 27 1369>
 date=30 Eleasias 1369
 ,sell;to=Someone;item=+1 Dagger (Charged, 50 charges)  #2;cash=500gp;virtual
@@ -63,16 +63,16 @@ date=30 Eleasias 1369
 ,,name=+1 Shield can cast 1d4 healing once/week;found=AFAL;xfrd=30 Eleasias 1369;value=1500gp;note=Narthan id <d 30 Eleasias 1369>
 date=Eleint 17 1369
 ,find;found=AFAL
-,,name=+1 Arrow (Flight);holder=Dexter
-,,name=+1 Arrow (Flight);holder=Maanamere
-,,name=+1 Arrow (Flight);holder=Misery
-,,name=+1 Arrow (Flight);holder=Henkles
-,,name=+1 Arrow (Flight);holder=Narthan
+,,name=+1 Arrow (Flight)  #1;holder=Dexter
+,,name=+1 Arrow (Flight)  #2;holder=Maanamere
+,,name=+1 Arrow (Flight)  #3;holder=Misery
+,,name=+1 Arrow (Flight)  #4;holder=Henkles
+,,name=+1 Arrow (Flight)  #5;holder=Narthan
 ,,name=+1 Sling Bullet;holder=Darius;note=Name is Bullwinkle
 date=19 Eleint 1369
 ,party;type=AFAL;name=Eleint-19-1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=0;Steve=1;Stewart=1
 ,find;found=Eleint-19-1369
-,,name=Arrow (Sheaf) of Holding *2;holder=Denyae;note=Steve failed, Darius id <d Eleint 20 1369>;owner=AFAL
+,,name=Arrow (Sheaf) of Holding *2;note=Steve failed, Darius id <d Eleint 20 1369>;owner=AFAL
 ,,name=+2 Shield;holder=Narthan;note=Narthan id <d Eleint 19 1369>
 ,,name=Ring of Teleport Adventurer Into Undermountain;note=Steve, Darius part id on <d Eleint 20 1369>;owner=Someone;xfrd=27 Eleint 1369
 ,,name=Oil of Firey Burning;owner=destroyed;xfrd=12 Uktar 1369;note=Used by Steve, Temple id <d Eleint 27 1369>

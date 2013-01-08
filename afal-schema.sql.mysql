@@ -1,5 +1,5 @@
 create table fr_character (
-	char_name varchar(128) primary key,
+	char_name varchar(128) not null primary key,
 	status enum ( 'active', 'inactive', 'dead', 'dummy' ) not null default 'active',
 	association text,
 	fullname text,
@@ -15,29 +15,41 @@ create table fr_character (
 	note text,
 	hidden_note text,
 	cash_cp integer
-);
+) engine=innodb;
+create table fr_marching (
+	marching_name varchar(128) not null,
+	pos char(2) not null,
+	char_name varchar(128) references fr_character,
+	primary key(marching_name, pos),
+	foreign key (char_name) references fr_character(char_name)
+) engine=innodb;
 create table fr_party (
 	party_name varchar(128) primary key,
 	type enum ('AFAL', 'Character', 'NPCs', 'Unknown') not null,
 	date integer unsigned,
 	note text
-);
+) engine=innodb;
 create table fr_char_party (
 	char_name varchar(128) not null references fr_character,
 	party_name varchar(128) not null references fr_party,
 	share double unsigned not null default 1.0,
-	primary key(char_name, party_name)
-);
+	primary key(char_name, party_name),
+	foreign key (party_name) references fr_party(party_name),
+	foreign key (char_name) references fr_character(char_name)
+)engine=innodb;
 create table fr_item (
 	item_name varchar(128) primary key,
-	found_by varchar(128) not null,
-	owned_by varchar(128) not null,
-	held_by varchar(128),
+	found_by varchar(128) not null references fr_party,
+	owned_by varchar(128) not null references fr_party,
+	held_by varchar(128) references fr_character,
 	date_found integer unsigned not null,
 	date_xfrd integer unsigned,
 	note text,
-	value_cp integer unsigned
-);
+	value_cp integer unsigned,
+	foreign key (found_by) references fr_party(party_name),
+	foreign key (owned_by) references fr_party(party_name),
+	foreign key (held_by) references fr_character(char_name)
+)engine=innodb;
 create table fr_debt (
 	debt_id integer unsigned primary key auto_increment,
 	date integer unsigned not null,
@@ -47,8 +59,10 @@ create table fr_debt (
 	share double unsigned not null default 1.0,
 	item varchar(128) references fr_item,
 	initial_cp integer unsigned not null,
-	owed_cp integer unsigned not null
-) auto_increment=100000;
+	owed_cp integer unsigned not null,
+	foreign key (debtor) references fr_character(char_name),
+	foreign key (debtee) references fr_character(char_name)
+)engine=innodb, auto_increment=100000;
 create table fr_journal (
 	journal_id integer unsigned not null primary key auto_increment,
 	part_of integer unsigned references fr_journal,
@@ -56,18 +70,23 @@ create table fr_journal (
 	date integer unsigned not null,
 	cash_cp integer unsigned,
 	virtual_cp integer unsigned,
-	description text not null
-) auto_increment=1000000;
+	description text not null,
+	foreign key (part_of) references fr_journal(journal_id)
+)engine=innodb, auto_increment=1000000;
 create table fr_journ_by (
 	made_by varchar(128) not null references fr_party,
         journal_id integer unsigned not null references fr_journal,
-        primary key(made_by, journal_id)
-);
+        primary key(made_by, journal_id),
+	foreign key (made_by) references fr_party(party_name),
+	foreign key (journal_id) references fr_journal(journal_id)
+)engine=innodb;
 create table fr_journ_to (
 	made_to varchar(128) not null references fr_party,
 	journal_id integer unsigned references fr_journal,
-	primary key(made_to, journal_id)
-);
+	primary key(made_to, journal_id),
+	foreign key (made_to) references fr_party(party_name),
+	foreign key (journal_id) references fr_journal(journal_id)
+)engine=innodb;
 create table fr_money_type (
 	money_id integer unsigned not null primary key auto_increment,
 	coin varchar(128) unique not null,
@@ -75,10 +94,12 @@ create table fr_money_type (
 	common_use boolean not null,
 	abbrev text,
 	note text
-) auto_increment=10000000;
+)engine=innodb, auto_increment=10000000;
 create table fr_char_money (
-	owner varchar(128) not null,
+	owner varchar(128) not null references fr_party,
 	money_id integer unsigned not null references money_type,
 	quantity integer unsigned not null,
-	primary key(owner,money_id)
-);
+	primary key(owner,money_id),
+	foreign key (owner) references fr_party(party_name),
+	foreign key (money_id) references fr_money_type(money_id)
+)engine=innodb;

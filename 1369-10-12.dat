@@ -4,9 +4,9 @@ date=1 Marpenoth 1369
 ,,name=Weapon: Perditor Mortua;holder=Dexter;note=Narthan id <d Marpenoth 1 1369>
 ,,name=+1 Full Plate Armor;holder=Maanamere;note=Narthan id <d Marpenoth 1 1369>
 ,,holder=Auction
-,,,name=Scroll (C);note=L3: Inflict Moderate Wounds
+,,,name=Scroll (C)  #2;note=L3: Inflict Moderate Wounds
 ,,,name=+1 Studded Leather Armor;value=2500gp
-,,name=Scroll (C);note=L1: Aid
+,,name=Scroll (C)  #3;note=L1: Aid
 ,,name=Potion of Aid;holder=Maanamere;note=Darius, Steve, Cassie failed id <d Marpenoth 1 1369>, Cassie id <d Marpenoth 11 1369>;owner=AFAL
 ,,name=Potion of Enlarge;holder=Narthan;note=Auction,Darius id <d Marpenoth 1 1369>
 ,,name=Potion of Blur;holder=Misery;note=Darius failed, Steve id <d Marpenoth 1 1369>;owner=AFAL
@@ -28,12 +28,12 @@ date=23 Marpenoth 1369
 ,,name=Gems: Serpentine 45gp, 75gp, 115gp, 260gp, 500gp (5*);owner=Darius;xfrd=24 Marpenoth 1369;value=995gp
 ,,name=Gems: Smokey Quartz 35gp, 50gp, 60gp*2, 85gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=290gp
 ,,name=Gems: Amber 75gp, 90gp, 100gp*2, 120gp (5*);owner=Steve;xfrd=24 Marpenoth 1369;value=485gp
-,,name=Scroll (C);note=L3: Cure Disease;holder=Dexter;owner=AFAL
-,,name=Scroll (C);note=Heal;owner=AFAL
-,,name=Scroll (C);note=Ressurection;owner=AFAL
+,,name=Scroll (C)  #4;note=L3: Cure Disease;holder=Dexter;owner=AFAL
+,,name=Scroll (C)  #5;note=Heal;owner=AFAL
+,,name=Scroll (C)  #6;note=Ressurection;owner=AFAL
 ,,name=Scroll of Protection from Possession
-,,name=Glim Gauntlet;holder=Steve;note=Steve part id, Darius id <d Marpenoth 24 1369>;owner=AFAL
-,,name=Potion of Heroism;holder=Misery;note=Steve id <d Marpenoth 24 1369>;owner=AFAL
+,,name=Glim Gauntlet  #1;holder=Steve;note=Steve part id, Darius id <d Marpenoth 24 1369>;owner=AFAL
+,,name=Potion of Heroism  #2;holder=Misery;note=Steve id <d Marpenoth 24 1369>;owner=AFAL
 ,,owner=AFAL
 ,,,name=Crystal of Spellreading;note=Steve failed, Darius part &amp\; failed <d Marpenoth 24 1369>
 ,,,name=Potion of Delusion (Invisibility);note=Steve id <d Marpenoth 24 1369>
@@ -50,16 +50,16 @@ date=26 Marpenoth 1369
 date=28 Marpenoth 1369
 ,party;type=AFAL;name=Marpenoth-28A-1369;Darius=1;Maanamere=1;Steve=1;Dexter=1;Stewart=1;Henkles=1;Narthan=1
 ,find;found=Marpenoth-28A-1369
-,,name=Potion of Stoneskin;owner=destroyed;xfrd=17 Nightal 1369;note=Used by Cassie
-,,name=Potion of Stoneskin;holder=Ursula;owner=AFAL
-,,name=Potion of Stoneskin;holder=Dexter;owner=AFAL
-,,name=Potion of Stoneskin;holder=Darius;owner=AFAL
+,,name=Potion of Stoneskin  #1;owner=destroyed;xfrd=17 Nightal 1369;note=Used by Cassie
+,,name=Potion of Stoneskin  #2;owner=AFAL
+,,name=Potion of Stoneskin  #3;holder=Dexter;owner=AFAL
+,,name=Potion of Stoneskin  #4;holder=Darius;owner=AFAL
 ,party;type=AFAL;name=Marpenoth-28B-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Stewart=1
 ,find;found=Marpenoth-28B-1369
 ,,name=Bracers of Initiative D8;holder=Misery;note=Darius failed, Cassie id <d Marpenoth 28 1369>
 ,,owner=Someone;xfrd=7 Uktar 1369
 ,,,name=Boots of Elvinkind;value=3000gp
-,,,name=+1 Scimitar;value=3000gp
+,,,name=+1 Scimitar  #1;value=3000gp
 ,,,name=Weapon: Elf Hurtr;value=4500gp
 ,party;type=AFAL;name=Marpenoth-28C-1369;Darius=1;Dexter=1;Henkles=1;Steve=1;Stewart=1
 ,find;found=Marpenoth-28C-1369
@@ -67,7 +67,7 @@ date=28 Marpenoth 1369
 ,,name=+1 Dagger (can glow enough to read a map);owner=Misery;xfrd=11 Uktar 1369;value=600gp
 ,,name=Potion of Invulnerability;holder=Dexter;owner=AFAL;note=Cassie failed id <d Marpenoth 28 1369>
 ,,name=Scroll of Protection from Normal Missiles;holder=Darius;owner=AFAL
-,,name=Scroll (MU);note=Enchanted Weapon, Magic Mirror, Globe of Invulnerability;owner=AFAL
+,,name=Scroll (MU)  #2;note=Enchanted Weapon, Magic Mirror, Globe of Invulnerability;owner=AFAL
 ,,name=Potion of Healing in twisted vial;note=Darius id <d Marpenoth 28 1369>;holder=Misery;owner=AFAL
 date=Uktar 8 1369
 ,meet;association=AFAL;status=active;name=Ursula;fullname=Ursula la Bim\
@@ -80,6 +80,7 @@ date=Uktar 8 1369
  (Party Item), Horn of Bubbles.\
 ;note=Currently spends a lot of time hanging around Fair Winds.\
  Ursula joined the party on <d Uktar 8 1369>.
+,lend;to=Ursula;item=Potion of Stoneskin  #2
 ,party;type=AFAL;name=Uktar-8-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Uktar-8-1369;name=Rusty hand axe with Magic Aura on it;owner=AFAL
 date=Uktar 9 1369
@@ -124,30 +125,30 @@ date=11 Uktar 1369
 ,party;type=AFAL;name=Uktar-11-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Steve=1;Stewart=1;Ursula=1
 ,find;found=Uktar-11-1369
 ,,name=Potion of Extra Healing;holder=Steve;owner=AFAL
-,,name=Potion of Healing;holder=Cassie;owner=AFAL
-,,name=Potion of Healing;holder=Ursula;owner=AFAL
-,,name=Potion of Healing;holder=Dexter;owner=AFAL
-,,name=Potion of Healing;holder=Darius;owner=AFAL
+,,name=Potion of Healing  #1;holder=Cassie;owner=AFAL
+,,name=Potion of Healing  #2;holder=Ursula;owner=AFAL
+,,name=Potion of Healing  #3;holder=Dexter;owner=AFAL
+,,name=Potion of Healing  #4;holder=Darius;owner=AFAL
 date=12 Uktar 1369;
 ,meet;name=Marraba Jhansczil;association=House Jhansczil\
 ;race=Human;gender=Female;status=active\
 ;characteristics=Haughty, self-assured, in her 30s, short dark blonde hair\
 ;equipment=Robe with expensive jewelry, Wand case, Dagger of Hurting\
 ;note=Met on <d Uktar 12 1369>.  Also <d Uktar 20 1369>.
-,party;type=AFAL;name=Uktar-12A-1369;;Ursula=1;Misery=1;Stewart=1;Darius=1;Dexter=1;Steve=1;Narthan=1;Cassie=1;Gomsha=0;note=Start of the day up to "At this point Henkles and Maanamere "...
+,party;type=AFAL;name=Uktar-12A-1369;Ursula=1;Misery=1;Stewart=1;Darius=1;Dexter=1;Steve=1;Narthan=1;Cassie=1;Gomsha=0;note=Start of the day up to "At this point Henkles and Maanamere "...
 ,party;type=AFAL;name=Uktar-12B-1369;Ursula=1;Misery=1;Stewart=1;Maanamere=1;Henkles=1;Darius=1;Dexter=1;Steve=1;Narthan=1;Cassie=1;Gomsha=0;note=Up to "Ursula and Cassie assumed responsibility for the ladies"...
 ,find;found=Uktar-12B-1369
 ,,name=Staff of Phantasmal Fireballs;holder=Steve;owner=AFAL
 ,,name=Fanny Pack of Holding;holder=Darius
 ,,name=Tenser's Throw Rug;holder=Darius;owner=AFAL
-,,name=Shield with scroll of Summon Mystic Moose;holder=Denyae;owner=AFAL
-,,name=+2 Arrow (Flight) *4;holder=Denyae;owner=AFAL
-,,name=Arrow (Flight) of Darkness;holder=Denyae;owner=AFAL
+,,name=Shield with scroll of Summon Mystic Moose;owner=AFAL
+,,name=+2 Arrow (Flight) *4;owner=AFAL
+,,name=Arrow (Flight) of Darkness;owner=AFAL
 ,,name=Preserved Green Dragon Breath;holder=Stewart;note=Blew up with Stewart
-,,name=Potion of Heroism;owner=AFAL
+,,name=Potion of Heroism  #3;owner=AFAL
 ,,name=Scroll (C) *2;owner=Someone;xfrd=13 Uktar 1369;value=3300gp
 ,,name=Potion of Murdoch's Insect Ward;holder=Auction
-,,name=Potion of Invisibility;owner=AFAL
+,,name=Potion of Invisibility  #1;owner=AFAL
 ,,name=Potion of Undead Control (Skeleton);holder=Auction;value=2500gp
 ,meet;association=Shining Sons;status=active;race=Human;gender=Male
 ,,name=Dagar Jhansczil;class=Party leader\
@@ -184,18 +185,18 @@ date=12 Uktar 1369;
 ,party;type=AFAL;name=Uktar-12E-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Stewart=1;Ursula=1;note=Up to"At this point, Dexter and Ursula switched to deep rear guard"...
 ,give;to=destroyed;item=+1 Dagger (can glow enough to read a map)
 ,find;found=Uktar-12E-1369
-,,name=+1 Ring of Protection;holder=Henkles
+,,name=+1 Ring of Protection  #1;holder=Henkles
 ,,name=+2 Leather Armor;owner=Someone;xfrd=14 Uktar 1369;value=6000gp
-,,name=+1 Bastard Sword;owner=Maanamere;xfrd=14 Uktar 1369;value=3200gp
-,,name=Dagger of Hurting;owner=Someone;xfrd=21 Nightal 1369;value=1400gp;note=Given to Silent Travellers in exchange for the location of one of Arcturagana's lairs
-,,name=Dagger of Hurting;owner=Ursula;xfrd=14 Uktar 1369;value=1400gp
-,,name=Dagger of Hurting;owner=Narthan;xfrd=14 Uktar 1369;value=1400gp
-,,name=+1 Ring of Protection;holder=Narthan;
-,,name=+1 Shield;owner=Someone;xfrd=13 Uktar 1369;note=Given to Dagar
-,,name=Ring of Warmth;holder=Ursula
+,,name=+1 Bastard Sword  #1;owner=Maanamere;xfrd=14 Uktar 1369;value=3200gp
+,,name=Dagger of Hurting  #1;owner=Someone;xfrd=21 Nightal 1369;value=1400gp;note=Given to Silent Travellers in exchange for the location of one of Arcturagana's lairs
+,,name=Dagger of Hurting  #2;owner=Ursula;xfrd=14 Uktar 1369;value=1400gp
+,,name=Dagger of Hurting  #3;owner=Narthan;xfrd=14 Uktar 1369;value=1400gp
+,,name=+1 Ring of Protection  #2;holder=Narthan;
+,,name=+1 Shield  #1;owner=Someone;xfrd=13 Uktar 1369;note=Given to Dagar
+,,name=Ring of Warmth  #1;holder=Ursula
 ,,name=Rod of Caltrops;owner=Stewart;xfrd=14 Uktar 1369;value=2500gp
-,,name=Scroll (MU);note=L9: Phesult's Sleep of Ages;owner=Someone;xfrd=13 Uktar 1369;value=2700gp
-,,name=Ring of Water Walking;owner=Steve;xfrd=14 Uktar 1369;value=5000gp
+,,name=Scroll (MU)  #3;note=L9: Phesult's Sleep of Ages;owner=Someone;xfrd=13 Uktar 1369;value=2700gp
+,,name=Ring of Water Walking  #1;owner=Steve;xfrd=14 Uktar 1369;value=5000gp
 ,meet;status=dead;association=Silent Travellers
 ,,name=Gurugh;fullname=Gurugh Brightfire;race=&frac12\;orc;gender=Male\
 ;class=Fighter/thief?;alignment=Unknown\
@@ -294,7 +295,7 @@ date=Uktar 13 1369
  the temple of Chaunteau the same day.
 ,meet;association=AFAL;status=active;name=Denyae;fullname=Denyae Stavefall\
 ;player=Eleah;race=Human;gender=Female;class=Fighter;alignment=Neutral Good\
-;picture=Denyae.png;large_picture=Denyae_lg.png;cash=1cp\
+;picture=Denyae.png;large_picture=Denyae_lg.png;cash=10cp\
 ;characteristics=Strong, clever, very quick,\
  very short, curly brown/dk blonde hair, grey eyes, 5'7&quot\;, 137 lbs.\
 ;equipment=+1 Plate mail, +1 Ring of Protection, <i>Thunderbolt</i> (unique bow),\
@@ -308,10 +309,15 @@ date=Uktar 13 1369
  Longbow and longsword specialist.\
  Has earned the emnity of the vampire lord Dread William of the South Moors.\
  Offered full party membership on <d Ches 21 1370>.
+,lend;to=Denyae
+,,item=Arrow (Sheaf) of Holding *2
+,,item=Shield with scroll of Summon Mystic Moose
+,,item=+2 Arrow (Flight) *4
+,,item=Arrow (Flight) of Darkness
 ,find;found=Henkles;holder=Henkles;name=Weapon: Balthazar Hellspawn of Terror;xfrd=13 Uktar 1369;value=4000gp
-,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius cast Fireball <d Uktar 24 1369>
-,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius cast Snilloc's Snowball Swarm on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
-,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small);note=Darius (mis)cast Snilloc's Snowball Swarm (actually Reduce) on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
+,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small)  #1;note=Darius cast Fireball <d Uktar 24 1369>
+,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small)  #2;note=Darius cast Snilloc's Snowball Swarm on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
+,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small)  #3;note=Darius (mis)cast Snilloc's Snowball Swarm (actually Reduce) on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
 date=Uktar 14 1369
 ,meet;name=Razaar;fullname=Razaar Slissin;association=Guildmaster of Vintners,\
  Distillers and Brewers guild;race=Human;gender=Male;status=active\
@@ -442,8 +448,8 @@ date=5 Nightal 1369
 ,,name=Ring of Stick;owner=Stalker;value=500gp;note=Steve, Darius failed, Cassie part and failed id <d Nightal 6 1369>
 ,,name=Green Dragon Hide Armor;owner=Steve;value=1800gp
 ,,name=Potion of Health ("Elixer");owner=AFAL;value=2000gp
-,,name=Black Dragon Hide Boots;owner=Misery
-,,name=Black Dragon Hide Boots;owner=Dexter
+,,name=Black Dragon Hide Boots  #1;owner=Misery
+,,name=Black Dragon Hide Boots  #2;owner=Dexter
 date=Nightal 8 1369
 ,meet;association=lieutenant of Dread William;status=active;name=Arcturagana\
 ;race=Moon Elf;gender=Female;class=Vampire/Ranger;alignment=Chaotic Evil\
@@ -464,7 +470,7 @@ date=12 Nightal 1369
  the previous night. 
 ,party;type=AFAL;name=Nightal-12-1369;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Nightal-12-1369
-,,name=+1 Dagger;note=From Staros;holder=Auction;value=1400gp
+,,name=+1 Dagger  #1;note=From Staros;holder=Auction;value=1400gp
 ,,name=+1 Arrow (Sheaf);holder=Denyae;note=From Staros;owner=AFAL
 ,,name=Potions of Minor Healing and Regeneration
 date=Nightal 13 1369;meet;name=Lin;status=active\
@@ -479,17 +485,17 @@ date=16 Nightal 1369
 ,party;type=AFAL;name=Nightal-16-1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Narthan=1;Stalker=1;Steve=1
 ,find;found=Nightal-16-1369
 ,,name=Rod of Bash Face;holder=Moogh;note=Cassie part and failed id <d Nightal 16 1369>
-,,name=Scroll (MU);holder=Darius;note=(used Create Water), (used Insatiable Thirst), (used Steam Blast), L5: Conjure Water Elemetal, (used Water Bomb);owner=AFAL
+,,name=Scroll (MU)  #4;holder=Darius;note=(used Create Water), (used Insatiable Thirst), (used Steam Blast), L5: Conjure Water Elemetal, (used Water Bomb);owner=AFAL
 date=17 Nightal 1369
 ,party;type=AFAL;name=Nightal-17-1369;Cassie=1;Darius=1;Denyae=.5;Dexter=1;Misery=1;Narthan=1;Stalker=1;Steve=1
 ,find;found=Nightal-17-1369
-,,name=+1 Light Crossbow;holder=Steve
-,,name=+1 Light Crossbow;holder=Moogh
-,,name=+1 Scimitar;holder=Auction
+,,name=+1 Light Crossbow  #1;holder=Steve
+,,name=+1 Light Crossbow  #2;holder=Moogh
+,,name=+1 Scimitar  #2;holder=Auction
 ,,name=+1 Knife;owner=Stalker
 ,,name=+1 Blowgun Dart *7;owner=Someone;xfrd=18 Nightal 1369;value=1gp
 ,,name=Weapon: Buggerer;owner=Someone;xfrd=20 Hammer 1370;note=Stolen by Moogh's ogre when he ran off
-,,name=Scroll (MU);note=(used Death Recall), Delay Death;holder=Auction
+,,name=Scroll (MU)  #5;note=(used Death Recall), Delay Death;holder=Auction
 date=19 Nightal 1369;meet;status=active;association=associate of Linn
 ,name=Mimon Iceblight;gender=Male;note=First encountered on <d Nightal 19,\
  1369>, when we attacked a vampire lair. We attacked another lair with him on\
@@ -501,7 +507,7 @@ date=20 Nightal 1369
 ,,party;type=AFAL;name=Nightal-20-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Stalker=1;Steve=1
 ,find;found=Nightal-20-1369
 ,,name=Eyedrops of the Enchantress;owner=AFAL;xfrd=20 Nightal 1369
-,,name=Potion of Gaseous Form;owner=destroyed;xfrd=21 Nightal 1369;note=by Jan
+,,name=Potion of Gaseous Form  #1;owner=destroyed;xfrd=21 Nightal 1369;note=by Jan
 date=23 Nightal 1369
 ,party;type=AFAL;name=Nightal-23-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Steve=1
 ,find;found=Nightal-23-1369
@@ -510,8 +516,8 @@ date=23 Nightal 1369
 ,,name=+2 Long Sword
 ,,name=+1/+2(half*)/+3(Humans) Bastard Sword;holder=Moogh
 ,,name=+2 Ring of Protection;holder=Denyae;note=Fully id by testing <d Tarsakh 10 1370>
-,,name=Bracers of Defense AC 5;holder=Ursula;note=Fully id by testing <d Tarsakh 10 1370>
-,,name=Bracers of Defense AC 5;holder=Darius;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=Bracers of Defense AC 5  #1;holder=Ursula;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=Bracers of Defense AC 5  #2;holder=Darius;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1 Long Bow;owner=Dexter;xfrd=23 Nightal 1369;value=3500gp
 # Nightal 19 Darius uses a Chardalyn
 # Party acquires 3 sapphires 2500gp each
@@ -519,11 +525,11 @@ date=24 Nightal 1369
 ,party;type=AFAL;name=Nightal-24-1369;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Stalker=1;Steve=1
 ,find;found=Nightal-24-1369
 ,,name=Potion of Water Breathing
-,,name=Scroll (C);note=Energy Drain
+,,name=Scroll (C)  #7;note=Energy Drain
 ,,name=+1/+3(Fire) Plate Mail;owner=Dexter;xfrd=24 Nightal 1369;value=5000gp
-,,name=Scroll (C);holder=Auction;note=Bless, Curse, Putrify Food, Focus
-,,name=Scroll (C);holder=Auction;note=Locate Animals or Plants *2, Snake Charm, Summon Insects, Call Woodland Being, Animal Summoning 3
-,give;to=Misery;item=+1 Bastard Sword
+,,name=Scroll (C)  #8;holder=Auction;note=Bless, Curse, Putrify Food, Focus
+,,name=Scroll (C)  #9;holder=Auction;note=Locate Animals or Plants *2, Snake Charm, Summon Insects, Call Woodland Being, Animal Summoning 3
+,give;to=Misery;item=+1 Bastard Sword  #1
 ,give;to=Maanamere;item=+2 Long Sword
 date=Nightal 26 1369
 ,writeoff;Narthan;Cassie;note=and ran away from the vampires

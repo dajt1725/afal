@@ -40,6 +40,7 @@ meet;status=dummy;date=Ches 1 1369
 ,name=destroyed
 ,name=Someone
 ,name=AFAL;cash=3 sembian steel pieces, 36cp, 48sp, 8ep, 114gp, 81pp, 3 gond bells, 32 harbor moons, 6 Gem: Moonstone 50gp
+party;date=Ches 1 1369;type=Character;name=debts
 date=Ches 1 1369;meet;association=AFAL
 ,status=active;name=Darius;fullname=Darius of Waterdeep;player=Ian;race=Human\
 ;gender=Male;class=Wild Mage;alignment=Chaotic Good;picture=Darius.gif\
@@ -55,7 +56,7 @@ date=Ches 1 1369;meet;association=AFAL
 ,status=active;name=Dexter;fullname=Dexter Melaenarlir;player=Dina\
 ;race=&frac12\;Elf;gender=Male;class=Ranger/Spec Pr - Selune\
 ;alignment=Neutral Good\
-;picture=Dexter.png;large_picture=Dexter_lg.png;cash=6000gp, 20cp\
+;picture=Dexter.png;large_picture=Dexter_lg.png;cash=6000gp, 30cp\
 ;characteristics=Green cat's eyes, strong, wise, clever, white hair, 6', 195lbs.\
 ;equipment=+1 plate mail, +1 shield, <i>Perditor Mortua</i>, Moon's Hand Mace,\
  +2/+4(negative plane/energy draining creatures) Mace, +1 Long Bow,\
@@ -213,18 +214,18 @@ date=16 Kythorn 1369
 ,party;type=AFAL;name=Kythorn-16-1369;Buffy=1;Darius=1;Dexter=1;Falco=1;Henkles=1;Moogh=1;Steve=1;Stewart=1;Thalion=1
 ,find;found=Kythorn-16-1369
 ,,name=Oil of Sharpness 5* (1 used)
-,,name=Potion of Heroism;note=Devlin failed id <d Kythorn 25 1369>, Buffy failed id <d Kythorn 26 1369>, Buffy id <d Flamerule 5 1369>
+,,name=Potion of Heroism  #1;note=Devlin failed id <d Kythorn 25 1369>, Buffy failed id <d Kythorn 26 1369>, Buffy id <d Flamerule 5 1369>
 ,,name=Potion of 3d8 extra hit points
 ,,name=Scroll of Protection from Petrification
 ,,name=Scroll of Protection from Magic
-,,name=Scroll (MU);note=L3: Slow
+,,name=Scroll (MU)  #1;note=L3: Slow
 ,,name=Potion of Delusion (Flying);owner=AFAL;note=Devlin id <d Kythorn 24 1369>.
 ,,xfrd=24 Flamerule 1369
 ,,,name=Weapon: Silver Strike;owner=Henkles;note=Devlin part id, fail <d Kythorn 24 1369>, Buffy, Darius failed id <d Kythorn 28 1369>, Steve failed, Buffy id <d Flamerule 4 1369>
 ,,,name=Weapon: Binky;owner=Maanamere;note=Devlin failed id <d Kythorn 26 1369>, Buffy failed, Darius part id, fail <d Kythorn 28 1369>, Steve, Buffy, Darius part id and fail on <d Flamerule 4 1369>
 ,,holder=Auction
 ,,,name=Potion of Ventriloquism;note=Devlin id <d Kythorn 26 1369>
-,,,name=Scroll (C);note=Lighten Load
+,,,name=Scroll (C)  #1;note=Lighten Load
 date=Kythorn 16 1369;writeoff;Thalion;Falco
 date=Kythorn 23 1369;meet;association=AFAL;status=inactive;
 ,name=Devlin;player=Kathy;race=Unknown;gender=Male?;alignment=Unknown\

@@ -18,7 +18,8 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
  not restricted.  Also, Brogan is compelled to kiss anything he sees that is\
  composed of silver unless it's on someone's person.  If he fails either\
  condition, he immediately loses all prepared spells.
-,sell;to=Someone;item=Nonmagic;cash=1908gp, 108sp
+,lend;to=Brogan;item=Sleep Gas Grenade (M) *2  #5
+,sell;to=Someone;item=Nonmagic  #1;cash=1908gp, 108sp
 ,give;by=AFAL;to=Someone;amount=300gp;note=pearls for Identify
 ,dividend;by=Ches-30-1370;cash=1908gp, 108sp
 ,sell;to=Dexter;item=Ebony Fly;cash=5000gp
@@ -26,27 +27,27 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
 ,trade;by=Darius;to=Ches-30-1370;for=2 Gem: Chrysoberyl 100gp
 date=2 Tarsakh 1370
 ,system;cmd=mysqldump -uafal -pBuffyStewart -r dump.1370-4-02.sql afal_devel
-,give;to=Ches-30-1370;item=+1 Ring of Protection  #1
+,give;to=Ches-30-1370;holder=Denyae;item=+1 Ring of Protection  #1
 ,sell
 ,,to=Ag
 ,,,item=Bracers of Defense AC 5  #1;cash=3cp;debt=14999gp, 197cp
-,,,item=+1 Ring of Protection  #3;cash=1cp;debt=4999gp, 199cp
-,,,item=Dagger of Hurting  #5;cash=1cp;debt=1399gp, 199cp
+,,,item=+1 Ring of Protection  #3;cash=10cp;debt=4999gp, 190cp
+,,,item=Dagger of Hurting  #5;cash=10cp;debt=1399gp, 190cp
 ,,to=Darius
 ,,,item=Fanny Pack of Holding;cash=4cp;debt=9499gp, 196cp
 ,,,item=Bracers of Defense AC 5  #2;cash=3cp;debt=14999gp, 197cp
 ,,,item=+2 Ring of Protection;cash=5cp;debt=11999gp, 195cp
 ,,to=Denyae
-,,,item=+1 Ring of Protection  #1;cash=1cp;debt=4999gp, 199cp
+,,,item=+1 Ring of Protection  #1;cash=10cp;debt=4999gp, 190cp
 ,,to=Dexter
 ,,,item=Weapon: Perditor Mortua;cash=4cp;debt=4999gp, 196cp
-,,,item=Ring of Fire Resistance;cash=1cp;debt=4999gp, 199cp
+,,,item=Ring of Fire Resistance;cash=10cp;debt=4999gp, 190cp
 ,,,item=Ring of Warmth  #2;cash=9cp;debt=4999gp, 191cp
 ,,,item=Ring of Water Walking  #2;cash=1cp;debt=4999gp, 199cp
 ,,,item=Potion of Invisibility  #1;cash=500gp
 ,,to=Henkles
 ,,,item=Ring of Projection;debt=5000gp
-,,,item=+1/+3(Saves) Ring of Protection;debt=4999gp, 199cp;cash=5000gp, 1cp\
+,,,item=+1/+3(Saves) Ring of Protection;debt=4999gp, 190cp;cash=5000gp, 10cp\
 ;virtual
 ,,to=Maanamere
 ,,,item=+1 Full Plate Armor;debt=30000gp
@@ -75,7 +76,7 @@ date=3 Tarsakh 1370
 # AFAL now owes Henkles 18gp, 5sp
 ,give;by=Henkles;to=Someone;cash=6 Toals, 6gp, 3sp, 20cp\
 ;note=for firewood and 9in/9out Undermountain
-,find;found=Tarsakh-3-1370;name=Nonmagic;holder=Sell\
+,find;found=Tarsakh-3-1370;name=Nonmagic  #2;holder=Sell\
 ;note=City Guard Breastplate,Jeweled Dagger, Long Sword, Spear
 # I have no idea where these items came from
 ,give;by=Someone;to=Maanamere;cash=2 Gem: Emerald 200gp, 2 Gem:\
@@ -98,8 +99,8 @@ date=4 Tarsakh 1370
 ;Henkles=1;Maanamere=1;Steve=1;Tristan=1
 ,find;found=Tarsakh-4-1370
 ,,name=+1 Sling;holder=Deringa
-,,name=+1 Dagger;holder=Auction;value=1400gp
-,,name=Nonmagic;holder=Sell;note=Glaive, Broadsword, Short Bow, Chainmail,\
+,,name=+1 Dagger  #5;holder=Auction;value=1400gp
+,,name=Nonmagic  #3;holder=Sell;note=Glaive, Broadsword, Short Bow, Chainmail,\
  Shield
 ,give;by=Someone;to=Tarsakh-4-1370;cash=17sp,42ep,1gp,7toal,2 harbor moon,2\
  Gem: Pearl 100gp
@@ -122,7 +123,7 @@ Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,give;by=Tarsakh-7-1370;to=Someone;cash=7 toals, 8gp\
 ;note=for 11gp in, 11gp out of Undermountain
 ,find;found=Tarsakh-7-1370
-,,name=Nonmagic;holder=Sell;note=6 composite short bows, 6 spears, arrows
+,,name=Nonmagic  #4;holder=Sell;note=6 composite short bows, 6 spears, arrows
 ,,name=Poison: (Sleep), Pot of;note=2 round onset, 5-10 rounds duration,\
  expires around the 17th or so
 ,,name=Shirt of Tackyness;note=Humanoids int >=7 suffer -2th,Darius id\
@@ -134,7 +135,7 @@ Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,,name=Droplets of Sobriety;owner=AFAL;note=6 droplets, Darius id\
  <d Tarsakh 8 1370>
 ,,name=+2/+4 (level draining or negative plane) Mace
-,,name=Nonmagic;note=Dagger *2;holder=Sell
+,,name=Nonmagic  #5;note=Dagger *2;holder=Sell
 ,give;by=Someone;to=Tarsakh-7-1370;cash=27cp, 16sp, 6ep, 9toals, 3 Gem: Satan\
  Spar 10gp, 1 Gem: Corstal 45gp, 4 Gem: Banded Agate 10gp
 ,give;by=Someone;to=Tarsakh-7-1370;cash=23 Triangular Electrum Piece, 12 Gond\
@@ -165,7 +166,7 @@ date=11 Tarsakh 1370
 # Shirt of tackyness
 ,cancel;Henkles;Misery;Dexter
 # And we give out some of the money
-,divy;by=Uktar-12B-1369;amount=500gp;note=from Potion of Invisibility
+,divy;by=Uktar-12B-1369;amount=500gp;note=from Potion of Invisibility  #1
 ,divy;by=Hammer-15-1370;amount=205gp, 53cp;note=from Light War Horses
 ,divy;by=Hammer-20-1370;amount=1094gp, 147cp;note=from Heavy War Horses
 ,divy;by=Ches-3c-1370;amount=1000gp;note=for bolts of silk
@@ -296,7 +297,7 @@ date=13 Tarsakh 1370
 ,,by=Deringa;cash=3 Harbor Moons, 4 Toals;for=158gp
 ,,by=Theo;cash=1 Harbor Moon;for=50gp
 ,,by=Steve;cash=3 Harbor Moons;for=150gp
-,lend;to=Maanamare;item=Ring of Shocking Grasp
+,lend;to=Maanamere;item=Ring of Shocking Grasp
 ,lend;to=Denyae;item=Scepter of Entrapment
 ,give;item=Potion of Shopping  #1;to=Destroyed;note=used by Brogan
 ,give;by=Brogan;to=Someone;cash=1 Gem: Spinel 500gp

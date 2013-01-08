@@ -27,7 +27,7 @@ def do_meet(d):
 'characteristics', 'class', 'hidden_note', 'equipment', 'fullname', 'note',
  'player', 'race', 'picture', 'large_picture', 'cash', 'gender'))
     e = {}
-    for i in ('name', 'status', 'alignment', 'association', 'characteristics',
+    for i in ('name', 'status', 'date', 'alignment', 'association', 'characteristics',
  'class', 'hidden_note', 'equipment', 'fullname', 'note', 'player',
  'race', 'picture', 'large_picture', 'gender'):
         e[i] = d.get(i)
@@ -36,10 +36,6 @@ def do_meet(d):
     if args.verbose:
         afal.pw("Creating character", e, max = 130)
     afal.insert_character(e)
-# Every character is in a party of just themselves
-# This is primarily to prevent someone accidentally creating a party and a
-# character with the same names
-    afal.insert_party({'name': d['name'], 'type': 'Character', 'date': d['date'], 'members': {d['name']: 1}})
 
 
 def do_party(d):
@@ -62,10 +58,10 @@ def do_give(d):
     # Two possibilities from=, amount= to move cash
     # or item= to give an item
     if 'item' in d:
-        check_dict(d, must = ('date', 'to', 'item'), may = ('journal', 'note', 'part_of'))
+        check_dict(d, must = ('date', 'to', 'item'), may = ('holder', 'journal', 'note', 'part_of'))
         if args.verbose:
             afal.pw("giving item", d, max = 130)
-        afal.change_item(d['date'], d['item'], owner = d['to'], holder = d['to'], part_of = d.get('part_of'))
+        afal.change_item(d['date'], d['item'], owner = d['to'], holder = d.get('holder',d['to']), part_of = d.get('part_of'))
         return
 
     if 'cash' in d:

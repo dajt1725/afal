@@ -1,13 +1,13 @@
 date=9 Hammer 1370
 ,party;type=AFAL;name=Hammer-9-1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Moogh=1;Stalker=1;Steve=1;Theo=1
 ,find;found=Hammer-9-1370
-,,name=Scroll (MU);note=MU L2: Whirling Blade;holder=Auction
-,,name=Potion of Polymorph Self
-,,name=+1 Dagger;owner=Someone;note=Sold
-,,name=+1 Dagger;owner=Misery;xfrd=9 Hammer 1369
-,,name=Potion of Healing;owner=AFAL
+,,name=Scroll (MU)  #6;note=MU L2: Whirling Blade;holder=Auction
+,,name=Potion of Polymorph Self  #1
+,,name=+1 Dagger  #2;owner=Someone;note=Sold
+,,name=+1 Dagger  #3;owner=Misery;xfrd=9 Hammer 1369
+,,name=Potion of Healing  #5;owner=AFAL
 ,,name=Potion (Maybe of Healing);note=Identify,AgL7Fail;owner=AFAL
-,,name=Potion of Invisibility
+,,name=Potion of Invisibility  #2
 ,,name=Necklace of Light and Darkness;holder=Henkles;owner=AFAL
 date=13 Hammer 1370
 ,party;type=AFAL;name=Hammer-13-1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Theo=1
@@ -15,9 +15,9 @@ date=13 Hammer 1370
 ,find;found=Hammer-13-1370
 ,,name=+1 Glaive;holder=Auction;note=6gp, 8#, 1-6/1-10/L/S/speed 8;value=2700gp
 ,,name=+1 Banded Mail;holder=Auction;value=4000gp
-,,name=+1 Shield;holder=Tristan
-,,name=Ring of Water Walking
-,,name=Potion of Healing;owner=AFAL
+,,name=+1 Shield  #2
+,,name=Ring of Water Walking  #2
+,,name=Potion of Healing  #6;owner=AFAL
 date=Hammer 15 1370
 #,writeoff;Theo
 ,party;type=AFAL;name=Hammer-15-1370;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Steve=1;Maanamere=1;Stalker=1;Moogh=1
@@ -41,31 +41,31 @@ date=Hammer 17 1370;meet;association=AFAL;status=active\
 date=Hammer 20 1370
 ,party;type=AFAL;name=Hammer-20-1370;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Staric=.5;Stalker=1;Steve=1
 ,find;found=Hammer-20-1370
-,,name=Dagger of Hurting;holder=Tristan
-,,name=Chardalyn;holder=Ag;note=L4MU Snillics Snowball Swarm;owner=AFAL
-,,name=Glim Gauntlet;holder=Darius;owner=AFAL
+,,name=Dagger of Hurting  #4
+,,name=Chardalyn;note=L4MU Snillics Snowball Swarm;owner=AFAL
+,,name=Glim Gauntlet  #2;holder=Darius;owner=AFAL
 ,,name=Animal: Heavy War Horse *7;note=1 killed <d Alturiak 6 1370>, sold for approx 182gp, 91cp each
 ,,name=Travelling Spell Book;note=L1: Magic Missile, Unseen Servant, Color Spray, Mending, Charm Person, Detect Illusion, L2: Snilloc's SS, Invisibility, Detect Poison
 ,,name=+1/+2(Lawful) Long Sword;holder=Steve
 ,,name=+2 Whip;holder=Misery
 ,,name=+1 Composite Short Bow;holder=Misery
-,,name=+1/+3(Cold) Ring of Protection;holder=Maanamere
+,,name=+1/+3(Cold) Ring of Protection  #1;holder=Maanamere
 ,,name=Bracers of Defense AC 6;holder=Ursula;note=Fully id'd by testing on <d Tarsakh 10 1370>
-,,name=+1 Plate Mail (Half Elf);holder=Tristan
+,,name=+1 Plate Mail (Half Elf)
 ,,holder=Auction
-,,,name=+1 Dagger;value=1400gp
+,,,name=+1 Dagger  #4;value=1400gp
 ,,,name=+1 Heavy Crossbow;note=bolts:1sp,.1#,dmg 1-10/1-10,S,P\; bow: 50gp, 14#, M, speed 11, RoF 1/2, Range 8/16/24;value=2700gp
 ,,holder=Maanamere;owner=AFAL
-,,,name=+1 Arrow (Sheaf) *3
-,,,name=Sleep Gas Grenade (M) *2
+,,,name=+1 Arrow (Sheaf) *3  #1
+,,,name=Sleep Gas Grenade (M) *2  #1
 ,,holder=Denyae;owner=AFAL
 ,,,name=+1 Arrow (Sheaf) *12
-,,,name=Sleep Gas Grenade (M) *2
-,,name=+1 Light Crossbow;owner=Someone;xfrd=30 Hammer 1370;note=Given to the orc chieftan
+,,,name=Sleep Gas Grenade (M) *2  #2
+,,name=+1 Light Crossbow  #3;owner=Someone;xfrd=30 Hammer 1370;note=Given to the orc chieftan
 ,,name=+1 Arrow (Sheaf) *6;holder=Dexter;owner=AFAL
-,,name=+1 Arrow (Sheaf) *3;holder=Henkles;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2;holder=Tristan;owner=AFAL
-,,name=Potion of Gaseous Form;note=AgL7Fail id, Darius id <d Tarsakh 8 1370>
+,,name=+1 Arrow (Sheaf) *3  #2;holder=Henkles;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2  #3;owner=AFAL
+,,name=Potion of Gaseous Form  #2;note=AgL7Fail id, Darius id <d Tarsakh 8 1370>
 ,meet;association=AFAL;status=inactive
 ,,name=Alril;fullname=Alril Elarorrieth;race=Moon Elf;gender=Male\
 ;class=Fighter;alignment=Neutral Evil;picture=Alril.png\
@@ -122,7 +122,7 @@ date=Alturiak 5 1370
  <d Alturiak 5 1370> Has a boyfriend, Fred, who has a younger brother George.
 ,meet;association=AFAL;status=active
 ,,name=Ag;player=Bill;race=Human;gender=Male;class=Thief;alignment=Neutral Good\
-;picture=ag.jpg;cash=5cp\
+;picture=ag.jpg;cash=25cp\
 ;characteristics=brown hair, blue eyes, 5'7&quot\;, 128lbs.,\
  wise beyond his years\
 ;equipment=Bracers of defense AC 5, +1 Ring of Protection, Gloves of Mask,\
@@ -137,6 +137,11 @@ date=Alturiak 5 1370
  <i>Ghoulbreaker</i>, Dagger of Hurting\
 ;note=Originally Gail's character, played by Andrew and now Alex.\
  Tristan joined the party on <d Alturiak 5 1370>.
+,lend;to=Ag;item=Chardalyn
+,lend;to=Tristan;item=+1 Shield  #2
+,lend;to=Tristan;item=Dagger of Hurting  #4
+,lend;to=Tristan;item=+1 Plate Mail (Half Elf)
+,lend;to=Tristan;item=Sleep Gas Grenade (M) *2  #3
 date=Alturiak 6 1370
 ,meet;name=Morgath the Stable;status=active\
 ;association=Miresk&apos\;s school of Thaumaturgy;race=Human?;gender=Male\
@@ -161,17 +166,17 @@ date=Ches 3 1370
 ,,name=Potion *4;note=Identify
 ,,name=Jug of Liquid Magic
 ,,holder=Auction
-,,,name=Scroll (MU);note=L1: Unseen Servant *3
-,,,name=Scroll (MU);note=L2: Levatate *4
-,,,name=Scroll (MU);note=L1: Comprehend Languages *3
+,,,name=Scroll (MU)  #7;note=L1: Unseen Servant *3
+,,,name=Scroll (MU)  #8;note=L2: Levatate *4
+,,,name=Scroll (MU)  #9;note=L1: Comprehend Languages *3
 ,party;type=AFAL;name=Ches-3c-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3c-1370
 ,,name=20yd bolt of fine silk *6
-,,name=Ring of Warmth
+,,name=Ring of Warmth  #2
 ,,name=Carpet of Flying 3x5;holder=Denyae;owner=AFAL
 ,,holder=Dexter;owner=AFAL
-,,,name=Potion of Healing
-,,,name=Potion of Healing
+,,,name=Potion of Healing  #7
+,,,name=Potion of Healing  #8
 ,,holder=Auction
 ,,,name=Potion of Youth ("Elixer");value=10000gp
 ,,,name=Potion of Longevitiy;value=1000gp
@@ -179,15 +184,15 @@ date=Ches 3 1370
 ,,,name=Potion of Lust
 ,,,name=Detect Magic powder *10;note=Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
 ,,,name=Brighten lamps powder *10;note=Green odorless powder: increases lamp oil light by 20'
-,,name=Scroll (MU);note=5 spells: 5) Zwei's 2nd extension, 6) Sadebreth's reincarnation - id'd, 7) Yong's dissipation, 7) Noanar's delayed fireball - id'd, 8) Lucke's 6th monster summons
-,,name=Scroll (MU);note=2 spells: 3) Nalevac's deep sight, 4) Zwei's 1st extension
-,,name=Scroll (MU);note=4 spells: 3) Gwynn's vampirism, 8) Lucke's 6th monster summons, 8) Kutson's antipathy/sympathy, 10) Proctiv's move mountain
-,,name=Scroll (MU);note=4 spells: 4) Proctiv's dig - id'd, 4) Zwei's 1st extension, 5) Stoca's fauna growth, 7) Toscudlo's bulk invisibility
-,,name=Scroll (MU);note=3 spells: 6) Lucke's 4th monster summons, 8) Anglin's wall, 9) Smolyn's foreseer
-,,name=Scroll (MU);note=2 spells: 7) Toscudlo's bulk invisibility, 10) Mavin's create volcano
+,,name=Scroll (MU)  #10;note=5 spells: 5) Zwei's 2nd extension, 6) Sadebreth's reincarnation - id'd, 7) Yong's dissipation, 7) Noanar's delayed fireball - id'd, 8) Lucke's 6th monster summons
+,,name=Scroll (MU)  #11;note=2 spells: 3) Nalevac's deep sight, 4) Zwei's 1st extension
+,,name=Scroll (MU)  #12;note=4 spells: 3) Gwynn's vampirism, 8) Lucke's 6th monster summons, 8) Kutson's antipathy/sympathy, 10) Proctiv's move mountain
+,,name=Scroll (MU)  #13;note=4 spells: 4) Proctiv's dig - id'd, 4) Zwei's 1st extension, 5) Stoca's fauna growth, 7) Toscudlo's bulk invisibility
+,,name=Scroll (MU)  #14;note=3 spells: 6) Lucke's 4th monster summons, 8) Anglin's wall, 9) Smolyn's foreseer
+,,name=Scroll (MU)  #15;note=2 spells: 7) Toscudlo's bulk invisibility, 10) Mavin's create volcano
 ,,name=Potion of Fire Breathing
 ,,name=Potion of Speed
-,,name=Potion of Polymorph Self
+,,name=Potion of Polymorph Self  #2
 ,,name=Oil of Disenchantment
 ,,name=Potion of Stone Giant Strength
 ,,name=Potion *3;note=Identify,TristanL5Fail
@@ -222,34 +227,34 @@ date=Ches 25 1370
 ,party;type=AFAL;name=Ches-25-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Ches-25-1370
 ,,name=-1 Cursed Khopesh;owner=AFAL;xfrd=25 Ches 1370
-,,name=+1 Shield (needs new handle);holder=Auction;note=10gp?, 10#;value=2500gp
+,,name=+1 Shield  #3;holder=Auction;note=(needs new handle), 10gp?, 10#;value=2500gp
 date=Ches 30 1370
 ,party;type=AFAL;name=Ches-30-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,give;to=Ches-30-1370;by=Someone;cash=2 Gem: Chrysoberyl 100gp
 ,find;found=Ches-30-1370
-,,name=Nonmagic;note=too much to list here
+,,name=Nonmagic  #1;note=too much to list here
 ,,name=Ring of Fire Resistance
 ,,name=Ebony Fly
 ,,name=Poison: Urds Teeth *3
-,,name=+1/+3(Cold) Ring of Protection;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
-,,name=+1 Ring of Protection;holder=Ag;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=+1/+3(Cold) Ring of Protection  #2;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=+1 Ring of Protection  #3;holder=Ag;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1/+3(Saves) Ring of Protection;holder=Henkles;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1 Arrow (Flight) *10;holder=Denyae;owner=AFAL
 ,,name=+1 Arrow (Flight) *6;holder=Dexter;owner=AFAL
-,,name=+1 Arrow (Flight) *2;holder=Maanamere;owner=AFAL
-,,name=+1 Arrow (Flight) *2;holder=Henkles;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2;owner=AFAL;xfrd=30 Ches 1370
-,,name=Sleep Gas Grenade (M) *2;holder=Brogan;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2;holder=Dexter;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2;holder=Deringa;owner=AFAL
+,,name=+1 Arrow (Flight) *2  #1;holder=Maanamere;owner=AFAL
+,,name=+1 Arrow (Flight) *2  #2;holder=Henkles;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2  #4;owner=AFAL;xfrd=30 Ches 1370
+,,name=Sleep Gas Grenade (M) *2  #5;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2  #6;holder=Dexter;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2  #7;holder=Deringa;owner=AFAL
 ,,name=Wand of Hurting;holder=Deringa;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2;holder=Staric;owner=AFAL
+,,name=Sleep Gas Grenade (M) *2  #8;holder=Staric;owner=AFAL
 ,,holder=Auction
 ,,,name=+1 Medium Shield;note=10gp?, 10#;value=2500gp
 ,,,name=+1 Footmans Pick;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp
 ,,,name=Staff of the Serpent;value=35000gp
 ,,,name=Oil of Slipperiness;value=750gp
-,,,name=+1 Bastard Sword;value=3200gp
+,,,name=+1 Bastard Sword  #2;value=3200gp
 ,,name=Oil of Etherialness;note=Darius id <d Tarsakh 8 1370>
 ,,name=+1/+3(Backstab) Long Sword;holder=Ag;note=+10% Hide in Shadows;owner=AFAL
-,,name=Dagger of Hurting
+,,name=Dagger of Hurting  #5
