@@ -61,7 +61,8 @@ create table fr_debt (
 	initial_cp integer unsigned not null,
 	owed_cp integer unsigned not null,
 	foreign key (debtor) references fr_character(char_name),
-	foreign key (debtee) references fr_character(char_name)
+	foreign key (debtee) references fr_character(char_name),
+	foreign key (item) references fr_item(item_name)
 )engine=innodb, auto_increment=100000;
 create table fr_journal (
 	journal_id integer unsigned not null primary key auto_increment,
