@@ -1,11 +1,11 @@
 create table fr_character (
 	char_name varchar(128) not null primary key,
-	status enum ( 'active', 'inactive', 'dead', 'dummy' ) not null default 'active',
+	status enum ( 'Unknown', 'active', 'inactive', 'dead', 'dummy' ) not null default 'active',
 	association text,
 	fullname text,
 	player text,
 	race   text,
-	gender enum ( 'Male', 'Female', 'Herm', 'Male?', 'Female?', 'No Gender'),
+	gender enum ( 'Unknown', 'Male', 'Female', 'Herm', 'Male?', 'Female?', 'No Gender'),
 	class  text,
 	alignment text,
 	picture_url text,
@@ -25,7 +25,7 @@ create table fr_marching (
 ) engine=innodb;
 create table fr_party (
 	party_name varchar(128) primary key,
-	type enum ('AFAL', 'Character', 'NPCs', 'Unknown') not null,
+	type enum ('Unknown', 'AFAL', 'Character', 'NPCs') not null,
 	date integer unsigned,
 	note text
 ) engine=innodb;

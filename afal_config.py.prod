@@ -4,15 +4,15 @@ import os
 
 config = {
     'database':'afal',
-    'user':'afal',
+    'user':'afal_ro',
     'password':'BuffyStewart'
 }
 background = '/back3l07.gif'
 background_pc = '/back3l15.gif'
 background_npc = '/back3l16.gif'
 logs = "/logs/log_"
-summary = '/summary.cgi'
-report = '/report.cgi'
-menu = '/menu.cgi'
-
+summary = '/prod/summary'
+cash = '/prod/cash'
+report = '/prod/report'
+menu = '/prod/menu'
 text = 'QUERY_STRING' not in os.environ
