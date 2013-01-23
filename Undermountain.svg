@@ -177,15 +177,15 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.8284271"
-     inkscape:cx="-85.297042"
-     inkscape:cy="40.403836"
+     inkscape:zoom="11.313708"
+     inkscape:cx="-255.90978"
+     inkscape:cy="-8.7934981"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
      showborder="false"
      inkscape:window-width="1920"
-     inkscape:window-height="1175"
+     inkscape:window-height="1177"
      inkscape:window-x="0"
      inkscape:window-y="2"
      inkscape:window-maximized="1">
@@ -217,6 +217,125 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-80"
+       width="5"
+       height="5"
+       x="-280"
+       y="1057.3622" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-65"
+       width="5"
+       height="5"
+       x="-279.91162"
+       y="1072.3345" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-09"
+       width="5"
+       height="5"
+       x="-270"
+       y="1072.4229" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-82"
+       width="5"
+       height="5"
+       x="-270.23743"
+       y="1057.5389" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-22"
+       width="5"
+       height="5"
+       x="-260"
+       y="1057.5667" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-0"
+       width="5"
+       height="5"
+       x="-260.02774"
+       y="1072.2738" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-40"
+       width="5"
+       height="5"
+       x="-250.17677"
+       y="1072.2131" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-4"
+       width="5"
+       height="5"
+       x="-230.02773"
+       y="1057.6273" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-1"
+       width="5"
+       height="5"
+       x="-250.02773"
+       y="1057.4229" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-63"
+       width="5"
+       height="5"
+       x="-240.02773"
+       y="1057.4506" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-57"
+       width="5"
+       height="5"
+       x="-240.11612"
+       y="1072.3345" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-6"
+       width="5"
+       height="5"
+       x="-230.08839"
+       y="1072.3345" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-5"
+       width="5"
+       height="5"
+       x="-219.91161"
+       y="1072.2461" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-2"
+       width="5"
+       height="5"
+       x="-210.11612"
+       y="1072.2461" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       id="rect3177-8"
+       width="5"
+       height="5"
+       x="-220.02773"
+       y="1057.7157" />
+    <rect
+       style="fill:#edb667;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       id="rect3177"
+       width="5"
+       height="5"
+       x="-210"
+       y="1057.3622" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;stroke:none"
+       id="rect5432"
+       width="85"
+       height="10"
+       x="-285"
+       y="1062.3622" />
     <rect
        style="fill:#edd567;fill-opacity:1;stroke:none"
        id="rect5543"
@@ -258,13 +377,6 @@
        id="rect5438"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
-    <rect
-       style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect5432"
-       width="85"
-       height="10"
-       x="-285"
-       y="1062.3622" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
        id="rect5367"
