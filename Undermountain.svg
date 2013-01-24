@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="744.09448819"
-   height="1052.3622047"
+   width="740"
+   height="1050"
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
@@ -37,17 +37,12 @@
     <pattern
        inkscape:collect="always"
        xlink:href="#Strips1_1"
-       id="pattern5359"
+       id="pattern-stairs-1"
        patternTransform="matrix(0.98379782,0,0,1.0821776,-22.977273,0)" />
     <pattern
        patternTransform="matrix(0,0.95920284,-0.52756158,0,342.90157,1206.5782)"
-       id="pattern5308"
+       id="pattern-stairs-2"
        xlink:href="#Strips1_1"
-       inkscape:collect="always" />
-    <pattern
-       patternTransform="matrix(0,-0.97150035,-0.52079797,0,336.07431,916.55538)"
-       id="pattern5340"
-       xlink:href="#pattern5308-4"
        inkscape:collect="always" />
     <pattern
        patternTransform="matrix(0,1.0821776,-0.52079797,0,346.19931,1221.8622)"
@@ -55,9 +50,14 @@
        xlink:href="#Strips1_1"
        inkscape:collect="always" />
     <pattern
-       patternTransform="matrix(-0.97150035,0,0,0.54785241,-315.55682,529.72883)"
-       id="pattern5403"
-       xlink:href="#pattern5340-2"
+       patternTransform="matrix(0,-0.97150035,-0.52079797,0,336.07431,916.55538)"
+       id="pattern-stairs-3"
+       xlink:href="#pattern5308-4"
+       inkscape:collect="always" />
+    <pattern
+       patternTransform="matrix(0,1.0821776,-0.52079797,0,346.19931,1221.8622)"
+       id="pattern5308-4-2"
+       xlink:href="#Strips1_1"
        inkscape:collect="always" />
     <pattern
        patternTransform="matrix(0,-0.97150035,-0.52079797,0,336.07431,916.55538)"
@@ -65,9 +65,9 @@
        xlink:href="#pattern5308-4-2"
        inkscape:collect="always" />
     <pattern
-       patternTransform="matrix(0,1.0821776,-0.52079797,0,346.19931,1221.8622)"
-       id="pattern5308-4-2"
-       xlink:href="#Strips1_1"
+       patternTransform="matrix(-0.97150035,0,0,0.54785241,-315.55682,529.72883)"
+       id="pattern-stairs-4"
+       xlink:href="#pattern5340-2"
        inkscape:collect="always" />
   </defs>
   <sodipodi:namedview
@@ -78,8 +78,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="11.313708"
-     inkscape:cx="-255.90978"
-     inkscape:cy="-8.7934981"
+     inkscape:cx="-182.27947"
+     inkscape:cy="15.790921"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -118,363 +118,529 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3880"
+       width="20"
+       height="10"
+       x="-200"
+       y="1260" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3878"
+       width="50"
+       height="10"
+       x="-200"
+       y="1300" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3876"
+       width="10"
+       height="30"
+       x="-30"
+       y="1300" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3874"
+       width="60"
+       height="10"
+       x="-90"
+       y="1320" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3872"
+       width="10"
+       height="30"
+       x="-100"
+       y="1300" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3870"
+       width="40"
+       height="10"
+       x="-140"
+       y="1300" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3868"
+       width="10"
+       height="50"
+       x="-150"
+       y="1260" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3866"
+       width="10"
+       height="10"
+       x="-140"
+       y="1260" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3864"
+       width="10"
+       height="20"
+       x="-160"
+       y="1260" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none;stroke-width:0.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3862"
+       width="10"
+       height="20"
+       x="-170"
+       y="1100" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;stroke:none"
+       id="rect3852"
+       width="20"
+       height="50"
+       x="-180"
+       y="1230" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3850"
+       width="10"
+       height="40"
+       x="-200"
+       y="1190" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3848"
+       width="10"
+       height="10"
+       x="-190"
+       y="1190" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3846"
+       width="20"
+       height="10"
+       x="-160"
+       y="1230" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3844"
+       width="10"
+       height="40"
+       x="-140"
+       y="1200" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3074"
+       width="30"
+       height="10"
+       x="-170"
+       y="1210" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="floor-corr-4-1"
+       width="10"
+       height="140"
+       x="-180"
+       y="1080" />
+    <rect
+       style="fill:#edd467;fill-opacity:1;stroke:none"
+       id="floor-corr-3"
+       width="90"
+       height="20"
+       x="-150"
+       y="1050" />
+    <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-1"
        width="5"
        height="5"
        x="-280"
-       y="1057.3622" />
+       y="1055" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-2"
        width="5"
        height="5"
-       x="-279.91162"
-       y="1072.3345" />
+       x="-280"
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-3"
        width="5"
        height="5"
        x="-270"
-       y="1072.4229" />
+       y="1055" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-4"
        width="5"
        height="5"
-       x="-270.23743"
-       y="1057.5389" />
+       x="-270"
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-5"
        width="5"
        height="5"
        x="-260"
-       y="1057.5667" />
+       y="1055" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-6"
        width="5"
        height="5"
-       x="-260.02774"
-       y="1072.2738" />
+       x="-260"
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-7"
        width="5"
        height="5"
-       x="-250.17677"
-       y="1072.2131" />
+       x="-250"
+       y="1055" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-8"
        width="5"
        height="5"
-       x="-230.02773"
-       y="1057.6273" />
+       x="-250"
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-9"
        width="5"
        height="5"
-       x="-250.02773"
-       y="1057.4229" />
+       x="-240"
+       y="1055" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-10"
        width="5"
        height="5"
-       x="-240.02773"
-       y="1057.4506" />
+       x="-240"
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-11"
        width="5"
        height="5"
-       x="-240.11612"
-       y="1072.3345" />
+       x="-230"
+       y="1055" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-12"
        width="5"
        height="5"
-       x="-230.08839"
-       y="1072.3345" />
+       x="-230"
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-13"
        width="5"
        height="5"
-       x="-219.91161"
-       y="1072.2461" />
+       x="-220"
+       y="1055" />
     <rect
        style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-14"
        width="5"
        height="5"
-       x="-210.11612"
-       y="1072.2461" />
+       x="-220"
+       y="1070" />
     <rect
-       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
+       style="fill:#edb667;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
        id="mirror-15"
        width="5"
        height="5"
-       x="-220.02773"
-       y="1057.7157" />
+       x="-210"
+       y="1055" />
     <rect
-       style="fill:#edb667;fill-rule:evenodd;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:#edb667;fill-opacity:1;fill-rule:evenodd;stroke:none"
        id="mirror-16"
        width="5"
        height="5"
        x="-210"
-       y="1057.3622" />
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect5432"
+       id="floor-mirror-hall"
        width="85"
        height="10"
        x="-285"
-       y="1062.3622" />
+       y="1060"
+       inkscape:label="#floor-mirror-hall" />
     <rect
        style="fill:#edd567;fill-opacity:1;stroke:none"
-       id="rect5543"
+       id="floor-corr-7"
        width="60"
        height="10"
-       x="-80.152542"
-       y="992.36218" />
+       x="-80"
+       y="990" />
     <rect
        style="fill:#edd567;fill-opacity:1;stroke:none"
-       id="rect5541"
+       id="floor-corr-6"
        width="10"
        height="20"
        x="-20"
-       y="992.36218" />
+       y="990" />
     <rect
        style="fill:#edd567;fill-opacity:1;stroke:none"
-       id="rect2999-6"
+       id="floor-corr-4"
        width="10"
-       height="50"
-       x="-180.05806"
-       y="982.2738" />
+       height="60.076271"
+       x="-180"
+       y="980" />
     <rect
        style="fill:#edd567;fill-opacity:1;stroke:none"
-       id="rect5537"
+       id="floor-corr-5"
        width="20"
        height="10"
        x="-170"
-       y="1012.3622" />
+       y="1010" />
     <rect
        style="fill:#d3ed67;fill-opacity:1;stroke:none;stroke-width:0.50000000000000000;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect3791"
+       id="floor-shield-room"
        width="40"
        height="40"
        x="-20"
-       y="1012.3622" />
+       y="1010"
+       inkscape:label="#floor-shield-room" />
     <path
        style="fill:#ed7767;fill-opacity:1;stroke:none"
-       d="m -189.875,1052.6122 9.875,-10.25 10,0 20,10.25 -0.0937,19.75 -19.90625,10 -10,0 -9.96875,-10 z"
-       id="rect5438"
+       d="m -190,1050 10,-10 10,0 20,10 0,20 -20,10 -10,0 -10,-10 z"
+       id="floor-null-magic"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc" />
+       sodipodi:nodetypes="ccccccccc"
+       inkscape:label="#floor-null-magic" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect5367"
+       id="floor-dexter-dance"
        width="30"
        height="20"
        x="-150"
-       y="1082.3622" />
+       y="1080"
+       inkscape:label="#floor-dexter-dance" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
        id="rect5365"
        width="10"
        height="10"
        x="-130"
-       y="1072.3622" />
+       y="1070" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
        id="rect5363"
        width="10"
        height="10"
        x="-110"
-       y="1042.3622" />
+       y="1040" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect5361"
+       id="floor-demon-gate"
        width="50"
        height="30"
        x="-150"
-       y="1012.3622" />
+       y="1010"
+       inkscape:label="#floor-demon-gate" />
     <path
-       style="fill:url(#pattern5359);fill-opacity:1;stroke:none"
-       d="m -150.25,1056.3622 10,-4 0,20 -10,-4 z"
-       id="rect3775"
+       style="fill:url(#pattern-stairs-1);fill-opacity:1;stroke:none"
+       d="m -150,1054 10,-4 0,20 -10,-4 z"
+       id="stairs-null-magic-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <rect
        style="fill:#edd467;fill-opacity:1;stroke:none"
-       id="rect3003"
-       width="80"
-       height="20"
-       x="-140"
-       y="1052.3622" />
-    <rect
-       style="fill:#edd467;fill-opacity:1;stroke:none"
-       id="rect3001"
+       id="floor-corr-2"
        width="40"
        height="10"
        x="-70"
-       y="1072.3622" />
+       y="1070" />
     <rect
        style="fill:#edd567;fill-opacity:1;stroke:none"
-       id="rect2999"
+       id="floor-corr-1"
        width="10"
        height="50"
        x="-30"
-       y="1032.3622" />
+       y="1030" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -20,1012.3622 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20.00002 90,0 0,10.00002 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20.00002 -10,1e-5 0,-20.00001 c 10,0 10,0 10,0 l 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,10 20,0 0,-30 -20,0 0,10 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,10.00002 40,0 0,-10.00002 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,60 10,0 0,10"
-       id="path2987"
+       d="m -20,1010 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20 90,0 0,10 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20 -10,1e-5 0,-20 c 10,0 10,0 10,0 l 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,10 20,0 0,-30 -20,0 0,10 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,10 40,0 0,-10 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,60 10,0 0,10"
+       id="walls-shield-room"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccc" />
     <rect
        style="fill:#e17a1e;fill-rule:evenodd;stroke:#000000;stroke-width:0.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none;fill-opacity:1"
-       id="rect3757"
+       id="s-door-shield-room"
        width="6"
        height="2"
        x="-18"
-       y="1011.3622" />
+       y="1009" />
     <rect
        style="fill:#e17a1e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect3757-6"
+       id="s-door-dexter-dance"
        width="6"
        height="2"
-       x="-128.25"
-       y="1071.6122" />
+       x="-128"
+       y="1069" />
     <rect
        style="fill:#e17a1e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect3757-4"
+       id="s-door-demon-gate"
        width="6"
        height="2"
-       x="-108.08839"
-       y="1051.3345" />
+       x="-108"
+       y="1049" />
     <rect
-       style="fill:#e1bb1e;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
-       id="rect3757-67"
-       width="6"
-       height="2"
-       x="-1020.1577"
-       y="-150.91161"
-       transform="matrix(0,-1,1,0,0,0)" />
+       style="fill:#e2c022;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:0.50000000000000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="door-demon-gate"
+       width="2"
+       height="6"
+       x="-151"
+       y="1012" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -108,1052.3622 c -2,0 -2,0 -2,0 l 0,-10 -40,0 0,-22 0,2 -20,0 0,20 20,10 z"
-       id="path3773"
+       d="m -108,1050 c -2,0 -2,0 -2,0 l 0,-10 -40,0 0,-22 0,2 -20,0 0,20 20,10 z"
+       id="walls-null-magic--demon-gate"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc" />
     <path
-       style="fill:url(#pattern5308);fill-opacity:1;stroke:none"
-       d="m -172.075,1082.4872 1.95,9.75 -9.75,0 1.95,-9.75 z"
-       id="rect3775-0"
+       style="fill:url(#pattern-stairs-2);fill-opacity:1;stroke:none"
+       d="m -172,1080 2,10 -10,0 2,-10 z"
+       id="stairs-null-magic-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:url(#pattern5340);fill-opacity:1;stroke:none"
-       d="m -172.3,1042.2372 1.925,-9.875 -9.625,0 1.925,9.875 z"
-       id="rect3775-0-1"
+       style="fill:url(#pattern-stairs-3);fill-opacity:1;stroke:none"
+       d="m -172,1040 2,-10 -10,0 2,10 z"
+       id="stairs-null-magic-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:url(#pattern5403);fill-opacity:1;stroke:none"
-       d="m -189.875,1064.5122 -9.875,-2.025 0,10.125 9.875,-2.025 z"
-       id="rect3775-0-1-6"
+       style="fill:url(#pattern-stairs-4);fill-opacity:1;stroke:none"
+       d="m -190,1062 -10,-2 0,10 10,-2 z"
+       id="stairs-null-magic-4"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -180,1112.3622 0,-30 -10,-10 -15,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,20 10,0 0,-10 35,0 33,0 0,35 -13,0 0,20"
-       id="path5424"
+       d="m -180,1142 0,-62 -10,-10 -15,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,20 10,0 0,-10 35,0 33,0 0,35 -13,0 0,20"
+       id="wall-null-magic--mirrors-s"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m -205,1062.3622 15,0 0,-10 10,-10 0,-20 -60,0 0,20 15,0 0,-10 30,0 0,20 -90,0 0,10 5,0 0,-5 5,0 0,5 5,0 c 0,0 0,-4 0,-5 l 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 z"
-       id="path5426"
+       d="m -205,1060 15,0 0,-10 10,-10 0,-20 -60,0 0,20 15,0 0,-10 30,0 0,20 -90,0 0,10 5,0 0,-5 5,0 0,5 5,0 c 0,0 0,-4 0,-5 l 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 z"
+       id="wall-null-magic--mirrors-n"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc" />
     <text
        xml:space="preserve"
        style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
        x="-264"
-       y="1068.3622"
+       y="1066"
        id="text5428"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5430"
          x="-264"
-         y="1068.3622">Hall Of Mirrors</tspan></text>
+         y="1066">Hall Of Mirrors</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
        x="-186"
-       y="1063.3622"
+       y="1061"
        id="text5434"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5436"
          x="-186"
-         y="1063.3622">Null Magic</tspan></text>
+         y="1061">Null Magic</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
        x="-148"
-       y="1028.3622"
+       y="1026"
        id="text5441"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5443"
          x="-148"
-         y="1028.3622">Demon Gate</tspan></text>
+         y="1026">Demon Gate</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:3,1;stroke-dashoffset:0"
-       d="m -125,1042.3622 0,-30"
-       id="path5445"
-       inkscape:connector-curvature="0" />
+       d="m -125,1040 0,-30"
+       id="bars-1"
+       inkscape:connector-curvature="0"
+       inkscape:label="#bars-1" />
     <text
        xml:space="preserve"
        style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
        x="-146"
-       y="1090.3622"
+       y="1088"
        id="text5447"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5449"
          x="-146"
-         y="1090.3622">Dexter</tspan><tspan
+         y="1088">Dexter</tspan><tspan
          sodipodi:role="line"
          x="-146"
-         y="1097.8622"
+         y="1095"
          id="tspan5451">Dance</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
        x="-10"
-       y="1030.3622"
+       y="1028"
        id="text5513"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan5515"
          x="-10"
-         y="1030.3622">Shield</tspan><tspan
+         y="1028">Shield</tspan><tspan
          sodipodi:role="line"
          x="-10"
-         y="1037.8622"
+         y="1035"
          id="tspan5517">Room</tspan></text>
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 20,892.36218 0,10 40,0 0,-10 z"
+       d="m 20,890 0,10 40,0 0,-10 z"
        id="path5539"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -170,1110 0,100 30,0 0,-10"
+       id="path3048"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -180,1148 0,42 -20,0 0,30 -20,0"
+       id="path3050"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -180,1200 -10,0 0,30 50,0 0,-10 -40,0 z"
+       id="path3052"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -130,1200 0,40 -30,0 0,22 0,-2 30,0"
+       id="path3054"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-opacity:1;stroke-width:0.50000000000000000;stroke-miterlimit:4;stroke-dasharray:none"
+       id="rect3854"
+       width="2"
+       height="16"
+       x="-161"
+       y="1262" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -130,1270 -10,0 0,30 50,0 0,20 60,0 0,-20 10,0 0,30 -80,0 0,-20 -100,0"
+       id="path3856"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -200,1300 50,0 0,-20 -10,0 0,-2 0,2 -20,0 0,-12 0,2 -20,0"
+       id="path3858"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -180,1230 0,32 0,-2 -20,0"
+       id="path3860"
        inkscape:connector-curvature="0" />
   </g>
 </svg>
