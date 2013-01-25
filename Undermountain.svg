@@ -7,7 +7,6 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="740"
@@ -19,56 +18,33 @@
   <defs
      id="defs4">
     <pattern
-       inkscape:stockid="Stripes 1:1"
-       id="Strips1_1"
-       patternTransform="translate(0,0) scale(5,5)"
+       inkscape:stockid="stairs e/w"
+       id="pattern-stairs-ew"
        height="1"
        width="2"
-       patternUnits="userSpaceOnUse"
-       inkscape:collect="always">
+       patternUnits="userSpaceOnUse">
       <rect
-         id="rect4496"
-         height="2"
+         id="stairs_ew_step"
+         height="1"
          width="1"
-         y="-0.5"
+         y="0"
          x="0"
          style="fill:black;stroke:none" />
     </pattern>
     <pattern
-       inkscape:collect="always"
-       xlink:href="#Strips1_1"
-       id="pattern-stairs-1"
-       patternTransform="matrix(0.98379782,0,0,1.0821776,-22.977273,0)" />
-    <pattern
-       patternTransform="matrix(0,0.95920284,-0.52756158,0,342.90157,1206.5782)"
-       id="pattern-stairs-2"
-       xlink:href="#Strips1_1"
-       inkscape:collect="always" />
-    <pattern
-       patternTransform="matrix(0,1.0821776,-0.52079797,0,346.19931,1221.8622)"
-       id="pattern5308-4"
-       xlink:href="#Strips1_1"
-       inkscape:collect="always" />
-    <pattern
-       patternTransform="matrix(0,-0.97150035,-0.52079797,0,336.07431,916.55538)"
-       id="pattern-stairs-3"
-       xlink:href="#pattern5308-4"
-       inkscape:collect="always" />
-    <pattern
-       patternTransform="matrix(0,1.0821776,-0.52079797,0,346.19931,1221.8622)"
-       id="pattern5308-4-2"
-       xlink:href="#Strips1_1"
-       inkscape:collect="always" />
-    <pattern
-       patternTransform="matrix(0,-0.97150035,-0.52079797,0,336.07431,916.55538)"
-       id="pattern5340-2"
-       xlink:href="#pattern5308-4-2"
-       inkscape:collect="always" />
-    <pattern
-       patternTransform="matrix(-0.97150035,0,0,0.54785241,-315.55682,529.72883)"
-       id="pattern-stairs-4"
-       xlink:href="#pattern5340-2"
-       inkscape:collect="always" />
+       inkscape:stockid="stairs n/s"
+       id="pattern-stairs-ns"
+       height="2"
+       width="1"
+       patternUnits="userSpaceOnUse">
+      <rect
+         id="stairs_ns_step"
+         height="1"
+         width="1"
+         y="0"
+         x="0"
+         style="fill:black;stroke:none" />
+    </pattern>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -77,9 +53,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.313708"
-     inkscape:cx="-182.27947"
-     inkscape:cy="15.790921"
+     inkscape:zoom="3.72"
+     inkscape:cx="-87.014262"
+     inkscape:cy="236.69582"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -117,6 +93,62 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1">
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3092"
+       width="10"
+       height="100.13144"
+       x="-60"
+       y="749.86853" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3088"
+       width="10"
+       height="10"
+       x="-50"
+       y="800" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3086"
+       width="10"
+       height="20"
+       x="-40"
+       y="800" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3084"
+       width="30"
+       height="10"
+       x="-50"
+       y="840" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3082"
+       width="30"
+       height="10"
+       x="-50"
+       y="820" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3078"
+       width="40"
+       height="10"
+       x="-60"
+       y="920" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3072"
+       width="10"
+       height="150.08557"
+       x="-20"
+       y="819.91443" />
+    <rect
+       style="fill:#edd667;fill-opacity:1;stroke:none"
+       id="rect3070"
+       width="10"
+       height="30"
+       x="-30"
+       y="960" />
     <rect
        style="fill:#edd667;fill-opacity:1;stroke:none"
        id="rect3880"
@@ -437,7 +469,7 @@
        y="1010"
        inkscape:label="#floor-demon-gate" />
     <path
-       style="fill:url(#pattern-stairs-1);fill-opacity:1;stroke:none"
+       style="fill:url(#pattern-stairs-ew);fill-opacity:1;stroke:none"
        d="m -150,1054 10,-4 0,20 -10,-4 z"
        id="stairs-null-magic-1"
        inkscape:connector-curvature="0"
@@ -497,19 +529,19 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc" />
     <path
-       style="fill:url(#pattern-stairs-2);fill-opacity:1;stroke:none"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        d="m -172,1080 2,10 -10,0 2,-10 z"
        id="stairs-null-magic-2"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:url(#pattern-stairs-3);fill-opacity:1;stroke:none"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        d="m -172,1040 2,-10 -10,0 2,10 z"
        id="stairs-null-magic-3"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccc" />
     <path
-       style="fill:url(#pattern-stairs-4);fill-opacity:1;stroke:none"
+       style="fill:url(#pattern-stairs-ew);fill-opacity:1;stroke:none"
        d="m -190,1062 -10,-2 0,10 10,-2 z"
        id="stairs-null-magic-4"
        inkscape:connector-curvature="0"
@@ -642,5 +674,33 @@
        d="m -180,1230 0,32 0,-2 -20,0"
        id="path3860"
        inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -30,990 0,-12 0,2 -20,0 0,-10 -10,0 0,20 z"
+       id="path3068"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -30,972 0,-12 10,0 0,-30 -40,0 0,-2"
+       id="path3074"
+       inkscape:connector-curvature="0" />
+    <g
+       id="g3096" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -20,830 0,10 -30,0 0,-10 z"
+       id="path3080"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -50,808 0,12 12,0 -2,0 0,-10 -10,0 z"
+       id="path3090"
+       inkscape:connector-curvature="0" />
+    <path
+       id="path3094"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -60,922 0,-2 40,0 0,-70 -12,0 2,0 0,40 -20,0 0,-10 10,0 0,-30 2,0 -22,0 0,-100 2,0 -62,0 0,50 -10,0 0,-10 -20,0"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc" />
   </g>
 </svg>
