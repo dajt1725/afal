@@ -1,0 +1,6 @@
+HSV colors for Undermountain.svg
+
+door      35 196 130
+room      25 201 170
+corridor  35 201 170
+sec door  20 185  60
