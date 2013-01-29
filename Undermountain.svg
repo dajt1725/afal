@@ -150,9 +150,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1"
-     inkscape:cx="-184.29819"
-     inkscape:cy="-263.06522"
+     inkscape:zoom="7.9960927"
+     inkscape:cx="-22.723172"
+     inkscape:cy="127.04857"
      inkscape:document-units="px"
      inkscape:current-layer="um1m"
      showgrid="true"
@@ -196,6 +196,7 @@
      inkscape:label="Undermountain L1 Main"
      inkscape:groupmode="layer"
      id="um1m">
+    <!-- Corridors first, then rooms -->
     <rect
        class="corr"
        id="rect4144"
@@ -244,36 +245,6 @@
        x="-250"
        y="1279.9447" />
     <rect
-       class="room"
-       id="rect5648"
-       width="10"
-       height="30"
-       x="184.19119"
-       y="830" />
-    <rect
-       class="room"
-       id="rect5646"
-       width="10"
-       height="40"
-       x="195"
-       y="830.07562" />
-    <rect
-       class="room"
-       id="rect5644"
-       width="35"
-       height="25"
-       x="500.5"
-       y="230.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect5642"
-       width="40"
-       height="56"
-       x="455.5"
-       y="220.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
        class="corr"
        id="rect5640"
        width="40"
@@ -321,14 +292,6 @@
        x="465.5"
        y="180.5"
        transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect5612"
-       width="50"
-       height="30"
-       x="415.5"
-       y="170.5"
-       transform="translate(-305.5,639.5)" />
     <path
        id="rect5598"
        transform="translate(-305.5,639.5)"
@@ -343,50 +306,6 @@
        height="50"
        x="335.5"
        y="190.5"
-       transform="translate(-305.5,639.5)" />
-    <path
-       id="rect5586"
-       transform="translate(-305.5,639.5)"
-       class="room"
-       d="m 325.5,350.5 40,0 0,10 -40,0 z m -10,-90 60,0 0,90 -60,0 z m 50,-10 10,0 0,10 -10,0 z m -50,0 10,0 0,10 -10,0 z m 0,-10 60,0 0,10 -60,0 z"
-       inkscape:connector-curvature="0" />
-    <path
-       id="rect5571"
-       class="room"
-       d="m 0,710.04614 80,0 L 80,810 0,810 z M 0,810 l 80,0 -20,20 -40,0 z"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc" />
-    <rect
-       class="room"
-       id="rect5569"
-       width="10"
-       height="10"
-       x="255.5"
-       y="240.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect5567"
-       width="10"
-       height="40"
-       x="265.5"
-       y="210.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect5565"
-       width="10"
-       height="60"
-       x="235.5"
-       y="270.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect5563"
-       width="40"
-       height="100"
-       x="195.5"
-       y="240.5"
        transform="translate(-305.5,639.5)" />
     <rect
        class="corr"
@@ -427,22 +346,6 @@
        height="10"
        x="235.5"
        y="330.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect5551"
-       width="10"
-       height="10"
-       x="265.5"
-       y="330.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect5538"
-       width="30"
-       height="20"
-       x="80.5"
-       y="390.5"
        transform="translate(-305.5,639.5)" />
     <rect
        class="corr"
@@ -506,14 +409,6 @@
        height="20"
        x="50.5"
        y="380.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="room"
-       id="rect4074"
-       width="20"
-       height="30"
-       x="-14.5"
-       y="130.5"
        transform="translate(-305.5,639.5)" />
     <rect
        class="corr"
@@ -603,13 +498,6 @@
        y="310.5"
        transform="translate(-305.5,639.5)" />
     <rect
-       class="room"
-       id="floor-5column-room"
-       width="40"
-       height="40"
-       x="-320"
-       y="940" />
-    <rect
        class="corr"
        id="rect4316"
        width="10"
@@ -686,25 +574,6 @@
        height="20"
        x="-263"
        y="720" />
-    <path
-       id="floor-bone-throne"
-       class="room"
-       d="m -200,760 10,0 0,50 -10,0 z m 10,-10 30,0 0,70 -30,0 z m 30,10 10,0 0,50 -10,0 z"
-       inkscape:connector-curvature="0" />
-    <rect
-       class="room"
-       id="rect4204"
-       width="10"
-       height="10"
-       x="-30"
-       y="800" />
-    <rect
-       class="room"
-       id="rect4202"
-       width="30"
-       height="40"
-       x="-40"
-       y="760" />
     <rect
        class="corr"
        id="rect4200"
@@ -712,13 +581,6 @@
        height="10"
        x="-50"
        y="780" />
-    <rect
-       class="room"
-       id="floor-heroes"
-       width="220"
-       height="20"
-       x="-220"
-       y="730" />
     <rect
        class="corr"
        id="rect3092"
@@ -846,13 +708,6 @@
        x="-170"
        y="1100" />
     <rect
-       class="room"
-       id="rect3852"
-       width="20"
-       height="50"
-       x="-180"
-       y="1230" />
-    <rect
        class="corr"
        id="rect3850"
        width="10"
@@ -894,13 +749,215 @@
        height="140"
        x="-180"
        y="1080" />
+    <path
+       style="fill:#edd567;stroke:none"
+       d="m -30,1030 0,40 -30,0 0,-20 -90,0 0,20 80,0 0,10 40,0 10,0 0,-50 -10,0 z"
+       id="floor-corr-1"
+       inkscape:connector-curvature="0" />
     <rect
        class="corr"
-       id="floor-corr-3"
-       width="90"
+       id="floor-corr-7"
+       width="60"
+       height="10"
+       x="-80"
+       y="990" />
+    <rect
+       class="corr"
+       id="floor-corr-6"
+       width="10"
        height="20"
-       x="-150"
-       y="1050" />
+       x="-20"
+       y="990" />
+    <rect
+       class="corr"
+       id="floor-corr-4"
+       width="10"
+       height="60.076271"
+       x="-180"
+       y="980" />
+    <rect
+       class="corr"
+       id="floor-corr-5"
+       width="20"
+       height="10"
+       x="-170"
+       y="1010" />
+    <rect
+       class="corr"
+       id="rect5365"
+       width="10"
+       height="10"
+       x="-130"
+       y="1070" />
+    <rect
+       class="corr"
+       id="rect5363"
+       width="10"
+       height="10"
+       x="-110"
+       y="1040" />
+    <rect
+       class="corr"
+       id="rect4124"
+       width="10"
+       height="50"
+       x="55.5"
+       y="670.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="corr"
+       id="rect4126"
+       width="10"
+       height="10"
+       x="65.5"
+       y="700.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5648"
+       width="10"
+       height="30"
+       x="184.19119"
+       y="830" />
+    <rect
+       class="room"
+       id="rect5646"
+       width="10"
+       height="40"
+       x="195"
+       y="830.07562" />
+    <rect
+       class="room"
+       id="rect5644"
+       width="35"
+       height="25"
+       x="500.5"
+       y="230.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5642"
+       width="40"
+       height="56"
+       x="455.5"
+       y="220.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5612"
+       width="50"
+       height="30"
+       x="415.5"
+       y="170.5"
+       transform="translate(-305.5,639.5)" />
+    <path
+       id="rect5586"
+       transform="translate(-305.5,639.5)"
+       class="room"
+       d="m 325.5,350.5 40,0 0,10 -40,0 z m -10,-90 60,0 0,90 -60,0 z m 50,-10 10,0 0,10 -10,0 z m -50,0 10,0 0,10 -10,0 z m 0,-10 60,0 0,10 -60,0 z"
+       inkscape:connector-curvature="0" />
+    <path
+       id="rect5571"
+       class="room"
+       d="m 0,710.04614 80,0 L 80,810 0,810 z M 0,810 l 80,0 -20,20 -40,0 z"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc" />
+    <rect
+       class="room"
+       id="rect5569"
+       width="10"
+       height="10"
+       x="255.5"
+       y="240.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5567"
+       width="10"
+       height="40"
+       x="265.5"
+       y="210.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5565"
+       width="10"
+       height="60"
+       x="235.5"
+       y="270.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5563"
+       width="40"
+       height="100"
+       x="195.5"
+       y="240.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5551"
+       width="10"
+       height="10"
+       x="265.5"
+       y="330.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect5538"
+       width="30"
+       height="20"
+       x="80.5"
+       y="390.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="rect4074"
+       width="20"
+       height="30"
+       x="-14.5"
+       y="130.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="room"
+       id="floor-5column-room"
+       width="40"
+       height="40"
+       x="-320"
+       y="940" />
+    <path
+       id="floor-bone-throne"
+       class="room"
+       d="m -200,760 10,0 0,50 -10,0 z m 10,-10 30,0 0,70 -30,0 z m 30,10 10,0 0,50 -10,0 z"
+       inkscape:connector-curvature="0" />
+    <rect
+       class="room"
+       id="rect4204"
+       width="10"
+       height="10"
+       x="-30"
+       y="800" />
+    <rect
+       class="room"
+       id="rect4202"
+       width="30"
+       height="40"
+       x="-40"
+       y="760" />
+    <rect
+       class="room"
+       id="floor-heroes"
+       width="220"
+       height="20"
+       x="-220"
+       y="730" />
+    <rect
+       class="room"
+       id="rect3852"
+       width="20"
+       height="50"
+       x="-180"
+       y="1230" />
     <rect
        class="room"
        id="mirror-1"
@@ -1022,33 +1079,21 @@
        y="1060"
        inkscape:label="#floor-mirror-hall" />
     <rect
-       class="corr"
-       id="floor-corr-7"
-       width="60"
-       height="10"
-       x="-80"
-       y="990" />
-    <rect
-       class="corr"
-       id="floor-corr-6"
-       width="10"
+       class="room"
+       id="floor-dexter-dance"
+       width="30"
        height="20"
-       x="-20"
-       y="990" />
+       x="-150"
+       y="1080"
+       inkscape:label="#floor-dexter-dance" />
     <rect
-       class="corr"
-       id="floor-corr-4"
-       width="10"
-       height="60.076271"
-       x="-180"
-       y="980" />
-    <rect
-       class="corr"
-       id="floor-corr-5"
-       width="20"
-       height="10"
-       x="-170"
-       y="1010" />
+       class="room"
+       id="floor-demon-gate"
+       width="50"
+       height="30"
+       x="-150"
+       y="1010"
+       inkscape:label="#floor-demon-gate" />
     <rect
        class="floor-sand"
        id="floor-shield-room"
@@ -1064,56 +1109,6 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc"
        inkscape:label="#floor-null-magic" />
-    <rect
-       class="room"
-       id="floor-dexter-dance"
-       width="30"
-       height="20"
-       x="-150"
-       y="1080"
-       inkscape:label="#floor-dexter-dance" />
-    <rect
-       class="corr"
-       id="rect5365"
-       width="10"
-       height="10"
-       x="-130"
-       y="1070" />
-    <rect
-       class="corr"
-       id="rect5363"
-       width="10"
-       height="10"
-       x="-110"
-       y="1040" />
-    <rect
-       class="room"
-       id="floor-demon-gate"
-       width="50"
-       height="30"
-       x="-150"
-       y="1010"
-       inkscape:label="#floor-demon-gate" />
-    <path
-       class="stairs-ew"
-       d="m -150,1054 10,-4 0,20 -10,-4 z"
-       id="stairs-null-magic-1"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <rect
-       class="corr"
-       id="floor-corr-2"
-       width="40"
-       height="10"
-       x="-70"
-       y="1070" />
-    <rect
-       class="corr"
-       id="floor-corr-1"
-       width="10"
-       height="50"
-       x="-30"
-       y="1030" />
     <path
        class="wall"
        d="m -20,1010 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20 90,0 0,10 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20 -10,10e-6 0,-20 c 10,0 10,0 10,0 l 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,9.99999 12,0 -2,0 0,10 10,0 0,-10 -2,0 12,0 0,-40 -30,0 0,20.00001 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,9.99999 40,0 0,-9.99999 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,79.99999 10,0 0,10"
@@ -1121,56 +1116,11 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     <path
-       class="sec-door"
-       d="m -18,1009 3,1 3,-1 0,2 -3,1 -3,-1 z"
-       id="s-door-shield-room"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc" />
-    <rect
-       class="sec-door"
-       id="s-door-dexter-dance"
-       width="6"
-       height="2"
-       x="-128"
-       y="1069" />
-    <rect
-       class="sec-door"
-       id="s-door-demon-gate"
-       width="6"
-       height="2"
-       x="-108"
-       y="1049" />
-    <rect
-       class="door"
-       id="door-demon-gate"
-       width="2"
-       height="6"
-       x="-151"
-       y="1012" />
-    <path
        class="wall"
        d="m -108,1050 c -2,0 -2,0 -2,0 l 0,-10 -40,0 0,-22 0,2 -20,0 0,20 20,10 z"
        id="walls-null-magic--demon-gate"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc" />
-    <path
-       class="stairs-ns"
-       d="m -172,1080 2,10 -10,0 2,-10 z"
-       id="stairs-null-magic-2"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="stairs-ns"
-       d="m -172,1040 2,-10 -10,0 2,10 z"
-       id="stairs-null-magic-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="stairs-ew"
-       d="m -190,1062 -10,-2 0,10 10,-2 z"
-       id="stairs-null-magic-4"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
     <path
        class="wall"
        d="m -180,1142 0,-62 -10,-10 -15,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,5 -5,0 0,-5 -5,0 0,20 10,0 0,-10 35,0 33,0 0,35 -13,0 0,20"
@@ -1183,83 +1133,6 @@
        id="wall-null-magic--mirrors-n"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc" />
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-264"
-       y="1066"
-       id="text5428"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5430"
-         x="-264"
-         y="1066">Hall Of Mirrors</tspan></text>
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-185"
-       y="1057"
-       id="text5434"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5436"
-         x="-185"
-         y="1057">Null</tspan><tspan
-         sodipodi:role="line"
-         x="-185"
-         y="1064.5"
-         id="tspan3326">Magic</tspan></text>
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-148"
-       y="1022"
-       id="text5441"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5443"
-         x="-148"
-         y="1022">Demon</tspan><tspan
-         sodipodi:role="line"
-         x="-148"
-         y="1029.5"
-         id="tspan3346">Gate</tspan></text>
-    <path
-       class="bars"
-       d="m -125,1040 0,-30"
-       id="bars-1"
-       inkscape:connector-curvature="0"
-       inkscape:label="#bars-1" />
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-146"
-       y="1088"
-       id="text5447"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5449"
-         x="-146"
-         y="1088">Dexter</tspan><tspan
-         sodipodi:role="line"
-         x="-146"
-         y="1095.5"
-         id="tspan5451">Dance</tspan></text>
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-10"
-       y="1028"
-       id="text5513"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan5515"
-         x="-10"
-         y="1028">Shield</tspan><tspan
-         sodipodi:role="line"
-         x="-10"
-         y="1035.5"
-         id="tspan5517">Room</tspan></text>
     <path
        class="wall"
        d="m 20,890 0,10 40,0 0,-10 z"
@@ -1285,13 +1158,6 @@
        d="m -130,1200 0,40 -30,0 0,22 0,-2 30,0"
        id="path3054"
        inkscape:connector-curvature="0" />
-    <rect
-       class="door"
-       id="rect3854"
-       width="2"
-       height="16"
-       x="-161"
-       y="1262" />
     <path
        class="wall"
        d="m -130,1270 -10,0 0,30 50,0 0,20 60,0 0,-20 10,0 0,30 -80,0 0,-20 -140,0"
@@ -1396,639 +1262,11 @@
        d="m -172,750 12,0 0,10 10,0 0,20 20,0 0,-30 z"
        id="path3105"
        inkscape:connector-curvature="0" />
-    <circle
-       id="column-heroes-37"
-       cx="-190"
-       cy="735"
-       r="1"
-       sodipodi:cx="-190"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -189,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-38"
-       cx="-190"
-       cy="745"
-       r="1"
-       sodipodi:cx="-190"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -189,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-35"
-       cx="-180"
-       cy="735"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-36"
-       cx="-180"
-       cy="745"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-33"
-       cx="-170"
-       cy="735"
-       r="1"
-       sodipodi:cx="-170"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -169,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-34"
-       cx="-170"
-       cy="745"
-       r="1"
-       sodipodi:cx="-170"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -169,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-31"
-       cx="-160"
-       cy="735"
-       r="1"
-       sodipodi:cx="-160"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -159,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-32"
-       cx="-160"
-       cy="745"
-       r="1"
-       sodipodi:cx="-160"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -159,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-29"
-       cx="-150"
-       cy="735"
-       r="1"
-       sodipodi:cx="-150"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -149,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-30"
-       cx="-150"
-       cy="745"
-       r="1"
-       sodipodi:cx="-150"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -149,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-27"
-       cx="-140"
-       cy="735"
-       r="1"
-       sodipodi:cx="-140"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -139,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-28"
-       cx="-140"
-       cy="745"
-       r="1"
-       sodipodi:cx="-140"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -139,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-25"
-       cx="-130"
-       cy="735"
-       r="1"
-       sodipodi:cx="-130"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -129,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-26"
-       cx="-130"
-       cy="745"
-       r="1"
-       sodipodi:cx="-130"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -129,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-23"
-       cx="-120"
-       cy="735"
-       r="1"
-       sodipodi:cx="-120"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -119,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-24"
-       cx="-120"
-       cy="745"
-       r="1"
-       sodipodi:cx="-120"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -119,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-21"
-       cx="-110"
-       cy="735"
-       r="1"
-       sodipodi:cx="-110"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -109,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-22"
-       cx="-110"
-       cy="745"
-       r="1"
-       sodipodi:cx="-110"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -109,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-19"
-       cx="-100"
-       cy="735"
-       r="1"
-       sodipodi:cx="-100"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -99,735 c 0,0.55228 -0.447715,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-20"
-       cx="-100"
-       cy="745"
-       r="1"
-       sodipodi:cx="-100"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -99,745 c 0,0.55228 -0.447715,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-17"
-       cx="-90"
-       cy="735"
-       r="1"
-       sodipodi:cx="-90"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -89,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-18"
-       cx="-90"
-       cy="745"
-       r="1"
-       sodipodi:cx="-90"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -89,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-15"
-       cx="-80"
-       cy="735"
-       r="1"
-       sodipodi:cx="-80"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -79,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-16"
-       cx="-80"
-       cy="745"
-       r="1"
-       sodipodi:cx="-80"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -79,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-13"
-       cx="-70"
-       cy="735"
-       r="1"
-       sodipodi:cx="-70"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -69,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-14"
-       cx="-70"
-       cy="745"
-       r="1"
-       sodipodi:cx="-70"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -69,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-11"
-       cx="-60"
-       cy="735"
-       r="1"
-       sodipodi:cx="-60"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -59,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-12"
-       cx="-60"
-       cy="745"
-       r="1"
-       sodipodi:cx="-60"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -59,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-9"
-       cx="-50"
-       cy="735"
-       r="1"
-       sodipodi:cx="-50"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -49,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-10"
-       cx="-50"
-       cy="745"
-       r="1"
-       sodipodi:cx="-50"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -49,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-7"
-       cx="-40"
-       cy="735"
-       r="1"
-       sodipodi:cx="-40"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -39,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-8"
-       cx="-40"
-       cy="745"
-       r="1"
-       sodipodi:cx="-40"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -39,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-5"
-       cx="-30"
-       cy="735"
-       r="1"
-       sodipodi:cx="-30"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -29,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-6"
-       cx="-30"
-       cy="745"
-       r="1"
-       sodipodi:cx="-30"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -29,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-3"
-       cx="-20"
-       cy="735"
-       r="1"
-       sodipodi:cx="-20"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -19,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-4"
-       cx="-20"
-       cy="745"
-       r="1"
-       sodipodi:cx="-20"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -19,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-1"
-       cx="-10"
-       cy="735"
-       r="1"
-       sodipodi:cx="-10"
-       sodipodi:cy="735"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -9,735 c 0,0.55228 -0.4477153,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.5522847,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-heroes-2"
-       cx="-10"
-       cy="745"
-       r="1"
-       sodipodi:cx="-10"
-       sodipodi:cy="745"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -9,745 c 0,0.55228 -0.4477153,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.5522847,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-hallway-1"
-       cx="-220"
-       cy="730"
-       r="1"
-       sodipodi:cx="-220"
-       sodipodi:cy="730"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -219,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-hallway-2"
-       cx="-230"
-       cy="730"
-       r="1"
-       sodipodi:cx="-230"
-       sodipodi:cy="730"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -229,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-hallway-3"
-       cx="-240"
-       cy="730"
-       r="1"
-       sodipodi:cx="-240"
-       sodipodi:cy="730"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -239,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-hallway-4"
-       cx="-250"
-       cy="730"
-       r="1"
-       sodipodi:cx="-250"
-       sodipodi:cy="730"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -249,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <circle
-       id="column-hallway-5"
-       cx="-260"
-       cy="730"
-       r="1"
-       sodipodi:cx="-260"
-       sodipodi:cy="730"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -259,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-170"
-       y="742"
-       id="text4224"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4226"
-         x="-170"
-         y="742">Hall of Heroes</tspan></text>
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-194"
-       y="806"
-       id="text4228"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4230"
-         x="-194"
-         y="806">Bone Throne</tspan></text>
-    <rect
-       class="door"
-       id="rect4232"
-       width="7"
-       height="2"
-       x="-178"
-       y="749" />
-    <rect
-       class="door"
-       id="rect4234"
-       width="6"
-       height="2"
-       x="-198"
-       y="759" />
-    <rect
-       class="door"
-       id="rect4236"
-       width="6"
-       height="2"
-       x="-228"
-       y="739" />
-    <rect
-       class="door"
-       id="rect4238"
-       width="6"
-       height="2"
-       x="-98"
-       y="729" />
-    <rect
-       class="door"
-       id="rect4240"
-       width="6"
-       height="2"
-       x="-58"
-       y="749" />
-    <rect
-       class="door"
-       id="rect4242"
-       width="6"
-       height="2"
-       x="-28"
-       y="799" />
-    <rect
-       class="door"
-       id="rect4244"
-       width="6"
-       height="2"
-       x="-38"
-       y="819" />
-    <rect
-       class="door"
-       id="rect4246"
-       width="2"
-       height="6"
-       x="-51"
-       y="802" />
-    <rect
-       class="door"
-       id="rect4248"
-       width="2"
-       height="6"
-       x="-131"
-       y="792" />
-    <rect
-       class="door"
-       id="rect4250"
-       width="2"
-       height="6"
-       x="-161"
-       y="812" />
-    <rect
-       class="door"
-       id="rect4252"
-       width="2"
-       height="6"
-       x="-191"
-       y="812" />
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-89"
-       y="742"
-       id="text4254"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4256"
-         x="-89"
-         y="742">40</tspan></text>
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-30.463575"
-       y="782.1192"
-       id="text4258"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         id="tspan4260"
-         x="-30.463575"
-         y="782.1192">203</tspan></text>
-    <rect
-       class="door"
-       id="rect4262"
-       width="6"
-       height="2"
-       x="-38"
-       y="849" />
-    <rect
-       class="door"
-       id="rect4264"
-       width="2"
-       height="6"
-       x="-61"
-       y="922" />
-    <rect
-       class="door"
-       id="rect4266"
-       width="2"
-       height="8"
-       x="-1"
-       y="732" />
-    <rect
-       class="door"
-       id="rect4268"
-       width="2"
-       height="8"
-       x="-1"
-       y="740" />
-    <rect
-       class="door"
-       id="rect4270"
-       width="8"
-       height="2"
-       x="32"
-       y="829" />
-    <rect
-       class="door"
-       id="rect4272"
-       width="8"
-       height="2"
-       x="40"
-       y="829" />
-    <rect
-       class="door"
-       id="rect4274"
-       width="2"
-       height="8"
-       x="79"
-       y="790" />
-    <rect
-       class="door"
-       id="rect4276"
-       width="2"
-       height="6"
-       x="-31"
-       y="972" />
-    <rect
-       class="door"
-       id="rect4278"
-       width="2"
-       height="8"
-       x="79"
-       y="782" />
     <path
        class="wall"
        d="m 80,748 0,34 0,-2 10,0 0,-10"
        id="path4280"
        inkscape:connector-curvature="0" />
-    <rect
-       class="door"
-       id="rect4282"
-       width="2"
-       height="8"
-       x="79"
-       y="740" />
-    <rect
-       class="door"
-       id="rect4284"
-       width="2"
-       height="8"
-       x="79"
-       y="732" />
     <path
        class="wall"
        d="m 80,710 0,22"
@@ -2058,61 +1296,6 @@
        id="path4296"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-168"
-       y="1307"
-       id="text4308"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="-168"
-         y="1307"
-         id="tspan4312">Candles</tspan></text>
-    <circle
-       id="column-null-magic-1"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
-       transform="translate(4.8270118,-3.9137934)" />
-    <circle
-       transform="translate(24.958047,2.7827587)"
-       id="column-null-magic-2"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(24.522989,21.26092)"
-       id="column-null-magic-3"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(5.1752879,27.892817)"
-       id="column-null-magic-4"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
     <path
        id="path3279"
        transform="translate(-305.5,639.5)"
@@ -2157,88 +1340,6 @@
        id="path3209"
        inkscape:connector-curvature="0"
        transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect3211"
-       width="2"
-       height="6"
-       x="4.5"
-       y="132.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect3981"
-       width="2"
-       height="6"
-       x="64.5"
-       y="312.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect3983"
-       width="2"
-       height="6"
-       x="74.5"
-       y="312.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect3985"
-       width="6"
-       height="2"
-       x="67.5"
-       y="299.5"
-       transform="translate(-305.5,639.5)" />
-    <circle
-       id="column-5col-room-1"
-       cx="-300"
-       cy="960"
-       r="1.5"
-       sodipodi:cx="-300"
-       sodipodi:cy="960"
-       sodipodi:rx="1.5"
-       sodipodi:ry="1.5"
-       d="m -298.5,960 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
-    <circle
-       id="column-5col-room-2"
-       cx="-310"
-       cy="950"
-       r="1.5"
-       sodipodi:cx="-310"
-       sodipodi:cy="950"
-       sodipodi:rx="1.5"
-       sodipodi:ry="1.5"
-       d="m -308.5,950 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
-    <circle
-       id="column-5col-room-3"
-       cx="-290"
-       cy="950"
-       r="1.5"
-       sodipodi:cx="-290"
-       sodipodi:cy="950"
-       sodipodi:rx="1.5"
-       sodipodi:ry="1.5"
-       d="m -288.5,950 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
-    <circle
-       id="column-5col-room-4"
-       cx="-310"
-       cy="970"
-       r="1.5"
-       sodipodi:cx="-310"
-       sodipodi:cy="970"
-       sodipodi:rx="1.5"
-       sodipodi:ry="1.5"
-       d="m -308.5,970 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
-    <circle
-       id="column-5col-room-5"
-       cx="-290"
-       cy="970"
-       r="1.5"
-       sodipodi:cx="-290"
-       sodipodi:cy="970"
-       sodipodi:rx="1.5"
-       sodipodi:ry="1.5"
-       d="m -288.5,970 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
     <path
        class="wall"
        d="m -19.5,380.5 0,10 -5,0 0,20"
@@ -2259,40 +1360,11 @@
        transform="translate(-305.5,639.5)"
        sodipodi:nodetypes="cccc" />
     <path
-       class="stairs-ns"
-       d="m -280,900 10,0 -3,20 -4,0 z"
-       id="rect4082"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       transform="translate(-305.5,639.5)"
-       class="stairs-ns"
-       d="m 18.5,150.5 4,0 3,20 -10,0 z"
-       id="rect5519"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
        id="path5540"
        transform="translate(-305.5,639.5)"
        class="wall"
        d="m 275.5,332.5 0,-2 -10,0 0,2 m 10,0 0,-12 10,0 0,-30 -40,0 0,-2 0,32 20,0 0,3 0,-3 10,0"
        inkscape:connector-curvature="0" />
-    <rect
-       class="sec-door"
-       id="rect5543"
-       width="2"
-       height="6"
-       x="264.5"
-       y="332.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5545"
-       width="2"
-       height="6"
-       x="234.5"
-       y="332.5"
-       transform="translate(-305.5,639.5)" />
     <path
        class="wall"
        d="m 190.5,320.5 5,0 0,-90"
@@ -2305,14 +1377,6 @@
        d="m 465.5,220.5 c 0,0 0,0 0,0 z"
        id="path5618"
        inkscape:connector-curvature="0"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5620"
-       width="2"
-       height="6"
-       x="534.5"
-       y="247.5"
        transform="translate(-305.5,639.5)" />
     <path
        class="wall"
@@ -2340,91 +1404,6 @@
        id="path5630"
        inkscape:connector-curvature="0"
        transform="translate(-305.5,639.5)" />
-    <circle
-       transform="translate(14.956897,-1.4135059)"
-       id="column-null-magic-1-6"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(15.347701,24.478161)"
-       id="column-null-magic-1-7"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(-6,22)"
-       id="column-null-magic-1-8"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(-6,3)"
-       id="column-null-magic-1-2"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(10,3)"
-       id="column-null-magic-1-9"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(10,19)"
-       id="column-null-magic-1-63"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <circle
-       transform="translate(10,10)"
-       id="column-null-magic-1-9-1"
-       cx="-180"
-       cy="1048"
-       r="1"
-       sodipodi:cx="-180"
-       sodipodi:cy="1048"
-       sodipodi:rx="1"
-       sodipodi:ry="1"
-       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
-    <rect
-       class="door"
-       id="rect3348"
-       width="2"
-       height="6"
-       x="124.5"
-       y="622.5"
-       transform="translate(-305.5,639.5)" />
     <path
        class="wall"
        d="m 65.5,660.5 -2,0 z"
@@ -2436,22 +1415,6 @@
        d="m 65.5,660.5 0,-11"
        id="path4120"
        inkscape:connector-curvature="0"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="corr"
-       id="rect4124"
-       width="10"
-       height="50"
-       x="55.5"
-       y="670.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="corr"
-       id="rect4126"
-       width="10"
-       height="10"
-       x="65.5"
-       y="700.5"
        transform="translate(-305.5,639.5)" />
     <path
        class="wall"
@@ -2472,19 +1435,6 @@
        inkscape:connector-curvature="0"
        transform="translate(-305.5,639.5)"
        sodipodi:nodetypes="ccccccccccccc" />
-    <path
-       transform="translate(-305.5,639.5)"
-       class="stairs-ew"
-       d="m 25.5,640.5 10,3 0,4 -10,3 z"
-       id="rect4146"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="stairs-ew"
-       d="m -300,1283 10,-3 0,10 -10,-3 z"
-       id="rect4146-3"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
     <path
        class="wall"
        d="m -12.5,640.5 -2,0 0,50 10,0 0,110 -10,0 0,-10"
@@ -2510,14 +1460,6 @@
        d="m 35.5,700.5 -2,0"
        id="path5615"
        inkscape:connector-curvature="0"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5617"
-       width="6"
-       height="2"
-       x="27.5"
-       y="699.5"
        transform="translate(-305.5,639.5)" />
     <path
        class="wall"
@@ -2611,14 +1553,6 @@
        id="path5651"
        inkscape:connector-curvature="0"
        transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5653"
-       width="2"
-       height="6"
-       x="-45.5"
-       y="1002.5"
-       transform="translate(-305.5,639.5)" />
     <path
        class="wall"
        d="m -74.5,1010.5 -10,0 0,-40 -20,0 0,-20"
@@ -2691,95 +1625,11 @@
        id="path5677"
        inkscape:connector-curvature="0"
        transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5681"
-       width="6"
-       height="2"
-       x="-222.5"
-       y="1089.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5683"
-       width="6"
-       height="2"
-       x="-202.5"
-       y="1089.5"
-       transform="translate(-305.5,639.5)" />
-    <text
-       xml:space="preserve"
-       class="name"
-       x="-234.20549"
-       y="1033.891"
-       id="text5685"
-       sodipodi:linespacing="125%"
-       transform="translate(-305.5,639.5)"><tspan
-         sodipodi:role="line"
-         id="tspan5687"
-         x="-234.20549"
-         y="1033.891">Lightning</tspan><tspan
-         sodipodi:role="line"
-         x="-234.20549"
-         y="1043.891"
-         id="tspan5689">Statue</tspan><tspan
-         sodipodi:role="line"
-         x="-234.20549"
-         y="1053.891"
-         id="tspan5691">Room</tspan></text>
-    <rect
-       class="door"
-       id="rect5693"
-       width="6"
-       height="2"
-       x="-202.5"
-       y="1019.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5695"
-       width="6"
-       height="2"
-       x="-142.5"
-       y="1029.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5697"
-       width="2"
-       height="6"
-       x="-155.5"
-       y="1002.5"
-       transform="translate(-305.5,639.5)" />
     <path
        class="wall"
        d="m -154.5,1002.5 0,-32 -10,0 0,-20 -30,0 0,40 40,0 z"
        id="path5699"
        inkscape:connector-curvature="0"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5701"
-       width="2"
-       height="6"
-       x="-205.5"
-       y="942.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5703"
-       width="2"
-       height="6"
-       x="-25.5"
-       y="902.5"
-       transform="translate(-305.5,639.5)" />
-    <rect
-       class="door"
-       id="rect5705"
-       width="6"
-       height="2"
-       x="-92.5"
-       y="1119.5"
        transform="translate(-305.5,639.5)" />
     <path
        class="wall"
@@ -2854,6 +1704,995 @@
        id="path5729"
        inkscape:connector-curvature="0"
        transform="translate(-305.5,639.5)" />
+    <path
+       class="sec-door"
+       d="m -18,1009 3,1 3,-1 0,2 -3,1 -3,-1 z"
+       id="s-door-shield-room"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <rect
+       class="sec-door"
+       id="s-door-dexter-dance"
+       width="6"
+       height="2"
+       x="-128"
+       y="1069" />
+    <rect
+       class="sec-door"
+       id="s-door-demon-gate"
+       width="6"
+       height="2"
+       x="-108"
+       y="1049" />
+    <rect
+       class="sec-door"
+       id="rect5543"
+       width="2"
+       height="6"
+       x="264.5"
+       y="332.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="door-demon-gate"
+       width="2"
+       height="6"
+       x="-151"
+       y="1012" />
+    <rect
+       class="door"
+       id="rect3854"
+       width="2"
+       height="16"
+       x="-161"
+       y="1262" />
+    <rect
+       class="door"
+       id="rect4232"
+       width="7"
+       height="2"
+       x="-178"
+       y="749" />
+    <rect
+       class="door"
+       id="rect4234"
+       width="6"
+       height="2"
+       x="-198"
+       y="759" />
+    <rect
+       class="door"
+       id="rect4236"
+       width="6"
+       height="2"
+       x="-228"
+       y="739" />
+    <rect
+       class="door"
+       id="rect4238"
+       width="6"
+       height="2"
+       x="-98"
+       y="729" />
+    <rect
+       class="door"
+       id="rect4240"
+       width="6"
+       height="2"
+       x="-58"
+       y="749" />
+    <rect
+       class="door"
+       id="rect4242"
+       width="6"
+       height="2"
+       x="-28"
+       y="799" />
+    <rect
+       class="door"
+       id="rect4244"
+       width="6"
+       height="2"
+       x="-38"
+       y="819" />
+    <rect
+       class="door"
+       id="rect4246"
+       width="2"
+       height="6"
+       x="-51"
+       y="802" />
+    <rect
+       class="door"
+       id="rect4248"
+       width="2"
+       height="6"
+       x="-131"
+       y="792" />
+    <rect
+       class="door"
+       id="rect4250"
+       width="2"
+       height="6"
+       x="-161"
+       y="812" />
+    <rect
+       class="door"
+       id="rect4252"
+       width="2"
+       height="6"
+       x="-191"
+       y="812" />
+    <rect
+       class="door"
+       id="rect4262"
+       width="6"
+       height="2"
+       x="-38"
+       y="849" />
+    <rect
+       class="door"
+       id="rect4264"
+       width="2"
+       height="6"
+       x="-61"
+       y="922" />
+    <rect
+       class="door"
+       id="rect4266"
+       width="2"
+       height="8"
+       x="-1"
+       y="732" />
+    <rect
+       class="door"
+       id="rect4268"
+       width="2"
+       height="8"
+       x="-1"
+       y="740" />
+    <rect
+       class="door"
+       id="rect4270"
+       width="8"
+       height="2"
+       x="32"
+       y="829" />
+    <rect
+       class="door"
+       id="rect4272"
+       width="8"
+       height="2"
+       x="40"
+       y="829" />
+    <rect
+       class="door"
+       id="rect4274"
+       width="2"
+       height="8"
+       x="79"
+       y="790" />
+    <rect
+       class="door"
+       id="rect4276"
+       width="2"
+       height="6"
+       x="-31"
+       y="972" />
+    <rect
+       class="door"
+       id="rect4278"
+       width="2"
+       height="8"
+       x="79"
+       y="782" />
+    <rect
+       class="door"
+       id="rect4282"
+       width="2"
+       height="8"
+       x="79"
+       y="740" />
+    <rect
+       class="door"
+       id="rect4284"
+       width="2"
+       height="8"
+       x="79"
+       y="732" />
+    <rect
+       class="door"
+       id="rect3211"
+       width="2"
+       height="6"
+       x="4.5"
+       y="132.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect3981"
+       width="2"
+       height="6"
+       x="64.5"
+       y="312.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect3983"
+       width="2"
+       height="6"
+       x="74.5"
+       y="312.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect3985"
+       width="6"
+       height="2"
+       x="67.5"
+       y="299.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5545"
+       width="2"
+       height="6"
+       x="234.5"
+       y="332.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5620"
+       width="2"
+       height="6"
+       x="534.5"
+       y="247.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect3348"
+       width="2"
+       height="6"
+       x="124.5"
+       y="622.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5617"
+       width="6"
+       height="2"
+       x="27.5"
+       y="699.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5653"
+       width="2"
+       height="6"
+       x="-45.5"
+       y="1002.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5681"
+       width="6"
+       height="2"
+       x="-222.5"
+       y="1089.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5683"
+       width="6"
+       height="2"
+       x="-202.5"
+       y="1089.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5693"
+       width="6"
+       height="2"
+       x="-202.5"
+       y="1019.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5695"
+       width="6"
+       height="2"
+       x="-142.5"
+       y="1029.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5697"
+       width="2"
+       height="6"
+       x="-155.5"
+       y="1002.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5701"
+       width="2"
+       height="6"
+       x="-205.5"
+       y="942.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5703"
+       width="2"
+       height="6"
+       x="-25.5"
+       y="902.5"
+       transform="translate(-305.5,639.5)" />
+    <rect
+       class="door"
+       id="rect5705"
+       width="6"
+       height="2"
+       x="-92.5"
+       y="1119.5"
+       transform="translate(-305.5,639.5)" />
+    <path
+       class="bars"
+       d="m -125,1040 0,-30"
+       id="bars-1"
+       inkscape:connector-curvature="0"
+       inkscape:label="#bars-1" />
+    <path
+       class="stairs-ew"
+       d="m -150,1054 10,-4 0,20 -10,-4 z"
+       id="stairs-null-magic-1"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       class="stairs-ns"
+       d="m -172,1080 2,10 -10,0 2,-10 z"
+       id="stairs-null-magic-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       class="stairs-ns"
+       d="m -172,1040 2,-10 -10,0 2,10 z"
+       id="stairs-null-magic-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       class="stairs-ew"
+       d="m -190,1062 -10,-2 0,10 10,-2 z"
+       id="stairs-null-magic-4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       transform="translate(-305.5,639.5)"
+       class="stairs-ew"
+       d="m 25.5,640.5 10,3 0,4 -10,3 z"
+       id="rect4146"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       class="stairs-ew"
+       d="m -300,1283 10,-3 0,10 -10,-3 z"
+       id="rect4146-3"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       class="stairs-ns"
+       d="m -280,900 10,0 -3,20 -4,0 z"
+       id="rect4082"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       transform="translate(-305.5,639.5)"
+       class="stairs-ns"
+       d="m 18.5,150.5 4,0 3,20 -10,0 z"
+       id="rect5519"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <circle
+       id="column-heroes-1"
+       cx="-10"
+       cy="735"
+       r="1"
+       sodipodi:cx="-10"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -9,735 c 0,0.55228 -0.4477153,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.5522847,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-2"
+       cx="-10"
+       cy="745"
+       r="1"
+       sodipodi:cx="-10"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -9,745 c 0,0.55228 -0.4477153,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.5522847,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-3"
+       cx="-20"
+       cy="735"
+       r="1"
+       sodipodi:cx="-20"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -19,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-4"
+       cx="-20"
+       cy="745"
+       r="1"
+       sodipodi:cx="-20"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -19,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-5"
+       cx="-30"
+       cy="735"
+       r="1"
+       sodipodi:cx="-30"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -29,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-6"
+       cx="-30"
+       cy="745"
+       r="1"
+       sodipodi:cx="-30"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -29,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-7"
+       cx="-40"
+       cy="735"
+       r="1"
+       sodipodi:cx="-40"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -39,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-8"
+       cx="-40"
+       cy="745"
+       r="1"
+       sodipodi:cx="-40"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -39,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-9"
+       cx="-50"
+       cy="735"
+       r="1"
+       sodipodi:cx="-50"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -49,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-10"
+       cx="-50"
+       cy="745"
+       r="1"
+       sodipodi:cx="-50"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -49,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-11"
+       cx="-60"
+       cy="735"
+       r="1"
+       sodipodi:cx="-60"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -59,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-12"
+       cx="-60"
+       cy="745"
+       r="1"
+       sodipodi:cx="-60"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -59,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-13"
+       cx="-70"
+       cy="735"
+       r="1"
+       sodipodi:cx="-70"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -69,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-14"
+       cx="-70"
+       cy="745"
+       r="1"
+       sodipodi:cx="-70"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -69,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-15"
+       cx="-80"
+       cy="735"
+       r="1"
+       sodipodi:cx="-80"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -79,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-16"
+       cx="-80"
+       cy="745"
+       r="1"
+       sodipodi:cx="-80"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -79,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-17"
+       cx="-90"
+       cy="735"
+       r="1"
+       sodipodi:cx="-90"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -89,735 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-18"
+       cx="-90"
+       cy="745"
+       r="1"
+       sodipodi:cx="-90"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -89,745 c 0,0.55228 -0.447715,1 -1,1 -0.552285,0 -1,-0.44772 -1,-1 0,-0.55228 0.447715,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-19"
+       cx="-100"
+       cy="735"
+       r="1"
+       sodipodi:cx="-100"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -99,735 c 0,0.55228 -0.447715,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-20"
+       cx="-100"
+       cy="745"
+       r="1"
+       sodipodi:cx="-100"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -99,745 c 0,0.55228 -0.447715,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.552285,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-21"
+       cx="-110"
+       cy="735"
+       r="1"
+       sodipodi:cx="-110"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -109,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-22"
+       cx="-110"
+       cy="745"
+       r="1"
+       sodipodi:cx="-110"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -109,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-23"
+       cx="-120"
+       cy="735"
+       r="1"
+       sodipodi:cx="-120"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -119,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-24"
+       cx="-120"
+       cy="745"
+       r="1"
+       sodipodi:cx="-120"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -119,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-25"
+       cx="-130"
+       cy="735"
+       r="1"
+       sodipodi:cx="-130"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -129,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-26"
+       cx="-130"
+       cy="745"
+       r="1"
+       sodipodi:cx="-130"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -129,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-27"
+       cx="-140"
+       cy="735"
+       r="1"
+       sodipodi:cx="-140"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -139,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-28"
+       cx="-140"
+       cy="745"
+       r="1"
+       sodipodi:cx="-140"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -139,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-29"
+       cx="-150"
+       cy="735"
+       r="1"
+       sodipodi:cx="-150"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -149,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-30"
+       cx="-150"
+       cy="745"
+       r="1"
+       sodipodi:cx="-150"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -149,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-31"
+       cx="-160"
+       cy="735"
+       r="1"
+       sodipodi:cx="-160"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -159,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-32"
+       cx="-160"
+       cy="745"
+       r="1"
+       sodipodi:cx="-160"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -159,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-33"
+       cx="-170"
+       cy="735"
+       r="1"
+       sodipodi:cx="-170"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -169,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-34"
+       cx="-170"
+       cy="745"
+       r="1"
+       sodipodi:cx="-170"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -169,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-35"
+       cx="-180"
+       cy="735"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-36"
+       cx="-180"
+       cy="745"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-37"
+       cx="-190"
+       cy="735"
+       r="1"
+       sodipodi:cx="-190"
+       sodipodi:cy="735"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -189,735 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-heroes-38"
+       cx="-190"
+       cy="745"
+       r="1"
+       sodipodi:cx="-190"
+       sodipodi:cy="745"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -189,745 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-hallway-1"
+       cx="-220"
+       cy="730"
+       r="1"
+       sodipodi:cx="-220"
+       sodipodi:cy="730"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -219,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-hallway-2"
+       cx="-230"
+       cy="730"
+       r="1"
+       sodipodi:cx="-230"
+       sodipodi:cy="730"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -229,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-hallway-3"
+       cx="-240"
+       cy="730"
+       r="1"
+       sodipodi:cx="-240"
+       sodipodi:cy="730"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -239,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-hallway-4"
+       cx="-250"
+       cy="730"
+       r="1"
+       sodipodi:cx="-250"
+       sodipodi:cy="730"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -249,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-hallway-5"
+       cx="-260"
+       cy="730"
+       r="1"
+       sodipodi:cx="-260"
+       sodipodi:cy="730"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -259,730 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z" />
+    <circle
+       id="column-null-magic-1"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
+       transform="translate(4.8270118,-3.9137934)" />
+    <circle
+       transform="translate(24.958047,2.7827587)"
+       id="column-null-magic-2"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(24.522989,21.26092)"
+       id="column-null-magic-3"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(5.1752879,27.892817)"
+       id="column-null-magic-4"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       id="column-5col-room-1"
+       cx="-300"
+       cy="960"
+       r="1.5"
+       sodipodi:cx="-300"
+       sodipodi:cy="960"
+       sodipodi:rx="1.5"
+       sodipodi:ry="1.5"
+       d="m -298.5,960 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
+    <circle
+       id="column-5col-room-2"
+       cx="-310"
+       cy="950"
+       r="1.5"
+       sodipodi:cx="-310"
+       sodipodi:cy="950"
+       sodipodi:rx="1.5"
+       sodipodi:ry="1.5"
+       d="m -308.5,950 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
+    <circle
+       id="column-5col-room-3"
+       cx="-290"
+       cy="950"
+       r="1.5"
+       sodipodi:cx="-290"
+       sodipodi:cy="950"
+       sodipodi:rx="1.5"
+       sodipodi:ry="1.5"
+       d="m -288.5,950 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
+    <circle
+       id="column-5col-room-4"
+       cx="-310"
+       cy="970"
+       r="1.5"
+       sodipodi:cx="-310"
+       sodipodi:cy="970"
+       sodipodi:rx="1.5"
+       sodipodi:ry="1.5"
+       d="m -308.5,970 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
+    <circle
+       id="column-5col-room-5"
+       cx="-290"
+       cy="970"
+       r="1.5"
+       sodipodi:cx="-290"
+       sodipodi:cy="970"
+       sodipodi:rx="1.5"
+       sodipodi:ry="1.5"
+       d="m -288.5,970 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
+    <circle
+       transform="translate(14.956897,-1.4135059)"
+       id="column-null-magic-1-6"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(15.347701,24.478161)"
+       id="column-null-magic-1-7"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(-6,22)"
+       id="column-null-magic-1-8"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(-6,3)"
+       id="column-null-magic-1-2"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(10,3)"
+       id="column-null-magic-1-9"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(10,19)"
+       id="column-null-magic-1-63"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
+    <circle
+       transform="translate(10,10)"
+       id="column-null-magic-1-9-1"
+       cx="-180"
+       cy="1048"
+       r="1"
+       sodipodi:cx="-180"
+       sodipodi:cy="1048"
+       sodipodi:rx="1"
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
     <rect
        class="feature"
        id="rect5623"
@@ -2862,5 +2701,151 @@
        x="35.5"
        y="940.5"
        transform="translate(-305.5,639.5)" />
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-170"
+       y="742"
+       id="text4224"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4226"
+         x="-170"
+         y="742">Hall of Heroes</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-194"
+       y="806"
+       id="text4228"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4230"
+         x="-194"
+         y="806">Bone Throne</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-89"
+       y="742"
+       id="text4254"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4256"
+         x="-89"
+         y="742">40</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-30.463575"
+       y="782.1192"
+       id="text4258"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4260"
+         x="-30.463575"
+         y="782.1192">203</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-168"
+       y="1307"
+       id="text4308"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-168"
+         y="1307"
+         id="tspan4312">Candles</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-264"
+       y="1066"
+       id="text5428"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5430"
+         x="-264"
+         y="1066">Hall Of Mirrors</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-185"
+       y="1057"
+       id="text5434"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5436"
+         x="-185"
+         y="1057">Null</tspan><tspan
+         sodipodi:role="line"
+         x="-185"
+         y="1064.5"
+         id="tspan3326">Magic</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-148"
+       y="1022"
+       id="text5441"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5443"
+         x="-148"
+         y="1022">Demon</tspan><tspan
+         sodipodi:role="line"
+         x="-148"
+         y="1029.5"
+         id="tspan3346">Gate</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-146"
+       y="1088"
+       id="text5447"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5449"
+         x="-146"
+         y="1088">Dexter</tspan><tspan
+         sodipodi:role="line"
+         x="-146"
+         y="1095.5"
+         id="tspan5451">Dance</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-10"
+       y="1028"
+       id="text5513"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5515"
+         x="-10"
+         y="1028">Shield</tspan><tspan
+         sodipodi:role="line"
+         x="-10"
+         y="1035.5"
+         id="tspan5517">Room</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="-234.20549"
+       y="1033.891"
+       id="text5685"
+       sodipodi:linespacing="125%"
+       transform="translate(-305.5,639.5)"><tspan
+         sodipodi:role="line"
+         id="tspan5687"
+         x="-234.20549"
+         y="1033.891">Lightning</tspan><tspan
+         sodipodi:role="line"
+         x="-234.20549"
+         y="1043.891"
+         id="tspan5689">Statue</tspan><tspan
+         sodipodi:role="line"
+         x="-234.20549"
+         y="1053.891"
+         id="tspan5691">Room</tspan></text>
   </g>
 </svg>
