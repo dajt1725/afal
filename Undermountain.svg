@@ -150,7 +150,7 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="7.9960927"
+     inkscape:zoom="8.0"
      inkscape:cx="-22.723172"
      inkscape:cy="127.04857"
      inkscape:document-units="px"
@@ -176,9 +176,7 @@
        empcolor="#0000a1"
        empopacity="0.25098039"
        color="#5555ff"
-       opacity="0.1254902"
-       originx="640.5px"
-       originy="770.5px" />
+       opacity="0.1254902" />
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -224,7 +222,7 @@
     <rect
        class="corr"
        id="rect4136"
-       width="69.999962"
+       width="70"
        height="10"
        x="-14.5"
        y="640.5"
@@ -241,9 +239,9 @@
        class="corr"
        id="rect4122"
        width="10"
-       height="20.055248"
+       height="20"
        x="-250"
-       y="1279.9447" />
+       y="1280" />
     <rect
        class="corr"
        id="rect5640"
@@ -358,9 +356,9 @@
     <rect
        class="corr"
        id="rect5534"
-       width="64.821205"
+       width="65"
        height="10"
-       x="-289.8212"
+       x="-290"
        y="1040" />
     <rect
        class="corr"
@@ -422,7 +420,7 @@
        class="corr"
        id="rect4070"
        width="10"
-       height="140.06763"
+       height="140"
        x="-320"
        y="800" />
     <rect
@@ -772,7 +770,7 @@
        class="corr"
        id="floor-corr-4"
        width="10"
-       height="60.076271"
+       height="60"
        x="-180"
        y="980" />
     <rect
@@ -817,7 +815,7 @@
        id="rect5648"
        width="10"
        height="30"
-       x="184.19119"
+       x="185"
        y="830" />
     <rect
        class="room"
@@ -825,7 +823,7 @@
        width="10"
        height="40"
        x="195"
-       y="830.07562" />
+       y="830" />
     <rect
        class="room"
        id="rect5644"
@@ -859,7 +857,7 @@
     <path
        id="rect5571"
        class="room"
-       d="m 0,710.04614 80,0 L 80,810 0,810 z M 0,810 l 80,0 -20,20 -40,0 z"
+       d="m 0,710 80,0 L 80,810 0,810 z M 0,810 l 80,0 -20,20 -40,0 z"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc" />
     <rect
@@ -1111,7 +1109,7 @@
        inkscape:label="#floor-null-magic" />
     <path
        class="wall"
-       d="m -20,1010 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20 90,0 0,10 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20 -10,10e-6 0,-20 c 10,0 10,0 10,0 l 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,9.99999 12,0 -2,0 0,10 10,0 0,-10 -2,0 12,0 0,-40 -30,0 0,20.00001 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,9.99999 40,0 0,-9.99999 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,79.99999 10,0 0,10"
+       d="m -20,1010 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20 90,0 0,10 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20 -10,10e-6 0,-20 c 10,0 10,0 10,0 l 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,10 12,0 -2,0 0,10 10,0 0,-10 -2,0 12,0 0,-40 -30,0 0,20 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,10 40,0 0,-10 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,80 10,0 0,10"
        id="walls-shield-room"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
@@ -2532,9 +2530,9 @@
        sodipodi:rx="1"
        sodipodi:ry="1"
        d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
-       transform="translate(4.8270118,-3.9137934)" />
+       transform="translate(5,-4)" />
     <circle
-       transform="translate(24.958047,2.7827587)"
+       transform="translate(25,3)"
        id="column-null-magic-2"
        cx="-180"
        cy="1048"
@@ -2556,7 +2554,7 @@
        sodipodi:ry="1"
        d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
     <circle
-       transform="translate(5.1752879,27.892817)"
+       transform="translate(5,28)"
        id="column-null-magic-4"
        cx="-180"
        cy="1048"
@@ -2617,7 +2615,7 @@
        sodipodi:ry="1.5"
        d="m -288.5,970 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z" />
     <circle
-       transform="translate(14.956897,-1.4135059)"
+       transform="translate(15,-1.4135059)"
        id="column-null-magic-1-6"
        cx="-180"
        cy="1048"
@@ -2628,7 +2626,7 @@
        sodipodi:ry="1"
        d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z" />
     <circle
-       transform="translate(15.347701,24.478161)"
+       transform="translate(15,24.478161)"
        id="column-null-magic-1-7"
        cx="-180"
        cy="1048"
@@ -2737,14 +2735,14 @@
     <text
        xml:space="preserve"
        class="name"
-       x="-30.463575"
-       y="782.1192"
+       x="-30"
+       y="782"
        id="text4258"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan4260"
-         x="-30.463575"
-         y="782.1192">203</tspan></text>
+         x="-30"
+         y="782">203</tspan></text>
     <text
        xml:space="preserve"
        class="name"
@@ -2831,21 +2829,21 @@
        xml:space="preserve"
        class="name"
        x="-234.20549"
-       y="1033.891"
+       y="1034"
        id="text5685"
        sodipodi:linespacing="125%"
        transform="translate(-305.5,639.5)"><tspan
          sodipodi:role="line"
          id="tspan5687"
          x="-234.20549"
-         y="1033.891">Lightning</tspan><tspan
+         y="1034">Lightning</tspan><tspan
          sodipodi:role="line"
          x="-234.20549"
-         y="1043.891"
+         y="1044"
          id="tspan5689">Statue</tspan><tspan
          sodipodi:role="line"
          x="-234.20549"
-         y="1053.891"
+         y="1054"
          id="tspan5691">Room</tspan></text>
   </g>
 </svg>
