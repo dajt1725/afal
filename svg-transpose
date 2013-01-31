@@ -1,0 +1,211 @@
+#!/usr/bin/python
+import argparse
+from xml.dom.minidom import parse, parseString
+import re
+
+###### path parsing code
+p_nargs = {
+ 'a': 7, 'c': 6, 'h': 1, 'l': 2, 'm': 2, 'q': 4, 's': 4, 't': 2, 'v': 1, 'z': 0
+}
+p_num = '(-?\d*\.?\d+)'
+p_sep = '(,|\s*)'
+p_regex = ''
+for l in p_nargs.keys():
+    p_regex += '|^{s}([{l1}{l2}])((({s}{n}){{{r}}})+)'.format(l1 = l, l2 = l.upper(),
+s = p_sep, n = p_num, r = p_nargs[l])
+
+p_re = re.compile(p_regex[1:])
+
+# take a textual path, and return a list of lists, where each sublist
+# is one path command and its arguments.  If a command in the path has
+# multiple groups of arguments, it turns into multiple sublists, one
+# for each set of arguments.
+# z commands are not put in sublists, but stored bare in the list.
+
+def path_to_list(p):
+    ret = []
+    while len(p) > 0:
+        m = re.match(p_re, p)
+        if m is None or len(m.group(0)) == 0:
+            raise ValueError('invalid path '+p)
+        s = m.group(0)
+        p = p[len(s):]
+        n = re.match('{s}([aAcChHlLmMqQsStTvVzZ])'.format(s=p_sep), s)
+        if n is None:
+            raise ValueError("Invalid command "+s)
+        t = n.group(0)
+        s = s[len(t):]
+        c = n.group(2)
+        if len(s)==0:
+            ret.append(c)
+        while len(s) > 0:
+            v = [c]
+            if c == 'm':
+                c = 'l'
+            elif c == 'M':
+                c = 'L'
+            for i in range(p_nargs[c.lower()]):
+                m3 = re.match('{s}({n})'.format(s=p_sep,n=p_num),s)
+                if m3 is None:
+                    raise ValueError("Invalid number "+s)
+                s = s[len(m3.group(0)):]
+                v.append(m3.group(2))
+            if len(v)>0:
+                ret.append(v)
+    return ret
+
+# takes a path list (as created by path_to_list) and turns all the
+# absolute positioning commands into relative ones.
+def abs_list_to_rel(l):
+    cx = 0
+    sx = 0
+    cy = 0
+    sy = 0
+    ret = []
+    for i in l:
+        if i[0].isupper():
+            c = i[0].tolower()
+            i[0] = c
+            if c == 'a':
+                i[6] -= cx
+                i[7] -= cy
+            elif c == 'c':
+                i[1] -= cx
+                i[2] -= cy
+                i[3] -= cx
+                i[4] -= cy
+                i[5] -= cx
+                i[6] -= cy
+            elif c == 'h':
+                i[1] -= cx
+            elif c == 'l' or c == 'm' or c == 't':
+                i[1] -= cx
+                i[2] -= cy
+            elif c == 'q' or c == 's':
+                i[1] -= cx
+                i[2] -= cy
+                i[3] -= cx
+                i[4] -= cy
+            elif c == 'v':
+                i[1] -= cy
+        ret.append(i)
+        if c == 'a':
+            cx += i[6]
+            cy += i[7]
+        elif c == 'c':
+            cx += i[5]
+            cy += i[6]
+        elif c == 'h':
+            cx += i[1]
+        elif c == 'l' or c == 't':
+            cx += i[1]
+            cy += i[2]
+        elif c == 'q' or c == 's':
+            cx += i[3]
+            cy += i[4]
+        elif c == 'v':
+            cy += i[1]
+        elif c == 'm':
+            cx += i[1]
+            cy += i[2]
+            sx = cx
+            sy = cy
+        elif c == 'z':
+            cx = sx
+            cy = sy
+        else:
+            raise ValueError("unknown command "+c)
+    return ret
+
+# takes a list and produces an optimized list
+def optimize_list(l):
+    ret = []
+    return ret
+
+
+# takes a path list (as created by path_to_list) and produces an optimized
+# textual representation, by folding repeated commands into a single one,
+# turning a 'm' followed by 'l' into a multi-argument 'm, etc.
+def list_to_path(l):
+    ret = ''
+    s = ' '
+    needs = false
+    for i in l:
+        for j in i:
+            j = str(j)
+            if needs and j[0].isdigit():
+                j = s + j
+            ret += j
+            if j[-1].isdigit():
+                needs = true
+            else:
+                needs = false
+
+    return ret
+
+
+####### xy transform
+
+def fixd1(m):
+    if args.verbose:
+        print "fixd1",m.group(1),m.group(2),m.group(3),m.group(4)
+    x = fixd1.dx+float(m.group(2))
+    if x == float(int(x)):
+        x = int(x)
+    y = fixd1.dy+float(m.group(4))
+    if y == float(int(y)):
+        y = int(y)
+    return '{p}{x}{s}{y}'.format(p=m.group(1), x=x, s=m.group(3), y=y)
+
+def fixd2(m):
+    if args.verbose:
+        print "fixd2",m.group(1),m.group(2)
+    return m.group(1)+re.sub(r'(\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, m.group(2))
+
+def upd(n,a,d):
+    v = n.getAttribute(a)
+    if v is not None:
+        t = float(v)+d
+        if t == float(int(t)):
+            t = int(t)
+        n.setAttribute(a,str(t))
+
+def do_tr(n,dx,dy):
+    if n.attributes:
+        t = n.getAttribute('transform')
+        if t is not None:
+            r = re.match(r'translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
+            if r:
+                dx += float(r.group(1))
+                dy += float(r.group(2))
+                n.removeAttribute('transform')
+        upd(n,'x',dx)
+        upd(n,'y',dy)
+        upd(n,'cx',dx)
+        upd(n,'cy',dy)
+        upd(n,'sodipodi:cx',dx)
+        upd(n,'sodipodi:cy',dy)
+        d = n.getAttribute('d')
+        if d is not None:
+            fixd1.dx = dx
+            fixd1.dy = dy
+            d = re.sub(r'^(m\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, d)
+	    d = re.sub(r'(M|L)((\s*-?\d+\.?\d*(\s+|,)-?\d+\.?\d*)*)', fixd2, d)
+            n.setAttribute('d',d)
+    for i in n.childNodes:
+        do_tr(i,dx,dy)
+
+parser = argparse.ArgumentParser("transform the specified svg file by the specified amounts")
+parser.add_argument("--verbose", "-v", help = "print progress messages", action = 'store_true', default = False)
+parser.add_argument('--x', '-x', type=int, default=0, help='translate x by')
+parser.add_argument('--y', '-y', type=int, default=0, help='translate y by')
+parser.add_argument("file", help = "file to read", nargs = 1, default = 'Undermountain.svg')
+parser.add_argument("outfile", help = "file to write", nargs = 1, default = 'um1.svg')
+args = parser.parse_args()
+
+a = parse(args.file)
+for i in a.childNodes:
+    do_tr(i, args.x, args.y)
+f = open(args.outfile, 'w')
+a.writexml(f)
+f.close()
