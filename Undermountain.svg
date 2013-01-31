@@ -157,6 +157,17 @@
      inkscape:document-units="px"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
+<<<<<<< HEAD
+=======
+     inkscape:zoom="8.0"
+     inkscape:cx="-22.723172"
+     inkscape:cy="127.04857"
+     inkscape:document-units="px"
+     inkscape:current-layer="um1m"
+     showgrid="true"
+     showborder="false"
+     inkscape:window-width="1010"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
      inkscape:window-height="1090"
      inkscape:window-maximized="0"
      inkscape:window-width="1010"
@@ -170,6 +181,7 @@
        color="#5555ff"
        empcolor="#0000a1"
        empopacity="0.25098039"
+<<<<<<< HEAD
        empspacing="10"
        enabled="true"
        id="grid2985"
@@ -177,6 +189,10 @@
        snapvisiblegridlinesonly="false"
        type="xygrid"
        visible="true" />
+=======
+       color="#5555ff"
+       opacity="0.1254902" />
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
   </sodipodi:namedview>
   <metadata
      id="metadata7">
@@ -231,8 +247,13 @@
        y="1580" />
     <rect
        class="corr"
+<<<<<<< HEAD
        id="rect4209"
        width="50"
+=======
+       id="rect4136"
+       width="70"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        height="10"
        x="60"
        y="1630" />
@@ -248,8 +269,13 @@
        id="rect4205"
        width="10"
        height="20"
+<<<<<<< HEAD
        x="150"
        y="1630" />
+=======
+       x="-250"
+       y="1280" />
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
     <rect
        class="corr"
        id="rect4203"
@@ -378,11 +404,19 @@
        y="1600" />
     <rect
        class="corr"
+<<<<<<< HEAD
        id="rect4165"
        width="12"
        height="10"
        x="170"
        y="1660" />
+=======
+       id="rect5534"
+       width="65"
+       height="10"
+       x="-290"
+       y="1040" />
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
     <rect
        class="corr"
        id="rect4163"
@@ -443,9 +477,15 @@
        class="corr"
        id="rect4147"
        width="10"
+<<<<<<< HEAD
        height="5"
        x="280"
        y="1575" />
+=======
+       height="140"
+       x="-320"
+       y="800" />
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
     <rect
        class="corr"
        id="rect4145"
@@ -958,6 +998,7 @@
        height="10"
        id="rect3088"
        width="10"
+<<<<<<< HEAD
        x="570"
        y="800" />
     <rect
@@ -967,6 +1008,11 @@
        width="10"
        x="580"
        y="800" />
+=======
+       height="60"
+       x="-180"
+       y="980" />
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
     <rect
        class="corr"
        height="10"
@@ -1019,14 +1065,24 @@
        height="30"
        id="rect5648"
        width="10"
+<<<<<<< HEAD
        x="805"
+=======
+       height="30"
+       x="185"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        y="830" />
     <rect
        class="room"
        height="40"
        id="rect5646"
        width="10"
+<<<<<<< HEAD
        x="815"
+=======
+       height="40"
+       x="195"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        y="830" />
     <rect
        class="room"
@@ -1055,8 +1111,12 @@
        id="rect5586" />
     <path
        class="room"
+<<<<<<< HEAD
        d="m 620,710 80,0 L 700,810 620,810 z M 620,810 l 80,0 -20,20 -40,0 z"
        id="floor-big-room"
+=======
+       d="m 0,710 80,0 L 80,810 0,810 z M 0,810 l 80,0 -20,20 -40,0 z"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc" />
     <path
@@ -1164,7 +1224,11 @@
        sodipodi:nodetypes="ccccccccc" />
     <path
        class="wall"
+<<<<<<< HEAD
        d="m 600,1010 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20 90,0 0,10 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20 -10,10e-6 0,-20 c 10,0 10,0 10,0 l 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,10 12,0 -2,0 0,10 10,0 0,-10 -2,0 12,0 0,-40 -30,0 0,20 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,10 40,0 0,-10 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,80 10,0 0,10"
+=======
+       d="m -20,1010 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20 90,0 0,10 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20 -10,10e-6 0,-20 c 10,0 10,0 10,0 l 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,10 12,0 -2,0 0,10 10,0 0,-10 -2,0 12,0 0,-40 -30,0 0,20 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,10 40,0 0,-10 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,80 10,0 0,10"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        id="walls-shield-room"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
@@ -2498,11 +2562,19 @@
        sodipodi:cx="445"
        sodipodi:cy="1044"
        sodipodi:rx="1"
+<<<<<<< HEAD
        sodipodi:ry="1" />
     <circle
        cx="465"
        cy="1051"
        d="m 466,1051 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
+=======
+       sodipodi:ry="1"
+       d="m -179,1048 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
+       transform="translate(5,-4)" />
+    <circle
+       transform="translate(25,3)"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        id="column-null-magic-2"
        r="1"
        sodipodi:cx="465"
@@ -2520,9 +2592,13 @@
        sodipodi:rx="1"
        sodipodi:ry="1" />
     <circle
+<<<<<<< HEAD
        cx="445"
        cy="1076"
        d="m 446,1076 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
+=======
+       transform="translate(5,28)"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        id="column-null-magic-4"
        r="1"
        sodipodi:cx="445"
@@ -2580,9 +2656,13 @@
        sodipodi:rx="1.5"
        sodipodi:ry="1.5" />
     <circle
+<<<<<<< HEAD
        cx="455"
        cy="1046.5864941"
        d="m 456,1046.5864941 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
+=======
+       transform="translate(15,-1.4135059)"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        id="column-null-magic-1-6"
        r="1"
        sodipodi:cx="455"
@@ -2590,9 +2670,13 @@
        sodipodi:rx="1"
        sodipodi:ry="1" />
     <circle
+<<<<<<< HEAD
        cx="455"
        cy="1072.478161"
        d="m 456,1072.478161 c 0,0.5523 -0.44772,1 -1,1 -0.55228,0 -1,-0.4477 -1,-1 0,-0.5523 0.44772,-1 1,-1 0.55228,0 1,0.4477 1,1 z"
+=======
+       transform="translate(15,24.478161)"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        id="column-null-magic-1-7"
        r="1"
        sodipodi:cx="455"
@@ -2691,14 +2775,23 @@
          y="742">40</tspan></text>
     <text
        class="name"
+<<<<<<< HEAD
+=======
+       x="-30"
+       y="782"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        id="text4258"
        sodipodi:linespacing="125%"
        x="590"
        xml:space="preserve"
        y="782"><tspan
          id="tspan4260"
+<<<<<<< HEAD
          sodipodi:role="line"
          x="590"
+=======
+         x="-30"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
          y="782">203</tspan></text>
     <text
        class="name"
@@ -2784,12 +2877,18 @@
          y="1035.5">Room</tspan></text>
     <text
        class="name"
+<<<<<<< HEAD
+=======
+       x="-234.20549"
+       y="1034"
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
        id="text5685"
        sodipodi:linespacing="125%"
        x="80.29451"
        xml:space="preserve"
        y="1673.5"><tspan
          id="tspan5687"
+<<<<<<< HEAD
          sodipodi:role="line"
          x="80.29451"
          y="1673.5">Lightning</tspan><tspan
@@ -2815,5 +2914,17 @@
        height="30"
        x="160"
        y="1610" />
+=======
+         x="-234.20549"
+         y="1034">Lightning</tspan><tspan
+         sodipodi:role="line"
+         x="-234.20549"
+         y="1044"
+         id="tspan5689">Statue</tspan><tspan
+         sodipodi:role="line"
+         x="-234.20549"
+         y="1054"
+         id="tspan5691">Room</tspan></text>
+>>>>>>> 79c7541be368e38dafd5d4861b7c518efd46b74e
   </g>
 </svg>
