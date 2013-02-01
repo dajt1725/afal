@@ -214,7 +214,11 @@ def upd(n,a,d):
         n.setAttribute(a,str(t))
 
 def do_tr(n,dx,dy):
+    if n.nodeName == 'pattern':
+        return
     if n.attributes:
+#        if args.verbose:
+#            print n.nodeName,n.getAttribute("id")
         t = n.getAttribute('transform')
         if t is not None:
             r = re.match(r'translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
@@ -247,6 +251,8 @@ def do_tr(n,dx,dy):
             d = re.sub(r'^(m\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, d)
 	    d = re.sub(r'(M|L)((\s*-?\d+\.?\d*(\s+|,)-?\d+\.?\d*)*)', fixd2, d)
             n.setAttribute('d',d)
+#    elif args.verbose:
+#        print n.nodeName
     for i in n.childNodes:
         do_tr(i,dx,dy)
 

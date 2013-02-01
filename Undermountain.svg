@@ -160,7 +160,7 @@
         stroke-opacity:1;
         stroke-dasharray:none
       }
-      path.pit {
+      circle.pit {
         fill:url(#pattern-pit);
         fill-opacity:1;
         stroke:#000000;
@@ -2912,14 +2912,11 @@
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="csssc"
        class="room-alt" />
-    <path
-       d="m90 745 10 0 1 1-20 0 10 10 0 1 1 20 0z"
+    <circle
        id="pit"
-       sodipodi:cx="80"
-       sodipodi:cy="745"
-       sodipodi:rx="10"
-       sodipodi:ry="10"
-       sodipodi:type="arc"
+       cx="80"
+       cy="745"
+       r="10"
        class="pit" />
     <path
        d="m70 770h-40v-20h30"
