@@ -12,12 +12,19 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    height="1200"
    id="svg2"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="um1.svg"
+   inkscape:version="0.47 r22583"
+   sodipodi:docname="Undermountain.svg"
    version="1.1"
-   width="901">
+   width="1200">
   <defs
      id="defs4">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 600 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="901 : 600 : 1"
+       inkscape:persp3d-origin="450.5 : 400 : 1"
+       id="perspective449" />
     <pattern
        height="1"
        id="pattern-stairs-ew"
@@ -97,6 +104,11 @@
         stroke:black;
         stroke-width:.5px
       }
+      path.feature {
+        fill:green;
+        stroke:black;
+        stroke-width:.5px
+      }
       path.stairs-ew {
         fill:url(#pattern-stairs-ew);
         stroke:none
@@ -169,6 +181,15 @@
         stroke-opacity:1;
         stroke-dasharray:none
       }
+      path.pit {
+        fill:url(#pattern-pit);
+        fill-opacity:1;
+        stroke:#000000;
+        stroke-width:1;
+        stroke-miterlimit:4;
+        stroke-opacity:1;
+        stroke-dasharray:none
+      }
     </style>
     <linearGradient
        id="pattern-linear-pit"
@@ -202,8 +223,8 @@
      fit-margin-top="20"
      id="base"
      inkscape:current-layer="um1m"
-     inkscape:cx="502.23776"
-     inkscape:cy="1001.3969"
+     inkscape:cx="1207.6469"
+     inkscape:cy="1088.0702"
      inkscape:document-units="px"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
@@ -212,7 +233,7 @@
      inkscape:window-width="1010"
      inkscape:window-x="630"
      inkscape:window-y="53"
-     inkscape:zoom="4.97"
+     inkscape:zoom="2.78"
      pagecolor="#ffffff"
      showborder="false"
      showgrid="true">
@@ -241,12 +262,340 @@
     </rdf:RDF>
   </metadata>
   <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Undermountain L1 lower"
+     style="display:inline">
+    <path
+       d="m 1290,110 30,0 0,10 -30,0 0,-10 z"
+       id="stairs-cursd"
+       class="stairs-ew" />
+    <rect
+       class="feature"
+       id="feature-balcony"
+       width="10"
+       height="30"
+       x="1350"
+       y="100"
+       inkscape:label="" />
+    <rect
+       class="feature"
+       id="pit-rock-lobster-b"
+       width="10"
+       height="10"
+       x="1160"
+       y="160"
+       inkscape:label="#rect3330" />
+    <path
+       d="m 1170,130 20,0 0,10 -20,0 0,-10 z"
+       id="stairs-d"
+       class="stairs-ew" />
+    <path
+       d="m 1190,140 10,0 0,20 -10,0 0,-20 z"
+       id="stairs-c"
+       class="stairs-ns" />
+    <path
+       d="m 1180,160 10,0 0,10 -10,0 0,-10 z"
+       id="stairs-e"
+       class="stairs-ew" />
+    <path
+       class="wall"
+       d="m 1180,170 20,0 0,-40"
+       id="path3314" />
+    <path
+       class="wall"
+       d="m 1180,160 10,0 0,-20 -20,0 0,60 10,0 0,12"
+       id="path3316" />
+    <path
+       class="wall"
+       d="m 1200,130 -40,0 0,70 -10,0 0,12"
+       id="path3318"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       class="wall"
+       d="m 1150,218 0,12 12,0"
+       id="path3320" />
+    <path
+       class="wall"
+       d="m 1168,230 12,0 0,-12"
+       id="path3322" />
+    <rect
+       class="sec-door"
+       id="s-door-seascape-a"
+       width="2"
+       height="6"
+       x="1149"
+       y="212"
+       inkscape:label="" />
+    <rect
+       class="sec-door"
+       id="s-door-seascape-b"
+       width="2"
+       height="6"
+       x="1179"
+       y="212"
+       inkscape:label="" />
+    <rect
+       class="door"
+       id="door-seascape"
+       width="6"
+       height="2"
+       x="1162"
+       y="229"
+       inkscape:label="" />
+    <path
+       d="m 1160,140 10,0 0,20 -10,0 0,-20 z"
+       id="stairs-1"
+       class="stairs-ns" />
+    <path
+       d="m 1160,170 10,0 0,20 -10,0 0,-20 z"
+       id="stairs-2"
+       class="stairs-ns" />
+    <path
+       class="wall"
+       d="m 1180,212 0,-2 30,0 0,-20 -20,0 0,-20 10,0 0,-10 30,0 0,-20 -10,0 0,-32"
+       id="path3336"
+       sodipodi:nodetypes="cccccccccccc" />
+    <path
+       class="wall"
+       d="m 1220,102 0,-2 10,0 0,-10"
+       id="path3338"
+       sodipodi:nodetypes="cccc" />
+    <path
+       class="wall"
+       d="m 1240,90 0,10 10,0 0,2 0,-2 20,0 0,2 0,-12 20,0 0,22 0,-2 30,0 0,-20 30,0 0,10 10,0 0,30 -10,0 0,10 -30,0 0,-20 -30,0 0,-2 0,2 -20,0 0,-12 0,2 -20,0 0,-2 0,32 -10,0 0,20 10,0"
+       id="path3340"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc" />
+    <path
+       d="m 1230,160 10,0 0,10 -10,0 0,-10 z"
+       id="feature-pit"
+       class="pit" />
+    <path
+       class="wall"
+       d="m 1250,170 -10,0 0,20 -20,0 0,50 5,0"
+       id="path3344" />
+    <path
+       class="wall"
+       d="m 1225,250 -15,0 0,-30 -30,0 0,-2"
+       id="path3346" />
+    <rect
+       class="door"
+       id="door-doory-b"
+       width="2"
+       height="6"
+       x="1289"
+       y="112"
+       inkscape:label="" />
+    <rect
+       class="door"
+       id="door-doory-a"
+       width="2"
+       height="6"
+       x="1269"
+       y="102"
+       inkscape:label="" />
+    <rect
+       class="door"
+       id="door-fence-b"
+       width="2"
+       height="6"
+       x="1249"
+       y="102"
+       inkscape:label="" />
+    <rect
+       class="door"
+       id="door-fence-a"
+       width="2"
+       height="6"
+       x="1219"
+       y="102"
+       inkscape:label="" />
+    <path
+       class="feature"
+       d="m 1237,115 13,0 m -30,0 13,0"
+       id="feature-fence-b"
+       sodipodi:nodetypes="cccc"
+       inkscape:label="" />
+    <path
+       class="feature"
+       d="m 1237,125 13,0 m -30,0 13,0"
+       id="feature-fence-a"
+       inkscape:label=""
+       sodipodi:nodetypes="cccc" />
+    <path
+       class="feature"
+       d="m 1320,110 0,10"
+       id="feature-trapped-step"
+       inkscape:label="" />
+    <rect
+       class="door"
+       id="rect3367"
+       width="2"
+       height="6"
+       x="1289"
+       y="102" />
+    <rect
+       class="door"
+       id="rect3369"
+       width="2"
+       height="5"
+       x="1289"
+       y="93" />
+    <rect
+       class="door"
+       id="rect3371"
+       width="6"
+       height="2"
+       x="1282"
+       y="89" />
+    <rect
+       class="door"
+       id="rect3373"
+       width="6"
+       height="2"
+       x="1272"
+       y="89" />
+    <rect
+       class="door"
+       id="rect3375"
+       width="2"
+       height="6"
+       x="1269"
+       y="92" />
+    <rect
+       class="door"
+       id="rect3377"
+       width="2"
+       height="6"
+       x="1269"
+       y="112" />
+    <rect
+       class="door"
+       id="rect3379"
+       width="6"
+       height="2"
+       x="1272"
+       y="119" />
+    <rect
+       class="door"
+       id="rect3381"
+       width="6"
+       height="2"
+       x="1282"
+       y="119" />
+    <rect
+       class="feature"
+       id="feature-button"
+       width="1"
+       height="1"
+       x="1169"
+       y="229"
+       inkscape:label="">
+      <desc
+         id="desc3385">Raises the floor so one can get at the secret doors, but can't leave through the north exit.</desc>
+    </rect>
+  </g>
+  <g
      id="um1m"
      inkscape:groupmode="layer"
-     inkscape:label="Undermountain L1 Main">
+     inkscape:label="Undermountain L1 Main"
+     style="display:inline">
+    <path
+       d="m 1170,160 10,0 0,10 -10,0 0,-10 z"
+       id="stairs"
+       class="stairs-ew" />
+    <path
+       d="m 1160,160 10,0 0,10 -10,0 0,-10 z"
+       id="pit-robot-lobster"
+       class="pit" />
+    <rect
+       class="corr"
+       id="corr"
+       width="10"
+       height="10"
+       x="1130"
+       y="160"
+       inkscape:label="" />
+    <path
+       d="m 1140,160 20,0 0,10 -20,0 0,-10 z"
+       id="stairs-b"
+       class="stairs-ew" />
+    <!-- Corridors, rooms, features, walls, doors, names -->
+    <!-- Corridors start here -->
+    <rect
+       class="corr"
+       id="corr-g"
+       width="20"
+       height="10"
+       x="890"
+       y="320" />
     <path
        class="corr"
-       d="m20 636v14h-15v20h15v50h-10v10h10v40h-10h-10v30v10h20v30h10v-30h10v70h10v-70v-10h-40v-20h60v-10h-40v-20h30v-10h-30v-90h10v-10h-10v-4h-10z"
+       d="m 960,230 0,90 -20,0 0,10 30,0 0,-10 0,-20 50,0 0,-10 -50,0 0,-30 60,0 0,-10 -10,0 0,-20 -10,0 0,20 -40,0 0,-20 -10,0 z"
+       id="corr-f" />
+    <rect
+       class="corr"
+       id="corr-e"
+       width="10"
+       height="10"
+       x="950"
+       y="170" />
+    <path
+       class="corr"
+       d="m 970,130 0,10 0,10 50,0 0,20 10,0 0,-30 -10,0 -40,0 0,-10 -10,0 z"
+       id="corr-d" />
+    <rect
+       class="corr"
+       id="corr-c"
+       width="40"
+       height="10"
+       x="1020"
+       y="210" />
+    <path
+       class="corr"
+       d="m 1050,150 0,20 -20,0 0,10 20,0 0,10 50,0 10,0 0,-40 -10,0 0,30 -40,0 0,-30 -10,0 z"
+       id="corr-b" />
+    <path
+       class="corr"
+       d="m 1130,130 0,10 10,0 0,-10 -10,0 z"
+       id="corr-a"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       class="room"
+       d="m 1090,100 0,20 -10,0 0,20 10,0 0,10 30,0 0,-10 10,0 0,-20 -10,0 0,-20 -30,0 z"
+       id="floor-couch-room" />
+    <path
+       class="room"
+       d="m 1040,100 0,20 -10,0 0,30 10,0 20,0 0,-50 -20,0 z"
+       id="rect4076" />
+    <path
+       class="room"
+       d="m 960,170 0,30 50,0 20,0 0,-20 -20,0 0,-10 -50,0 z"
+       id="floor-lizard-men" />
+    <rect
+       class="room"
+       id="rect4057"
+       width="60"
+       height="30"
+       x="960"
+       y="200" />
+    <rect
+       class="room"
+       id="rect4033"
+       width="30"
+       height="60"
+       x="910"
+       y="290" />
+    <rect
+       class="room"
+       id="rect3259"
+       width="30"
+       height="30"
+       x="860"
+       y="310" />
+    <path
+       class="corr"
+       d="m 20,636 v 14 H 5 v 20 h 15 v 50 H 10 v 10 h 10 v 40 H 10 0 v 30 10 h 20 v 30 h 10 v -30 h 10 v 70 H 50 V 810 800 H 10 V 780 H 70 V 770 H 30 V 750 H 60 V 740 H 30 V 650 H 40 V 640 H 30 v -4 H 20 z"
        id="floor-corr-falling-stair" />
     <rect
        class="corr"
@@ -277,13 +626,6 @@
        x="270"
        y="1210" />
     <rect
-       class="feature"
-       height="10"
-       id="teleportal-a-out"
-       width="10"
-       x="260"
-       y="1210" />
-    <rect
        class="corr"
        height="10"
        id="rect4188"
@@ -303,13 +645,6 @@
        id="rect4149"
        width="50"
        x="250"
-       y="1110" />
-    <rect
-       class="feature"
-       height="10"
-       id="teleportal-a-in"
-       width="10"
-       x="280"
        y="1110" />
     <rect
        class="corr"
@@ -338,469 +673,536 @@
        id="rect4209"
        width="50"
        x="60"
-       y="1130" />
+       y="1130"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4207"
        width="30"
        x="120"
-       y="1130" />
+       y="1130"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect4205"
        width="10"
        x="150"
-       y="1130" />
+       y="1130"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4203"
        width="40"
        x="130"
-       y="1190" />
+       y="1190"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="40"
        id="rect4201"
        width="10"
        x="200"
-       y="1260" />
+       y="1260"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4199"
        width="50"
        x="200"
-       y="1250" />
+       y="1250"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="40"
        id="rect4197"
        width="10"
        x="200"
-       y="1210" />
+       y="1210"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="30"
        id="rect4195"
        width="10"
        x="250"
-       y="1230" />
+       y="1230"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4193"
        width="20"
        x="190"
-       y="1200" />
+       y="1200"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4191"
        width="20"
        x="290"
-       y="1230" />
+       y="1230"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4189"
        width="90"
        x="250"
-       y="1220" />
+       y="1220"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="30"
        id="rect4187"
        width="10"
        x="340"
-       y="1200" />
+       y="1200"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4185"
        width="30"
        x="340"
-       y="1190" />
+       y="1190"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4183"
        width="10"
        x="340"
-       y="1180" />
+       y="1180"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4181"
        width="10"
        x="300"
-       y="1180" />
+       y="1180"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4179"
        width="50"
        x="300"
-       y="1170" />
+       y="1170"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect4177"
        width="10"
        x="320"
-       y="1150" />
+       y="1150"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="30"
        id="rect4175"
        width="10"
        x="280"
-       y="1160" />
+       y="1160"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="30"
        id="rect4173"
        width="10"
        x="270"
-       y="1140" />
+       y="1140"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4171"
        width="15"
        x="170"
-       y="1090" />
+       y="1090"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4169"
        width="30"
        x="150"
-       y="1100" />
+       y="1100"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4165"
        width="12"
        x="170"
-       y="1160" />
+       y="1160"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect4163"
        width="10"
        x="160"
-       y="1150" />
+       y="1150"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4161"
        width="50"
        x="160"
-       y="1140" />
+       y="1140"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4159"
        width="10"
        x="210"
-       y="1110" />
+       y="1110"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4157"
        width="10"
        x="360"
-       y="1000" />
+       y="1000"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4155"
        width="30"
        x="280"
-       y="1060" />
+       y="1060"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4153"
        width="60"
        x="250"
-       y="1130" />
+       y="1130"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4151"
        width="10"
        x="250"
-       y="1120" />
+       y="1120"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4147"
        width="10"
        x="280"
-       y="1070" />
+       y="1070"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4145"
        width="20"
        x="270"
-       y="1080" />
+       y="1080"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4143"
        width="10"
        x="270"
-       y="1090" />
+       y="1090"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4141"
        width="30"
        x="250"
-       y="1100" />
+       y="1100"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect4139"
        width="10"
        x="250"
-       y="1080" />
+       y="1080"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="70"
        id="rect4137"
        width="10"
        x="230"
-       y="1080" />
+       y="1080"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4135"
        width="10"
        x="220"
-       y="1100" />
+       y="1100"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="80"
        id="rect4133"
        width="10"
        x="200"
-       y="1060" />
+       y="1060"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4131"
        width="20"
        x="190"
-       y="1050" />
+       y="1050"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4129"
        width="10"
        x="200"
-       y="1040" />
+       y="1040"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="100"
        id="rect4125"
        width="10"
        x="210"
-       y="1010" />
+       y="1010"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4123"
        width="10"
        x="290"
-       y="1040" />
+       y="1040"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4121"
        width="20"
        x="280"
-       y="1030" />
+       y="1030"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4119"
        width="20"
        x="270"
-       y="1020" />
+       y="1020"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4117"
        width="60"
        x="220"
-       y="1010" />
+       y="1010"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4115"
        width="20"
        x="290"
-       y="1050" />
+       y="1050"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4113"
        width="10"
        x="250"
-       y="1000" />
+       y="1000"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4111"
        width="70"
        x="240"
-       y="990" />
+       y="990"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4109"
        width="30"
        x="240"
-       y="980" />
+       y="980"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect4107"
        width="10"
        x="260"
-       y="960" />
+       y="960"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4105"
        width="50"
        x="260"
-       y="950" />
+       y="950"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4097"
        width="30"
        x="20"
-       y="880" />
+       y="880"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="30"
        id="rect4095"
        width="10"
        x="20"
-       y="890" />
+       y="890"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4093"
        width="30"
        x="20"
-       y="920" />
+       y="920"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4091"
        width="30"
        x="40"
-       y="910" />
+       y="910"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="50"
        id="rect4089"
        width="10"
        x="70"
-       y="910" />
+       y="910"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4087"
        width="120"
        x="80"
-       y="930" />
+       y="930"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4085"
        width="15"
        x="180"
-       y="900" />
+       y="900"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="13"
        id="rect4083"
        width="10"
        x="170"
-       y="897" />
+       y="897"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4081"
        width="30"
        x="160"
-       y="910" />
+       y="910"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4079"
        width="30"
        x="180"
-       y="920" />
+       y="920"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4077"
        width="120"
        x="190"
-       y="940" />
+       y="940"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4075"
        width="20"
        x="180"
-       y="950" />
+       y="950"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4073"
        width="10"
        x="290"
-       y="930" />
+       y="930"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="190"
        id="rect4071"
        width="10"
        x="310"
-       y="810" />
+       y="810"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="40"
        id="rect4069"
        width="10"
        x="300"
-       y="790" />
+       y="790"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4067"
        width="10"
        x="340"
-       y="830" />
+       y="830"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="90"
        id="rect4065"
        width="10"
        x="330"
-       y="750" />
+       y="750"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
@@ -808,409 +1210,495 @@
        inkscape:label="#rect3292"
        width="30"
        x="340"
-       y="720" />
+       y="720"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4063"
        width="20"
        x="330"
-       y="740" />
-    <!-- Corridors first, then rooms -->
+       y="740"
+       style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m440 580v110h-10h-10v30h-50v10v30h-10h-10v20h-50v10h70v10h-30v10h30v50h10v-10h10v-10h-10v-30h90h10h40v20h10h60h10v-30h-10v20h-60v-20h-10h-40v-30h10v-10h-10h-10h-10v20h10v20h-90v-20h-10h-10v-10h20h60v-10h-60v-30h40h10v-30h10v20h10h30v20h10v-40h-10v10h-30v-90h10v-20h-10v-20h-10z"
-       id="rect4144" />
+       d="m 440,580 v 110 h -10 -10 v 30 h -50 v 10 30 h -10 -10 v 20 h -50 v 10 h 70 v 10 h -30 v 10 h 30 v 50 h 10 v -10 h 10 v -10 h -10 v -30 h 90 10 40 v 20 h 10 60 10 v -30 h -10 v 20 h -60 v -20 h -10 -40 v -30 h 10 v -10 h -10 -10 -10 v 20 h 10 v 20 h -90 v -20 h -10 -10 v -10 h 20 60 v -10 h -60 v -30 h 40 10 v -30 h 10 v 20 h 10 30 v 20 h 10 v -40 h -10 v 10 h -30 v -90 h 10 v -20 h -10 v -20 h -10 z"
+       id="rect4144"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5640"
        width="40"
        x="810"
-       y="405" />
+       y="405"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5638"
        width="5"
        x="845"
-       y="395" />
+       y="395"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="40"
        id="rect5636"
        width="10"
        x="840"
-       y="330" />
+       y="330"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5634"
        width="60"
        x="800"
-       y="320" />
+       y="320"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect5632"
        width="10"
        x="770"
-       y="340" />
+       y="340"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5616"
        width="20"
        x="780"
-       y="320" />
+       y="320"
+       style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m700 280h10v20h-10zm10-10h10v110h-10zm10 50h10v10h-10zm0 50h10v20h-10zm10 0h40v10h-40z"
+       d="m 700,280 h 10 v 20 h -10 z m 10,-10 h 10 v 110 h -10 z m 10,50 h 10 v 10 h -10 z m 0,50 h 10 v 20 h -10 z m 10,0 h 40 v 10 h -40 z"
        id="rect5598"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccccccccccc" />
+       sodipodi:nodetypes="ccccccccccccccccccccccccc"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="50"
        id="rect5594"
        width="20"
        x="650"
-       y="330" />
+       y="330"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5561"
        width="10"
        x="510"
-       y="370" />
+       y="370"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5559"
        width="5"
        x="505"
-       y="460" />
+       y="460"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5557"
        width="30"
        x="560"
-       y="460" />
+       y="460"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5555"
        width="10"
        x="570"
-       y="470" />
+       y="470"
+       style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m560 250v100h10h30v70h-40v10h40v30h-10v30h-30v-10v-10h-10v10h-100h-10h-110v10h110v20h-75v10v10h-60v-10h-10v10h-5v10v30h10h20h10v-30h35h15v-20h60v20h10v-20h20v-10h-20v-20h90v10h60v10h10v-20h-10v-20h10v-150h-10h-30v-30h10v-10h-10v-30h-10zm10 80h30v10h-30v-10zm-270 210h20v20h-20v-20z"
-       id="rect5553" />
+       d="m 560,250 v 100 h 10 30 v 70 h -40 v 10 h 40 v 30 h -10 v 30 h -30 v -10 -10 h -10 v 10 H 450 440 330 v 10 h 110 v 20 h -75 v 10 10 h -60 v -10 h -10 v 10 h -5 v 10 30 h 10 20 10 v -30 h 35 15 v -20 h 60 v 20 h 10 v -20 h 20 v -10 h -20 v -20 h 90 v 10 h 60 v 10 h 10 v -20 h -10 v -20 h 10 V 320 h -10 -30 v -30 h 10 v -10 h -10 v -30 h -10 z m 10,80 h 30 v 10 H 570 V 330 z M 300,540 h 20 v 20 h -20 v -20 z"
+       id="rect5553"
+       style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m330 540v10v40h5v-40h60v-10h-65z"
-       id="floor-corr-mirrors" />
+       d="m 330,540 v 10 40 h 5 v -40 h 60 v -10 h -65 z"
+       id="floor-corr-mirrors"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4072"
        width="10"
        x="310"
-       y="340" />
+       y="340"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="140"
        id="rect4070"
        width="10"
        x="300"
-       y="300" />
+       y="300"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4068"
        width="5"
        x="340"
-       y="270" />
+       y="270"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="110"
        id="rect4066"
        width="10"
        x="330"
-       y="240" />
+       y="240"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="80"
        id="rect4064"
        width="10"
        x="340"
-       y="340" />
+       y="340"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4062"
        width="20"
        x="340"
-       y="420" />
+       y="420"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4060"
        width="40"
        x="350"
-       y="430" />
+       y="430"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4058"
        width="10"
        x="380"
-       y="420" />
+       y="420"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4056"
        width="15"
        x="380"
-       y="410" />
+       y="410"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect4054"
        width="10"
        x="380"
-       y="440" />
+       y="440"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4052"
        width="40"
        x="340"
-       y="450" />
+       y="450"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4316"
        width="10"
        x="420"
-       y="560" />
+       y="560"
+       style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m490 160v10h-10v10h10v50h10v-70h-10z"
+       d="m 490,160 v 10 h -10 v 10 h 10 v 50 h 10 v -70 h -10 z"
        id="floor-hh-1"
-       inkscape:label="" />
+       inkscape:label=""
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect4218"
        width="20"
        x="470"
-       y="280" />
+       y="280"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="50"
        id="rect4216"
        width="10"
        x="490"
-       y="250" />
+       y="250"
+       style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m360 220v20h40v-10h10v-10h-10h-40z"
-       id="rect4214" />
+       d="m 360,220 v 20 h 40 v -10 h 10 v -10 h -10 -40 z"
+       id="rect4214"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect3088"
        width="10"
        x="570"
-       y="300" />
+       y="300"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="20"
        id="rect3086"
        width="10"
        x="580"
-       y="300" />
+       y="300"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect3846"
        width="20"
        x="460"
-       y="730" />
+       y="730"
+       style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m590 530v40h-30v-20h-90v20h80v10h40h10v-50h-10z"
+       d="m 590,530 v 40 h -30 v -20 h -90 v 20 h 80 v 10 h 40 10 v -50 h -10 z"
        id="floor-corr-1"
-       inkscape:connector-curvature="0" />
+       inkscape:connector-curvature="0"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5365"
        width="10"
        x="490"
-       y="570" />
+       y="570"
+       style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
        height="10"
        id="rect5363"
        width="10"
        x="510"
-       y="540" />
+       y="540"
+       style="fill:#edd567;stroke:none" />
+    <rect
+       height="10"
+       id="rect4127"
+       class="corr"
+       width="10"
+       x="220"
+       y="1030"
+       style="fill:#edd567;stroke:none" />
+    <rect
+       height="30"
+       id="rect4167"
+       class="corr"
+       width="10"
+       x="160"
+       y="1110"
+       style="fill:#edd567;stroke:none" />
+    <path
+       d="m 60,740 c 1,-9 9.127572,-15 20.173267,-15 11,0 20.000003,10 20.000003,20 0,11 -10.000003,20 -20.000003,20 C 74.65042,765 61,759.9505 60,749.9505"
+       id="room-circular-pit"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="csssc"
+       class="room-alt"
+       style="fill:#edb667;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <!-- Rooms start here -->
     <rect
        class="room"
        height="110"
        id="floor-spider-alter"
        width="60"
        x="310"
-       y="1040" />
+       y="1040"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="160"
        id="floor-sleeping-kings"
        width="40"
        x="330"
-       y="840" />
+       y="840"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="70"
        id="rect4225"
        width="60"
        x="70"
-       y="1160" />
+       y="1160"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="30"
        id="rect4223"
        width="30"
        x="230"
-       y="1050" />
+       y="1050"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="30"
        id="rect4221"
        width="10"
        x="300"
-       y="1090" />
+       y="1090"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="30"
        id="rect5648"
        width="10"
        x="805"
-       y="330" />
+       y="330"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="40"
        id="rect5646"
        width="10"
        x="815"
-       y="330" />
+       y="330"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="25"
        id="rect5644"
        width="35"
        x="815"
-       y="370" />
+       y="370"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="55"
        id="rect5642"
        width="40"
        x="770"
-       y="360" />
+       y="360"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="30"
        id="rect5612"
        width="50"
        x="730"
-       y="310" />
+       y="310"
+       style="fill:#edb667;stroke:none" />
     <path
        class="room"
-       d="m630 380v10v10v90h10v10h40v-10h10v-90v-10v-10h-60zm10 10h40v10h-40v-10z"
-       id="rect5586" />
+       d="m 630,380 v 10 10 90 h 10 v 10 h 40 v -10 h 10 v -90 -10 -10 h -60 z m 10,10 h 40 v 10 h -40 v -10 z"
+       id="rect5586"
+       style="fill:#edb667;stroke:none" />
     <path
        class="room"
-       d="m620 210h80v100h-80zm0 100h80l-20 20h-40z"
+       d="m 620,210 h 80 v 100 h -80 z m 0,100 h 80 l -20,20 h -40 z"
        id="floor-big-room"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc" />
+       sodipodi:nodetypes="cccccccccc"
+       style="fill:#edb667;stroke:none" />
     <path
        class="room"
-       d="m580 350v30h-10v10h10h10v-40h-10z"
-       id="rect5569" />
+       d="m 580,350 v 30 h -10 v 10 h 10 10 v -40 h -10 z"
+       id="rect5569"
+       style="fill:#edb667;stroke:none" />
     <path
        class="room"
-       d="m510 380v100h40v-10h10v-60h-10v-30h-40z"
-       id="rect5565" />
+       d="m 510,380 v 100 h 40 v -10 h 10 v -60 h -10 v -30 h -40 z"
+       id="rect5565"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="10"
        id="rect5551"
        width="10"
        x="580"
-       y="470" />
+       y="470"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="20"
        id="rect5538"
        width="30"
        x="395"
-       y="530" />
+       y="530"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="30"
        id="rect4074"
        width="20"
        x="300"
-       y="270" />
+       y="270"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="40"
        id="floor-5column-room"
        width="40"
        x="300"
-       y="440" />
+       y="440"
+       style="fill:#edb667;stroke:none" />
     <path
        class="room"
-       d="m430 250v10h-10v50h10v10h30v-10h10v-50h-10v-10h-30z"
-       id="floor-bone-throne" />
+       d="m 430,250 v 10 h -10 v 50 h 10 v 10 h 30 v -10 h 10 v -50 h -10 v -10 h -30 z"
+       id="floor-bone-throne"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="10"
        id="rect4204"
        width="10"
        x="590"
-       y="300" />
+       y="300"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="40"
        id="rect4202"
        width="30"
        x="580"
-       y="260" />
+       y="260"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="20"
        id="floor-heroes"
        width="220"
        x="400"
-       y="230" />
+       y="230"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="50"
        id="rect3852"
        width="20"
        x="440"
-       y="730" />
+       y="730"
+       style="fill:#edb667;stroke:none" />
     <path
        class="room"
-       d="m340 555v5h-5v10h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v-10h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5z"
-       id="floor-mirror-hall" />
+       d="m 340,555 v 5 h -5 v 10 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v -10 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 z"
+       id="floor-mirror-hall"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="20"
@@ -1218,7 +1706,8 @@
        inkscape:label="#floor-dexter-dance"
        width="30"
        x="470"
-       y="580" />
+       y="580"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="room"
        height="30"
@@ -1226,7 +1715,8 @@
        inkscape:label="#floor-demon-gate"
        width="50"
        x="470"
-       y="510" />
+       y="510"
+       style="fill:#edb667;stroke:none" />
     <rect
        class="floor-sand"
        height="40"
@@ -1234,922 +1724,85 @@
        inkscape:label="#floor-shield-room"
        width="40"
        x="600"
-       y="510" />
+       y="510"
+       style="fill:#ffff00;stroke:none" />
     <path
        class="floor-null-magic"
-       d="m430 550 10-10h10l20 10v20l-20 10h-10l-10-10z"
+       d="m 430,550 10,-10 h 10 l 20,10 v 20 l -20,10 h -10 l -10,-10 z"
        id="floor-null-magic"
        inkscape:connector-curvature="0"
        inkscape:label="#floor-null-magic"
-       sodipodi:nodetypes="ccccccccc" />
-    <path
-       class="wall"
-       d="m600 510v20h-10v40h-30v-20h-42h2v-40h-50v2v-2h-20v-20h90v10h60v10h2zm-140 110v-20h-10v-20l20-10h22h-2v10h-20v20h30v-30h-2h52v10h50v-30h40v-40h-32h2v-20h-10v-20c10 0 10 0 10 0v-150h-22h2v-20h-20v2v-12h10v10h12h-2v10h10v-10h-2h12v-40h-30v20h-10v-30h-2h52v-2v62l20 20h12h-2v50h-20v110h10v10h40v-10h10v-110h-20v-50h-2h12l20-20v-12v2h10v80h10v10"
-       id="walls-shield-room"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
-    <path
-       class="wall"
-       d="m512 550c-2 0-2 0-2 0v-10h-40v-22v2h-20v20l20 10z"
-       id="walls-null-magic--demon-gate"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc" />
-    <path
-       class="wall"
-       d="m440 642v-62l-10-10h-15v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v20h10v-10h35h33v35h-13v15"
-       id="wall-null-magic--mirrors-s"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccc" />
-    <path
-       class="wall"
-       d="m415 560h15v-10l10-10v-20h-60v20h15v-10h30v20h-90v10h5v-5h5v5h5c0 0 0-4 0-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5z"
-       id="wall-null-magic--mirrors-n"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc" />
-    <path
-       class="wall"
-       d="m640 390v10h40v-10z"
-       id="path5539"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m450 610v100h30v-10"
-       id="path3048"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m440 648v42h-20v30h-60v-25h-10"
-       id="path3050"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="wall"
-       d="m440 700h-10v30h50v-10h-40z"
-       id="path3052"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m490 700v40h-30v22v-2h30"
-       id="path3054"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m490 770h-10v30h50v20h60v-20h10v30h-80v-20h-140"
-       id="path3856"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccc" />
-    <path
-       class="wall"
-       d="m380 800h90v-20h-10v-2v2h-20v-12v2h-60v-2v2h-20v10h20v2"
-       id="path3858"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccc" />
-    <path
-       class="wall"
-       d="m440 730v32v-2h-60v2v-32h22"
-       id="path3860"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
-    <path
-       class="wall"
-       d="m590 490v-12v2h-10v-2v2h-10v-10h-20v2v-2h10v20z"
-       id="path3068"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccc" />
-    <g
-       id="g3096" />
-    <path
-       class="wall"
-       d="m600 330v10h-30v-10z"
-       id="path3080"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m570 308v12h12h-2v-10h-10z"
-       id="path3090"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m490 298v2h10v-50h62h-2v100h22h-2v30h-10v10h20v-40h-2h12v70h-40v2v-12h-10v-30h-30v-10"
-       id="path3094"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccccccccc" />
-    <path
-       class="wall"
-       d="m620 232v-2h-92"
-       id="path3082"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m522 230h-22v-70"
-       id="wall-hh-2"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       inkscape:label="" />
-    <path
-       class="wall"
-       d="m490 160v10h-10"
-       id="wall-hh-3"
-       inkscape:connector-curvature="0"
-       inkscape:label="" />
-    <path
-       class="wall"
-       d="m480 180h10v50h-80v-12"
-       id="wall-hh-1"
-       inkscape:connector-curvature="0"
-       inkscape:label="" />
-    <path
-       class="wall"
-       d="m400 218v2h-43"
-       id="path3091"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m358 240h12v2"
-       id="path3093"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m380 242v-2h12"
-       id="path3095"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m398 240h2v10h42h-12v10h-2"
-       id="path3097"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc" />
-    <path
-       class="wall"
-       d="m422 260h-2v50h10v2"
-       id="path3099"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m430 318v2h30v-2"
-       id="path3101"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m460 312v-2h10v-20h20v2"
-       id="path3103"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m448 250h12v10h10v20h20v-30z"
-       id="path3105"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m700 248v34v-2h10v-10"
-       id="path4280"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m700 210v22"
-       id="path4286"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m720 270v50h10v-10h50v10h20v2v-2h60"
-       id="path4288"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="wall"
-       d="m730 330h-10v40h50v-30h-40z"
-       id="path4290"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc" />
-    <path
-       class="wall"
-       d="m730 390v-10h40v36h80v-23"
-       id="path4292"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccc" />
-    <path
-       class="wall"
-       d="m320 272v-2h-20v210l30-0.5v10.5h110v20h-75v20h-60v-10"
-       id="path4296"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc" />
-    <path
-       class="wall"
-       d="m390 458v2h-10v-2v2h-40v20h210v-2v2h-40v-10h-5"
-       id="path3279"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccc" />
-    <path
-       class="wall"
-       d="m390 452v-12h-2"
-       id="path3197"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m330 240v110h10v80h10v10h32h-2v12v-2h-40v-10h-30v-90h10"
-       id="path3201"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccc" />
-    <path
-       class="wall"
-       d="m340 240v30h5"
-       id="path3203"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m345 280h-5v60h10v80h10v10h20v-20h15"
-       id="path3205"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m395 420h-5v10"
-       id="path3207"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m320 278v22h-10v40h10"
-       id="path3209"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m295 520v10h-5v20"
-       id="path4076"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m300 540h20v20h-20z"
-       id="path4078"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m380 540h-50v30h-30v35"
-       id="path4080"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
-    <path
-       class="wall"
-       d="m590 472v-2h-10v2m10 0v-12h10v-30h-40v-2v32h20v3v-3h10"
-       id="path5540"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m505 460h5v-90"
-       id="path5547"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc" />
-    <path
-       class="wall"
-       d="m780 360c0 0 0 0 0 0z"
-       id="path5618"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m850 387v-57h10"
-       id="path5622"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc" />
-    <path
-       class="wall"
-       d="m804 336-4-8v2h-20v30h30v46h35v-11h-30v-30"
-       id="path5626"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc" />
-    <path
-       class="wall"
-       d="m840 330h-15v40h15z"
-       id="path5628"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m804 336v24"
-       id="path5630"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m380 800h-2z"
-       id="path4118"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m380 800v-11"
-       id="path4120"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m380 810v30h10"
-       id="path4128"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m390 850h-10v10"
-       id="path4130"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m310 790h60v10h2h-32v-50h10v-10h20v20h-20v20h-50"
-       id="path4134"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccccc" />
-    <path
-       class="wall"
-       d="m302 780h-2v50h10v110h-10v-10"
-       id="path5609"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m310 790v20h10v190h-60v10h20v10h10v10h10v20h10v-10h20v-200h2h-2"
-       id="path5611"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccc" />
-    <path
-       class="wall"
-       d="m342 840h-12v-100h10v-20h10v-5"
-       id="path5613"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="wall"
-       d="m350 840h-2"
-       id="path5615"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m370 810h-30v20h10v10h20v170"
-       id="path5619"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc" />
-    <path
-       class="wall"
-       d="m360 1010v-10h-10v40h20v110h-40v20h20v20h25"
-       id="path5621"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc" />
-    <path
-       class="wall"
-       d="m375 1200h-25v30h-40v10h-20v-10h-30v30h-32"
-       id="path5625"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccc" />
-    <path
-       class="wall"
-       d="m222 1260h-12v40"
-       id="path5627"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m200 1300v-90h-10"
-       id="path5629"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m190 1200h20v50h40v-30h50v10v-10h40v-40h-30v20h-40v10h20v10"
-       id="path5631"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccccc" />
-    <path
-       class="wall"
-       d="m300 1190v-20h20v-20h-10v-10h-30v20h10v15v15z"
-       id="path5633"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m270 1148v22h10v20h-10v-20"
-       id="path5635"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
-    <path
-       class="wall"
-       d="m270 1142v-2h-20v-60h-10v60h10"
-       id="path5637"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m250 1110h20"
-       id="path5639"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m260 1120h50v10h-50z"
-       id="path5641"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m310 1060h-20v-12"
-       id="path5643"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m290 1042v-2h-10v-10h-10v-10h-50v10h10"
-       id="path5645"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m300 1070h10v20h-10v20h-20v-20h10v-20z"
-       id="path5647"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc" />
-    <path
-       class="wall"
-       d="m230 1040h-10v60h10v-50h30v50h10v-20h10v-20h10"
-       id="path5651"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc" />
-    <path
-       class="wall"
-       d="m270 1150h-40v-40h-20v-20"
-       id="path5655"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="wall"
-       d="m220 1120h-10v30h-40v10h10"
-       id="path5657"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m178 1170h7"
-       id="path5659"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m172 1170h-12v-22v2h-10v-10h-30v20h-2h12v30h40"
-       id="path5661"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m170 1200h-40v30h-12"
-       id="path5663"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m112 1230h-14"
-       id="path5665"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m92 1230h-22v-70h42h-2v-20h-50"
-       id="path5667"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m60 1130h50v-42"
-       id="path5669"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m110 1082v-2h50v20h10v-10h15"
-       id="path5671"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m190 1100h-10v10h-10v30h30v-80h-10"
-       id="path5673"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m190 1050h20v20"
-       id="path5675"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m200 1040h10v-30"
-       id="path5677"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m160 1142v-32h-10v-20h-30v40h40z"
-       id="path5699"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m250 990h60v-30h-40v30z"
-       id="path5707"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m310 950h-50v30h-20v20h10v10h-30v9"
-       id="path5709"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m290 930v10h-90v-10h10"
-       id="path5711"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m210 920h-20v-10h5"
-       id="path5713"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc" />
-    <path
-       class="wall"
-       d="m260 950h-60v11"
-       id="path5715"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m190 960h-10"
-       id="path5717"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m180 950h10v-10h-110v20h-10"
-       id="path5719"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m65 950h5v-30h-20v10h-30v-50h20v-70h-10v30h-10"
-       id="path5721"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m15 830h5v-20h-20"
-       id="path5723"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m194 900h-14v-5"
-       id="path5725"
-       inkscape:connector-curvature="0" />
-    <path
-       class="wall"
-       d="m159 920h21v10h-100v-20h-40v10h-10v-30h20v-90h-40v-20h60"
-       id="path5727"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccccccccccccc" />
-    <path
-       class="wall"
-       d="m160 910h10v-13"
-       id="path5729"
-       inkscape:connector-curvature="0" />
-    <path
-       class="sec-door"
-       d="m602 509 3 1 3-1v2l-3 1-3-1z"
-       id="s-door-shield-room"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccc" />
-    <rect
-       class="sec-door"
-       height="2"
-       id="s-door-dexter-dance"
-       width="6"
-       x="492"
-       y="569" />
-    <rect
-       class="sec-door"
-       height="2"
-       id="s-door-demon-gate"
-       width="6"
-       x="512"
-       y="549" />
-    <rect
-       class="sec-door"
-       height="6"
-       id="rect5543"
-       width="2"
-       x="579"
-       y="472" />
-    <rect
-       class="door"
-       height="6"
-       id="door-demon-gate"
-       width="2"
-       x="469"
-       y="512" />
-    <rect
-       class="door"
-       height="16"
-       id="rect3854"
-       width="2"
-       x="459"
-       y="762" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4232"
-       width="7"
-       x="442"
-       y="249" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4234"
-       width="6"
-       x="422"
-       y="259" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4236"
-       width="6"
-       x="392"
-       y="239" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4238"
-       width="6"
-       x="522"
-       y="229" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4240"
-       width="6"
-       x="562"
-       y="249" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4242"
-       width="6"
-       x="592"
-       y="299" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4244"
-       width="6"
-       x="582"
-       y="319" />
-    <rect
-       class="door"
-       height="6"
-       id="rect4246"
-       width="2"
-       x="569"
-       y="302" />
-    <rect
-       class="door"
-       height="6"
-       id="rect4248"
-       width="2"
-       x="489"
-       y="292" />
-    <rect
-       class="door"
-       height="6"
-       id="rect4250"
-       width="2"
-       x="459"
-       y="312" />
-    <rect
-       class="door"
-       height="6"
-       id="rect4252"
-       width="2"
-       x="429"
-       y="312" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4262"
-       width="6"
-       x="582"
-       y="349" />
-    <rect
-       class="door"
-       height="6"
-       id="rect4264"
-       width="2"
-       x="559"
-       y="422" />
-    <rect
-       class="door"
-       height="8"
-       id="rect4266"
-       width="2"
-       x="619"
-       y="232" />
-    <rect
-       class="door"
-       height="8"
-       id="rect4268"
-       width="2"
-       x="619"
-       y="240" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4270"
-       width="8"
-       x="652"
-       y="329" />
-    <rect
-       class="door"
-       height="2"
-       id="rect4272"
-       width="8"
-       x="660"
-       y="329" />
-    <rect
-       class="door"
-       height="8"
-       id="rect4274"
-       width="2"
-       x="699"
-       y="290" />
-    <rect
-       class="door"
-       height="6"
-       id="rect4276"
-       width="2"
-       x="589"
-       y="472" />
-    <rect
-       class="door"
-       height="8"
-       id="rect4278"
-       width="2"
-       x="699"
-       y="282" />
-    <rect
-       class="door"
-       height="8"
-       id="rect4282"
-       width="2"
-       x="699"
-       y="240" />
-    <rect
-       class="door"
-       height="8"
-       id="rect4284"
-       width="2"
-       x="699"
-       y="232" />
-    <rect
-       class="door"
-       height="6"
-       id="rect3211"
-       width="2"
-       x="319"
-       y="272" />
-    <rect
-       class="door"
-       height="6"
-       id="rect3981"
-       width="2"
-       x="379"
-       y="452" />
-    <rect
-       class="door"
-       height="6"
-       id="rect3983"
-       width="2"
-       x="389"
-       y="452" />
-    <rect
-       class="door"
-       height="2"
-       id="rect3985"
-       width="6"
-       x="382"
-       y="439" />
-    <rect
-       class="door"
-       height="6"
-       id="rect5545"
-       width="2"
-       x="549"
-       y="472" />
-    <rect
-       class="door"
-       height="6"
-       id="rect5620"
-       width="2"
-       x="849"
-       y="387" />
-    <rect
-       class="door"
-       height="6"
-       id="rect3348"
-       width="2"
-       x="439"
-       y="762" />
-    <rect
-       class="door"
-       height="2"
-       id="rect5617"
-       width="6"
-       x="342"
-       y="839" />
-    <rect
-       class="door"
-       height="6"
-       id="rect5653"
-       width="2"
-       x="269"
-       y="1142" />
-    <rect
-       class="door"
-       height="2"
-       id="rect5681"
-       width="6"
-       x="92"
-       y="1229" />
-    <rect
-       class="door"
-       height="2"
-       id="rect5683"
-       width="6"
-       x="112"
-       y="1229" />
-    <rect
-       class="door"
-       height="2"
-       id="rect5693"
-       width="6"
-       x="112"
-       y="1159" />
-    <rect
-       class="door"
-       height="2"
-       id="rect5695"
-       width="6"
-       x="172"
-       y="1169" />
-    <rect
-       class="door"
-       height="6"
-       id="rect5697"
-       width="2"
-       x="159"
-       y="1142" />
-    <rect
-       class="door"
-       height="6"
-       id="rect5701"
-       width="2"
-       x="109"
-       y="1082" />
-    <rect
-       class="door"
-       height="6"
-       id="rect5703"
-       width="2"
-       x="289"
-       y="1042" />
-    <rect
-       class="door"
-       height="2"
-       id="rect5705"
-       width="6"
-       x="222"
-       y="1259" />
+       sodipodi:nodetypes="ccccccccc"
+       style="fill:#ed7767;stroke:none" />
+    <!-- Features start here -->
     <path
        class="bars"
-       d="m495 540v-30"
+       d="M 495,540 V 510"
        id="bars-1"
        inkscape:connector-curvature="0"
-       inkscape:label="#bars-1" />
+       inkscape:label="#bars-1"
+       style="fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3, 1;stroke-dashoffset:0" />
     <path
        class="stairs-ew"
-       d="m470 554 10-4v20l-10-4z"
+       d="m 470,554 10,-4 v 20 l -10,-4 z"
        id="stairs-null-magic-1"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
     <path
        class="stairs-ns"
-       d="m448 580 2 10h-10l2-10z"
+       d="m 448,580 2,10 h -10 l 2,-10 z"
        id="stairs-null-magic-2"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ns);stroke:none" />
     <path
        class="stairs-ns"
-       d="m448 540 2-10h-10l2 10z"
+       d="m 448,540 2,-10 h -10 l 2,10 z"
        id="stairs-null-magic-3"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ns);stroke:none" />
     <path
        class="stairs-ew"
-       d="m430 562-10-2v10l10-2z"
+       d="m 430,562 -10,-2 v 10 l 10,-2 z"
        id="stairs-null-magic-4"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
     <path
        class="stairs-ew"
-       d="m340 780 10 3v4l-10 3z"
+       d="m 340,780 10,3 v 4 l -10,3 z"
        id="rect4146"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
     <path
        class="stairs-ew"
-       d="m320 783 10-3v10l-10-3z"
+       d="m 320,783 10,-3 v 10 l -10,-3 z"
        id="rect4146-3"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
     <path
        class="stairs-ns"
-       d="m340 400h10l-3 20h-4z"
+       d="m 340,400 h 10 l -3,20 h -4 z"
        id="rect4082"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ns);stroke:none" />
     <path
        class="stairs-ns"
-       d="m333 290h4l3 20h-10z"
+       d="m 333,290 h 4 l 3,20 h -10 z"
        id="rect5519"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ns);stroke:none" />
+    <path
+       d="m 370,1190 h 10 v 10 h -10 z"
+       id="rect4194"
+       class="stairs-ew"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
     <circle
        cx="610"
        cy="235"
@@ -2601,13 +2254,13 @@
        sodipodi:rx="1"
        sodipodi:ry="1" />
     <circle
-       cx="464.522989"
-       cy="569.26092"
+       cx="464.52298"
+       cy="569.26093"
        d="m465.522989 569.26092c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
        id="column-null-magic-3"
        r="1"
-       sodipodi:cx="464.522989"
-       sodipodi:cy="569.26092"
+       sodipodi:cx="464.52298"
+       sodipodi:cy="569.26093"
        sodipodi:rx="1"
        sodipodi:ry="1" />
     <circle
@@ -2672,22 +2325,22 @@
        sodipodi:ry="1.5" />
     <circle
        cx="455"
-       cy="546.5864941"
+       cy="546.58649"
        d="m456 546.5864941c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
        id="column-null-magic-1-6"
        r="1"
        sodipodi:cx="455"
-       sodipodi:cy="546.5864941"
+       sodipodi:cy="546.58649"
        sodipodi:rx="1"
        sodipodi:ry="1" />
     <circle
        cx="455"
-       cy="572.478161"
+       cy="572.47815"
        d="m456 572.478161c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
        id="column-null-magic-1-7"
        r="1"
        sodipodi:cx="455"
-       sodipodi:cy="572.478161"
+       sodipodi:cy="572.47815"
        sodipodi:rx="1"
        sodipodi:ry="1" />
     <circle
@@ -2742,18 +2395,1361 @@
        sodipodi:ry="1" />
     <rect
        class="feature"
+       height="10"
+       id="teleportal-a-out"
+       width="10"
+       x="260"
+       y="1210"
+       style="fill:#008000;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="feature"
+       height="10"
+       id="teleportal-a-in"
+       width="10"
+       x="280"
+       y="1110"
+       style="fill:#008000;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="feature"
+       id="feature-revgravity-trap"
+       width="10"
+       height="10"
+       x="1020"
+       y="170"
+       inkscape:label=""
+       style="fill:#008000;stroke:#000000;stroke-width:0.5px" />
+    <path
+       d="m 31,645 -6,3 v 5 l 2,-4 4,-2 z"
+       id="feature-dragon-tail"
+       inkscape:connector-curvature="0"
+       class="feature" />
+    <rect
+       class="feature"
        height="40"
        id="altar-giant-spider"
        width="20"
        x="350"
-       y="1080" />
+       y="1080"
+       style="fill:#008000;stroke:#000000;stroke-width:0.5px" />
+    <circle
+       id="pit"
+       cx="80"
+       cy="745"
+       r="10"
+       class="pit"
+       sodipodi:cx="80"
+       sodipodi:cy="745"
+       sodipodi:rx="10"
+       sodipodi:ry="10"
+       style="fill:url(#pattern-pit);fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       d="m 360,1190 v 10"
+       id="curtain"
+       inkscape:connector-curvature="0"
+       class="feature" />
+    <rect
+       class="feature"
+       id="feature-bone-throne"
+       width="9"
+       height="9"
+       x="441"
+       y="310"
+       style="fill:#008000;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="feature"
+       id="feature-couch"
+       width="5"
+       height="5"
+       x="1100"
+       y="125"
+       inkscape:label=""
+       style="fill:#008000;stroke:#000000;stroke-width:0.5px" />
+    <!-- Walls start here -->
+    <path
+       class="wall"
+       d="m 600,510 v 20 h -10 v 40 h -30 v -20 h -42 2 v -40 h -50 v 2 -2 h -20 v -20 h 90 v 10 h 60 v 10 h 2 z M 460,620 v -20 h -10 v -20 l 20,-10 h 22 -2 v 10 h -20 v 20 h 30 v -30 h -2 52 v 10 h 50 v -30 h 40 v -40 h -32 2 v -20 h -10 v -20 c 10,0 10,0 10,0 V 320 h -22 2 v -20 h -20 v 2 -12 h 10 v 10 h 12 -2 v 10 h 10 v -10 h -2 12 v -40 h -30 v 20 h -10 v -30 h -2 52 v -2 62 l 20,20 h 12 -2 v 50 h -20 v 110 h 10 v 10 h 40 v -10 h 10 V 380 h -20 v -50 h -2 12 l 20,-20 v -12 2 h 10 v 80 h 10 v 10"
+       id="walls-shield-room"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 512,550 c -2,0 -2,0 -2,0 v -10 h -40 v -22 2 h -20 v 20 l 20,10 z"
+       id="walls-null-magic--demon-gate"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 440,642 v -62 l -10,-10 h -15 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 5 h -5 v -5 h -5 v 20 h 10 v -10 h 35 33 v 35 h -13 v 15"
+       id="wall-null-magic--mirrors-s"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 415,560 h 15 v -10 l 10,-10 v -20 h -60 v 20 h 15 v -10 h 30 v 20 h -90 v 10 h 5 v -5 h 5 v 5 h 5 c 0,0 0,-4 0,-5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 z"
+       id="wall-null-magic--mirrors-n"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 640,390 v 10 h 40 v -10 z"
+       id="path5539"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 450,610 v 100 h 30 v -10"
+       id="path3048"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 440,648 v 42 h -20 v 30 h -60 v -25 h -10"
+       id="path3050"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 440,700 h -10 v 30 h 50 v -10 h -40 z"
+       id="path3052"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 490,700 v 40 h -30 v 22 -2 h 30"
+       id="path3054"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 490,770 h -10 v 30 h 50 v 20 h 60 v -20 h 10 v 30 H 520 V 810 H 380"
+       id="path3856"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 380,800 h 90 v -20 h -10 v -2 2 h -20 v -12 2 h -60 v -2 2 h -20 v 10 h 20 v 2"
+       id="path3858"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 440,730 v 32 -2 h -60 v 2 -32 h 22"
+       id="path3860"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 590,490 v -12 2 h -10 v -2 2 h -10 v -10 h -20 v 2 -2 h 10 v 20 z"
+       id="path3068"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <g
+       id="g3096" />
+    <path
+       class="wall"
+       d="m 600,330 v 10 h -30 v -10 z"
+       id="path3080"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 570,308 v 12 h 12 -2 v -10 h -10 z"
+       id="path3090"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 490,298 v 2 h 10 v -50 h 62 -2 v 100 h 22 -2 v 30 h -10 v 10 h 20 v -40 h -2 12 v 70 h -40 v 2 -12 h -10 v -30 h -30 v -10"
+       id="path3094"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 620,232 v -2 h -92"
+       id="path3082"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 522,230 H 500 V 160"
+       id="wall-hh-2"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       inkscape:label=""
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 490,160 v 10 h -10"
+       id="wall-hh-3"
+       inkscape:connector-curvature="0"
+       inkscape:label=""
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 480,180 h 10 v 50 h -80 v -12"
+       id="wall-hh-1"
+       inkscape:connector-curvature="0"
+       inkscape:label=""
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 400,218 v 2 h -43"
+       id="path3091"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 358,240 h 12 v 2"
+       id="path3093"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 380,242 v -2 h 12"
+       id="path3095"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 398,240 h 2 v 10 h 42 -12 v 10 h -2"
+       id="path3097"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 422,260 h -2 v 50 h 10 v 2"
+       id="path3099"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 430,318 v 2 h 30 v -2"
+       id="path3101"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 460,312 v -2 h 10 v -20 h 20 v 2"
+       id="path3103"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 448,250 h 12 v 10 h 10 v 20 h 20 v -30 z"
+       id="path3105"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 700,248 v 34 -2 h 10 v -10"
+       id="path4280"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 700,210 v 22"
+       id="path4286"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 720,270 v 50 h 10 v -10 h 50 v 10 h 20 v 2 -2 h 60"
+       id="path4288"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 730,330 h -10 v 40 h 50 v -30 h -40 z"
+       id="path4290"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 730,390 v -10 h 40 v 36 h 80 v -23"
+       id="path4292"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 320,272 v -2 h -20 v 210 l 30,-0.5 V 490 h 110 v 20 h -75 v 20 h -60 v -10"
+       id="path4296"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 390,458 v 2 h -10 v -2 2 h -40 v 20 h 210 v -2 2 h -40 v -10 h -5"
+       id="path3279"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 390,452 v -12 h -2"
+       id="path3197"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 330,240 v 110 h 10 v 80 h 10 v 10 h 32 -2 v 12 -2 h -40 v -10 h -30 v -90 h 10"
+       id="path3201"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 340,240 v 30 h 5"
+       id="path3203"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 345,280 h -5 v 60 h 10 v 80 h 10 v 10 h 20 v -20 h 15"
+       id="path3205"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 395,420 h -5 v 10"
+       id="path3207"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 320,278 v 22 h -10 v 40 h 10"
+       id="path3209"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 295,520 v 10 h -5 v 20"
+       id="path4076"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 300,540 h 20 v 20 h -20 z"
+       id="path4078"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 380,540 h -50 v 30 h -30 v 35"
+       id="path4080"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 590,472 v -2 h -10 v 2 m 10,0 v -12 h 10 v -30 h -40 v -2 32 h 20 v 3 -3 h 10"
+       id="path5540"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 505,460 h 5 v -90"
+       id="path5547"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 780,360 c 0,0 0,0 0,0 z"
+       id="path5618"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 850,387 0,-57 10,0 0,10 30,0 0,-10 20,0 0,20 30,0 0,-20 30,0 0,-30 30,0"
+       id="path5622"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 804,336 -4,-8 v 2 h -20 v 30 h 30 v 46 h 35 v -11 h -30 v -30"
+       id="path5626"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 840,330 h -15 v 40 h 15 z"
+       id="path5628"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 804,336 v 24"
+       id="path5630"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 380,800 h -2 z"
+       id="path4118"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 380,800 V 789"
+       id="path4120"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 380,810 v 30 h 10"
+       id="path4128"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 390,850 h -10 v 10"
+       id="path4130"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 310,790 h 60 v 10 h 2 -32 v -50 h 10 v -10 h 20 v 20 h -20 v 20 h -50"
+       id="path4134"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 302,780 h -2 v 50 h 10 v 110 h -10 v -10"
+       id="path5609"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 310,790 v 20 h 10 v 190 h -60 v 10 h 20 v 10 h 10 v 10 h 10 v 20 h 10 v -10 h 20 V 840 h 2 -2"
+       id="path5611"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 342,840 H 330 V 740 h 10 v -20 h 10 v -5"
+       id="path5613"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 350,840 h -2"
+       id="path5615"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 370,810 h -30 v 20 h 10 v 10 h 20 v 170"
+       id="path5619"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 360,1010 v -10 h -10 v 40 h 20 v 110 h -40 v 20 h 20 v 20 h 25"
+       id="path5621"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 375,1200 h -25 v 30 h -40 v 10 h -20 v -10 h -30 v 30 h -32"
+       id="path5625"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 222,1260 h -12 v 40"
+       id="path5627"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 200,1300 v -90 h -10"
+       id="path5629"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 190,1200 h 20 v 50 h 40 v -30 h 50 v 10 -10 h 40 v -40 h -30 v 20 h -40 v 10 h 20 v 10"
+       id="path5631"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 300,1190 v -20 h 20 v -20 h -10 v -10 h -30 v 20 h 10 v 15 15 z"
+       id="path5633"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 270,1148 v 22 h 10 v 20 h -10 v -20"
+       id="path5635"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 270,1142 v -2 h -20 v -60 h -10 v 60 h 10"
+       id="path5637"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 250,1110 h 20"
+       id="path5639"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 260,1120 h 50 v 10 h -50 z"
+       id="path5641"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 310,1060 h -20 v -12"
+       id="path5643"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 290,1042 v -2 h -10 v -10 h -10 v -10 h -50 v 10 h 10"
+       id="path5645"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 300,1070 h 10 v 20 h -10 v 20 h -20 v -20 h 10 v -20 z"
+       id="path5647"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 230,1040 h -10 v 60 h 10 v -50 h 30 v 50 h 10 v -20 h 10 v -20 h 10"
+       id="path5651"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 270,1150 h -40 v -40 h -20 v -20"
+       id="path5655"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 220,1120 h -10 v 30 h -40 v 10 h 10"
+       id="path5657"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 178,1170 h 7"
+       id="path5659"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 172,1170 h -12 v -22 2 h -10 v -10 h -30 v 20 h -2 12 v 30 h 40"
+       id="path5661"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 170,1200 h -40 v 30 h -12"
+       id="path5663"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 112,1230 H 98"
+       id="path5665"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 92,1230 H 70 v -70 h 42 -2 v -20 H 60"
+       id="path5667"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 60,1130 h 50 v -42"
+       id="path5669"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 110,1082 v -2 h 50 v 20 h 10 v -10 h 15"
+       id="path5671"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 190,1100 h -10 v 10 h -10 v 30 h 30 v -80 h -10"
+       id="path5673"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 190,1050 h 20 v 20"
+       id="path5675"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 200,1040 h 10 v -30"
+       id="path5677"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 160,1142 v -32 h -10 v -20 h -30 v 40 h 40 z"
+       id="path5699"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 250,990 h 60 v -30 h -40 v 30 z"
+       id="path5707"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 310,950 h -50 v 30 h -20 v 20 h 10 v 10 h -30 v 9"
+       id="path5709"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 290,930 v 10 h -90 v -10 h 10"
+       id="path5711"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 210,920 h -20 v -10 h 5"
+       id="path5713"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 260,950 h -60 v 11"
+       id="path5715"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 190,960 H 180"
+       id="path5717"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 180,950 h 10 V 940 H 80 v 20 H 70"
+       id="path5719"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 65,950 h 5 V 920 H 50 v 10 H 20 V 880 H 40 V 810 H 30 v 30 H 20"
+       id="path5721"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 15,830 h 5 V 810 H 0"
+       id="path5723"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 194,900 h -14 v -5"
+       id="path5725"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 159,920 h 21 v 10 H 80 V 910 H 40 v 10 H 30 V 890 H 50 V 800 H 10 v -20 h 60"
+       id="path5727"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 160,910 h 10 v -13"
+       id="path5729"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="M 70,770 H 30 v -20 h 30"
+       id="path4147"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 15,730 h 5 v 40 H 0"
+       id="path4149"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="M 60,740 H 30 v -90 h 10"
+       id="path4151"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 260,1220 v -50 20 h -25"
+       id="path4181"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 235,1180 c 15,0 15,0 15,0 v -20 h 20"
+       id="path4190"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 380,780 h 20"
+       id="path5664"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 380,790 h 20"
+       id="path5666"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="M 40,640 H 30 v -3"
+       id="path5668"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 20,636 v 14 H 6"
+       id="path5670"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 15,720 h 5 V 670 H 10 v 5"
+       id="path5672"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 330,570 v 10 h -10"
+       id="path5689"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 320,590 h 10 v 80 h 10 v -2 12 h -10 v 10 h 2 -2 v 15 h -30 v -85 h 10 v -15 h -20 v 110 h 10 v 9"
+       id="path5691"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 310,724 v -9 h 40 v -11"
+       id="path5693"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 350,697 v -7 h -12 12 v -30 h -10 v 2 -32 h 20 v -2"
+       id="path5695"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 360,622 v -2 h -20 v -20 h 20 v 10 h 15 v 10 h -15 z"
+       id="path5697"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 360,630 h 10 v 60 h 35 v -30 h -25 v -20 h 30 v 10 h 2"
+       id="path5700"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 418,650 h 21 v -10 h -19 v -10 h -40"
+       id="path5702"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 385,580 v 40 h 5"
+       id="path5704"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 385,590 h -2"
+       id="path5706"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 377,590 h -17 v 10"
+       id="path5710"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="M 430,730 H 408"
+       id="path5712"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="M 380,730 H 370"
+       id="path5714"
+       inkscape:connector-curvature="0"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1020,300 0,-10"
+       id="path3255"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 860,320 0,-10 30,0 0,10 20,0 0,-30 30,0 0,30 20,0 0,-140 -5,0"
+       id="path3257"
+       sodipodi:nodetypes="cccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1000,290 -30,0 0,-30 60,0"
+       id="path4035"
+       sodipodi:nodetypes="cccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 970,250 0,-20 40,0 0,20 -40,0 z"
+       id="path4037"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1030,250 -10,0 0,-30 10,0"
+       id="path4039"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1050,222 0,-2 12,0"
+       id="path4041"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1060,210 -40,0 0,-10"
+       id="path4043"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 1130,140 10,0 0,20 -10,0 0,-20 z"
+       id="stairs-a"
+       class="stairs-ns" />
+    <path
+       class="wall"
+       d="m 970,200 60,0 0,-20 20,0 0,10 60,0 0,-40 10,0 0,-10 10,0 0,-2 0,32 50,0"
+       id="path4045"
+       sodipodi:nodetypes="ccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1180,160 -40,0 0,-30 -10,0 0,2 0,-12 -10,0 0,-20 -30,0 0,20 -10,0 0,20 10,0 0,10 10,0 0,30 -40,0 0,-80 -20,0 0,20 -10,0 0,2"
+       id="path4047"
+       sodipodi:nodetypes="cccccccccccccccccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1030,128 0,14 0,-2 -50,0 0,-4"
+       id="path4049"
+       sodipodi:nodetypes="ccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1030,148 0,22 20,0 0,-20 -20,0 0,-2 z"
+       id="path4051"
+       sodipodi:nodetypes="cccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 970,130 0,20 50,0 0,30 -10,0 0,-10 -60,0"
+       id="path4053"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <!-- Doors start here -->
+    <path
+       class="sec-door"
+       d="m 602,509 3,1 3,-1 v 2 l -3,1 -3,-1 z"
+       id="s-door-shield-room"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc"
+       style="fill:#683910;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="sec-door"
+       height="2"
+       id="s-door-dexter-dance"
+       width="6"
+       x="492"
+       y="569"
+       style="fill:#683910;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="sec-door"
+       height="2"
+       id="s-door-demon-gate"
+       width="6"
+       x="512"
+       y="549"
+       style="fill:#683910;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="sec-door"
+       height="6"
+       id="rect5543"
+       width="2"
+       x="579"
+       y="472"
+       style="fill:#683910;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="sec-door"
+       id="secret-door-couch-room"
+       width="2"
+       height="6"
+       x="1129"
+       y="132"
+       inkscape:label=""
+       style="fill:#683910;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="door-demon-gate"
+       width="2"
+       x="469"
+       y="512"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="16"
+       id="rect3854"
+       width="2"
+       x="459"
+       y="762"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4232"
+       width="7"
+       x="442"
+       y="249"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4234"
+       width="6"
+       x="422"
+       y="259"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4236"
+       width="6"
+       x="392"
+       y="239"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4238"
+       width="6"
+       x="522"
+       y="229"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4240"
+       width="6"
+       x="562"
+       y="249"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4242"
+       width="6"
+       x="592"
+       y="299"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4244"
+       width="6"
+       x="582"
+       y="319"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect4246"
+       width="2"
+       x="569"
+       y="302"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect4248"
+       width="2"
+       x="489"
+       y="292"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect4250"
+       width="2"
+       x="459"
+       y="312"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect4252"
+       width="2"
+       x="429"
+       y="312"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4262"
+       width="6"
+       x="582"
+       y="349"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect4264"
+       width="2"
+       x="559"
+       y="422"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="8"
+       id="rect4266"
+       width="2"
+       x="619"
+       y="232"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="8"
+       id="rect4268"
+       width="2"
+       x="619"
+       y="240"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4270"
+       width="8"
+       x="652"
+       y="329"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect4272"
+       width="8"
+       x="660"
+       y="329"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="8"
+       id="rect4274"
+       width="2"
+       x="699"
+       y="290"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect4276"
+       width="2"
+       x="589"
+       y="472"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="8"
+       id="rect4278"
+       width="2"
+       x="699"
+       y="282"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="8"
+       id="rect4282"
+       width="2"
+       x="699"
+       y="240"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="8"
+       id="rect4284"
+       width="2"
+       x="699"
+       y="232"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect3211"
+       width="2"
+       x="319"
+       y="272"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect3981"
+       width="2"
+       x="379"
+       y="452"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect3983"
+       width="2"
+       x="389"
+       y="452"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect3985"
+       width="6"
+       x="382"
+       y="439"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect5545"
+       width="2"
+       x="549"
+       y="472"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect5620"
+       width="2"
+       x="849"
+       y="387"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect3348"
+       width="2"
+       x="439"
+       y="762"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect5617"
+       width="6"
+       x="342"
+       y="839"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect5653"
+       width="2"
+       x="269"
+       y="1142"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect5681"
+       width="6"
+       x="92"
+       y="1229"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect5683"
+       width="6"
+       x="112"
+       y="1229"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect5693"
+       width="6"
+       x="112"
+       y="1159"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect5695"
+       width="6"
+       x="172"
+       y="1169"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect5697"
+       width="2"
+       x="159"
+       y="1142"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect5701"
+       width="2"
+       x="109"
+       y="1082"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="6"
+       id="rect5703"
+       width="2"
+       x="289"
+       y="1042"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       height="2"
+       id="rect5705"
+       width="6"
+       x="222"
+       y="1259"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       height="2"
+       id="rect5641"
+       class="door"
+       width="6"
+       x="282"
+       y="1218"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       height="6"
+       id="door-corr-a"
+       class="door"
+       width="2"
+       x="379"
+       y="762"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       height="2"
+       id="door-corr-b"
+       class="door"
+       width="6"
+       x="372"
+       y="799"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       height="6"
+       id="door-corr-c"
+       class="door"
+       width="2"
+       x="379"
+       y="782"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       id="door-room-a"
+       width="2"
+       height="6"
+       x="1029"
+       y="122"
+       inkscape:label=""
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       class="door"
+       id="door-room-b"
+       width="2"
+       height="6"
+       x="1029"
+       y="142"
+       inkscape:label=""
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       height="2"
+       id="door"
+       class="door"
+       width="6"
+       x="377"
+       y="589"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <!-- Names start here -->
     <text
        class="name"
        id="text4224"
        sodipodi:linespacing="125%"
        x="450"
        xml:space="preserve"
-       y="242"><tspan
+       y="242"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan4226"
          sodipodi:role="line"
          x="450"
@@ -2764,7 +3760,8 @@
        sodipodi:linespacing="125%"
        x="426"
        xml:space="preserve"
-       y="287"><tspan
+       y="287"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan4230"
          sodipodi:role="line"
          x="426"
@@ -2775,7 +3772,8 @@
        sodipodi:linespacing="125%"
        x="531"
        xml:space="preserve"
-       y="242"><tspan
+       y="242"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan4256"
          sodipodi:role="line"
          x="531"
@@ -2786,7 +3784,8 @@
        sodipodi:linespacing="125%"
        x="590"
        xml:space="preserve"
-       y="282"><tspan
+       y="282"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan4260"
          sodipodi:role="line"
          x="590"
@@ -2797,7 +3796,8 @@
        sodipodi:linespacing="125%"
        x="452"
        xml:space="preserve"
-       y="807"><tspan
+       y="807"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan4312"
          sodipodi:role="line"
          x="452"
@@ -2808,7 +3808,8 @@
        sodipodi:linespacing="125%"
        x="356"
        xml:space="preserve"
-       y="566"><tspan
+       y="566"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5430"
          sodipodi:role="line"
          x="356"
@@ -2819,7 +3820,8 @@
        sodipodi:linespacing="125%"
        x="435"
        xml:space="preserve"
-       y="557"><tspan
+       y="557"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5436"
          sodipodi:role="line"
          x="435"
@@ -2834,7 +3836,8 @@
        sodipodi:linespacing="125%"
        x="472"
        xml:space="preserve"
-       y="522"><tspan
+       y="522"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5443"
          sodipodi:role="line"
          x="472"
@@ -2849,7 +3852,8 @@
        sodipodi:linespacing="125%"
        x="474"
        xml:space="preserve"
-       y="588"><tspan
+       y="588"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5449"
          sodipodi:role="line"
          x="474"
@@ -2864,7 +3868,8 @@
        sodipodi:linespacing="125%"
        x="610"
        xml:space="preserve"
-       y="528"><tspan
+       y="528"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5515"
          sodipodi:role="line"
          x="610"
@@ -2879,7 +3884,8 @@
        sodipodi:linespacing="125%"
        x="80.29451"
        xml:space="preserve"
-       y="1173.5"><tspan
+       y="1173.5"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5687"
          sodipodi:role="line"
          x="80.29451"
@@ -2887,89 +3893,19 @@
          id="tspan5689"
          sodipodi:role="line"
          x="80.29451"
-         y="1183.5">Statue</tspan><tspan
+         y="1181">Statue</tspan><tspan
          id="tspan5691"
          sodipodi:role="line"
          x="80.29451"
-         y="1193.5">Room</tspan></text>
-    <rect
-       height="10"
-       id="rect4127"
-       class="corr"
-       width="10"
-       x="220"
-       y="1030" />
-    <rect
-       height="30"
-       id="rect4167"
-       class="corr"
-       width="10"
-       x="160"
-       y="1110" />
-    <path
-       d="m 60,740 c 1,-9 9.127572,-15 20.173267,-15 11,0 20.000003,10 20.000003,20 0,11 -10.000003,20 -20.000003,20 C 74.65042,765 61,759.9505 60,749.9505"
-       id="room-circular-pit"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="csssc"
-       class="room-alt" />
-    <circle
-       id="pit"
-       cx="80"
-       cy="745"
-       r="10"
-       class="pit" />
-    <path
-       d="m70 770h-40v-20h30"
-       id="path4147"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc"
-       class="wall" />
-    <path
-       d="m15 730h5v40h-20"
-       id="path4149"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc"
-       class="wall" />
-    <path
-       d="m60 740h-30v-90h10"
-       id="path4151"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       class="wall" />
-    <path
-       d="m260 1220v-50v20h-25"
-       id="path4181"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cccc"
-       class="wall" />
-    <path
-       d="m235 1180c15 0 15 0 15 0v-20h20"
-       id="path4190"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m360 1190v10"
-       id="curtain"
-       inkscape:connector-curvature="0"
-       class="feature" />
-    <path
-       d="m370 1190h10v10h-10z"
-       id="rect4194"
-       class="stairs-ew" />
-    <rect
-       height="2"
-       id="rect5641"
-       class="door"
-       width="6"
-       x="282"
-       y="1218" />
+         y="1188.5">Room</tspan></text>
     <text
        id="text5643"
        sodipodi:linespacing="125%"
        class="name"
        x="320"
        xml:space="preserve"
-       y="1061.2625"><tspan
+       y="1061.2625"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5645"
          sodipodi:role="line"
          x="320"
@@ -2977,18 +3913,19 @@
          id="tspan5647"
          sodipodi:role="line"
          x="320"
-         y="1071.2625">Spider</tspan><tspan
+         y="1068.7625">Spider</tspan><tspan
          id="tspan5649"
          sodipodi:role="line"
          x="320"
-         y="1081.2625">Altar</tspan></text>
+         y="1076.2625">Altar</tspan></text>
     <text
        id="text5651"
        sodipodi:linespacing="125%"
        class="name"
        x="333"
        xml:space="preserve"
-       y="899"><tspan
+       y="899"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
          id="tspan5653"
          sodipodi:role="line"
          x="333"
@@ -2996,134 +3933,42 @@
          id="tspan5655"
          sodipodi:role="line"
          x="333"
-         y="909">Kings</tspan></text>
+         y="906.5">Kings</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="911"
+       y="307"
+       id="text3329"
+       sodipodi:linespacing="125%"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
+         sodipodi:role="line"
+         id="tspan3331"
+         x="911"
+         y="307">Black</tspan><tspan
+         sodipodi:role="line"
+         x="911"
+         y="314.5"
+         id="tspan3333">Pudding</tspan></text>
+    <text
+       xml:space="preserve"
+       class="name"
+       x="970"
+       y="187"
+       id="text3335"
+       sodipodi:linespacing="125%"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"><tspan
+         sodipodi:role="line"
+         id="tspan3337"
+         x="970"
+         y="187">Lizard Men</tspan></text>
     <rect
-       height="6"
-       id="door-corr-a"
-       class="door"
-       width="2"
-       x="379"
-       y="762" />
-    <rect
-       height="2"
-       id="door-corr-b"
-       class="door"
-       width="6"
-       x="372"
-       y="799" />
-    <rect
-       height="6"
-       id="door-corr-c"
-       class="door"
-       width="2"
-       x="379"
-       y="782" />
-    <path
-       d="m380 780h20"
-       id="path5664"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       class="wall" />
-    <path
-       d="m380 790h20"
-       id="path5666"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc"
-       class="wall" />
-    <path
-       d="m40 640h-10v-3"
-       id="path5668"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m20 636v14h-14"
-       id="path5670"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m15 720h5v-50h-10v5"
-       id="path5672"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m31 645-6 3v5l2-4 4-2z"
-       id="feature-dragon-tail"
-       inkscape:connector-curvature="0"
-       class="feature" />
-    <path
-       d="m330 570v10h-10"
-       id="path5689"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m320 590h10v80h10v-2v12h-10v10h2h-2v15h-30v-85h10v-15h-20v110h10v9"
-       id="path5691"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m310 724v-9h40v-11"
-       id="path5693"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m350 697v-7h-12h12v-30h-10v2v-32h20v-2"
-       id="path5695"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccc"
-       class="wall" />
-    <path
-       d="m360 622v-2h-20v-20h20v10h15v10h-15z"
-       id="path5697"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m360 630h10v60h35v-30h-25v-20h30v10h2"
-       id="path5700"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m418 650h21v-10h-19v-10h-40"
-       id="path5702"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m385 580v40h5"
-       id="path5704"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m385 590h-2"
-       id="path5706"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <rect
-       height="2"
-       id="door"
-       class="door"
-       width="6"
-       x="377"
-       y="589" />
-    <path
-       d="m377 590h-17v10"
-       id="path5710"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m430 730h-22"
-       id="path5712"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <path
-       d="m380 730h-10"
-       id="path5714"
-       inkscape:connector-curvature="0"
-       class="wall" />
-    <rect
-       class="feature"
-       id="feature-bone-throne"
-       width="9"
-       height="9"
-       x="441"
-       y="310" />
+       style="fill:#67ed6b;fill-opacity:1;stroke:none"
+       id="feature-lightning-statue"
+       width="10"
+       height="10"
+       x="95"
+       y="1190"
+       inkscape:label="" />
   </g>
 </svg>
