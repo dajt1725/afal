@@ -7,14 +7,22 @@ import re
 p_nargs = {
  'a': 7, 'c': 6, 'h': 1, 'l': 2, 'm': 2, 'q': 4, 's': 4, 't': 2, 'v': 1, 'z': 0
 }
-p_num = '(-?\d*\.?\d+)'
-p_sep = '(,|\s*)'
-p_regex = ''
+p_num = r'(-?\d*\.?\d+)'
+p_sep = r'\s*,?\s*'
+p_regex = r'\s*('
 for l in p_nargs.keys():
-    p_regex += '|^{s}([{l1}{l2}])((({s}{n}){{{r}}})+)'.format(l1 = l, l2 = l.upper(),
+    if len(p_regex) > 4:
+        p_regex += '|'
+    if p_nargs[l] > 1:
+        p_regex += r'\s*[{l1}{l2}](({s}{n}){{{r}}})+'.format(l1 = l, l2 = l.upper(),
 s = p_sep, n = p_num, r = p_nargs[l])
-
-p_re = re.compile(p_regex[1:])
+    elif p_nargs[l] == 1:
+        p_regex += r'\s*[{l1}{l2}]({s}{n})+'.format(l1 = l, l2 = l.upper(),
+s = p_sep, n = p_num)
+    else:
+        p_regex += r'\s*[{l1}{l2}]'.format(l1 = l, l2 = l.upper())
+p_regex += r')\s*'
+p_re = re.compile(p_regex)
 
 # take a textual path, and return a list of lists, where each sublist
 # is one path command and its arguments.  If a command in the path has
@@ -23,33 +31,45 @@ p_re = re.compile(p_regex[1:])
 # z commands are not put in sublists, but stored bare in the list.
 
 def path_to_list(p):
+#    print p_regex
     ret = []
     while len(p) > 0:
+#        if args.verbose:
+#            print "to_list '"+p+"'"
         m = re.match(p_re, p)
         if m is None or len(m.group(0)) == 0:
-            raise ValueError('invalid path '+p)
+            raise ValueError("Invalid path '"+p+"'")
         s = m.group(0)
+#        if args.verbose:
+#            print "matched '"+s+"'"
         p = p[len(s):]
-        n = re.match('{s}([aAcChHlLmMqQsStTvVzZ])'.format(s=p_sep), s)
+        n = re.match(r'\s*([aAcChHlLmMqQsStTvVzZ])(.*?)\s*$', s)
         if n is None:
             raise ValueError("Invalid command "+s)
         t = n.group(0)
-        s = s[len(t):]
-        c = n.group(2)
+        c = n.group(1)
+        s = n.group(2)
         if len(s)==0:
             ret.append(c)
         while len(s) > 0:
+#            if args.verbose:
+#                print "args '"+s+"'"
             v = [c]
             if c == 'm':
                 c = 'l'
             elif c == 'M':
                 c = 'L'
             for i in range(p_nargs[c.lower()]):
-                m3 = re.match('{s}({n})'.format(s=p_sep,n=p_num),s)
+                m3 = re.match(r'{s}({n})\s*'.format(s=p_sep,n=p_num),s)
                 if m3 is None:
-                    raise ValueError("Invalid number "+s)
+                    raise ValueError("Invalid number '" + s + "'")
                 s = s[len(m3.group(0)):]
-                v.append(m3.group(2))
+                r = m3.group(2)
+                if '.' in r:
+                    v.append(float(r))
+                else:
+                    v.append(int(r))
+
             if len(v)>0:
                 ret.append(v)
     return ret
@@ -63,8 +83,10 @@ def abs_list_to_rel(l):
     sy = 0
     ret = []
     for i in l:
+#        if args.verbose:
+#            print "i '"+repr(i)+"'"
         if i[0].isupper():
-            c = i[0].tolower()
+            c = i[0].lower()
             i[0] = c
             if c == 'a':
                 i[6] -= cx
@@ -88,6 +110,8 @@ def abs_list_to_rel(l):
                 i[4] -= cy
             elif c == 'v':
                 i[1] -= cy
+        else:
+            c = i[0]
         ret.append(i)
         if c == 'a':
             cx += i[6]
@@ -120,16 +144,34 @@ def abs_list_to_rel(l):
 # takes a list and produces an optimized list
 def optimize_list(l):
     ret = []
+    i = 0
+    while i < len(l):
+        t = l[i]
+        j = i + 1
+        if t[0] == 'l':
+            if t[1] == 0:
+                t = ['v', t[2]]
+            elif t[2] == 0:
+                t = ['h', t[1]]
+        while j < len(l):
+            m = l[j][0]
+            if (m != 'l' or (l[j][1] != 0 and l[j][2] != 0)) and (( t[0] == 'm' and l[j][0] == 'l' ) or t[0] == l[j][0]):
+                for k in l[j][1:]:
+                    t.append(k)
+                j += 1
+            else:
+                break
+        ret.append(t)
+        i = j
     return ret
 
 
-# takes a path list (as created by path_to_list) and produces an optimized
-# textual representation, by folding repeated commands into a single one,
-# turning a 'm' followed by 'l' into a multi-argument 'm, etc.
+# takes a path list (as created by path_to_list) and produces a text
+# representation of it
 def list_to_path(l):
     ret = ''
     s = ' '
-    needs = false
+    needs = False
     for i in l:
         for j in i:
             j = str(j)
@@ -137,18 +179,17 @@ def list_to_path(l):
                 j = s + j
             ret += j
             if j[-1].isdigit():
-                needs = true
+                needs = True
             else:
-                needs = false
-
+                needs = False
     return ret
 
 
 ####### xy transform
 
 def fixd1(m):
-    if args.verbose:
-        print "fixd1",m.group(1),m.group(2),m.group(3),m.group(4)
+#    if args.verbose:
+#        print "fixd1",m.group(1),m.group(2),m.group(3),m.group(4)
     x = fixd1.dx+float(m.group(2))
     if x == float(int(x)):
         x = int(x)
@@ -158,13 +199,15 @@ def fixd1(m):
     return '{p}{x}{s}{y}'.format(p=m.group(1), x=x, s=m.group(3), y=y)
 
 def fixd2(m):
-    if args.verbose:
-        print "fixd2",m.group(1),m.group(2)
+#    if args.verbose:
+#        print "fixd2",m.group(1),m.group(2)
     return m.group(1)+re.sub(r'(\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, m.group(2))
 
 def upd(n,a,d):
     v = n.getAttribute(a)
-    if v is not None:
+    if v is not None and v != '':
+#        if args.verbose:
+#            print "updating",a,'(',v,')','by',d
         t = float(v)+d
         if t == float(int(t)):
             t = int(t)
@@ -186,7 +229,19 @@ def do_tr(n,dx,dy):
         upd(n,'sodipodi:cx',dx)
         upd(n,'sodipodi:cy',dy)
         d = n.getAttribute('d')
-        if d is not None:
+        if d is not None and d != '':
+            if args.verbose:
+#                print n.nodeName,n.getAttribute("id")
+#                print "original path '" + d + "'"
+                l = path_to_list(d)
+#                print "list",l
+                l = abs_list_to_rel(l)
+#                print "rel",l
+                l = optimize_list(l)
+#                print "optimized",l
+                d_new = list_to_path(l)
+                print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
+                d = d_new
             fixd1.dx = dx
             fixd1.dy = dy
             d = re.sub(r'^(m\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, d)
@@ -199,11 +254,11 @@ parser = argparse.ArgumentParser("transform the specified svg file by the specif
 parser.add_argument("--verbose", "-v", help = "print progress messages", action = 'store_true', default = False)
 parser.add_argument('--x', '-x', type=int, default=0, help='translate x by')
 parser.add_argument('--y', '-y', type=int, default=0, help='translate y by')
-parser.add_argument("file", help = "file to read", nargs = 1, default = 'Undermountain.svg')
-parser.add_argument("outfile", help = "file to write", nargs = 1, default = 'um1.svg')
+parser.add_argument("infile", help = "file to read", default = 'Undermountain.svg')
+parser.add_argument("outfile", help = "file to write", default = 'um1.svg')
 args = parser.parse_args()
 
-a = parse(args.file)
+a = parse(args.infile)
 for i in a.childNodes:
     do_tr(i, args.x, args.y)
 f = open(args.outfile, 'w')
