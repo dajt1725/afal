@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="310.5"
+   height="460.5"
+   id="svg4347"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="Undermountain-north-to-mirror.svg">
+  <defs
+     id="defs4349">
+    <pattern
+       height="1"
+       id="pattern-stairs-ew"
+       patternUnits="userSpaceOnUse"
+       width="2">
+      <rect
+         height="1"
+         id="stairs_ew_step"
+         style="fill:black;stroke:none"
+         width="1"
+         x="0"
+         y="0" />
+      <rect
+         height="1"
+         id="stairs_ew_riser"
+         style="fill:#edd567;stroke:none"
+         width="1"
+         x="1"
+         y="0" />
+    </pattern>
+    <pattern
+       height="2"
+       id="pattern-stairs-ns"
+       patternUnits="userSpaceOnUse"
+       width="1">
+      <rect
+         height="1"
+         id="stairs_ns_step"
+         style="fill:black;stroke:none"
+         width="1"
+         x="0"
+         y="0" />
+      <rect
+         height="1"
+         id="stairs_ns_riser"
+         style="fill:#edd567;stroke:none"
+         width="1"
+         x="0"
+         y="1" />
+    </pattern>
+    <style
+       id="style-um"
+       type="text/css">
+      *.door {
+        fill:#e2c022;
+        stroke:black;
+        stroke-width:0.5px
+      }
+      *.sec-door {
+        fill:#683910;
+        stroke:black;
+        stroke-width:0.5px
+      }
+      *.room {
+        fill:#edb667;
+        stroke:none
+      }
+      *.corr {
+        fill:#edd567;
+        stroke:none
+      }
+      *.column {
+        fill:black;
+        stroke:none
+      }
+      *.floor-null-magic {
+        fill:#ed7767;
+        stroke:none
+      }
+      *.floor-sand {
+        fill:yellow;
+        stroke:none
+      }
+      *.feature {
+        fill:green;
+        stroke:yellow;
+        stroke-width:.5px
+      }
+      *.stairs-ew {
+        fill:url(#pattern-stairs-ew);
+        stroke:none
+      }
+      *.stairs-ns {
+        fill:url(#pattern-stairs-ns);
+        stroke:none
+      }
+      *.wall {
+        fill:none;
+        stroke:#000000;
+        stroke-width:1px;
+        stroke-linecap:butt;
+        stroke-linejoin:miter;
+        stroke-opacity:1
+      }
+      *.name {
+       font-size:6px;
+       font-style:normal;
+       font-variant:normal;
+       font-weight:normal;
+       font-stretch:normal;
+       text-align:start;
+       line-height:125%;
+       letter-spacing:0px;
+       word-spacing:0px;
+       writing-mode:lr-tb;
+       text-anchor:start;
+       fill:#000000;
+       fill-opacity:1;
+       stroke:none;
+       font-family:Sans;
+       -inkscape-font-specification:Sans
+      }
+      *.bars {
+       fill:none;
+       stroke:#000000;
+       stroke-width:1;
+       stroke-linecap:butt;
+       stroke-linejoin:miter;
+       stroke-miterlimit:4;
+       stroke-opacity:1;
+       stroke-dasharray:3, 1;
+       stroke-dashoffset:0
+      }
+      *.room-alt {
+        fill:#edb667;
+        fill-opacity:1;
+        stroke:#000000;
+        stroke-width:1;
+        stroke-miterlimit:4;
+        stroke-opacity:1;
+        stroke-dasharray:none
+      }
+      *.corr-alt {
+        fill:#ebd667;
+        fill-opacity:1;
+        stroke:#000000;
+        stroke-width:1;
+        stroke-miterlimit:4;
+        stroke-opacity:1;
+        stroke-dasharray:none
+      }
+      *.pit {
+        fill:grey;
+        fill-opacity:1;
+        stroke:yellow;
+        stroke-width:1;
+        stroke-miterlimit:4;
+        stroke-opacity:1;
+        stroke-dasharray:none
+      }
+    </style>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="8.88"
+     inkscape:cx="409.10233"
+     inkscape:cy="411.36384"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1796"
+     inkscape:window-height="901"
+     inkscape:window-x="0"
+     inkscape:window-y="2"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4355"
+       empspacing="10"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       color="#4646ff"
+       opacity="0.1254902"
+       originx="-280px"
+       originy="-579.5px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4352">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
+       d="m 390,270 10,0 -4,160 -2,0 z"
+       id="rect4583"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;stroke:none"
+       id="rect4581"
+       width="14"
+       height="11"
+       x="388"
+       y="259"
+       class="room" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4579"
+       width="30"
+       height="10"
+       x="380"
+       y="430"
+       class="room" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4577"
+       width="10"
+       height="20"
+       x="390"
+       y="440"
+       class="room" />
+    <path
+       style="fill-opacity:1"
+       d="m 450,430 0,10 0,10 10,0 0,-10 20,0 0,-10 -30,0 z"
+       id="rect4570"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4558"
+       width="10"
+       height="20"
+       x="480"
+       y="390"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4556"
+       width="10"
+       height="20"
+       x="520"
+       y="330"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4554"
+       width="10"
+       height="10"
+       x="490"
+       y="330"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4552"
+       width="10"
+       height="10"
+       x="530"
+       y="310"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4550"
+       width="10"
+       height="10"
+       x="510"
+       y="300"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4546"
+       width="20"
+       height="30"
+       x="510"
+       y="350"
+       class="room" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4544"
+       width="40"
+       height="20"
+       x="490"
+       y="310"
+       class="room" />
+    <path
+       style="fill-opacity:1"
+       d="m 430,200 0,40 30,0 0,10 -40,0 0,20 30,0 0,20 60,0 0,10 20,0 0,-30 -20,0 0,-30 -10,0 0,-10 -10,0 0,-10 100,0 0,-20 -160,0 z"
+       id="rect4523"
+       class="room"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill-opacity:1"
+       d="m 380,120 0,10 30,0.0128 0,10 0,10 20,0 0,-10 -10,0 0,-20 -10,0 z"
+       id="rect4444"
+       class="corr"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccc" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4442"
+       width="30"
+       height="30"
+       x="430"
+       y="120"
+       class="room" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4422"
+       width="30"
+       height="40"
+       x="480"
+       y="60"
+       class="room" />
+    <path
+       d="m 375,10 c -10,1 -20,6 -21,10 l -14,0 0,10 -10,0 0,20 -50,0 0,50 190,0 0,-50 -50,0 0,-20 -10,0 0,-10 -15,0 c -1,-4 -11,-9 -20,-10 z"
+       id="rect4417"
+       class="room"
+       inkscape:connector-curvature="0"
+       style="fill-opacity:1;" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4471"
+       width="10"
+       height="10"
+       x="420"
+       y="450"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4469"
+       width="20"
+       height="20"
+       x="400"
+       y="440"
+       class="room" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4467"
+       width="30"
+       height="20"
+       x="430"
+       y="450"
+       class="room" />
+    <path
+       style="fill-opacity:1"
+       d="m 480,410 0,30 20,0 0,30 60,0 0,-40 -50,0 0,-20 -30,0 z"
+       id="rect4462"
+       class="room"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4458"
+       width="10"
+       height="10"
+       x="380"
+       y="160"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4440"
+       width="10"
+       height="10"
+       x="460"
+       y="140"
+       class="corr" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4438"
+       width="30"
+       height="30"
+       x="470"
+       y="130"
+       class="room" />
+    <path
+       style="fill-opacity:1"
+       d="m 510,90 0,10 10,0 0,40 -20,0 0,10 20,0 0,50 10,0 0,-80 10,0 0,-10 -10,0 0,-10 0,-10 -20,0 z"
+       id="rect4434"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4420"
+       width="10"
+       height="10"
+       x="470"
+       y="70"
+       class="corr" />
+    <path
+       d="m 540,110 -10,0 0,-19.999997 -20,0 0,-30 -30,0 0,12 0,-2 -10,0 0,-20 -50,0 0,-20 -10,0 0,-10 -15,0 c -10,-13.0000008 -31,-13.0000008 -41,0 l -14,0 0,10 -10,0 0,20 -50,0 0,49.999997 190,0 0,-19.999997 10,0 0,-2 0,2 0,0 0,19.999997 40,0 0,40 0,2 0,-2 -20,0 0,-10 -30,0 0,10 -10,0 0,-20 -30,0 0,20 -10,0 0,-20 -40,0 0,50 40,0"
+       id="path4357"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccc"
+       class="wall"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       d="m 420,160 -30,0 0,-30 20,0 0,20 60,0 0,10 30,0 0,-10 20,0 0,-2 0,52 -70,0 0,-10"
+       id="path4359"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccc"
+       class="wall" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 540,120 -10,0 0,80 22,0"
+       id="path4361"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 558,200 32,0"
+       id="path4363"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 590,220 -62,0"
+       id="path4365"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 522,220 -32,0 0,10 10,0 0,10 10,0 0,12"
+       id="path4367"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 510,258 0,12 20,0 0,20 10,0"
+       id="path4369"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 540,300 -20,0 0,10 20,0"
+       id="path4371"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 540,320 -10,0 0,60 -10,0 0,20 10,0 0,10 10,0"
+       id="path4373"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 540,420 -20,0 0,-10 -10,0 0,20 50,0 0,40"
+       id="path4375"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 500,470 0,-30 -40,0 0,30"
+       id="path4377"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 430,470 0,-10 -30,0 -10,0 0,-20 2,0 -12,0 0,-10 10,0 0,-160 -2,0 0,-11 14,0 0,11 -2,0 0,160 10,0 0,10 -2,0 12,0 0,10 30,0 0,-20 30,0 0,-40"
+       id="path4379"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccccccccccccccccc" />
+    <path
+       d="m 490,390 0,20 10,0 0,-10 10,0 0,-50 10,0 0,-20 -20,0 0,10"
+       id="path4381"
+       inkscape:connector-curvature="0"
+       class="wall" />
+    <path
+       d="m 490,340 0,-30 20,0 0,-20 -60,0 0,-20 -30,0 0,-20 40,0 0,-10 -30,0 0,-30"
+       id="path4383"
+       inkscape:connector-curvature="0"
+       class="wall" />
+    <path
+       sodipodi:type="arc"
+       style="fill-opacity:1"
+       id="path4385"
+       sodipodi:cx="347"
+       sodipodi:cy="28.362183"
+       sodipodi:rx="3"
+       sodipodi:ry="3"
+       d="m 350,28.362183 c 0,1.656854 -1.34315,3 -3,3 -1.65685,0 -3,-1.343146 -3,-3 0,-1.656855 1.34315,-3 3,-3 1.65685,0 3,1.343145 3,3 z"
+       class="column" />
+    <path
+       sodipodi:type="arc"
+       style="fill-opacity:1"
+       id="path4387"
+       sodipodi:cx="335"
+       sodipodi:cy="38.362183"
+       sodipodi:rx="3"
+       sodipodi:ry="3"
+       d="m 338,38.362183 c 0,1.656854 -1.34315,3 -3,3 -1.65685,0 -3,-1.343146 -3,-3 0,-1.656855 1.34315,-3 3,-3 1.65685,0 3,1.343145 3,3 z"
+       class="column" />
+    <path
+       sodipodi:type="arc"
+       style="fill-opacity:1"
+       id="path4389"
+       sodipodi:cx="403"
+       sodipodi:cy="27.362183"
+       sodipodi:rx="3"
+       sodipodi:ry="3"
+       d="m 406,27.362183 c 0,1.656854 -1.34315,3 -3,3 -1.65685,0 -3,-1.343146 -3,-3 0,-1.656855 1.34315,-3 3,-3 1.65685,0 3,1.343145 3,3 z"
+       class="column" />
+    <path
+       sodipodi:type="arc"
+       style="fill-opacity:1"
+       id="path4391"
+       sodipodi:cx="414"
+       sodipodi:cy="37.362183"
+       sodipodi:rx="3"
+       sodipodi:ry="3"
+       d="m 417,37.362183 c 0,1.656854 -1.34315,3 -3,3 -1.65685,0 -3,-1.343146 -3,-3 0,-1.656855 1.34315,-3 3,-3 1.65685,0 3,1.343145 3,3 z"
+       class="column" />
+    <rect
+       style="fill-opacity:1"
+       id="feature-mirror-myth-drannor"
+       width="7"
+       height="2"
+       x="371"
+       y="10"
+       class="feature" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4395"
+       width="2"
+       height="6"
+       x="519"
+       y="142.13995"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4397"
+       width="2"
+       height="6"
+       x="479"
+       y="71.91774"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4399"
+       width="6"
+       height="2"
+       x="551.77777"
+       y="199.02885"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4401"
+       width="6"
+       height="2"
+       x="522"
+       y="218.91774"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4403"
+       width="2"
+       height="6"
+       x="509"
+       y="252.13995"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4405"
+       width="6"
+       height="2"
+       x="402.11111"
+       y="438.91772"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4407"
+       width="6"
+       height="2"
+       x="392"
+       y="439.13995"
+       class="door" />
+    <path
+       d="m 400,460 0,-20 2,0 -4,0"
+       id="path4409"
+       inkscape:connector-curvature="0"
+       class="wall" />
+    <path
+       style="fill:url(#pattern-stairs-ns);stroke:none"
+       d="m 380,130 10,0 -3,30 -4,0 z"
+       id="rect4454"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <path
+       style="fill:url(#pattern-stairs-ew);stroke:none"
+       d="m 390,160 30,3 0,4 -30,3 z"
+       id="rect4456"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
+    <rect
+       style="fill-opacity:1"
+       id="rect4548"
+       width="10"
+       height="10"
+       x="530"
+       y="290"
+       class="corr" />
+    <path
+       style="fill-opacity:1"
+       d="m 510,380 0,20 -10,0 0,10 20,0 0,10 20,0 0,-10 -10,0 0,-10 -10,0 0,-20 -10,0 z"
+       id="rect4560"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill-opacity:1"
+       id="ceiling-trapdoor"
+       width="6"
+       height="5"
+       x="391"
+       y="262"
+       class="feature" />
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="512.16217"
+       y="444.17117"
+       id="text3055"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3057"
+         x="512.16217"
+         y="444.17117">Good Room</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="343.58109"
+       y="54.644142"
+       id="text3059"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3061"
+         x="343.58109"
+         y="54.644142">Giant Lightning Room</tspan></text>
+  </g>
+</svg>
