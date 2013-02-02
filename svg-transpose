@@ -217,8 +217,25 @@ def do_tr(n,dx,dy):
     if n.nodeName == 'pattern':
         return
     if n.attributes:
-#        if args.verbose:
-#            print n.nodeName,n.getAttribute("id")
+        if args.verbose:
+            print n.nodeName,n.getAttribute("id")
+        a = n.attributes.getNamedItem('inkscape:label')
+        print "a",a
+        if a and a.value == '':
+            if args.verbose:
+                print "removing label",a
+            n.attributes.removeNamedItem('inkscape:label')
+        a1 = n.attributes.getNamedItem('class')
+        a2 = n.attributes.getNamedItem('style')
+        print "a1",a1,"a2",a2
+        if a1:
+            print a1.specified,a1.value
+        if a2:
+            print a2.specified,a2.value
+        if a1 and a1.value != '' and a2 and a2.value != '':
+            if args.verbose:
+                print "removing style",a2.value,"for class",a1.value
+            n.removeAttribute('style')
         t = n.getAttribute('transform')
         if t is not None:
             r = re.match(r'translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
