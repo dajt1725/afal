@@ -263,10 +263,11 @@ def do_tr(n,dx,dy):
                 d_new = list_to_path(l)
                 print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
                 d = d_new
-            fixd1.dx = dx
-            fixd1.dy = dy
-            d = re.sub(r'^(m\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, d)
-	    d = re.sub(r'(M|L)((\s*-?\d+\.?\d*(\s+|,)-?\d+\.?\d*)*)', fixd2, d)
+            else:
+                fixd1.dx = dx
+                fixd1.dy = dy
+                d = re.sub(r'^(m\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, d)
+	        d = re.sub(r'(M|L)((\s*-?\d+\.?\d*(\s+|,)-?\d+\.?\d*)*)', fixd2, d)
             n.setAttribute('d',d)
 #    elif args.verbose:
 #        print n.nodeName
