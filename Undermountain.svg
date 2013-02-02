@@ -7,13 +7,12 @@
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   height="1250"
+   height="1500"
    id="svg2"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="um1.svg"
+   sodipodi:docname="Undermountain.svg"
    version="1.1"
    width="1400">
   <defs
@@ -176,28 +175,6 @@
         stroke-dasharray:none
       }
     </style>
-    <linearGradient
-       id="pattern-linear-pit"
-       inkscape:collect="always">
-      <stop
-         id="stop4167"
-         offset="0"
-         style="stop-color:#000000;stop-opacity:1;" />
-      <stop
-         id="stop4169"
-         offset="1"
-         style="stop-color:#000000;stop-opacity:0;" />
-    </linearGradient>
-    <radialGradient
-       cx="80"
-       cy="645"
-       fx="80"
-       fy="745"
-       gradientUnits="userSpaceOnUse"
-       id="pattern-pit"
-       inkscape:collect="always"
-       r="10.25"
-       xlink:href="#pattern-linear-pit" />
   </defs>
   <sodipodi:namedview
      bordercolor="#666666"
@@ -207,20 +184,20 @@
      fit-margin-right="20"
      fit-margin-top="20"
      id="base"
-     inkscape:current-layer="um1m"
-     inkscape:cx="389.49571"
-     inkscape:cy="694.44111"
+     inkscape:current-layer="um-l1-m"
+     inkscape:cx="307.50529"
+     inkscape:cy="1310.1395"
      inkscape:document-units="px"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:window-height="1090"
+     inkscape:window-height="1171"
      inkscape:window-maximized="0"
-     inkscape:window-width="1010"
-     inkscape:window-x="905"
-     inkscape:window-y="6"
+     inkscape:window-width="1252"
+     inkscape:window-x="664"
+     inkscape:window-y="0"
      inkscape:zoom="1"
      pagecolor="#ffffff"
-     showborder="false"
+     showborder="true"
      showgrid="true">
     <inkscape:grid
        color="#5555ff"
@@ -247,56 +224,130 @@
     </rdf:RDF>
   </metadata>
   <g
-     id="layer1"
+     id="um-l1-l"
      inkscape:groupmode="layer"
      inkscape:label="Undermountain L1 lower"
      style="display:inline">
+    <!-- Corridors, rooms, features, walls, doors, names -->
+    <!-- Corridors start here -->
     <rect
        id="rect3523"
        width="20"
        height="10"
        x="1250"
        y="0"
+       class="corr"
+       style="fill:#edd567;stroke:none" />
+    <rect
+       id="rect4293"
+       width="10"
+       height="10"
+       x="1230"
+       y="-10"
+       class="corr"
+       style="fill:#edd567;stroke:none" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect4295"
+       width="10"
+       height="20"
+       x="1230"
+       y="40"
+       class="corr" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect4297"
+       width="10"
+       height="10"
+       x="1240"
+       y="60"
+       class="corr" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect4299"
+       width="10"
+       height="10"
+       x="1160"
+       y="90"
+       class="corr" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3519"
+       width="10"
+       height="10"
+       x="1160"
+       y="30"
+       class="corr" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3521"
+       width="10"
+       height="10"
+       x="1190"
+       y="30"
+       class="corr" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect3524"
+       width="10"
+       height="10"
+       x="1190"
+       y="60"
        class="corr" />
     <path
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       d="m 1210,90 0,20 -30,0 0,10 30,0 0,30 10,0 5,0 0,-10 -5,0 0,-50 -10,0 z"
+       id="rect3526"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <!-- Rooms start here -->
+    <path
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       d="M 1200 60 L 1200 69.90625 L 1190 69.90625 L 1190 90 L 1240 90 L 1240 69.90625 L 1229 69.90625 L 1229 60 L 1200 60 z "
-       id="rect3518" />
+       d="m 1200,60 0,9.90625 -10,0 0,20.09375 50,0 0,-20.09375 -10,0.09375 0,-10 z"
+       id="rect3518"
+       class="room"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccc" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect3514"
+       id="cursd-room"
        width="30"
        height="50"
        x="1320"
-       y="-10" />
+       y="-10"
+       class="room" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect3512"
+       id="floor-doory-room"
        width="20"
        height="31"
        x="1270"
-       y="-10" />
+       y="-10"
+       class="room" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect3510"
+       id="floor-fence-room"
        width="30"
        height="40"
        x="1220"
-       y="0" />
+       y="0"
+       class="room" />
     <rect
        style="fill:#edb667;fill-opacity:1;stroke:none"
-       id="rect3508"
+       id="floor-seascape-room"
        width="30"
        height="30"
        x="1150"
-       y="100" />
+       y="100"
+       class="room" />
+    <!-- Features start here -->
     <path
        class="stairs-ew"
        d="m 1290,10 30,3 0,4 -30,3 z"
        id="stairs-cursd"
        inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ew);stroke:none"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
     <rect
        class="feature"
        height="30"
@@ -316,24 +367,76 @@
     <path
        class="stairs-ew"
        d="m 1170,33 20,-3 0,10 -20,-3 z"
-       id="stairs-d"
+       id="stairs-cursd-e"
        inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ew);stroke:none"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
     <path
        class="stairs-ns"
        d="m 1193,40 3,0 4,20 -10,0 z"
-       id="stairs-c"
+       id="stairs-cursd-d"
        inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ns);stroke:none"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ns);stroke:none" />
     <path
        class="stairs-ew"
-       d="m 1180,60 10,3 0,4 -10,3 z"
-       id="stairs-e"
+       d="m 1170,60 20,3 0,4 -20,3 z"
+       id="stairs-cursd-c-l"
        inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ew);stroke:none"
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
+    <path
+       class="stairs-ns"
+       d="m 1160,40 10,0 -3,20 -4,0 z"
+       id="stairs-cursd-f"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ns);stroke:none" />
+    <path
+       class="stairs-ns"
+       d="m 1160,70 10,0 -3,20 -4,0 z"
+       id="stairs-cursd-g"
+       inkscape:connector-curvature="0"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        sodipodi:nodetypes="ccccc" />
+    <path
+       class="pit"
+       d="m 1230,60 h 10 v 10 h -10 V 60 z"
+       id="feature-pit"
+       inkscape:connector-curvature="0"
+       style="fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       class="feature"
+       d="m 1237,15 h 13 m -30,0 h 13"
+       id="feature-fence-b"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px" />
+    <path
+       class="feature"
+       d="m 1237,25 h 13 m -30,0 h 13"
+       id="feature-fence-a"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px" />
+    <path
+       class="feature"
+       d="M 1320,10 V 20"
+       id="feature-trapped-step"
+       inkscape:connector-curvature="0"
+       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px" />
+    <rect
+       class="feature"
+       height="1"
+       id="feature-seascape-button"
+       width="1"
+       x="1169"
+       y="129"
+       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px">
+      <desc
+         id="desc3385">Raises the floor so one can get at the secret doors, but can't leave through the north exit.</desc>
+    </rect>
+    <!-- Walls start here -->
     <path
        class="wall"
        d="m 1180,70 h 20 V 30"
@@ -345,8 +448,8 @@
        d="m 1180,60 10,0 0,-20 -20,0 0,60 10,0 0,12"
        id="path3316"
        inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       sodipodi:nodetypes="ccccccc" />
+       sodipodi:nodetypes="ccccccc"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
        d="m 1200,30 h -40 v 70 h -10 v 12"
@@ -366,6 +469,40 @@
        id="path3322"
        inkscape:connector-curvature="0"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1180,112 v -2 h 30 V 90 h -20 V 70 h 10 V 60 h 30 V 40 h -10 V 8"
+       id="path3336"
+       sodipodi:nodetypes="cccccccccccc"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 1220,2 V 0 h 10 v -10"
+       id="path3338"
+       sodipodi:nodetypes="cccc"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="M 1240,-10 V 0 h 10 V 2 0 h 20 v 2 -12 h 20 v 22 -2 h 30 v -20 h 30 V 0 h 10 v 30 h -10 v 10 h -30 V 20 h -30 v -2 2 h -20 V 8 10 h -20 V 8 40 h -10 v 20 h 10"
+       id="path3340"
+       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1250,70 h -10 v 20 h -20 v 50 h 5"
+       id="path3344"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <path
+       class="wall"
+       d="m 1225,150 h -15 v -30 h -30 v -2"
+       id="path3346"
+       inkscape:connector-curvature="0"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+    <!-- Doors start here -->
     <rect
        class="sec-door"
        height="6"
@@ -390,59 +527,6 @@
        x="1162"
        y="129"
        style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
-    <path
-       class="stairs-ns"
-       d="m 1160,40 10,0 -3,20 -4,0 z"
-       id="stairs-1"
-       inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ns);stroke:none"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="stairs-ns"
-       d="m 1160,70 10,0 -3,20 -4,0 z"
-       id="stairs-2"
-       inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ns);stroke:none"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="wall"
-       d="m 1180,112 v -2 h 30 V 90 h -20 V 70 h 10 V 60 h 30 V 40 h -10 V 8"
-       id="path3336"
-       sodipodi:nodetypes="cccccccccccc"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <path
-       class="wall"
-       d="M 1220,2 V 0 h 10 v -10"
-       id="path3338"
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <path
-       class="wall"
-       d="M 1240,-10 V 0 h 10 V 2 0 h 20 v 2 -12 h 20 v 22 -2 h 30 v -20 h 30 V 0 h 10 v 30 h -10 v 10 h -30 V 20 h -30 v -2 2 h -20 V 8 10 h -20 V 8 40 h -10 v 20 h 10"
-       id="path3340"
-       sodipodi:nodetypes="ccccccccccccccccccccccccccccccccc"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <path
-       class="pit"
-       d="m 1230,60 h 10 v 10 h -10 V 60 z"
-       id="feature-pit"
-       inkscape:connector-curvature="0"
-       style="fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
-    <path
-       class="wall"
-       d="m 1250,70 h -10 v 20 h -20 v 50 h 5"
-       id="path3344"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <path
-       class="wall"
-       d="m 1225,150 h -15 v -30 h -30 v -2"
-       id="path3346"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <rect
        class="door"
        height="6"
@@ -475,26 +559,6 @@
        x="1219"
        y="2"
        style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
-    <path
-       class="feature"
-       d="m 1237,15 h 13 m -30,0 h 13"
-       id="feature-fence-b"
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px" />
-    <path
-       class="feature"
-       d="m 1237,25 h 13 m -30,0 h 13"
-       id="feature-fence-a"
-       sodipodi:nodetypes="cccc"
-       inkscape:connector-curvature="0"
-       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px" />
-    <path
-       class="feature"
-       d="M 1320,10 V 20"
-       id="feature-trapped-step"
-       inkscape:connector-curvature="0"
-       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px" />
     <rect
        class="door"
        height="6"
@@ -559,161 +623,16 @@
        x="1282"
        y="19"
        style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
-    <rect
-       class="feature"
-       height="1"
-       id="feature-button"
-       width="1"
-       x="1169"
-       y="129"
-       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px">
-      <desc
-         id="desc3385">Raises the floor so one can get at the secret doors, but can't leave through the north exit.</desc>
-    </rect>
-    <rect
-       id="rect4293"
-       width="10"
-       height="10"
-       x="1230"
-       y="-10"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4295"
-       width="10"
-       height="20"
-       x="1230"
-       y="40"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4297"
-       width="10"
-       height="10"
-       x="1240"
-       y="60"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4299"
-       width="10"
-       height="10"
-       x="1160"
-       y="90"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3519"
-       width="10"
-       height="10"
-       x="1160"
-       y="30"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3521"
-       width="10"
-       height="10"
-       x="1190"
-       y="30"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3524"
-       width="10"
-       height="10"
-       x="1190"
-       y="60"
-       class="corr" />
-    <path
-       style="fill-opacity:1"
-       d="m 1210,90 0,20 -30,0 0,10 30,0 0,30 10,0 5,0 0,-10 -5,0 0,-50 -10,0 z"
-       id="rect3526"
-       class="corr"
-       inkscape:connector-curvature="0" />
+    <!-- Names start here -->
+    <!-- Unclassified start here -->
   </g>
   <g
-     id="um1m"
+     id="um-l1-m"
      inkscape:groupmode="layer"
      inkscape:label="Undermountain L1 Main"
      style="display:inline">
-    <rect
-       style="fill-opacity:1"
-       id="rect4102"
-       width="10"
-       height="20"
-       x="340"
-       y="560"
-       class="corr" />
-    <rect
-       style="fill:#edd567;fill-opacity:1;stroke:none"
-       id="rect4098"
-       width="10"
-       height="25.036777"
-       x="350"
-       y="594.9632"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4100"
-       width="20"
-       height="10"
-       x="330"
-       y="580"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4662"
-       width="10"
-       height="80"
-       x="330"
-       y="490"
-       class="corr" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4096"
-       width="20"
-       height="25"
-       x="330"
-       y="590"
-       class="room" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3529"
-       width="25"
-       height="20"
-       x="360"
-       y="490"
-       class="room" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3527"
-       width="28"
-       height="35"
-       x="385"
-       y="480"
-       class="room" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3531"
-       width="35"
-       height="30"
-       x="370"
-       y="560"
-       class="room" />
-    <path
-       class="stairs-ew"
-       d="m 1170,60 10,3 0,4 -10,3 z"
-       id="stairs"
-       inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ew);stroke:none"
-       sodipodi:nodetypes="ccccc" />
-    <path
-       class="pit"
-       d="m 1160,60 h 10 v 10 h -10 V 60 z"
-       id="pit-robot-lobster"
-       inkscape:connector-curvature="0"
-       style="fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <!-- Corridors, rooms, features, walls, doors, names -->
+    <!-- Corridors start here -->
     <rect
        class="corr"
        height="10"
@@ -723,14 +642,37 @@
        y="60"
        style="fill:#edd567;stroke:none" />
     <path
-       class="stairs-ew"
-       d="m 1140,60 20,3 0,4 -20,3 z"
-       id="stairs-b"
-       inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ew);stroke:none"
-       sodipodi:nodetypes="ccccc" />
-    <!-- Corridors, rooms, features, walls, doors, names -->
-    <!-- Corridors start here -->
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       d="m 330,440 0,10 0,30 -10,0 0,10 10,0 0,80 10,0 0,10 -10,0 0,10 20,0 0,-10 0,-20 -10,0 0,-70 -5,0 0,-40 60,0 0,-10 -65,0 z"
+       id="rect3569"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       d="m 345,480 0,10 -5,0 0,10 20,0 0,-10 25,0 0,-10 -40,0 z"
+       id="rect3562"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       d="m 375,510 0,10 -35,0 0,10 30,0 0,30 10,0 0,-20 30,0 0,10 29,0 0,-10 -19,0 0,-10 -20,0 0,-10 -15,0 0,-10 -10,0 z"
+       id="rect3546"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       d="m 290,520 0,85 0,10 10,0 0,9 10,0 0,-9 20,0 0,-10 -30,0 0,-85 -10,0 z"
+       id="rect3536"
+       class="corr"
+       inkscape:connector-curvature="0" />
+    <rect
+       style="fill:#edd567;fill-opacity:1;stroke:none"
+       id="rect4098"
+       width="10"
+       height="25.036777"
+       x="350"
+       y="594.9632"
+       class="corr" />
     <rect
        class="corr"
        height="10"
@@ -1468,28 +1410,25 @@
        style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
-       height="10"
+       height="10.000003"
        id="rect5640"
        width="40"
        x="810"
-       y="305"
-       style="fill:#edd567;stroke:none" />
+       y="306" />
     <rect
        class="corr"
-       height="10"
+       height="11.000003"
        id="rect5638"
        width="5"
        x="845"
-       y="295"
-       style="fill:#edd567;stroke:none" />
+       y="295" />
     <rect
        class="corr"
        height="40"
        id="rect5636"
        width="10"
        x="840"
-       y="230"
-       style="fill:#edd567;stroke:none" />
+       y="230" />
     <rect
        class="corr"
        height="10"
@@ -1563,15 +1502,10 @@
        style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m 560,150 v 100 h 10 30 v 70 h -40 v 10 h 40 v 30 h -10 v 30 h -30 v -10 -10 h -10 v 10 H 450 440 330 v 10 h 110 v 20 h -75 v 10 10 h -60 v -10 h -10 v 10 h -5 v 10 30 h 10 20 10 v -30 h 35 15 v -20 h 60 v 20 h 10 v -20 h 20 v -10 h -20 v -20 h 90 v 10 h 60 v 10 h 10 v -20 h -10 v -20 h 10 V 220 h -10 -30 v -30 h 10 v -10 h -10 v -30 h -10 z m 10,80 h 30 v 10 H 570 V 230 z M 300,440 h 20 v 20 h -20 v -20 z"
+       d="m 560,150 0,100 40,0 0,70 -40,0 0,10 40,0 0,30 -10,0 0,30 -30,0 0,-20 -10,0 0,10 -100,0 -10,0 -110,0 0,10 110,0 0,20 -75,0 0,20 -60,0 0,-10 -10,0 0,10 -5,0 0,40 10,0 30,0 0,-30 50,0 0,-20 60,0 0,20 10,0 0,-20 20,0 0,-10 -20,0 0,-20 90,0 0,10 60,0 0,10 10,0 0,-20 -10,0 0,-20 10,0 0,-150 -40,0 0,-30 10,0 0,-10 -10,0 0,-30 z m 10,80 30,0 0,10 -30,0 z m -270,210 20,0 0,20 -20,0 z"
        id="rect5553"
        inkscape:connector-curvature="0"
-       style="fill:#edd567;stroke:none" />
-    <path
-       class="corr"
-       d="m 330,440 v 10 40 h 5 v -40 h 60 v -10 h -65 z"
-       id="floor-corr-mirrors"
-       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
        style="fill:#edd567;stroke:none" />
     <rect
        class="corr"
@@ -1723,10 +1657,11 @@
        style="fill:#edd567;stroke:none" />
     <path
        class="corr"
-       d="m 590,430 v 40 h -30 v -20 h -90 v 20 h 80 v 10 h 40 10 v -50 h -10 z"
+       d="m 590,430 0,40 -30,0 0,-20 -90,0 0,20 80,0 0,10 50,0 0,-50 z"
        id="floor-corr-1"
        inkscape:connector-curvature="0"
-       style="fill:#edd567;stroke:none" />
+       style="fill:#edd567;stroke:none"
+       sodipodi:nodetypes="ccccccccccc" />
     <rect
        class="corr"
        height="10"
@@ -1767,6 +1702,38 @@
        sodipodi:nodetypes="csssc"
        style="fill:#edb667;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
     <!-- Rooms start here -->
+    <rect
+       style="fill:#edb667;fill-opacity:1;stroke:none"
+       id="rect4096"
+       width="20"
+       height="25"
+       x="330"
+       y="590"
+       class="room" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;stroke:none"
+       id="rect3529"
+       width="25"
+       height="20"
+       x="360"
+       y="490"
+       class="room" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;stroke:none"
+       id="rect3527"
+       width="28"
+       height="35"
+       x="385"
+       y="480"
+       class="room" />
+    <rect
+       style="fill:#edb667;fill-opacity:1;stroke:none"
+       id="rect3531"
+       width="35"
+       height="30"
+       x="370"
+       y="560"
+       class="room" />
     <rect
        class="room"
        height="110"
@@ -1811,8 +1778,8 @@
        class="room"
        height="30"
        id="rect5648"
-       width="10"
-       x="805"
+       width="10.999988"
+       x="804"
        y="230"
        style="fill:#edb667;stroke:none" />
     <rect
@@ -1821,24 +1788,21 @@
        id="rect5646"
        width="10"
        x="815"
-       y="230"
-       style="fill:#edb667;stroke:none" />
+       y="230" />
     <rect
        class="room"
        height="25"
        id="rect5644"
        width="35"
        x="815"
-       y="270"
-       style="fill:#edb667;stroke:none" />
+       y="270" />
     <rect
        class="room"
-       height="55"
+       height="56.000004"
        id="rect5642"
        width="40"
        x="770"
-       y="260"
-       style="fill:#edb667;stroke:none" />
+       y="260" />
     <rect
        class="room"
        height="30"
@@ -1981,6 +1945,26 @@
        style="fill:#ed7767;stroke:none" />
     <!-- Features start here -->
     <path
+       class="stairs-ew"
+       d="m 1170,60 20,3 0,4 -20,3 z"
+       id="stairs-cursd-c-u"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
+    <path
+       class="pit"
+       d="m 1160,60 h 10 v 10 h -10 V 60 z"
+       id="pit-robot-lobster"
+       inkscape:connector-curvature="0"
+       style="fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+    <path
+       class="stairs-ew"
+       d="m 1140,60 20,3 0,4 -20,3 z"
+       id="stairs-cursd-b"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ew);stroke:none" />
+    <path
        class="bars"
        d="M 495,440 V 410"
        id="bars-1"
@@ -2043,14 +2027,14 @@
     <path
        class="stairs-ns"
        d="m 1130,40 10,0 -3,20 -4,0 z"
-       id="stairs-z2"
+       id="stairs-cursd-a"
        inkscape:connector-curvature="0"
-       style="fill:url(#pattern-stairs-ns);stroke:none"
-       sodipodi:nodetypes="ccccc" />
+       sodipodi:nodetypes="ccccc"
+       style="fill:url(#pattern-stairs-ns);stroke:none" />
     <circle
        cx="610"
        cy="135"
-       d="m611 135c0 0.55228-0.4477153 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.5522847 0 1 0.44772 1 1z"
+       d="m 611,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-1"
        r="1"
        sodipodi:cx="610"
@@ -2060,7 +2044,7 @@
     <circle
        cx="610"
        cy="145"
-       d="m611 145c0 0.55228-0.4477153 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.5522847 0 1 0.44772 1 1z"
+       d="m 611,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-2"
        r="1"
        sodipodi:cx="610"
@@ -2070,7 +2054,7 @@
     <circle
        cx="600"
        cy="135"
-       d="m601 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 601,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-3"
        r="1"
        sodipodi:cx="600"
@@ -2080,7 +2064,7 @@
     <circle
        cx="600"
        cy="145"
-       d="m601 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 601,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-4"
        r="1"
        sodipodi:cx="600"
@@ -2090,7 +2074,7 @@
     <circle
        cx="590"
        cy="135"
-       d="m591 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 591,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-5"
        r="1"
        sodipodi:cx="590"
@@ -2100,7 +2084,7 @@
     <circle
        cx="590"
        cy="145"
-       d="m591 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 591,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-6"
        r="1"
        sodipodi:cx="590"
@@ -2110,7 +2094,7 @@
     <circle
        cx="580"
        cy="135"
-       d="m581 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 581,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-7"
        r="1"
        sodipodi:cx="580"
@@ -2120,7 +2104,7 @@
     <circle
        cx="580"
        cy="145"
-       d="m581 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 581,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-8"
        r="1"
        sodipodi:cx="580"
@@ -2130,7 +2114,7 @@
     <circle
        cx="570"
        cy="135"
-       d="m571 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 571,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-9"
        r="1"
        sodipodi:cx="570"
@@ -2140,7 +2124,7 @@
     <circle
        cx="570"
        cy="145"
-       d="m571 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 571,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-10"
        r="1"
        sodipodi:cx="570"
@@ -2150,7 +2134,7 @@
     <circle
        cx="560"
        cy="135"
-       d="m561 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 561,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-11"
        r="1"
        sodipodi:cx="560"
@@ -2160,7 +2144,7 @@
     <circle
        cx="560"
        cy="145"
-       d="m561 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 561,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-12"
        r="1"
        sodipodi:cx="560"
@@ -2170,7 +2154,7 @@
     <circle
        cx="550"
        cy="135"
-       d="m551 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 551,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-13"
        r="1"
        sodipodi:cx="550"
@@ -2180,7 +2164,7 @@
     <circle
        cx="550"
        cy="145"
-       d="m551 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 551,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-14"
        r="1"
        sodipodi:cx="550"
@@ -2190,7 +2174,7 @@
     <circle
        cx="540"
        cy="135"
-       d="m541 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 541,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-15"
        r="1"
        sodipodi:cx="540"
@@ -2200,7 +2184,7 @@
     <circle
        cx="540"
        cy="145"
-       d="m541 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 541,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-16"
        r="1"
        sodipodi:cx="540"
@@ -2210,7 +2194,7 @@
     <circle
        cx="530"
        cy="135"
-       d="m531 135c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 531,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-17"
        r="1"
        sodipodi:cx="530"
@@ -2220,7 +2204,7 @@
     <circle
        cx="530"
        cy="145"
-       d="m531 145c0 0.55228-0.447715 1-1 1-0.552285 0-1-0.44772-1-1 0-0.55228 0.447715-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 531,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-18"
        r="1"
        sodipodi:cx="530"
@@ -2230,7 +2214,7 @@
     <circle
        cx="520"
        cy="135"
-       d="m521 135c0 0.55228-0.447715 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 521,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-19"
        r="1"
        sodipodi:cx="520"
@@ -2240,7 +2224,7 @@
     <circle
        cx="520"
        cy="145"
-       d="m521 145c0 0.55228-0.447715 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.552285 0 1 0.44772 1 1z"
+       d="m 521,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-20"
        r="1"
        sodipodi:cx="520"
@@ -2250,7 +2234,7 @@
     <circle
        cx="510"
        cy="135"
-       d="m511 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 511,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-21"
        r="1"
        sodipodi:cx="510"
@@ -2260,7 +2244,7 @@
     <circle
        cx="510"
        cy="145"
-       d="m511 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 511,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-22"
        r="1"
        sodipodi:cx="510"
@@ -2270,7 +2254,7 @@
     <circle
        cx="500"
        cy="135"
-       d="m501 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 501,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-23"
        r="1"
        sodipodi:cx="500"
@@ -2280,7 +2264,7 @@
     <circle
        cx="500"
        cy="145"
-       d="m501 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 501,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-24"
        r="1"
        sodipodi:cx="500"
@@ -2290,7 +2274,7 @@
     <circle
        cx="490"
        cy="135"
-       d="m491 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 491,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-25"
        r="1"
        sodipodi:cx="490"
@@ -2300,7 +2284,7 @@
     <circle
        cx="490"
        cy="145"
-       d="m491 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 491,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-26"
        r="1"
        sodipodi:cx="490"
@@ -2310,7 +2294,7 @@
     <circle
        cx="480"
        cy="135"
-       d="m481 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 481,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-27"
        r="1"
        sodipodi:cx="480"
@@ -2320,7 +2304,7 @@
     <circle
        cx="480"
        cy="145"
-       d="m481 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 481,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-28"
        r="1"
        sodipodi:cx="480"
@@ -2330,7 +2314,7 @@
     <circle
        cx="470"
        cy="135"
-       d="m471 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 471,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-29"
        r="1"
        sodipodi:cx="470"
@@ -2340,7 +2324,7 @@
     <circle
        cx="470"
        cy="145"
-       d="m471 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 471,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-30"
        r="1"
        sodipodi:cx="470"
@@ -2350,7 +2334,7 @@
     <circle
        cx="460"
        cy="135"
-       d="m461 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 461,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-31"
        r="1"
        sodipodi:cx="460"
@@ -2360,7 +2344,7 @@
     <circle
        cx="460"
        cy="145"
-       d="m461 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 461,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-32"
        r="1"
        sodipodi:cx="460"
@@ -2370,7 +2354,7 @@
     <circle
        cx="450"
        cy="135"
-       d="m451 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 451,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-33"
        r="1"
        sodipodi:cx="450"
@@ -2380,7 +2364,7 @@
     <circle
        cx="450"
        cy="145"
-       d="m451 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 451,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-34"
        r="1"
        sodipodi:cx="450"
@@ -2390,7 +2374,7 @@
     <circle
        cx="440"
        cy="135"
-       d="m441 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 441,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-35"
        r="1"
        sodipodi:cx="440"
@@ -2400,7 +2384,7 @@
     <circle
        cx="440"
        cy="145"
-       d="m441 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 441,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-36"
        r="1"
        sodipodi:cx="440"
@@ -2410,7 +2394,7 @@
     <circle
        cx="430"
        cy="135"
-       d="m431 135c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 431,135 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-37"
        r="1"
        sodipodi:cx="430"
@@ -2420,7 +2404,7 @@
     <circle
        cx="430"
        cy="145"
-       d="m431 145c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 431,145 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-heroes-38"
        r="1"
        sodipodi:cx="430"
@@ -2430,7 +2414,7 @@
     <circle
        cx="400"
        cy="130"
-       d="m401 130c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 401,130 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-hallway-1"
        r="1"
        sodipodi:cx="400"
@@ -2440,7 +2424,7 @@
     <circle
        cx="390"
        cy="130"
-       d="m391 130c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 391,130 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-hallway-2"
        r="1"
        sodipodi:cx="390"
@@ -2450,7 +2434,7 @@
     <circle
        cx="380"
        cy="130"
-       d="m381 130c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 381,130 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-hallway-3"
        r="1"
        sodipodi:cx="380"
@@ -2460,7 +2444,7 @@
     <circle
        cx="370"
        cy="130"
-       d="m371 130c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 371,130 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-hallway-4"
        r="1"
        sodipodi:cx="370"
@@ -2470,7 +2454,7 @@
     <circle
        cx="360"
        cy="130"
-       d="m361 130c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z"
+       d="m 361,130 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-hallway-5"
        r="1"
        sodipodi:cx="360"
@@ -2480,7 +2464,7 @@
     <circle
        cx="445"
        cy="444"
-       d="m446 444c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 446,444 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-1"
        r="1"
        sodipodi:cx="445"
@@ -2490,7 +2474,7 @@
     <circle
        cx="465"
        cy="451"
-       d="m466 451c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 466,451 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-2"
        r="1"
        sodipodi:cx="465"
@@ -2500,7 +2484,7 @@
     <circle
        cx="464.52298"
        cy="469.26093"
-       d="m465.522989 469.26092c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 465.52298,469.26093 c 0,0.55228 -0.44772,1 -1,1 -0.55229,0 -1,-0.44772 -1,-1 0,-0.55229 0.44771,-1 1,-1 0.55228,0 1,0.44771 1,1 z"
        id="column-null-magic-3"
        r="1"
        sodipodi:cx="464.52298"
@@ -2510,7 +2494,7 @@
     <circle
        cx="445"
        cy="476"
-       d="m446 476c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 446,476 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-4"
        r="1"
        sodipodi:cx="445"
@@ -2520,7 +2504,7 @@
     <circle
        cx="320"
        cy="360"
-       d="m321.5 360c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z"
+       d="m 321.5,360 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z"
        id="column-5col-room-1"
        r="1.5"
        sodipodi:cx="320"
@@ -2530,7 +2514,7 @@
     <circle
        cx="310"
        cy="350"
-       d="m311.5 350c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z"
+       d="m 311.5,350 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z"
        id="column-5col-room-2"
        r="1.5"
        sodipodi:cx="310"
@@ -2540,7 +2524,7 @@
     <circle
        cx="330"
        cy="350"
-       d="m331.5 350c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z"
+       d="m 331.5,350 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z"
        id="column-5col-room-3"
        r="1.5"
        sodipodi:cx="330"
@@ -2550,7 +2534,7 @@
     <circle
        cx="310"
        cy="370"
-       d="m311.5 370c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z"
+       d="m 311.5,370 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z"
        id="column-5col-room-4"
        r="1.5"
        sodipodi:cx="310"
@@ -2560,7 +2544,7 @@
     <circle
        cx="330"
        cy="370"
-       d="m331.5 370c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z"
+       d="m 331.5,370 c 0,0.82843 -0.67157,1.5 -1.5,1.5 -0.82843,0 -1.5,-0.67157 -1.5,-1.5 0,-0.82843 0.67157,-1.5 1.5,-1.5 0.82843,0 1.5,0.67157 1.5,1.5 z"
        id="column-5col-room-5"
        r="1.5"
        sodipodi:cx="330"
@@ -2570,7 +2554,7 @@
     <circle
        cx="455"
        cy="446.58649"
-       d="m456 446.5864941c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 456,446.58649 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55229 0.44772,-1 1,-1 0.55228,0 1,0.44771 1,1 z"
        id="column-null-magic-1-6"
        r="1"
        sodipodi:cx="455"
@@ -2580,7 +2564,7 @@
     <circle
        cx="455"
        cy="472.47815"
-       d="m456 472.478161c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 456,472.47815 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55229 0.44772,-1 1,-1 0.55228,0 1,0.44771 1,1 z"
        id="column-null-magic-1-7"
        r="1"
        sodipodi:cx="455"
@@ -2590,7 +2574,7 @@
     <circle
        cx="434"
        cy="470"
-       d="m435 470c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 435,470 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-1-8"
        r="1"
        sodipodi:cx="434"
@@ -2600,7 +2584,7 @@
     <circle
        cx="434"
        cy="451"
-       d="m435 451c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 435,451 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-1-2"
        r="1"
        sodipodi:cx="434"
@@ -2610,7 +2594,7 @@
     <circle
        cx="450"
        cy="451"
-       d="m451 451c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 451,451 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-1-9"
        r="1"
        sodipodi:cx="450"
@@ -2620,7 +2604,7 @@
     <circle
        cx="450"
        cy="467"
-       d="m451 467c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 451,467 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-1-63"
        r="1"
        sodipodi:cx="450"
@@ -2630,7 +2614,7 @@
     <circle
        cx="450"
        cy="458"
-       d="m451 458c0 0.5523-0.44772 1-1 1-0.55228 0-1-0.4477-1-1 0-0.5523 0.44772-1 1-1 0.55228 0 1 0.4477 1 1z"
+       d="m 451,458 c 0,0.55228 -0.44772,1 -1,1 -0.55228,0 -1,-0.44772 -1,-1 0,-0.55228 0.44772,-1 1,-1 0.55228,0 1,0.44772 1,1 z"
        id="column-null-magic-1-9-1"
        r="1"
        sodipodi:cx="450"
@@ -2685,7 +2669,8 @@
        sodipodi:cy="645"
        sodipodi:rx="10"
        sodipodi:ry="10"
-       style="fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
+       style="fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       d="m 90,645 c 0,5.52285 -4.477153,10 -10,10 -5.522847,0 -10,-4.47715 -10,-10 0,-5.52285 4.477153,-10 10,-10 5.522847,0 10,4.47715 10,10 z" />
     <path
        class="feature"
        d="m 360,1090 v 10"
@@ -2716,17 +2701,45 @@
        x="95"
        y="1090"
        style="fill:#008000;stroke:#ffff00;stroke-width:0.5px" />
+    <rect
+       style="fill-opacity:1"
+       id="dexter-dance-lever"
+       width="2"
+       height="2"
+       x="490"
+       y="498" />
+    <path
+       d="m 495,490 0,-30 -50,0 0,135 -20,0 0,30 -80,0 0,20 -10,0 0,90 10,0 0,210 -20,103 0,27 20,0 0,50 -40,0 0,10 -10,0 0,-10 -40,0 0,30 -50,0 0,45"
+       id="dexter-dance-path"
+       inkscape:connector-curvature="0"
+       class="feature"
+       style="fill:none;stroke:#ffff00;stroke-width:0.5px"
+       sodipodi:nodetypes="cccccccccccccccccccccccc" />
+    <rect
+       id="feature-demon-gate"
+       width="2"
+       height="5"
+       x="494"
+       y="423"
+       class="feature" />
+    <path
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
+       d="m 200,1170 10,0 -3,30 -4,0 z"
+       id="stairs-dexter-a"
+       class="stairs-ns"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc" />
     <!-- Walls start here -->
     <path
        class="wall"
-       d="m 600,410 v 20 h -10 v 40 h -30 v -20 h -42 2 v -40 h -50 v 2 -2 h -20 v -20 h 90 v 10 h 60 v 10 h 2 z M 460,520 v -20 h -10 v -20 l 20,-10 h 22 -2 v 10 h -20 v 20 h 30 v -30 h -2 52 v 10 h 50 v -30 h 40 v -40 h -32 2 v -20 h -10 v -20 c 10,0 10,0 10,0 V 220 h -22 2 v -20 h -20 v 2 -12 h 10 v 10 h 12 -2 v 10 h 10 v -10 h -2 12 v -40 h -30 v 20 h -10 v -30 h -2 52 v -2 62 l 20,20 h 12 -2 v 50 h -20 v 110 h 10 v 10 h 40 v -10 h 10 V 280 h -20 v -50 h -2 12 l 20,-20 v -12 2 h 10 v 80 h 10 v 10"
+       d="m 600,410 0,20 -10,0 0,40 -30,0 0,-20 -42,0 2,0 0,-40 -50,0 0,2 0,-2 -20,0 0,-20 90,0 0,10 60,0 0,10 2,0 z m -140,110 0,-20 -10,0 0,-20 20,-10 22,0 -2,0 0,10 -20,0 0,20 30,0 0,-30 -2,0 52,0 0,10 50,0 0,-30 40,0 0,-40 -32,0 2,0 0,-20 -10,0 0,-20 10,0 0,-150 -22,0 2,0 0,-20 -20,0 0,2 0,-12 10,0 0,10 12,0 -2,0 0,10 10,0 0,-10 -2,0 12,0 0,-40 -30,0 0,20 -10,0 0,-30 -2,0 52,0 0,-2 0,62 20,20 12,0 -2,0 0,50 -20,0 0,110 10,0 0,10 40,0 0,-10 10,0 0,-110 -20,0 0,-50 -2,0 12,0 20,-20 0,-12 0,2 10,0 0,80 10,0 0,10"
        id="walls-shield-room"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
-       d="m 512,450 c -2,0 -2,0 -2,0 v -10 h -40 v -22 2 h -20 v 20 l 20,10 z"
+       d="m 512,450 -2,0 0,-10 -40,0 0,-22 0,2 -20,0 0,20 20,10 z"
        id="walls-null-magic--demon-gate"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccccccccc"
@@ -2740,7 +2753,7 @@
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
-       d="m 415,460 h 15 v -10 l 10,-10 v -20 h -60 v 20 h 15 v -10 h 30 v 20 h -90 v 10 h 5 v -5 h 5 v 5 h 5 c 0,0 0,-4 0,-5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 v 5 h 5 v -5 h 5 z"
+       d="m 415,460 15,0 0,-10 10,-10 0,-20 -60,0 0,20 15,0 0,-10 30,0 0,20 -90,0 0,10 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 0,5 5,0 0,-5 5,0 z"
        id="wall-null-magic--mirrors-n"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccc"
@@ -3017,12 +3030,6 @@
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
-       d="m 780,260 c 0,0 0,0 0,0 z"
-       id="path5618"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-    <path
-       class="wall"
        d="m 850,287 v -57 h 10 v 10 h 30 v -10 h 20 v 20 h 30 v -20 h 30 v -30 h 30"
        id="path5622"
        inkscape:connector-curvature="0"
@@ -3039,8 +3046,7 @@
        class="wall"
        d="m 840,230 h -15 v 40 h 15 z"
        id="path5628"
-       inkscape:connector-curvature="0"
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+       inkscape:connector-curvature="0" />
     <path
        class="wall"
        d="m 804,236 v 24"
@@ -3384,9 +3390,10 @@
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
-       d="m 235,1080 c 15,0 15,0 15,0 v -20 h 20"
+       d="m 235,1080 15,0 0,-20 20,0"
        id="path4190"
        inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccc"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
@@ -3849,8 +3856,7 @@
        id="rect5620"
        width="2"
        x="849"
-       y="287"
-       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+       y="287" />
     <rect
        class="door"
        height="6"
@@ -3994,6 +4000,54 @@
        width="6"
        x="377"
        y="489"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect3533"
+       width="2"
+       height="6"
+       x="359"
+       y="522"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect3535"
+       width="6"
+       height="2"
+       x="412"
+       y="549"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect3537"
+       width="2"
+       height="7"
+       x="349"
+       y="597"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4092"
+       width="6"
+       height="2"
+       x="332"
+       y="589"
+       class="door" />
+    <rect
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
+       id="rect4094"
+       width="2"
+       height="6"
+       x="339"
+       y="562"
+       class="door" />
+    <rect
+       id="door-maybe"
+       width="2"
+       height="6"
+       x="799"
+       y="222"
+       class="door"
        style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
     <!-- Names start here -->
     <text
@@ -4216,52 +4270,6 @@
          sodipodi:role="line"
          x="970"
          y="87">Lizard Men</tspan></text>
-    <path
-       style="fill-opacity:1"
-       d="m 200,1170 10,0 -3,30 -4,0 z"
-       id="rect3525"
-       class="stairs-ns"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3533"
-       width="2"
-       height="6"
-       x="359"
-       y="522"
-       class="door" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3535"
-       width="6"
-       height="2"
-       x="412"
-       y="549"
-       class="door" />
-    <rect
-       style="fill-opacity:1"
-       id="rect3537"
-       width="2"
-       height="7"
-       x="349"
-       y="597"
-       class="door" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4092"
-       width="6"
-       height="2"
-       x="332"
-       y="589"
-       class="door" />
-    <rect
-       style="fill-opacity:1"
-       id="rect4094"
-       width="2"
-       height="6"
-       x="339"
-       y="562"
-       class="door" />
+    <!-- Unclassified start here -->
   </g>
 </svg>
