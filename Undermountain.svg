@@ -185,8 +185,8 @@
      fit-margin-top="20"
      id="base"
      inkscape:current-layer="um-l1-m"
-     inkscape:cx="776.24743"
-     inkscape:cy="1210.8235"
+     inkscape:cx="441.43713"
+     inkscape:cy="854.88667"
      inkscape:document-units="px"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
@@ -195,7 +195,7 @@
      inkscape:window-width="1252"
      inkscape:window-x="664"
      inkscape:window-y="0"
-     inkscape:zoom="6.66"
+     inkscape:zoom="1"
      pagecolor="#ffffff"
      showborder="true"
      showgrid="true">
@@ -402,7 +402,7 @@
      id="um-l1-l"
      inkscape:groupmode="layer"
      inkscape:label="Undermountain L1 lower"
-     style="display:none">
+     style="display:inline">
     <!-- Corridors, rooms, features, walls, doors, names -->
     <!-- Corridors start here -->
     <rect
@@ -801,7 +801,7 @@
     <!-- Names start here -->
     <!-- Unclassified start here -->
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        id="rect5203"
        width="9.999999"
        height="20.000095"
@@ -906,7 +906,7 @@
        d="m 150,1342 a 8.5,8 0 1 1 -17,0 8.5,8 0 1 1 17,0 z"
        transform="matrix(1.1614244,0,0,1.3811409,-24.213659,-498.07497)" />
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        id="rect5241"
        width="10"
        height="10"
@@ -914,7 +914,7 @@
        y="1370"
        class="stairs-ns" />
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        id="rect5243"
        width="10"
        height="10"
@@ -922,7 +922,7 @@
        y="1320"
        class="stairs-ns" />
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        id="rect5245"
        width="10"
        height="20"
@@ -933,7 +933,7 @@
          id="desc5301">Down</desc>
     </rect>
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        id="rect5247"
        width="10"
        height="21"
@@ -944,7 +944,7 @@
          id="desc5303">Up</desc>
     </rect>
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        id="rect5249"
        width="10"
        height="20"
@@ -952,7 +952,7 @@
        y="1380"
        class="stairs-ns" />
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ew);fill-opacity:1;stroke:none"
        id="rect5251"
        width="30"
        height="10"
@@ -963,7 +963,7 @@
          id="desc5305">Left end up</desc>
     </rect>
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ns);fill-opacity:1;stroke:none"
        id="rect5253"
        width="11"
        height="31"
@@ -971,7 +971,7 @@
        y="1359"
        class="stairs-ns" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
        id="rect5255"
        width="7"
        height="3"
@@ -979,7 +979,7 @@
        y="1359"
        class="door" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
        id="rect5257"
        width="3"
        height="7"
@@ -987,7 +987,7 @@
        y="1312"
        class="door" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
        id="rect5259"
        width="3"
        height="5"
@@ -995,7 +995,7 @@
        y="1313"
        class="door" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
        id="rect5261"
        width="3"
        height="7"
@@ -1003,7 +1003,7 @@
        y="1312"
        class="door" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
        id="rect5263"
        width="6"
        height="2"
@@ -1011,7 +1011,7 @@
        y="1329"
        class="door" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#e2c022;fill-opacity:1;stroke:#000000;stroke-width:0.5px"
        id="rect5265"
        width="3"
        height="6"
@@ -1019,7 +1019,7 @@
        y="1352"
        class="door" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect5267"
        width="10"
        height="10"
@@ -1162,7 +1162,7 @@
        sodipodi:ry="1.5"
        d="m 223,1460.5 a 2,1.5 0 1 1 -4,0 2,1.5 0 1 1 4,0 z" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#008000;fill-opacity:1;stroke:#ffff00;stroke-width:0.5px"
        id="statue-you-can-turn"
        width="5"
        height="5"
@@ -1171,7 +1171,7 @@
        class="feature"
        inkscape:label="#rect5299" />
     <rect
-       style="fill-opacity:1"
+       style="fill:#008000;fill-opacity:1;stroke:#ffff00;stroke-width:0.5px"
        id="rect5307"
        width="10"
        height="11"
@@ -1179,7 +1179,7 @@
        y="1310"
        class="feature" />
     <rect
-       style="fill-opacity:1"
+       style="fill:url(#pattern-stairs-ew);fill-opacity:1;stroke:none"
        id="rect5309"
        width="10"
        height="10"
@@ -4092,10 +4092,10 @@
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
-       d="m 860,270 0,-10 30,0 0,10 20,0 0,-30 30,0 0,30 20,0 0,-140 -5,0"
+       d="m 770,240 0,30 90,0 0,-10 30,0 0,10 20,0 0,-30 30,0 0,30 20,0 0,-140 -5,0"
        id="path3257"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccccccccc"
+       sodipodi:nodetypes="ccccccccccccc"
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
     <path
        class="wall"
@@ -4733,22 +4733,6 @@
          y="479.5">Gate</tspan></text>
     <text
        class="name"
-       id="text5447"
-       sodipodi:linespacing="125%"
-       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
-       x="452"
-       xml:space="preserve"
-       y="534"><tspan
-         id="tspan5449"
-         sodipodi:role="line"
-         x="452"
-         y="534">Dexter</tspan><tspan
-         id="tspan5451"
-         sodipodi:role="line"
-         x="452"
-         y="541.5">Dance</tspan></text>
-    <text
-       class="name"
        id="text5513"
        sodipodi:linespacing="125%"
        style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
@@ -5032,12 +5016,6 @@
       <desc
          id="desc5468">Up end North</desc>
     </rect>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 870,270 -100,0 0,-30"
-       id="path5470"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc" />
     <rect
        style="fill-opacity:1"
        id="rect5472"
@@ -5048,6 +5026,33 @@
        class="pit">
       <desc
          id="desc5474">With 25' of water in it</desc>
+    </rect>
+    <text
+       xml:space="preserve"
+       style="font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans"
+       x="471"
+       y="538"
+       id="text3651"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3653"
+         x="471"
+         y="538">Animated</tspan><tspan
+         sodipodi:role="line"
+         x="471"
+         y="545.5"
+         id="tspan3655">Armor</tspan></text>
+    <rect
+       style="fill-opacity:1"
+       id="teleportal-too-late"
+       width="10"
+       height="10"
+       x="420"
+       y="590"
+       class="feature"
+       inkscape:label="#rect3657">
+      <desc
+         id="desc3659">&quot;If you're reading this, it's already too late&quot;</desc>
     </rect>
   </g>
 </svg>
