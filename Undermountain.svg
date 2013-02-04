@@ -211,17 +211,17 @@
      fit-margin-top="20"
      id="base"
      inkscape:current-layer="um-l2-m"
-     inkscape:cx="110.94775"
-     inkscape:cy="2275.8051"
+     inkscape:cx="28.138904"
+     inkscape:cy="2018.7407"
      inkscape:document-units="px"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:window-height="1177"
-     inkscape:window-maximized="1"
-     inkscape:window-width="1920"
-     inkscape:window-x="0"
+     inkscape:window-height="1165"
+     inkscape:window-maximized="0"
+     inkscape:window-width="1068"
+     inkscape:window-x="825"
      inkscape:window-y="2"
-     inkscape:zoom="2.98"
+     inkscape:zoom="1"
      pagecolor="#ffffff"
      showborder="true"
      showgrid="true">
@@ -255,10 +255,18 @@
      id="um-l2-m"
      style="display:inline">
     <rect
+       id="rect3863"
+       width="80"
+       height="90"
+       x="-60"
+       y="120"
+       class="room"
+       style="fill:#edb667;stroke:none" />
+    <rect
        id="rect3972"
-       width="150"
-       height="200"
-       x="-30"
+       width="280"
+       height="270"
+       x="-160"
        y="-150"
        class="room"
        style="fill:#edb667;stroke:none" />
@@ -510,16 +518,16 @@
        sodipodi:nodetypes="ccccccccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 120,50 0,-192 0,2 110,0 0,20 50,0 0,-50 -2,0 92,0"
+       d="m 120,-78 0,-64 0,2 110,0 0,20 50,0 0,-50 -2,0 92,0"
        id="path3759"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="ccccccccc" />
     <path
        style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 112,-150 -142,0"
+       d="m 112,-150 -14,0 m -6,0 -252,0 0,3"
        id="path3761"
        inkscape:connector-curvature="0"
-       sodipodi:nodetypes="cc" />
+       sodipodi:nodetypes="cccc" />
     <rect
        style="fill:#e2c022;stroke:#000000;stroke-width:0.5px;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
        id="rect3763"
@@ -758,6 +766,137 @@
          id="tspan4004"
          x="-45.637585"
          y="-403.69128">258</tspan></text>
+    <rect
+       id="rect3838"
+       width="6"
+       height="2"
+       x="92"
+       y="-151"
+       class="door"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       id="rect3840"
+       width="2"
+       height="6"
+       x="119"
+       y="-78"
+       class="door"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 120,-71 0,113"
+       id="path3842"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <rect
+       id="rect3844"
+       width="3"
+       height="5"
+       x="118"
+       y="43"
+       class="door"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 120,48 0,72 -2,0"
+       id="path3846"
+       inkscape:connector-curvature="0" />
+    <rect
+       id="rect3848"
+       width="6"
+       height="2"
+       x="112"
+       y="119"
+       class="door"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 112,120 -92,0 0,43"
+       id="path3850"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 20,168 0,42 -31,0"
+       id="path3852"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -28,210 -32,0 0,-42"
+       id="path3854"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -60,162 0,-42 -92,1"
+       id="path3856"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m -158,120 -2,0 0,-261"
+       id="path3859"
+       inkscape:connector-curvature="0" />
+    <rect
+       id="rect3861"
+       width="2"
+       height="6"
+       x="-161"
+       y="-148"
+       class="door"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       id="rect3866"
+       width="2"
+       height="6"
+       x="19"
+       y="162"
+       class="door"
+       style="fill:#e2c022;stroke:#000000;stroke-width:0.5px" />
+    <rect
+       style="fill:#000000;fill-opacity:0.64313725;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3868"
+       width="9"
+       height="2"
+       x="-20"
+       y="210"
+       class="door" />
+    <rect
+       style="fill:#000000;fill-opacity:0.64313725;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3870"
+       width="8"
+       height="2"
+       x="-28"
+       y="210"
+       class="door" />
+    <rect
+       style="fill:#000000;fill-opacity:0.64313725;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="rect3872"
+       width="3"
+       height="7"
+       x="-62"
+       y="162"
+       class="door" />
+    <rect
+       id="ziggurat"
+       width="100"
+       height="100"
+       x="-70"
+       y="-70"
+       class="feature"
+       style="fill:#008000;stroke:#ffff00;stroke-width:0.5px">
+      <desc
+         id="desc3876">of horrible flaming spiky death and snakes</desc>
+    </rect>
+    <rect
+       style="fill:#000000;fill-opacity:0.64313725;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
+       id="statue-animating-snake"
+       width="9"
+       height="8"
+       x="-24"
+       y="-23"
+       class="feature"
+       inkscape:label="#rect3878">
+      <desc
+         id="desc3880">Does not like to leave the room</desc>
+    </rect>
   </g>
   <g
      inkscape:groupmode="layer"
