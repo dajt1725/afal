@@ -86,14 +86,14 @@ def _xp_na(m):
 def transpose_path(p,dx,dy):
     transpose_path.dx = dx
     transpose_path.dy = dy
-    d_new = re.sub(r'^(m\s*)(-?\d*\.?\d+)\s*,?\s*(-?\d*\.?\d+)', _xp_1p, d)
-    d_new = re.sub(r'([CSMLQT])((\s*,?\s*-?\d*\.?\d+\s*,?\s*-?\d*\.?\d+)+)', _xp_np, d_new)
+    p_new = re.sub(r'^(m\s*)(-?\d*\.?\d+)\s*,?\s*(-?\d*\.?\d+)', _xp_1p, p)
+    p_new = re.sub(r'([CSMLQT])((\s*,?\s*-?\d*\.?\d+\s*,?\s*-?\d*\.?\d+)+)', _xp_np, p_new)
     transpose_path.d = dx
-    d_new = re.sub(r'(H)(\s*,?\s*-?\d*\.?\d+)+', _xp_ns, d_new)
+    p_new = re.sub(r'(H)(\s*,?\s*-?\d*\.?\d+)+', _xp_ns, p_new)
     transpose_path.d = dx
-    d_new = re.sub(r'(V)(\s*,?\s*-?\d*\.?\d+)+', _xp_ns, d_new)
-    d_new = re.sub(r'A((\s*,?\s*-?\d*\.?\d+){7})+', _xp_na, d_new)
-    return p
+    p_new = re.sub(r'(V)(\s*,?\s*-?\d*\.?\d+)+', _xp_ns, p_new)
+    p_new = re.sub(r'A((\s*,?\s*-?\d*\.?\d+){7})+', _xp_na, p_new)
+    return p_new
 
 # take a textual path, and return a list of lists, where each sublist
 # is one path command and its arguments.  If a command in the path has
@@ -292,11 +292,11 @@ def fixd2(m):
 def upd(n,a,d):
     v = n.getAttribute(a)
     if v is not None and v != '':
-#        if args.verbose:
-#            print "updating",a,'(',v,')','by',d
         t = float(v)+d
         if t == float(int(t)):
             t = int(t)
+        if args.verbose:
+            print "updating",a,'(',v,')','by',d,'to',t
         n.setAttribute(a,str(t))
 
 def do_update(n,dx,dy):
@@ -348,12 +348,13 @@ def do_update(n,dx,dy):
                 n.removeAttribute('transform')
             else:
                 print "Unknown transform",t
-        if dx != 0 and dy != 0:
+        if dx != 0:
             upd(n,'x',dx)
-            upd(n,'y',dy)
             upd(n,'cx',dx)
-            upd(n,'cy',dy)
             upd(n,'sodipodi:cx',dx)
+        if dy != 0:
+            upd(n,'y',dy)
+            upd(n,'cy',dy)
             upd(n,'sodipodi:cy',dy)
         d = n.getAttribute('d')
         if d is not None and d != '':
@@ -370,11 +371,13 @@ def do_update(n,dx,dy):
                     l = transpose_list(l,dx,dy)
 #                    print "transposed",l
                 d_new = list_to_path(l)
-                if args.verbose:
-                    print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
-                n.setAttribute('d',d_new)
             elif dx!= 0 or dy!= 0:
                 d_new = transpose_path(d,dx,dy)
+            else:
+                d_new = None
+            if d_new:
+                if args.verbose:
+                    print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
                 n.setAttribute('d',d_new)
 #    elif args.verbose:
 #        print n.nodeName
