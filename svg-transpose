@@ -3,7 +3,37 @@ import argparse
 from xml.dom.minidom import parse, parseString
 import re
 
+unneeded_attributes = {
+ 'inkscape:connector-curvature': re.compile('^0$'),
+ 'sodipodi:nodetypes': re.compile('^c*$'),
+ 'inkscape:label': re.compile('^$|^[^U]')
+}
+
 ###### path parsing code
+style_to_class = {
+ 'fill:#edd567;stroke:none': 'corr',
+ 'fill:#edb667;stroke:none': 'room',
+ 'fill:#0000ff;stroke:#ffff00;stroke-width:0.5px': 'feature-water',
+ 'fill:url(#pattern-stairs-ew);stroke:none': 'stairs-ew',
+ 'fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1': 'wall',
+ 'fill:#e2c022;stroke:#000000;stroke-width:0.5px': 'door',
+ 'fill:url(#pattern-stairs-ns);stroke:none': 'stairs-ns',
+ 'fill:#ffa500;stroke:#ffff00;stroke-width:0.5px': 'feature',
+ 'font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans': 'name',
+ 'fill:#ff0000;stroke:#ffff00;stroke-width:0.5px': 'feature-bad',
+ 'fill:#683910;stroke:#000000;stroke-width:0.5px': 'sec-door',
+ 'fill-opacity:1;stroke:#feff04;stroke-opacity:1': 'door',
+ 'fill:none;stroke:#ffff00;stroke-width:2px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1': 'feature-path',
+ 'fill:#808080;fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'pit',
+ 'fill:#edb667;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'room-alt',
+ 'fill:#ffff00;stroke:none': 'floor-sand',
+ 'fill:#ed7767;stroke:none': 'floor-null-magic',
+ 'fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:3, 1;stroke-dashoffset:0': 'bars',
+ 'fill:#000000;stroke:none': 'column',
+ 'fill:#800080;stroke:#ffff00;stroke-width:0.5px': 'feature-purple',
+ 'fill:#008000;stroke:#ffff00;stroke-width:0.5px': 'feature-green'
+}
+
 p_nargs = {
  'a': 7, 'c': 6, 'h': 1, 'l': 2, 'm': 2, 'q': 4, 's': 4, 't': 2, 'v': 1, 'z': 0
 }
@@ -23,6 +53,47 @@ s = p_sep, n = p_num)
         p_regex += r'\s*[{l1}{l2}]'.format(l1 = l, l2 = l.upper())
 p_regex += r')\s*'
 p_re = re.compile(p_regex)
+
+def _xp_1p(m):
+    p = m.group(1)
+    if p == '':
+        p = ' '
+    x = transpose_path.dx + float(m.group(2))
+    if x == float(int(x)):
+        x = int(x)
+    y = transpose_path.dy + float(m.group(3))
+    if y == float(int(y)):
+        y = int(y)
+    return '{p}{x} {y}'.format(p = p, x = x, y = y)
+
+def _xp_np(m):
+    return m.group(1) + re_sub(r'(\s*,?\s*)(-?\d*\.?\d+)\s*,?\s*(-?\d*\.?\d+)', _xp_1p, m.group(2))
+
+def _xp_1s(m):
+    n = transpose_path.d + float(m.group(1))
+    if n == float(int(n)):
+        n = int(n)
+    return ' {n}'.format(n = n)
+
+def _xp_ns(m):
+    return m.group(1) + re.sub(r'\s*,?\s*(-?\d*\.?\d+)', _xp_1s, m.group(2))
+
+def _xp_na(m):
+    return 'A'+re.sub(r'(\s*,?\s*-?\d*\.?\d+\s*,?\s*-?\d*\.?\d+\s*,?\s*-?\d*\.?\d+\s*,?\s*-?\d*\.?\d+\s*,?\s*-?\d*\.?\d+)(\s*,?\s*-?\d*\.?\d+)(\s*,?\s*-?\d*\.?\d+)', _xp_1p, m.group(1))
+
+# take a textual path, and transpose it by dx,dy.  This requires modifying
+# all absolute addresses appropriately.
+def transpose_path(p,dx,dy):
+    transpose_path.dx = dx
+    transpose_path.dy = dy
+    d_new = re.sub(r'^(m\s*)(-?\d*\.?\d+)\s*,?\s*(-?\d*\.?\d+)', _xp_1p, d)
+    d_new = re.sub(r'([CSMLQT])((\s*,?\s*-?\d*\.?\d+\s*,?\s*-?\d*\.?\d+)+)', _xp_np, d_new)
+    transpose_path.d = dx
+    d_new = re.sub(r'(H)(\s*,?\s*-?\d*\.?\d+)+', _xp_ns, d_new)
+    transpose_path.d = dx
+    d_new = re.sub(r'(V)(\s*,?\s*-?\d*\.?\d+)+', _xp_ns, d_new)
+    d_new = re.sub(r'A((\s*,?\s*-?\d*\.?\d+){7})+', _xp_na, d_new)
+    return p
 
 # take a textual path, and return a list of lists, where each sublist
 # is one path command and its arguments.  If a command in the path has
@@ -141,6 +212,32 @@ def abs_list_to_rel(l):
             raise ValueError("unknown command "+c)
     return ret
 
+# takes a list and returns a list with all the absolute elements moved by dx,dy
+# This is much easier than transposing a path
+
+def transpose_list(l,dx,dy):
+    ret = []
+    if l[0][0] == 'm':
+        l[0][1] += dx
+        l[0][2] += dy
+    for i in l:
+        if i[0] == 'M' or i[0] == 'L' or i[0] == 'T' or i[0] == 'C' or i[0] == 'Q' or i[0] == 'S':
+            for j in range(1,len(i),2):
+                i[j]+= dx
+                i[j+1] += dy
+        elif i[0] == 'H':
+             for j in range(1,len(i)):
+                 i[j] += dx
+        elif i[0] == 'V':
+             for j in range(1,len(i)):
+                 i[j] += dy
+        elif i[0] == 'A':
+             for j in range(1,len(i),7):
+                 i[j+5] += dx
+                 i[j+6] += dy
+        ret.append(i)
+    return ret
+
 # takes a list and produces an optimized list
 def optimize_list(l):
     ret = []
@@ -187,17 +284,6 @@ def list_to_path(l):
 
 ####### xy transform
 
-def fixd1(m):
-#    if args.verbose:
-#        print "fixd1",m.group(1),m.group(2),m.group(3),m.group(4)
-    x = fixd1.dx+float(m.group(2))
-    if x == float(int(x)):
-        x = int(x)
-    y = fixd1.dy+float(m.group(4))
-    if y == float(int(y)):
-        y = int(y)
-    return '{p}{x}{s}{y}'.format(p=m.group(1), x=x, s=m.group(3), y=y)
-
 def fixd2(m):
 #    if args.verbose:
 #        print "fixd2",m.group(1),m.group(2)
@@ -213,44 +299,62 @@ def upd(n,a,d):
             t = int(t)
         n.setAttribute(a,str(t))
 
-def do_tr(n,dx,dy):
+def do_update(n,dx,dy):
+# We never update patterns
     if n.nodeName == 'pattern':
         return
-    if n.attributes:
+# We ignore p elements, but update their children
+    if n.attributes and n.nodeName != 'p':
         if args.verbose:
             print n.nodeName,n.getAttribute("id")
-        if args.label:
-            a = n.attributes.getNamedItem('inkscape:label')
-#        print "a",a
-            if a and a.value == '':
+        if args.unneeded:
+            for attr_name in unneeded_attributes.keys():
+                attr = n.attributes.getNamedItem(attr_name)
+                if not attr or not unneeded_attributes[attr_name].search(attr.value):
+                    continue
+#                print "a",a
                 if args.verbose:
-                    print "removing label",a
-                n.attributes.removeNamedItem('inkscape:label')
+                    print "removing",attr.name,attr.value
+                n.attributes.removeNamedItem(attr_name)
         if args.style:
-            a1 = n.attributes.getNamedItem('class')
-            a2 = n.attributes.getNamedItem('style')
-            print "a1",a1,"a2",a2
-            if a1:
-                print a1.specified,a1.value
-            if a2:
-                print a2.specified,a2.value
-            if a1 and a1.value != '' and a2 and a2.value != '':
-                if args.verbose:
-                    print "removing style",a2.value,"for class",a1.value
-                n.removeAttribute('style')
+            ele_class = n.attributes.getNamedItem('class')
+            ele_style = n.attributes.getNamedItem('style')
+            if args.verbose and ele_class:
+                print "class",ele_class.specified,ele_class.value
+            if args.verbose and ele_style:
+                print "style", ele_style.specified,ele_style.value
+            if ele_style and ele_style.value != '':
+                if not ele_class or ele_class.value == '':
+                   t = style_to_class.get(ele_style.value)
+                   if t:
+                       if args.verbose:
+                           print "Replacing style", ele_style.value, "with class", t
+                       n.setAttribute('class',t)
+                       n.removeAttribute('style')
+                   else:
+                       print "No known class for style", ele_style.value
+                elif style_to_class.get(ele_style.value) == ele_class.value:
+                    if args.verbose:
+                        print "removing style",ele_style.value,"for class",ele_class.value
+                    n.removeAttribute('style')
+                else:
+                    print "style ",ele_style.value, "!= class style for",ele_class.value
         t = n.getAttribute('transform')
-        if t is not None:
+        if t is not None and t!= '':
             r = re.match(r'translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
             if r:
                 dx += float(r.group(1))
                 dy += float(r.group(2))
                 n.removeAttribute('transform')
-        upd(n,'x',dx)
-        upd(n,'y',dy)
-        upd(n,'cx',dx)
-        upd(n,'cy',dy)
-        upd(n,'sodipodi:cx',dx)
-        upd(n,'sodipodi:cy',dy)
+            else:
+                print "Unknown transform",t
+        if dx != 0 and dy != 0:
+            upd(n,'x',dx)
+            upd(n,'y',dy)
+            upd(n,'cx',dx)
+            upd(n,'cy',dy)
+            upd(n,'sodipodi:cx',dx)
+            upd(n,'sodipodi:cy',dy)
         d = n.getAttribute('d')
         if d is not None and d != '':
             if args.path:
@@ -262,23 +366,24 @@ def do_tr(n,dx,dy):
 #                print "rel",l
                 l = optimize_list(l)
 #                print "optimized",l
+                if dx != 0 or dy != 0:
+                    l = transpose_list(l,dx,dy)
+#                    print "transposed",l
                 d_new = list_to_path(l)
-                print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
-                d = d_new
-            else:
-                fixd1.dx = dx
-                fixd1.dy = dy
-                d = re.sub(r'^(m\s*)(-?\d+\.?\d*)(\s+|,)(-?\d+\.?\d*)', fixd1, d)
-	        d = re.sub(r'(M|L)((\s*-?\d+\.?\d*(\s+|,)-?\d+\.?\d*)*)', fixd2, d)
-            n.setAttribute('d',d)
+                if args.verbose:
+                    print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
+                n.setAttribute('d',d_new)
+            elif dx!= 0 or dy!= 0:
+                d_new = transpose_path(d,dx,dy)
+                n.setAttribute('d',d_new)
 #    elif args.verbose:
 #        print n.nodeName
     for i in n.childNodes:
-        do_tr(i,dx,dy)
+        do_update(i,dx,dy)
 
 parser = argparse.ArgumentParser("transform the specified svg file by the specified amounts")
 parser.add_argument("--verbose", "-v", help = "print progress messages", action = 'store_true', default = False)
-parser.add_argument("--label", "-l", help = "remove inkscape:label elements", action = 'store_true', default = False)
+parser.add_argument("--unneeded", "-u", help = "remove unneeded attributes elements", action = 'store_true', default = False)
 parser.add_argument("--style", "-s", help = "remove/edit style elements", action = 'store_true', default = False)
 parser.add_argument("--path", "-p", help = "edit paths", action = 'store_true', default = False)
 parser.add_argument('--x', '-x', type=int, default=0, help='translate x by')
@@ -289,7 +394,7 @@ args = parser.parse_args()
 
 a = parse(args.infile)
 for i in a.childNodes:
-    do_tr(i, args.x, args.y)
+    do_update(i, args.x, args.y)
 f = open(args.outfile, 'w')
 a.writexml(f)
 f.close()
