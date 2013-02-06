@@ -162,6 +162,11 @@
     <path class="corr" d="m380 100v10 120h-20v10h20v60h10v-190h10v30h130v-30h60v170h10v-160h30v-10h-30v-10h-80v30h-40v-10h-10v10h-60v-30z" id="rect3865"/>
     <rect class="corr" height="10" id="rect3855" width="110" x="310" y="370"/>
     <rect class="corr" height="10" id="rect3853" width="80" x="460" y="340"/>
+    <rect class="corr" height="10" id="rect3823" width="10" x="570" y="270"/>
+    <path class="corr" d="m540 120v30h-140v140h90v10h-10v10h20v-40h-10v10h-80v-120h110v120h10v-120h10v110h10v-140h20v30h10v-40z" id="rect3805"/>
+    <rect class="room" height="100" id="rect3789" width="90" x="420" y="170"/>
+    <rect class="room" height="100" id="rect3821" width="20" x="560" y="170"/>
+    <rect class="room" height="40" id="rect3819" width="80" x="520" y="280"/>
     <rect class="room" height="90" id="rect3863" width="80" x="130" y="640"/>
     <rect class="room" height="270" id="rect3972" width="280" x="30" y="370"/>
     <path class="room" d="m140 140v20h-10v30h20v-30h20v-20h-30z" id="rect3939"/>
@@ -177,83 +182,80 @@
     <rect class="room" height="20" id="rect3857" width="90" x="420" y="100"/>
     <rect class="room" height="50" id="rect3851" width="50" x="420" y="350"/>
     <rect class="room" height="30" id="rect3847" width="20" x="630" y="100"/>
-    <rect class="feature-water" height="50" id="mud-river" width="10" x="60" y="270"/>
-    <path class="stairs-ew" d="m400 300 80 4v3l-80 3z" id="Stairs-l1"/>
     <path class="wall" d="m400 300h90v-10h-10-80v-140h140v-30h40v40h-10v-30h-20v140h-10v-110h-10v120h40v-10h-10v-100h20v110h10v-170h-60v30h-130v-30h-10v190h-300v20h-50v-20h-20" id="path3755"/>
     <path class="wall" d="m400 310h90v30h-30v10h2-42v20h-112 2v2" id="path3757"/>
     <path class="wall" d="m310 442v-64 2h110v20h50v-50h-2 92" id="path3759"/>
     <path class="wall" d="m302 370h-14m-6 0h-252v3" id="path3761"/>
-    <rect class="corr" height="10" id="rect3823" width="10" x="570" y="270"/>
-    <rect class="room" height="100" id="rect3821" width="20" x="560" y="170"/>
-    <rect class="room" height="40" id="rect3819" width="80" x="520" y="280"/>
-    <path class="corr" d="m540 120v30h-140v140h90v10h-10v10h20v-40h-10v10h-80v-120h110v120h10v-120h10v110h10v-140h20v30h10v-40z" id="rect3805"/>
-    <rect class="room" height="100" id="rect3789" width="90" x="420" y="170"/>
-    <rect class="door" height="2" id="rect3763" width="6" x="302" y="369"/>
-    <rect class="door" height="6" id="rect3765" width="2" x="309" y="372"/>
-    <rect class="door" height="2" id="rect3767" width="6" x="462" y="349"/>
     <path class="wall" d="m560 340h-60v-70h10v-100h-90v100h70v10h-10-70v-120h110v160h80v-200h30v10h20v-30h-20v10h-30v-10h-80v30h-40v-10h30v-20" id="path3771"/>
-    <path class="stairs-ns" d="m490 310h10l-3 30h-4z" id="rect3773"/>
-    <path class="stairs-ew" d="m540 340 20 3v4l-20 3z" id="rect3776"/>
-    <rect class="feature" height="2" id="feature-lever-a" width="1" x="471" y="170"/>
-    <path class="stairs-ns" d="m463 170h4l3 30h-10z" id="lowering-stairs-a"/>
-    <text class="name" id="text3785" sodipodi:linespacing="125%" x="424" xml:space="preserve" y="178"><tspan id="tspan3787" sodipodi:role="line" x="424" y="178">Bones</tspan></text>
-    <path class="wall" d="m500 100h-80v20h50v10h-60v-30h-30v130h-20v-10h-40v30h40v-10h20v50h-240v-10h30v-30h-20v20h-10v-30h30v-10h10v10h20v-60h10v20h20v10h30v-30h-30v10h-10v-10h70v10h-10v20h90v-20h-70v-20h-80v-10" id="path3849"/>
-    <path class="stairs-ew" d="m360 290 20 3v4l-20 3z" id="rect3876"/>
     <path class="wall" d="m210 160v10h-50v20h30v10h-10v20h-10v-20h-20v-40h20v-30h10" id="path3881"/>
     <path class="wall" d="m180 120h-10v-20h-40v30h30v10h-30" id="path3883"/>
     <path class="wall" d="m130 150h10v10h-16" id="path3885"/>
     <path class="wall" d="m120 170h10v20h10v10h-10v90h-40v-20h-50v20h-20" id="path3887"/>
-    <rect class="feature" height="10" id="bridge" width="50" x="40" y="290">
-      <desc id="desc3892">Can be used to teleport to Nesme</desc>
-    </rect>
-    <path class="stairs-ew" d="m90 290 10 3v4l-10 3z" id="rect3898"/>
-    <path class="stairs-ew" d="m170 223 10-3v10l-10-3z" id="rect3915"/>
-    <text class="name" id="text3926" sodipodi:linespacing="125%" x="234" xml:space="preserve" y="194"><tspan id="tspan3928" sodipodi:role="line" x="234" y="194">Slime</tspan></text>
-    <text class="name" id="text3930" sodipodi:linespacing="125%" x="290" xml:space="preserve" y="197"><tspan id="tspan3932" sodipodi:role="line" x="290" y="197">Illusions</tspan></text>
-    <path class="stairs-ns" d="m290 180h10l-3 10h-4z" id="rect3934"/>
-    <path class="stairs-ns" d="m210 160h10l-3 10h-4z" id="rect3946"/>
-    <path class="stairs-ew" d="m170 123 10-3v10l-10-3z" id="rect3949"/>
-    <rect class="sec-door" height="2" id="rect3974" width="6" x="312" y="209"/>
-    <text class="name" id="text3986" sodipodi:linespacing="125%" x="443" xml:space="preserve" y="226"><tspan id="tspan3988" sodipodi:role="line" x="443" y="226">254</tspan></text>
-    <text class="name" id="text3990" sodipodi:linespacing="125%" x="136" xml:space="preserve" y="213"><tspan id="tspan3992" sodipodi:role="line" x="136" y="213">257</tspan></text>
-    <text class="name" id="text3994" sodipodi:linespacing="125%" x="235" xml:space="preserve" y="202"><tspan id="tspan3996" sodipodi:role="line" x="235" y="202">256</tspan></text>
-    <text class="name" id="text3998" sodipodi:linespacing="125%" x="330" xml:space="preserve" y="201"><tspan id="tspan4000" sodipodi:role="line" x="330" y="201">219a</tspan></text>
-    <text class="name" id="text4002" sodipodi:linespacing="125%" x="144" xml:space="preserve" y="116"><tspan id="tspan4004" sodipodi:role="line" x="144" y="116">258</tspan></text>
-    <rect class="door" height="2" id="rect3838" width="6" x="282" y="369"/>
-    <rect class="door" height="6" id="rect3840" width="2" x="309" y="442"/>
+    <path class="wall" d="m500 100h-80v20h50v10h-60v-30h-30v130h-20v-10h-40v30h40v-10h20v50h-240v-10h30v-30h-20v20h-10v-30h30v-10h10v10h20v-60h10v20h20v10h30v-30h-30v10h-10v-10h70v10h-10v20h90v-20h-70v-20h-80v-10" id="path3849"/>
     <path class="wall" d="m310 449v113" id="path3842"/>
-    <rect class="door" height="6" id="rect3844" width="2" x="309" y="562"/>
     <path class="wall" d="m310 568v72h-2" id="path3846"/>
-    <rect class="door" height="2" id="rect3848" width="6" x="302" y="639"/>
     <path class="wall" d="m302 640h-92v42" id="path3850"/>
     <path class="wall" d="m210 688v42h-32" id="path3852"/>
     <path class="wall" d="m162 730h-32v-42" id="path3854"/>
     <path class="wall" d="m130 682v-42h-92" id="path3856"/>
     <path class="wall" d="m32 640h-2v-261" id="path3859"/>
+    <rect class="door" height="2" id="rect3763" width="6" x="302" y="369"/>
+    <rect class="door" height="6" id="rect3765" width="2" x="309" y="372"/>
+    <rect class="door" height="2" id="rect3767" width="6" x="462" y="349"/>
+    <rect class="door" height="2" id="rect3838" width="6" x="282" y="369"/>
+    <rect class="door" height="6" id="rect3840" width="2" x="309" y="442"/>
+    <rect class="door" height="6" id="rect3844" width="2" x="309" y="562"/>
+    <rect class="door" height="2" id="rect3848" width="6" x="302" y="639"/>
     <rect class="door" height="6" id="rect3861" width="2" x="29" y="372"/>
     <rect class="door" height="6" id="rect3866" width="2" x="209" y="682"/>
     <rect class="door" height="2" id="rect3868" width="8" x="170" y="729"/>
     <rect class="door" height="2" id="rect3870" width="8" x="162" y="729"/>
     <rect class="door" height="6" id="rect3872" width="2" x="129" y="682"/>
+    <rect class="door" height="2" id="rect5533" width="6" x="32" y="639"/>
+    <rect class="sec-door" height="2" id="rect3974" width="6" x="312" y="209"/>
+    <path class="stairs-ew" d="m360 290 20 3v4l-20 3z" id="rect3876"/>
+    <path class="stairs-ew" d="m90 290 10 3v4l-10 3z" id="rect3898"/>
+    <path class="stairs-ew" d="m170 223 10-3v10l-10-3z" id="rect3915"/>
+    <path class="stairs-ns" d="m290 180h10l-3 10h-4z" id="rect3934"/>
+    <path class="stairs-ns" d="m210 160h10l-3 10h-4z" id="rect3946"/>
+    <path class="stairs-ew" d="m170 123 10-3v10l-10-3z" id="rect3949"/>
+    <path class="stairs-ns" d="m490 310h10l-3 30h-4z" id="rect3773"/>
+    <path class="stairs-ew" d="m540 340 20 3v4l-20 3z" id="rect3776"/>
+    <path class="stairs-ns" d="m463 170h4l3 30h-10z" id="lowering-stairs-a"/>
+    <path class="stairs-ew" d="m400 300 80 4v3l-80 3z" id="Stairs-l1"/>
+    <rect class="feature" height="2" id="feature-lever-a" width="1" x="471" y="170"/>
+    <rect class="feature-water" height="50" id="mud-river" width="10" x="60" y="270"/>
+    <rect class="feature" height="10" id="bridge" width="50" x="40" y="290">
+      <desc id="desc3892">Can be used to teleport to Nesme</desc>
+    </rect>
     <rect class="feature" height="100" id="ziggurat" width="100" x="120" y="450">
       <desc id="desc3876">of horrible flaming spiky death and snakes</desc>
     </rect>
     <rect class="feature-bad" height="8" id="statue-animating-snake" width="9" x="166" y="497">
       <desc id="desc3880">Does not like to leave the room</desc>
     </rect>
-    <rect class="door" height="2" id="rect5533" width="6" x="32" y="639"/>
+    <text class="name" id="text3785" sodipodi:linespacing="125%" x="424" xml:space="preserve" y="178"><tspan id="tspan3787" sodipodi:role="line" x="424" y="178">Bones</tspan></text>
+    <text class="name" id="text3926" sodipodi:linespacing="125%" x="234" xml:space="preserve" y="194"><tspan id="tspan3928" sodipodi:role="line" x="234" y="194">Slime</tspan></text>
+    <text class="name" id="text3930" sodipodi:linespacing="125%" x="290" xml:space="preserve" y="197"><tspan id="tspan3932" sodipodi:role="line" x="290" y="197">Illusions</tspan></text>
+    <text class="name" id="text3986" sodipodi:linespacing="125%" x="443" xml:space="preserve" y="226"><tspan id="tspan3988" sodipodi:role="line" x="443" y="226">254</tspan></text>
+    <text class="name" id="text3990" sodipodi:linespacing="125%" x="136" xml:space="preserve" y="213"><tspan id="tspan3992" sodipodi:role="line" x="136" y="213">257</tspan></text>
+    <text class="name" id="text3994" sodipodi:linespacing="125%" x="235" xml:space="preserve" y="202"><tspan id="tspan3996" sodipodi:role="line" x="235" y="202">256</tspan></text>
+    <text class="name" id="text3998" sodipodi:linespacing="125%" x="330" xml:space="preserve" y="201"><tspan id="tspan4000" sodipodi:role="line" x="330" y="201">219a</tspan></text>
+    <text class="name" id="text4002" sodipodi:linespacing="125%" x="144" xml:space="preserve" y="116"><tspan id="tspan4004" sodipodi:role="line" x="144" y="116">258</tspan></text>
   </g>
   <g id="um-l1-l2" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 2" style="display:none">
     <rect class="corr" height="20" id="rect5531" width="10" x="290" y="1920"/>
+    <path class="corr" d="m380 1860v40h-20v10h20v10h-10v10h40v-10h-20v-60h-10z" id="rect5517"/>
+    <rect class="corr" height="10" id="rect5513" width="30" x="340" y="1840"/>
     <rect class="room" height="20" id="rect5529" width="30" x="280" y="1940"/>
     <rect class="room" height="40" id="rect5527" width="30" x="410" y="1900"/>
-    <path class="corr" d="m380 1860v40h-20v10h20v10h-10v10h40v-10h-20v-60h-10z" id="rect5517"/>
     <rect class="room" height="31" id="rect5515" width="30" x="370" y="1829"/>
-    <rect class="corr" height="10" id="rect5513" width="30" x="340" y="1840"/>
     <rect class="room" height="50" id="rect5511" width="30" x="320" y="1850"/>
-    <rect class="feature-water" height="30" id="rect5336" width="30" x="320" y="1910">
-      <desc id="desc5338">6' of water</desc>
-    </rect>
+    <path class="wall" d="m290 1900c0 40 0 40 0 40h-10v20h30v-20h-10v-10h20v10h12" id="path5316"/>
+    <path class="wall" d="m300 1900v20h20v-10h30v10h30v-60h2-12v-12 2h-22 2v50h-30v-50h22-2v-10h30v2-12h30v30h-12 2v60h32" id="path5318"/>
+    <path class="wall" d="m429 1920h11v-20h-10v-10" id="path5320"/>
+    <path class="wall" d="m420 1890v10h-10-50v10h50v10" id="path5322"/>
+    <path class="wall" d="m440 1920v20h-30v-10h-60v10h-10" id="path5324"/>
     <path class="stairs-ew" d="m300 1920 20 3v4l-20 3z" id="rect5326">
       <desc id="desc3805">Up end left</desc>
     </path>
@@ -261,44 +263,24 @@
     <path class="stairs-ns" d="m420 1890h10l-3 10h-4z" id="rect5344"/>
     <path class="stairs-ew" d="m390 1903 20-3v10l-20-3z" id="rect5340"/>
     <path class="stairs-ns" d="m290 1900h10l-3 20h-4z" id="rect5314"/>
-    <path class="wall" d="m290 1900c0 40 0 40 0 40h-10v20h30v-20h-10v-10h20v10h12" id="path5316"/>
-    <path class="wall" d="m300 1900v20h20v-10h30v10h30v-60h2-12v-12 2h-22 2v50h-30v-50h22-2v-10h30v2-12h30v30h-12 2v60h32" id="path5318"/>
-    <path class="wall" d="m429 1920h11v-20h-10v-10" id="path5320"/>
-    <path class="wall" d="m420 1890v10h-10-50v10h50v10" id="path5322"/>
-    <path class="wall" d="m440 1920v20h-30v-10h-60v10h-10" id="path5324"/>
     <rect class="door" height="2" id="rect5334" width="6" x="332" y="1939"/>
-    <rect class="feature" height="3" id="rect5346" width="6" x="392" y="1832">
-      <desc id="desc5348">Ladder to room above</desc>
-    </rect>
     <rect class="door" height="6" id="rect5350" width="2" x="409" y="1902"/>
-    <rect class="sec-door" height="2" id="rect5352" width="6" x="422" y="1919"/>
     <rect class="door" height="2" id="rect5354" width="6" x="382" y="1859"/>
     <rect class="door" height="6" id="rect5356" width="2" x="369" y="1842"/>
     <rect class="door" height="2" id="rect5358" width="6" x="342" y="1849"/>
+    <rect class="sec-door" height="2" id="rect5352" width="6" x="422" y="1919"/>
+    <rect class="feature-water" height="30" id="rect5336" width="30" x="320" y="1910">
+      <desc id="desc5338">6' of water</desc>
+    </rect>
+    <rect class="feature" height="3" id="rect5346" width="6" x="392" y="1832">
+      <desc id="desc5348">Ladder to room above</desc>
+    </rect>
     <rect class="feature" height="9" id="rect5360" width="8" x="330" y="1866">
       <desc id="desc5362">cage on chains, lowered by rotating statue above</desc>
     </rect>
     <path class="feature-path" d="m396 1836-11 9-1 79-89 1v-25" id="dexter-path-c"/>
   </g>
   <g id="um-l1-l" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:none">
-    <path class="corr" d="m170 1840v10h10v60h-20v10h20 10v-40h60v-10h-60v-20-10h-20z" id="rect5498"/>
-    <rect class="corr" height="20" id="rect5496" width="10" x="280" y="1840"/>
-    <rect class="room" height="40" id="rect5494" width="20" x="280" y="1860"/>
-    <path class="room" d="m320 1810v30h30v-20h10v-10h-10-30z" id="rect5487"/>
-    <rect class="room" height="20" id="rect5485" width="20" x="300" y="1820"/>
-    <rect class="corr" height="10" id="rect5483" width="10" x="340" y="1870"/>
-    <path class="corr" d="m350 1830v10h10v60h10v-60h10v-10h-30z" id="rect5476"/>
-    <path class="room" d="m390 1880v10h-10v30h30v-30-10h-20z" id="rect5469"/>
-    <rect class="room" height="30" id="rect5467" width="20" x="370" y="1860"/>
-    <rect class="corr" height="10" id="rect5463" width="10" x="400" y="1920"/>
-    <rect class="corr" height="10" id="rect5465" width="10" x="380" y="1920"/>
-    <rect class="corr" height="30" id="rect5461" width="10" x="390" y="1850"/>
-    <rect class="corr" height="10" id="rect5459" width="10" x="420" y="1850"/>
-    <rect class="room" height="30" id="rect5457" width="20" x="410" y="1860"/>
-    <rect class="room" height="20" id="rect5455" width="20" x="410" y="1820"/>
-    <rect class="room" height="30" id="rect5453" width="30" x="380" y="1820"/>
-    <rect class="corr" height="50" id="rect5451" width="10" x="390" y="1770"/>
-    <rect class="room" height="40" id="rect3675" width="50" x="370" y="1950"/>
     <path class="stairs-ns" d="m380 1930h10l-3 20h-4z" id="rect5245"/>
     <path class="stairs-ns" d="m403 1930h3l4 20h-10z" id="rect5247"/>
     <path class="stairs-ns" d="m420 1890h10l-3 10h-4z" id="rect5241"/>
@@ -309,6 +291,15 @@
     <path class="stairs-ns" d="m163 1880h4l3 30h-10z" id="rect5253"/>
     <!-- Corridors, rooms, features, walls, doors, names -->
     <!-- Corridors start here -->
+    <path class="corr" d="m170 1840v10h10v60h-20v10h20 10v-40h60v-10h-60v-20-10h-20z" id="rect5498"/>
+    <rect class="corr" height="20" id="rect5496" width="10" x="280" y="1840"/>
+    <rect class="corr" height="10" id="rect5483" width="10" x="340" y="1870"/>
+    <path class="corr" d="m350 1830v10h10v60h10v-60h10v-10h-30z" id="rect5476"/>
+    <rect class="corr" height="10" id="rect5463" width="10" x="400" y="1920"/>
+    <rect class="corr" height="10" id="rect5465" width="10" x="380" y="1920"/>
+    <rect class="corr" height="30" id="rect5461" width="10" x="390" y="1850"/>
+    <rect class="corr" height="10" id="rect5459" width="10" x="420" y="1850"/>
+    <rect class="corr" height="50" id="rect5451" width="10" x="390" y="1770"/>
     <rect class="corr" height="10" id="rect3523" width="20" x="1440" y="570"/>
     <rect class="corr" height="10" id="rect4293" width="10" x="1420" y="560"/>
     <rect class="corr" height="20" id="rect4295" width="10" x="1420" y="610"/>
@@ -319,11 +310,31 @@
     <rect class="corr" height="10" id="rect3524" width="10" x="1380" y="630"/>
     <path class="corr" d="m1400 660v20h-30v10h30v30h10 5v-10h-5v-50h-10z" id="rect3526"/>
     <!-- Rooms start here -->
+    <path class="room" d="m390 1880v10h-10v30h30v-30-10h-20z" id="rect5469"/>
+    <rect class="room" height="30" id="rect5467" width="20" x="370" y="1860"/>
+    <rect class="room" height="40" id="rect5494" width="20" x="280" y="1860"/>
+    <path class="room" d="m320 1810v30h30v-20h10v-10h-10-30z" id="rect5487"/>
+    <rect class="room" height="20" id="rect5485" width="20" x="300" y="1820"/>
+    <rect class="room" height="30" id="rect5457" width="20" x="410" y="1860"/>
+    <rect class="room" height="20" id="rect5455" width="20" x="410" y="1820"/>
+    <rect class="room" height="30" id="rect5453" width="30" x="380" y="1820"/>
+    <rect class="room" height="40" id="rect3675" width="50" x="370" y="1950"/>
     <path class="room" d="m1390 630v10h-10v20h50v-20h-10v-10z" id="rect3518"/>
     <rect class="room" height="50" id="cursd-room" width="30" x="1510" y="560"/>
     <rect class="room" height="31" id="floor-doory-room" width="20" x="1460" y="560"/>
     <rect class="room" height="40" id="floor-fence-room" width="30" x="1410" y="570"/>
     <rect class="room" height="30" id="floor-seascape-room" width="30" x="1340" y="670"/>
+    <!-- Walls start here -->
+    <path class="wall" d="m1370 640h20v-40" id="path3314"/>
+    <path class="wall" d="m1370 630h10v-20h-20v60h10v12" id="path3316"/>
+    <path class="wall" d="m1390 600h-40v70h-10v12" id="path3318"/>
+    <path class="wall" d="m1340 688v12h12" id="wall-foo"/>
+    <path class="wall" d="m1358 700h12v-12" id="path3322"/>
+    <path class="wall" d="m1370 682v-2h30v-20h-20v-20h10v-10h30v-20h-10v-32" id="path3336"/>
+    <path class="wall" d="m1410 572v-2h10v-10" id="path3338"/>
+    <path class="wall" d="m1430 560v10h10v2-2h20v2-12h20v22-2h30v-20h30v10h10v30h-10v10h-30v-20h-30v-2 2h-20v-12 2h-20v-2 32h-10v20h10" id="path3340"/>
+    <path class="wall" d="m1440 640h-10v20h-20v50h5" id="path3344"/>
+    <path class="wall" d="m1415 720h-15v-30h-30v-2" id="path3346"/>
     <!-- Features start here -->
     <path class="stairs-ew" d="m1480 580 30 3v4l-30 3z" id="stairs-cursd"/>
     <rect class="feature" height="30" id="feature-balcony" width="10" x="1540" y="570"/>
@@ -340,17 +351,6 @@
     <rect class="feature" height="1" id="feature-seascape-button" width="1" x="1359" y="699">
       <desc id="desc3385">Raises the floor so one can get at the secret doors, but can't leave through the north exit.</desc>
     </rect>
-    <!-- Walls start here -->
-    <path class="wall" d="m1370 640h20v-40" id="path3314"/>
-    <path class="wall" d="m1370 630h10v-20h-20v60h10v12" id="path3316"/>
-    <path class="wall" d="m1390 600h-40v70h-10v12" id="path3318"/>
-    <path class="wall" d="m1340 688v12h12" id="wall-foo"/>
-    <path class="wall" d="m1358 700h12v-12" id="path3322"/>
-    <path class="wall" d="m1370 682v-2h30v-20h-20v-20h10v-10h30v-20h-10v-32" id="path3336"/>
-    <path class="wall" d="m1410 572v-2h10v-10" id="path3338"/>
-    <path class="wall" d="m1430 560v10h10v2-2h20v2-12h20v22-2h30v-20h30v10h10v30h-10v10h-30v-20h-30v-2 2h-20v-12 2h-20v-2 32h-10v20h10" id="path3340"/>
-    <path class="wall" d="m1440 640h-10v20h-20v50h5" id="path3344"/>
-    <path class="wall" d="m1415 720h-15v-30h-30v-2" id="path3346"/>
     <!-- Doors start here -->
     <rect class="sec-door" height="6" id="s-door-seascape-a" width="2" x="1339" y="682"/>
     <rect class="sec-door" height="6" id="s-door-seascape-b" width="2" x="1369" y="682"/>
