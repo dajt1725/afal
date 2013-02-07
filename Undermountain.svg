@@ -674,8 +674,8 @@
     <circle class="column" cx="770" cy="920" d="m771.5 920c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-3" r="1.5" sodipodi:cx="770" sodipodi:cy="920" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
     <circle class="column" cx="750" cy="940" d="m751.5 940c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-4" r="1.5" sodipodi:cx="750" sodipodi:cy="940" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
     <circle class="column" cx="770" cy="940" d="m771.5 940c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-5" r="1.5" sodipodi:cx="770" sodipodi:cy="940" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
-    <circle class="column" cx="895" cy="1016.5865" d="m896 1016.58649c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55229 0.44772-1 1-1 0.55228 0 1 0.44771 1 1z" id="column-null-magic-1-6" r="1" sodipodi:cx="895" sodipodi:cy="1016.5865" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="895" cy="1042.4781" d="m896 1042.47815c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55229 0.44772-1 1-1 0.55228 0 1 0.44771 1 1z" id="column-null-magic-1-7" r="1" sodipodi:cx="895" sodipodi:cy="1042.4781" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="895" cy="1016.5" d="m896 1016.58649c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55229 0.44772-1 1-1 0.55228 0 1 0.44771 1 1z" id="column-null-magic-1-6" r="1" sodipodi:cx="895" sodipodi:cy="1016.5865" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="895" cy="1042.5" d="m896 1042.47815c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55229 0.44772-1 1-1 0.55228 0 1 0.44771 1 1z" id="column-null-magic-1-7" r="1" sodipodi:cx="895" sodipodi:cy="1042.4781" sodipodi:rx="1" sodipodi:ry="1"/>
     <circle class="column" cx="874" cy="1040" d="m875 1040c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-8" r="1" sodipodi:cx="874" sodipodi:cy="1040" sodipodi:rx="1" sodipodi:ry="1"/>
     <circle class="column" cx="874" cy="1021" d="m875 1021c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-2" r="1" sodipodi:cx="874" sodipodi:cy="1021" sodipodi:rx="1" sodipodi:ry="1"/>
     <circle class="column" cx="890" cy="1021" d="m891 1021c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-9" r="1" sodipodi:cx="890" sodipodi:cy="1021" sodipodi:rx="1" sodipodi:ry="1"/>
@@ -726,7 +726,7 @@
     <path class="wall" d="m1160 740v50h10v-10h30v-10" id="path4288"/>
     <path class="wall" d="m1170 800h-10v40h40v-30h-30z" id="path4290"/>
     <path class="wall" d="m1170 860v-10h30v30h90v-32" id="path4292"/>
-    <path class="wall" d="m760 742v-2h-20v210l30-0.5v10.5h110v20h-75v20h-60v-10" id="path4296"/>
+    <path class="wall" d="m760 742v-2h-20v210l30 0v10h110v20h-75v20h-60v-10" id="path4296"/>
     <path class="wall" d="m830 928v2h-10v-2 2h-40v20h210v-2 2h-40v-10h-5" id="path3279"/>
     <path class="wall" d="m830 922v-12h-2" id="path3197"/>
     <path class="wall" d="m780 710v30h5" id="path3203"/>
@@ -928,7 +928,7 @@
     <path class="wall" d="m1050 1440v-20h10v10h50v10" id="path3676"/>
     <path class="wall" d="m1119.7598 1439.8499v-50h10" id="path3678"/>
     <path class="wall" d="m1130 1380h-10v-30h30v-12" id="path3680"/>
-    <path class="wall" d="m1150 1332-0.09-51.8498" id="path3682"/>
+    <path class="wall" d="m1150 1332 0-52" id="path3682"/>
     <path class="wall" d="m1150 1250v-10" id="path3684"/>
     <path class="wall" d="m1130 1340v-20h-10v20z" id="path3686"/>
     <path class="wall" d="m1120 1290h10v20h-10z" id="path3688"/>
