@@ -1,0 +1,37 @@
+#!/usr/bin/python
+from __future__ import print_function
+import afal_config
+import afal
+import cgi
+import cgitb
+import os
+
+cgitb.enable()
+
+maps = os.listdir("maps")
+form = cgi.FieldStorage()
+map_of = form.getfirst('map')
+if map_of is not None and map_of != '':
+    title = 'AFAL map of ' + map_of
+else:
+    title = 'AFAL map menu'
+print(
+ afal.html_header.format(title = title))
+print(
+ '      <form action="{map_url}" method="GET">\n'
+ '       <label>or \n'
+ '        <noscript>\n'
+ '        <input type="submit" name="doit" value="Show"/>\n'
+ '        </noscript>\n'
+ '       </label>\n'
+ '       <select name="map" onchange=\'this.form.submit()\'>\n'.format(map_url = afal_config.map_url))
+for i in maps:
+    print('        <option label="{i}" value="{i}">{i}</option>\n'.format(i=i))
+print('       </select>\n'
+ '      </form>\n'
+ ' <hl />')
+if map_of is not None and map_of != '':
+    print(' <img src="maps/{map_of}">\n'.format(map_of = map_of))
+print( ' </body>\n'
+ '</html>\n'
+)
