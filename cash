@@ -18,13 +18,8 @@ if afal_config.text:
     wmax = args.width
 else:
     header = \
- 'Content-Type: text/html\n'\
- '\n'\
- '<html>\n'\
- ' <head><title>AFAL Cash Summary</title></head>\n'\
- ' <body background="{background}">\n'\
- '  {menu_html}\n'\
- '  <center><h1>Anything For A Laugh</h1>\n'\
+ afal.html_header.format(title='AFAL Cash Summary', add_menu = '')+\
+ '  <h1>Anything For A Laugh</h1>\n'\
  '   <h2>Cash in hand as of {date}</h2>\n'\
  '   <a href="{menu_url}"><b>Return to Menu</b></a><br>\n'\
  '  </center><br>\n'\
@@ -40,8 +35,7 @@ else:
  '</html>\n'
     wmax = None
 
-afal.pw(header.format(menu_html = afal.menu_html, menu_url = afal_config.menu_url,
- background = afal_config.background, date = date), max=wmax, indent=4)
+afal.pw(header.format(menu_url = afal_config.menu_url, date = date), max=wmax, indent=4)
 for char in afal.character_list:
     m = afal.get_char_money(char)
     value_cp = 0

@@ -5,6 +5,7 @@ from mysql.connector import errorcode
 import random
 import re
 import afal_config
+import os
 
 ############################## begin startup code here
 
@@ -622,7 +623,6 @@ def chars_move_cash(i):
     if 'cash' in i:
         cash = i['cash']
         if not 'value_cp' in cash:
-            print i
             raise ValueError("invalid cash")
         amount_cp = cash['value_cp']
     else:
@@ -745,45 +745,62 @@ def get_journal(cond = None):
 
     if cond is None:
         cond = {}
-    _check_dict(cond, must=None, may=('char', 'primary', 'latest', 'on', 'starting_on', 'up_to', 'cash'))
+    _check_dict(cond, must=None, may=('char', 'char2', 'primary', 'on', 'starting_on', 'up_to', 'cash'))
     clause = ''
     pre = ' where '
     npre = ' and '
     date1 = None
     date2 = None
-    char = None
+    char = []
     char_clause = ''
-    if 'char' in cond and cond['char'] != 'All':
-        tmp = '(journal_id in (select journal_id from fr_journ_by where made_by = %(char)s) or journal_id in (select journal_id from fr_journ_to where made_to = %(char)s))'
+    args = {}
+    if cond.get('char','').lower() == 'all':
+        del cond['char']
+    if cond.get('char2','').lower() == 'all':
+        del cond['char2']
+    if cond.get('on','').lower() == 'all':
+        del cond['on']
+    if cond.get('starting_on','').lower() == 'all':
+        del cond['starting_on']
+    if cond.get('up_to','').lower() == 'all':
+        del cond['up_to']
+    if 'char' in cond:
+        char.append(cond['char'])
+    if 'char2' in cond:
+        char.append(cond['char2'])
+    if len(char) > 0:
+        if len(char) > 1:
+            tmp = "(journal_id in (select journal_id from fr_journ_by where made_by in (%(ch1)s, %(ch2)s)) and journal_id in (select journal_id from fr_journ_to where made_to in (%(ch1)s, %(ch2)s)))"
+            args['ch1'] = char[0]
+            args['ch2'] = char[1]
+        else:
+            tmp = "(journal_id in (select journal_id from fr_journ_by where made_by = %(ch)s) or journal_id in (select journal_id from fr_journ_to where made_to = %(ch)s))"
+            args['ch'] = char[0]
         clause += pre + tmp
         char_clause = ' where ' + tmp
         pre = npre
-        char = cond['char']
     if 'primary' in cond:
         clause += pre + ' part_of is NULL '
         pre = npre
-    if 'on' in cond and cond['on'] != 'All':
-        clause += pre + ' date = %(date1)s '
+    if 'on' in cond:
+        if cond['on'].lower() == 'latest':
+            clause += pre + ' date = (select max(date) from fr_journal {char_clause}) '.format(char_clause = char_clause)
+        else:
+            clause += pre + ' date = %(on)s '
+            args['on'] = str_to_date(cond['on'])
         pre = npre
-        date1 = cond['on']
-    if 'latest' in cond:
+    if 'starting_on' in cond:
         if 'on' in cond:
-            raise KeyError("Can't have both 'latest' and 'on' in condition")
-        clause += pre + ' date = (select max(date) from fr_journal {char_clause}) '.format(char_clause = char_clause)
+            raise KeyError("Can't have both 'starting_on' and 'on' in condition")
+        clause += pre + ' date >= %(s_o)s '
+        args['s_o'] = str_to_date(cond['starting_on'])
         pre = npre
-    if 'starting_on' in cond and cond['starting_on'] != 'All':
-        if 'on' in cond or 'latest' in cond:
-            raise KeyError("Can't have both 'starting_on' and 'latest' or 'on' in condition")
-        clause += pre + ' date >= %(date1)s '
-        date1 = cond['starting_on']
+    if 'up_to' in cond:
+        if 'on' in cond:
+            raise KeyError("Can't have both 'up_to' and 'on' in condition")
+        clause += pre + ' date <= %(u_t)s '
+        args['u_t'] = str_to_date(cond['up_to'])
         pre = npre
-    if 'up_to' in cond and cond['up_to'] != 'All':
-        if 'on' in cond or 'latest' in cond:
-            raise KeyError("Can't have both 'up_to' and 'latest' or 'on' in condition")
-        clause += pre + ' date <= %(date2)s '
-        date2 = cond['up_to']
-        pre = npre
-
     if 'cash' in cond:
         clause += pre + ' cash_cp > 0 '
         pre = npre
@@ -791,7 +808,7 @@ def get_journal(cond = None):
     cmd = 'select '\
 ' journal_id, part_of, ourtime, date, cash_cp, virtual_cp, description'\
 ' from fr_journal {clause} order by date, journal_id'.format(clause = clause)
-    cur.execute(cmd, {'date1': str_to_date(date1), 'date2': str_to_date(date2), 'char': char})
+    cur.execute(cmd, args)
     resp = cur.fetchall()
     _check_warnings()
     if resp == None or len(resp) == 0:
@@ -1235,6 +1252,18 @@ def insert_debt(d):
 
 global coins_byname,coins_bycpe,coins_byid
 (coins_byname, coins_bycpe, coins_byid) = get_coins()
+
+def map_to_name(m):
+    ret = m
+    if len(ret)>4 and ret[-4:] == '.svg':
+        ret = ret[:-4]
+    return ret
+
+maps = os.listdir("maps")
+maps.sort()
+map_names = []
+for i in maps:
+    map_names.append(map_to_name(i))
 character_list = get_characters('Current')
 party_list = get_parties()
 date_list = get_journal_dates()
@@ -1243,78 +1272,71 @@ items_texts = ('Unresolved Items', 'Party Items', 'Items to Auction', 'Items to 
 people_values = ('Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs')
 people_texts = ('Current AFAL Members', 'Former AFAL Members', 'Dead AFAL Members', 'People We Might Meet', "People We Probably Won't Meet", 'People We Have Killed')
 
-def _format_group(name_singular, name_plural, val_pre, values, texts):
+def _format_group(has_all, name_singular, name_plural, val_pre, values, texts):
     ret = \
- '     <option value="{vp}All">All {np}</option>\n'\
- '      <optgroup label="{ns}">\n'.format(vp = val_pre,
+ '    <optgroup label="{ns}">\n'.format(vp = val_pre,
  ns = name_singular, np = name_plural)
+    if has_all:
+        ret += \
+ '     <option value="{vp}All">All {np}</option>\n'.format(
+ vp = val_pre, np = name_plural)
+
     for v,t in zip(values,texts):
-        ret += '      <option value="{vp}{v}">{t}</option>'.format(vp = val_pre, v=v, t=t)
-    ret += '     </optgroup>'
+        ret += \
+'      <option value="{vp}{v}">{t}</option>\n'.format(vp = val_pre, v=v, t=t)
+    ret += \
+'     </optgroup>\n'
     return ret
 
-menu_html = (
+html_header = (
+ 'Content-Type: text/html\n'
+ '\n'
+ '<html>\n'
+ ' <head><title>{{title}}</title><META http-equiv="Content-Script-Type" content="text/javascript"></head>\n'
+ ' <body background="{background}">\n'
  '  <center>\n'
- '   <table>\n'
- '    <tr>\n'
- '     <td>\n'
- '      <form action="{summary}" method="GET">\n'
- '       <input type="submit" name="go" value="Debt Summary" />\n'
- '      </form>\n'
- '     </td>\n'
- '     <td>\n'
- '      <form action="{cash}" method="GET">\n'
- '       <input type="submit" name="go" value="Cash Summary" />\n'
- '      </form>\n'
- '     </td>\n'
- '     <td>\n'
- '      <form action="{report}" method="GET">\n'
- '       <label>or\n'
- '        <input type="submit" name="generate" value="Show"/>\n'
- '       </label>\n'
- '       <select name="todo">\n'
- '        <option selected label="Everything" value="All">Everything</option>\n'
+ '   <form action="{map_url}" method="GET">\n'
+ '    <noscript>\n'
+ '     <input type="submit" name="generate" value="Show"/>\n'
+ '    </noscript>\n'
+ '   <label for="start">From</label>\n'
+ '   <select name="start">\n'
+ '{dates_group}\n'
+ '   </select>\n'
+ '   <label for="end">to</label>\n'
+ '   <select name="end">\n'
+ '{dates_group}\n'
+ '   </select>\n'
+ '   <label for="char">involving</label>\n'
+ '   <select name="char">\n'
  '{char_group}\n'
+ '   </select>\n'
+ '   <select name="todo" onchange=\'this.form.submit()\'>\n'
+ '    <option selected label="Choose" value="Noop">Pick Something</option>\n'
+ '    <optgroup label="Executive Summary">\n'
+ '    <option label="Cash" value="Cash">Cash Summary</option>\n'
+ '    <option label="Debt" value="Debt">Debt Summary</option>\n'
+ '   </optgroup>\n'
+ '   <optgroup label="Show it all">\n'
+ '    <option label="Everything" value="All">Everything</option>\n'
+ '    <option label="Journal" value="Journal">Journal</option>\n'
+ '   </optgroup>\n'
+ '{char_group}\n'
+ '{maps_group}\n'
  '{party_group}\n'
  '{items_group}\n'
  '{people_group}\n'
- '       </select>\n'
- '      </form>\n'
- '     </td>\n'
- '    </tr>\n'
- '    <tr>\n'
- '     <td colspan="7">\n'
- '      <form action="{report}" method="GET">\n'
- '       <label>or\n'
- '        <input type="submit" name="journal" value="Show" />\n'
- '       Journal</label>&nbsp;&nbsp;\n'
- '       <label for="start">From</label>\n'
- '       <select name="start">\n'
- '{dates_group}\n'
- '       </select>\n'
- '       <label for="end">to</label>\n'
- '       <select name="end">\n'
- '{dates_group}\n'
- '       </select>\n'
- '       <label for="char">involving</label>\n'
- '       <select name="char">\n'
- '{char_group}\n'
- '       </select>\n'
- '      </form>\n'
- '     </td>\n'
- '    </tr>\n'
- '   </table>\n'
- '  </center>\n'
+ '   </select>\n'
+ '  </form>\n'
  '  <hr />'
 .format(
  background = afal_config.background,
- summary = afal_config.summary,
- cash = afal_config.cash,
- report = afal_config.report,
- char_group = _format_group('Character','Characters','char.',character_list, character_list),
- party_group = _format_group('Party','Parties', 'party.', party_list, party_list),
- items_group = _format_group('Items','Items','items.', items_values, items_texts),
- people_group = _format_group('Groups','Groups', 'people.', people_values, people_texts),
- dates_group = _format_group('Date','Dates','date.',date_list,date_list)))
+ map_url = afal_config.map_url,
+ char_group = _format_group(True, 'Character','Characters','char.',character_list, character_list),
+ party_group = _format_group(True, 'Party','Parties', 'party.', party_list, party_list),
+ items_group = _format_group(True, 'Items','Items','items.', items_values, items_texts),
+ people_group = _format_group(True, 'Groups','Groups', 'people.', people_values, people_texts),
+ dates_group = _format_group(True, 'Date','Dates','',date_list, date_list),
+ maps_group = _format_group(False, 'Map','Maps', 'map.', maps, map_names)))
 
 ######## End

@@ -5,33 +5,45 @@ import afal
 import cgi
 import cgitb
 import os
+import sys
 
 cgitb.enable()
 
-maps = os.listdir("maps")
 form = cgi.FieldStorage()
-map_of = form.getfirst('map')
-if map_of is not None and map_of != '':
-    title = 'AFAL map of ' + map_of
+todo = form.getfirst('todo')
+map_of = None
+if todo and todo != '':
+    if todo == 'Cash':
+        os.execv('./cash', sys.argv)
+    elif todo == 'Debt':
+        os.execv('./summary', sys.argv)
+    elif todo == 'All' or todo == 'Journal':
+        os.execv('./report', sys.argv)
+    elif todo == 'Noop':
+        pass
+    else:
+        i = todo.index('.')
+        if i > 0:
+            cl = todo[:i]
+            inst = todo[i+1:]
+            if cl == 'char' or cl == 'items' or cl == 'party' or cl == 'people':
+               os.execv('./report', sys.argv)
+            elif cl == 'map':
+                map_of = inst
+
+if map_of is not None:
+    map_name = afal.map_to_name(map_of)
+    title = 'AFAL map of ' + map_name
 else:
-    title = 'AFAL map menu'
+    title = 'AFAL Menu'
+    map_name = None
+
+print(afal.html_header.format(title = title))
+if map_name:
+    print('  <h1>{m}</h1>\n'.format(m = map_name))
+    print(' <img style="background-color:#a0a0a0;border:3px solid black" src="/maps/{map_of}">\n'.format(map_of = map_of))
 print(
- afal.html_header.format(title = title))
-print(
- '      <form action="{map_url}" method="GET">\n'
- '       <label>or \n'
- '        <noscript>\n'
- '        <input type="submit" name="doit" value="Show"/>\n'
- '        </noscript>\n'
- '       </label>\n'
- '       <select name="map" onchange=\'this.form.submit()\'>\n'.format(map_url = afal_config.map_url))
-for i in maps:
-    print('        <option label="{i}" value="{i}">{i}</option>\n'.format(i=i))
-print('       </select>\n'
- '      </form>\n'
- ' <hl />')
-if map_of is not None and map_of != '':
-    print(' <img src="maps/{map_of}">\n'.format(map_of = map_of))
-print( ' </body>\n'
- '</html>\n'
-)
+ ' </center>\n'
+ ' </body>\n'
+ '</html>\n')
+######## End

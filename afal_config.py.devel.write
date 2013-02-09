@@ -4,7 +4,7 @@ import os
 
 config = {
     'database':'afal_devel',
-    'user':'afal_ro',
+    'user':'afal',
     'password':'BuffyStewart'
 }
 background = '/mw-escher.gif'
@@ -14,6 +14,6 @@ logs = "/logs/log_"
 summary = '/devel/summary'
 cash = '/devel/cash'
 report = '/devel/report'
-menu_url = '/devel/menu'
+menu_url = '/devel/map'
 map_url = '/devel/map'
 text = 'QUERY_STRING' not in os.environ

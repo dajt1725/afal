@@ -2,6 +2,7 @@ cp mw-escher.gif /var/www/html/
 cp *.png *.jpg /var/www/html/
 cp afal.py.mysql /var/www/devel/afal.py
 cp afal_config.py.devel /var/www/devel/afal_config.py
+cp map /var/www/devel/map
 cp cash /var/www/devel/cash
 cp menu /var/www/devel/menu
 cp report /var/www/devel/report

@@ -16,13 +16,8 @@ if afal_config.text:
     trailer = ''
 else:
     header = \
- 'Content-Type: text/html\n' \
- '\n' \
- '<html>\n' \
- ' <head><title>AFAL Debt Summary</title></head>\n' \
- ' <body background="{background}">\n' \
- '  {menu_html}' \
- '  <center><h1>Anything For A Laugh</h1>\n' \
+ afal.html_header.format(title = 'AFAL Debt Summary', add_menu = '') + \
+ '  <h1>Anything For A Laugh</h1>\n' \
  '   <h2>Debt Summary Report as of {date}</h2>\n' \
  '  <table border="1"><tr><th>Character</th><th>Receivable</th><th>' \
  'Payable</th><th>Cash</th><th>Net</th></tr>'
@@ -38,7 +33,7 @@ else:
 
 
 print(header.format(menu_url = afal_config.menu_url,
- background = afal_config.background, date = date, menu_html = afal.menu_html))
+ date = date))
 for char in afal.character_list:
     c = afal.get_char_data(char)['cash_cp']
     if c is None:

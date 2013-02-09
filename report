@@ -603,7 +603,10 @@ def print_full_character(c):
         if len(payable):
             print_debt(payable, 'to', 'Payable')
 # was primary=True
-        print_journal({'latest': True, 'char': char})
+        t = {'on': 'latest', 'char2': char}
+        if journal_args is not None:
+            t.update(journal_args)
+        print_journal(t)
 
 
 def print_members(members):
@@ -700,7 +703,10 @@ def print_full_party(p):
         items = afal.get_items('Found_by', party)
         if len(items):
             print_items(items, 'Found', show_note = True, show_finder = False, show_holder = party, show_owner = party)
-        print_journal({'char': party})
+        t = {'char2': party}
+        if journal_args is not None:
+            t.update(journal_args)
+        print_journal(t)
 
 
 def print_people(p):
@@ -742,6 +748,7 @@ parser.add_argument('--note', '-n', default = False, action='store_true', help='
 parser.add_argument('--party', '-p', nargs='*', default = [], help='report on these parties')
 parser.add_argument('--width', '-w', type=int, default=130, help='width to wrap at')
 args = parser.parse_args()
+journal_args = None
 
 if afal_config.text:
     fmt = { 'max': args.width, 'indent': 4 }
@@ -751,12 +758,15 @@ if afal_config.text:
     fmt_section_header = { 'max': args.width, 'prefix': 30, 'sep':'' }
     fmt_group_header = { 'max': args.width, 'prefix': 12, 'sep':'' }
     title = ''
+    if args.journal is not None:
+        journal_args = eval(args.journal)
+        args.journal = True
     if len(args.character) == 0 and len(args.party) == 0 and \
  len(args.items) == 0 and args.journal is None and \
  len(args.members) == 0:
         args.character = ['All']
         args.party = ['All']
-        args.journal = '{}'
+        args.journal = True
         args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
         args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs',
  'InactiveNPCs', 'DeadNPCs']
@@ -771,29 +781,18 @@ else:
     cgitb.enable()
     form = cgi.FieldStorage()
     title = "Who knows what?"
-    tmp = form.getlist('journal')
-    if len(tmp) > 0:
-        js = form.getfirst('start')
-        if js is None or len(js) < 5 or js[0:5] != 'date.':
-            js = 'All'
-        else:
-            js = js[5:]
-        je = form.getfirst('end')
-        if je is None or len(je) < 5 or je[0:5] != 'date.':
-            je = 'All'
-        else:
-            je = je[5:]
-        jc = form.getfirst('char')
-        if jc is None or len(jc) < 5 or jc[0:5] != 'char.':
-            jc = 'All'
-        else:
-            jc = jc[5:]
-        args.journal = "{{'starting_on': '{js}', 'up_to': '{je}', 'char': '{jc}'}}".format(js = js, je = je, jc = jc)
-        if jc is not None and jc != 'All':
-            title = jc + ' Transaction Journal Report'
-        else:
-            title = 'Transaction Journal Report'
-
+    j = {}
+    js = form.getfirst('start')
+    if js is not None and js.lower() != 'all':
+        j['starting_on'] = js
+    je = form.getfirst('end')
+    if je is not None and je.lower() != 'all':
+        j['up_to'] = je
+    jc = form.getfirst('char')
+    if jc is not None and jc.lower() != 'char.all' and len(jc)>5 and jc[0:5] == 'char.':
+        j['char'] = jc[5:]
+    if len(j) > 0:
+        journal_args = j
     for todo in form.getlist('todo'):
         if len(todo)>5 and todo[0:5] == 'char.':
             args.character.append(todo[5:])
@@ -826,24 +825,20 @@ else:
                 title = tmp[todo]
             else:
                 title = 'People'
+        elif todo == 'Journal':
+            args.journal = True
+            if jc is not None and jc != 'All':
+                title = jc + ' Transaction Journal Report'
+            else:
+                title = 'AFAL Transaction Journal Report'
         else:
             title = 'Everything'
             args.character = afal.character_list
             args.party = afal.party_list
-            args.journal = '{}'
+            args.journal = True
             args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
             args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs']
-    afal.pw('Content-Type: text/html\n'
- '\n'
- '<html>\n'
- ' <head><title>{title}</title></head>\n'
- ' <body background="{background}">\n'
- '  {menu_html}\n'
- '  <center>\n'.format(
- title = title,
- background = afal_config.background,
- menu_url = afal_config.menu_url,
- menu_html = afal.menu_html), **fmt)
+    afal.pw(afal.html_header.format(title = title, add_menu = ''), **fmt)
     trailer = \
  '   <br><b><a href="{menu_url}">Return to Menu</a></b><br>\n'\
  '  </center>\n'\
@@ -858,7 +853,7 @@ if args.party:
     print_full_party(args.party)
 
 if args.journal:
-    print_journal(eval(args.journal), show_sub = True)
+    print_journal(journal_args, show_sub = True)
 
 if args.items:
     for i in args.items:
