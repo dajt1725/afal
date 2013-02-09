@@ -150,7 +150,7 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
-  <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Main" style="display:inline">
+  <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Main" style="display:none">
     <path class="corr" d="m1480 150v50h-30v10h260v-10h-220v-50zm10 30v10h10v-10z" id="rect3901"/>
     <path class="corr" d="m1550 80v10h10v20h10 10v-10h-10v-10h80v-10h-100z" id="rect3962"/>
     <path class="corr" d="m1730 10v10 120h-20v10h20v60h10v-190h10v30h130v-30h60v170h10v-160h30v-10h-30v-10h-80v30h-40v-10h-10v10h-60v-30z" id="rect3865"/>
@@ -237,8 +237,8 @@
     <text class="name" id="text3998" sodipodi:linespacing="125%" x="1680" xml:space="preserve" y="111"><tspan id="tspan4000" sodipodi:role="line" x="1680" y="111">219a</tspan></text>
     <text class="name" id="text4002" sodipodi:linespacing="125%" x="1494" xml:space="preserve" y="26"><tspan id="tspan4004" sodipodi:role="line" x="1494" y="26">258</tspan></text>
   </g>
-  <g id="um-l1-l2" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 2" style="display:inline"/>
-  <g id="um-l1-l" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:inline">
+  <g id="um-l1-l2" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 2" style="display:none"/>
+  <g id="um-l1-l" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:none">
     <path class="feature" d="m1130 2360h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="path4247"/>
     <rect class="feature-bad" height="30" id="rect4302" width="30" x="200" y="3250"/>
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
@@ -302,7 +302,7 @@
     <!-- Pits start here -->
     <rect class="pit" height="10" id="pit-rock-lobster-b" width="10" x="2700" y="540"/>
     <path class="pit" d="m2770 540h10v10h-10v-10z" id="pit-cursd"/>
-    <rect class="feature-water" height="30" id="rect5336" width="30" x="1670" y="1820"> <desc id="desc5338">6' of water</desc> </rect>
+    <rect class="feature-water" height="30" id="pit-water-filled-1" width="30" x="1670" y="1820"> <desc id="desc5338">6' of water</desc> </rect>
     <!-- Walls start here -->
     <path class="wall" d="m2720 550h20v-40" id="path3314"/>
     <path class="wall" d="m2720 540h10v-20h-20v60h10v12" id="path3316"/>
@@ -491,19 +491,19 @@
     <rect class="door" height="6" id="rect5356" width="2" x="1719" y="1752"/>
     <rect class="sec-door" height="2" id="rect5352" width="6" x="1772" y="1829"/>
     <!-- Features start here -->
-    <rect class="feature" height="30" id="feature-balcony" width="10" x="2890" y="480"/>
-    <path class="feature-bad" d="m2777 495h13m-30 0h13" id="feature-fence-b"/>
-    <path class="feature-bad" d="m2777 505h13m-30 0h13" id="feature-fence-a"/>
-    <path class="feature-bad" d="m2860 490v10" id="feature-trapped-step"/>
-    <rect class="feature" height="1" id="feature-seascape-button" width="1" x="2709" y="609">
+    <rect class="feature" height="30" id="balcony-cursd" width="10" x="2890" y="480"/>
+    <path class="feature-bad" d="m2777 495h13m-30 0h13" id="fence-b"/>
+    <path class="feature-bad" d="m2777 505h13m-30 0h13" id="fence-a"/>
+    <path class="feature-bad" d="m2860 490v10" id="trapped-step"/>
+    <rect class="feature" height="1" id="seascape-button" width="1" x="2709" y="609">
       <desc id="desc3385">Raises the floor so one can get at the secret doors, but can't leave through the north exit.</desc>
     </rect>
-    <rect class="feature" height="2" id="rect4206" width="10" x="890" y="2188"/>
-    <rect class="feature" height="3" id="rect5346" width="6" x="1742" y="1742"> <desc id="desc5348">Ladder to room above</desc> </rect>
-    <rect class="feature" height="9" id="rect5360" width="8" x="1680" y="1776"> <desc id="desc5362">cage on chains, lowered by rotating statue above</desc> </rect>
-    <rect class="feature-bad" height="10" id="rect4279" width="10" x="260" y="3480"/>
-    <rect class="feature-bad" height="6" id="rect4296" width="2" x="149" y="3542"/>
-    <path class="feature-path" d="m1746 1746-11 9-1 79-89 1v-25" id="dexter-path-c"/>
+    <rect class="feature" height="2" id="fixme-rect4206" width="10" x="890" y="2188"/>
+    <rect class="feature" height="3" id="ladder-1" width="6" x="1742" y="1742"> <desc id="desc5348">Ladder to room above</desc> </rect>
+    <rect class="feature" height="9" id="cage-1" width="8" x="1680" y="1776"> <desc id="desc5362">cage on chains, lowered by rotating statue above</desc> </rect>
+    <rect class="feature-bad" height="10" id="fixme-rect4279" width="10" x="260" y="3480"/>
+    <rect class="feature-bad" height="6" id="fixme-rect4296" width="2" x="149" y="3542"/>
+    <path class="feature-path" d="m1746 1746-11 9-1 79-89 1v-25" id="path-dexter-c"/>
     <!-- Names start here -->
     <!-- Unclassified start here -->
   </g>
@@ -749,7 +749,7 @@
     <rect class="room" height="20" id="floor-heroes" width="220" x="1940" y="610"/>
     <rect class="room" height="50" id="rect3852" width="20" x="1980" y="1110"/>
     <path class="room" d="m1885 940h-5v10 0h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5h5v5h5v-5-10-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5v5h-5v-5h-5z" id="floor-mirror-hall"/>
-    <rect class="room" height="20" id="floor-dexter-dance" width="30" x="2010" y="960"/>
+    <rect class="room" height="20" id="floor-animated-armor" width="30" x="2010" y="960"/>
     <rect class="room" height="30" id="floor-demon-gate" width="50" x="2010" y="890"/>
     <path class="room" d="m1670 1720v30h30v-20h10v-10h-10-30z" id="rect5487"/>
     <path class="room" d="m1735 60c-10 1-20 6-21 10h-14v10h-10v20h-50v50h190v-50h-50v-20h-10v-10h-15c-1-4-11-9-20-10z" id="room-lightning-and-mirror"/>
@@ -816,7 +816,7 @@
     <path class="pit" d="m2700 540h10v10h-10v-10z" id="pit-robot-lobster"/>
     <rect class="pit" height="10" id="rect5267" width="10" x="1710" y="1810"/>
     <rect class="pit" height="10" id="rect5472" width="20" x="2340" y="700"> <desc id="desc5474">With 25' of water in it</desc> </rect>
-    <circle class="pit" cx="1620" cy="1125" d="m1630 1125c0 5.52285-4.477153 10-10 10-5.522847 0-10-4.47715-10-10 0-5.52285 4.477153-10 10-10 5.522847 0 10 4.47715 10 10z" id="circular-pit" r="10" sodipodi:cx="1620" sodipodi:cy="1125" sodipodi:rx="10" sodipodi:ry="10"/>
+    <circle class="pit" cx="1620" cy="1125" id="circular-pit" r="10" />
     <!-- Walls start here -->
     <path class="wall" d="m2140 890v20h-10v40h-30v-20h-42 2v-40h-50v2-2h-20v-20h90v10h60v10h2zm-140 110v-20h-10v-20l20-10h22-2v10h-20v20h30v-30h-2 52v10h50v-30h40v-40h-32 2v-20h-10v-20h10v-150h-22 2v-20h-20v2-12h10v10h12-2v10h10v-10h-2 12v-40h-30v20h-10v-30h-2 52v-2 62l20 20h12-2v50h-20v110h10v10h40v-10h10v-110h-20v-50h-2 12l20-20v-12 2h10v80h10v10" id="walls-shield-room"/>
     <path class="wall" d="m2052 930h-2v-10h-40v-22 2h-20v20l20 10z" id="walls-null-magic--demon-gate"/>
@@ -1045,7 +1045,7 @@
     <path class="wall" d="m980 1110v30h-50" id="path3969"/>
     <!-- Doors start here -->
     <path class="sec-door" d="m2142 889 3 1 3-1v2l-3 1-3-1z" id="s-door-shield-room"/>
-    <rect class="sec-door" height="2" id="s-door-dexter-dance" width="6" x="2032" y="949"/>
+    <rect class="sec-door" height="2" id="s-door-animated-armor" width="6" x="2032" y="949"/>
     <rect class="sec-door" height="2" id="s-door-demon-gate" width="6" x="2052" y="929"/>
     <rect class="sec-door" height="6" id="rect5543" width="2" x="2119" y="852"/>
     <rect class="sec-door" height="6" id="secret-door-couch-room" width="2" x="2669" y="512"/>
@@ -1158,116 +1158,116 @@
     <circle class="column" cx="1085" cy="1175" id="column-cooking-11" r="2.5"/>
     <circle class="column" cx="1085" cy="1185" id="column-cooking-6" r="2.5"/>
     <circle class="column" cx="1085" cy="1195" id="column-cooking-1" r="2.5"/>
-    <circle class="column" cx="1695" cy="88" id="column-lightning-2" r="3"/>
-    <circle class="column" cx="1707" cy="78" id="column-lightning-1" r="3"/>
     <circle class="column" cx="1730" cy="1870" id="column-spiders-1" r="2"/>
     <circle class="column" cx="1730" cy="1880" id="column-spiders-10" r="2"/>
     <circle class="column" cx="1730" cy="1890" id="column-spiders-9" r="2"/>
-    <circle class="column" cx="1740" cy="1810" id="column-dd-l1-5" r="2"/>
-    <circle class="column" cx="1740" cy="1820" id="column-dd-l1-4" r="2"/>
     <circle class="column" cx="1740" cy="1870" id="column-spiders-2" r="2"/>
     <circle class="column" cx="1740" cy="1890" id="column-spiders-8" r="2"/>
     <circle class="column" cx="1750" cy="1800" id="column-dd-l1-1" r="2"/>
     <circle class="column" cx="1750" cy="1810" id="column-dd-l1-2" r="2"/>
     <circle class="column" cx="1750" cy="1820" id="column-dd-l1-3" r="2"/>
+    <circle class="column" cx="1740" cy="1820" id="column-dd-l1-4" r="2"/>
+    <circle class="column" cx="1740" cy="1810" id="column-dd-l1-5" r="2"/>
     <circle class="column" cx="1750" cy="1870" id="column-spiders-3" r="2"/>
     <circle class="column" cx="1750" cy="1890" id="column-spiders-7" r="2"/>
     <circle class="column" cx="1760" cy="1870" id="column-spiders-4" r="2"/>
     <circle class="column" cx="1760" cy="1880" id="column-spiders-5" r="2"/>
     <circle class="column" cx="1760" cy="1890" id="column-spiders-6" r="2"/>
+    <circle class="column" cx="1707" cy="78" id="column-lightning-1" r="3"/>
+    <circle class="column" cx="1695" cy="88" id="column-lightning-2" r="3"/>
     <circle class="column" cx="1763" cy="78" id="column-lightning-3" r="3"/>
     <circle class="column" cx="1773" cy="88" id="column-lightning-4" r="3"/>
-    <circle class="column" cx="1890" cy="610" d="m1901 610c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-hallway-5-0" r="1" sodipodi:cx="1890" sodipodi:cy="610" sodipodi:rx="1" sodipodi:ry="1"/>
     <rect class="column" height="4" id="column-x" width="4" x="1874" y="1076"/>
     <rect class="column" height="4" id="column-z" width="4" x="1878" y="1086"/>
-    <circle class="column" cx="2150" cy="615" d="m2151 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-1" r="1" sodipodi:cx="2150" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2150" cy="625" d="m2151 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-2" r="1" sodipodi:cx="2150" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2140" cy="615" d="m2141 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-3" r="1" sodipodi:cx="2140" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2140" cy="625" d="m2141 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-4" r="1" sodipodi:cx="2140" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2130" cy="615" d="m2131 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-5" r="1" sodipodi:cx="2130" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2130" cy="625" d="m2131 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-6" r="1" sodipodi:cx="2130" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2120" cy="615" d="m2121 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-7" r="1" sodipodi:cx="2120" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2120" cy="625" d="m2121 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-8" r="1" sodipodi:cx="2120" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2110" cy="615" d="m2111 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-9" r="1" sodipodi:cx="2110" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2110" cy="625" d="m2111 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-10" r="1" sodipodi:cx="2110" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2100" cy="615" d="m2101 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-11" r="1" sodipodi:cx="2100" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2100" cy="625" d="m2101 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-12" r="1" sodipodi:cx="2100" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2090" cy="615" d="m2091 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-13" r="1" sodipodi:cx="2090" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2090" cy="625" d="m2091 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-14" r="1" sodipodi:cx="2090" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2080" cy="615" d="m2081 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-15" r="1" sodipodi:cx="2080" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2080" cy="625" d="m2081 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-16" r="1" sodipodi:cx="2080" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2070" cy="615" d="m2071 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-17" r="1" sodipodi:cx="2070" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2070" cy="625" d="m2071 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-18" r="1" sodipodi:cx="2070" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2060" cy="615" d="m2061 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-19" r="1" sodipodi:cx="2060" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2060" cy="625" d="m2061 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-20" r="1" sodipodi:cx="2060" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2050" cy="615" d="m2051 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-21" r="1" sodipodi:cx="2050" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2050" cy="625" d="m2051 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-22" r="1" sodipodi:cx="2050" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2040" cy="615" d="m2041 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-23" r="1" sodipodi:cx="2040" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2040" cy="625" d="m2041 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-24" r="1" sodipodi:cx="2040" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2030" cy="615" d="m2031 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-25" r="1" sodipodi:cx="2030" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2030" cy="625" d="m2031 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-26" r="1" sodipodi:cx="2030" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2020" cy="615" d="m2021 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-27" r="1" sodipodi:cx="2020" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2020" cy="625" d="m2021 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-28" r="1" sodipodi:cx="2020" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2010" cy="615" d="m2011 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-29" r="1" sodipodi:cx="2010" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2010" cy="625" d="m2011 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-30" r="1" sodipodi:cx="2010" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2000" cy="615" d="m2001 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-31" r="1" sodipodi:cx="2000" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2000" cy="625" d="m2001 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-32" r="1" sodipodi:cx="2000" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1990" cy="615" d="m1991 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-33" r="1" sodipodi:cx="1990" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1990" cy="625" d="m1991 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-34" r="1" sodipodi:cx="1990" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1980" cy="615" d="m1981 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-35" r="1" sodipodi:cx="1980" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1980" cy="625" d="m1981 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-36" r="1" sodipodi:cx="1980" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1970" cy="615" d="m1971 615c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-37" r="1" sodipodi:cx="1970" sodipodi:cy="615" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1970" cy="625" d="m1971 625c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-heroes-38" r="1" sodipodi:cx="1970" sodipodi:cy="625" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1940" cy="610" d="m1941 610c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-hallway-1" r="1" sodipodi:cx="1940" sodipodi:cy="610" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1930" cy="610" d="m1931 610c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-hallway-2" r="1" sodipodi:cx="1930" sodipodi:cy="610" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1920" cy="610" d="m1921 610c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-hallway-3" r="1" sodipodi:cx="1920" sodipodi:cy="610" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1910" cy="610" d="m1911 610c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-hallway-4" r="1" sodipodi:cx="1910" sodipodi:cy="610" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1900" cy="610" d="m1901 610c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-hallway-5" r="1" sodipodi:cx="1900" sodipodi:cy="610" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1985" cy="924" d="m1986 924c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1" r="1" sodipodi:cx="1985" sodipodi:cy="924" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2005" cy="931" d="m2006 931c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-2" r="1" sodipodi:cx="2005" sodipodi:cy="931" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="2004.52301" cy="950" d="m2005.52298 950c0 0.55228-0.44772 1-1 1-0.55229 0-1-0.44772-1-1 0-0.55229 0.44771-1 1-1 0.55228 0 1 0.44771 1 1z" id="column-null-magic-3" r="1" sodipodi:cx="2004.52301" sodipodi:cy="950" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1985" cy="956" d="m1986 956c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-4" r="1" sodipodi:cx="1985" sodipodi:cy="956" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1860" cy="840" d="m1861.5 840c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-1" r="1.5" sodipodi:cx="1860" sodipodi:cy="840" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
-    <circle class="column" cx="1850" cy="830" d="m1851.5 830c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-2" r="1.5" sodipodi:cx="1850" sodipodi:cy="830" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
-    <circle class="column" cx="1870" cy="830" d="m1871.5 830c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-3" r="1.5" sodipodi:cx="1870" sodipodi:cy="830" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
-    <circle class="column" cx="1850" cy="850" d="m1851.5 850c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-4" r="1.5" sodipodi:cx="1850" sodipodi:cy="850" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
-    <circle class="column" cx="1870" cy="850" d="m1871.5 850c0 0.82843-0.67157 1.5-1.5 1.5-0.82843 0-1.5-0.67157-1.5-1.5 0-0.82843 0.67157-1.5 1.5-1.5 0.82843 0 1.5 0.67157 1.5 1.5z" id="column-5col-room-5" r="1.5" sodipodi:cx="1870" sodipodi:cy="850" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
-    <circle class="column" cx="1995" cy="926.5" d="m1996 926.58649c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55229 0.44772-1 1-1 0.55228 0 1 0.44771 1 1z" id="column-null-magic-1-6" r="1" sodipodi:cx="1995" sodipodi:cy="926.5865" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1995" cy="952.5" d="m1996 952.47815c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55229 0.44772-1 1-1 0.55228 0 1 0.44771 1 1z" id="column-null-magic-1-7" r="1" sodipodi:cx="1995" sodipodi:cy="952.4781" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1974" cy="950" d="m1975 950c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-8" r="1" sodipodi:cx="1974" sodipodi:cy="950" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1974" cy="931" d="m1975 931c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-2" r="1" sodipodi:cx="1974" sodipodi:cy="931" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1990" cy="931" d="m1991 931c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-9" r="1" sodipodi:cx="1990" sodipodi:cy="931" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1990" cy="947" d="m1991 947c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-63" r="1" sodipodi:cx="1990" sodipodi:cy="947" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="1990" cy="938" d="m1991 938c0 0.55228-0.44772 1-1 1-0.55228 0-1-0.44772-1-1 0-0.55228 0.44772-1 1-1 0.55228 0 1 0.44772 1 1z" id="column-null-magic-1-9-1" r="1" sodipodi:cx="1990" sodipodi:cy="938" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="2150" cy="615" id="column-heroes-1" r="1"/>
+    <circle class="column" cx="2150" cy="625" id="column-heroes-2" r="1"/>
+    <circle class="column" cx="2140" cy="615" id="column-heroes-3" r="1"/>
+    <circle class="column" cx="2140" cy="625" id="column-heroes-4" r="1"/>
+    <circle class="column" cx="2130" cy="615" id="column-heroes-5" r="1"/>
+    <circle class="column" cx="2130" cy="625" id="column-heroes-6" r="1"/>
+    <circle class="column" cx="2120" cy="615" id="column-heroes-7" r="1"/>
+    <circle class="column" cx="2120" cy="625" id="column-heroes-8" r="1"/>
+    <circle class="column" cx="2110" cy="615" id="column-heroes-9" r="1"/>
+    <circle class="column" cx="2110" cy="625" id="column-heroes-10" r="1"/>
+    <circle class="column" cx="2100" cy="615" id="column-heroes-11" r="1"/>
+    <circle class="column" cx="2100" cy="625" id="column-heroes-12" r="1"/>
+    <circle class="column" cx="2090" cy="615" id="column-heroes-13" r="1"/>
+    <circle class="column" cx="2090" cy="625" id="column-heroes-14" r="1"/>
+    <circle class="column" cx="2080" cy="615" id="column-heroes-15" r="1"/>
+    <circle class="column" cx="2080" cy="625" id="column-heroes-16" r="1"/>
+    <circle class="column" cx="2070" cy="615" id="column-heroes-17" r="1"/>
+    <circle class="column" cx="2070" cy="625" id="column-heroes-18" r="1"/>
+    <circle class="column" cx="2060" cy="615" id="column-heroes-19" r="1"/>
+    <circle class="column" cx="2060" cy="625" id="column-heroes-20" r="1"/>
+    <circle class="column" cx="2050" cy="615" id="column-heroes-21" r="1"/>
+    <circle class="column" cx="2050" cy="625" id="column-heroes-22" r="1"/>
+    <circle class="column" cx="2040" cy="615" id="column-heroes-23" r="1"/>
+    <circle class="column" cx="2040" cy="625" id="column-heroes-24" r="1"/>
+    <circle class="column" cx="2030" cy="615" id="column-heroes-25" r="1"/>
+    <circle class="column" cx="2030" cy="625" id="column-heroes-26" r="1"/>
+    <circle class="column" cx="2020" cy="615" id="column-heroes-27" r="1"/>
+    <circle class="column" cx="2020" cy="625" id="column-heroes-28" r="1"/>
+    <circle class="column" cx="2010" cy="615" id="column-heroes-29" r="1"/>
+    <circle class="column" cx="2010" cy="625" id="column-heroes-30" r="1"/>
+    <circle class="column" cx="2000" cy="615" id="column-heroes-31" r="1"/>
+    <circle class="column" cx="2000" cy="625" id="column-heroes-32" r="1"/>
+    <circle class="column" cx="1990" cy="615" id="column-heroes-33" r="1"/>
+    <circle class="column" cx="1990" cy="625" id="column-heroes-34" r="1"/>
+    <circle class="column" cx="1980" cy="615" id="column-heroes-35" r="1"/>
+    <circle class="column" cx="1980" cy="625" id="column-heroes-36" r="1"/>
+    <circle class="column" cx="1970" cy="615" id="column-heroes-37" r="1"/>
+    <circle class="column" cx="1970" cy="625" id="column-heroes-38" r="1" />
+    <circle class="column" cx="1940" cy="610" id="column-hallway-1" r="1" />
+    <circle class="column" cx="1930" cy="610" id="column-hallway-2" r="1" />
+    <circle class="column" cx="1920" cy="610" id="column-hallway-3" r="1" />
+    <circle class="column" cx="1910" cy="610" id="column-hallway-4" r="1" />
+    <circle class="column" cx="1900" cy="610" id="column-hallway-5" r="1" />
+    <circle class="column" cx="1890" cy="610" id="column-hallway-6" r="1" />
+    <circle class="column" cx="1985" cy="924" id="column-null-magic-1" r="1" />
+    <circle class="column" cx="2005" cy="931" id="column-null-magic-2" r="1" />
+    <circle class="column" cx="2004" cy="950" id="column-null-magic-3" r="1" />
+    <circle class="column" cx="1985" cy="956" id="column-null-magic-4" r="1" />
+    <circle class="column" cx="1995" cy="926" id="column-null-magic-5" r="1" />
+    <circle class="column" cx="1995" cy="952" id="column-null-magic-6" r="1" />
+    <circle class="column" cx="1974" cy="950" id="column-null-magic-7" r="1" />
+    <circle class="column" cx="1974" cy="931" id="column-null-magic-8" r="1" />
+    <circle class="column" cx="1990" cy="931" id="column-null-magic-9" r="1" />
+    <circle class="column" cx="1990" cy="947" id="column-null-magic-10" r="1" />
+    <circle class="column" cx="1990" cy="938" id="column-null-magic-11" r="1" />
+    <circle class="column" cx="1860" cy="840" id="column-5col-room-1" r="1.5" />
+    <circle class="column" cx="1850" cy="830" id="column-5col-room-2" r="1.5" />
+    <circle class="column" cx="1870" cy="830" id="column-5col-room-3" r="1.5" />
+    <circle class="column" cx="1850" cy="850" id="column-5col-room-4" r="1.5" />
+    <circle class="column" cx="1870" cy="850" id="column-5col-room-5" r="1.5" />
     <rect class="feature" height="10" id="teleportal-a-out" width="10" x="1800" y="1590"/>
     <rect class="feature-bad" height="10" id="teleportal-a-in" width="10" x="1820" y="1490"/>
-    <rect class="feature-bad" height="10" id="feature-revgravity-trap" width="10" x="2560" y="550"/>
-    <path class="feature" d="m1571 1025-6 3v5l2-4 4-2z" id="feature-dragon-tail"/>
+    <rect class="feature-bad" height="10" id="-revgravity-trap" width="10" x="2560" y="550"/>
+    <path class="feature" d="m1571 1025-6 3v5l2-4 4-2z" id="dragon-tail"/>
     <rect class="feature" height="40" id="altar-giant-spider" width="20" x="1890" y="1460"/>
-    <path class="feature-bad" d="m1900 1570v10" id="curtain"/>
-    <rect class="feature" height="10" id="feature-bone-throne" width="10" x="1980" y="690"/>
-    <rect class="feature" height="5" id="feature-couch" width="5" x="2640" y="505"/>
-    <rect class="feature-bad" height="10" id="feature-lightning-statue" width="10" x="1635" y="1570"/>
+    <path class="feature-bad" d="m1900 1570v10" id="curtain-x1"/>
+    <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="690"/>
+    <rect class="feature" height="5" id="couch" width="5" x="2640" y="505"/>
+    <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1570"/>
     <rect class="feature" height="2" id="dexter-dance-lever" width="2" x="1998.59399" y="953"/>
-    <rect class="feature" height="5" id="feature-demon-gate" width="2" x="2034" y="903"/>
-    <rect class="feature" height="1" id="lever-sdoor" width="2" x="1217" y="1222"> <desc id="desc3947">Opens secret door to cooking room</desc> </rect>
+    <rect class="feature" height="5" id="demon-gate" width="2" x="2034" y="903"/>
+    <rect class="feature" height="1" id="lever-cooking-room-sdoor" width="2" x="1217" y="1222"> <desc id="desc3947">Opens secret door to cooking room</desc> </rect>
     <rect class="feature" height="12" id="statue-purple-glow" width="12" x="2044" y="994"/>
-    <rect class="feature" height="2" id="feature-mirror-myth-drannor" width="8" x="1730" y="60"/>
+    <rect class="feature" height="2" id="mirror-myth-drannor" width="8" x="1730" y="60"/>
     <rect class="feature" height="5" id="statue-you-can-turn" width="5" x="1678" y="1782"/>
     <rect class="feature" height="6" id="ceiling-trapdoor" width="6" x="1751" y="312"/>
     <rect class="feature" height="6" id="cooking-platform" width="6" x="1062" y="1172"/>
-    <rect class="feature" height="6" id="feature-trapdoor-in-floor" width="6" x="1742" y="1742"/>
+    <rect class="feature" height="6" id="trapdoor-in-floor" width="6" x="1742" y="1742"/>
     <rect class="feature" height="7" id="statue-of-mask" width="6" x="1123" y="1246"/>
     <path class="feature-bad" d="m1862 950v10" id="curtain-x2"/>
     <path class="feature-bad" d="m2149 1226 4 9h-1l-4-8z" id="fixme-path3875"/>
     <rect class="feature-bad" height="2" id="fixme-rect3877" width="10" x="2140" y="1288"/>
     <rect class="feature-bad" height="2" id="sliding-wall" width="10" x="2090" y="1089"/>
-    <rect class="feature-bad" height="4" id="feat-chest" width="4" x="1851" y="362"> <desc id="desc5172">Exploded chest surrounded by bodies</desc> </rect>
+    <rect class="feature-bad" height="4" id="chest" width="4" x="1851" y="362"> <desc id="desc5172">Exploded chest surrounded by bodies</desc> </rect>
     <rect class="feature-bad" height="8" id="fixme-rect3873" width="9" x="2130" y="1250"/>
     <rect class="feature-bad" height="8" id="statue-wonder" width="6" x="1983" y="1113"/>
     <path class="feature-path" d="m1986 948-1 127h-20v30h-80v20h-10v90h10v210l-20 103v27h20v50h-40v10h-10v-10h-40v30h-50v45" id="path-dexter-dance-a"/>
     <path class="feature-path" d="m1745 1680v65" id="path-dexter-dance-b"/>
-    <path class="feature-path" d="m1645 1830-1-45-109 1v38h-20v-34" id="path-dexter-dance-c"/>
+    <path class="feature-path" d="m1645 1830-1-45-109 1v38h-20v-34" id="path-dexter-dance-d"/>
     <path class="bars" d="m2035 920v-30" id="bars-1"/>
     <!-- Names start here -->
     <text class="name" id="text4224" sodipodi:linespacing="125%" x="1990" xml:space="preserve" y="622"><tspan id="tspan4226" sodipodi:role="line" x="1990" y="622">Hall of Heroes</tspan></text>
