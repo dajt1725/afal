@@ -291,6 +291,25 @@
     <rect class="corr" height="10" id="rect4334" width="10" x="1060" y="2300"/>
     <rect class="corr" height="20" id="rect4247" width="50" x="1280" y="2110"/>
     <rect class="corr" height="20" id="rect4251" width="20" x="1280" y="2130"/>
+    <path class="corr" d="m1070 2180v20h10h30v-10h-30v-10h-10z" id="rect4206"/>
+    <rect class="corr" height="10" id="rect4256" width="10" x="1090" y="2150"/>
+    <rect class="corr" height="10" id="rect4258" width="10" x="1050" y="2150"/>
+    <path class="corr" d="m890 2160v10v20h-10v20h10v-10h10h140v-10h-140v-20h10v-10zm70 40v10h10v-10z" id="rect4260"/>
+    <rect class="corr" height="10" id="rect4296" width="10" x="940" y="2230"/>
+    <path class="corr" d="m810 2230v30h10v50h10v-60h-10v-10h40v-10h-40h-10z" id="rect4313"/>
+    <path class="corr" d="m820 2340v40h-10v30h10v-20h10v20h10v-30h-10v-40h-10z" id="rect4335"/>
+    <rect class="corr" height="10" id="rect4345" width="10" x="800" y="2320"/>
+    <rect class="corr" height="10" id="rect4349" width="10" x="760" y="2300"/>
+    <rect class="corr" height="10" id="rect4357" width="10" x="730" y="2320"/>
+    <path class="corr" d="m700 2270v10h10v10v10h-10v10h20v-10h10v-10h-10v-10h10v-10h-30z" id="rect4359"/>
+    <rect class="corr" height="10" id="rect4374" width="10" x="660" y="2310"/>
+    <path class="corr" d="m620 2270v60h-60v10h60v80h-10v10h10v30h-10v10h10v40h-10h-10l-10 10v10h10l10-10h10v20h10v-20h10v-10h-10v-40h10v-10h-10v-30h10v-10h-10v-80h100v-10h-100v-60zm-20 260h-10v190h10z" id="rect4376"/>
+    <rect class="corr" height="10" id="rect4423" width="50" x="510" y="2600"/>
+    <rect class="corr" height="10" id="rect4427" width="60" x="460" y="2650"/>
+    <rect class="corr" height="10" id="rect4431" width="40" x="370" y="2670"/>
+    <rect class="corr" height="10" id="rect4433" width="10" x="360" y="2710"/>
+    <rect class="corr" height="10" id="rect4455" width="30" x="290" y="2670"/>
+    <path class="corr" d="m320 2710v10h-10v10h20v-10v-10h-10z" id="rect4461"/>
     <!-- Rooms start here -->
     <path class="room" d="m1470 1800v30h20v-20h10v-10h-10-20z" id="rect3905"/>
     <rect class="room" height="30" id="rect3926" width="70" x="1410" y="1840"/>
@@ -320,6 +339,27 @@
     <rect class="room" height="30" id="rect4350" width="30" x="1050" y="2250"/>
     <rect class="room" height="20" id="rect4257" width="30" x="1380" y="2150"/>
     <rect class="room" height="20" id="rect4324" width="30" x="1070" y="2300"/>
+    <rect class="room" height="30" id="rect4409" width="20" x="590" y="2410"/>
+    <rect class="room" height="30" id="rect4411" width="20" x="640" y="2410"/>
+    <rect class="room" height="30" id="rect4413" width="20" x="590" y="2450"/>
+    <rect class="room" height="30" id="rect4415" width="20" x="640" y="2450"/>
+    <rect class="room" height="30" id="rect4417" width="20" x="640" y="2500"/>
+    <rect class="room" height="30" id="rect4419" width="30" x="610" y="2540"/>
+    <rect class="room" height="50" id="rect4421" width="30" x="560" y="2600"/>
+    <rect class="room" height="40" id="rect4425" width="30" x="500" y="2610"/>
+    <path class="room" d="m410 2700v-30h20l20-20h10v10l-20 20v20z" id="path4429"/>
+    <rect class="room" height="40" id="rect4372" width="20" x="640" y="2280"/>
+    <rect class="room" height="30" id="rect4333" width="30" x="810" y="2310"/>
+    <rect class="room" height="30" id="rect4347" width="30" x="770" y="2300"/>
+    <rect class="room" height="30" id="rect4351" width="30" x="730" y="2290"/>
+    <rect class="room" height="20" id="rect4353" width="30" x="730" y="2330"/>
+    <rect class="room" height="30" id="rect4355" width="30" x="670" y="2290"/>
+    <rect class="room" height="40" id="rect4301" width="40" x="860" y="2210"/>
+    <rect class="room" height="40" id="rect4311" width="30" x="950" y="2210"/>
+    <rect class="room" height="30" id="rect4254" width="30" x="1060" y="2150"/>
+    <rect class="room" height="20" id="rect4435" width="30" x="350" y="2720"/>
+    <rect class="room" height="40" id="rect4437" width="50" x="320" y="2670"/>
+    <rect class="room" height="30" id="rect4457" width="30" x="260" y="2660"/>
     <!-- Stairs start here -->
     <path class="stairs-ew" d="m2830 490 30 3v4l-30 3z" id="stairs-cursd"/>
     <path class="stairs-ew" d="m1130 2363 20-3v10l-20-3z" id="rect4228"/>
@@ -564,62 +604,12 @@
     <rect class="feature-bad" height="6" id="fixme-rect4296" width="2" x="149" y="3542"/>
     <path class="feature-path" d="m1746 1746-11 9-1 79-89 1v-25" id="path-dexter-dance-c"/>
     <path class="feature-path" d="m1515 1820v-35h-30v40h-30v30h-40v150h-30v70h10v40h-61v5h-44v55h-85v40h10v50h70v90h-90v10h-100v-60h-60v-110h-150v41l-70-1v20h10v71l-50-1v-20h-40v31l-110-1v180h-20l-11 10 1 100h-10l-20-19h-50v49h-61l-19 20-110 1v49h-50" id="path-dexter-dance-e"/>
-    <!-- Names start here -->
-    <!-- Unclassified start here -->
-    <path class="corr" d="m1070 2180v20h10h30v-10h-30v-10h-10z" id="rect4206"/>
-    <rect class="room" height="30" id="rect4254" width="30" x="1060" y="2150"/>
-    <rect class="corr" height="10" id="rect4256" width="10" x="1090" y="2150"/>
-    <rect class="corr" height="10" id="rect4258" width="10" x="1050" y="2150"/>
-    <path class="corr" d="m890 2160v10v20h-10v20h10v-10h10h140v-10h-140v-20h10v-10zm70 40v10h10v-10z" id="rect4260"/>
-    <rect class="corr" height="10" id="rect4296" width="10" x="940" y="2230"/>
-    <rect class="room" height="40" id="rect4301" width="40" x="860" y="2210"/>
-    <rect class="room" height="40" id="rect4311" width="30" x="950" y="2210"/>
-    <path class="corr" d="m810 2230v30h10v50h10v-60h-10v-10h40v-10h-40h-10z" id="rect4313"/>
-    <rect class="room" height="30" id="rect4333" width="30" x="810" y="2310"/>
-    <path class="corr" d="m820 2340v40h-10v30h10v-20h10v20h10v-30h-10v-40h-10z" id="rect4335"/>
-    <rect class="corr" height="10" id="rect4345" width="10" x="800" y="2320"/>
-    <rect class="room" height="30" id="rect4347" width="30" x="770" y="2300"/>
-    <rect class="corr" height="10" id="rect4349" width="10" x="760" y="2300"/>
-    <rect class="room" height="30" id="rect4351" width="30" x="730" y="2290"/>
-    <rect class="room" height="20" id="rect4353" width="30" x="730" y="2330"/>
-    <rect class="room" height="30" id="rect4355" width="30" x="670" y="2290"/>
-    <rect class="corr" height="10" id="rect4357" width="10" x="730" y="2320"/>
-    <path class="corr" d="m700 2270v10h10v10v10h-10v10h20v-10h10v-10h-10v-10h10v-10h-30z" id="rect4359"/>
-    <rect class="room" height="40" id="rect4372" width="20" x="640" y="2280"/>
-    <rect class="corr" height="10" id="rect4374" width="10" x="660" y="2310"/>
-    <path class="corr" d="m620 2270v60h-60v10h60v80h-10v10h10v30h-10v10h10v40h-10h-10l-10 10v10h10l10-10h10v20h10v-20h10v-10h-10v-40h10v-10h-10v-30h10v-10h-10v-80h100v-10h-100v-60zm-20 260h-10v190h10z" id="rect4376"/>
-    <rect class="room" height="30" id="rect4409" width="20" x="590" y="2410"/>
-    <rect class="room" height="30" id="rect4411" width="20" x="640" y="2410"/>
-    <rect class="room" height="30" id="rect4413" width="20" x="590" y="2450"/>
-    <rect class="room" height="30" id="rect4415" width="20" x="640" y="2450"/>
-    <rect class="room" height="30" id="rect4417" width="20" x="640" y="2500"/>
-    <rect class="room" height="30" id="rect4419" width="30" x="610" y="2540"/>
-    <rect class="room" height="50" id="rect4421" width="30" x="560" y="2600"/>
-    <rect class="corr" height="10" id="rect4423" width="50" x="510" y="2600"/>
-    <rect class="room" height="40" id="rect4425" width="30" x="500" y="2610"/>
-    <rect class="corr" height="10" id="rect4427" width="60" x="460" y="2650"/>
-    <path class="room" d="m410 2700v-30h20l20-20h10v10l-20 20v20z" id="path4429"/>
-    <rect class="corr" height="10" id="rect4431" width="40" x="370" y="2670"/>
-    <rect class="corr" height="10" id="rect4433" width="10" x="360" y="2710"/>
-    <rect class="room" height="20" id="rect4435" width="30" x="350" y="2720"/>
-    <rect class="room" height="40" id="rect4437" width="50" x="320" y="2670"/>
-    <path d="m332 2690a1.5 1.5 0 1 1 0.0129-0.1113" id="path4439" sodipodi:cx="330.5" sodipodi:cy="2689.5" sodipodi:end="6.3615167" sodipodi:open="true" sodipodi:rx="1.5" sodipodi:ry="1.5" sodipodi:start="0.1530581" sodipodi:type="arc" class="column"/>
-    <path d="m342 2690a1.5 1.5 0 1 1 0.0129-0.1113" id="path4441" sodipodi:cx="340.5" sodipodi:cy="2689.5" sodipodi:end="6.3615167" sodipodi:open="true" sodipodi:rx="1.5" sodipodi:ry="1.5" sodipodi:start="0.1530581" sodipodi:type="arc" class="column"/>
-    <path d="m352 2690a2 2 0 1 1 0.0172-0.1484" id="path4443" sodipodi:cx="350" sodipodi:cy="2690" sodipodi:end="6.3615167" sodipodi:open="true" sodipodi:rx="2" sodipodi:ry="2" sodipodi:start="0.1530581" sodipodi:type="arc" class="column"/>
-    <path d="m362 2690a1.5 2 0 1 1 0.0129-0.1484" id="path4445" sodipodi:cx="360.5" sodipodi:cy="2690" sodipodi:end="6.3615167" sodipodi:open="true" sodipodi:rx="1.5" sodipodi:ry="2" sodipodi:start="0.1530581" sodipodi:type="arc" class="column"/>
-    <text id="text4447" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="335" xml:space="preserve" y="2684"><tspan id="tspan4449" sodipodi:role="line" x="335" y="2684">Frost</tspan></text>
-    <text id="text4451" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="329.57959" xml:space="preserve" y="2699.8499"><tspan id="tspan4453" sodipodi:role="line" x="329.57959" y="2699.8499">Spiders</tspan></text>
-    <rect class="corr" height="10" id="rect4455" width="30" x="290" y="2670"/>
-    <rect class="room" height="30" id="rect4457" width="30" x="260" y="2660"/>
     <rect class="feature-bad" height="30" id="rect4459" width="30" x="280" y="2710"/>
-    <path class="corr" d="m320 2710v10h-10v10h20v-10v-10h-10z" id="rect4461"/>
-    <text id="text4468" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="282" xml:space="preserve" y="2723"><tspan id="tspan4470" sodipodi:role="line" x="282" y="2723">Puzzle</tspan><tspan id="tspan4472" sodipodi:role="line" x="282" y="2733">Lock</tspan></text>
     <path class="feature-bad" d="m550 2600v10h-1v-10z" id="path4478"/>
     <rect class="feature-bad" height="10" id="rect4480" width="1" x="479" y="2650"/>
     <rect class="feature" height="5" id="im-hungry" width="5" x="622" y="2333">
       <desc id="desc4484">big thing that demanded food to let us past.</desc>
     </rect>
-    <text id="text4486" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="861.11108" xml:space="preserve" y="2223.7236"><tspan id="tspan4488" sodipodi:role="line" x="861.11108" y="2223.7236">Shriekers</tspan></text>
     <rect class="feature" height="10" id="rect4492" width="1" x="1119" y="2360"/>
     <rect class="feature" height="10" id="rect4494" width="1" x="1109" y="2360"/>
     <rect class="feature" height="1" id="rect4496" width="10" x="1090" y="2347"/>
@@ -628,11 +618,21 @@
     <rect class="feature" height="1" id="rect4502" width="10" x="1090" y="2383"/>
     <rect class="feature" height="10" id="rect4504" width="1" x="1079" y="2360"/>
     <rect class="feature" height="10" id="rect4506" width="1" x="1069" y="2360"/>
-    <path d="m1293 2175a3 2 0 1 1 0.026-0.1484" id="path4508" sodipodi:cx="1290" sodipodi:cy="2175" sodipodi:end="6.3615167" sodipodi:open="true" sodipodi:rx="3" sodipodi:ry="2" sodipodi:start="0.1530581" sodipodi:type="arc" style="fill:#000000;fill-opacity:0.64313725;stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"/>
-    <text id="text4474" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="501" xml:space="preserve" y="2618"><tspan id="tspan4476" sodipodi:role="line" x="501" y="2618">Litch</tspan></text>
-    <path class="feature" d="m518 2630a3 2.5 0 1 1 0.0259-0.1856" id="path4510" sodipodi:cx="515" sodipodi:cy="2630.5" sodipodi:end="6.3615167" sodipodi:open="true" sodipodi:rx="3" sodipodi:ry="2.5" sodipodi:start="0.1530581" sodipodi:type="arc"/>
+    <circle class="feature" cx="1290" cy="2175" id="feature-round-a" r="2.5"/>
+    <circle class="feature" cx="515" cy="2630" id="feature-round-b" r="3"/>
     <rect class="feature" height="4" id="rect4512" width="6" x="512" y="2643"/>
     <rect class="feature" height="5" id="rect4514" width="5" x="512" y="2612"/>
+    <circle class="column" cx="330" cy="2690" id="column-frost-spiders-1" r="1"/>
+    <circle class="column" cx="340" cy="2690" id="column-frost-spiders-2" r="1"/>
+    <circle class="column" cx="350" cy="2690" id="column-frost-spiders-3" r="1"/>
+    <circle class="column" cx="360" cy="2690" id="column-frost-spiders-4" r="1"/>
+    <!-- Names start here -->
+    <text id="text4447" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="335" xml:space="preserve" y="2684"><tspan id="tspan4449" sodipodi:role="line" x="335" y="2684">Frost</tspan></text>
+    <text id="text4451" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="329.57959" xml:space="preserve" y="2699.8499"><tspan id="tspan4453" sodipodi:role="line" x="329.57959" y="2699.8499">Spiders</tspan></text>
+    <text id="text4486" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="861.11108" xml:space="preserve" y="2223.7236"><tspan id="tspan4488" sodipodi:role="line" x="861.11108" y="2223.7236">Shriekers</tspan></text>
+    <text id="text4468" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="282" xml:space="preserve" y="2723"><tspan id="tspan4470" sodipodi:role="line" x="282" y="2723">Puzzle</tspan><tspan id="tspan4472" sodipodi:role="line" x="282" y="2733">Lock</tspan></text>
+    <text id="text4474" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="501" xml:space="preserve" y="2618"><tspan id="tspan4476" sodipodi:role="line" x="501" y="2618">Litch</tspan></text>
+    <!-- Unclassified start here -->
   </g>
   <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:inline">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
