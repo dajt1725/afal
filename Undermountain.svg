@@ -1,5 +1,20 @@
 <?xml version="1.0" ?>
 <!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="Undermountain.svg" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <script type="text/ecmascript">
+    <![CDATA[
+      function toggleLayer(e,n) {
+        var l = document.getElementById(n);
+        var state = l.getAttributeNS(null,"style");
+        if (state == "display:inline") {
+          l.setAttributeNS(null,"style","display:none");
+          e.target.setAttributeNS(null,"style","font-size:14px;fill:red");
+        } else {
+          l.setAttributeNS(null,"style","display:inline");
+          e.target.setAttributeNS(null,"style","font-size:14px;fill:black");
+        }
+      }
+    ]]>
+  </script>
   <defs id="defs4">
     <inkscape:perspective id="perspective449" inkscape:persp3d-origin="450.5 : 400 : 1" inkscape:vp_x="0 : 600 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="901 : 600 : 1" sodipodi:type="inkscape:persp3d"/>
     <pattern height="1" id="pattern-stairs-ew" patternUnits="userSpaceOnUse" width="2">
@@ -139,7 +154,7 @@
       }
     </style>
   </defs>
-  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="base" inkscape:current-layer="um-l1-l" inkscape:cx="1992.5978" inkscape:cy="2509.8091" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1165" inkscape:window-maximized="0" inkscape:window-width="1125" inkscape:window-x="0" inkscape:window-y="2" inkscape:zoom="1" pagecolor="#ffffff" showborder="true" showgrid="true">
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="base" inkscape:current-layer="um-l1-l1" inkscape:cx="1992.5978" inkscape:cy="2509.8091" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1165" inkscape:window-maximized="0" inkscape:window-width="1125" inkscape:window-x="0" inkscape:window-y="2" inkscape:zoom="1" pagecolor="#ffffff" showborder="true" showgrid="true">
     <inkscape:grid color="#5555ff" empcolor="#0000a1" empopacity="0.25098039" empspacing="10" enabled="true" id="grid2985" opacity="0.1254902" snapvisiblegridlinesonly="false" type="xygrid" visible="true"/>
   </sodipodi:namedview>
   <metadata id="metadata7">
@@ -245,7 +260,7 @@
     <text class="name" id="text4002" sodipodi:linespacing="125%" x="1494" xml:space="preserve" y="26"><tspan id="tspan4004" sodipodi:role="line" x="1494" y="26">258</tspan></text>
   </g>
   <g id="um-l1-l2" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 2" style="display:none"/>
-  <g id="um-l1-l" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:inline">
+  <g id="um-l1-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:inline">
     <rect class="room" height="50" id="rect4253" width="80" x="1250" y="2150"/>
     <rect class="room" height="50" id="rect4320" width="70" x="1060" y="2340"/>
     <path class="feature" d="m1130 2360h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="path4247"/>
@@ -627,7 +642,7 @@
     <circle class="column" cx="350" cy="2690" id="column-frost-spiders-3" r="1"/>
     <circle class="column" cx="360" cy="2690" id="column-frost-spiders-4" r="1"/>
     <!-- Names start here -->
-    <text id="text4447" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="335" xml:space="preserve" y="2684"><tspan id="tspan4449" sodipodi:role="line" x="335" y="2684">Frost</tspan></text>
+    <text id="text4447" sodipodi:linespacing="125%" class="name" x="335" xml:space="preserve" y="2684"><tspan id="tspan4449" sodipodi:role="line" x="335" y="2684">Frost</tspan></text>
     <text id="text4451" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="329.57959" xml:space="preserve" y="2699.8499"><tspan id="tspan4453" sodipodi:role="line" x="329.57959" y="2699.8499">Spiders</tspan></text>
     <text id="text4486" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="861.11108" xml:space="preserve" y="2223.7236"><tspan id="tspan4488" sodipodi:role="line" x="861.11108" y="2223.7236">Shriekers</tspan></text>
     <text id="text4468" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="282" xml:space="preserve" y="2723"><tspan id="tspan4470" sodipodi:role="line" x="282" y="2723">Puzzle</tspan><tspan id="tspan4472" sodipodi:role="line" x="282" y="2733">Lock</tspan></text>
@@ -1434,5 +1449,11 @@
     <text class="name" id="text3651" sodipodi:linespacing="125%" x="2011" xml:space="preserve" y="968"><tspan id="tspan3653" sodipodi:role="line" x="2011" y="968">Animated</tspan><tspan id="tspan3655" sodipodi:role="line" x="2011" y="975.5">Armor</tspan></text>
     <text class="name" id="text3677" sodipodi:linespacing="125%" x="1732" xml:space="preserve" y="1877"><tspan id="tspan3679" sodipodi:role="line" x="1732" y="1877">Metal</tspan><tspan id="tspan3681" sodipodi:role="line" x="1732" y="1884.5">Spiders</tspan></text>
     <!-- Unclassified start here -->
+  </g>
+  <g id="menu" inkscape:groupmode="layer" inkscape:label="Menu" style="display:inline">
+    <text x="2" y="22" style="font-size:20px;fill:black">Map of Undermountain as of Tarsakh 20 1370</text>
+    <text x="2" y="42" style="font-size:14px;fill:black" onclick="toggleLayer(evt,'um-l1-m')">(Click to toggle)  Level 1 Main</text>
+    <text x="2" y="62" style="font-size:14px;fill:black" onclick="toggleLayer(evt,'um-l1-l1')">(Click to toggle)  Level 1 Lower 1</text>
+    <text x="2" y="82" style="font-size:14px;fill:black" onclick="toggleLayer(evt,'um-l2-m')">(Click to toggle) Level 2 Main</text>
   </g>
 </svg>
