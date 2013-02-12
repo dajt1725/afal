@@ -1,4 +1,5 @@
 <?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="Undermountain.svg" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+  <title>Anything For A Laugh's map of Undermountain</title>
   <script id="script3" type="text/ecmascript">
       function toggleLayer(e,n) {
         var l = document.getElementById(n);
@@ -22,18 +23,23 @@
       <rect height="1" id="stairs_ns_step" style="fill:black;stroke:none" width="1" x="0" y="0"/>
       <rect height="1" id="stairs_ns_riser" style="fill:#edd567;stroke:none" width="1" x="0" y="1"/>
     </pattern>
+    <pattern height="10" id="pattern-floor-corr" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.75" style="fill:#edd567;stroke:black;stroke-width:0.25" width="9.75" x="0" y="0"/>
+    </pattern>
+    <pattern height="10" id="pattern-floor-room" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.75" style="fill:#edb667;stroke:black;stroke-width:0.25" width="9.75" x="0" y="0"/>
+    </pattern>
     <style id="style-um" type="text/css">
       *.corr {
-        fill:#edd567;
+        fill:url(#pattern-floor-corr);
         stroke:none
       }
       *.room {
-        fill:#edb667;
+        fill:url(#pattern-floor-room);
         stroke:none
       }
       *.room-alt {
-        fill:#edb667;
-        fill-opacity:1;
+        fill:url(#pattern-floor-room);
         stroke:#000000;
         stroke-width:1;
         stroke-miterlimit:4;
@@ -166,11 +172,11 @@
   <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Main" style="display:inline">
     <rect class="corr" height="10" id="rect4412" width="40" x="1790" y="10"/>
     <rect class="feature" height="20" id="teleportal-l2-a-2" width="20" x="1770" y="0">
-      <desc id="desc4410">This teleports you back to teleportal l2-a-1.</desc>
+      <title>This teleports you back to teleportal l2-a-1.</title>
     </rect>
     <rect class="room" height="20" id="rect3857" width="90" x="1770" y="40"/>
     <rect class="feature" height="20" id="teleportal-l2-a-1" width="20" x="1800" y="40">
-      <desc id="desc4396">Teleportal to somewhere.  Dunno exactly where to yet.  We currently call it teleportal-l2-a-2.</desc>
+      <title>Teleportal to somewhere.  Dunno exactly where to yet.  We currently call it teleportal-l2-a-2.</title>
     </rect>
     <rect class="room" height="60" id="rect4392" width="20" x="1520" y="40"/>
     <path class="corr" d="m1550 70h10v30h-10zm0-30h10v20h-10zm-10 20h90v10h-90zm60 10h10v10h-10zm0-20h10v10h-10zm-30-10h60v10h-60z" id="rect4383"/>
@@ -178,7 +184,7 @@
     <rect class="room" height="20" id="rect4342" width="10" x="1680" y="80"/>
     <rect class="room" height="30" id="rect4340" width="40" x="1680" y="40"/>
     <rect class="feature" height="20" id="unknown-feature" width="30" x="1690" y="80">
-      <desc id="desc4400">This was marked on the Smoke Powder smugglers' map.  Dunno what it is yet.</desc>
+      <title>This was marked on the Smoke Powder smugglers' map.  Dunno what it is yet.</title>
     </rect>
     <rect class="corr" height="10" id="rect4358" width="10" x="1640" y="180"/>
     <rect class="room" height="30" id="rect4356" width="20" x="1620" y="160"/>
@@ -259,20 +265,22 @@
     <rect class="door" height="6" id="rect3866" width="2" x="1559" y="622"/>
     <rect class="door" height="6" id="rect3872" width="2" x="1479" y="622"/>
     <rect class="sec-door" height="2" id="sec-door-smoke-powder" width="6" x="1652" y="149">
-      <desc id="desc4398">Secret door with lock.  We used a Knock spell on it.</desc>
+      <title>Secret door with lock.  We used a Knock spell on it.</title>
     </rect>
-    <rect class="feature-water" height="50" id="mud-river" width="10" x="1460" y="210"/>
+    <rect class="feature-water" height="50" id="mud-river" width="10" x="1460" y="210">
+      <title>We have not explored anything about this river of mud.</title>
+    </rect>
     <rect class="feature" height="10" id="bridge" width="50" x="1440" y="230">
-      <desc id="desc3892">Can be used to teleport to Nesme</desc>
+      <title>This bridge can be used to teleport to Nesme</title>
     </rect>
     <rect class="feature" height="100" id="ziggurat" width="100" x="1470" y="390">
-      <desc id="desc3876">Ziggurat of horrible flaming spiky death and snakes.</desc>
+      <title>Ziggurat of horrible flaming spiky death and snakes.</title>
     </rect>
     <rect class="feature" height="2" id="feature-lever-a" width="1" x="1821" y="110">
-      <desc id="desc4404">This lever causes the stairs to appear.</desc>
+      <title>This lever causes the stairs to appear.</title>
     </rect>
     <rect class="feature-bad" height="8" id="statue-animating-snake" width="9" x="1516" y="437">
-      <desc id="desc3880">This statue turns into a snake.  Although it's ovbiously valuable, it does not like to leave the room.</desc>
+      <title>This statue turns into a snake.  Although it's obviously valuable, it does not like to leave the room.</title>
     </rect>
     <text class="name" id="text3785" sodipodi:linespacing="125%" x="1774" xml:space="preserve" y="118"><tspan id="tspan3787" sodipodi:role="line" x="1774" y="118">Bones</tspan></text>
     <text class="name" id="text3926" sodipodi:linespacing="125%" x="1578" xml:space="preserve" y="137"><tspan id="tspan3928" sodipodi:role="line" x="1578" y="137">Slime</tspan></text>
@@ -283,35 +291,35 @@
     <text class="name" id="text3998" sodipodi:linespacing="125%" x="1680" xml:space="preserve" y="141"><tspan id="tspan4000" sodipodi:role="line" x="1680" y="141">219a</tspan></text>
     <text class="name" id="text4002" sodipodi:linespacing="125%" x="1494" xml:space="preserve" y="56"><tspan id="tspan4004" sodipodi:role="line" x="1494" y="56">258</tspan></text>
     <rect class="feature" height="6" id="smoke-powder-cache" width="4" x="1660" y="322">
-      <desc id="desc4314">Cache for the smoke powder.  Dug by Brogan as an enlarged Umber Hulk, hidden by Stone Shape.</desc>
+      <title>Cache for the smoke powder.  Dug by Brogan as an enlarged Umber Hulk, hidden by Stone Shape.</title>
     </rect>
     <path class="wall" d="m1650 150v0v0v0v0v30h-10v-20h-20v30h30v10h-70v-10h20v-20h-30v50h40v-10h10v10h40v-10h10v10h40v-20h-50v-50" id="path4316"/>
     <path class="feature" d="m1707 210a6.5 7 0 1 1-13 0 6.5 7 0 1 1 13 0z" id="magic-gate" sodipodi:cx="1700.5" sodipodi:cy="210" sodipodi:rx="6.5" sodipodi:ry="7" sodipodi:type="arc">
-      <desc id="desc4350">Magical gate.  Probably how the smoke powder has been coming in.</desc>
+      <title>Magical gate.  Probably how the smoke powder has been coming in.</title>
     </path>
     <rect class="feature" height="10" id="illusion-wall" width="2" x="1648" y="180">
-      <desc id="desc4348">Illusionary wall.  Hard to disbelieve, but easy to walk through.</desc>
+      <title>Illusionary wall.  Hard to disbelieve, but easy to walk through.</title>
     </rect>
     <rect class="corr" height="10" id="rect4341" width="10" x="1660" y="200"/>
-    <text id="text4361" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="1670" xml:space="preserve" y="208"><tspan id="tspan4363" sodipodi:role="line" x="1670" y="208">Teleportal</tspan></text>
-    <text id="text4365" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="1571" xml:space="preserve" y="178"><tspan id="tspan4367" sodipodi:role="line" x="1571" y="178">Smoke</tspan><tspan id="tspan4369" sodipodi:role="line" x="1571" y="188">Powder</tspan></text>
+    <text id="text4361" sodipodi:linespacing="125%" class="name" x="1670" xml:space="preserve" y="208"><tspan id="tspan4363" sodipodi:role="line" x="1670" y="208">Teleportal</tspan></text>
+    <text id="text4365" sodipodi:linespacing="125%" class="name" x="1571" xml:space="preserve" y="178"><tspan id="tspan4367" sodipodi:role="line" x="1571" y="178">Smoke</tspan><tspan id="tspan4369" sodipodi:role="line" x="1571" y="188">Powder</tspan></text>
     <path class="wall" d="m1850 40h-80v20h50v10h-60v-30h-30v130h-20v-10h-40v30h40v-10h20v50h-220v-10h30v-30h-20v20h-10v-40h10v10h20v-60h10v30h20v10h30v-30h-30v10h-10v-20h70v10h-10v20h32m6 0h52v-20h-70v-20h-80v-40h40v10h-30v20h60v-20h-20v-10h40v20h30v10h40v-20h-60v-20h20v10h40v-30h-40v10h-20v-10h-2h2v-50" id="path4305"/>
     <rect class="sec-door" height="2" id="sec-door-a-1" width="6" x="1652" y="39">
-      <desc id="desc4402">Secret door with unknown mechanism.  Henkles opened it the hard way.</desc>
+      <title>Secret door with unknown mechanism.  Henkles opened it the hard way.</title>
     </rect>
     <path class="stairs-ns" d="m1650-10h10l-3 30h-4z" id="rect4314"/>
     <rect class="room" height="20" id="rect4344" width="60" x="1570" y="80"/>
     <path class="stairs-ew" d="m1630 63 20-3v10l-20-4z" id="rect4360"/>
     <path class="wall" d="m1830 24v-4h-60v-20h20v10h40v-4" id="path4406"/>
-    <text id="text4414" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="1799" xml:space="preserve" y="53"><tspan id="tspan4416" sodipodi:role="line" x="1799" y="53">l2-a-1</tspan></text>
-    <text id="text4418" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="1771" xml:space="preserve" y="18"><tspan id="tspan4420" sodipodi:role="line" x="1771" y="18">l2-a-2</tspan></text>
+    <text id="text4414" sodipodi:linespacing="125%" class="name" x="1799" xml:space="preserve" y="53"><tspan id="tspan4416" sodipodi:role="line" x="1799" y="53">l2-a-1</tspan></text>
+    <text id="text4418" sodipodi:linespacing="125%" class="name" x="1771" xml:space="preserve" y="18"><tspan id="tspan4420" sodipodi:role="line" x="1771" y="18">l2-a-2</tspan></text>
   </g>
   <g id="um-l1-l2" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 2" style="display:none"/>
-  <g id="um-l1-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:none">
+  <g id="um-l1-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:inline">
     <rect class="room" height="50" id="rect4253" width="80" x="1250" y="2180"/>
     <rect class="room" height="50" id="rect4320" width="70" x="1060" y="2370"/>
-    <path class="feature" d="m1130 2390h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="path4247"/>
-    <rect class="feature-bad" height="30" id="rect4302" width="30" x="200" y="3280"/>
+    <path class="feature" d="m1130 2390h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="fixme-path4247"/>
+    <rect class="feature-bad" height="30" id="fixme-rect4302" width="30" x="200" y="3280"/>
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
     <rect class="corr" height="10" id="rect3523" width="20" x="2790" y="510"/>
@@ -434,9 +442,7 @@
     <path class="stairs-ew" d="m1230 2380 20 3v4l-20 3z" id="rect4243"/>
     <path class="stairs-ew" d="m1250 2203 20-3v10l-20-3z" id="rect4146"/>
     <path class="stairs-ew" d="m1460 1853 10-3v10l-10-3v-4z" id="rect3893"/>
-    <path class="stairs-ew" d="m1650 1860 20 3v4l-20 3z" id="rect5326">
-      <desc id="desc3805">Up end left</desc>
-    </path>
+    <path class="stairs-ew" d="m1650 1860 20 3v4l-20 3z" id="rect5326"/>
     <path class="stairs-ew" d="m1700 1863 20-3v10l-20-3z" id="rect5330"/>
     <path class="stairs-ew" d="m1740 1843 20-3v10l-20-3z" id="rect5340"/>
     <path class="stairs-ns" d="m1093 2350h4l3 10h-10z" id="rect4231"/>
@@ -448,8 +454,8 @@
     <!-- Pits start here -->
     <rect class="pit" height="10" id="pit-rock-lobster-b" width="10" x="2700" y="570"/>
     <path class="pit" d="m2770 570h10v10h-10v-10z" id="pit-cursd"/>
-    <rect class="feature-water" height="30" id="pit-water-filled-1" width="30" x="1670" y="1850">
-      <desc id="desc5338">6' of water</desc>
+    <rect class="feature-water" height="30" id="room-water-filled-1" width="30" x="1670" y="1850">
+      <title>6' of water</title>
     </rect>
     <!-- Walls start here -->
     <path class="wall" d="m2720 580h20v-40" id="path3314"/>
@@ -646,31 +652,39 @@
     <rect class="door" height="6" id="rect4292" width="2" x="1199" y="2292"/>
     <rect class="door" height="6" id="rect4300" width="2" x="1299" y="2292"/>
     <!-- Features start here -->
-    <rect class="feature" height="30" id="balcony-cursd" width="10" x="2890" y="510"/>
-    <path class="feature-bad" d="m2777 525h13m-30 0h13" id="fence-b"/>
-    <path class="feature-bad" d="m2777 535h13m-30 0h13" id="fence-a"/>
-    <path class="feature-bad" d="m2860 520v10" id="trapped-step"/>
+    <rect class="feature" height="30" id="balcony-cursd" width="10" x="2890" y="510">
+      <title>This is the balcony where Dethen was hanging.</title>
+    </rect>
+    <path class="feature-bad" d="m2777 525h13m-30 0h13" id="fence-b">
+      <title>To avoid getting hit by a trap, you need to pass through the gap in this fence.</title>
+    </path>
+    <path class="feature-bad" d="m2777 535h13m-30 0h13" id="fence-a">
+      <title>To avoid getting hit by a trap, you need to jump/climb over this fence.</title>
+    </path>
+    <path class="feature-bad" d="m2860 520v10" id="trapped-step">
+      <title>Jump over this step to avoid the trap.</title>
+    </path>
     <rect class="feature" height="1" id="seascape-button" width="1" x="2709" y="639">
-      <desc id="desc3385">Raises the floor so one can get at the secret doors, but can't leave through the north exit.</desc>
+      <title>This button raises the floor so one can get at the secret doors, but can't leave through the north exit.</title>
     </rect>
     <rect class="feature" height="2" id="discontiguous-floor" width="10" x="890" y="2218">
-      <desc id="desc4490">North corridor floor is 10' above ew corridor floor.</desc>
+      <title>The North corridor floor is 10' above the E/W corridor floor.</title>
     </rect>
     <rect class="feature" height="3" id="ladder-1" width="6" x="1742" y="1772">
-      <desc id="desc5348">Ladder to room above</desc>
+      <title>This is a ladder to room above</title>
     </rect>
     <rect class="feature" height="9" id="cage-1" width="8" x="1680" y="1806">
-      <desc id="desc5362">cage on chains, lowered by rotating statue above</desc>
+      <title>This is a cage on chains that hangs from the ceiling.  It is lowered/raised by rotating the statue in the room above.</title>
     </rect>
     <rect class="feature-bad" height="10" id="fixme-rect4279" width="10" x="260" y="3510"/>
     <rect class="feature-bad" height="6" id="fixme-rect4296" width="2" x="149" y="3572"/>
     <path class="feature-path" d="m1746 1776-11 9-1 79-89 1v-25" id="path-dexter-dance-c"/>
     <path class="feature-path" d="m1515 1850v-35h-30v40h-30v30h-40v150h-30v70h10v40h-61v5h-44v55h-85v40h10v50h70v90h-90v10h-100v-60h-60v-110h-150v41l-70-1v20h10v71l-50-1v-20h-40v31l-110-1v180h-20l-11 10 1 100h-10l-20-19h-50v49h-61l-19 20-110 1v49h-50" id="path-dexter-dance-e"/>
-    <rect class="feature-bad" height="30" id="rect4459" width="30" x="280" y="2740"/>
-    <path class="feature-bad" d="m550 2630v10h-1v-10z" id="path4478"/>
-    <rect class="feature-bad" height="10" id="rect4480" width="1" x="479" y="2680"/>
+    <rect class="feature-bad" height="30" id="fixme-rect4459" width="30" x="280" y="2740"/>
+    <path class="feature-bad" d="m550 2630v10h-1v-10z" id="fixme-path4478"/>
+    <rect class="feature-bad" height="10" id="fixme-rect4480" width="1" x="479" y="2680"/>
     <rect class="feature" height="5" id="im-hungry" width="5" x="622" y="2363">
-      <desc id="desc4484">big thing that demanded food to let us past.</desc>
+      <title>big thing that demanded food to let us past.</title>
     </rect>
     <rect class="feature" height="10" id="rect4492" width="1" x="1119" y="2390"/>
     <rect class="feature" height="10" id="rect4494" width="1" x="1109" y="2390"/>
@@ -690,13 +704,13 @@
     <circle class="column" cx="360" cy="2720" id="column-frost-spiders-4" r="1" sodipodi:cx="360" sodipodi:cy="2720" sodipodi:rx="1" sodipodi:ry="1"/>
     <!-- Names start here -->
     <text class="name" id="text4447" sodipodi:linespacing="125%" x="335" xml:space="preserve" y="2714"><tspan id="tspan4449" sodipodi:role="line" x="335" y="2714">Frost</tspan></text>
-    <text id="text4451" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="329.57959" xml:space="preserve" y="2729.8499"><tspan id="tspan4453" sodipodi:role="line" x="329.57959" y="2729.8499">Spiders</tspan></text>
-    <text id="text4486" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="861.11108" xml:space="preserve" y="2253.7236"><tspan id="tspan4488" sodipodi:role="line" x="861.11108" y="2253.7236">Shriekers</tspan></text>
-    <text id="text4468" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="282" xml:space="preserve" y="2753"><tspan id="tspan4470" sodipodi:role="line" x="282" y="2753">Puzzle</tspan><tspan id="tspan4472" sodipodi:role="line" x="282" y="2763">Lock</tspan></text>
-    <text id="text4474" sodipodi:linespacing="125%" style="font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="501" xml:space="preserve" y="2648"><tspan id="tspan4476" sodipodi:role="line" x="501" y="2648">Litch</tspan></text>
+    <text id="text4451" sodipodi:linespacing="125%" class="name" x="329.57959" xml:space="preserve" y="2729.8499"><tspan id="tspan4453" sodipodi:role="line" x="329.57959" y="2729.8499">Spiders</tspan></text>
+    <text id="text4486" sodipodi:linespacing="125%" class="name" x="861.11108" xml:space="preserve" y="2253.7236"><tspan id="tspan4488" sodipodi:role="line" x="861.11108" y="2253.7236">Shriekers</tspan></text>
+    <text id="text4468" sodipodi:linespacing="125%" class="name" x="282" xml:space="preserve" y="2753"><tspan id="tspan4470" sodipodi:role="line" x="282" y="2753">Puzzle</tspan><tspan id="tspan4472" sodipodi:role="line" x="282" y="2763">Lock</tspan></text>
+    <text id="text4474" sodipodi:linespacing="125%" class="name" x="501" xml:space="preserve" y="2648"><tspan id="tspan4476" sodipodi:role="line" x="501" y="2648">Litch</tspan></text>
     <!-- Unclassified start here -->
   </g>
-  <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:none">
+  <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:inline">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
     <path class="corr" d="m1000 1246v44h10 60v20h10 10v10h10v-10-10h-20v-30h-10v10h-60v-34z" id="rect4112"/>
@@ -963,26 +977,28 @@
     <rect class="room" height="40" id="rect5494" width="20" x="1630" y="1800"/>
     <path class="room-alt" d="m1690 1820c-1.722 4.3442-4.3051 4.3442-8.5 4.6811-4.6732 0.3753-9.5-4.5032-9.5-8.9215 0-4.4183 4.3056-9 9-9 2.3472 0 8.139 1.1039 9 4" id="circular-dd-room" sodipodi:nodetypes="csssc"/>
     <!-- Stairs/pits/floor features start here -->
-    <rect class="feature-sand" height="40" id="floor-shield-room" style="fill:#ffff00;stroke:none" width="40" x="2140" y="920"/>
-    <path class="feature-null-magic" d="m1970 960 10-10h10l20 10v20l-20 10h-10l-10-10z" id="floor-null-magic" style="fill:#ed7767;stroke:none"/>
+    <rect class="feature-sand" height="40" id="floor-shield-room" width="40" x="2140" y="920"/>
+    <path class="feature-null-magic" d="m1970 960 10-10h10l20 10v20l-20 10h-10l-10-10z" id="floor-null-magic" />
     <rect class="feature-green" height="10" id="rect3542" width="20" x="1870" y="1420">
-      <desc id="desc3544">Green continual faiery fire</desc>
+      <title>Green continual faiery fire</title>
     </rect>
     <rect class="feature-green" height="10" id="rect3551" width="20" x="1870" y="1440">
-      <desc id="desc3553">Green Continual Faery Fire</desc>
+      <title>Green Continual Faery Fire</title>
     </rect>
     <rect class="feature-purple" height="10" id="rect3538" width="20" x="1870" y="1410">
-      <desc id="desc3540">Purple continual faiery fire</desc>
+      <title>Purple continual faiery fire</title>
     </rect>
     <rect class="feature-purple" height="10" id="rect3547" width="20" x="1870" y="1430">
-      <desc id="desc3549">Purple continual faery fire</desc>
+      <title>Purple continual faery fire</title>
     </rect>
-    <rect class="feature-sand" height="20" id="rect3777" style="fill:#ffff00;stroke:none" width="20" x="2090" y="1060"/>
+    <rect class="feature-sand" height="20" id="rect3777" width="20" x="2090" y="1060"/>
     <rect class="feature-water" height="4" id="rect3841" width="4" x="2031" y="1101"/>
     <rect class="feature-bad" height="10" id="teleportal-too-late" width="10" x="1960" y="1050">
-      <desc id="desc3659">&quot;If you're reading this, it's already too late&quot;</desc>
+      <title>Teleportal: &quot;If you're reading this, it's already too late&quot;</title>
     </rect>
-    <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1180"/>
+    <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1180">
+      <title>This room is filled with boiling oil.</title>
+    </rect>
     <rect class="stairs-ew" height="10" id="rect4331" width="20" x="1920" y="1190"/>
     <path class="stairs-ns" d="m2300 710h10l-3 10h-4z" id="rect5466"/>
     <path class="stairs-ew" d="m2710 570 20 3v4l-20 3z" id="stairs-cursd-c-u"/>
@@ -1003,7 +1019,7 @@
     <path class="stairs-ew" d="m1750 240 30 3v4l-30 3z" id="rect4456"/>
     <path class="stairs-ns" d="m1513 1820h4l3 30h-10z" id="rect5253"/>
     <path class="stairs-ns" d="m1543 1080h4l3 20h-10z" id="stairs-falling">
-      <desc id="desc3969">The Falling Stairs</desc>
+      <title>The Falling Stairs</title>
     </path>
     <path class="stairs-ns" d="m1640 1840h10l-3 20h-4z" id="rect5249"/>
     <path class="stairs-ns" d="m1730 1870h10l-3 20h-4z" id="rect5245"/>
@@ -1017,7 +1033,7 @@
     <path class="pit" d="m2700 570h10v10h-10v-10z" id="pit-robot-lobster"/>
     <rect class="pit" height="10" id="rect5267" width="10" x="1710" y="1840"/>
     <rect class="pit" height="10" id="rect5472" width="20" x="2340" y="730">
-      <desc id="desc5474">With 25' of water in it</desc>
+      <title>With 25' of water in it</title>
     </rect>
     <circle class="pit" cx="1620" cy="1155" id="circular-pit" r="10" sodipodi:cx="1620" sodipodi:cy="1155" sodipodi:rx="10" sodipodi:ry="10"/>
     <!-- Walls start here -->
@@ -1447,31 +1463,63 @@
     <rect class="feature-bad" height="10" id="-revgravity-trap" width="10" x="2560" y="580"/>
     <path class="feature" d="m1571 1055-6 3v5l2-4 4-2z" id="dragon-tail"/>
     <rect class="feature" height="40" id="altar-giant-spider" width="20" x="1890" y="1490"/>
-    <path class="feature-bad" d="m1900 1600v10" id="curtain-x1"/>
-    <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="720"/>
-    <rect class="feature" height="5" id="couch" width="5" x="2640" y="535"/>
-    <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1600"/>
-    <rect class="feature" height="2" id="dexter-dance-lever" width="2" x="1998.594" y="983"/>
-    <rect class="feature" height="5" id="demon-gate" width="2" x="2034" y="933"/>
-    <rect class="feature" height="1" id="lever-cooking-room-sdoor" width="2" x="1217" y="1252">
-      <desc id="desc3947">Opens secret door to cooking room</desc>
+    <path class="feature-bad" d="m1900 1600v10" id="curtain-x1">
+      <title>This is a curtain of darkness."</title>
+    </path>
+    <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="720">
+      <title>This chair made out of bones used to have arms that turned into poison-spitting snakes and it was covered in gems.</title>
     </rect>
-    <rect class="feature" height="12" id="statue-purple-glow" width="12" x="2044" y="1024"/>
-    <rect class="feature" height="2" id="mirror-myth-drannor" width="8" x="1730" y="90"/>
-    <rect class="feature" height="5" id="statue-you-can-turn" width="5" x="1678" y="1812"/>
-    <rect class="feature" height="6" id="ceiling-trapdoor" width="6" x="1751" y="342"/>
-    <rect class="feature" height="6" id="cooking-platform" width="6" x="1062" y="1202"/>
-    <rect class="feature" height="6" id="trapdoor-in-floor" width="6" x="1742" y="1772"/>
-    <rect class="feature" height="7" id="statue-of-mask" width="6" x="1123" y="1276"/>
-    <path class="feature-bad" d="m1862 980v10" id="curtain-x2"/>
+    <rect class="feature" height="5" id="couch" width="5" x="2640" y="535">
+      <title>We have never found out the purpose of this slipcovered couch.</title>
+    </rect>
+    <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1600">
+      <title>This statue shoots lightning bolts.</title>
+    </rect>
+    <rect class="feature" height="2" id="dexter-dance-lever" width="2" x="1998.594" y="983">
+      <title>If you pump this hidden lever, the Dexter Dance path appears.</title>
+    </rect>
+    <rect class="feature" height="5" id="demon-gate" width="2" x="2034" y="933">
+      <title>This gate asks you a riddle, and if you answer it, it opens, allowing you to bypass the null-magic room.</title>
+    </rect>
+    <rect class="feature" height="1" id="lever-cooking-room-sdoor" width="2" x="1217" y="1252">
+      <title>This lever opens the secret door to cooking room</title>
+    </rect>
+    <rect class="feature" height="12" id="statue-purple-glow" width="12" x="2044" y="1024">
+      <title>This statue glows enough to almost illuminate the water-filled room.</title>
+    </rect>
+    <rect class="feature" height="2" id="mirror-myth-drannor" width="8" x="1730" y="90">
+      <title>Touching this mirror when the lightning bolts trigger teleports you to Myth Drannor.</title>
+    </rect>
+    <rect class="feature" height="5" id="statue-you-can-turn" width="5" x="1678" y="1812">
+      <title>Turning this statue raises and lowers the cage on chains in the room below.</title>
+    </rect>
+    <rect class="feature" height="6" id="ceiling-trapdoor" width="6" x="1751" y="342">
+      <title>This opens into an alley in Waterdeep.  The watch has told us to never be caught near it again.</title>
+    </rect>
+    <rect class="feature" height="6" id="cooking-platform" width="6" x="1062" y="1202">
+      <title>All mistakes in jumping between columns result in one being teleported here.  It sinks under weight.  After a minute or so it teleports you back to the entrance.</title>
+    </rect>
+    <rect class="feature" height="6" id="trapdoor-in-floor" width="6" x="1742" y="1772">
+      <title>This trapdoor opens onto a ladder that leads to the room below.</title>
+    </rect>
+    <rect class="feature" height="7" id="statue-of-mask" width="6" x="1123" y="1276">
+      <title>This statue has two sheathes that you can insert a sword or dagger into, and an outstretched hand.  When you put a sword in the sheath and put a serpentine in the hand, the sword becomes enchanted</title>
+    </rect>
+    <path class="feature-bad" d="m1862 980v10" id="curtain-x2">
+      <title>This is yet another curtain of magical blackness.</title>
+    </path>
     <path class="feature-bad" d="m2149 1256 4 9h-1l-4-8z" id="fixme-path3875"/>
     <rect class="feature-bad" height="2" id="fixme-rect3877" width="10" x="2140" y="1318"/>
-    <rect class="feature-bad" height="2" id="sliding-wall" width="10" x="2090" y="1119"/>
+    <rect class="feature-bad" height="2" id="sliding-wall" width="10" x="2090" y="1119">
+      <title>This wall slid down a while after we were teleported to the flooded room with the giant gar in it.</title>
+    </rect>
     <rect class="feature-bad" height="4" id="chest" width="4" x="1851" y="392">
-      <desc id="desc5172">Exploded chest surrounded by bodies</desc>
+      <title>We have never explored this exploded chest surrounded by bodies.</title>
     </rect>
     <rect class="feature-bad" height="8" id="fixme-rect3873" width="9" x="2130" y="1280"/>
-    <rect class="feature-bad" height="8" id="statue-wonder" width="6" x="1983" y="1143"/>
+    <rect class="feature-bad" height="8" id="statue-wonder" width="6" x="1983" y="1143">
+      <title>This statue acts as a Wand of Wonder, blasting the room randomly.</title>
+    </rect>
     <path class="feature-path" d="m1986 978-1 127h-20v30h-80v20h-10v90h10v210l-20 103v27h20v50h-40v10h-10v-10h-40v30h-50v45" id="path-dexter-dance-a"/>
     <path class="feature-path" d="m1745 1710v65" id="path-dexter-dance-b"/>
     <path class="feature-path" d="m1645 1860-1-45-109 1v38h-20v-34" id="path-dexter-dance-d"/>
