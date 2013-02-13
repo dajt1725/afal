@@ -24,31 +24,31 @@
       <rect height="1" style="fill:#edd567;stroke:none" width="1" x="0" y="1"/>
     </pattern>
     <pattern height="10" id="pattern-floor-corr" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:#edd567;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:#edd567;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-room" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:#edb667;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:#edb667;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-orange" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:orange;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:orange;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-yellow" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:yellow;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:yellow;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-green" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:green;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:green;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-purple" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:purple;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:purple;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-blue" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:blue;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:blue;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-red" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:red;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:red;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-reddish" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:#ed7767;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:#ed7767;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-dark-grey" patternUnits="userSpaceOnUse" width="10">
       <rect height="9.75" style="fill:#505050;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
