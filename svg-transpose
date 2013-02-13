@@ -9,8 +9,23 @@ unneeded_attributes = {
  'inkscape:label': re.compile('^$|^[^U]')
 }
 
+unneeded_ids = ('text\d+$', 'path\d+$', 'tspan\d+$', 'title\d+$', 'rect\d+$') 
+id_regex = re.compile('(text|path|tspan|title|rect)\d+$')
+
 ###### path parsing code
 style_to_class = {
+ 'fill:url(#pattern-floor-corr);stroke:none': 'corr',
+ 'fill:url(#pattern-floor-room);stroke:none': 'room',
+ 'fill:url(#pattern-floor-orange);stroke:#ffff00;stroke-width:0.5px': 'feature',
+ 'fill:url(#pattern-floor-red);stroke:#ffff00;stroke-width:0.5px': 'feature-bad',
+ 'fill:url(#pattern-floor-dark-grey);fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'pit',
+ 'fill:url(#pattern-floor-blue);stroke:#ffff00;stroke-width:0.5px': 'feature-water',
+ 'fill:url(#pattern-floor-room);stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'room-alt',
+ 'fill:url(#pattern-floor-yellow);stroke:#000000;stroke-width:0.5px': 'feature-sand',
+ 'fill:url(#pattern-floor-reddish);stroke:none': 'feature-null-magic',
+ 'fill:url(#pattern-floor-green);stroke:#ffff00;stroke-width:0.5px': 'feature-green',
+ 'fill:url(#pattern-floor-purple);stroke:#ffff00;stroke-width:0.5px': 'feature-purple',
+
  'fill:#edd567;stroke:none': 'corr',
  'fill:#edb667;stroke:none': 'room',
  'fill:#0000ff;stroke:#ffff00;stroke-width:0.5px': 'feature-water',
@@ -313,6 +328,9 @@ def do_update(n,dx,dy):
         if args.verbose:
             print n.nodeName,n.getAttribute("id")
         if args.unneeded:
+            i = n.attributes.getNamedItem('id')
+            if i and i != '' and id_regex.match(i):
+                n.attributes.removeNamedItem('id')
             for attr_name in unneeded_attributes.keys():
                 attr = n.attributes.getNamedItem(attr_name)
                 if not attr or not unneeded_attributes[attr_name].search(attr.value):
