@@ -9,7 +9,6 @@ unneeded_attributes = {
  'inkscape:label': re.compile('^$|^[^U]')
 }
 
-unneeded_ids = ('text\d+$', 'path\d+$', 'tspan\d+$', 'title\d+$', 'rect\d+$') 
 id_regex = re.compile('(text|path|tspan|title|rect)\d+$')
 
 ###### path parsing code
@@ -197,6 +196,10 @@ def abs_list_to_rel(l):
                 i[4] -= cy
             elif c == 'v':
                 i[1] -= cy
+            elif c == 'z':
+                pass
+            else:
+                print "Unknown movement char "+c+" in path"
         else:
             c = i[0]
         ret.append(i)
@@ -228,6 +231,122 @@ def abs_list_to_rel(l):
             raise ValueError("unknown command "+c)
     return ret
 
+def _in(p, r):
+    if p[0] >= r[0] and p[0] <= r[2] and p[1] >= r[1] and p[1] <= r[3]:
+        return True
+    else:
+        return False
+
+def _a(a, b):
+    return map(sum, zip(a, b))
+
+# Takes a relative list, and returns one where coordinates xm <= x <= xx and
+# ym <= y <= yx are shifted by dx,dy
+
+def _cond_rel_mv(cur, box, to_new, d, nd):
+    ret = [0, 0]
+    new_pos = _a(cur, to_new)
+    if not _in(cur, box) and _in(new_pos, box):
+        new_pos = _a(new_pos, d)
+        ret = d
+    elif _in(cur, box) and not _in(new_pos, box):
+        ret = nd
+    return (new_pos, ret)
+
+def _cond_abs_mv(cur, box, new_pos, d, nd):
+    ret = [0, 0]
+    if not _in(cur, box) and _in(new_pos, box):
+        new_pos = _a(new_pos, d)
+        ret = d
+    elif _in(cur, box) and not _in(new_pos, box):
+        ret = nd
+    elif _in(new_pos, box):
+        new_pos = _a(new_pos, d)
+        ret = d
+    return (new_pos, ret)
+
+def cond_transpose_list(l, r, d):
+    ret = []
+    c = [0, 0]
+    neg_d = [-d[0], -d[1]]
+    for i in l:
+        ch = i[0]
+        i = i[1:]
+        if ch == 'a':
+            for j in range(0, len(i), 7):
+                v = i[j+5:j+7]
+                (c, t) = _cond_rel_mv(c, r, v, d, neg_d)
+                i[j+5:j+7] = _a(v, t)
+        elif ch == 'A':
+            for j in range(0, len(i), 7):
+                v = i[j+5:j+7]
+                (c, t) = _cond_abs_mv(c, r, v, d, neg_d)
+                i[j+5:j+7] = c
+        elif ch == 'c':
+            for j in range(0, len(i), 6):
+                v = i[j+4:j+6]
+                (c, t) = _cond_rel_mv(c, r, v, d, neg_d)
+                i[j:j+6] = _a(i[j:j+6], 3 * t)
+        elif ch == 'C':
+            for j in range(0, len(i), 6):
+                (c, t) = _cond_abs_mv(c, r, i[j+4:j+6], d, neg_d)
+                i[j:j+6] = _a(i[j:j+6], 3 * t)
+        elif ch == 'h':
+            for j in range(0, len(i)):
+                (c, t) = _cond_rel_mv(c, r, [i[j], 0], d, neg_d)
+                i[j] += t[0]
+        elif ch == 'H':
+            for j in range(0, len(i)):
+                (c, t) = _cond_abs_mv(c, r, [i[j], c[1]], d, neg_d)
+                i[j] = c[0]
+        elif ch == 'l' or ch == 't':
+            for j in range(0, len(i), 2):
+                v = i[j:j+2]
+                (c, t) = _cond_rel_mv(c, r, v, d, neg_d)
+                i[j:j+2] = _a(v, t)
+        elif ch == 'L' or ch == 'T':
+            for j in range(0, len(i), 2):
+                v = i[j:j+2]
+                (c, t) = _cond_abs_mv(c, r, v, d, neg_d)
+                i[j:j+2] = c
+        elif ch == 'q' or ch == 's':
+            for j in range(0, len(i), 4):
+                (c, t) = _cond_rel_mv(c, r, i[j+2:j+4], d, neg_d)
+                i[j:j+4] = _a(i[j:j+4], 2 * t)
+        elif ch == 'Q' or ch == 'S':
+            for j in range(0, len(i), 4):
+                (c, t) = _cond_abs_mv(c, r, i[j+2:j+4], d, neg_d)
+                i[j:j+4] = _a(i[j:j+4], 2 * t)
+        elif ch == 'm':
+            for j in range(0, len(i), 2):
+                (c, t) = _cond_rel_mv(c, r, i[j:j+2], d, neg_d)
+                i[j:j+2] = _a(i[j:j+2], t)
+                if j == 0:
+                    s = c
+        elif ch == 'M':
+            for j in range(0, len(i), 2):
+                (c, t) = _cond_abs_mv(c, r, i[j:j+2], d, neg_d)
+                i[j:j+2] = c
+                if j == 0:
+                    s = c
+        elif ch == 'v':
+            for j in range(0, len(i)):
+                (c, t) = _cond_rel_mv(c, r, [0, i[j]], d, neg_d)
+                i[j] += t[1]
+        elif ch == 'V':
+            for j in range(0, len(i)):
+                (c, t) = _cond_abs_mv(c, r, [c[0], i[j]], d, neg_d)
+                i[j] = c[1]
+        elif ch == 'z' or ch == 'Z':
+            c = s
+        else:
+            print "Unknown movement char "+ch+" in path"
+        t = [ch]
+        t.extend(i)
+        ret.append(t)
+    return ret
+
+
 # takes a list and returns a list with all the absolute elements moved by dx,dy
 # This is much easier than transposing a path
 
@@ -239,7 +358,7 @@ def transpose_list(l,dx,dy):
     for i in l:
         if i[0] == 'M' or i[0] == 'L' or i[0] == 'T' or i[0] == 'C' or i[0] == 'Q' or i[0] == 'S':
             for j in range(1,len(i),2):
-                i[j]+= dx
+                i[j] += dx
                 i[j+1] += dy
         elif i[0] == 'H':
              for j in range(1,len(i)):
@@ -304,11 +423,6 @@ def list_to_path(l):
 
 ####### xy transform
 
-def fixd2(m):
-#    if args.verbose:
-#        print "fixd2",m.group(1),m.group(2)
-    return m.group(1)+re.sub(r'(\s*)(-?\d+\.?\d*)(\s*|,)(-?\d+\.?\d*)', fixd1, m.group(2))
-
 def upd(n,a,d):
     v = n.getAttribute(a)
     if v is not None and v != '':
@@ -327,18 +441,6 @@ def do_update(n,dx,dy):
     if n.attributes and n.nodeName != 'g':
         if args.verbose:
             print n.nodeName,n.getAttribute("id")
-        if args.unneeded:
-            i = n.attributes.getNamedItem('id')
-            if i and i != '' and id_regex.match(i):
-                n.attributes.removeNamedItem('id')
-            for attr_name in unneeded_attributes.keys():
-                attr = n.attributes.getNamedItem(attr_name)
-                if not attr or not unneeded_attributes[attr_name].search(attr.value):
-                    continue
-#                print "a",a
-                if args.verbose:
-                    print "removing",attr.name,attr.value
-                n.attributes.removeNamedItem(attr_name)
         if args.style:
             ele_class = n.attributes.getNamedItem('class')
             ele_style = n.attributes.getNamedItem('style')
@@ -371,14 +473,49 @@ def do_update(n,dx,dy):
                 n.removeAttribute('transform')
             else:
                 print "Unknown transform",t
-        if dx != 0:
-            upd(n,'x',dx)
-            upd(n,'cx',dx)
-            upd(n,'sodipodi:cx',dx)
-        if dy != 0:
-            upd(n,'y',dy)
-            upd(n,'cy',dy)
-            upd(n,'sodipodi:cy',dy)
+        if args.box:
+            if n.nodeName == 'rect':
+                x = float(n.getAttribute('x'))
+                y = float(n.getAttribute('y'))
+                x1 = x + float(n.getAttribute('width'))
+                y1 = y + float(n.getAttribute('height'))
+                if _in([x, y], args.box) or _in([x1, y], args.box) or _in([x, y1], args.box) or _in([x1, y1], args.box):
+                    print "Transposing rect",x,y,x1,y1
+                    if x >= args.box[0] and x <= args.box[2]:
+                        upd(n, 'x', dx)
+                        if x1 < args.box[0] or x1 > args.box[2]:
+                            upd(n, 'width', -dx)
+                    elif x1 >= args.box[0] and x1 <= args.box[2]:
+                        upd(n, 'width', dx)
+                    if y >= args.box[1] and y <= args.box[3]:
+                        upd(n, 'y', dy)
+                        if y1 < args.box[1] or y1 > args.box[3]:
+                            upd(n, 'height', -dy)
+                    elif y1 >= args.box[1] and y1 <= args.box[3]:
+                        upd(n, 'height', dy)
+            elif n.nodeName == 'circle':
+                if _in([n.getAttribute('cx'), n.getAttribute('cy')], args.box):
+                    upd(n,'cx',dx)
+                    upd(n,'sodipodi:cx',dx)
+                    upd(n,'cy',dy)
+                    upd(n,'sodipodi:cy',dy)
+            elif n.nodeName == 'text' or n.nodeName == 'tspan':
+                if _in([n.getAttribute('x'), n.getAttribute('y')], args.box):
+                    upd(n, 'x', dx)
+                    upd(n, 'y', dy)
+            elif n.nodeName == 'path' or n.nodeName == 'title':
+                pass
+            else:
+                print "Unknown nodeName",n.nodeName
+        else:
+            if dx != 0:
+                upd(n,'x',dx)
+                upd(n,'cx',dx)
+                upd(n,'sodipodi:cx',dx)
+            if dy != 0:
+                upd(n,'y',dy)
+                upd(n,'cy',dy)
+                upd(n,'sodipodi:cy',dy)
         d = n.getAttribute('d')
         if d is not None and d != '':
             if args.path:
@@ -391,10 +528,17 @@ def do_update(n,dx,dy):
                 l = optimize_list(l)
 #                print "optimized",l
                 if dx != 0 or dy != 0:
-                    l = transpose_list(l,dx,dy)
+                    if args.box:
+#                        print "transposing",args.box,"by",[dx, dy]
+                        l = cond_transpose_list(l, args.box, [dx, dy])
+#                        print "transposed",l
+                    else:
+                        l = transpose_list(l,dx,dy)
 #                    print "transposed",l
                 d_new = list_to_path(l)
             elif dx!= 0 or dy!= 0:
+                if args.box:
+                    print "You must use --path with --box"
                 d_new = transpose_path(d,dx,dy)
             else:
                 d_new = None
@@ -402,6 +546,17 @@ def do_update(n,dx,dy):
                 if args.verbose:
                     print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
                 n.setAttribute('d',d_new)
+        if args.unneeded:
+            i = n.attributes.getNamedItem('id')
+            if i and i.value != '' and id_regex.match(i.value):
+                n.attributes.removeNamedItem('id')
+            for attr_name in unneeded_attributes.keys():
+                attr = n.attributes.getNamedItem(attr_name)
+                if not attr or not unneeded_attributes[attr_name].search(attr.value):
+                    continue
+                if args.verbose:
+                    print "removing",attr.name,attr.value
+                n.attributes.removeNamedItem(attr_name)
 #    elif args.verbose:
 #        print n.nodeName
     for i in n.childNodes:
@@ -413,6 +568,7 @@ parser.add_argument("--unneeded", "-u", help = "remove unneeded attributes eleme
 parser.add_argument("--style", "-s", help = "remove/edit style elements", action = 'store_true', default = False)
 parser.add_argument("--path", "-p", help = "edit paths", action = 'store_true', default = False)
 parser.add_argument('--x', '-x', type=int, default=0, help='translate x by')
+parser.add_argument('--box', '-r', type = int, nargs = 4, default = None, help = 'Only transpose elements within the specified box {min_x, min_y, max_x, max_y}')
 parser.add_argument('--y', '-y', type=int, default=0, help='translate y by')
 parser.add_argument("infile", help = "file to read")
 parser.add_argument("outfile", help = "file to write")

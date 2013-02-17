@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="Undermountain.svg" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="um2.svg" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg">
   <title>Anything For A Laugh's map of Undermountain</title>
   <script id="script3" type="text/ecmascript">
       function toggleLayer(e,n) {
@@ -182,7 +182,7 @@
       }
     </style>
   </defs>
-  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="base" inkscape:current-layer="um-l2-m" inkscape:cx="1892.4492" inkscape:cy="3845.5779" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="741" inkscape:window-maximized="0" inkscape:window-width="919" inkscape:window-x="443" inkscape:window-y="2" inkscape:zoom="5.55" pagecolor="#ffffff" showborder="true" showgrid="true">
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="base" inkscape:current-layer="um-l1-l1" inkscape:cx="880.21312" inkscape:cy="2131.3498" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="743" inkscape:window-maximized="1" inkscape:window-width="1366" inkscape:window-x="0" inkscape:window-y="2" inkscape:zoom="1" pagecolor="#ffffff" showborder="true" showgrid="true">
     <inkscape:grid color="#5555ff" empcolor="#0000a1" empopacity="0.25098039" empspacing="10" enabled="true" id="grid2985" opacity="0.1254902" snapvisiblegridlinesonly="false" type="xygrid" visible="true"/>
   </sodipodi:namedview>
   <metadata id="metadata7">
@@ -195,51 +195,21 @@
     </rdf:RDF>
   </metadata>
   <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Main" style="display:inline">
-    <path class="room" d="m1790 90h-30v-20h30l10 10h40v20h-40z"/>
-    <rect class="corr" height="10" width="10" x="1910" y="70"/>
-    <rect class="room" height="20" width="40" x="1910" y="50"/>
-    <rect class="corr" height="10" width="10" x="1940" y="40"/>
-    <rect class="room" height="40" width="40" x="1910" y="0"/>
-    <rect class="room" height="40" width="50" x="1900" y="80"/>
-    <path class="corr" d="m1880 80v10v20h10v-20h10v-10h-20z"/>
-    <rect class="corr" height="10" width="10" x="1830" y="100"/>
-    <rect class="corr" height="10" width="10" x="1850" y="100"/>
-    <rect class="room" height="20.09009" width="59.909908" x="1830" y="110"/>
-    <path class="corr" d="m1390 240h10v10h-10zm-10-20h10v50h-10z"/>
-    <rect class="corr" height="10" width="10" x="1380" y="140"/>
-    <path class="stairs-ns" d="m1383 150h4l3 70h-10z"/>
-    <rect class="room" height="20" width="20" x="1400" y="230"/>
-    <path class="stairs-ew" d="m1420 230 10 3v4l-10 3z"/>
-    <rect class="room" height="40" width="30" x="1430" y="210"/>
-    <rect class="room" height="30" width="30" x="1400" y="140"/>
-    <path class="stairs-ew" d="m1430 150 10 3v4l-10 3z"/>
-    <rect class="room" height="50" width="20" x="1440" y="140"/>
     <rect class="corr" height="10" width="40" x="1790" y="110"/>
-    <rect class="feature" height="20" id="teleportal-l2-a-2" width="20" x="1770" y="100">
-      <title>This teleports you back to teleportal l2-a-1.</title>
-    </rect>
-    <rect class="room" height="20" width="90" x="1770" y="140"/>
-    <rect class="feature" height="20" id="teleportal-l2-a-1" width="20" x="1800" y="140">
-      <title>Teleportal to somewhere.  Dunno exactly where to yet.  We currently call it teleportal-l2-a-2.</title>
-    </rect>
-    <rect class="room" height="60" width="20" x="1520" y="140"/>
     <path class="corr" d="m1550 170h10v30h-10zm0-30h10v20h-10zm-10 20h90v10h-90zm60 10h10v10h-10zm0-20h10v10h-10zm-30-10h60v10h-60z"/>
     <path class="corr" d="m1660 180h20v10h-20zm0-30h20v10h-20zm-10-30h10v70h-10z"/>
-    <rect class="room" height="20" width="10" x="1680" y="180"/>
-    <rect class="room" height="30" width="40" x="1680" y="140"/>
-    <rect class="feature" height="20" id="fixme-unknown-feature" width="30" x="1690" y="180">
-      <title>This was marked on the Smoke Powder smugglers' map.  Dunno what it is yet.</title>
-    </rect>
     <rect class="corr" height="10" width="10" x="1640" y="280"/>
-    <rect class="room" height="30" width="20" x="1620" y="260"/>
     <rect class="corr" height="10" width="10" x="1570" y="290"/>
-    <rect class="room" height="20" width="30" x="1570" y="270"/>
     <rect class="corr" height="10" width="10" x="1610" y="300"/>
     <rect class="corr" height="50" width="10" x="1650" y="250"/>
-    <rect class="room" height="20" width="40" x="1570" y="300"/>
-    <rect class="room" height="20" width="40" x="1620" y="300"/>
-    <rect class="room" height="20" width="40" x="1670" y="300"/>
-    <path class="corr" d="m1500 280v50 10c-138.4861 0 175.3201 0 210 0v-10h-200v-50zm10 30v10h10v-10z"/>
+    <rect class="corr" height="10" width="10" x="1910" y="70"/>
+    <rect class="corr" height="10" width="10" x="1940" y="40"/>
+    <path class="corr" d="m1880 80v10 20h10v-20h10v-10h-20z"/>
+    <rect class="corr" height="10" width="10" x="1830" y="100"/>
+    <rect class="corr" height="10" width="10" x="1850" y="100"/>
+    <path class="corr" d="m1390 240h10v10h-10zm-10-20h10v50h-10z"/>
+    <rect class="corr" height="10" width="10" x="1380" y="140"/>
+    <path class="corr" d="m1500 280v50 10c-138.4861 0 175.3201 0 210 0v-10h-200v-50zm10 30v10h10v-10z" id="fixme-path5739"/>
     <path class="corr" d="m1540 210v10h10v30h20v-10h-10v-20h80v-10z"/>
     <path class="corr" d="m1730 140v10 120h-20v10h20v60h10v-190h10v30h130v-30h60v170h10v-160h30v-10h-30v-10h-80v30h-40v-10h-10v10h-60v-30z"/>
     <path class="corr" d="m1890 160v30h-140v140h90v10h-10v10h20v-40h-10v10h-80v-120h110v120h10v-120h10v110h10v-140h20v30h10v-40z"/>
@@ -252,6 +222,26 @@
     <rect class="corr" height="10" width="10" x="1480" y="230"/>
     <rect class="corr" height="10" width="10" x="1530" y="230"/>
     <rect class="corr" height="10" width="20" x="1420" y="330"/>
+    <rect class="corr" height="10" width="10" x="1660" y="300"/>
+    <rect class="room" height="30" width="20" x="1620" y="260"/>
+    <rect class="room" height="30" width="40" x="1680" y="140"/>
+    <rect class="room" height="50" width="20" x="1440" y="140"/>
+    <rect class="room" height="20" width="90" x="1770" y="140"/>
+    <rect class="room" height="60" width="20" x="1520" y="140"/>
+    <rect class="room" height="20" width="10" x="1680" y="180"/>
+    <rect class="room" height="20" width="30" x="1570" y="270"/>
+    <rect class="room" height="20" width="40" x="1570" y="300"/>
+    <rect class="room" height="20" width="40" x="1620" y="300"/>
+    <rect class="room" height="20" width="40" x="1670" y="300"/>
+    <rect class="room" height="40" width="30" x="1430" y="210"/>
+    <rect class="room" height="40" width="40" x="1910" y="0"/>
+    <rect class="room" height="20" width="40" x="1910" y="50"/>
+    <path class="room" d="m1790 90h-30v-20h30l10 10h40v20h-40z"/>
+    <rect class="room" height="40" width="50" x="1900" y="80"/>
+    <rect class="room" height="20" width="60" x="1830" y="110"/>
+    <rect class="room" height="20" width="20" x="1400" y="230"/>
+    <rect class="room" height="30" width="30" x="1400" y="140"/>
+    <rect class="room" height="20" width="60" x="1570" y="180"/>
     <path class="room" d="m1480 180v20h-10v30h20v-30h20v-20z"/>
     <rect class="room" height="100" width="90" x="1770" y="210"/>
     <rect class="room" height="100" width="20" x="1910" y="210"/>
@@ -269,6 +259,9 @@
     <rect class="room" height="50" width="50" x="1770" y="390"/>
     <rect class="room" height="50" width="50" x="1440" y="310"/>
     <rect class="room" height="90" width="80" x="1480" y="680"/>
+    <path class="stairs-ns" d="m1383 150h4l3 70h-10z"/>
+    <path class="stairs-ew" d="m1420 230 10 3v4l-10 3z"/>
+    <path class="stairs-ew" d="m1430 150 10 3v4l-10 3z"/>
     <path class="stairs-ew" d="m1490 330 10 3v3l-10 4z"/>
     <path class="stairs-ew" d="m1510 263 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1510 164 10-4v10l-10-3z"/>
@@ -279,11 +272,19 @@
     <path class="stairs-ns" d="m1630 220h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m1813 210h4l3 30h-10z" id="lowering-stairs-a"/>
     <path class="stairs-ns" d="m1840 350h10l-3 30h-4z"/>
+    <path class="stairs-ns" d="m1650 90h10l-3 30h-4z"/>
+    <path class="stairs-ew" d="m1630 163 20-3v10l-20-4z"/>
+    <path class="stairs-ew" d="m1370 233 10-3v10l-10-4z"/>
+    <rect class="feature" height="20" id="teleportal-l2-a-2" width="20" x="1770" y="100"> <title>This teleports you back to teleportal l2-a-1.</title> </rect>
+    <rect class="feature" height="20" id="teleportal-l2-a-1" width="20" x="1800" y="140"> <title>Teleportal to somewhere.  Dunno exactly where to yet.  We currently call it teleportal-l2-a-2.</title> </rect>
+    <rect class="feature" height="20" id="feature-unknown" width="30" x="1690" y="180"> <title>This was marked on the Smoke Powder smugglers' map.  Dunno what it is yet.</title> </rect>
+    <rect class="feature-water" height="50" id="mud-river" width="10" x="1460" y="310"> <title>We have not explored anything about this river of mud.</title> </rect>
+    <rect class="feature" height="100" id="ziggurat" width="100" x="1470" y="490"> <title>Ziggurat of horrible flaming spiky death and snakes.</title> </rect>
     <path class="wall" d="m1382 680h-2v-262"/>
     <path class="wall" d="m1420 330h20v-20h50v20h10v-50h-30v-40h10v-10h-10v-20h-10v40h-30v-10h-10v10h-30v20"/>
     <path class="wall" d="m1480 722v-42h-92"/>
     <path class="wall" d="m1512 770h-32v-42"/>
-    <path class="wall" d="m1650 90v50h2h-2v20h-40v-10h20v-10h-60v10h30v10h-40v-20h-10v20h-10v-20h-20v20h-10v-20h-40v30h30v10h-40v-40h-20v10h-10v-10h-30v30h30v-10h10v30h40v10h-40v10h-10v20h-30v10h-10v-100h-10v90h-10"/>
+    <path class="wall" d="m1650 90v50h2-2v20h-40v-10h20v-10h-60v10h30v10h-40v-20h-10v20h-10v-20h-20v20h-10v-20h-40v30h30v10h-40v-40h-20v10h-10v-10h-30v30h30v-10h10v30h40v10h-40v10h-10v20h-30v10h-10v-100h-10v90h-10"/>
     <path class="wall" d="m1560 728v42h-32"/>
     <path class="wall" d="m1550 170v40h-40v20h20v10h-10v20h-10v-20h-20v-40h20v-30h10v30h20v-30z"/>
     <path class="wall" d="m1652 410h-14m-6 0h-252v3"/>
@@ -293,6 +294,11 @@
     <path class="wall" d="m1660 608v72h-2"/>
     <path class="wall" d="m1750 340h90v-10h-10-80v-140h140v-30h40v40h-10v-30h-20v140h-10v-110h-10v120h40v-10h-10v-100h20v110h10v-170h-60v30h-130v-30h-10v190h-250v20h-50v-20h-20"/>
     <path class="wall" d="m1750 350h90v30h-30v10h2-42v20h-112 2v2"/>
+    <path class="wall" d="m1658 250h52v-20h-70v-20h-80v-40h40v10h-30v20h60v-20h-20v-10h40v20h30v10h40v-20h-60v-20h20v10h40v-30h-40v10h-20v-10h-2 2v-50m250 290h-60v-70h10v-100h-90v100h70v10h-10-70v-120h110v160h80v-200h30v10h20v-30h-20v10h-30v-10h-80v30h-40v-10h30v-20h-90v20h50v10h-60v-30h-30v130h-20v-10h-40v30h40v-10h20v50h-220v-10h30v-30h-20v20h-10v-40h10v10h20v-60h10v30h20v10h30v-30h-30v10h-10v-20h70v10h-10v20h32"/>
+    <path class="wall" d="m1760 70h30l10 10h40v30h10v-10h2"/>
+    <path class="wall" d="m1858 100h2v10h20v-30h30v-30h30v-10h-30v-40h40v70h-30v10h30v40h-50v-30h-10v40h-60v-10h-60v-20h20v10h40v-10h-30l-10-10h-30"/>
+    <path class="wall" d="m1380 270v-30h-10"/>
+    <path class="wall" d="m1650 250v0 0 0 0 30h-10v-20h-20v30h30v10h-70v-10h20v-20h-30v50h40v-10h10v10h40v-10h10v10h40v-20h-50v-50"/>
     <rect class="door" height="2" width="6" x="1652" y="409"/>
     <rect class="door" height="2" width="6" x="1812" y="389"/>
     <rect class="door" height="2" width="6" x="1632" y="409"/>
@@ -306,24 +312,15 @@
     <rect class="door" height="6" width="2" x="1379" y="412"/>
     <rect class="door" height="6" width="2" x="1559" y="722"/>
     <rect class="door" height="6" width="2" x="1479" y="722"/>
-    <rect class="sec-door" height="2" id="sec-door-smoke-powder" width="6" x="1652" y="249">
-      <title>Secret door with lock.  We used a Knock spell on it.</title>
-    </rect>
-    <rect class="feature-water" height="50" id="mud-river" width="10" x="1460" y="310">
-      <title>We have not explored anything about this river of mud.</title>
-    </rect>
-    <rect class="feature" height="10" id="bridge" width="50" x="1440" y="330">
-      <title>This bridge can be used to teleport to Nesme</title>
-    </rect>
-    <rect class="feature" height="100" id="ziggurat" width="100" x="1470" y="490">
-      <title>Ziggurat of horrible flaming spiky death and snakes.</title>
-    </rect>
-    <rect class="feature" height="2" id="lever-a" width="1" x="1821" y="210">
-      <title>This lever causes the stairs to appear.</title>
-    </rect>
-    <rect class="feature-bad" height="8" id="statue-animating-snake" width="9" x="1516" y="537">
-      <title>This statue turns into a snake.  Although it's obviously valuable, it does not like to leave the room.</title>
-    </rect>
+    <rect class="door" height="2" width="6" x="1852" y="99"/>
+    <rect class="sec-door" height="2" id="sec-door-smoke-powder" width="6" x="1652" y="249"> <title>Secret door with lock.  We used a Knock spell on it.</title> </rect>
+    <rect class="sec-door" height="2" id="sec-door-a-1" width="6" x="1652" y="139"> <title>Secret door with unknown mechanism.  Henkles opened it the hard way.</title> </rect>
+    <rect class="feature" height="10" id="bridge" width="50" x="1440" y="330"> <title>This bridge can be used to teleport to Nesme</title> </rect>
+    <rect class="feature" height="2" id="lever-a" width="1" x="1821" y="210"> <title>This lever causes the stairs to appear.</title> </rect>
+    <rect class="feature-bad" height="8" id="statue-animating-snake" width="9" x="1516" y="537"> <title>This statue turns into a snake.  Although it's obviously valuable, it does not like to leave the room.</title> </rect>
+    <rect class="feature" height="6" id="smoke-powder-cache" width="4" x="1660" y="422"> <title>Cache for the smoke powder.  Dug by Brogan as an enlarged Umber Hulk, hidden by Stone Shape.</title> </rect>
+    <path class="feature" d="m1707 310a6.5 7 0 1 1-13 0 6.5 7 0 1 1 13 0z" id="magic-gate" sodipodi:cx="1700.5" sodipodi:cy="310" sodipodi:rx="6.5" sodipodi:ry="7" sodipodi:type="arc"> <title>Magical gate.  Probably how the smoke powder has been coming in.</title> </path>
+    <rect class="feature" height="10" id="illusion-wall" width="2" x="1648" y="280"> <title>Illusionary wall.  Hard to disbelieve, but easy to walk through.</title> </rect>
     <text class="name" sodipodi:linespacing="125%" x="1774" xml:space="preserve" y="218"><tspan sodipodi:role="line" x="1774" y="218">Bones</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1578" xml:space="preserve" y="237"><tspan sodipodi:role="line" x="1578" y="237">Slime</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1640" xml:space="preserve" y="237"><tspan sodipodi:role="line" x="1640" y="237">Illusions</tspan></text>
@@ -332,42 +329,17 @@
     <text class="name" sodipodi:linespacing="125%" x="1579" xml:space="preserve" y="254"><tspan sodipodi:role="line" x="1579" y="254">256</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1680" xml:space="preserve" y="241"><tspan sodipodi:role="line" x="1680" y="241">219a</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1494" xml:space="preserve" y="156"><tspan sodipodi:role="line" x="1494" y="156">258</tspan></text>
-    <rect class="feature" height="6" id="smoke-powder-cache" width="4" x="1660" y="422">
-      <title>Cache for the smoke powder.  Dug by Brogan as an enlarged Umber Hulk, hidden by Stone Shape.</title>
-    </rect>
-    <path class="wall" d="m1650 250v0 0 0 0 30h-10v-20h-20v30h30v10h-70v-10h20v-20h-30v50h40v-10h10v10h40v-10h10v10h40v-20h-50v-50"/>
-    <path class="feature" d="m1707 310a6.5 7 0 1 1-13 0 6.5 7 0 1 1 13 0z" id="magic-gate" sodipodi:cx="1700.5" sodipodi:cy="310" sodipodi:rx="6.5" sodipodi:ry="7" sodipodi:type="arc">
-      <title>Magical gate.  Probably how the smoke powder has been coming in.</title>
-    </path>
-    <rect class="feature" height="10" id="illusion-wall" width="2" x="1648" y="280">
-      <title>Illusionary wall.  Hard to disbelieve, but easy to walk through.</title>
-    </rect>
-    <rect class="corr" height="10" width="10" x="1660" y="300"/>
-    <text class="name" sodipodi:linespacing="125%" x="1670" xml:space="preserve" y="308"><tspan sodipodi:role="line" x="1670" y="308">Teleportal</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="1571" xml:space="preserve" y="278"><tspan sodipodi:role="line" x="1571" y="278">Smoke</tspan><tspan sodipodi:role="line" x="1571" y="288">Powder</tspan></text>
-    <path class="wall" d="m1658 250h52v-20h-70v-20h-80v-40h40v10h-30v20h60v-20h-20v-10h40v20h30v10h40v-20h-60v-20h20v10h40v-30h-40v10h-20v-10h-2 2v-50m250 290h-60v-70h10v-100h-90v100h70v10h-10-70v-120h110v160h80v-200h30v10h20v-30h-20v10h-30v-10h-80v30h-40v-10h30v-20h-90v20h50v10h-60v-30h-30v130h-20v-10h-40v30h40v-10h20v50h-220v-10h30v-30h-20v20h-10v-40h10v10h20v-60h10v30h20v10h30v-30h-30v10h-10v-20h70v10h-10v20h32"/>
-    <rect class="sec-door" height="2" id="sec-door-a-1" width="6" x="1652" y="139">
-      <title>Secret door with unknown mechanism.  Henkles opened it the hard way.</title>
-    </rect>
-    <path class="stairs-ns" d="m1650 90h10l-3 30h-4z"/>
-    <rect class="room" height="20" width="60" x="1570" y="180"/>
-    <path class="stairs-ew" d="m1630 163 20-3v10l-20-4z"/>
-    <path class="wall" d="m1858 100h2v10h20v-30h30v-30h30v-10h-30v-40h40v70h-30v10h30v40h-50v-30h-10v40h-60v-10h-60v-20h20v10h40v-10h-30l-10-10h-30"/>
     <text class="name" sodipodi:linespacing="125%" x="1799" xml:space="preserve" y="153"><tspan sodipodi:role="line" x="1799" y="153">l2-a-1</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1771" xml:space="preserve" y="118"><tspan sodipodi:role="line" x="1771" y="118">l2-a-2</tspan></text>
-    <path class="wall" d="m1380 270v-30h-10"/>
-    <path class="stairs-ew" d="m1370 233 10-3v10l-10-4z"/>
-    <path class="wall" d="m1760 70h30l10 10h40v30h10v-10h2"/>
-    <rect class="door" height="2" width="6" x="1852" y="99"/>
+    <text class="name" sodipodi:linespacing="125%" x="1670" xml:space="preserve" y="308"><tspan sodipodi:role="line" x="1670" y="308">Teleportal</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="1571" xml:space="preserve" y="278"><tspan sodipodi:role="line" x="1571" y="278">Smoke</tspan><tspan sodipodi:role="line" x="1571" y="288">Powder</tspan></text>
   </g>
   <g id="um-l1-l2" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 2" style="display:none"/>
   <g id="um-l1-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:inline">
-    <rect class="room" height="50" width="80" x="1250" y="2280"/>
-    <rect class="room" height="50" width="70" x="1060" y="2470"/>
-    <path class="feature" d="m1130 2490h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="fixme-path4247"/>
-    <rect class="feature-bad" height="30" id="fixme-rect4302" width="30" x="200" y="3380"/>
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
+    <path class="corr" d="m320 3600v10h-40v10h40v10h10v-30z"/>
+    <path class="corr" d="m250 3640-10-10 20-20h10v10z"/>
     <rect class="corr" height="10" width="20" x="2790" y="610"/>
     <rect class="corr" height="10" width="10" x="2770" y="600"/>
     <rect class="corr" height="20" width="10" x="2770" y="650"/>
@@ -427,6 +399,9 @@
     <rect class="corr" height="10" width="30" x="290" y="2800"/>
     <path class="corr" d="m320 2840v10h-10v10h20v-10-10h-10z"/>
     <!-- Rooms start here -->
+    <rect class="room" height="50" width="80" x="1250" y="2280"/>
+    <rect class="room" height="50" width="70" x="1060" y="2470"/>
+    <rect class="room" height="50" width="50" x="130" y="2830"/>
     <path class="room" d="m1470 1930v30h20v-20h10v-10h-10-20z"/>
     <rect class="room" height="30" width="70" x="1410" y="1970"/>
     <rect class="room" height="30" width="40" x="1410" y="2020"/>
@@ -500,9 +475,11 @@
     <!-- Pits start here -->
     <rect class="pit" height="10" id="pit-rock-lobster-b" width="10" x="2700" y="670"/>
     <path class="pit" d="m2770 670h10v10h-10v-10z" id="pit-cursd"/>
-    <rect class="feature-water" height="30" id="room-water-filled-1" width="30" x="1670" y="1950">
-      <title>6' of water</title>
-    </rect>
+    <rect class="feature-water" height="30" id="room-water-filled-1" width="30" x="1670" y="1950"> <title>6' of water</title> </rect>
+    <rect class="pit" height="10" id="pit-dd-a" width="10" x="270" y="3610"> <title>Don't fall into this pit again.</title> </rect>
+    <rect class="feature-bad" height="30" id="puzzle-room-a" width="30" x="280" y="2840"/>
+    <path class="feature" d="m1130 2490h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="walkways-headless-room"/>
+    <rect class="feature-bad" height="30" id="puzzle-room-b" width="30" x="210" y="3380"/>
     <!-- Walls start here -->
     <path class="wall" d="m2720 680h20v-40"/>
     <path class="wall" d="m2720 670h10v-20h-20v60h10v12"/>
@@ -519,8 +496,8 @@
     <path class="wall" d="m1050 2290h10v20h10v10h-170v-20h10"/>
     <path class="wall" d="m1060 2492v-22h32-2v-20h-20v-10h-10v10h-50v-30h20v-22"/>
     <path class="wall" d="m1092 2520h-32v-22"/>
-    <path class="wall" d="m110 3652v-2h40v22-2h10v2-22l10-10-40-40 3-3"/>
-    <path class="wall" d="m110 3658v42h40v-22 2h10v-2 2h21l9 10h5"/>
+    <path class="wall" d="m120 3652v-2h40v22-2h10v2-22l10-10-40-40 3-3"/>
+    <path class="wall" d="m120 3658v42h40v-22v2h10v-2v2h20l10 10h5"/>
     <path class="wall" d="m1100 2280h-50"/>
     <path class="wall" d="m1130 2320h-50v-10h10v-20h10"/>
     <path class="wall" d="m1190 2350h20v10h-10v11"/>
@@ -528,60 +505,60 @@
     <path class="wall" d="m1200 2398v12h10v10"/>
     <path class="wall" d="m1202 2470h-52v22-2h-20v-20h-32 2v-30h10v10h20v-30h-10v-40h-20v30h10v20h-50v-10h-20v-22 2h10v10h30v-30h-30v10h-10v2-34 2h10v10h30v-30h-30v10h-10v2-22h70"/>
     <path class="wall" d="m1202 2510h-52v-12 2h-20v20h-32"/>
-    <path class="wall" d="m122 3160h-74"/>
+    <path class="wall" d="m132 3160h-74"/>
     <path class="wall" d="m1220 2240h10v20h30v-10h20v-2 32h-30v50h80v-12 2h40v-30h10v10h30v-20h-70v30h-10v3-33h-30v-20h30v10h40v-20h10v10h30v-2 2h40"/>
     <path class="wall" d="m1220 2420v-10h10v-10h40v10h12-2v22"/>
     <path class="wall" d="m1230 2378v12h40v-10h12"/>
     <path class="wall" d="m1250 2300h-50v40h-10"/>
     <path class="wall" d="m1250 2310h-40v30h10v20h10v12"/>
-    <path class="wall" d="m128 3030h12v10h40v-20h-10"/>
+    <path class="wall" d="m138 3030h12v10h40v-20h-10"/>
     <path class="wall" d="m1280 2438v42h-50v-10h-22"/>
     <path class="wall" d="m1288 2380h12v12"/>
     <path class="wall" d="m1290 2438v42h45v-3"/>
     <path class="wall" d="m1300 2398v12h-12 2v22"/>
     <path class="wall" d="m1335 2492v-2h-105v20h-22"/>
-    <path class="wall" d="m137 3593 3-3 40 40h20v-100h-20"/>
+    <path class="wall" d="m147 3593 3-3 40 40h20v-100h-20"/>
     <path class="wall" d="m1390 2120v10h-20v30h10v50h10v10h-10v20h-10v-10h-40v10h-50v2-2h-20v-20h-30v10h-10"/>
     <path class="wall" d="m1410 1960v112"/>
     <path class="wall" d="m1410 2078v54-2h-10v-10"/>
-    <path class="wall" d="m142 2830h-22v50h22"/>
+    <path class="wall" d="m152 2830h-22v50h22"/>
     <path class="wall" d="m1420 2072v-22h30v-10h10"/>
     <path class="wall" d="m1420 2078v54"/>
     <path class="wall" d="m1430 1918v2h50v10h-10v20h-10v-20h-20"/>
     <path class="wall" d="m1440 1940h10v30h-30v-10"/>
     <path class="wall" d="m1450 2250h-40v2-32h-10v-10h10v-40h-20v-10h10v-20h10v-2 2h10v-2"/>
-    <path class="wall" d="m148 2880h22v-20h20v112"/>
+    <path class="wall" d="m158 2880h22v-20h20v112"/>
     <path class="wall" d="m1510 1950v-30h-20v10h10v10h-10v20h-30v10h20v30h-60v20h30v10h10"/>
     <path class="wall" d="m1520 1950v-40h-90v2"/>
     <path class="wall" d="m1640 1940c0 40 0 40 0 40h-10v20h30v-20h-10v-10h20v10h12"/>
     <path class="wall" d="m1650 1940v20h20v-10h30v10h30v-60h2-12v-12 2h-22 2v50h-30v-50h22-2v-10h30v2-12h30v30h-12 2v60h32"/>
-    <path class="wall" d="m170 3010h20v-32"/>
-    <path class="wall" d="m172 3220h-2v-10h30v-50h2-74"/>
+    <path class="wall" d="m180 3010h20v-32"/>
+    <path class="wall" d="m182 3220h-2v-10h30v-50h2-74"/>
     <path class="wall" d="m1770 1930v10h-10-50v10h50v10"/>
     <path class="wall" d="m1779 1960h11v-20h-10v-10"/>
     <path class="wall" d="m1790 1960v20h-30v-10h-60v10h-10"/>
-    <path class="wall" d="m180 3520h20v-110h12-12v-30h12-2v-20h2-2v-60h20v-22"/>
-    <path class="wall" d="m190 2810v40h-20v-20h-22"/>
-    <path class="wall" d="m200 2978v32h20"/>
-    <path class="wall" d="m220 3020h-10v20h10"/>
-    <path class="wall" d="m220 3050h-80v10h-12 82v100h-2 2v50h60"/>
-    <path class="wall" d="m230 3242v-22h-52"/>
-    <path class="wall" d="m230 3272v-24"/>
-    <path class="wall" d="m230 3530h-20v100h20l20-20h60v-10"/>
-    <path class="wall" d="m240 3248v24"/>
-    <path class="wall" d="m240 3278v22h20v60h-2"/>
-    <path class="wall" d="m240 3420h-30v100h20"/>
-    <path class="wall" d="m260 2818v2h30v-10h30v40h-10v2-12h-30v12-2h-80v-40"/>
-    <path class="wall" d="m252 3360h-34 2v20h-2 12v30h-12 22"/>
+    <path class="wall" d="m190 3520h20v-110h12-12v-30h12-2v-20h2-2v-60h20v-22"/>
+    <path class="wall" d="m200 2810v40h-20v-20h-22"/>
+    <path class="wall" d="m210 2978v32h20"/>
+    <path class="wall" d="m230 3020h-10v20h10"/>
+    <path class="wall" d="m230 3050h-80v10h-12 82v100h-2 2v50h60"/>
+    <path class="wall" d="m240 3242v-22h-52"/>
+    <path class="wall" d="m240 3272v-24"/>
+    <path class="wall" d="m240 3530h-20v100h20l20-20h60v-10"/>
+    <path class="wall" d="m250 3248v24"/>
+    <path class="wall" d="m250 3278v22h20v60h-2"/>
+    <path class="wall" d="m250 3420h-30v100h20"/>
+    <path class="wall" d="m260 2818v2h30v-10h30v40h-10v2-12h-30v12-2h-70v-40"/>
+    <path class="wall" d="m262 3360h-34 2v20h-2 12v30h-12 22"/>
     <path class="wall" d="m272 2790h-12v22"/>
-    <path class="wall" d="m270 3220h-30v22"/>
-    <path class="wall" d="m272 3680h-22v-2 2h-20l-10 10h-5"/>
-    <path class="wall" d="m280 3678v2h-2"/>
-    <path class="wall" d="m310 3630v-10h-50l-20 20 10 10v22-2h30v2"/>
-    <path class="wall" d="m320 3600v30"/>
-    <path class="wall" d="m372 2870h-22v-20h10v-10h-30v20h-20v-2 12h-30v-12 2h-80v112"/>
+    <path class="wall" d="m280 3220h-30v22"/>
+    <path class="wall" d="m282 3680h-22v-2 2h-20l-10 10h-5"/>
+    <path class="wall" d="m290 3678v2h-2"/>
+    <path class="wall" d="m320 3630v-10h-50l-20 20 10 10v22-2h30v2"/>
+    <path class="wall" d="m330 3600v30"/>
+    <path class="wall" d="m372 2870h-22v-20h10v-10h-30v20h-20v-2 12h-30v-12 2h-70v112"/>
     <path class="wall" d="m422 2830h-12v-22 2h-40v40h10v20h-2"/>
-    <path class="wall" d="m42 3160h-2v-100h82-2v-30h2"/>
+    <path class="wall" d="m52 3160h-2v-100h82-2v-30h2"/>
     <path class="wall" d="m440 2828v2h-12"/>
     <path class="wall" d="m460 2782v-2h2-12l-20 20h-20v2-2h-120v-10h-12"/>
     <path class="wall" d="m460 2788v2h2-2l-20 20v12"/>
@@ -615,14 +592,14 @@
     <rect class="door" height="6" width="2" x="2809" y="622"/>
     <rect class="door" height="2" width="6" x="2812" y="629"/>
     <rect class="door" height="2" width="6" x="2822" y="629"/>
-    <path class="door" id="fixme-door-huh" d="m136 3592 2 2-4 4-2-2z"/>
-    <rect class="door" height="2" width="6" x="202" y="3159"/>
-    <rect class="door" height="2" width="6" x="122" y="3159"/>
-    <rect class="door" height="2" width="6" x="42" y="3159"/>
-    <rect class="door" height="2" width="6" x="122" y="3059"/>
-    <rect class="door" height="2" width="6" x="122" y="3029"/>
-    <rect class="door" height="2" width="6" x="142" y="2879"/>
-    <rect class="door" height="2" width="6" x="142" y="2829"/>
+    <path class="door" d="m146 3592 2 2-4 4-2-2z" id="fixme-door-huh"/>
+    <rect class="door" height="2" width="6" x="212" y="3159"/>
+    <rect class="door" height="2" width="6" x="132" y="3159"/>
+    <rect class="door" height="2" width="6" x="52" y="3159"/>
+    <rect class="door" height="2" width="6" x="132" y="3059"/>
+    <rect class="door" height="2" width="6" x="132" y="3029"/>
+    <rect class="door" height="2" width="6" x="152" y="2879"/>
+    <rect class="door" height="2" width="6" x="152" y="2829"/>
     <rect class="door" height="2" width="6" x="372" y="2869"/>
     <rect class="door" height="2" width="6" x="272" y="2789"/>
     <rect class="door" height="2" width="6" x="422" y="2829"/>
@@ -640,24 +617,24 @@
     <rect class="door" height="2" width="6" x="1282" y="2409"/>
     <rect class="door" height="2" width="6" x="1092" y="2469"/>
     <rect class="door" height="2" width="6" x="1092" y="2519"/>
-    <rect class="door" height="2" width="6" x="272" y="3679"/>
-    <rect class="door" height="2" width="6" x="212" y="3379"/>
-    <rect class="door" height="2" width="6" x="212" y="3409"/>
-    <rect class="door" height="2" width="6" x="212" y="3359"/>
-    <rect class="door" height="2" width="6" x="252" y="3359"/>
-    <rect class="door" height="2" width="6" x="172" y="3219"/>
+    <rect class="door" height="2" width="6" x="282" y="3679"/>
+    <rect class="door" height="2" width="6" x="222" y="3379"/>
+    <rect class="door" height="2" width="6" x="222" y="3409"/>
+    <rect class="door" height="2" width="6" x="222" y="3359"/>
+    <rect class="door" height="2" width="6" x="262" y="3359"/>
+    <rect class="door" height="2" width="6" x="182" y="3219"/>
     <rect class="door" height="2" width="6" x="1682" y="1979"/>
     <rect class="door" height="2" width="6" x="1732" y="1899"/>
     <rect class="door" height="2" width="6" x="1692" y="1889"/>
+    <rect class="door" height="4" width="10" x="215" y="3688"/>
     <rect class="door" height="4" width="10" x="205" y="3688"/>
-    <rect class="door" height="4" width="10" x="195" y="3688"/>
     <rect class="door" height="6" width="2" x="1429" y="1912"/>
     <rect class="door" height="6" width="2" x="1409" y="2072"/>
     <rect class="door" height="6" width="2" x="1419" y="2072"/>
     <rect class="door" height="6" width="2" x="1419" y="2132"/>
     <rect class="door" height="6" width="2" x="1409" y="2132"/>
-    <rect class="door" height="6" width="2" x="189" y="2972"/>
     <rect class="door" height="6" width="2" x="199" y="2972"/>
+    <rect class="door" height="6" width="2" x="209" y="2972"/>
     <rect class="door" height="6" width="2" x="279" y="2852"/>
     <rect class="door" height="6" width="2" x="309" y="2852"/>
     <rect class="door" height="6" width="2" x="1409" y="2252"/>
@@ -679,14 +656,14 @@
     <rect class="door" height="6" width="2" x="1289" y="2432"/>
     <rect class="door" height="6" width="2" x="1059" y="2492"/>
     <rect class="door" height="6" width="2" x="1149" y="2492"/>
-    <rect class="door" height="6" width="2" x="279" y="3672"/>
-    <rect class="door" height="6" width="2" x="249" y="3672"/>
-    <rect class="door" height="6" width="2" x="159" y="3672"/>
-    <rect class="door" height="6" width="2" x="109" y="3652"/>
-    <rect class="door" height="6" width="2" x="229" y="3272"/>
+    <rect class="door" height="6" width="2" x="289" y="3672"/>
+    <rect class="door" height="6" width="2" x="259" y="3672"/>
+    <rect class="door" height="6" width="2" x="169" y="3672"/>
+    <rect class="door" height="6" width="2" x="119" y="3652"/>
     <rect class="door" height="6" width="2" x="239" y="3272"/>
-    <rect class="door" height="6" width="2" x="229" y="3242"/>
+    <rect class="door" height="6" width="2" x="249" y="3272"/>
     <rect class="door" height="6" width="2" x="239" y="3242"/>
+    <rect class="door" height="6" width="2" x="249" y="3242"/>
     <rect class="door" height="6" width="2" x="1759" y="1942"/>
     <rect class="door" height="6" width="2" x="1719" y="1882"/>
     <rect class="sec-door" height="2" width="6" x="1772" y="1959"/>
@@ -722,13 +699,13 @@
     <rect class="feature" height="9" id="cage-1" width="8" x="1680" y="1906">
       <title>This is a cage on chains that hangs from the ceiling.  It is lowered/raised by rotating the statue in the room above.</title>
     </rect>
-    <rect class="feature-bad" height="10" id="fixme-rect4279" width="10" x="260" y="3610"/>
-    <rect class="feature-bad" height="6" id="fixme-rect4296" width="2" x="149" y="3672"/>
+    <rect class="feature-bad" height="6" id="trapped-door-a" width="2" x="159" y="3672">
+      <title>We don't remember the details of this trapped door.</title>
+    </rect>
     <path class="feature-path" d="m1746 1876-11 9-1 79-89 1v-25" id="path-dexter-dance-c"/>
-    <path class="feature-path" d="m1515 1950v-35h-30v40h-30v30h-40v150h-30v70h10v40h-61v5h-44v55h-85v40h10v50h70v90h-90v10h-100v-60h-60v-110h-150v41l-70-1v20h10v71l-50-1v-20h-40v31l-110-1v180h-20l-11 10 1 100h-10l-20-19h-50v49h-61l-19 20-110 1v49h-50" id="path-dexter-dance-e"/>
-    <rect class="feature-bad" height="30" id="fixme-rect4459" width="30" x="280" y="2840"/>
-    <path class="feature-bad" d="m550 2730v10h-1v-10z" id="fixme-path4478"/>
-    <rect class="feature-bad" height="10" id="fixme-rect4480" width="1" x="479" y="2780"/>
+    <path class="feature-path" d="m1515 1950v-35h-30v40h-30v30h-40v150h-30v70h10v40h-61v5h-44v55h-85v40h10v50h70v90h-90v10h-100v-60h-60v-110h-150v41l-70-1v20h10v71l-50-1v-20h-40v31l-110-1v180h-20l-11 10 1 100h-10l-20-19h-50v49h-61l-19 20-110 1v49h-119l-1 190h-71v20l81 79v70l30 1v140h-21l1 60h-11l1 272" id="path-dexter-dance-e"/>
+    <path class="feature-bad" d="m550 2730v10h-1v-10z" id="portcullis-litch-a"/>
+    <rect class="feature-bad" height="10" id="portcullis-litch-b" width="1" x="479" y="2780"/>
     <rect class="feature" height="5" id="im-hungry" width="5" x="622" y="2463">
       <title>big thing that demanded food to let us past.</title>
     </rect>
@@ -750,11 +727,35 @@
     <circle class="column" cx="360" cy="2820" id="column-frost-spiders-4" r="1" sodipodi:cx="360" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
     <!-- Names start here -->
     <text class="name" sodipodi:linespacing="125%" x="335" xml:space="preserve" y="2814"><tspan sodipodi:role="line" x="335" y="2814">Frost</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="329.57959" xml:space="preserve" y="2829.8499"><tspan sodipodi:role="line" x="329.57959" y="2829.8499">Spiders</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="861.11108" xml:space="preserve" y="2353.7236"><tspan sodipodi:role="line" x="861.11108" y="2353.7236">Shriekers</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="282" xml:space="preserve" y="2853"><tspan sodipodi:role="line" x="282" y="2853">Puzzle</tspan><tspan sodipodi:role="line" x="282" y="2860.5">Lock</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="329" xml:space="preserve" y="2829"><tspan sodipodi:role="line" x="329" y="2829">Spiders</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="861" xml:space="preserve" y="2353"><tspan sodipodi:role="line" x="861" y="2353">Shriekers</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="282" xml:space="preserve" y="2853"><tspan sodipodi:role="line" x="282" y="2853">Puzzle</tspan><tspan sodipodi:role="line" x="282" y="2860">Lock</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="501" xml:space="preserve" y="2748"><tspan sodipodi:role="line" x="501" y="2748">Litch</tspan></text>
     <!-- Unclassified start here -->
+    <path class="stairs-ns" d="m55 3120h160l5 20h-170z"/>
+    <rect class="room" height="60" width="170" x="50" y="3060"/>
+    <rect class="room" height="20" width="170" x="50" y="3140"/>
+    <rect class="room" height="30" width="20" x="130" y="3030"/>
+    <rect class="room" height="40" width="30" x="190" y="3010"/>
+    <path class="corr" d="m200 2810v40h-20v10h20v150h10v-150h70v-10h-70v-40h-10z"/>
+    <rect class="corr" height="10" width="40" x="150" y="3040"/>
+    <rect class="corr" height="10" width="10" x="180" y="3010"/>
+    <rect class="corr" height="10" width="10" x="220" y="3010"/>
+    <rect class="corr" height="10" width="10" x="220" y="3040"/>
+    <path class="corr" d="m210 3160v50h-30v10h60v80h10v-80h30v-10h-60v-50h-10z"/>
+    <rect class="room" height="60" width="50" x="220" y="3300"/>
+    <rect class="corr" height="20" width="10" x="220" y="3360"/>
+    <path class="corr" d="m210 3410v10v100h-20v10h20v100h10v-100h20v-10h-20v-100h30v-10h-40z"/>
+    <path class="corr" d="m140 3600 10-10 40 40-10 10z"/>
+    <rect class="room" height="50" width="40" x="120" y="3650"/>
+    <rect class="corr" height="10" width="10" x="160" y="3670"/>
+    <rect class="corr" height="10" width="30" x="260" y="3670"/>
+    <path class="room" d="m190 3630h50l20 20v30h-20l-10 10h-30l-10-10h-20v-30z"/>
+    <path class="feature" d="m160 2855a5 5 0 1 1-10 0 5 5 0 1 1 10 0z" sodipodi:cx="155" sodipodi:cy="2855" sodipodi:rx="5" sodipodi:ry="5" sodipodi:type="arc"/>
+    <path class="column" d="m170 2842a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="168" sodipodi:cy="2842" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
+    <path class="column" d="m144 2842a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="142" sodipodi:cy="2842" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
+    <path class="column" d="m170 2868a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="168" sodipodi:cy="2868" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
+    <path class="column" d="m144 2868a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="142" sodipodi:cy="2868" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
   </g>
   <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:inline">
     <path class="feature-water" d="m2040 1120v10h-10v20h60v-20h-30v-10h-20z"/>
@@ -790,7 +791,7 @@
     <rect class="corr" height="20" width="10" x="1540" y="1370"/>
     <rect class="corr" height="200" width="10" x="1870" y="660"/>
     <rect class="corr" height="30" width="10" x="2140" y="1450"/>
-    <rect class="corr" height="9.9994345" width="10.000147" x="2160" y="1130"/>
+    <rect class="corr" height="10" width="10" x="2160" y="1130"/>
     <rect class="corr" height="10" width="10" x="2670" y="670"/>
     <path class="corr" d="m1870 1050v10 20h-10v10h10v90h10v10h-10v10h20v-10-20h-10v-70-40h55v-10z"/>
     <path class="corr" d="m1890 1090v10h-10v10h20v-10h30v-10z"/>
@@ -930,7 +931,7 @@
     <rect class="corr" height="10" width="10" x="1830" y="250"/>
     <rect class="corr" height="10" width="10" x="1820" y="320"/>
     <rect class="corr" height="10" width="10" x="1740" y="340"/>
-    <rect class="corr" height="10" width="10" x="1779.8379" y="629.82886"/>
+    <rect class="corr" height="10" width="10" x="1780" y="630"/>
     <rect class="corr" height="10" width="10" x="1870" y="480"/>
     <rect class="corr" height="10" width="10" x="1850" y="510"/>
     <rect class="corr" height="10" width="10" x="1770" y="1890"/>
@@ -1005,9 +1006,9 @@
     <path class="room" d="m1740 1920v10h-10v30h30v-30-10h-20z"/>
     <path class="room" d="m1790 380v40h30v10h-40v20h30v20h60v10h20v-30h-20v-30h-10v-10h-10v-10h100v-20h-160z"/>
     <rect class="room" height="10" width="30" x="1740" y="610"/>
-    <rect class="room" height="11" id="fixme-messy-rect4581" width="14" x="1747.8379" y="438.82883"/>
-    <rect class="room" height="20" width="30" x="1789.8379" y="629.82886"/>
-    <rect class="room" height="20" width="20" x="1759.8379" y="619.82886"/>
+    <rect class="room" height="12" id="room-trapdoor-to-surface" width="14" x="1748" y="438"/>
+    <rect class="room" height="20" width="30" x="1790" y="630"/>
+    <rect class="room" height="20" width="20" x="1760" y="620"/>
     <rect class="room" height="20" width="40" x="1850" y="490"/>
     <rect class="room" height="20" width="10" x="1750" y="620"/>
     <rect class="room" height="20" width="20" x="1760" y="1860"/>
@@ -1512,7 +1513,7 @@
     <path class="feature" d="m1571 1155-6 3v5l2-4 4-2z" id="dragon-tail"/>
     <rect class="feature" height="40" id="altar-giant-spider" width="20" x="1890" y="1590"/>
     <path class="feature-bad" d="m1900 1700v10" id="curtain-x1">
-      <title>This is a curtain of darkness.&quot;</title>
+      <title>This is a curtain of darkness.</title>
     </path>
     <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="820">
       <title>This chair made out of bones used to have arms that turned into poison-spitting snakes and it was covered in gems.</title>
@@ -1523,7 +1524,7 @@
     <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1700">
       <title>This statue shoots lightning bolts.</title>
     </rect>
-    <rect class="feature" height="2" id="dexter-dance-lever" width="2" x="1998.594" y="1083">
+    <rect class="feature" height="2" id="dexter-dance-lever" width="2" x="2000" y="1083">
       <title>If you pump this hidden lever, the Dexter Dance path appears.</title>
     </rect>
     <rect class="feature" height="5" id="demon-gate" width="2" x="2034" y="1033">
@@ -1556,15 +1557,21 @@
     <path class="feature-bad" d="m1862 1080v10" id="curtain-x2">
       <title>This is yet another curtain of magical blackness.</title>
     </path>
-    <path class="feature-bad" d="m2149 1356 4 9h-1l-4-8z" id="fixme-path3875"/>
-    <rect class="feature-bad" height="2" id="fixme-rect3877" width="10" x="2140" y="1418"/>
+    <path class="feature-bad" d="m2149 1356 4 9h-1l-4-8z" id="portcullis-1">
+      <title>This portcullis falls down when someone steps on the pressure plate.</title>
+    </path>
+    <rect class="feature-bad" height="2" id="portcullis-2" width="10" x="2140" y="1418">
+      <title>This portcullis blocks the path when the pressure plate is stepped on.</title>
+    </rect>
     <rect class="feature-bad" height="2" id="sliding-wall" width="10" x="2090" y="1219">
       <title>This wall slid down a while after we were teleported to the flooded room with the giant gar in it.</title>
     </rect>
     <rect class="feature-bad" height="4" id="chest" width="4" x="1851" y="492">
       <title>We have never explored this exploded chest surrounded by bodies.</title>
     </rect>
-    <rect class="feature-bad" height="8" id="fixme-rect3873" width="9" x="2130" y="1380"/>
+    <rect class="feature-bad" height="8" id="pressure-plate-1" width="9" x="2130" y="1380">
+      <title>This pressure plate drops portcullises ahead and behind and dumps hundreds of pounds of garbage on the person who triggered it.</title>
+    </rect>
     <rect class="feature-bad" height="8" id="statue-wonder" width="6" x="1983" y="1243">
       <title>This statue acts as a Wand of Wonder, blasting the room randomly.</title>
     </rect>
@@ -1579,18 +1586,18 @@
     <text class="name" sodipodi:linespacing="125%" x="2130" xml:space="preserve" y="792"><tspan sodipodi:role="line" x="2130" y="792">203</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1992" xml:space="preserve" y="1317"><tspan sodipodi:role="line" x="1992" y="1317">Candles</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1896" xml:space="preserve" y="1076"><tspan sodipodi:role="line" x="1896" y="1076">Hall Of Mirrors</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="1975" xml:space="preserve" y="1067"><tspan sodipodi:role="line" x="1975" y="1067">Null</tspan><tspan sodipodi:role="line" x="1975" y="1074.5">Magic</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="2012" xml:space="preserve" y="1032"><tspan sodipodi:role="line" x="2012" y="1032">Demon</tspan><tspan sodipodi:role="line" x="2012" y="1039.5">Gate</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="2150" xml:space="preserve" y="1038"><tspan sodipodi:role="line" x="2150" y="1038">Shield</tspan><tspan sodipodi:role="line" x="2150" y="1045.5">Room</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="1620" xml:space="preserve" y="1683.5"><tspan sodipodi:role="line" x="1620" y="1683.5">Lightning</tspan><tspan sodipodi:role="line" x="1620" y="1691">Statue</tspan><tspan sodipodi:role="line" x="1620" y="1698.5">Room</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="1860" xml:space="preserve" y="1571"><tspan sodipodi:role="line" x="1860" y="1571">Giant</tspan><tspan sodipodi:role="line" x="1860" y="1578.5">Spider</tspan><tspan sodipodi:role="line" x="1860" y="1586">Altar</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="1873" xml:space="preserve" y="1409"><tspan sodipodi:role="line" x="1873" y="1409">Sleeping</tspan><tspan sodipodi:role="line" x="1873" y="1416.5">Kings</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="2451" xml:space="preserve" y="817"><tspan sodipodi:role="line" x="2451" y="817">Black</tspan><tspan sodipodi:role="line" x="2451" y="824.5">Pudding</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="1975" xml:space="preserve" y="1067"><tspan sodipodi:role="line" x="1975" y="1067">Null</tspan><tspan sodipodi:role="line" x="1975" y="1074">Magic</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="2012" xml:space="preserve" y="1032"><tspan sodipodi:role="line" x="2012" y="1032">Demon</tspan><tspan sodipodi:role="line" x="2012" y="1039">Gate</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="2150" xml:space="preserve" y="1038"><tspan sodipodi:role="line" x="2150" y="1038">Shield</tspan><tspan sodipodi:role="line" x="2150" y="1045">Room</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="1620" xml:space="preserve" y="1683"><tspan sodipodi:role="line" x="1620" y="1683">Lightning</tspan><tspan sodipodi:role="line" x="1620" y="1691">Statue</tspan><tspan sodipodi:role="line" x="1620" y="1698">Room</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="1860" xml:space="preserve" y="1571"><tspan sodipodi:role="line" x="1860" y="1571">Giant</tspan><tspan sodipodi:role="line" x="1860" y="1578">Spider</tspan><tspan sodipodi:role="line" x="1860" y="1586">Altar</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="1873" xml:space="preserve" y="1409"><tspan sodipodi:role="line" x="1873" y="1409">Sleeping</tspan><tspan sodipodi:role="line" x="1873" y="1416">Kings</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="2451" xml:space="preserve" y="817"><tspan sodipodi:role="line" x="2451" y="817">Black</tspan><tspan sodipodi:role="line" x="2451" y="824">Pudding</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="2510" xml:space="preserve" y="697"><tspan sodipodi:role="line" x="2510" y="697">Lizard Men</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1872" xml:space="preserve" y="624"><tspan sodipodi:role="line" x="1872" y="624">Good Room</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1704" xml:space="preserve" y="235"><tspan sodipodi:role="line" x="1704" y="235">Giant Lightning Room</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="2011" xml:space="preserve" y="1098"><tspan sodipodi:role="line" x="2011" y="1098">Animated</tspan><tspan sodipodi:role="line" x="2011" y="1105.5">Armor</tspan></text>
-    <text class="name" sodipodi:linespacing="125%" x="1732" xml:space="preserve" y="2007"><tspan sodipodi:role="line" x="1732" y="2007">Metal</tspan><tspan sodipodi:role="line" x="1732" y="2014.5">Spiders</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="2011" xml:space="preserve" y="1098"><tspan sodipodi:role="line" x="2011" y="1098">Animated</tspan><tspan sodipodi:role="line" x="2011" y="1105">Armor</tspan></text>
+    <text class="name" sodipodi:linespacing="125%" x="1732" xml:space="preserve" y="2007"><tspan sodipodi:role="line" x="1732" y="2007">Metal</tspan><tspan sodipodi:role="line" x="1732" y="2014">Spiders</tspan></text>
     <!-- Unclassified start here -->
   </g>
   <g id="menu" inkscape:groupmode="layer" inkscape:label="Menu" style="display:inline">
