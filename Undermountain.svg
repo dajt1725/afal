@@ -1086,6 +1086,7 @@
       <title>With 25' of water in it</title>
     </rect>
     <circle class="pit" cx="1620" cy="1255" id="circular-pit" r="10" sodipodi:cx="1620" sodipodi:cy="1255" sodipodi:rx="10" sodipodi:ry="10"/>
+    <path class="bars" d="m2035 1050v-30" id="bars-1"/>
     <!-- Walls start here -->
     <path class="wall" d="m2140 1020v20h-10v40h-30v-20h-42 2v-40h-50v2-2h-20v-20h90v10h60v10h2zm-140 110v-20h-10v-20l20-10h22-2v10h-20v20h30v-30h-2 52v10h50v-30h40v-40h-32 2v-20h-10v-20h10v-150h-22 2v-20h-20v2-12h10v10h12-2v10h10v-10h-2 12v-40h-30v20h-10v-30h-2 52v-2 62l20 20h12-2v50h-20v110h10v10h40v-10h10v-110h-20v-50h-2 12l20-20v-12 2h10v80h10v10"/>
     <path class="wall" d="m2052 1060h-2v-10h-40v-22 2h-20v20l20 10z"/>
@@ -1321,9 +1322,9 @@
     <rect class="sec-door" height="2" width="6" x="2162" y="1349"/>
     <rect class="sec-door" height="6" width="2" x="2149" y="1432"/>
     <rect class="sec-door" height="6" width="2" x="959" y="1338"/>
-    <rect class="door" height="6" id="door-demon-gate" width="2" x="2009" y="1022"/>
+    <rect class="door" height="6" id="demon-gate" width="2" x="2009" y="1022"/>
     <rect class="door" height="16" width="2" x="1999" y="1272"/>
-    <rect class="door" height="2" width="7" x="1982" y="759"/>
+    <rect class="door" height="2" width="6" x="1982" y="759"/>
     <rect class="door" height="2" width="6" x="1962" y="769"/>
     <rect class="door" height="2" width="6" x="1932" y="749"/>
     <rect class="door" height="2" width="6" x="2062" y="739"/>
@@ -1370,15 +1371,15 @@
     <rect class="door" height="6" width="2" x="2569" y="652"/>
     <rect class="door" height="2" width="6" x="1922" y="1099"/>
     <rect class="door" height="6" width="2" x="1899" y="1132"/>
-    <rect class="door" height="3" width="5" x="1943" y="1158"/>
-    <rect class="door" height="7" width="2" x="1889" y="1207"/>
+    <rect class="door" height="2" width="6" x="1943" y="1158"/>
+    <rect class="door" height="6" width="2" x="1889" y="1207"/>
     <rect class="door" height="2" width="6" x="1872" y="1199"/>
     <rect class="door" height="6" width="2" x="1879" y="1172"/>
-    <rect class="door" height="2" id="door-grim" width="6" x="1902" y="489"/>
+    <rect class="door" height="2" width="6" x="1902" y="489"/>
     <rect class="door" height="2" width="6" x="1942" y="1239"/>
-    <rect class="door" height="2" width="5" x="2192" y="1319"/>
+    <rect class="door" height="2" width="6" x="2192" y="1319"/>
     <rect class="door" height="2" width="6" x="1162" y="1289"/>
-    <rect class="door" height="2" width="7" x="1262" y="1319"/>
+    <rect class="door" height="2" width="6" x="1262" y="1319"/>
     <rect class="door" height="2" width="6" x="1332" y="1329"/>
     <rect class="door" height="2" width="6" x="1312" y="1269"/>
     <rect class="door" height="2" width="6" x="1912" y="379"/>
@@ -1388,7 +1389,7 @@
     <rect class="door" height="2" width="6" x="1802" y="369"/>
     <rect class="door" height="2" width="6" x="1582" y="1919"/>
     <rect class="door" height="2" width="6" x="1742" y="1889"/>
-    <rect class="door" height="3" width="6" x="2152" y="1298"/>
+    <rect class="door" height="2" width="6" x="2152" y="1298"/>
     <rect class="door" height="6" width="2" x="1929" y="1092"/>
     <rect class="door" height="6" width="2" x="2129" y="1262"/>
     <rect class="door" height="6" width="2" x="2199" y="1192"/>
@@ -1427,20 +1428,20 @@
     <circle class="column" cx="1085" cy="1315" id="column-cooking-6" r="2.5" sodipodi:cx="1085" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
     <circle class="column" cx="1085" cy="1325" id="column-cooking-1" r="2.5" sodipodi:cx="1085" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
     <circle class="column" cx="1730" cy="2000" id="column-spiders-1" r="2" sodipodi:cx="1730" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1730" cy="2010" id="column-spiders-10" r="2" sodipodi:cx="1730" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1730" cy="2020" id="column-spiders-9" r="2" sodipodi:cx="1730" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1740" cy="2000" id="column-spiders-2" r="2" sodipodi:cx="1740" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1750" cy="2000" id="column-spiders-3" r="2" sodipodi:cx="1750" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1760" cy="2000" id="column-spiders-4" r="2" sodipodi:cx="1760" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1760" cy="2010" id="column-spiders-5" r="2" sodipodi:cx="1760" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1760" cy="2020" id="column-spiders-6" r="2" sodipodi:cx="1760" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1750" cy="2020" id="column-spiders-7" r="2" sodipodi:cx="1750" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1740" cy="2020" id="column-spiders-8" r="2" sodipodi:cx="1740" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1730" cy="2020" id="column-spiders-9" r="2" sodipodi:cx="1730" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1730" cy="2010" id="column-spiders-10" r="2" sodipodi:cx="1730" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1750" cy="1930" id="column-dd-l1-1" r="2" sodipodi:cx="1750" sodipodi:cy="1930" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1750" cy="1940" id="column-dd-l1-2" r="2" sodipodi:cx="1750" sodipodi:cy="1940" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1750" cy="1950" id="column-dd-l1-3" r="2" sodipodi:cx="1750" sodipodi:cy="1950" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1740" cy="1950" id="column-dd-l1-4" r="2" sodipodi:cx="1740" sodipodi:cy="1950" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1740" cy="1940" id="column-dd-l1-5" r="2" sodipodi:cx="1740" sodipodi:cy="1940" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1750" cy="2000" id="column-spiders-3" r="2" sodipodi:cx="1750" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1750" cy="2020" id="column-spiders-7" r="2" sodipodi:cx="1750" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1760" cy="2000" id="column-spiders-4" r="2" sodipodi:cx="1760" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1760" cy="2010" id="column-spiders-5" r="2" sodipodi:cx="1760" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1760" cy="2020" id="column-spiders-6" r="2" sodipodi:cx="1760" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1707" cy="208" id="column-lightning-1" r="3" sodipodi:cx="1707" sodipodi:cy="208" sodipodi:rx="3" sodipodi:ry="3"/>
     <circle class="column" cx="1695" cy="218" id="column-lightning-2" r="3" sodipodi:cx="1695" sodipodi:cy="218" sodipodi:rx="3" sodipodi:ry="3"/>
     <circle class="column" cx="1763" cy="208" id="column-lightning-3" r="3" sodipodi:cx="1763" sodipodi:cy="208" sodipodi:rx="3" sodipodi:ry="3"/>
@@ -1578,7 +1579,6 @@
     <path class="feature-path" d="m1986 1078-1 127h-20v30h-80v20h-10v90h10v210l-20 103v27h20v50h-40v10h-10v-10h-40v30h-50v45" id="path-dexter-dance-a"/>
     <path class="feature-path" d="m1745 1810v65" id="path-dexter-dance-b"/>
     <path class="feature-path" d="m1645 1960-1-45-109 1v38h-20v-34" id="path-dexter-dance-d"/>
-    <path class="bars" d="m2035 1050v-30" id="bars-1"/>
     <!-- Names start here -->
     <text class="name" sodipodi:linespacing="125%" x="1990" xml:space="preserve" y="752"><tspan sodipodi:role="line" x="1990" y="752">Hall of Heroes</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1966" xml:space="preserve" y="797"><tspan sodipodi:role="line" x="1966" y="797">Bone Throne</tspan></text>
