@@ -302,3 +302,38 @@ date=13 Tarsakh 1370
 ,give;item=Potion of Shopping  #1;to=Destroyed;note=used by Brogan
 ,give;by=Brogan;to=Someone;cash=1 Gem: Spinel 500gp
 ,give;by=Brogan;to=Someone;cash=12gp
+date=Tarsakh 16, 1370;find;found=AFAL;name=Augury Sticks
+date=Tarsakh 18, 1370;give;by=Maanamere;to=Someone;amount=810gp,5s4;note=rent warehouse, oil of cloves, maps and charts, hammock
+date=Tarsakh 20, 1370
+,party;type=AFAL;name=Tarsakh-20-1370-A;Brogan=1;Darius=1;Denyae=1;Deringa=0.5;Dexter=1;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
+,find;found=Tarsakh-20-1370-A
+,,name=3x Giant Spider poison sacks
+,,name=Magic Bracers
+,,name=Magic Ring  #1
+,,name=Magic Ring  #2
+,,name=Magic Potion
+,,name=+2 Broadsword
+,,name=+1 Sickle
+,,name=Arquebus
+,,name=4x throwing dagger
+,,name=cash and gems;note=5x 50gp Phenalopes,34gp,27ep,5sp,8x10gp Eye Agates, 10x10gp Algaes, 11x10gp Chrysocolls, 14x10gp Agni Manis, 3x10gp Bluestones,17x 10gp Sharpstones, 13x12gp Violanes, 12x 10gp Tiger Eye Agates, 12x 10gp Silkstones, 10x50gp Mykaros,403gp,655ep,113sp
+,,name=Nonmagic  #6,note=7 longbows,11 footmans flails, 11 long spears
+,,name=73x arrows, poisoned
+,,name=3x tub of sleep poison
+,,name=2x double-shot light ballista
+,,name=8x ballista bolt
+,,name=2x reflecting silver mirror array,value=250gp
+,,name=3x map of dungeon/Undermountain
+,,name=2x barrel of smoke powder
+,,name=blank/used scroll
+,party;type=AFAL;name=Tarsakh-20-1370-B;Brogan=1;Darius=1;Deringa=0.5;Dexter=1;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
+,find;found=Tarsakh-20-1370-B
+,,name=2x Giant Spider poison sacks
+,,name=Cash and nonmagic: 3 Toals, 11ep, 1cp, 3 scimitars
+,,name=Glass Sphere of Wall of Force  #2
+,party;type=AFAL;name=Tarsakh-20-1370-C;Brogan=1;Darius=1;Deringa=0.5;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
+,find;found=Tarsakh-20-1370-C;name=3x 160gp Tourmaline
+,give;by=Henkles;to=Someone;cash=10 Toals;note=10 people into and out of Undermountain.
+,sell;to=Someone;item=Nonmagic #6;cash=7 Harbor Moons
+date=Tarsakh 21, 1370
+,give;by=Henkles;to=Someone;cash=1 Harbor Moon;note=For bidder number, Steve put up the deposit
