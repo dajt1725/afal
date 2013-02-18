@@ -195,6 +195,8 @@
     </rdf:RDF>
   </metadata>
   <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Main" style="display:inline">
+    <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
+    <!-- Corridors start here -->
     <rect class="corr" height="10" width="40" x="1790" y="110"/>
     <path class="corr" d="m1550 170h10v30h-10zm0-30h10v20h-10zm-10 20h90v10h-90zm60 10h10v10h-10zm0-20h10v10h-10zm-30-10h60v10h-60z"/>
     <path class="corr" d="m1660 180h20v10h-20zm0-30h20v10h-20zm-10-30h10v70h-10z"/>
@@ -223,6 +225,7 @@
     <rect class="corr" height="10" width="10" x="1530" y="230"/>
     <rect class="corr" height="10" width="20" x="1420" y="330"/>
     <rect class="corr" height="10" width="10" x="1660" y="300"/>
+    <!-- Corridors start here -->
     <rect class="room" height="30" width="20" x="1620" y="260"/>
     <rect class="room" height="30" width="40" x="1680" y="140"/>
     <rect class="room" height="50" width="20" x="1440" y="140"/>
@@ -259,6 +262,7 @@
     <rect class="room" height="50" width="50" x="1770" y="390"/>
     <rect class="room" height="50" width="50" x="1440" y="310"/>
     <rect class="room" height="90" width="80" x="1480" y="680"/>
+    <!-- Stairs start here -->
     <path class="stairs-ns" d="m1383 150h4l3 70h-10z"/>
     <path class="stairs-ew" d="m1420 230 10 3v4l-10 3z"/>
     <path class="stairs-ew" d="m1430 150 10 3v4l-10 3z"/>
@@ -280,6 +284,7 @@
     <rect class="feature" height="20" id="feature-unknown" width="30" x="1690" y="180"> <title>This was marked on the Smoke Powder smugglers' map.  Dunno what it is yet.</title> </rect>
     <rect class="feature-water" height="50" id="mud-river" width="10" x="1460" y="310"> <title>We have not explored anything about this river of mud.</title> </rect>
     <rect class="feature" height="100" id="ziggurat" width="100" x="1470" y="490"> <title>Ziggurat of horrible flaming spiky death and snakes.</title> </rect>
+    <!-- Walls start here -->
     <path class="wall" d="m1382 680h-2v-262"/>
     <path class="wall" d="m1420 330h20v-20h50v20h10v-50h-30v-40h10v-10h-10v-20h-10v40h-30v-10h-10v10h-30v20"/>
     <path class="wall" d="m1480 722v-42h-92"/>
@@ -299,28 +304,31 @@
     <path class="wall" d="m1858 100h2v10h20v-30h30v-30h30v-10h-30v-40h40v70h-30v10h30v40h-50v-30h-10v40h-60v-10h-60v-20h20v10h40v-10h-30l-10-10h-30"/>
     <path class="wall" d="m1380 270v-30h-10"/>
     <path class="wall" d="m1650 250v0 0 0 0 30h-10v-20h-20v30h30v10h-70v-10h20v-20h-30v50h40v-10h10v10h40v-10h10v10h40v-20h-50v-50"/>
-    <rect class="door" height="2" width="6" x="1652" y="409"/>
-    <rect class="door" height="2" width="6" x="1812" y="389"/>
-    <rect class="door" height="2" width="6" x="1632" y="409"/>
-    <rect class="door" height="2" width="6" x="1652" y="679"/>
-    <rect class="door" height="2" width="8" x="1520" y="769"/>
-    <rect class="door" height="2" width="8" x="1512" y="769"/>
+    <!-- Doors start here -->
+    <rect class="sec-door" height="2" id="sec-door-smoke-powder" width="6" x="1652" y="249"> <title>Secret door with lock.  We used a Knock spell on it.</title> </rect>
+    <rect class="sec-door" height="2" id="sec-door-a-1" width="6" x="1652" y="139"> <title>Secret door with unknown mechanism.  Henkles opened it the hard way.</title> </rect>
     <rect class="door" height="2" width="6" x="1382" y="679"/>
+    <rect class="door" height="2" width="6" x="1632" y="409"/>
+    <rect class="door" height="2" width="6" x="1652" y="409"/>
+    <rect class="door" height="2" width="6" x="1652" y="679"/>
+    <rect class="door" height="2" width="6" x="1812" y="389"/>
+    <rect class="door" height="2" width="6" x="1852" y="99"/>
+    <rect class="door" height="2" width="8" x="1512" y="769"/>
+    <rect class="door" height="2" width="8" x="1520" y="769"/>
+    <rect class="door" height="6" width="2" x="1379" y="412"/>
+    <rect class="door" height="6" width="2" x="1479" y="722"/>
+    <rect class="door" height="6" width="2" x="1559" y="722"/>
     <rect class="door" height="6" width="2" x="1659" y="412"/>
     <rect class="door" height="6" width="2" x="1659" y="482"/>
     <rect class="door" height="6" width="2" x="1659" y="602"/>
-    <rect class="door" height="6" width="2" x="1379" y="412"/>
-    <rect class="door" height="6" width="2" x="1559" y="722"/>
-    <rect class="door" height="6" width="2" x="1479" y="722"/>
-    <rect class="door" height="2" width="6" x="1852" y="99"/>
-    <rect class="sec-door" height="2" id="sec-door-smoke-powder" width="6" x="1652" y="249"> <title>Secret door with lock.  We used a Knock spell on it.</title> </rect>
-    <rect class="sec-door" height="2" id="sec-door-a-1" width="6" x="1652" y="139"> <title>Secret door with unknown mechanism.  Henkles opened it the hard way.</title> </rect>
+    <!-- Features start here -->
     <rect class="feature" height="10" id="bridge" width="50" x="1440" y="330"> <title>This bridge can be used to teleport to Nesme</title> </rect>
     <rect class="feature" height="2" id="lever-a" width="1" x="1821" y="210"> <title>This lever causes the stairs to appear.</title> </rect>
     <rect class="feature-bad" height="8" id="statue-animating-snake" width="9" x="1516" y="537"> <title>This statue turns into a snake.  Although it's obviously valuable, it does not like to leave the room.</title> </rect>
     <rect class="feature" height="6" id="smoke-powder-cache" width="4" x="1660" y="422"> <title>Cache for the smoke powder.  Dug by Brogan as an enlarged Umber Hulk, hidden by Stone Shape.</title> </rect>
     <path class="feature" d="m1707 310a6.5 7 0 1 1-13 0 6.5 7 0 1 1 13 0z" id="magic-gate" sodipodi:cx="1700.5" sodipodi:cy="310" sodipodi:rx="6.5" sodipodi:ry="7" sodipodi:type="arc"> <title>Magical gate.  Probably how the smoke powder has been coming in.</title> </path>
     <rect class="feature" height="10" id="illusion-wall" width="2" x="1648" y="280"> <title>Illusionary wall.  Hard to disbelieve, but easy to walk through.</title> </rect>
+    <!-- Names start here -->
     <text class="name" sodipodi:linespacing="125%" x="1774" xml:space="preserve" y="218"><tspan sodipodi:role="line" x="1774" y="218">Bones</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1578" xml:space="preserve" y="237"><tspan sodipodi:role="line" x="1578" y="237">Slime</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1640" xml:space="preserve" y="237"><tspan sodipodi:role="line" x="1640" y="237">Illusions</tspan></text>
@@ -333,6 +341,7 @@
     <text class="name" sodipodi:linespacing="125%" x="1771" xml:space="preserve" y="118"><tspan sodipodi:role="line" x="1771" y="118">l2-a-2</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1670" xml:space="preserve" y="308"><tspan sodipodi:role="line" x="1670" y="308">Teleportal</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1571" xml:space="preserve" y="278"><tspan sodipodi:role="line" x="1571" y="278">Smoke</tspan><tspan sodipodi:role="line" x="1571" y="288">Powder</tspan></text>
+    <!-- Unclassified start here -->
   </g>
   <g id="um-l1-l2" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 2" style="display:none"/>
   <g id="um-l1-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:inline">
@@ -398,6 +407,17 @@
     <rect class="corr" height="10" width="10" x="360" y="2840"/>
     <rect class="corr" height="10" width="30" x="290" y="2800"/>
     <path class="corr" d="m320 2840v10h-10v10h20v-10-10h-10z"/>
+    <path class="corr" d="m140 3600 10-10 40 40-10 10z"/>
+    <path class="corr" d="m200 2810v40h-20v10h20v150h10v-150h70v-10h-70v-40h-10z"/>
+    <path class="corr" d="m210 3160v50h-30v10h60v80h10v-80h30v-10h-60v-50h-10z"/>
+    <path class="corr" d="m210 3410v10v100h-20v10h20v100h10v-100h20v-10h-20v-100h30v-10h-40z"/>
+    <rect class="corr" height="10" width="10" x="160" y="3670"/>
+    <rect class="corr" height="10" width="10" x="180" y="3010"/>
+    <rect class="corr" height="10" width="10" x="220" y="3010"/>
+    <rect class="corr" height="10" width="10" x="220" y="3040"/>
+    <rect class="corr" height="10" width="30" x="260" y="3670"/>
+    <rect class="corr" height="10" width="40" x="150" y="3040"/>
+    <rect class="corr" height="20" width="10" x="220" y="3360"/>
     <!-- Rooms start here -->
     <rect class="room" height="50" width="80" x="1250" y="2280"/>
     <rect class="room" height="50" width="70" x="1060" y="2470"/>
@@ -451,6 +471,13 @@
     <rect class="room" height="20" width="30" x="350" y="2850"/>
     <rect class="room" height="40" width="50" x="320" y="2800"/>
     <rect class="room" height="30" width="30" x="260" y="2790"/>
+    <path class="room" d="m190 3630h50l20 20v30h-20l-10 10h-30l-10-10h-20v-30z"/>
+    <rect class="room" height="20" width="170" x="50" y="3140"/>
+    <rect class="room" height="30" width="20" x="130" y="3030"/>
+    <rect class="room" height="40" width="30" x="190" y="3010"/>
+    <rect class="room" height="50" width="40" x="120" y="3650"/>
+    <rect class="room" height="60" width="170" x="50" y="3060"/>
+    <rect class="room" height="60" width="50" x="220" y="3300"/>
     <!-- Stairs start here -->
     <path class="stairs-ew" d="m2830 620 30 3v4l-30 3z" id="stairs-cursd"/>
     <path class="stairs-ew" d="m1130 2493 20-3v10l-20-3z"/>
@@ -472,14 +499,15 @@
     <path class="stairs-ns" d="m1640 1940h10l-3 20h-4z"/>
     <path class="stairs-ns" d="m1770 1930h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m890 2270h10l-3 20h-4z"/>
-    <!-- Pits start here -->
-    <rect class="pit" height="10" id="pit-rock-lobster-b" width="10" x="2700" y="670"/>
-    <path class="pit" d="m2770 670h10v10h-10v-10z" id="pit-cursd"/>
-    <rect class="feature-water" height="30" id="room-water-filled-1" width="30" x="1670" y="1950"> <title>6' of water</title> </rect>
+    <path class="stairs-ns" d="m55 3120h160l5 20h-170z"/>
+    <!-- Pits and floor features start here -->
+    <rect class="pit" height="10" id="pit-rock-lobster-b" width="10" x="2700" y="670"><title>This pit has a nasty robot lobster in it.</title></rect>
     <rect class="pit" height="10" id="pit-dd-a" width="10" x="270" y="3610"> <title>Don't fall into this pit again.</title> </rect>
-    <rect class="feature-bad" height="30" id="puzzle-room-a" width="30" x="280" y="2840"/>
-    <path class="feature" d="m1130 2490h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="walkways-headless-room"/>
-    <rect class="feature-bad" height="30" id="puzzle-room-b" width="30" x="210" y="3380"/>
+    <rect class="feature-water" height="30" id="room-water-filled-1" width="30" x="1670" y="1950"> <title>6' of water</title> </rect>
+    <rect class="feature-bad" height="30" id="puzzle-room-a" width="30" x="280" y="2840"><title>We don't remember the solution to this puzzle.</title></rect>
+    <rect class="feature-bad" height="30" id="puzzle-room-b" width="30" x="210" y="3380"><title>Not solving this puzzle will set off the flaming dragons.  We think, anyway.</title></rect>
+    <path class="feature" d="m1130 2490h-30v-20h-10v20h-30v10h30v20h10v-20h30z" id="walkways-headless-room"><title>These walkways are slightly slippery and curved to make falling easy.</title></path>
+    <rect class="feature" height="30" id="balcony-cursd" width="10" x="2890" y="610"><title>This is the balcony where Dethen was hanging.</title></rect>
     <!-- Walls start here -->
     <path class="wall" d="m2720 680h20v-40"/>
     <path class="wall" d="m2720 670h10v-20h-20v60h10v12"/>
@@ -579,66 +607,92 @@
     <!-- Doors start here -->
     <rect class="sec-door" height="6" id="s-door-seascape-a" width="2" x="2689" y="722"/>
     <rect class="sec-door" height="6" id="s-door-seascape-b" width="2" x="2719" y="722"/>
+    <rect class="sec-door" height="2" width="6" x="1772" y="1959"/>
+    <path class="door" d="m146 3592 2 2-4 4-2-2z"/>
     <rect class="door" height="2" id="door-seascape" width="6" x="2702" y="739"/>
-    <rect class="door" height="6" id="door-doory-b" width="2" x="2829" y="622"/>
-    <rect class="door" height="6" id="door-doory-a" width="2" x="2809" y="612"/>
-    <rect class="door" height="6" id="door-fence-b" width="2" x="2789" y="612"/>
-    <rect class="door" height="6" id="door-fence-a" width="2" x="2759" y="612"/>
-    <rect class="door" height="6" width="2" x="2829" y="612"/>
-    <rect class="door" height="6" width="2" x="2829" y="602"/>
-    <rect class="door" height="2" width="6" x="2822" y="599"/>
-    <rect class="door" height="2" width="6" x="2812" y="599"/>
-    <rect class="door" height="6" width="2" x="2809" y="602"/>
-    <rect class="door" height="6" width="2" x="2809" y="622"/>
-    <rect class="door" height="2" width="6" x="2812" y="629"/>
-    <rect class="door" height="2" width="6" x="2822" y="629"/>
-    <path class="door" d="m146 3592 2 2-4 4-2-2z" id="fixme-door-huh"/>
-    <rect class="door" height="2" width="6" x="212" y="3159"/>
-    <rect class="door" height="2" width="6" x="132" y="3159"/>
-    <rect class="door" height="2" width="6" x="52" y="3159"/>
-    <rect class="door" height="2" width="6" x="132" y="3059"/>
+    <rect class="door" height="2" width="6" x="1092" y="2469"/>
+    <rect class="door" height="2" width="6" x="1092" y="2519"/>
+    <rect class="door" height="2" width="6" x="1202" y="2469"/>
+    <rect class="door" height="2" width="6" x="1202" y="2509"/>
+    <rect class="door" height="2" width="6" x="1282" y="2379"/>
+    <rect class="door" height="2" width="6" x="1282" y="2409"/>
     <rect class="door" height="2" width="6" x="132" y="3029"/>
-    <rect class="door" height="2" width="6" x="152" y="2879"/>
+    <rect class="door" height="2" width="6" x="132" y="3059"/>
+    <rect class="door" height="2" width="6" x="132" y="3159"/>
     <rect class="door" height="2" width="6" x="152" y="2829"/>
-    <rect class="door" height="2" width="6" x="372" y="2869"/>
+    <rect class="door" height="2" width="6" x="152" y="2879"/>
+    <rect class="door" height="2" width="6" x="1682" y="1979"/>
+    <rect class="door" height="2" width="6" x="1692" y="1889"/>
+    <rect class="door" height="2" width="6" x="1732" y="1899"/>
+    <rect class="door" height="2" width="6" x="182" y="3219"/>
+    <rect class="door" height="2" width="6" x="212" y="3159"/>
+    <rect class="door" height="2" width="6" x="222" y="3359"/>
+    <rect class="door" height="2" width="6" x="222" y="3379"/>
+    <rect class="door" height="2" width="6" x="222" y="3409"/>
+    <rect class="door" height="2" width="6" x="262" y="3359"/>
     <rect class="door" height="2" width="6" x="272" y="2789"/>
+    <rect class="door" height="2" width="6" x="2812" y="599"/>
+    <rect class="door" height="2" width="6" x="2812" y="629"/>
+    <rect class="door" height="2" width="6" x="282" y="3679"/>
+    <rect class="door" height="2" width="6" x="2822" y="599"/>
+    <rect class="door" height="2" width="6" x="2822" y="629"/>
+    <rect class="door" height="2" width="6" x="372" y="2869"/>
     <rect class="door" height="2" width="6" x="422" y="2829"/>
     <rect class="door" height="2" width="6" x="462" y="2779"/>
     <rect class="door" height="2" width="6" x="462" y="2789"/>
+    <rect class="door" height="2" width="6" x="52" y="3159"/>
     <rect class="door" height="2" width="6" x="572" y="2729"/>
-    <rect class="door" height="2" width="6" x="622" y="2699"/>
-    <rect class="door" height="2" width="6" x="622" y="2639"/>
-    <rect class="door" height="2" width="6" x="622" y="2589"/>
     <rect class="door" height="2" width="6" x="622" y="2559"/>
+    <rect class="door" height="2" width="6" x="622" y="2589"/>
+    <rect class="door" height="2" width="6" x="622" y="2639"/>
+    <rect class="door" height="2" width="6" x="622" y="2699"/>
     <rect class="door" height="2" width="6" x="652" y="2539"/>
     <rect class="door" height="2" width="6" x="862" y="2339"/>
-    <rect class="door" height="2" width="6" x="1202" y="2469"/>
-    <rect class="door" height="2" width="6" x="1202" y="2509"/>
-    <rect class="door" height="2" width="6" x="1282" y="2409"/>
-    <rect class="door" height="2" width="6" x="1092" y="2469"/>
-    <rect class="door" height="2" width="6" x="1092" y="2519"/>
-    <rect class="door" height="2" width="6" x="282" y="3679"/>
-    <rect class="door" height="2" width="6" x="222" y="3379"/>
-    <rect class="door" height="2" width="6" x="222" y="3409"/>
-    <rect class="door" height="2" width="6" x="222" y="3359"/>
-    <rect class="door" height="2" width="6" x="262" y="3359"/>
-    <rect class="door" height="2" width="6" x="182" y="3219"/>
-    <rect class="door" height="2" width="6" x="1682" y="1979"/>
-    <rect class="door" height="2" width="6" x="1732" y="1899"/>
-    <rect class="door" height="2" width="6" x="1692" y="1889"/>
-    <rect class="door" height="4" width="10" x="215" y="3688"/>
     <rect class="door" height="4" width="10" x="205" y="3688"/>
-    <rect class="door" height="6" width="2" x="1429" y="1912"/>
+    <rect class="door" height="4" width="10" x="215" y="3688"/>
+    <rect class="door" height="6" id="door-doory-a" width="2" x="2809" y="612"/>
+    <rect class="door" height="6" id="door-doory-b" width="2" x="2829" y="622"/>
+    <rect class="door" height="6" id="door-fence-a" width="2" x="2759" y="612"/>
+    <rect class="door" height="6" id="door-fence-b" width="2" x="2789" y="612"/>
+    <rect class="door" height="6" width="2" x="1029" y="2352"/>
+    <rect class="door" height="6" width="2" x="1029" y="2392"/>
+    <rect class="door" height="6" width="2" x="1039" y="2352"/>
+    <rect class="door" height="6" width="2" x="1039" y="2392"/>
+    <rect class="door" height="6" width="2" x="1059" y="2492"/>
+    <rect class="door" height="6" width="2" x="1149" y="2492"/>
+    <rect class="door" height="6" width="2" x="119" y="3652"/>
+    <rect class="door" height="6" width="2" x="1199" y="2372"/>
+    <rect class="door" height="6" width="2" x="1199" y="2392"/>
+    <rect class="door" height="6" width="2" x="1229" y="2372"/>
+    <rect class="door" height="6" width="2" x="1279" y="2242"/>
+    <rect class="door" height="6" width="2" x="1279" y="2432"/>
+    <rect class="door" height="6" width="2" x="1289" y="2432"/>
+    <rect class="door" height="6" width="2" x="1299" y="2392"/>
+    <rect class="door" height="6" width="2" x="1329" y="2312"/>
     <rect class="door" height="6" width="2" x="1409" y="2072"/>
+    <rect class="door" height="6" width="2" x="1409" y="2132"/>
+    <rect class="door" height="6" width="2" x="1409" y="2252"/>
     <rect class="door" height="6" width="2" x="1419" y="2072"/>
     <rect class="door" height="6" width="2" x="1419" y="2132"/>
-    <rect class="door" height="6" width="2" x="1409" y="2132"/>
+    <rect class="door" height="6" width="2" x="1429" y="1912"/>
+    <rect class="door" height="6" width="2" x="169" y="3672"/>
+    <rect class="door" height="6" width="2" x="1719" y="1882"/>
+    <rect class="door" height="6" width="2" x="1759" y="1942"/>
     <rect class="door" height="6" width="2" x="199" y="2972"/>
     <rect class="door" height="6" width="2" x="209" y="2972"/>
-    <rect class="door" height="6" width="2" x="279" y="2852"/>
-    <rect class="door" height="6" width="2" x="309" y="2852"/>
-    <rect class="door" height="6" width="2" x="1409" y="2252"/>
+    <rect class="door" height="6" width="2" x="239" y="3242"/>
+    <rect class="door" height="6" width="2" x="239" y="3272"/>
+    <rect class="door" height="6" width="2" x="249" y="3242"/>
+    <rect class="door" height="6" width="2" x="249" y="3272"/>
     <rect class="door" height="6" width="2" x="259" y="2812"/>
+    <rect class="door" height="6" width="2" x="259" y="3672"/>
+    <rect class="door" height="6" width="2" x="279" y="2852"/>
+    <rect class="door" height="6" width="2" x="2809" y="602"/>
+    <rect class="door" height="6" width="2" x="2809" y="622"/>
+    <rect class="door" height="6" width="2" x="2829" y="602"/>
+    <rect class="door" height="6" width="2" x="2829" y="612"/>
+    <rect class="door" height="6" width="2" x="289" y="3672"/>
+    <rect class="door" height="6" width="2" x="309" y="2852"/>
     <rect class="door" height="6" width="2" x="409" y="2802"/>
     <rect class="door" height="6" width="2" x="439" y="2822"/>
     <rect class="door" height="6" width="2" x="459" y="2782"/>
@@ -646,69 +700,33 @@
     <rect class="door" height="6" width="2" x="559" y="2732"/>
     <rect class="door" height="6" width="2" x="589" y="2752"/>
     <rect class="door" height="6" width="2" x="639" y="2682"/>
-    <rect class="door" height="6" width="2" x="859" y="2362"/>
     <rect class="door" height="6" width="2" x="859" y="2342"/>
-    <rect class="door" height="6" width="2" x="1029" y="2352"/>
-    <rect class="door" height="6" width="2" x="1039" y="2352"/>
-    <rect class="door" height="6" width="2" x="1029" y="2392"/>
-    <rect class="door" height="6" width="2" x="1039" y="2392"/>
-    <rect class="door" height="6" width="2" x="1279" y="2432"/>
-    <rect class="door" height="6" width="2" x="1289" y="2432"/>
-    <rect class="door" height="6" width="2" x="1059" y="2492"/>
-    <rect class="door" height="6" width="2" x="1149" y="2492"/>
-    <rect class="door" height="6" width="2" x="289" y="3672"/>
-    <rect class="door" height="6" width="2" x="259" y="3672"/>
-    <rect class="door" height="6" width="2" x="169" y="3672"/>
-    <rect class="door" height="6" width="2" x="119" y="3652"/>
-    <rect class="door" height="6" width="2" x="239" y="3272"/>
-    <rect class="door" height="6" width="2" x="249" y="3272"/>
-    <rect class="door" height="6" width="2" x="239" y="3242"/>
-    <rect class="door" height="6" width="2" x="249" y="3242"/>
-    <rect class="door" height="6" width="2" x="1759" y="1942"/>
-    <rect class="door" height="6" width="2" x="1719" y="1882"/>
-    <rect class="sec-door" height="2" width="6" x="1772" y="1959"/>
-    <rect class="door" height="2" width="6" x="1282" y="2379"/>
-    <rect class="door" height="6" width="2" x="1279" y="2242"/>
-    <rect class="door" height="6" width="2" x="1329" y="2312"/>
-    <rect class="door" height="6" width="2" x="1229" y="2372"/>
-    <rect class="door" height="6" width="2" x="1199" y="2372"/>
-    <rect class="door" height="6" width="2" x="1199" y="2392"/>
-    <rect class="door" height="6" width="2" x="1299" y="2392"/>
+    <rect class="door" height="6" width="2" x="859" y="2362"/>
     <!-- Features start here -->
-    <rect class="feature" height="30" id="balcony-cursd" width="10" x="2890" y="610">
-      <title>This is the balcony where Dethen was hanging.</title>
-    </rect>
-    <path class="feature-bad" d="m2777 625h13m-30 0h13" id="fence-b">
-      <title>To avoid getting hit by a trap, you need to pass through the gap in this fence.</title>
-    </path>
-    <path class="feature-bad" d="m2777 635h13m-30 0h13" id="fence-a">
-      <title>To avoid getting hit by a trap, you need to jump/climb over this fence.</title>
-    </path>
-    <path class="feature-bad" d="m2860 620v10" id="trapped-step">
-      <title>Jump over this step to avoid the trap.</title>
-    </path>
-    <rect class="feature" height="1" id="seascape-button" width="1" x="2709" y="739">
-      <title>This button raises the floor so one can get at the secret doors, but can't leave through the north exit.</title>
-    </rect>
-    <rect class="feature" height="2" id="discontiguous-floor" width="10" x="890" y="2318">
-      <title>The North corridor floor is 10' above the E/W corridor floor.</title>
-    </rect>
-    <rect class="feature" height="3" id="ladder-1" width="6" x="1742" y="1872">
-      <title>This is a ladder to room above</title>
-    </rect>
-    <rect class="feature" height="9" id="cage-1" width="8" x="1680" y="1906">
-      <title>This is a cage on chains that hangs from the ceiling.  It is lowered/raised by rotating the statue in the room above.</title>
-    </rect>
-    <rect class="feature-bad" height="6" id="trapped-door-a" width="2" x="159" y="3672">
-      <title>We don't remember the details of this trapped door.</title>
-    </rect>
-    <path class="feature-path" d="m1746 1876-11 9-1 79-89 1v-25" id="path-dexter-dance-c"/>
-    <path class="feature-path" d="m1515 1950v-35h-30v40h-30v30h-40v150h-30v70h10v40h-61v5h-44v55h-85v40h10v50h70v90h-90v10h-100v-60h-60v-110h-150v41l-70-1v20h10v71l-50-1v-20h-40v31l-110-1v180h-20l-11 10 1 100h-10l-20-19h-50v49h-61l-19 20-110 1v49h-119l-1 190h-71v20l81 79v70l30 1v140h-21l1 60h-11l1 272" id="path-dexter-dance-e"/>
+    <circle class="column" cx="330" cy="2820" id="column-frost-spiders-1" r="1" sodipodi:cx="330" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="340" cy="2820" id="column-frost-spiders-2" r="1" sodipodi:cx="340" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="350" cy="2820" id="column-frost-spiders-3" r="1" sodipodi:cx="350" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="360" cy="2820" id="column-frost-spiders-4" r="1" sodipodi:cx="360" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <path class="feature-bad" d="m2777 625h13m-30 0h13" id="fence-b"><title>To avoid getting hit by a trap, you need to pass through the gap in this fence.</title></path>
+    <path class="feature-bad" d="m2777 635h13m-30 0h13" id="fence-a"><title>To avoid getting hit by a trap, you need to jump/climb over this fence.</title></path>
+    <path class="feature-bad" d="m2860 620v10" id="trapped-step"><title>Jump over this step to avoid the trap.</title></path>
+    <rect class="feature" height="1" id="seascape-button" width="1" x="2709" y="739"><title>This button raises the floor so one can get at the secret doors, but can't leave through the north exit.</title></rect>
+    <rect class="feature" height="2" id="discontiguous-floor" width="10" x="890" y="2318"><title>The North corridor floor is 10' above the E/W corridor floor.</title></rect>
+    <rect class="feature" height="3" id="ladder-1" width="6" x="1742" y="1872"><title>This is a ladder to room above</title></rect>
+    <rect class="feature" height="9" id="cage-1" width="8" x="1680" y="1906"><title>This is a cage on chains that hangs from the ceiling.  It is lowered/raised by rotating the statue in the room above.</title></rect>
+    <rect class="feature-bad" height="6" id="trapped-door-a" width="2" x="159" y="3672"><title>We don't remember the details of this trapped door.</title></rect>
+    <rect class="feature" height="5" id="im-hungry" width="5" x="622" y="2463"><title>Big creature that demanded food to let us past.</title></rect>
     <path class="feature-bad" d="m550 2730v10h-1v-10z" id="portcullis-litch-a"/>
     <rect class="feature-bad" height="10" id="portcullis-litch-b" width="1" x="479" y="2780"/>
-    <rect class="feature" height="5" id="im-hungry" width="5" x="622" y="2463">
-      <title>big thing that demanded food to let us past.</title>
-    </rect>
+    <circle class="feature" cx="1290" cy="2305" id="fixme-round-a" r="2.5" sodipodi:cx="1290" sodipodi:cy="2305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="feature" cx="515" cy="2760" id="fixme-round-b" r="3" sodipodi:cx="515" sodipodi:cy="2760" sodipodi:rx="3" sodipodi:ry="3"/>
+    <path class="feature" d="m160 2855a5 5 0 1 1-10 0 5 5 0 1 1 10 0z" sodipodi:cx="155" sodipodi:cy="2855" sodipodi:rx="5" sodipodi:ry="5" sodipodi:type="arc"/>
+    <path class="column" d="m170 2842a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="168" sodipodi:cy="2842" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
+    <path class="column" d="m144 2842a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="142" sodipodi:cy="2842" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
+    <path class="column" d="m170 2868a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="168" sodipodi:cy="2868" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
+    <path class="column" d="m144 2868a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="142" sodipodi:cy="2868" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
+    <rect class="feature" height="4" width="6" x="512" y="2773"/>
+    <rect class="feature" height="5" width="5" x="512" y="2742"/>
     <rect class="feature" height="10" width="1" x="1119" y="2490"/>
     <rect class="feature" height="10" width="1" x="1109" y="2490"/>
     <rect class="feature" height="1" width="10" x="1090" y="2477"/>
@@ -717,14 +735,8 @@
     <rect class="feature" height="1" width="10" x="1090" y="2513"/>
     <rect class="feature" height="10" width="1" x="1079" y="2490"/>
     <rect class="feature" height="10" width="1" x="1069" y="2490"/>
-    <circle class="feature" cx="1290" cy="2305" id="fixme-round-a" r="2.5" sodipodi:cx="1290" sodipodi:cy="2305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="feature" cx="515" cy="2760" id="fixme-round-b" r="3" sodipodi:cx="515" sodipodi:cy="2760" sodipodi:rx="3" sodipodi:ry="3"/>
-    <rect class="feature" height="4" width="6" x="512" y="2773"/>
-    <rect class="feature" height="5" width="5" x="512" y="2742"/>
-    <circle class="column" cx="330" cy="2820" id="column-frost-spiders-1" r="1" sodipodi:cx="330" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="340" cy="2820" id="column-frost-spiders-2" r="1" sodipodi:cx="340" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="350" cy="2820" id="column-frost-spiders-3" r="1" sodipodi:cx="350" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
-    <circle class="column" cx="360" cy="2820" id="column-frost-spiders-4" r="1" sodipodi:cx="360" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <path class="feature-path" d="m1746 1876-11 9-1 79-89 1v-25" id="path-dexter-dance-c"><title>Dexter dance path.</title></path>
+    <path class="feature-path" d="m1515 1950v-35h-30v40h-30v30h-40v150h-30v70h10v40h-61v5h-44v55h-85v40h10v50h70v90h-90v10h-100v-60h-60v-110h-150v41l-70-1v20h10v71l-50-1v-20h-40v31l-110-1v180h-20l-11 10 1 100h-10l-20-19h-50v49h-61l-19 20-110 1v49h-119l-1 190h-71v20l81 79v70l30 1v140h-21l1 60h-11l1 272" id="path-dexter-dance-e"><title>Dexter dance path.</title></path>
     <!-- Names start here -->
     <text class="name" sodipodi:linespacing="125%" x="335" xml:space="preserve" y="2814"><tspan sodipodi:role="line" x="335" y="2814">Frost</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="329" xml:space="preserve" y="2829"><tspan sodipodi:role="line" x="329" y="2829">Spiders</tspan></text>
@@ -732,33 +744,8 @@
     <text class="name" sodipodi:linespacing="125%" x="282" xml:space="preserve" y="2853"><tspan sodipodi:role="line" x="282" y="2853">Puzzle</tspan><tspan sodipodi:role="line" x="282" y="2860">Lock</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="501" xml:space="preserve" y="2748"><tspan sodipodi:role="line" x="501" y="2748">Litch</tspan></text>
     <!-- Unclassified start here -->
-    <path class="stairs-ns" d="m55 3120h160l5 20h-170z"/>
-    <rect class="room" height="60" width="170" x="50" y="3060"/>
-    <rect class="room" height="20" width="170" x="50" y="3140"/>
-    <rect class="room" height="30" width="20" x="130" y="3030"/>
-    <rect class="room" height="40" width="30" x="190" y="3010"/>
-    <path class="corr" d="m200 2810v40h-20v10h20v150h10v-150h70v-10h-70v-40h-10z"/>
-    <rect class="corr" height="10" width="40" x="150" y="3040"/>
-    <rect class="corr" height="10" width="10" x="180" y="3010"/>
-    <rect class="corr" height="10" width="10" x="220" y="3010"/>
-    <rect class="corr" height="10" width="10" x="220" y="3040"/>
-    <path class="corr" d="m210 3160v50h-30v10h60v80h10v-80h30v-10h-60v-50h-10z"/>
-    <rect class="room" height="60" width="50" x="220" y="3300"/>
-    <rect class="corr" height="20" width="10" x="220" y="3360"/>
-    <path class="corr" d="m210 3410v10v100h-20v10h20v100h10v-100h20v-10h-20v-100h30v-10h-40z"/>
-    <path class="corr" d="m140 3600 10-10 40 40-10 10z"/>
-    <rect class="room" height="50" width="40" x="120" y="3650"/>
-    <rect class="corr" height="10" width="10" x="160" y="3670"/>
-    <rect class="corr" height="10" width="30" x="260" y="3670"/>
-    <path class="room" d="m190 3630h50l20 20v30h-20l-10 10h-30l-10-10h-20v-30z"/>
-    <path class="feature" d="m160 2855a5 5 0 1 1-10 0 5 5 0 1 1 10 0z" sodipodi:cx="155" sodipodi:cy="2855" sodipodi:rx="5" sodipodi:ry="5" sodipodi:type="arc"/>
-    <path class="column" d="m170 2842a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="168" sodipodi:cy="2842" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
-    <path class="column" d="m144 2842a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="142" sodipodi:cy="2842" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
-    <path class="column" d="m170 2868a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="168" sodipodi:cy="2868" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
-    <path class="column" d="m144 2868a2 2 0 1 1-4 0 2 2 0 1 1 4 0z" sodipodi:cx="142" sodipodi:cy="2868" sodipodi:rx="2" sodipodi:ry="2" sodipodi:type="arc"/>
   </g>
   <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:inline">
-    <path class="feature-water" d="m2040 1120v10h-10v20h60v-20h-30v-10h-20z"/>
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
     <path class="corr" d="m1000 1346v44h10 60v20h10 10v10h10v-10-10h-20v-30h-10v10h-60v-34z"/>
@@ -1024,31 +1011,18 @@
     <rect class="room" height="40" width="20" x="1630" y="1900"/>
     <path class="room-alt" d="m1690 1920c-1.722 4.3442-4.3051 4.3442-8.5 4.6811-4.6732 0.3753-9.5-4.5032-9.5-8.9215 0-4.4183 4.3056-9 9-9 2.3472 0 8.139 1.1039 9 4" id="circular-dd-room" sodipodi:nodetypes="csssc"/>
     <!-- Stairs/pits/floor features start here -->
-    <rect class="feature-sand" height="40" id="floor-shield-room" width="40" x="2140" y="1020"/>
-    <path class="feature-null-magic" d="m1970 1060 10-10h10l20 10v20l-20 10h-10l-10-10z" id="floor-null-magic"/>
-    <rect class="feature-green" height="10" width="20" x="1870" y="1520">
-      <title>Green continual faiery fire</title>
-    </rect>
-    <rect class="feature-green" height="10" width="20" x="1870" y="1540">
-      <title>Green Continual Faery Fire</title>
-    </rect>
-    <rect class="feature-purple" height="10" width="20" x="1870" y="1510">
-      <title>Purple continual faiery fire</title>
-    </rect>
-    <rect class="feature-purple" height="10" width="20" x="1870" y="1530">
-      <title>Purple continual faery fire</title>
-    </rect>
-    <rect class="feature-sand" height="20" width="20" x="2090" y="1160"/>
-    <rect class="feature-water" height="4" width="4" x="2031" y="1201"/>
-    <rect class="feature-bad" height="10" id="teleportal-too-late-in" width="10" x="1960" y="1150">
-      <title>Teleportal: &quot;If you're reading this, it's already too late&quot;</title>
-    </rect>
-    <rect class="feature" height="6" id="teleportal-too-late-out" width="7" x="2072" y="1132">
-      <title>The too late teleportal dumps you here.</title>
-    </rect>
-    <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1280">
-      <title>This room is filled with boiling oil.</title>
-    </rect>
+    <rect class="feature-sand" height="40" id="floor-shield-room" width="40" x="2140" y="1020"><title>This floor is covered with sand, but don't mistake it for a sandbox.</title></rect>
+    <path class="feature-null-magic" d="m1970 1060 10-10h10l20 10v20l-20 10h-10l-10-10z" id="floor-null-magic"><title>Magic is unusable in this room.</title></path>
+    <rect class="feature-green" height="10" width="20" x="1870" y="1520"><title>Green continual faiery fire</title></rect>
+    <rect class="feature-green" height="10" width="20" x="1870" y="1540"><title>Green Continual Faery Fire</title></rect>
+    <rect class="feature-purple" height="10" width="20" x="1870" y="1510"><title>Purple continual faiery fire</title></rect>
+    <rect class="feature-purple" height="10" width="20" x="1870" y="1530"><title>Purple continual faery fire</title></rect>
+    <rect class="feature-sand" height="20" width="20" x="2090" y="1160"><title>The orc that was trapped here used this area as a sandbox.</title></rect>
+    <rect class="feature-water" height="4" width="4" x="2031" y="1201"><title>Drinkable water that does not require going near the (dead) giant gar.</title></rect>
+    <path class="feature-water" d="m2040 1120v10h-10v20h60v-20h-30v-10h-20z"><title>This water-filled room had a giant gar in it.</title></path>
+    <rect class="feature-bad" height="10" id="teleportal-too-late-in" width="10" x="1960" y="1150"><title>Teleportal: &quot;If you're reading this, it's already too late&quot;</title></rect>
+    <rect class="feature" height="6" id="teleportal-too-late-out" width="7" x="2072" y="1132"><title>The too late teleportal dumps you here.</title></rect>
+    <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1280"><title>This room is filled with boiling oil.</title></rect>
     <rect class="stairs-ew" height="10" width="20" x="1920" y="1290"/>
     <path class="stairs-ns" d="m2300 810h10l-3 10h-4z"/>
     <path class="stairs-ew" d="m2710 670 20 3v4l-20 3z" id="stairs-cursd-c-u"/>
@@ -1080,12 +1054,10 @@
     <path class="stairs-ns" d="m1753 1970h3l4 20h-10z"/>
     <path class="stairs-ns" d="m1770 1880h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m1770 1930h10l-3 10h-4z"/>
-    <path class="pit" d="m2700 670h10v10h-10v-10z" id="pit-robot-lobster"/>
+    <rect class="pit" height="10" id="pit-rock-lobster-a" width="10" x="2700" y="670"><title>This pit has a nasty robot lobster in it.</title></rect>
     <rect class="pit" height="10" width="10" x="1710" y="1940"/>
-    <rect class="pit" height="10" width="20" x="2340" y="830">
-      <title>With 25' of water in it</title>
-    </rect>
-    <circle class="pit" cx="1620" cy="1255" id="circular-pit" r="10" sodipodi:cx="1620" sodipodi:cy="1255" sodipodi:rx="10" sodipodi:ry="10"/>
+    <rect class="pit" height="10" width="20" x="2340" y="830"><title>With 25' of water in it</title></rect>
+    <circle class="pit" cx="1620" cy="1255" id="circular-pit" r="10" sodipodi:cx="1620" sodipodi:cy="1255" sodipodi:rx="10" sodipodi:ry="10"><title>This pit has enhanced gravity in it, for extra pain.</title></circle>
     <!-- Walls start here -->
     <path class="wall" d="m2140 1020v20h-10v40h-30v-20h-42 2v-40h-50v2-2h-20v-20h90v10h60v10h2zm-140 110v-20h-10v-20l20-10h22-2v10h-20v20h30v-30h-2 52v10h50v-30h40v-40h-32 2v-20h-10v-20h10v-150h-22 2v-20h-20v2-12h10v10h12-2v10h10v-10h-2 12v-40h-30v20h-10v-30h-2 52v-2 62l20 20h12-2v50h-20v110h10v10h40v-10h10v-110h-20v-50h-2 12l20-20v-12 2h10v80h10v10"/>
     <path class="wall" d="m2052 1060h-2v-10h-40v-22 2h-20v20l20 10z"/>
@@ -1311,8 +1283,9 @@
     <path class="wall" d="m950 1390v-10h10v-10h10"/>
     <path class="wall" d="m970 1360h-10v-17 3h40v44h70v20h20v11"/>
     <path class="wall" d="m980 1240v30h-50"/>
+    <path class="bars" d="m2035 1050v-30" id="bars-1"/>
     <!-- Doors start here -->
-    <path class="sec-door" d="m2142 1019 3 1 3-1v2l-3 1-3-1z" id="s-door-shield-room"/>
+    <path class="sec-door" d="m2142 1019 3 1 3-1v2l-3 1-3-1z" id="s-door-shield-room"><title>This is a one-way secret door.</title></path>
     <rect class="sec-door" height="2" id="s-door-animated-armor" width="6" x="2032" y="1079"/>
     <rect class="sec-door" height="2" id="s-door-demon-gate" width="6" x="2052" y="1059"/>
     <rect class="sec-door" height="6" width="2" x="2119" y="982"/>
@@ -1321,130 +1294,130 @@
     <rect class="sec-door" height="2" width="6" x="2162" y="1349"/>
     <rect class="sec-door" height="6" width="2" x="2149" y="1432"/>
     <rect class="sec-door" height="6" width="2" x="959" y="1338"/>
-    <rect class="door" height="6" id="door-demon-gate" width="2" x="2009" y="1022"/>
     <rect class="door" height="16" width="2" x="1999" y="1272"/>
-    <rect class="door" height="2" width="7" x="1982" y="759"/>
-    <rect class="door" height="2" width="6" x="1962" y="769"/>
+    <rect class="door" height="2" width="6" x="1943" y="1159"/>
+    <rect class="door" height="2" width="6" x="2192" y="1319"/>
+    <rect class="door" height="2" width="6" x="1162" y="1289"/>
+    <rect class="door" height="2" width="6" x="1262" y="1319"/>
+    <rect class="door" height="2" width="6" x="1312" y="1269"/>
+    <rect class="door" height="2" width="6" x="1332" y="1329"/>
+    <rect class="door" height="2" width="6" x="1582" y="1919"/>
+    <rect class="door" height="2" width="6" x="1632" y="1739"/>
+    <rect class="door" height="2" width="6" x="1652" y="1669"/>
+    <rect class="door" height="2" width="6" x="1652" y="1739"/>
+    <rect class="door" height="2" width="6" x="1712" y="1679"/>
+    <rect class="door" height="2" width="6" x="1742" y="1889"/>
+    <rect class="door" height="2" width="6" x="1752" y="619"/>
+    <rect class="door" height="2" width="6" x="1762" y="1769"/>
+    <rect class="door" height="2" width="6" x="1762" y="619"/>
+    <rect class="door" height="2" width="6" x="1802" y="369"/>
+    <rect class="door" height="2" width="6" x="1822" y="1728"/>
+    <rect class="door" height="2" width="6" x="1872" y="1199"/>
+    <rect class="door" height="2" width="6" x="1882" y="1349"/>
+    <rect class="door" height="2" width="6" x="1882" y="399"/>
+    <rect class="door" height="2" width="6" x="1902" y="489"/>
+    <rect class="door" height="2" width="6" x="1912" y="1309"/>
+    <rect class="door" height="2" width="6" x="1912" y="379"/>
+    <rect class="door" height="2" width="6" x="1922" y="1099"/>
+    <rect class="door" height="2" width="6" x="1922" y="949"/>
     <rect class="door" height="2" width="6" x="1932" y="749"/>
+    <rect class="door" height="2" width="6" x="1942" y="1239"/>
+    <rect class="door" height="2" width="6" x="1962" y="769"/>
+    <rect class="door" height="2" width="6" x="1982" y="759"/>
     <rect class="door" height="2" width="6" x="2062" y="739"/>
     <rect class="door" height="2" width="6" x="2102" y="759"/>
-    <rect class="door" height="2" width="6" x="2132" y="809"/>
     <rect class="door" height="2" width="6" x="2122" y="829"/>
-    <rect class="door" height="6" width="2" x="2109" y="812"/>
-    <rect class="door" height="6" width="2" x="2029" y="802"/>
-    <rect class="door" height="6" width="2" x="1999" y="822"/>
-    <rect class="door" height="6" width="2" x="1969" y="822"/>
     <rect class="door" height="2" width="6" x="2122" y="859"/>
-    <rect class="door" height="6" width="2" x="2099" y="932"/>
-    <rect class="door" height="8" width="2" x="2159" y="742"/>
-    <rect class="door" height="8" width="2" x="2159" y="750"/>
+    <rect class="door" height="2" width="6" x="2132" y="809"/>
+    <rect class="door" height="2" width="6" x="2152" y="1299"/>
     <rect class="door" height="2" width="8" x="2192" y="839"/>
     <rect class="door" height="2" width="8" x="2200" y="839"/>
-    <rect class="door" height="8" width="2" x="2239" y="800"/>
-    <rect class="door" height="6" width="2" x="2129" y="982"/>
-    <rect class="door" height="8" width="2" x="2239" y="792"/>
-    <rect class="door" height="8" width="2" x="2239" y="750"/>
-    <rect class="door" height="8" width="2" x="2239" y="742"/>
-    <rect class="door" height="6" width="2" x="1859" y="782"/>
-    <rect class="door" height="6" width="2" x="1919" y="962"/>
-    <rect class="door" height="6" width="2" x="1929" y="962"/>
-    <rect class="door" height="2" width="6" x="1922" y="949"/>
-    <rect class="door" height="6" width="2" x="2089" y="982"/>
-    <rect class="door" height="6" width="2" x="2389" y="882"/>
-    <rect class="door" height="6" width="2" x="1979" y="1272"/>
-    <rect class="door" height="2" width="6" x="1882" y="1349"/>
-    <rect class="door" height="6" width="2" x="1809" y="1652"/>
-    <rect class="door" height="2" width="6" x="1632" y="1739"/>
-    <rect class="door" height="2" width="6" x="1652" y="1739"/>
-    <rect class="door" height="2" width="6" x="1652" y="1669"/>
-    <rect class="door" height="2" width="6" x="1712" y="1679"/>
-    <rect class="door" height="6" width="2" x="1699" y="1652"/>
-    <rect class="door" height="6" width="2" x="1649" y="1592"/>
-    <rect class="door" height="6" width="2" x="1829" y="1552"/>
-    <rect class="door" height="2" width="6" x="1762" y="1769"/>
-    <rect class="door" height="2" width="6" x="1822" y="1728"/>
-    <rect class="door" height="6" width="2" x="1919" y="1272"/>
-    <rect class="door" height="2" width="6" x="1912" y="1309"/>
-    <rect class="door" height="6" width="2" x="1919" y="1292"/>
-    <rect class="door" height="6" width="2" x="2569" y="632"/>
-    <rect class="door" height="6" width="2" x="2569" y="652"/>
-    <rect class="door" height="2" width="6" x="1922" y="1099"/>
-    <rect class="door" height="6" width="2" x="1899" y="1132"/>
-    <rect class="door" height="3" width="5" x="1943" y="1158"/>
-    <rect class="door" height="7" width="2" x="1889" y="1207"/>
-    <rect class="door" height="2" width="6" x="1872" y="1199"/>
-    <rect class="door" height="6" width="2" x="1879" y="1172"/>
-    <rect class="door" height="2" id="door-grim" width="6" x="1902" y="489"/>
-    <rect class="door" height="2" width="6" x="1942" y="1239"/>
-    <rect class="door" height="2" width="5" x="2192" y="1319"/>
-    <rect class="door" height="2" width="6" x="1162" y="1289"/>
-    <rect class="door" height="2" width="7" x="1262" y="1319"/>
-    <rect class="door" height="2" width="6" x="1332" y="1329"/>
-    <rect class="door" height="2" width="6" x="1312" y="1269"/>
-    <rect class="door" height="2" width="6" x="1912" y="379"/>
-    <rect class="door" height="2" width="6" x="1882" y="399"/>
-    <rect class="door" height="2" width="6" x="1762" y="619"/>
-    <rect class="door" height="2" width="6" x="1752" y="619"/>
-    <rect class="door" height="2" width="6" x="1802" y="369"/>
-    <rect class="door" height="2" width="6" x="1582" y="1919"/>
-    <rect class="door" height="2" width="6" x="1742" y="1889"/>
-    <rect class="door" height="3" width="6" x="2152" y="1298"/>
-    <rect class="door" height="6" width="2" x="1929" y="1092"/>
-    <rect class="door" height="6" width="2" x="2129" y="1262"/>
-    <rect class="door" height="6" width="2" x="2199" y="1192"/>
+    <rect class="door" height="6" width="2" x="2009" y="1022"/>
     <rect class="door" height="6" width="2" x="1159" y="1382"/>
     <rect class="door" height="6" width="2" x="1479" y="1272"/>
     <rect class="door" height="6" width="2" x="1519" y="1352"/>
-    <rect class="door" height="6" width="2" x="1879" y="322"/>
-    <rect class="door" height="6" width="2" x="1839" y="252"/>
-    <rect class="door" height="6" width="2" x="1869" y="432"/>
+    <rect class="door" height="6" width="2" x="1649" y="1592"/>
     <rect class="door" height="6" width="2" x="1669" y="1872"/>
+    <rect class="door" height="6" width="2" x="1699" y="1652"/>
     <rect class="door" height="6" width="2" x="1729" y="1872"/>
-    <rect class="door" height="6" width="2" x="1759" y="1872"/>
     <rect class="door" height="6" width="2" x="1739" y="1912"/>
-    <circle class="column" cx="1045" cy="1285" id="column-cooking-25" r="2.5" sodipodi:cx="1045" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1045" cy="1295" id="column-cooking-20" r="2.5" sodipodi:cx="1045" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1045" cy="1305" id="column-cooking-15" r="2.5" sodipodi:cx="1045" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1045" cy="1315" id="column-cooking-10" r="2.5" sodipodi:cx="1045" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <rect class="door" height="6" width="2" x="1759" y="1872"/>
+    <rect class="door" height="6" width="2" x="1809" y="1652"/>
+    <rect class="door" height="6" width="2" x="1829" y="1552"/>
+    <rect class="door" height="6" width="2" x="1839" y="252"/>
+    <rect class="door" height="6" width="2" x="1859" y="782"/>
+    <rect class="door" height="6" width="2" x="1869" y="432"/>
+    <rect class="door" height="6" width="2" x="1879" y="1172"/>
+    <rect class="door" height="6" width="2" x="1879" y="322"/>
+    <rect class="door" height="6" width="2" x="1889" y="1207"/>
+    <rect class="door" height="6" width="2" x="1899" y="1132"/>
+    <rect class="door" height="6" width="2" x="1919" y="1272"/>
+    <rect class="door" height="6" width="2" x="1919" y="1292"/>
+    <rect class="door" height="6" width="2" x="1919" y="962"/>
+    <rect class="door" height="6" width="2" x="1929" y="1092"/>
+    <rect class="door" height="6" width="2" x="1929" y="962"/>
+    <rect class="door" height="6" width="2" x="1969" y="822"/>
+    <rect class="door" height="6" width="2" x="1979" y="1272"/>
+    <rect class="door" height="6" width="2" x="1999" y="822"/>
+    <rect class="door" height="6" width="2" x="2029" y="802"/>
+    <rect class="door" height="6" width="2" x="2089" y="982"/>
+    <rect class="door" height="6" width="2" x="2099" y="932"/>
+    <rect class="door" height="6" width="2" x="2109" y="812"/>
+    <rect class="door" height="6" width="2" x="2129" y="1262"/>
+    <rect class="door" height="6" width="2" x="2129" y="982"/>
+    <rect class="door" height="6" width="2" x="2199" y="1192"/>
+    <rect class="door" height="6" width="2" x="2389" y="882"/>
+    <rect class="door" height="6" width="2" x="2569" y="632"/>
+    <rect class="door" height="6" width="2" x="2569" y="652"/>
+    <rect class="door" height="8" width="2" x="2159" y="742"/>
+    <rect class="door" height="8" width="2" x="2159" y="750"/>
+    <rect class="door" height="8" width="2" x="2239" y="742"/>
+    <rect class="door" height="8" width="2" x="2239" y="750"/>
+    <rect class="door" height="8" width="2" x="2239" y="792"/>
+    <rect class="door" height="8" width="2" x="2239" y="800"/>
+    <circle class="column" cx="1045" cy="1285" id="column-cooking-1" r="2.5" sodipodi:cx="1045" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1045" cy="1295" id="column-cooking-2" r="2.5" sodipodi:cx="1045" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1045" cy="1305" id="column-cooking-3" r="2.5" sodipodi:cx="1045" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1045" cy="1315" id="column-cooking-4" r="2.5" sodipodi:cx="1045" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
     <circle class="column" cx="1045" cy="1325" id="column-cooking-5" r="2.5" sodipodi:cx="1045" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1055" cy="1285" id="column-cooking-24" r="2.5" sodipodi:cx="1055" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1055" cy="1295" id="column-cooking-19" r="2.5" sodipodi:cx="1055" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1055" cy="1305" id="column-cooking-14" r="2.5" sodipodi:cx="1055" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1055" cy="1285" id="column-cooking-6" r="2.5" sodipodi:cx="1055" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1055" cy="1295" id="column-cooking-7" r="2.5" sodipodi:cx="1055" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1055" cy="1305" id="column-cooking-8" r="2.5" sodipodi:cx="1055" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
     <circle class="column" cx="1055" cy="1315" id="column-cooking-9" r="2.5" sodipodi:cx="1055" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1055" cy="1325" id="column-cooking-4" r="2.5" sodipodi:cx="1055" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1065" cy="1285" id="column-cooking-23" r="2.5" sodipodi:cx="1065" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1065" cy="1295" id="column-cooking-18" r="2.5" sodipodi:cx="1065" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1065" cy="1315" id="column-cooking-8" r="2.5" sodipodi:cx="1065" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1065" cy="1325" id="column-cooking-3" r="2.5" sodipodi:cx="1065" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1075" cy="1285" id="column-cooking-22" r="2.5" sodipodi:cx="1075" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1075" cy="1295" id="column-cooking-17" r="2.5" sodipodi:cx="1075" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1075" cy="1305" id="column-cooking-12" r="2.5" sodipodi:cx="1075" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1075" cy="1315" id="column-cooking-7" r="2.5" sodipodi:cx="1075" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1075" cy="1325" id="column-cooking-2" r="2.5" sodipodi:cx="1075" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1085" cy="1285" id="column-cooking-21" r="2.5" sodipodi:cx="1085" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1085" cy="1295" id="column-cooking-16" r="2.5" sodipodi:cx="1085" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1085" cy="1305" id="column-cooking-11" r="2.5" sodipodi:cx="1085" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1085" cy="1315" id="column-cooking-6" r="2.5" sodipodi:cx="1085" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1085" cy="1325" id="column-cooking-1" r="2.5" sodipodi:cx="1085" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
-    <circle class="column" cx="1730" cy="2000" id="column-spiders-1" r="2" sodipodi:cx="1730" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1730" cy="2010" id="column-spiders-10" r="2" sodipodi:cx="1730" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1730" cy="2020" id="column-spiders-9" r="2" sodipodi:cx="1730" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1740" cy="2000" id="column-spiders-2" r="2" sodipodi:cx="1740" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1740" cy="2020" id="column-spiders-8" r="2" sodipodi:cx="1740" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1055" cy="1325" id="column-cooking-10" r="2.5" sodipodi:cx="1055" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1065" cy="1285" id="column-cooking-11" r="2.5" sodipodi:cx="1065" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1065" cy="1295" id="column-cooking-12" r="2.5" sodipodi:cx="1065" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1065" cy="1315" id="column-cooking-13" r="2.5" sodipodi:cx="1065" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1065" cy="1325" id="column-cooking-14" r="2.5" sodipodi:cx="1065" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1075" cy="1285" id="column-cooking-15" r="2.5" sodipodi:cx="1075" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1075" cy="1295" id="column-cooking-16" r="2.5" sodipodi:cx="1075" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1075" cy="1305" id="column-cooking-17" r="2.5" sodipodi:cx="1075" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1075" cy="1315" id="column-cooking-18" r="2.5" sodipodi:cx="1075" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1075" cy="1325" id="column-cooking-19" r="2.5" sodipodi:cx="1075" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1085" cy="1285" id="column-cooking-20" r="2.5" sodipodi:cx="1085" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1085" cy="1295" id="column-cooking-21" r="2.5" sodipodi:cx="1085" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1085" cy="1305" id="column-cooking-22" r="2.5" sodipodi:cx="1085" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1085" cy="1315" id="column-cooking-23" r="2.5" sodipodi:cx="1085" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+    <circle class="column" cx="1085" cy="1325" id="column-cooking-24" r="2.5" sodipodi:cx="1085" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
     <circle class="column" cx="1750" cy="1930" id="column-dd-l1-1" r="2" sodipodi:cx="1750" sodipodi:cy="1930" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1750" cy="1940" id="column-dd-l1-2" r="2" sodipodi:cx="1750" sodipodi:cy="1940" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1750" cy="1950" id="column-dd-l1-3" r="2" sodipodi:cx="1750" sodipodi:cy="1950" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1740" cy="1950" id="column-dd-l1-4" r="2" sodipodi:cx="1740" sodipodi:cy="1950" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1740" cy="1940" id="column-dd-l1-5" r="2" sodipodi:cx="1740" sodipodi:cy="1940" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1750" cy="2000" id="column-spiders-3" r="2" sodipodi:cx="1750" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1730" cy="2000" id="column-spiders-1" r="2" sodipodi:cx="1730" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1730" cy="2010" id="column-spiders-2" r="2" sodipodi:cx="1730" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1730" cy="2020" id="column-spiders-3" r="2" sodipodi:cx="1730" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1740" cy="2000" id="column-spiders-4" r="2" sodipodi:cx="1740" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1740" cy="2020" id="column-spiders-5" r="2" sodipodi:cx="1740" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1750" cy="2000" id="column-spiders-6" r="2" sodipodi:cx="1750" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1750" cy="2020" id="column-spiders-7" r="2" sodipodi:cx="1750" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1760" cy="2000" id="column-spiders-4" r="2" sodipodi:cx="1760" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1760" cy="2010" id="column-spiders-5" r="2" sodipodi:cx="1760" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
-    <circle class="column" cx="1760" cy="2020" id="column-spiders-6" r="2" sodipodi:cx="1760" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1760" cy="2000" id="column-spiders-8" r="2" sodipodi:cx="1760" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1760" cy="2010" id="column-spiders-9" r="2" sodipodi:cx="1760" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
+    <circle class="column" cx="1760" cy="2020" id="column-spiders-10" r="2" sodipodi:cx="1760" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
     <circle class="column" cx="1707" cy="208" id="column-lightning-1" r="3" sodipodi:cx="1707" sodipodi:cy="208" sodipodi:rx="3" sodipodi:ry="3"/>
-    <circle class="column" cx="1695" cy="218" id="column-lightning-2" r="3" sodipodi:cx="1695" sodipodi:cy="218" sodipodi:rx="3" sodipodi:ry="3"/>
-    <circle class="column" cx="1763" cy="208" id="column-lightning-3" r="3" sodipodi:cx="1763" sodipodi:cy="208" sodipodi:rx="3" sodipodi:ry="3"/>
-    <circle class="column" cx="1773" cy="218" id="column-lightning-4" r="3" sodipodi:cx="1773" sodipodi:cy="218" sodipodi:rx="3" sodipodi:ry="3"/>
+    <circle class="column" cx="1695" cy="218" id="column-lightning-2" r="3" sodipodi:cx="1695" sodipodi:cy="218" sodipodi:rx="3" sodipodi:ry="3"><title>These columns shoot lightning.</title></circle>
+    <circle class="column" cx="1763" cy="208" id="column-lightning-3" r="3" sodipodi:cx="1763" sodipodi:cy="208" sodipodi:rx="3" sodipodi:ry="3"><title>These columns shoot lightning.</title></circle>
+    <circle class="column" cx="1773" cy="218" id="column-lightning-4" r="3" sodipodi:cx="1773" sodipodi:cy="218" sodipodi:rx="3" sodipodi:ry="3"><title>These columns shoot lightning.</title></circle>
     <rect class="column" height="4" id="column-x" width="4" x="1874" y="1206"/>
     <rect class="column" height="4" id="column-z" width="4" x="1878" y="1216"/>
     <circle class="column" cx="2150" cy="745" id="column-heroes-1" r="1" sodipodi:cx="2150" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
@@ -1507,78 +1480,35 @@
     <circle class="column" cx="1870" cy="960" id="column-5col-room-3" r="1.5" sodipodi:cx="1870" sodipodi:cy="960" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
     <circle class="column" cx="1850" cy="980" id="column-5col-room-4" r="1.5" sodipodi:cx="1850" sodipodi:cy="980" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
     <circle class="column" cx="1870" cy="980" id="column-5col-room-5" r="1.5" sodipodi:cx="1870" sodipodi:cy="980" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
-    <rect class="feature" height="10" id="teleportal-a-out" width="10" x="1800" y="1720"/>
-    <rect class="feature-bad" height="10" id="teleportal-a-in" width="10" x="1820" y="1620"/>
-    <rect class="feature-bad" height="10" id="-revgravity-trap" width="10" x="2560" y="680"/>
-    <path class="feature" d="m1571 1155-6 3v5l2-4 4-2z" id="dragon-tail"/>
-    <rect class="feature" height="40" id="altar-giant-spider" width="20" x="1890" y="1590"/>
-    <path class="feature-bad" d="m1900 1700v10" id="curtain-x1">
-      <title>This is a curtain of darkness.</title>
-    </path>
-    <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="820">
-      <title>This chair made out of bones used to have arms that turned into poison-spitting snakes and it was covered in gems.</title>
-    </rect>
-    <rect class="feature" height="5" id="couch" width="5" x="2640" y="635">
-      <title>We have never found out the purpose of this slipcovered couch.</title>
-    </rect>
-    <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1700">
-      <title>This statue shoots lightning bolts.</title>
-    </rect>
-    <rect class="feature" height="2" id="dexter-dance-lever" width="2" x="2000" y="1083">
-      <title>If you pump this hidden lever, the Dexter Dance path appears.</title>
-    </rect>
-    <rect class="feature" height="5" id="demon-gate" width="2" x="2034" y="1033">
-      <title>This gate asks you a riddle, and if you answer it, it opens, allowing you to bypass the null-magic room.</title>
-    </rect>
-    <rect class="feature" height="1" id="lever-cooking-room-sdoor" width="2" x="1217" y="1352">
-      <title>This lever opens the secret door to cooking room</title>
-    </rect>
-    <rect class="feature" height="4" id="statue-purple-glow" width="4" x="2048" y="1124">
-      <title>This statue glows enough to almost illuminate the water-filled room.</title>
-    </rect>
-    <rect class="feature" height="2" id="mirror-myth-drannor" width="8" x="1730" y="190">
-      <title>Touching this mirror when the lightning bolts trigger teleports you to Myth Drannor.</title>
-    </rect>
-    <rect class="feature" height="5" id="statue-you-can-turn" width="5" x="1678" y="1912">
-      <title>Turning this statue raises and lowers the cage on chains in the room below.</title>
-    </rect>
-    <rect class="feature" height="6" id="ceiling-trapdoor" width="6" x="1751" y="442">
-      <title>This opens into an alley in Waterdeep.  The watch has told us to never be caught near it again.</title>
-    </rect>
-    <rect class="feature" height="6" id="cooking-platform" width="6" x="1062" y="1302">
-      <title>All mistakes in jumping between columns result in one being teleported here.  It sinks under weight.  After a minute or so it teleports you back to the entrance.</title>
-    </rect>
-    <rect class="feature" height="6" id="trapdoor-in-floor" width="6" x="1742" y="1872">
-      <title>This trapdoor opens onto a ladder that leads to the room below.</title>
-    </rect>
-    <rect class="feature" height="7" id="statue-of-mask" width="6" x="1123" y="1376">
-      <title>This statue has two sheathes that you can insert a sword or dagger into, and an outstretched hand.  When you put a sword in the sheath and put a serpentine in the hand, the sword becomes enchanted</title>
-    </rect>
-    <path class="feature-bad" d="m1862 1080v10" id="curtain-x2">
-      <title>This is yet another curtain of magical blackness.</title>
-    </path>
-    <path class="feature-bad" d="m2149 1356 4 9h-1l-4-8z" id="portcullis-1">
-      <title>This portcullis falls down when someone steps on the pressure plate.</title>
-    </path>
-    <rect class="feature-bad" height="2" id="portcullis-2" width="10" x="2140" y="1418">
-      <title>This portcullis blocks the path when the pressure plate is stepped on.</title>
-    </rect>
-    <rect class="feature-bad" height="2" id="sliding-wall" width="10" x="2090" y="1219">
-      <title>This wall slid down a while after we were teleported to the flooded room with the giant gar in it.</title>
-    </rect>
-    <rect class="feature-bad" height="4" id="chest" width="4" x="1851" y="492">
-      <title>We have never explored this exploded chest surrounded by bodies.</title>
-    </rect>
-    <rect class="feature-bad" height="8" id="pressure-plate-1" width="9" x="2130" y="1380">
-      <title>This pressure plate drops portcullises ahead and behind and dumps hundreds of pounds of garbage on the person who triggered it.</title>
-    </rect>
-    <rect class="feature-bad" height="8" id="statue-wonder" width="6" x="1983" y="1243">
-      <title>This statue acts as a Wand of Wonder, blasting the room randomly.</title>
-    </rect>
-    <path class="feature-path" d="m1986 1078-1 127h-20v30h-80v20h-10v90h10v210l-20 103v27h20v50h-40v10h-10v-10h-40v30h-50v45" id="path-dexter-dance-a"/>
-    <path class="feature-path" d="m1745 1810v65" id="path-dexter-dance-b"/>
-    <path class="feature-path" d="m1645 1960-1-45-109 1v38h-20v-34" id="path-dexter-dance-d"/>
-    <path class="bars" d="m2035 1050v-30" id="bars-1"/>
+    <path class="feature" d="m1571 1155-6 3v5l2-4 4-2z" id="dragon-tail"><title>This is the skeleton of a dragon's tail, a well known landmark in Undermountain.</title></path>
+    <rect class="feature" height="1" id="lever-cooking-room-sdoor" width="2" x="1217" y="1352"><title>This lever opens the secret door to cooking room</title></rect>
+    <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="820"><title>This chair made out of bones used to have arms that turned into poison-spitting snakes and it was covered in gems.</title></rect>
+    <rect class="feature" height="10" id="teleportal-a-out" width="10" x="1800" y="1720"><title>The nearby teleportal teleports you here.</title></rect>
+    <rect class="feature" height="2" id="dexter-dance-lever" width="2" x="2000" y="1083"><title>If you pump this hidden lever, the Dexter Dance path appears.</title></rect>
+    <rect class="feature" height="2" id="mirror-myth-drannor" width="8" x="1730" y="190"><title>Touching this mirror when the lightning bolts trigger teleports you to Myth Drannor.</title></rect>
+    <rect class="feature" height="4" id="statue-purple-glow" width="4" x="2048" y="1124"><title>This statue glows enough to almost illuminate the water-filled room.</title></rect>
+    <rect class="feature" height="40" id="altar-giant-spider" width="20" x="1890" y="1590"><title>This giant altar to Lolth has been much abused by Stewart in the past.</title></rect>
+    <rect class="feature" height="5" id="couch" width="5" x="2640" y="635"><title>We have never found out the purpose of this slipcovered couch.</title></rect>
+    <rect class="feature" height="5" id="demon-gate" width="2" x="2034" y="1033"><title>This gate asks you a riddle, and if you answer it, it opens, allowing you to bypass the null-magic room.</title></rect>
+    <rect class="feature" height="5" id="statue-you-can-turn" width="5" x="1678" y="1912"><title>Turning this statue raises and lowers the cage on chains in the room below.</title></rect>
+    <rect class="feature" height="6" id="ceiling-trapdoor" width="6" x="1751" y="442"><title>This opens into an alley in Waterdeep.  The watch has told us to never be caught near it again.</title></rect>
+    <rect class="feature" height="6" id="cooking-platform" width="6" x="1062" y="1302"><title>All mistakes in jumping between columns result in one being teleported here.  It sinks under weight.  After a minute or so it teleports you back to the entrance.</title></rect>
+    <rect class="feature" height="6" id="trapdoor-in-floor" width="6" x="1742" y="1872"><title>This trapdoor opens onto a ladder that leads to the room below.</title></rect>
+    <rect class="feature" height="7" id="statue-of-mask" width="6" x="1123" y="1376"><title>This statue has two sheathes that you can insert a sword or dagger into, and an outstretched hand.  When you put a sword in the sheath and put a serpentine in the hand, the sword becomes enchanted</title></rect>
+    <path class="feature-bad" d="m1862 1080v10" id="curtain-x2"><title>This is yet another curtain of magical blackness.</title></path>
+    <path class="feature-bad" d="m1900 1700v10" id="curtain-x1"><title>This is a curtain of darkness.</title></path>
+    <path class="feature-bad" d="m2149 1356 4 9h-1l-4-8z" id="portcullis-1"><title>This portcullis falls down when someone steps on the pressure plate.</title></path>
+    <rect class="feature-bad" height="10" id="-revgravity-trap" width="10" x="2560" y="680"><title>This is a reverse-gravity trap, with nasty spikes on the ceiling.</title></rect>
+    <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1700"><title>This statue shoots lightning bolts.</title></rect>
+    <rect class="feature-bad" height="10" id="teleportal-a-in" width="10" x="1820" y="1620"><title>This teleports you nearby.</title></rect>
+    <rect class="feature-bad" height="2" id="portcullis-2" width="10" x="2140" y="1418"><title>This portcullis blocks the path when the pressure plate is stepped on.</title></rect>
+    <rect class="feature-bad" height="2" id="sliding-wall" width="10" x="2090" y="1219"><title>This wall slid down a while after we were teleported to the flooded room with the giant gar in it.</title></rect>
+    <rect class="feature-bad" height="4" id="chest" width="4" x="1851" y="492"><title>We have never explored this exploded chest surrounded by bodies.</title></rect>
+    <rect class="feature-bad" height="8" id="pressure-plate-1" width="9" x="2130" y="1380"><title>This pressure plate drops portcullises ahead and behind and dumps hundreds of pounds of garbage on the person who triggered it.</title></rect>
+    <rect class="feature-bad" height="8" id="statue-wonder" width="6" x="1983" y="1243"><title>This statue acts as a Wand of Wonder, blasting the room randomly.</title></rect>
+    <path class="feature-path" d="m1986 1078-1 127h-20v30h-80v20h-10v90h10v210l-20 103v27h20v50h-40v10h-10v-10h-40v30h-50v45" id="path-dexter-dance-a"><title>Dexter dance path.</title></path>
+    <path class="feature-path" d="m1745 1810v65" id="path-dexter-dance-b"><title>Dexter dance path.</title></path>
+    <path class="feature-path" d="m1645 1960-1-45-109 1v38h-20v-34" id="path-dexter-dance-d"><title>Dexter dance path.</title></path>
     <!-- Names start here -->
     <text class="name" sodipodi:linespacing="125%" x="1990" xml:space="preserve" y="752"><tspan sodipodi:role="line" x="1990" y="752">Hall of Heroes</tspan></text>
     <text class="name" sodipodi:linespacing="125%" x="1966" xml:space="preserve" y="797"><tspan sodipodi:role="line" x="1966" y="797">Bone Throne</tspan></text>
