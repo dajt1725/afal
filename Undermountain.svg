@@ -248,7 +248,7 @@
     </circle>
     <circle class="feature" cx="475" cy="175" r="6"><title>We don't know what this circle represents.</title></circle>
   </g>
-  <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Main" style="display:none">
+  <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Main" style="display:inline">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
     <rect class="corr" height="10" width="40" x="1790" y="110"/>
@@ -423,7 +423,7 @@
     <text class="name" x="1571" xml:space="preserve" y="278"><tspan x="1571" y="278">Smoke</tspan><tspan x="1571" y="285.5">Powder</tspan></text>
     <!-- Unclassified start here -->
   </g>
-  <g id="um-l1-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:none">
+  <g id="um-l1-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Lower 1" style="display:inline">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
     <path class="corr" d="m320 3600v10h-40v10h40v10h10v-30z"/>
@@ -860,7 +860,7 @@
     <text class="name" x="501" xml:space="preserve" y="2748"><tspan x="501" y="2748">Litch</tspan></text>
     <!-- Unclassified start here -->
   </g>
-  <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:none">
+  <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:inline">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
     <path class="corr" d="m1000 1346v44h10 60v20h10 10v10h10v-10-10h-20v-30h-10v10h-60v-34z"/>
