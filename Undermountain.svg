@@ -586,40 +586,21 @@
     </path>
     <rect class="feature" height="20" width="2" x="931" y="770"/>
     <rect class="feature" height="20" width="2" x="646" y="610"/>
-    <text class="name" x="444" xml:space="preserve" y="913"><tspan sodipodi:role="line" x="444" y="913">A</tspan></text>
-    <text class="name" x="562" xml:space="preserve" y="1240"><tspan sodipodi:role="line" x="562" y="1240">B</tspan></text>
-    <text class="name" x="382" xml:space="preserve" y="628"><tspan sodipodi:role="line" x="382" y="628">C</tspan></text>
-    <text class="name" x="1068" xml:space="preserve" y="492"><tspan sodipodi:role="line" x="1068" y="492">C</tspan></text>
-    <rect class="feature" height="17" width="17" x="541" y="746">
-      <title>Food and nasty bats in here.</title>
-    </rect>
-    <text class="name" x="547" xml:space="preserve" y="756"><tspan sodipodi:role="line" x="547" y="756">D</tspan></text>
-    <rect class="feature" height="20" width="21" x="681" y="981">
-      <title>Fi'i'tharg Lair.  Frog thing?  Ogres leave it tribute.</title>
-    </rect>
-    <text class="name" x="690" xml:space="preserve" y="992"><tspan sodipodi:role="line" x="690" y="992">E</tspan></text>
-    <text class="name" x="885" xml:space="preserve" y="987"><tspan sodipodi:role="line" x="885" y="987">F</tspan></text>
-    <text class="name" x="833" xml:space="preserve" y="1099"><tspan sodipodi:role="line" x="833" y="1099">F</tspan></text>
-    <text class="name" x="972" xml:space="preserve" y="516"><tspan sodipodi:role="line" x="972" y="516">G</tspan></text>
-    <text class="name" x="1104" xml:space="preserve" y="1029"><tspan sodipodi:role="line" x="1104" y="1029">I</tspan></text>
-    <text class="name" x="795" xml:space="preserve" y="1536"><tspan sodipodi:role="line" x="795" y="1536">J</tspan></text>
-    <text class="name" x="815" xml:space="preserve" y="1535"><tspan sodipodi:role="line" x="815" y="1535">J</tspan></text>
-    <text class="name" x="913" xml:space="preserve" y="1536"><tspan sodipodi:role="line" x="913" y="1536">J</tspan></text>
-    <text class="name" x="893" xml:space="preserve" y="1535"><tspan sodipodi:role="line" x="893" y="1535">J</tspan></text>
-    <text class="name" x="923" xml:space="preserve" y="1427"><tspan sodipodi:role="line" x="923" y="1427">K</tspan></text>
-    <text class="name" x="982" xml:space="preserve" y="807"><tspan sodipodi:role="line" x="982" y="807">H</tspan></text>
     <rect class="feature" height="10" width="10" x="790" y="550">
       <title>Good area to hunt giant lizards.</title>
     </rect>
-    <text class="name" x="793" xml:space="preserve" y="557"><tspan sodipodi:role="line" x="793" y="557">K</tspan></text>
+    <rect class="feature" height="17" width="17" x="541" y="746">
+      <title>Food and nasty bats in here.</title>
+    </rect>
+    <rect class="feature" height="20" width="21" x="681" y="981">
+      <title>Fi'i'tharg Lair.  Frog thing?  Ogres leave it tribute.</title>
+    </rect>
     <rect class="feature" height="10" width="10" x="740" y="710">
       <title>Strange lights here.</title>
     </rect>
-    <text class="name" x="742" xml:space="preserve" y="716"><tspan sodipodi:role="line" x="742" y="716">L</tspan></text>
     <rect class="feature" height="10" width="10" x="980" y="1300">
       <title>Bigass spiders here, at least two, maybe five.  White fuzzy cold kind.</title>
     </rect>
-    <text class="name" x="982" xml:space="preserve" y="1306"><tspan sodipodi:role="line" x="982" y="1306">M</tspan></text>
     <g id="bat-room-columns">
       <circle class="column" cx="490" cy="705" id="circle764" r="4"/>
       <circle class="column" cx="510" cy="685" id="circle766" r="4"/>
@@ -665,6 +646,27 @@
       <circle class="column" cx="420" cy="880" id="circle837" r="2"/>
       <circle class="column" cx="450" cy="880" id="circle839" r="2"/>
     </g>
+    <text class="name" x="444" xml:space="preserve" y="913"><tspan sodipodi:role="line" x="444" y="913">A</tspan></text>
+    <text class="name" x="562" xml:space="preserve" y="1240"><tspan sodipodi:role="line" x="562" y="1240">B</tspan></text>
+    <text class="name" x="382" xml:space="preserve" y="628"><tspan sodipodi:role="line" x="382" y="628">C</tspan></text>
+    <text class="name" x="1068" xml:space="preserve" y="492"><tspan sodipodi:role="line" x="1068" y="492">C</tspan></text>
+    <text class="name" x="768" xml:space="preserve" y="1279"><tspan sodipodi:role="line" x="768" y="1279">C</tspan></text>
+    <text class="name" x="1033" xml:space="preserve" y="1156"><tspan sodipodi:role="line" x="1033" y="1156">C</tspan></text>
+    <text class="name" x="547" xml:space="preserve" y="756"><tspan sodipodi:role="line" x="547" y="756">D</tspan></text>
+    <text class="name" x="690" xml:space="preserve" y="992"><tspan sodipodi:role="line" x="690" y="992">E</tspan></text>
+    <text class="name" x="885" xml:space="preserve" y="987"><tspan sodipodi:role="line" x="885" y="987">F</tspan></text>
+    <text class="name" x="833" xml:space="preserve" y="1099"><tspan sodipodi:role="line" x="833" y="1099">F</tspan></text>
+    <text class="name" x="972" xml:space="preserve" y="516"><tspan sodipodi:role="line" x="972" y="516">G</tspan></text>
+    <text class="name" x="1104" xml:space="preserve" y="1029"><tspan sodipodi:role="line" x="1104" y="1029">I</tspan></text>
+    <text class="name" x="795" xml:space="preserve" y="1536"><tspan sodipodi:role="line" x="795" y="1536">J</tspan></text>
+    <text class="name" x="815" xml:space="preserve" y="1535"><tspan sodipodi:role="line" x="815" y="1535">J</tspan></text>
+    <text class="name" x="913" xml:space="preserve" y="1536"><tspan sodipodi:role="line" x="913" y="1536">J</tspan></text>
+    <text class="name" x="893" xml:space="preserve" y="1535"><tspan sodipodi:role="line" x="893" y="1535">J</tspan></text>
+    <text class="name" x="923" xml:space="preserve" y="1427"><tspan sodipodi:role="line" x="923" y="1427">K</tspan></text>
+    <text class="name" x="982" xml:space="preserve" y="807"><tspan sodipodi:role="line" x="982" y="807">H</tspan></text>
+    <text class="name" x="793" xml:space="preserve" y="557"><tspan sodipodi:role="line" x="793" y="557">K</tspan></text>
+    <text class="name" x="742" xml:space="preserve" y="716"><tspan sodipodi:role="line" x="742" y="716">L</tspan></text>
+    <text class="name" x="982" xml:space="preserve" y="1306"><tspan sodipodi:role="line" x="982" y="1306">M</tspan></text>
     <path d="m592 755-28-5v10z" inkscape:original-d="m 592,755 -28,0" inkscape:path-effect="#path-effect6769" style="fill:orange;fill-rule:evenodd;stroke:none"/>
     <path d="m537 756-25-5v10z" inkscape:original-d="m 537,756 -25,0" inkscape:path-effect="#path-effect6773" style="fill:orange;fill-rule:evenodd;stroke:none"/>
     <path d="m490 712-5.99703 28.82769 9.99406 0.34462z" inkscape:original-d="m 490,712 -1,29" inkscape:path-effect="#path-effect6777" style="fill:orange;fill-rule:evenodd;stroke:none"/>
@@ -673,8 +675,6 @@
     <path d="m564 826-20.32598-29.3914-7.34804 6.7828z" inkscape:original-d="m 564,826 -24,-26" inkscape:path-effect="#path-effect6793" style="fill:orange;fill-rule:evenodd;stroke:none"/>
     <path d="m689 1038 5.99681-27.8215-9.99362-0.357z" inkscape:original-d="m 689,1038 1,-28" inkscape:path-effect="#path-effect6801" style="fill:orange;fill-rule:evenodd;stroke:none"/>
     <path d="m690 1090 5-30h-10z" inkscape:original-d="m 690,1090 0,-30" inkscape:path-effect="#path-effect6805" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <text class="name" x="768" xml:space="preserve" y="1279"><tspan sodipodi:role="line" x="768" y="1279">C</tspan></text>
-    <text class="name" x="1033" xml:space="preserve" y="1156"><tspan sodipodi:role="line" x="1033" y="1156">C</tspan></text>
   </g>
   <g id="mythdranor" inkscape:groupmode="layer" inkscape:label="Myth Dranor" style="display:inline">
     <path class="corr" d="m585 250v10h-115v20h115v60h20v-60h60v-20h-60v-10h-20z"/>
@@ -816,7 +816,7 @@
     <path class="room" d="m1480 180v20h-10v30h20v-30h20v-20z"/>
     <rect class="room" height="100" width="90" x="1770" y="210"/>
     <rect class="room" height="100" width="20" x="1910" y="210"/>
-    <rect class="room" height="20" ry="0" width="90" x="1620" y="230"/>
+    <rect class="room" height="20" width="90" x="1620" y="230"/>
     <rect class="room" height="20" width="30" x="1510" y="210"/>
     <rect class="room" height="270" width="280" x="1380" y="410"/>
     <rect class="room" height="30" width="20" x="1980" y="140"/>
@@ -1338,11 +1338,6 @@
     <rect class="feature-bad" height="10" id="portcullis-litch-b" width="1" x="479" y="2780"/>
     <circle class="feature" cx="1290" cy="2305" id="fixme-round-a" r="2.5"/>
     <circle class="feature" cx="515" cy="2760" id="fixme-round-b" r="3"/>
-    <path class="feature" d="m0 0a0 0 0 1 1 0 0 0 0 0 1 1 0 0z" sodipodi:type="arc"/>
-    <path class="column" d="m0 0a0 0 0 1 1 0 0 0 0 0 1 1 0 0z" sodipodi:type="arc"/>
-    <path class="column" d="m0 0a0 0 0 1 1 0 0 0 0 0 1 1 0 0z" sodipodi:type="arc"/>
-    <path class="column" d="m0 0a0 0 0 1 1 0 0 0 0 0 1 1 0 0z" sodipodi:type="arc"/>
-    <path class="column" d="m0 0a0 0 0 1 1 0 0 0 0 0 1 1 0 0z" sodipodi:type="arc"/>
     <rect class="feature" height="4" width="6" x="512" y="2773"/>
     <rect class="feature" height="5" width="5" x="512" y="2742"/>
     <rect class="feature" height="10" width="1" x="1119" y="2490"/>
@@ -1667,7 +1662,7 @@
       <title>The too late teleportal dumps you here.</title>
     </rect>
     <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1280">
-      <title>This room is filled with boiling oil.</title>
+      <title>This room is filled with boiling oil. *and* magic only works above the pillars.</title>
     </rect>
     <rect class="stairs-ew" height="10" width="20" x="1920" y="1290"/>
     <path class="stairs-ns" d="m2300 810h10l-3 10h-4z"/>
@@ -1705,7 +1700,7 @@
     </rect>
     <rect class="pit" height="10" width="10" x="1710" y="1940"/>
     <rect class="pit" height="10" width="20" x="2340" y="830">
-      <title>With 25' of water in it</title>
+      <title>This pit is deep and has 25' of water in it.</title>
     </rect>
     <circle class="pit" cx="1620" cy="1255" id="circular-pit" r="10">
       <title>This pit has enhanced gravity in it, for extra pain.</title>
@@ -1943,7 +1938,7 @@
     <rect class="sec-door" height="2" id="s-door-animated-armor" width="6" x="2032" y="1079"/>
     <rect class="sec-door" height="2" id="s-door-demon-gate" width="6" x="2052" y="1059"/>
     <rect class="sec-door" height="6" width="2" x="2119" y="982"/>
-    <rect class="sec-door" height="6" id="secret-door-couch-room" width="2" x="2669" y="642"/>
+    <rect class="sec-door" height="6" id="secret-door-couch-room" width="2" x="2669" y="642"><title>Something about touching the red tiles opens this door.</title></rect>
     <rect class="sec-door" height="10" width="2" x="1178" y="1330"/>
     <rect class="sec-door" height="2" width="6" x="2162" y="1349"/>
     <rect class="sec-door" height="6" width="2" x="2149" y="1432"/>
@@ -2029,45 +2024,51 @@
     <rect class="door" height="8" width="2" x="2239" y="750"/>
     <rect class="door" height="8" width="2" x="2239" y="792"/>
     <rect class="door" height="8" width="2" x="2239" y="800"/>
-    <circle class="column" cx="1045" cy="1285" id="column-cooking-1" r="2.5"/>
-    <circle class="column" cx="1045" cy="1295" id="column-cooking-2" r="2.5"/>
-    <circle class="column" cx="1045" cy="1305" id="column-cooking-3" r="2.5"/>
-    <circle class="column" cx="1045" cy="1315" id="column-cooking-4" r="2.5"/>
-    <circle class="column" cx="1045" cy="1325" id="column-cooking-5" r="2.5"/>
-    <circle class="column" cx="1055" cy="1285" id="column-cooking-6" r="2.5"/>
-    <circle class="column" cx="1055" cy="1295" id="column-cooking-7" r="2.5"/>
-    <circle class="column" cx="1055" cy="1305" id="column-cooking-8" r="2.5"/>
-    <circle class="column" cx="1055" cy="1315" id="column-cooking-9" r="2.5"/>
-    <circle class="column" cx="1055" cy="1325" id="column-cooking-10" r="2.5"/>
-    <circle class="column" cx="1065" cy="1285" id="column-cooking-11" r="2.5"/>
-    <circle class="column" cx="1065" cy="1295" id="column-cooking-12" r="2.5"/>
-    <circle class="column" cx="1065" cy="1315" id="column-cooking-13" r="2.5"/>
-    <circle class="column" cx="1065" cy="1325" id="column-cooking-14" r="2.5"/>
-    <circle class="column" cx="1075" cy="1285" id="column-cooking-15" r="2.5"/>
-    <circle class="column" cx="1075" cy="1295" id="column-cooking-16" r="2.5"/>
-    <circle class="column" cx="1075" cy="1305" id="column-cooking-17" r="2.5"/>
-    <circle class="column" cx="1075" cy="1315" id="column-cooking-18" r="2.5"/>
-    <circle class="column" cx="1075" cy="1325" id="column-cooking-19" r="2.5"/>
-    <circle class="column" cx="1085" cy="1285" id="column-cooking-20" r="2.5"/>
-    <circle class="column" cx="1085" cy="1295" id="column-cooking-21" r="2.5"/>
-    <circle class="column" cx="1085" cy="1305" id="column-cooking-22" r="2.5"/>
-    <circle class="column" cx="1085" cy="1315" id="column-cooking-23" r="2.5"/>
-    <circle class="column" cx="1085" cy="1325" id="column-cooking-24" r="2.5"/>
-    <circle class="column" cx="1750" cy="1930" id="column-dd-l1-1" r="2"/>
-    <circle class="column" cx="1750" cy="1940" id="column-dd-l1-2" r="2"/>
-    <circle class="column" cx="1750" cy="1950" id="column-dd-l1-3" r="2"/>
-    <circle class="column" cx="1740" cy="1950" id="column-dd-l1-4" r="2"/>
-    <circle class="column" cx="1740" cy="1940" id="column-dd-l1-5" r="2"/>
-    <circle class="column" cx="1730" cy="2000" id="column-spiders-1" r="2"/>
-    <circle class="column" cx="1730" cy="2010" id="column-spiders-2" r="2"/>
-    <circle class="column" cx="1730" cy="2020" id="column-spiders-3" r="2"/>
-    <circle class="column" cx="1740" cy="2000" id="column-spiders-4" r="2"/>
-    <circle class="column" cx="1740" cy="2020" id="column-spiders-5" r="2"/>
-    <circle class="column" cx="1750" cy="2000" id="column-spiders-6" r="2"/>
-    <circle class="column" cx="1750" cy="2020" id="column-spiders-7" r="2"/>
-    <circle class="column" cx="1760" cy="2000" id="column-spiders-8" r="2"/>
-    <circle class="column" cx="1760" cy="2010" id="column-spiders-9" r="2"/>
-    <circle class="column" cx="1760" cy="2020" id="column-spiders-10" r="2"/>
+    <g id="cooking-columns">
+      <circle class="column" cx="1045" cy="1285" r="2.5"/>
+      <circle class="column" cx="1045" cy="1295" r="2.5"/>
+      <circle class="column" cx="1045" cy="1305" r="2.5"/>
+      <circle class="column" cx="1045" cy="1315" r="2.5"/>
+      <circle class="column" cx="1045" cy="1325" r="2.5"/>
+      <circle class="column" cx="1055" cy="1285" r="2.5"/>
+      <circle class="column" cx="1055" cy="1295" r="2.5"/>
+      <circle class="column" cx="1055" cy="1305" r="2.5"/>
+      <circle class="column" cx="1055" cy="1315" r="2.5"/>
+      <circle class="column" cx="1055" cy="1325" r="2.5"/>
+      <circle class="column" cx="1065" cy="1285" r="2.5"/>
+      <circle class="column" cx="1065" cy="1295" r="2.5"/>
+      <circle class="column" cx="1065" cy="1315" r="2.5"/>
+      <circle class="column" cx="1065" cy="1325" r="2.5"/>
+      <circle class="column" cx="1075" cy="1285" r="2.5"/>
+      <circle class="column" cx="1075" cy="1295" r="2.5"/>
+      <circle class="column" cx="1075" cy="1305" r="2.5"/>
+      <circle class="column" cx="1075" cy="1315" r="2.5"/>
+      <circle class="column" cx="1075" cy="1325" r="2.5"/>
+      <circle class="column" cx="1085" cy="1285" r="2.5"/>
+      <circle class="column" cx="1085" cy="1295" r="2.5"/>
+      <circle class="column" cx="1085" cy="1305" r="2.5"/>
+      <circle class="column" cx="1085" cy="1315" r="2.5"/>
+      <circle class="column" cx="1085" cy="1325" r="2.5"/>
+    </g>
+    <g id="dexter-dance-columns">
+        <circle class="column" cx="1750" cy="1930" r="2"/>
+        <circle class="column" cx="1750" cy="1940" r="2"/>
+        <circle class="column" cx="1750" cy="1950" r="2"/>
+        <circle class="column" cx="1740" cy="1950" r="2"/>
+        <circle class="column" cx="1740" cy="1940" r="2"/>
+    </g>
+    <g id="metal-spider-room-columns">
+      <circle class="column" cx="1730" cy="2000" r="2"/>
+      <circle class="column" cx="1730" cy="2010" r="2"/>
+      <circle class="column" cx="1730" cy="2020" r="2"/>
+      <circle class="column" cx="1740" cy="2000" r="2"/>
+      <circle class="column" cx="1740" cy="2020" r="2"/>
+      <circle class="column" cx="1750" cy="2000" r="2"/>
+      <circle class="column" cx="1750" cy="2020" r="2"/>
+      <circle class="column" cx="1760" cy="2000" r="2"/>
+      <circle class="column" cx="1760" cy="2010" r="2"/>
+      <circle class="column" cx="1760" cy="2020" r="2"/>
+    </g>
     <circle class="column" cx="1707" cy="208" id="column-lightning-1" r="3">
       <title>These columns shoot lightning.</title>
     </circle>
@@ -2082,66 +2083,74 @@
     </circle>
     <rect class="column" height="4" id="column-x" width="4" x="1874" y="1206"/>
     <rect class="column" height="4" id="column-z" width="4" x="1878" y="1216"/>
-    <circle class="column" cx="2150" cy="745" id="column-heroes-1" r="1"/>
-    <circle class="column" cx="2150" cy="755" id="column-heroes-2" r="1"/>
-    <circle class="column" cx="2140" cy="745" id="column-heroes-3" r="1"/>
-    <circle class="column" cx="2140" cy="755" id="column-heroes-4" r="1"/>
-    <circle class="column" cx="2130" cy="745" id="column-heroes-5" r="1"/>
-    <circle class="column" cx="2130" cy="755" id="column-heroes-6" r="1"/>
-    <circle class="column" cx="2120" cy="745" id="column-heroes-7" r="1"/>
-    <circle class="column" cx="2120" cy="755" id="column-heroes-8" r="1"/>
-    <circle class="column" cx="2110" cy="745" id="column-heroes-9" r="1"/>
-    <circle class="column" cx="2110" cy="755" id="column-heroes-10" r="1"/>
-    <circle class="column" cx="2100" cy="745" id="column-heroes-11" r="1"/>
-    <circle class="column" cx="2100" cy="755" id="column-heroes-12" r="1"/>
-    <circle class="column" cx="2090" cy="745" id="column-heroes-13" r="1"/>
-    <circle class="column" cx="2090" cy="755" id="column-heroes-14" r="1"/>
-    <circle class="column" cx="2080" cy="745" id="column-heroes-15" r="1"/>
-    <circle class="column" cx="2080" cy="755" id="column-heroes-16" r="1"/>
-    <circle class="column" cx="2070" cy="745" id="column-heroes-17" r="1"/>
-    <circle class="column" cx="2070" cy="755" id="column-heroes-18" r="1"/>
-    <circle class="column" cx="2060" cy="745" id="column-heroes-19" r="1"/>
-    <circle class="column" cx="2060" cy="755" id="column-heroes-20" r="1"/>
-    <circle class="column" cx="2050" cy="745" id="column-heroes-21" r="1"/>
-    <circle class="column" cx="2050" cy="755" id="column-heroes-22" r="1"/>
-    <circle class="column" cx="2040" cy="745" id="column-heroes-23" r="1"/>
-    <circle class="column" cx="2040" cy="755" id="column-heroes-24" r="1"/>
-    <circle class="column" cx="2030" cy="745" id="column-heroes-25" r="1"/>
-    <circle class="column" cx="2030" cy="755" id="column-heroes-26" r="1"/>
-    <circle class="column" cx="2020" cy="745" id="column-heroes-27" r="1"/>
-    <circle class="column" cx="2020" cy="755" id="column-heroes-28" r="1"/>
-    <circle class="column" cx="2010" cy="745" id="column-heroes-29" r="1"/>
-    <circle class="column" cx="2010" cy="755" id="column-heroes-30" r="1"/>
-    <circle class="column" cx="2000" cy="745" id="column-heroes-31" r="1"/>
-    <circle class="column" cx="2000" cy="755" id="column-heroes-32" r="1"/>
-    <circle class="column" cx="1990" cy="745" id="column-heroes-33" r="1"/>
-    <circle class="column" cx="1990" cy="755" id="column-heroes-34" r="1"/>
-    <circle class="column" cx="1980" cy="745" id="column-heroes-35" r="1"/>
-    <circle class="column" cx="1980" cy="755" id="column-heroes-36" r="1"/>
-    <circle class="column" cx="1970" cy="745" id="column-heroes-37" r="1"/>
-    <circle class="column" cx="1970" cy="755" id="column-heroes-38" r="1"/>
-    <circle class="column" cx="1940" cy="740" id="column-hallway-1" r="1"/>
-    <circle class="column" cx="1930" cy="740" id="column-hallway-2" r="1"/>
-    <circle class="column" cx="1920" cy="740" id="column-hallway-3" r="1"/>
-    <circle class="column" cx="1910" cy="740" id="column-hallway-4" r="1"/>
-    <circle class="column" cx="1900" cy="740" id="column-hallway-5" r="1"/>
-    <circle class="column" cx="1890" cy="740" id="column-hallway-6" r="1"/>
-    <circle class="column" cx="1985" cy="1054" id="column-null-magic-1" r="1"/>
-    <circle class="column" cx="2005" cy="1061" id="column-null-magic-2" r="1"/>
-    <circle class="column" cx="2004" cy="1080" id="column-null-magic-3" r="1"/>
-    <circle class="column" cx="1985" cy="1086" id="column-null-magic-4" r="1"/>
-    <circle class="column" cx="1995" cy="1056" id="column-null-magic-5" r="1"/>
-    <circle class="column" cx="1995" cy="1082" id="column-null-magic-6" r="1"/>
-    <circle class="column" cx="1974" cy="1080" id="column-null-magic-7" r="1"/>
-    <circle class="column" cx="1974" cy="1061" id="column-null-magic-8" r="1"/>
-    <circle class="column" cx="1990" cy="1061" id="column-null-magic-9" r="1"/>
-    <circle class="column" cx="1990" cy="1077" id="column-null-magic-10" r="1"/>
-    <circle class="column" cx="1990" cy="1068" id="column-null-magic-11" r="1"/>
-    <circle class="column" cx="1860" cy="970" id="column-5col-room-1" r="1.5"/>
-    <circle class="column" cx="1850" cy="960" id="column-5col-room-2" r="1.5"/>
-    <circle class="column" cx="1870" cy="960" id="column-5col-room-3" r="1.5"/>
-    <circle class="column" cx="1850" cy="980" id="column-5col-room-4" r="1.5"/>
-    <circle class="column" cx="1870" cy="980" id="column-5col-room-5" r="1.5"/>
+    <g id="hall-of-heroes-columns">
+      <circle class="column" cx="2150" cy="745" r="1"/>
+      <circle class="column" cx="2150" cy="755" r="1"/>
+      <circle class="column" cx="2140" cy="745" r="1"/>
+      <circle class="column" cx="2140" cy="755" r="1"/>
+      <circle class="column" cx="2130" cy="745" r="1"/>
+      <circle class="column" cx="2130" cy="755" r="1"/>
+      <circle class="column" cx="2120" cy="745" r="1"/>
+      <circle class="column" cx="2120" cy="755" r="1"/>
+      <circle class="column" cx="2110" cy="745" r="1"/>
+      <circle class="column" cx="2110" cy="755" r="1"/>
+      <circle class="column" cx="2100" cy="745" r="1"/>
+      <circle class="column" cx="2100" cy="755" r="1"/>
+      <circle class="column" cx="2090" cy="745" r="1"/>
+      <circle class="column" cx="2090" cy="755" r="1"/>
+      <circle class="column" cx="2080" cy="745" r="1"/>
+      <circle class="column" cx="2080" cy="755" r="1"/>
+      <circle class="column" cx="2070" cy="745" r="1"/>
+      <circle class="column" cx="2070" cy="755" r="1"/>
+      <circle class="column" cx="2060" cy="745" r="1"/>
+      <circle class="column" cx="2060" cy="755" r="1"/>
+      <circle class="column" cx="2050" cy="745" r="1"/>
+      <circle class="column" cx="2050" cy="755" r="1"/>
+      <circle class="column" cx="2040" cy="745" r="1"/>
+      <circle class="column" cx="2040" cy="755" r="1"/>
+      <circle class="column" cx="2030" cy="745" r="1"/>
+      <circle class="column" cx="2030" cy="755" r="1"/>
+      <circle class="column" cx="2020" cy="745" r="1"/>
+      <circle class="column" cx="2020" cy="755" r="1"/>
+      <circle class="column" cx="2010" cy="745" r="1"/>
+      <circle class="column" cx="2010" cy="755" r="1"/>
+      <circle class="column" cx="2000" cy="745" r="1"/>
+      <circle class="column" cx="2000" cy="755" r="1"/>
+      <circle class="column" cx="1990" cy="745" r="1"/>
+      <circle class="column" cx="1990" cy="755" r="1"/>
+      <circle class="column" cx="1980" cy="745" r="1"/>
+      <circle class="column" cx="1980" cy="755" r="1"/>
+      <circle class="column" cx="1970" cy="745" r="1"/>
+      <circle class="column" cx="1970" cy="755" r="1"/>
+    </g>
+    <g id="hallway-columns">
+      <circle class="column" cx="1940" cy="740" r="1"/>
+      <circle class="column" cx="1930" cy="740" r="1"/>
+      <circle class="column" cx="1920" cy="740" r="1"/>
+      <circle class="column" cx="1910" cy="740" r="1"/>
+      <circle class="column" cx="1900" cy="740" r="1"/>
+      <circle class="column" cx="1890" cy="740" r="1"/>
+    </g>
+    <g id="null-magic-columns">
+      <circle class="column" cx="1985" cy="1054" r="1"/>
+      <circle class="column" cx="2005" cy="1061" r="1"/>
+      <circle class="column" cx="2004" cy="1080" r="1"/>
+      <circle class="column" cx="1985" cy="1086" r="1"/>
+      <circle class="column" cx="1995" cy="1056" r="1"/>
+      <circle class="column" cx="1995" cy="1082" r="1"/>
+      <circle class="column" cx="1974" cy="1080" r="1"/>
+      <circle class="column" cx="1974" cy="1061" r="1"/>
+      <circle class="column" cx="1990" cy="1061" r="1"/>
+      <circle class="column" cx="1990" cy="1077" r="1"/>
+      <circle class="column" cx="1990" cy="1068" r="1"/>
+    </g>
+    <g id="boring-5column-room">
+      <circle class="column" cx="1860" cy="970" r="1.5"/>
+      <circle class="column" cx="1850" cy="960" r="1.5"/>
+      <circle class="column" cx="1870" cy="960" r="1.5"/>
+      <circle class="column" cx="1850" cy="980" r="1.5"/>
+      <circle class="column" cx="1870" cy="980" r="1.5"/>
+    </g>
     <path class="feature" d="m1571 1155-6 3v5l2-4 4-2z" id="dragon-tail">
       <title>This is the skeleton of a dragon's tail, a well known landmark in Undermountain.</title>
     </path>
@@ -2200,7 +2209,7 @@
       <title>This is a reverse-gravity trap, with nasty spikes on the ceiling.</title>
     </rect>
     <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1700">
-      <title>This statue shoots lightning bolts.</title>
+      <title>This statue shoots lightning bolts.  There's a secret door in its base that leads to a spiral staircase.</title>
     </rect>
     <rect class="feature-bad" height="10" id="teleportal-a-in" width="10" x="1820" y="1620">
       <title>This teleports you nearby.</title>
