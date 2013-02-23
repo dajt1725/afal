@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="um2a.svg" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.47 r22583" sodipodi:docname="Undermountain.svg" style="display:inline" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Anything For A Laugh's map of Undermountain</title>
   <script id="script3" type="text/ecmascript">
       function toggleLayer(e,n) {
@@ -26,42 +26,42 @@
     <inkscape:path-effect copytype="single_stretched" effect="skeletal" fuse_tolerance="0" id="path-effect6769" is_visible="true" normal_offset="0" pattern="m 5,25 10,5 0,-10 z" prop_scale="1" prop_units="false" scale_y_rel="false" spacing="0" tang_offset="0" vertical_pattern="false"/>
     <inkscape:perspective id="perspective449" inkscape:persp3d-origin="450.5 : 400 : 1" inkscape:vp_x="0 : 600 : 1" inkscape:vp_y="0 : 1000 : 0" inkscape:vp_z="901 : 600 : 1" sodipodi:type="inkscape:persp3d"/>
     <pattern height="1" id="pattern-stairs-ew" patternUnits="userSpaceOnUse" width="2">
-      <rect height="1" id="rect9" style="fill:black;stroke:none" width="1" x="0" y="0"/>
-      <rect height="1" id="rect11" style="fill:#edd567;stroke:none" width="1" x="1" y="0"/>
+      <rect height="1" style="fill:black;stroke:none" width="1" x="0" y="0"/>
+      <rect height="1" style="fill:#edd567;stroke:none" width="1" x="1" y="0"/>
     </pattern>
     <pattern height="2" id="pattern-stairs-ns" patternUnits="userSpaceOnUse" width="1">
-      <rect height="1" id="rect14" style="fill:black;stroke:none" width="1" x="0" y="0"/>
-      <rect height="1" id="rect16" style="fill:#edd567;stroke:none" width="1" x="0" y="1"/>
+      <rect height="1" style="fill:black;stroke:none" width="1" x="0" y="0"/>
+      <rect height="1" style="fill:#edd567;stroke:none" width="1" x="0" y="1"/>
     </pattern>
     <pattern height="10" id="pattern-floor-corr" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect19" style="fill:#edd567;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:#edd567;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-room" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect22" style="fill:#edb667;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:#edb667;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-orange" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect25" style="fill:orange;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:orange;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-yellow" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect28" style="fill:yellow;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:yellow;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-green" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect31" style="fill:green;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:green;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-purple" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect34" style="fill:purple;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:purple;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-blue" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect37" style="fill:blue;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:blue;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-red" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect40" style="fill:red;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:red;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-reddish" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect43" style="fill:#ed7767;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:#ed7767;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <pattern height="10" id="pattern-floor-dark-grey" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" id="rect46" style="fill:#505050;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.75" style="fill:#505050;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
     </pattern>
     <style id="style-um" type="text/css">
       *.corr {
@@ -192,7 +192,7 @@
       }
     </style>
   </defs>
-  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="base" inkscape:current-layer="fluffy" inkscape:cx="338.7" inkscape:cy="3307.1973" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="732" inkscape:window-maximized="0" inkscape:window-width="809" inkscape:window-x="0" inkscape:window-y="2" inkscape:zoom="1" pagecolor="#ffffff" showborder="true" showgrid="true">
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="base" inkscape:current-layer="um-l1-l1" inkscape:cx="1630.7575" inkscape:cy="2067.5766" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1167" inkscape:window-maximized="0" inkscape:window-width="1916" inkscape:window-x="0" inkscape:window-y="2" inkscape:zoom="1" pagecolor="#ffffff" showborder="true" showgrid="true">
     <inkscape:grid color="#5555ff" empcolor="#0000a1" empopacity="0.25098039" empspacing="10" enabled="true" id="grid2985" opacity="0.1254902" snapvisiblegridlinesonly="false" type="xygrid" visible="true"/>
   </sodipodi:namedview>
   <metadata id="metadata7">
@@ -276,25 +276,33 @@
     <rect class="feature" height="20" width="2" x="349" y="320">
       <title>This line was on the map we acquired.  We don't know what it means.</title>
     </rect>
-    <circle class="feature" cx="155" cy="485" id="circle445" r="4">
+    <circle class="feature" cx="155" cy="485" r="4" sodipodi:cx="155" sodipodi:cy="485" sodipodi:rx="4" sodipodi:ry="4">
       <title>We don't know what this circle represents.</title>
     </circle>
-    <circle class="feature" cx="475" cy="175" id="circle136" r="6">
+    <circle class="feature" cx="475" cy="175" r="6" sodipodi:cx="475" sodipodi:cy="175" sodipodi:rx="6" sodipodi:ry="6">
       <title>We don't know what this circle represents.</title>
     </circle>
   </g>
   <g id="fluffy" inkscape:groupmode="layer" inkscape:label="Fluffy Map" style="display:inline">
+    <path class="room" d="m1040 1380-25 25 35 35v50h-40v-10h20l10-10v-30l-10-10-20-20-20 20v50 10 20h60 20v-130h-20-10z"/>
     <path class="corr" d="m890 1430v10h10v10h10v-10-10h-20z"/>
     <rect class="corr" height="10" width="20" x="920" y="1420"/>
+    <rect class="room" height="20" width="30" x="900" y="1400"/>
     <rect class="corr" height="10" width="10" x="890" y="1410"/>
+    <path class="room" d="m940 1410h30l-30 30z"/>
+    <rect class="room" height="40" width="30" x="1130" y="1170"/>
     <rect class="corr" height="30" width="10" x="1130" y="1270"/>
     <rect class="corr" height="10" width="10" x="980" y="1450"/>
+    <path class="room" d="m930 1490h50v-50z"/>
     <path class="corr" d="m930 770v20h50v10h10v-10h160v360h-30-10v210h-20v-10h-10v10h-40v-100h-10v100h-100v10h100l-120 120v10h-50v10h50l-20 20v10h10v-10l10-10v20h10v-10h240v-10h-70v-110h-10v110h-160v-10h70v-10h-70v-10l120-120h80 40v-10h-40v-30h10v-10h-10v-160h30v10h10v-380-20z"/>
+    <path class="room" d="m830 1500v30h30v10h20v-20h-20v-20h-30z"/>
     <path class="corr" d="m830 1460v10 30h10v-30h10v-10h-20z"/>
+    <rect class="room" height="20" width="40" x="830" y="1380"/>
     <rect class="corr" height="10" width="10" x="830" y="1370"/>
     <path class="corr" d="m760 210v10h-110v10 80h-30v10 60 10 90 20l-60 60h-40v-10-10h-30v10h20v70h10v-50h15v10h10v-10h15v80h-110-10v110h-10v-130h-10v140h10 10v10h10v-120h110 10v-30h170l90 90h80v130h-70v-80h-10v80h-130v10h130v110h-30v20 70h-10v10 120h-10v-120h-20v220h20v-90h10v340h10v-340h10v-10h-10v-120h70v10h10v-10h40l10 10v10h10v10h10v-10l-30-30h-70v-10h80v-20-310-220h40v10h10v-10h100v-20h-260v-270h-20-40zm10 10h30v80h-10v10h10v50h-10v10h10v110h-170v-90h10v-10h-10v-60h20 10v-90h70v30h10v-30h30v-10zm-130 280h180 90v200h-70l-90-90h-160v-10h70v-10h-10v-10h-10v10h-50v-10h-10v10 10 10h-10v-40l70-70zm210 360h20v10h10v-10h30v70h-10v10h10v90h-70v20 10h-30v-30h10v20h10v-50h-10v20h-10v-30h30v10h10v-10-20-110z"/>
     <rect class="corr" height="200" width="10" x="810" y="1340"/>
     <path class="corr" d="m930 1040v10l100 100v100h-100v-20h-10v20h-110v10 40h10v-40h40v10h10v-10h50v10h10v-10h110v-10-100l-110-110z"/>
+    <path class="room" d="m1050 1160v100h20v-40h10v20h20v-40h-20-10v-10h30v-30h-30-20z"/>
     <rect class="corr" height="10" width="20" x="830" y="1090"/>
     <rect class="corr" height="10" width="10" x="860" y="1150"/>
     <path class="corr" d="m890 1130v10h-10v10h80v-10h-10v-10h-10v10h-40v-10h-10z"/>
@@ -357,14 +365,6 @@
     <path class="room-alt" d="m850 1000h10v20h-20v-20"/>
     <path class="room-alt" d="m700 560v-20h-30v20h20"/>
     <path class="room-alt" d="m545 580h5v60h-20v-60h5"/>
-    <rect class="room" height="20" width="30" x="900" y="1400"/>
-    <path class="room" d="m1040 1380-25 25 35 35v50h-40v-10h20l10-10v-30l-10-10-20-20-20 20v50 10 20h60 20v-130h-20-10z"/>
-    <path class="room" d="m940 1410h30l-30 30z"/>
-    <rect class="room" height="40" width="30" x="1130" y="1170"/>
-    <path class="room" d="m930 1490h50v-50z"/>
-    <path class="room" d="m830 1500v30h30v10h20v-20h-20v-20h-30z"/>
-    <rect class="room" height="20" width="40" x="830" y="1380"/>
-    <path class="room" d="m1050 1160v100h20v-40h10v20h20v-40h-20-10v-10h30v-30h-30-20z"/>
     <path class="room" d="m960 1140v-40l50 50h-50"/>
     <path class="room" d="m940 950v70h200v-50h-30v-20z"/>
     <rect class="room" height="60" width="50" x="1030" y="860"/>
@@ -473,82 +473,46 @@
     <rect class="feature" height="10" width="10" x="830" y="1090">
       <title>&quot;We never go this way because it would make us dead.&quot;</title>
     </rect>
+    <path class="wall" d="m850 1148v2h10v10h-50v30h-10v-120h70v10h-20v10h-20"/>
+    <path class="wall" d="m830 1100h20v42"/>
+    <path class="wall" d="m892 1130h-2v10h-10v-70h40l10 10v10h10v10h2-12v30h10v10h2-42v-10h-2 22v-50h-30v20h20v10h-20v20z"/>
     <rect class="feature" height="10" width="10" x="1030" y="1150">
       <title>We never go that way, don't know why.</title>
     </rect>
+    <path class="wall" d="m1030 1150-100-100h-80v10h70l30 30v50h-2 12v-40l50 50h-50-90v10h60v90h100z"/>
+    <path class="wall" d="m590 580v10h50v-10h-30v-20h10v-10h-10l40-40h110v30h10v-30h130v90h-30v10h40v-110h-270l-70 70v40h10v-30"/>
+    <path class="wall" d="m750 400h10v20h-10z"/>
+    <path class="wall" d="m660 230h70v40h-30v-20h-30v30h50v10h40v-30h30v-20h-40v20h-10v-30h30v-10h30v80h-10v-30h-20v50h-10v-10h-40v10h-40v10h-40v20h50v-20h30v30h-80v20h-10v-60h30z"/>
+    <path class="wall" d="m800 370h-10v10h-40v-40l40 1v19h10v-50h-10v20h-50v50h-50v30h-40v10h50v-30h90v40h-10v10h10v30h-20v-40h-20v10h10v30h-70v-30h50v-10h-60v40h-40v-80h-10v90h170z"/>
     <rect class="feature" height="20" width="20" x="1060" y="480">
       <title>&quot;We never go that way, don't know why.&quot;</title>
     </rect>
     <rect class="feature" height="20" width="10" x="970" y="500">
       <title>Here there be troll.</title>
     </rect>
+    <path class="wall" d="m1080 500h-100v10h50l30 30"/>
+    <path class="wall" d="m400 930v-10h10v30h50v10h10v10"/>
     <rect class="feature" height="20" width="10" x="560" y="1220">
       <title>This way to Skullport.</title>
     </rect>
-    <rect class="feature" height="20" width="20" x="760" y="1270">
-      <title>&quot;We never go this way.  I don't know why.&quot;</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="790" y="1530">
-      <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="20" width="10" x="380" y="620">
-      <title>&quot;We never go this way.  I don't know why.&quot;</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="880" y="980">
-      <title>We never go this way because it would make us dead.</title>
-    </rect>
-    <rect class="feature" height="20" width="10" x="980" y="790">
-      <title>Ogre camp/lair.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="1100" y="1020">
-      <title>Ogre Leaders' Quarters.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="810" y="1530">
-      <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="910" y="1530">
-      <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="890" y="1530">
-      <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="920" y="1420">
-      <title>Good area to hunt giant lizards.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="790" y="550">
-      <title>Good area to hunt giant lizards.</title>
-    </rect>
-    <rect class="feature" height="17" width="17" x="541" y="746">
-      <title>Food and nasty bats in here.</title>
-    </rect>
-    <rect class="feature" height="20" width="21" x="681" y="981">
-      <title>Fi'i'tharg Lair.  Frog thing?  Ogres leave it tribute.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="740" y="710">
-      <title>Strange lights here.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="980" y="1300">
-      <title>Bigass spiders here, at least two, maybe five.  White fuzzy cold kind.</title>
-    </rect>
-    <path class="wall" d="m850 1148v2h10v10h-50v30h-10v-120h70v10h-20v10h-20"/>
-    <path class="wall" d="m830 1100h20v42"/>
-    <path class="wall" d="m892 1130h-2v10h-10v-70h40l10 10v10h10v10h2-12v30h10v10h2-42v-10h-2 22v-50h-30v20h20v10h-20v20z"/>
-    <path class="wall" d="m1030 1150-100-100h-80v10h70l30 30v50h-2 12v-40l50 50h-50-90v10h60v90h100z"/>
-    <path class="wall" d="m590 580v10h50v-10h-30v-20h10v-10h-10l40-40h110v30h10v-30h130v90h-30v10h40v-110h-270l-70 70v40h10v-30"/>
-    <path class="wall" d="m750 400h10v20h-10z"/>
-    <path class="wall" d="m660 230h70v40h-30v-20h-30v30h50v10h40v-30h30v-20h-40v20h-10v-30h30v-10h30v80h-10v-30h-20v50h-10v-10h-40v10h-40v10h-40v20h50v-20h30v30h-80v20h-10v-60h30z"/>
-    <path class="wall" d="m800 370h-10v10h-40v-40l40 1v19h10v-50h-10v20h-50v50h-50v30h-40v10h50v-30h90v40h-10v10h10v30h-20v-40h-20v10h10v30h-70v-30h50v-10h-60v40h-40v-80h-10v90h170z"/>
-    <path class="wall" d="m1080 500h-100v10h50l30 30"/>
-    <path class="wall" d="m400 930v-10h10v30h50v10h10v10"/>
     <path class="wall" d="m480 970v-20h-10 10v-80h-50v-10h60v100h130v80h-10v50h-50v150"/>
     <path class="wall" d="m570 1240v-140h50v-50h10v-100h-90v-10h100v20h40v10h-40v50h20v10"/>
     <path class="wall" d="m640 1020v40l10 10v10"/>
     <path class="wall" d="m640 1060h-10v70h120v-70h-10"/>
     <path class="wall" d="m730 1080v-10l10-10v-90h-40v-110h130v110h-30v90h-10v130h-10v-140h10v-80h-10v-10h-2"/>
+    <rect class="feature" height="20" width="20" x="760" y="1270">
+      <title>&quot;We never go this way.  I don't know why.&quot;</title>
+    </rect>
     <path class="wall" d="m762 960h-2v10h-10v80h10v240"/>
+    <rect class="feature" height="10" width="10" x="790" y="1530">
+      <title>These all connect somehow.</title>
+    </rect>
     <path class="wall" d="m780 1290v-90h10v340"/>
     <path class="wall" d="m390 930v-20h20v-10h-30"/>
     <path class="wall" d="m380 890h30v-20h10v10h30"/>
+    <rect class="feature" height="20" width="10" x="380" y="620">
+      <title>&quot;We never go this way.  I don't know why.&quot;</title>
+    </rect>
     <path class="wall" d="m380 620v170h30v70h10v10"/>
     <path class="wall" d="m390 620v160h30v70h80v100h30v-10h-20v-90h150v-70h10v-20h-20v80h-190v-80h-10v20"/>
     <path class="wall" d="m1080 480h-260v-270h-60v10h-110v90h-30v190l-60 60h-40v-20h-100l50 50h20v-40h20v70h-80v10h-10v140h20v10"/>
@@ -559,19 +523,40 @@
     <path class="wall" d="m700 560v30h-20v10h-90v10h160l90 90h70v-80h-10v70h-50v-20h20v-30h20v-20h-40v10"/>
     <path class="wall" d="m990 850h70v10h-30v80h100v30h-20v-20h-140v-10h50v-80h-30z"/>
     <path class="wall" d="m880 860h30v70h-10v-20h-30v-10h30v-30h-20z"/>
+    <rect class="feature" height="10" width="10" x="880" y="980">
+      <title>We never go this way because it would make us dead.</title>
+    </rect>
     <path class="wall" d="m890 990v-20h10v-30h10v90h-70v30h-30v-30h10v20h10v-50h-10v20h-10v-30h30v10"/>
     <path class="wall" d="m850 1000v-140h20v10h-10v100h20v20"/>
     <path class="wall" d="m900 820v-90h-50v20h-10v-20h-20v30h-10v-10h-10v-40l-10-10h-20v-10h10l-30-30v20h-10v-40h-90"/>
+    <rect class="feature" height="20" width="10" x="980" y="790">
+      <title>Ogre camp/lair.</title>
+    </rect>
+    <rect class="feature" height="10" width="10" x="1100" y="1020">
+      <title>Ogre Leaders' Quarters.</title>
+    </rect>
     <path class="wall" d="m1108 1020h32v-220h-40v60h-10v60h40v10h-90v-10h40v-60h-10v-10h20v-50h-100v-10h160v360h-40v210h-20v-10h10v-40h-12 2v-10h10v-50h-2 2v-50h-30v-10h30v-40h-2 2v-40h-50v2-2h-40l30 30v-20h10v-2 32h42-2v10h-40v100h20v-40h10v20h10v10h2-12v40h-10v-20h-20v30h30v10h2-32v40h30v10h-40v-210l-110-110-1-250h51v10h-40v50h40v10h-40v80h20v10h-20v70h162"/>
     <rect class="wall" height="10" width="60" x="700" y="690"/>
     <path class="wall" d="m890 820v-10h-10"/>
+    <rect class="feature" height="10" width="10" x="810" y="1530">
+      <title>These all connect somehow.</title>
+    </rect>
     <path class="wall" d="m800 1540v-340h10v30h110v20h-110v290"/>
+    <rect class="feature" height="10" width="10" x="910" y="1530">
+      <title>These all connect somehow.</title>
+    </rect>
     <path class="wall" d="m1160 1370h-120l-120 120v10h70v-40h-10v30h-50l50-50v10h10v-20l20-20 30 30v30l-10 10h-20v10h40v-50l-35-35 25-25h30v130h-150v10h160v-110h10v110h70v10h-240v10"/>
     <path class="wall" d="m1160 1360h-40v-32 2h10v20h30v-50h-20v-30h10v20h10v-130h-2 2v-390h-230v-270h40v50h-10v-40h-20v70h60v-40h-20v-10h50v10"/>
     <path class="wall" d="m1120 1160h32-2v10h-20v40h20v40-20h-20v90h-10v2z"/>
     <path class="wall" d="m890 1390h50v10h20v10h-20v10h-10v-20h-30v10h-10z"/>
+    <rect class="feature" height="10" width="10" x="890" y="1530">
+      <title>These all connect somehow.</title>
+    </rect>
     <path class="wall" d="m910 1540v-20l-10 10v10"/>
     <path class="wall" d="m820 1540v-200h40v-40h-40v-40h40v10h-30v20h40v-30h50v10h-40v30h-10v40h70v10h70v-80h-70v40h-10v-50h100v100h-100v-10h-100v50h40v-10h10v20h-50v40h10v-10h60v10h-50v10h-20v70h30v10h20v-20h-20v-10h50l-20 20v10"/>
+    <rect class="feature" height="10" width="10" x="920" y="1420">
+      <title>Good area to hunt giant lizards.</title>
+    </rect>
     <path class="wall" d="m840 1370h190l-120 120v10h-70v-30h10v20h50v-10l30-30h-20v-20h-20v-10h30v10h20v10l30-30v-10h10l20-20h-160z"/>
     <rect class="door" height="2" width="6" x="537" y="569"/>
     <rect class="door" height="6" width="2" x="1049" y="1112"/>
@@ -587,64 +572,79 @@
     <rect class="door" height="2" width="8" x="770" y="959"/>
     <rect class="door" height="2" width="6" x="1152" y="1159"/>
     <rect class="door" height="6" width="2" x="1119" y="1322"/>
-    <path class="feature" d="m863 680a3 3 0 1 1-6 0 3 3 0 1 1 6 0z" sodipodi:type="arc">
-      <title>&quot;Big statue of some human.</title>
-    </path>
-    <path class="feature-water" d="m1139 800a19 19 0 1 1-38 0" sodipodi:end="3.1415927" sodipodi:open="true" sodipodi:start="0" sodipodi:type="arc">
+    <circle class="feature" cx="863" cy="680" r="3">
+      <title>&quot;Big statue of some human.&quot;</title>
+    </circle>
+    <path class="feature-water" d="m1139 800a19 19 0 1 1-38 0" sodipodi:cx="1120" sodipodi:cy="800" sodipodi:end="3.1415927" sodipodi:open="true" sodipodi:rx="19" sodipodi:ry="19" sodipodi:start="0" sodipodi:type="arc">
       <title>Make waste here.</title>
     </path>
-    <path class="feature-water" d="m1134 800a14 12 0 1 1-28 0" sodipodi:end="3.1415927" sodipodi:open="true" sodipodi:start="0" sodipodi:type="arc">
+    <path class="feature-water" d="m1134 800a14 12 0 1 1-28 0" sodipodi:cx="1120" sodipodi:cy="800" sodipodi:end="3.1415927" sodipodi:open="true" sodipodi:rx="14" sodipodi:ry="14" sodipodi:start="0" sodipodi:type="arc">
       <title>Bathe here.</title>
     </path>
-    <path class="feature-water" d="m1129 800a9 8 0 1 1-18 0" sodipodi:end="3.1415927" sodipodi:open="true" sodipodi:start="0" sodipodi:type="arc">
+    <path class="feature-water" d="m1129 800a9 8 0 1 1-18 0" sodipodi:cx="1120" sodipodi:cy="800" sodipodi:end="3.1415927" sodipodi:open="true" sodipodi:rx="9" sodipodi:ry="9" sodipodi:start="0" sodipodi:type="arc">
       <title>Drink from here.</title>
     </path>
     <rect class="feature" height="20" width="2" x="931" y="770"/>
     <rect class="feature" height="20" width="2" x="646" y="610"/>
+    <rect class="feature" height="10" width="10" x="790" y="550">
+      <title>Good area to hunt giant lizards.</title>
+    </rect>
+    <rect class="feature" height="17" width="17" x="541" y="746">
+      <title>Food and nasty bats in here.</title>
+    </rect>
+    <rect class="feature" height="20" width="21" x="681" y="981">
+      <title>Fi'i'tharg Lair.  Frog thing?  Ogres leave it tribute.</title>
+    </rect>
+    <rect class="feature" height="10" width="10" x="740" y="710">
+      <title>Strange lights here.</title>
+    </rect>
+    <rect class="feature" height="10" width="10" x="980" y="1300">
+      <title>Bigass spiders here, at least two, maybe five.  White fuzzy cold kind.</title>
+    </rect>
     <g id="bat-room-columns">
-      <circle class="column" cx="490" cy="705" id="circle764" r="4"/>
-      <circle class="column" cx="510" cy="685" id="circle766" r="4"/>
-      <circle class="column" cx="490" cy="805" id="circle768" r="4"/>
-      <circle class="column" cx="510" cy="815" id="circle770" r="4"/>
-      <circle class="column" cx="560" cy="735" id="circle772" r="4"/>
-      <circle class="column" cx="560" cy="775" id="circle774" r="4"/>
-      <circle class="column" cx="590" cy="710" id="circle776" r="4"/>
-      <circle class="column" cx="590" cy="800" id="circle778" r="4"/>
-      <circle class="column" cx="620" cy="795" id="circle780" r="4"/>
-      <circle class="column" cx="620" cy="715" id="circle782" r="4"/>
-      <circle class="column" cx="630" cy="735" id="circle784" r="4"/>
-      <circle class="column" cx="630" cy="775" id="circle786" r="4"/>
+      <circle class="column" cx="490" cy="705" r="4" sodipodi:cx="490" sodipodi:cy="705" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="510" cy="685" r="4" sodipodi:cx="510" sodipodi:cy="685" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="490" cy="805" r="4" sodipodi:cx="490" sodipodi:cy="805" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="510" cy="815" r="4" sodipodi:cx="510" sodipodi:cy="815" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="560" cy="735" r="4" sodipodi:cx="560" sodipodi:cy="735" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="560" cy="775" r="4" sodipodi:cx="560" sodipodi:cy="775" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="590" cy="710" r="4" sodipodi:cx="590" sodipodi:cy="710" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="590" cy="800" r="4" sodipodi:cx="590" sodipodi:cy="800" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="620" cy="795" r="4" sodipodi:cx="620" sodipodi:cy="795" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="620" cy="715" r="4" sodipodi:cx="620" sodipodi:cy="715" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="630" cy="735" r="4" sodipodi:cx="630" sodipodi:cy="735" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="630" cy="775" r="4" sodipodi:cx="630" sodipodi:cy="775" sodipodi:rx="4" sodipodi:ry="4"/>
     </g>
     <g id="room-columns">
-      <circle class="column" cx="550" cy="925" id="circle789" r="4"/>
-      <circle class="column" cx="570" cy="925" id="circle791" r="4"/>
-      <circle class="column" cx="590" cy="925" id="circle793" r="4"/>
-      <circle class="column" cx="610" cy="925" id="circle795" r="4"/>
-      <circle class="column" cx="630" cy="925" id="circle797" r="4"/>
-      <circle class="column" cx="650" cy="925" id="circle799" r="4"/>
-      <circle class="column" cx="550" cy="865" id="circle801" r="4"/>
-      <circle class="column" cx="570" cy="865" id="circle803" r="4"/>
-      <circle class="column" cx="590" cy="865" id="circle805" r="4"/>
-      <circle class="column" cx="610" cy="865" id="circle807" r="4"/>
-      <circle class="column" cx="630" cy="865" id="circle809" r="4"/>
-      <circle class="column" cx="650" cy="865" id="circle811" r="4"/>
+      <circle class="column" cx="550" cy="925" r="4" sodipodi:cx="550" sodipodi:cy="925" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="570" cy="925" r="4" sodipodi:cx="570" sodipodi:cy="925" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="590" cy="925" r="4" sodipodi:cx="590" sodipodi:cy="925" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="610" cy="925" r="4" sodipodi:cx="610" sodipodi:cy="925" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="630" cy="925" r="4" sodipodi:cx="630" sodipodi:cy="925" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="650" cy="925" r="4" sodipodi:cx="650" sodipodi:cy="925" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="550" cy="865" r="4" sodipodi:cx="550" sodipodi:cy="865" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="570" cy="865" r="4" sodipodi:cx="570" sodipodi:cy="865" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="590" cy="865" r="4" sodipodi:cx="590" sodipodi:cy="865" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="610" cy="865" r="4" sodipodi:cx="610" sodipodi:cy="865" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="630" cy="865" r="4" sodipodi:cx="630" sodipodi:cy="865" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="650" cy="865" r="4" sodipodi:cx="650" sodipodi:cy="865" sodipodi:rx="4" sodipodi:ry="4"/>
     </g>
     <g id="double-door-columns">
-      <circle class="column" cx="760" cy="980" id="circle814" r="4"/>
-      <circle class="column" cx="760" cy="995" id="circle816" r="4"/>
-      <circle class="column" cx="760" cy="1010" id="circle818" r="4"/>
-      <circle class="column" cx="760" cy="1025" id="circle820" r="4"/>
-      <circle class="column" cx="760" cy="1040" id="circle822" r="4"/>
-      <circle class="column" cx="780" cy="980" id="circle824" r="4"/>
-      <circle class="column" cx="780" cy="995" id="circle826" r="4"/>
-      <circle class="column" cx="780" cy="1010" id="circle828" r="4"/>
-      <circle class="column" cx="780" cy="1025" id="circle830" r="4"/>
-      <circle class="column" cx="780" cy="1040" id="circle832" r="4"/>
+      <circle class="column" cx="760" cy="980" r="4" sodipodi:cx="760" sodipodi:cy="980" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="760" cy="995" r="4" sodipodi:cx="760" sodipodi:cy="995" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="760" cy="1010" r="4" sodipodi:cx="760" sodipodi:cy="1010" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="760" cy="1025" r="4" sodipodi:cx="760" sodipodi:cy="1025" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="760" cy="1040" r="4" sodipodi:cx="760" sodipodi:cy="1040" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="780" cy="980" r="4" sodipodi:cx="780" sodipodi:cy="980" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="780" cy="995" r="4" sodipodi:cx="780" sodipodi:cy="995" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="780" cy="1010" r="4" sodipodi:cx="780" sodipodi:cy="1010" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="780" cy="1025" r="4" sodipodi:cx="780" sodipodi:cy="1025" sodipodi:rx="4" sodipodi:ry="4"/>
+      <circle class="column" cx="780" cy="1040" r="4" sodipodi:cx="780" sodipodi:cy="1040" sodipodi:rx="4" sodipodi:ry="4"/>
     </g>
     <g id="entrance-columns">
-      <circle class="column" cx="470" cy="950" id="circle835" r="2"/>
-      <circle class="column" cx="420" cy="880" id="circle837" r="2"/>
-      <circle class="column" cx="450" cy="880" id="circle839" r="2"/>
+      <circle class="column" cx="470" cy="950" r="2" sodipodi:cx="470" sodipodi:cy="950" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="420" cy="880" r="2" sodipodi:cx="420" sodipodi:cy="880" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="450" cy="880" r="2" sodipodi:cx="450" sodipodi:cy="880" sodipodi:rx="2" sodipodi:ry="2"/>
     </g>
     <text class="name" x="444" xml:space="preserve" y="913"><tspan sodipodi:role="line" x="444" y="913">A</tspan></text>
     <text class="name" x="562" xml:space="preserve" y="1240"><tspan sodipodi:role="line" x="562" y="1240">B</tspan></text>
@@ -667,14 +667,14 @@
     <text class="name" x="793" xml:space="preserve" y="557"><tspan sodipodi:role="line" x="793" y="557">K</tspan></text>
     <text class="name" x="742" xml:space="preserve" y="716"><tspan sodipodi:role="line" x="742" y="716">L</tspan></text>
     <text class="name" x="982" xml:space="preserve" y="1306"><tspan sodipodi:role="line" x="982" y="1306">M</tspan></text>
-    <path d="m592 755-28-5v10z" inkscape:original-d="m 592,755 -28,0" inkscape:path-effect="#path-effect6769" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <path d="m537 756-25-5v10z" inkscape:original-d="m 537,756 -25,0" inkscape:path-effect="#path-effect6773" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <path d="m490 712-5.99703 28.82769 9.99406 0.34462z" inkscape:original-d="m 490,712 -1,29" inkscape:path-effect="#path-effect6777" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <path d="m488 802 5.9974-30.83879-9.9948-0.32242z" inkscape:original-d="m 488,802 1,-31" inkscape:path-effect="#path-effect6781" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <path d="m566 686-28.30314 18.24643 6.60628 7.50714z" inkscape:original-d="m 566,686 -25,22" inkscape:path-effect="#path-effect6789" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <path d="m564 826-20.32598-29.3914-7.34804 6.7828z" inkscape:original-d="m 564,826 -24,-26" inkscape:path-effect="#path-effect6793" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <path d="m689 1038 5.99681-27.8215-9.99362-0.357z" inkscape:original-d="m 689,1038 1,-28" inkscape:path-effect="#path-effect6801" style="fill:orange;fill-rule:evenodd;stroke:none"/>
-    <path d="m690 1090 5-30h-10z" inkscape:original-d="m 690,1090 0,-30" inkscape:path-effect="#path-effect6805" style="fill:orange;fill-rule:evenodd;stroke:none"/>
+    <path d="m592 755-28-5v10z" inkscape:original-d="m 592,755 -28,0" inkscape:path-effect="#path-effect6769" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
+    <path d="m537 756-25-5v10z" inkscape:original-d="m 537,756 -25,0" inkscape:path-effect="#path-effect6773" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
+    <path d="m490 712-5.99703 28.82769 9.99406 0.34462z" inkscape:original-d="m 490,712 -1,29" inkscape:path-effect="#path-effect6777" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
+    <path d="m488 802 5.9974-30.83879-9.9948-0.32242z" inkscape:original-d="m 488,802 1,-31" inkscape:path-effect="#path-effect6781" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
+    <path d="m566 686-28.30314 18.24643 6.60628 7.50714z" inkscape:original-d="m 566,686 -25,22" inkscape:path-effect="#path-effect6789" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
+    <path d="m564 826-20.32598-29.3914-7.34804 6.7828z" inkscape:original-d="M 564,826 540,800" inkscape:path-effect="#path-effect6793" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
+    <path d="m689 1038 5.99681-27.8215-9.99362-0.357z" inkscape:original-d="m 689,1038 1,-28" inkscape:path-effect="#path-effect6801" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
+    <path d="m690 1090 5-30h-10z" inkscape:original-d="m 690,1090 0,-30" inkscape:path-effect="#path-effect6805" style="fill:#ffa500;fill-rule:evenodd;stroke:none"/>
   </g>
   <g id="mythdranor" inkscape:groupmode="layer" inkscape:label="Myth Dranor" style="display:inline">
     <path class="corr" d="m585 250v10h-115v20h115v60h20v-60h60v-20h-60v-10h-20z"/>
@@ -688,9 +688,6 @@
     <path class="feature" d="m515 171h9l10 9v10h-5v-7l-7-7h-7z">
       <title>I don't have a pattern for winding staircases.</title>
     </path>
-    <rect class="feature" height="6" width="6" x="512" y="272">
-      <title>Arrive here from Undermountain.</title>
-    </rect>
     <path class="wall" d="m470 278v2h2"/>
     <path class="wall" d="m478 280h107v60"/>
     <path class="wall" d="m470 262v-2h115v-10h2-2l-25-30v-12 12h-12 2v20h-15"/>
@@ -712,27 +709,29 @@
     <rect class="door" height="2" width="8" x="595" y="249"/>
     <rect class="door" height="6" width="2" x="559" y="202"/>
     <rect class="door" height="6" width="2" x="629" y="202"/>
+    <rect class="feature" height="6" width="6" x="512" y="272">
+      <title>Arrive here from Undermountain.</title>
+    </rect>
     <rect class="feature" height="20" width="2" x="534" y="200">
       <title>There's not much left of this curtain after the fight with the Silent Travellers.</title>
     </rect>
-    <circle class="column" cx="590" cy="280" id="circle74" r="1"/>
-    <circle class="column" cx="590" cy="290" id="circle76" r="1"/>
-    <circle class="column" cx="590" cy="300" id="circle78" r="1"/>
-    <circle class="column" cx="590" cy="310" id="circle80" r="1"/>
-    <circle class="column" cx="590" cy="320" id="circle82" r="1"/>
-    <circle class="column" cx="590" cy="330" id="circle84" r="1"/>
-    <circle class="column" cx="590" cy="340" id="circle86" r="1"/>
-    <circle class="column" cx="600" cy="280" id="circle88" r="1"/>
-    <circle class="column" cx="600" cy="290" id="circle90" r="1"/>
-    <circle class="column" cx="600" cy="300" id="circle92" r="1"/>
-    <circle class="column" cx="600" cy="310" id="circle94" r="1"/>
-    <circle class="column" cx="600" cy="320" id="circle96" r="1"/>
-    <circle class="column" cx="600" cy="330" id="circle98" r="1"/>
-    <circle class="column" cx="600" cy="340" id="circle100" r="1"/>
+    <circle class="column" cx="590" cy="280" r="1" sodipodi:cx="590" sodipodi:cy="280" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="590" cy="290" r="1" sodipodi:cx="590" sodipodi:cy="290" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="590" cy="300" r="1" sodipodi:cx="590" sodipodi:cy="300" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="590" cy="310" r="1" sodipodi:cx="590" sodipodi:cy="310" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="590" cy="320" r="1" sodipodi:cx="590" sodipodi:cy="320" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="590" cy="330" r="1" sodipodi:cx="590" sodipodi:cy="330" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="590" cy="340" r="1" sodipodi:cx="590" sodipodi:cy="340" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="600" cy="280" r="1" sodipodi:cx="600" sodipodi:cy="280" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="600" cy="290" r="1" sodipodi:cx="600" sodipodi:cy="290" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="600" cy="300" r="1" sodipodi:cx="600" sodipodi:cy="300" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="600" cy="310" r="1" sodipodi:cx="600" sodipodi:cy="310" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="600" cy="320" r="1" sodipodi:cx="600" sodipodi:cy="320" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="600" cy="330" r="1" sodipodi:cx="600" sodipodi:cy="330" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="600" cy="340" r="1" sodipodi:cx="600" sodipodi:cy="340" sodipodi:rx="1" sodipodi:ry="1"/>
     <path class="feature" d="m600 240 20-30-12-10h-26l-12 10 20 30v-10l-13-20 5-5h25l7 5-14 20z">
       <title>This is a big conference table.</title>
     </path>
-    <path class="feature" d="m0 0a0 0 0 1 1 0 0 0 0 0 1 1 0 0z" sodipodi:type="arc"/>
     <rect class="feature" height="2" width="2" x="587" y="239"/>
     <rect class="feature" height="2" width="2" x="584" y="236"/>
     <rect class="feature" height="2" width="2" x="582" y="232"/>
@@ -757,7 +756,7 @@
     <rect class="feature" height="2" width="2" x="611" y="200"/>
     <rect class="feature" height="2" width="2" x="615" y="202"/>
     <rect class="feature" height="2" width="2" x="618" y="205"/>
-    <text class="name" x="472" xml:space="preserve" y="288"><tspan sodipodi:role="line" x="472" y="288">&quot;Stairway up and east</tspan><tspan sodipodi:role="line" x="472" y="295">to a four-way intersection&quot;</tspan></text>
+    <text class="name" x="472" xml:space="preserve" y="288"><tspan sodipodi:role="line" x="472" y="288">&quot;Stairway up and east</tspan><tspan sodipodi:role="line" x="472" y="295.5">to a four-way intersection&quot;</tspan></text>
   </g>
   <g id="um-l2-l1" inkscape:groupmode="layer" inkscape:label="Undermountain L2 Lower 1" style="display:inline">
     <rect class="corr" height="70" width="10" x="1810" y="140"/>
@@ -798,7 +797,7 @@
     <rect class="corr" height="10" width="10" x="1530" y="230"/>
     <rect class="corr" height="10" width="20" x="1420" y="330"/>
     <rect class="corr" height="10" width="10" x="1660" y="300"/>
-    <!-- Rooms start here -->
+    <!-- Corridors start here -->
     <rect class="room" height="30" width="20" x="1620" y="260"/>
     <rect class="room" height="30" width="40" x="1680" y="140"/>
     <rect class="room" height="50" width="20" x="1440" y="140"/>
@@ -910,7 +909,7 @@
     <rect class="feature" height="6" id="smoke-powder-cache" width="4" x="1660" y="422">
       <title>Cache for the smoke powder.  Dug by Brogan as an enlarged Umber Hulk, hidden by Stone Shape.</title>
     </rect>
-    <circle class="feature" cx="1700" cy="310" id="magic-gate" r="7">
+    <circle class="feature" cx="1700" cy="310" id="magic-gate" r="7" sodipodi:cx="1700" sodipodi:cy="310" sodipodi:rx="7" sodipodi:ry="7">
       <title>Magical gate.  Probably how the smoke powder has been coming in.</title>
     </circle>
     <rect class="feature" height="10" id="illusion-wall" width="2" x="1648" y="280">
@@ -1064,6 +1063,9 @@
     <rect class="room" height="50" width="40" x="120" y="3650"/>
     <rect class="room" height="60" width="170" x="50" y="3060"/>
     <rect class="room" height="60" width="50" x="220" y="3300"/>
+    <rect class="room" height="10" width="10" x="1635" y="1687">
+      <title>This room has a looted couch and other debris in it.</title>
+    </rect>
     <!-- Stairs start here -->
     <path class="stairs-ew" d="m2830 620 30 3v4l-30 3z" id="stairs-cursd"/>
     <path class="stairs-ew" d="m1130 2493 20-3v10l-20-3z"/>
@@ -1090,6 +1092,9 @@
     <rect class="pit" height="10" id="pit-rock-lobster-b" width="10" x="2700" y="670">
       <title>This pit has a nasty robot lobster in it.</title>
     </rect>
+    <rect class="pit" height="10" width="10" x="2770" y="670">
+      <title>This 10' deep pit had a gelatenous cube in it.</title>
+    </rect>
     <rect class="pit" height="10" id="pit-dd-a" width="10" x="270" y="3610">
       <title>Don't fall into this pit again.</title>
     </rect>
@@ -1112,7 +1117,7 @@
     <path class="wall" d="m2720 680h20v-40"/>
     <path class="wall" d="m2720 670h10v-20h-20v60h10v12"/>
     <path class="wall" d="m2740 640h-40v70h-10v12"/>
-    <path class="wall" d="m2690 728v12h12" id="fixme-wall-foo"/>
+    <path class="wall" d="m2690 728v12h12" id="wall-seascape"/>
     <path class="wall" d="m2708 740h12v-12"/>
     <path class="wall" d="m2720 722v-2h30v-20h-20v-20h10v-10h30v-20h-10v-32"/>
     <path class="wall" d="m2760 612v-2h10v-10"/>
@@ -1204,6 +1209,7 @@
     <path class="wall" d="m868 2340h12v-20h10v-50"/>
     <path class="wall" d="m910 2290h-10v-20"/>
     <path class="wall" d="m940 2360h10v-20h10v-10h-70v10h10v40h-40v-12 2h-40v10h10v60h10v30h-10v40h10v30m-30 0v-30h10v-40h-10v-10h-40v-20h-10v10h-20v10h20v20h-30v-10h-100v80h10v-10h12"/>
+    <path class="wall" d="m1638 1697h-3v-10h10v10h-3c3.9774 1.8973 7.1858 3.6516 7 6h2v4h-2c-4.0343 7.5027-10.7112 10.736-17 0 0.4736-3.4825 1.7905-6.9845 6-10z" id="wall-spiral-staircase"/>
     <!-- Doors start here -->
     <rect class="sec-door" height="6" id="s-door-seascape-a" width="2" x="2689" y="722"/>
     <rect class="sec-door" height="6" id="s-door-seascape-b" width="2" x="2719" y="722"/>
@@ -1303,10 +1309,10 @@
     <rect class="door" height="6" width="2" x="859" y="2342"/>
     <rect class="door" height="6" width="2" x="859" y="2362"/>
     <!-- Features start here -->
-    <circle class="column" cx="330" cy="2820" id="column-frost-spiders-1" r="1"/>
-    <circle class="column" cx="340" cy="2820" id="column-frost-spiders-2" r="1"/>
-    <circle class="column" cx="350" cy="2820" id="column-frost-spiders-3" r="1"/>
-    <circle class="column" cx="360" cy="2820" id="column-frost-spiders-4" r="1"/>
+    <circle class="column" cx="330" cy="2820" id="column-frost-spiders-1" r="1" sodipodi:cx="330" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="340" cy="2820" id="column-frost-spiders-2" r="1" sodipodi:cx="340" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="350" cy="2820" id="column-frost-spiders-3" r="1" sodipodi:cx="350" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
+    <circle class="column" cx="360" cy="2820" id="column-frost-spiders-4" r="1" sodipodi:cx="360" sodipodi:cy="2820" sodipodi:rx="1" sodipodi:ry="1"/>
     <path class="feature-bad" d="m2777 625h13m-30 0h13" id="fence-b">
       <title>To avoid getting hit by a trap, you need to pass through the gap in this fence.</title>
     </path>
@@ -1336,18 +1342,41 @@
     </rect>
     <path class="feature-bad" d="m550 2730v10h-1v-10z" id="portcullis-litch-a"/>
     <rect class="feature-bad" height="10" id="portcullis-litch-b" width="1" x="479" y="2780"/>
-    <circle class="feature" cx="1290" cy="2305" id="fixme-round-a" r="2.5"/>
-    <circle class="feature" cx="515" cy="2760" id="fixme-round-b" r="3"/>
-    <rect class="feature" height="4" width="6" x="512" y="2773"/>
-    <rect class="feature" height="5" width="5" x="512" y="2742"/>
-    <rect class="feature" height="10" width="1" x="1119" y="2490"/>
-    <rect class="feature" height="10" width="1" x="1109" y="2490"/>
-    <rect class="feature" height="1" width="10" x="1090" y="2477"/>
-    <rect class="feature" height="1" width="10" x="1090" y="2484"/>
-    <rect class="feature" height="1" width="10" x="1090" y="2505"/>
-    <rect class="feature" height="1" width="10" x="1090" y="2513"/>
-    <rect class="feature" height="10" width="1" x="1079" y="2490"/>
-    <rect class="feature" height="10" width="1" x="1069" y="2490"/>
+    <circle class="feature" cx="1290" cy="2305" id="fixme-round-a" r="2.5" sodipodi:cx="1290" sodipodi:cy="2305" sodipodi:rx="2.5" sodipodi:ry="2.5">
+      <title>I think this is a fountain that you walk through to trigger the staircase.</title>
+    </circle>
+    <circle class="feature" cx="515" cy="2760" id="fixme-round-b" r="3" sodipodi:cx="515" sodipodi:cy="2760" sodipodi:rx="3" sodipodi:ry="3">
+      <title>This is a round thing in the Litch's labratory.</title>
+    </circle>
+    <rect class="feature" height="4" width="6" x="512" y="2773">
+      <title>This is a rectangular thing in the litch's labratory.</title>
+    </rect>
+    <rect class="feature" height="5" width="5" x="512" y="2742">
+      <title>This is a rectangular thing in the litch's labratory.</title>
+    </rect>
+    <rect class="feature" height="10" width="6" x="1112" y="2490">
+      <title>This is an archway/tunnel under the walkway.</title>
+    </rect>
+    <rect class="feature" height="4" width="10" x="1090" y="2479">
+      <title>This is a tunnel/archway under the walkway.</title>
+    </rect>
+    <rect class="feature" height="5" width="10" x="1090" y="2506">
+      <title>This is a tunnel/archway under the walkway.</title>
+    </rect>
+    <rect class="feature" height="10" width="6" x="1072" y="2490">
+      <title>This is a tunnel/archway under the walkway.</title>
+    </rect>
+    <circle class="feature" cx="1640.5" cy="1705.5" r="8.5">
+      <title>This is a spiral staircase, going down a long ways IIRC.</title>
+    </circle>
+    <rect class="feature" height="4" width="2" x="1649" y="1703">
+      <title>This compartment held a chest guarded by a little pict.</title>
+    </rect>
+    <circle class="feature" cx="155" cy="2855" r="6"/>
+    <circle class="column" cx="168" cy="2868" r="2"/>
+    <circle class="column" cx="168" cy="2842" r="2"/>
+    <circle class="column" cx="142" cy="2868" r="2"/>
+    <circle class="column" cx="142" cy="2842" r="2"/>
     <path class="feature-path" d="m1746 1876-11 9-1 79-89 1v-25" id="path-dexter-dance-c">
       <title>Dexter dance path.</title>
     </path>
@@ -1360,9 +1389,10 @@
     <text class="name" x="861" xml:space="preserve" y="2353"><tspan x="861" y="2353">Shriekers</tspan></text>
     <text class="name" x="282" xml:space="preserve" y="2853"><tspan x="282" y="2853">Puzzle</tspan><tspan x="282" y="2860">Lock</tspan></text>
     <text class="name" x="501" xml:space="preserve" y="2748"><tspan x="501" y="2748">Litch</tspan></text>
+    <text class="name" x="1121" xml:space="preserve" y="2337"><tspan sodipodi:role="line" x="1121" y="2337">Teleportal around</tspan><tspan sodipodi:role="line" x="1121" y="2347">here somewhere</tspan></text>
     <!-- Unclassified start here -->
   </g>
-  <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:inline">
+  <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Undermountain L1 Main" style="display:none">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
     <path class="corr" d="m1000 1346v44h10 60v20h10 10v10h10v-10-10h-20v-30h-10v10h-60v-34z"/>
@@ -1702,7 +1732,7 @@
     <rect class="pit" height="10" width="20" x="2340" y="830">
       <title>This pit is deep and has 25' of water in it.</title>
     </rect>
-    <circle class="pit" cx="1620" cy="1255" id="circular-pit" r="10">
+    <circle class="pit" cx="1620" cy="1255" id="circular-pit" r="10" sodipodi:cx="1620" sodipodi:cy="1255" sodipodi:rx="10" sodipodi:ry="10">
       <title>This pit has enhanced gravity in it, for extra pain.</title>
     </circle>
     <!-- Walls start here -->
@@ -1938,11 +1968,14 @@
     <rect class="sec-door" height="2" id="s-door-animated-armor" width="6" x="2032" y="1079"/>
     <rect class="sec-door" height="2" id="s-door-demon-gate" width="6" x="2052" y="1059"/>
     <rect class="sec-door" height="6" width="2" x="2119" y="982"/>
-    <rect class="sec-door" height="6" id="secret-door-couch-room" width="2" x="2669" y="642"><title>Something about touching the red tiles opens this door.</title></rect>
+    <rect class="sec-door" height="6" id="secret-door-couch-room" width="2" x="2669" y="642">
+      <title>Something about touching the red tiles opens this door.</title>
+    </rect>
     <rect class="sec-door" height="10" width="2" x="1178" y="1330"/>
     <rect class="sec-door" height="2" width="6" x="2162" y="1349"/>
     <rect class="sec-door" height="6" width="2" x="2149" y="1432"/>
     <rect class="sec-door" height="6" width="2" x="959" y="1338"/>
+    <rect class="sec-door" height="2" width="6" x="1637" y="1711"/>
     <rect class="door" height="16" width="2" x="1999" y="1272"/>
     <rect class="door" height="2" width="6" x="1943" y="1159"/>
     <rect class="door" height="2" width="6" x="2192" y="1319"/>
@@ -2025,131 +2058,131 @@
     <rect class="door" height="8" width="2" x="2239" y="792"/>
     <rect class="door" height="8" width="2" x="2239" y="800"/>
     <g id="cooking-columns">
-      <circle class="column" cx="1045" cy="1285" r="2.5"/>
-      <circle class="column" cx="1045" cy="1295" r="2.5"/>
-      <circle class="column" cx="1045" cy="1305" r="2.5"/>
-      <circle class="column" cx="1045" cy="1315" r="2.5"/>
-      <circle class="column" cx="1045" cy="1325" r="2.5"/>
-      <circle class="column" cx="1055" cy="1285" r="2.5"/>
-      <circle class="column" cx="1055" cy="1295" r="2.5"/>
-      <circle class="column" cx="1055" cy="1305" r="2.5"/>
-      <circle class="column" cx="1055" cy="1315" r="2.5"/>
-      <circle class="column" cx="1055" cy="1325" r="2.5"/>
-      <circle class="column" cx="1065" cy="1285" r="2.5"/>
-      <circle class="column" cx="1065" cy="1295" r="2.5"/>
-      <circle class="column" cx="1065" cy="1315" r="2.5"/>
-      <circle class="column" cx="1065" cy="1325" r="2.5"/>
-      <circle class="column" cx="1075" cy="1285" r="2.5"/>
-      <circle class="column" cx="1075" cy="1295" r="2.5"/>
-      <circle class="column" cx="1075" cy="1305" r="2.5"/>
-      <circle class="column" cx="1075" cy="1315" r="2.5"/>
-      <circle class="column" cx="1075" cy="1325" r="2.5"/>
-      <circle class="column" cx="1085" cy="1285" r="2.5"/>
-      <circle class="column" cx="1085" cy="1295" r="2.5"/>
-      <circle class="column" cx="1085" cy="1305" r="2.5"/>
-      <circle class="column" cx="1085" cy="1315" r="2.5"/>
-      <circle class="column" cx="1085" cy="1325" r="2.5"/>
+      <circle class="column" cx="1045" cy="1285" r="2.5" sodipodi:cx="1045" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1045" cy="1295" r="2.5" sodipodi:cx="1045" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1045" cy="1305" r="2.5" sodipodi:cx="1045" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1045" cy="1315" r="2.5" sodipodi:cx="1045" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1045" cy="1325" r="2.5" sodipodi:cx="1045" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1055" cy="1285" r="2.5" sodipodi:cx="1055" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1055" cy="1295" r="2.5" sodipodi:cx="1055" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1055" cy="1305" r="2.5" sodipodi:cx="1055" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1055" cy="1315" r="2.5" sodipodi:cx="1055" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1055" cy="1325" r="2.5" sodipodi:cx="1055" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1065" cy="1285" r="2.5" sodipodi:cx="1065" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1065" cy="1295" r="2.5" sodipodi:cx="1065" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1065" cy="1315" r="2.5" sodipodi:cx="1065" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1065" cy="1325" r="2.5" sodipodi:cx="1065" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1075" cy="1285" r="2.5" sodipodi:cx="1075" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1075" cy="1295" r="2.5" sodipodi:cx="1075" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1075" cy="1305" r="2.5" sodipodi:cx="1075" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1075" cy="1315" r="2.5" sodipodi:cx="1075" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1075" cy="1325" r="2.5" sodipodi:cx="1075" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1085" cy="1285" r="2.5" sodipodi:cx="1085" sodipodi:cy="1285" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1085" cy="1295" r="2.5" sodipodi:cx="1085" sodipodi:cy="1295" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1085" cy="1305" r="2.5" sodipodi:cx="1085" sodipodi:cy="1305" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1085" cy="1315" r="2.5" sodipodi:cx="1085" sodipodi:cy="1315" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
+      <circle class="column" cx="1085" cy="1325" r="2.5" sodipodi:cx="1085" sodipodi:cy="1325" sodipodi:rx="2.5" sodipodi:ry="2.5"/>
     </g>
     <g id="dexter-dance-columns">
-        <circle class="column" cx="1750" cy="1930" r="2"/>
-        <circle class="column" cx="1750" cy="1940" r="2"/>
-        <circle class="column" cx="1750" cy="1950" r="2"/>
-        <circle class="column" cx="1740" cy="1950" r="2"/>
-        <circle class="column" cx="1740" cy="1940" r="2"/>
+      <circle class="column" cx="1750" cy="1930" r="2" sodipodi:cx="1750" sodipodi:cy="1930" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1750" cy="1940" r="2" sodipodi:cx="1750" sodipodi:cy="1940" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1750" cy="1950" r="2" sodipodi:cx="1750" sodipodi:cy="1950" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1740" cy="1950" r="2" sodipodi:cx="1740" sodipodi:cy="1950" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1740" cy="1940" r="2" sodipodi:cx="1740" sodipodi:cy="1940" sodipodi:rx="2" sodipodi:ry="2"/>
     </g>
     <g id="metal-spider-room-columns">
-      <circle class="column" cx="1730" cy="2000" r="2"/>
-      <circle class="column" cx="1730" cy="2010" r="2"/>
-      <circle class="column" cx="1730" cy="2020" r="2"/>
-      <circle class="column" cx="1740" cy="2000" r="2"/>
-      <circle class="column" cx="1740" cy="2020" r="2"/>
-      <circle class="column" cx="1750" cy="2000" r="2"/>
-      <circle class="column" cx="1750" cy="2020" r="2"/>
-      <circle class="column" cx="1760" cy="2000" r="2"/>
-      <circle class="column" cx="1760" cy="2010" r="2"/>
-      <circle class="column" cx="1760" cy="2020" r="2"/>
+      <circle class="column" cx="1730" cy="2000" r="2" sodipodi:cx="1730" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1730" cy="2010" r="2" sodipodi:cx="1730" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1730" cy="2020" r="2" sodipodi:cx="1730" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1740" cy="2000" r="2" sodipodi:cx="1740" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1740" cy="2020" r="2" sodipodi:cx="1740" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1750" cy="2000" r="2" sodipodi:cx="1750" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1750" cy="2020" r="2" sodipodi:cx="1750" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1760" cy="2000" r="2" sodipodi:cx="1760" sodipodi:cy="2000" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1760" cy="2010" r="2" sodipodi:cx="1760" sodipodi:cy="2010" sodipodi:rx="2" sodipodi:ry="2"/>
+      <circle class="column" cx="1760" cy="2020" r="2" sodipodi:cx="1760" sodipodi:cy="2020" sodipodi:rx="2" sodipodi:ry="2"/>
     </g>
-    <circle class="column" cx="1707" cy="208" id="column-lightning-1" r="3">
+    <circle class="column" cx="1707" cy="208" id="column-lightning-1" r="3" sodipodi:cx="1707" sodipodi:cy="208" sodipodi:rx="3" sodipodi:ry="3">
       <title>These columns shoot lightning.</title>
     </circle>
-    <circle class="column" cx="1695" cy="218" id="column-lightning-2" r="3">
+    <circle class="column" cx="1695" cy="218" id="column-lightning-2" r="3" sodipodi:cx="1695" sodipodi:cy="218" sodipodi:rx="3" sodipodi:ry="3">
       <title>These columns shoot lightning.</title>
     </circle>
-    <circle class="column" cx="1763" cy="208" id="column-lightning-3" r="3">
+    <circle class="column" cx="1763" cy="208" id="column-lightning-3" r="3" sodipodi:cx="1763" sodipodi:cy="208" sodipodi:rx="3" sodipodi:ry="3">
       <title>These columns shoot lightning.</title>
     </circle>
-    <circle class="column" cx="1773" cy="218" id="column-lightning-4" r="3">
+    <circle class="column" cx="1773" cy="218" id="column-lightning-4" r="3" sodipodi:cx="1773" sodipodi:cy="218" sodipodi:rx="3" sodipodi:ry="3">
       <title>These columns shoot lightning.</title>
     </circle>
     <rect class="column" height="4" id="column-x" width="4" x="1874" y="1206"/>
     <rect class="column" height="4" id="column-z" width="4" x="1878" y="1216"/>
     <g id="hall-of-heroes-columns">
-      <circle class="column" cx="2150" cy="745" r="1"/>
-      <circle class="column" cx="2150" cy="755" r="1"/>
-      <circle class="column" cx="2140" cy="745" r="1"/>
-      <circle class="column" cx="2140" cy="755" r="1"/>
-      <circle class="column" cx="2130" cy="745" r="1"/>
-      <circle class="column" cx="2130" cy="755" r="1"/>
-      <circle class="column" cx="2120" cy="745" r="1"/>
-      <circle class="column" cx="2120" cy="755" r="1"/>
-      <circle class="column" cx="2110" cy="745" r="1"/>
-      <circle class="column" cx="2110" cy="755" r="1"/>
-      <circle class="column" cx="2100" cy="745" r="1"/>
-      <circle class="column" cx="2100" cy="755" r="1"/>
-      <circle class="column" cx="2090" cy="745" r="1"/>
-      <circle class="column" cx="2090" cy="755" r="1"/>
-      <circle class="column" cx="2080" cy="745" r="1"/>
-      <circle class="column" cx="2080" cy="755" r="1"/>
-      <circle class="column" cx="2070" cy="745" r="1"/>
-      <circle class="column" cx="2070" cy="755" r="1"/>
-      <circle class="column" cx="2060" cy="745" r="1"/>
-      <circle class="column" cx="2060" cy="755" r="1"/>
-      <circle class="column" cx="2050" cy="745" r="1"/>
-      <circle class="column" cx="2050" cy="755" r="1"/>
-      <circle class="column" cx="2040" cy="745" r="1"/>
-      <circle class="column" cx="2040" cy="755" r="1"/>
-      <circle class="column" cx="2030" cy="745" r="1"/>
-      <circle class="column" cx="2030" cy="755" r="1"/>
-      <circle class="column" cx="2020" cy="745" r="1"/>
-      <circle class="column" cx="2020" cy="755" r="1"/>
-      <circle class="column" cx="2010" cy="745" r="1"/>
-      <circle class="column" cx="2010" cy="755" r="1"/>
-      <circle class="column" cx="2000" cy="745" r="1"/>
-      <circle class="column" cx="2000" cy="755" r="1"/>
-      <circle class="column" cx="1990" cy="745" r="1"/>
-      <circle class="column" cx="1990" cy="755" r="1"/>
-      <circle class="column" cx="1980" cy="745" r="1"/>
-      <circle class="column" cx="1980" cy="755" r="1"/>
-      <circle class="column" cx="1970" cy="745" r="1"/>
-      <circle class="column" cx="1970" cy="755" r="1"/>
+      <circle class="column" cx="2150" cy="745" r="1" sodipodi:cx="2150" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2150" cy="755" r="1" sodipodi:cx="2150" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2140" cy="745" r="1" sodipodi:cx="2140" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2140" cy="755" r="1" sodipodi:cx="2140" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2130" cy="745" r="1" sodipodi:cx="2130" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2130" cy="755" r="1" sodipodi:cx="2130" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2120" cy="745" r="1" sodipodi:cx="2120" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2120" cy="755" r="1" sodipodi:cx="2120" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2110" cy="745" r="1" sodipodi:cx="2110" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2110" cy="755" r="1" sodipodi:cx="2110" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2100" cy="745" r="1" sodipodi:cx="2100" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2100" cy="755" r="1" sodipodi:cx="2100" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2090" cy="745" r="1" sodipodi:cx="2090" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2090" cy="755" r="1" sodipodi:cx="2090" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2080" cy="745" r="1" sodipodi:cx="2080" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2080" cy="755" r="1" sodipodi:cx="2080" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2070" cy="745" r="1" sodipodi:cx="2070" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2070" cy="755" r="1" sodipodi:cx="2070" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2060" cy="745" r="1" sodipodi:cx="2060" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2060" cy="755" r="1" sodipodi:cx="2060" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2050" cy="745" r="1" sodipodi:cx="2050" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2050" cy="755" r="1" sodipodi:cx="2050" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2040" cy="745" r="1" sodipodi:cx="2040" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2040" cy="755" r="1" sodipodi:cx="2040" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2030" cy="745" r="1" sodipodi:cx="2030" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2030" cy="755" r="1" sodipodi:cx="2030" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2020" cy="745" r="1" sodipodi:cx="2020" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2020" cy="755" r="1" sodipodi:cx="2020" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2010" cy="745" r="1" sodipodi:cx="2010" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2010" cy="755" r="1" sodipodi:cx="2010" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2000" cy="745" r="1" sodipodi:cx="2000" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2000" cy="755" r="1" sodipodi:cx="2000" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1990" cy="745" r="1" sodipodi:cx="1990" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1990" cy="755" r="1" sodipodi:cx="1990" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1980" cy="745" r="1" sodipodi:cx="1980" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1980" cy="755" r="1" sodipodi:cx="1980" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1970" cy="745" r="1" sodipodi:cx="1970" sodipodi:cy="745" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1970" cy="755" r="1" sodipodi:cx="1970" sodipodi:cy="755" sodipodi:rx="1" sodipodi:ry="1"/>
     </g>
     <g id="hallway-columns">
-      <circle class="column" cx="1940" cy="740" r="1"/>
-      <circle class="column" cx="1930" cy="740" r="1"/>
-      <circle class="column" cx="1920" cy="740" r="1"/>
-      <circle class="column" cx="1910" cy="740" r="1"/>
-      <circle class="column" cx="1900" cy="740" r="1"/>
-      <circle class="column" cx="1890" cy="740" r="1"/>
+      <circle class="column" cx="1940" cy="740" r="1" sodipodi:cx="1940" sodipodi:cy="740" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1930" cy="740" r="1" sodipodi:cx="1930" sodipodi:cy="740" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1920" cy="740" r="1" sodipodi:cx="1920" sodipodi:cy="740" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1910" cy="740" r="1" sodipodi:cx="1910" sodipodi:cy="740" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1900" cy="740" r="1" sodipodi:cx="1900" sodipodi:cy="740" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1890" cy="740" r="1" sodipodi:cx="1890" sodipodi:cy="740" sodipodi:rx="1" sodipodi:ry="1"/>
     </g>
     <g id="null-magic-columns">
-      <circle class="column" cx="1985" cy="1054" r="1"/>
-      <circle class="column" cx="2005" cy="1061" r="1"/>
-      <circle class="column" cx="2004" cy="1080" r="1"/>
-      <circle class="column" cx="1985" cy="1086" r="1"/>
-      <circle class="column" cx="1995" cy="1056" r="1"/>
-      <circle class="column" cx="1995" cy="1082" r="1"/>
-      <circle class="column" cx="1974" cy="1080" r="1"/>
-      <circle class="column" cx="1974" cy="1061" r="1"/>
-      <circle class="column" cx="1990" cy="1061" r="1"/>
-      <circle class="column" cx="1990" cy="1077" r="1"/>
-      <circle class="column" cx="1990" cy="1068" r="1"/>
+      <circle class="column" cx="1985" cy="1054" r="1" sodipodi:cx="1985" sodipodi:cy="1054" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2005" cy="1061" r="1" sodipodi:cx="2005" sodipodi:cy="1061" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="2004" cy="1080" r="1" sodipodi:cx="2004" sodipodi:cy="1080" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1985" cy="1086" r="1" sodipodi:cx="1985" sodipodi:cy="1086" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1995" cy="1056" r="1" sodipodi:cx="1995" sodipodi:cy="1056" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1995" cy="1082" r="1" sodipodi:cx="1995" sodipodi:cy="1082" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1974" cy="1080" r="1" sodipodi:cx="1974" sodipodi:cy="1080" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1974" cy="1061" r="1" sodipodi:cx="1974" sodipodi:cy="1061" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1990" cy="1061" r="1" sodipodi:cx="1990" sodipodi:cy="1061" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1990" cy="1077" r="1" sodipodi:cx="1990" sodipodi:cy="1077" sodipodi:rx="1" sodipodi:ry="1"/>
+      <circle class="column" cx="1990" cy="1068" r="1" sodipodi:cx="1990" sodipodi:cy="1068" sodipodi:rx="1" sodipodi:ry="1"/>
     </g>
     <g id="boring-5column-room">
-      <circle class="column" cx="1860" cy="970" r="1.5"/>
-      <circle class="column" cx="1850" cy="960" r="1.5"/>
-      <circle class="column" cx="1870" cy="960" r="1.5"/>
-      <circle class="column" cx="1850" cy="980" r="1.5"/>
-      <circle class="column" cx="1870" cy="980" r="1.5"/>
+      <circle class="column" cx="1860" cy="970" r="1.5" sodipodi:cx="1860" sodipodi:cy="970" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
+      <circle class="column" cx="1850" cy="960" r="1.5" sodipodi:cx="1850" sodipodi:cy="960" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
+      <circle class="column" cx="1870" cy="960" r="1.5" sodipodi:cx="1870" sodipodi:cy="960" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
+      <circle class="column" cx="1850" cy="980" r="1.5" sodipodi:cx="1850" sodipodi:cy="980" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
+      <circle class="column" cx="1870" cy="980" r="1.5" sodipodi:cx="1870" sodipodi:cy="980" sodipodi:rx="1.5" sodipodi:ry="1.5"/>
     </g>
     <path class="feature" d="m1571 1155-6 3v5l2-4 4-2z" id="dragon-tail">
       <title>This is the skeleton of a dragon's tail, a well known landmark in Undermountain.</title>
@@ -2208,7 +2241,7 @@
     <rect class="feature-bad" height="10" id="-revgravity-trap" width="10" x="2560" y="680">
       <title>This is a reverse-gravity trap, with nasty spikes on the ceiling.</title>
     </rect>
-    <rect class="feature-bad" height="10" id="lightning-statue" width="10" x="1635" y="1700">
+    <rect class="feature-bad" height="14" id="lightning-statue" width="14" x="1633" y="1698">
       <title>This statue shoots lightning bolts.  There's a secret door in its base that leads to a spiral staircase.</title>
     </rect>
     <rect class="feature-bad" height="10" id="teleportal-a-in" width="10" x="1820" y="1620">
@@ -2257,17 +2290,20 @@
     <text class="name" x="1704" xml:space="preserve" y="235"><tspan x="1704" y="235">Giant Lightning Room</tspan></text>
     <text class="name" x="2011" xml:space="preserve" y="1098"><tspan x="2011" y="1098">Animated</tspan><tspan x="2011" y="1105">Armor</tspan></text>
     <text class="name" x="1732" xml:space="preserve" y="2007"><tspan x="1732" y="2007">Metal</tspan><tspan x="1732" y="2014">Spiders</tspan></text>
+    <text class="name" transform="matrix(0,1,-1,0,0,0)" x="1292" xml:space="preserve" y="-942"><tspan sodipodi:role="line" x="1292" y="-942">Menagerie</tspan></text>
+    <text class="name" x="1519" xml:space="preserve" y="1086"><tspan sodipodi:role="line" x="1519" y="1086">Somewhere around here is a secret library in a place</tspan><tspan sodipodi:role="line" x="1519" y="1096">where the corridor goes around a 30x30 area.</tspan></text>
+    <text class="name" x="1604" xml:space="preserve" y="1196"><tspan sodipodi:role="line" x="1604" y="1196">This area appears to be on the old map that we found under the lightning statue.</tspan></text>
     <!-- Unclassified start here -->
   </g>
   <g id="menu" inkscape:groupmode="layer" inkscape:label="Menu" style="display:inline">
-    <text style="font-size:20px;fill:black" x="2" y="22">Map of Undermountain as of Tarsakh 20 1370</text>
-    <text onclick="toggleLayer(evt,'um-l1-m')" style="font-size:14px;fill:black" x="2" y="42">(Click to toggle)  Level 1 Main</text>
-    <text onclick="toggleLayer(evt,'um-l1-l1')" style="font-size:14px;fill:black" x="2" y="57">(Click to toggle)  Level 1 Lower 1</text>
-    <text onclick="toggleLayer(evt,'um-l2-m')" style="font-size:14px;fill:black" x="2" y="72">(Click to toggle)  Level 2 Main</text>
-    <text onclick="toggleLayer(evt,'um-l2-l1')" style="font-size:14px;fill:black" x="2" y="87">(Click to toggle)  Level 2 Lower 1</text>
-    <text onclick="toggleLayer(evt,'um-uk-1')" style="font-size:14px;fill:black" x="2" y="102">(Click to toggle)  Unknown Area 1</text>
-    <text onclick="toggleLayer(evt,'um-uk-2')" style="font-size:14px;fill:black" x="2" y="117">(Click to toggle)  Unknown Area 2</text>
-    <text onclick="toggleLayer(evt,'mythdranor')" style="font-size:14px;fill:black" x="2" y="132">(Click to toggle)  Myth Dranor</text>
-    <text onclick="toggleLayer(evt,'fluffy')" style="font-size:14px;fill:black" x="2" y="147">(Click to toggle)  Fluffy's Map.</text>
+    <text style="font-size:20px;fill:#000000" x="2" y="22">Map of Undermountain as of Tarsakh 20 1370</text>
+    <text onclick="toggleLayer(evt,'um-l1-m')" style="font-size:14px;fill:#000000" x="2" y="42">(Click to toggle) Level 1 Main</text>
+    <text onclick="toggleLayer(evt,'um-l1-l1')" style="font-size:14px;fill:#000000" x="2" y="57">(Click to toggle) Level 1 Lower 1</text>
+    <text onclick="toggleLayer(evt,'um-l2-m')" style="font-size:14px;fill:#000000" x="2" y="72">(Click to toggle) Level 2 Main</text>
+    <text onclick="toggleLayer(evt,'um-l2-l1')" style="font-size:14px;fill:#000000" x="2" y="87">(Click to toggle) Level 2 Lower 1</text>
+    <text onclick="toggleLayer(evt,'um-uk-1')" style="font-size:14px;fill:#000000" x="2" y="102">(Click to toggle) Unknown Area 1</text>
+    <text onclick="toggleLayer(evt,'um-uk-2')" style="font-size:14px;fill:#000000" x="2" y="117">(Click to toggle) Unknown Area 2</text>
+    <text onclick="toggleLayer(evt,'mythdranor')" style="font-size:14px;fill:#000000" x="2" y="132">(Click to toggle) Myth Dranor</text>
+    <text onclick="toggleLayer(evt,'fluffy')" style="font-size:14px;fill:#000000" x="2" y="147">(Click to toggle) Fluffy's Map.</text>
   </g>
 </svg>

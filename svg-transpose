@@ -7,14 +7,10 @@ unneeded_attributes = {
  'inkscape:connector-curvature': re.compile('^0$'),
  'sodipodi:nodetypes': re.compile('^c*$'),
  'inkscape:label': re.compile('^$|^[^U]'),
- 'sodipodi:cx': re.compile(r'^\d*\.?\d+$'),
- 'sodipodi:cy': re.compile(r'^\d*\.?\d+$'),
- 'sodipodi:rx': re.compile(r'^\d*\.?\d+$'),
- 'sodipodi:ry': re.compile(r'^\d*\.?\d+$'),
  'sodipodi:linespacing': re.compile(r'^\d+%$')
 }
 
-id_regex = re.compile('(text|path|tspan|title|rect)\d+$')
+id_regex = re.compile('(text|path|tspan|title|rect|circle)\d+$')
 
 ###### path parsing code
 style_to_class = {
