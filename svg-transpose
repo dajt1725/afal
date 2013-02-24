@@ -572,9 +572,9 @@ def do_update(n,dx,dy):
     if args.layer and n.nodeName == 'g':
         attr = n.attributes.getNamedItem('inkscape:groupmode')
         i = n.attributes.getNamedItem('id')
-        print "checking group", attr, i
+#        print "checking group", attr, i
         if attr and attr.value == 'layer' and i and i.value == args.layer:
-            print "layer found"
+#            print "layer found"
             dx += args.x
             dy += args.y
 
