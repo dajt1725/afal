@@ -10,6 +10,10 @@ unneeded_attributes = {
  'sodipodi:linespacing': re.compile(r'^\d+%$')
 }
 
+unneeded_byname = {
+ 'circle': ('sodipodi:cx', 'sodipodi:cy', 'sodipodi:rx', 'sodipodi:ry')
+}
+
 id_regex = re.compile('(text|path|tspan|title|rect|circle)\d+$')
 
 ###### path parsing code
@@ -558,8 +562,22 @@ def do_update(n,dx,dy):
                 if args.verbose:
                     print "removing",attr.name,attr.value
                 n.attributes.removeNamedItem(attr_name)
+            if n.nodeName in unneeded_byname:
+                for i in unneeded_byname[n.nodeName]:
+                    if n.attributes.getNamedItem(i):
+                        n.attributes.removeNamedItem(i)
+
 #    elif args.verbose:
 #        print n.nodeName
+    if args.layer and n.nodeName == 'g':
+        attr = n.attributes.getNamedItem('inkscape:groupmode')
+        i = n.attributes.getNamedItem('id')
+        print "checking group", attr, i
+        if attr and attr.value == 'layer' and i and i.value == args.layer:
+            print "layer found"
+            dx += args.x
+            dy += args.y
+
     for i in n.childNodes:
         do_update(i,dx,dy)
 
@@ -570,6 +588,7 @@ parser.add_argument("--style", "-s", help = "remove/edit style elements", action
 parser.add_argument("--path", "-p", help = "edit paths", action = 'store_true', default = False)
 parser.add_argument('--x', '-x', type=int, default=0, help='translate x by')
 parser.add_argument('--box', '-r', type = int, nargs = 4, default = None, help = 'Only transpose elements within the specified box {min_x, min_y, max_x, max_y}')
+parser.add_argument('--layer', '-l', default=None, help='Only transpose specified layer');
 parser.add_argument('--y', '-y', type=int, default=0, help='translate y by')
 parser.add_argument("infile", help = "file to read")
 parser.add_argument("outfile", help = "file to write")
@@ -577,7 +596,10 @@ args = parser.parse_args()
 
 a = parse(args.infile)
 for i in a.childNodes:
-    do_update(i, args.x, args.y)
+    if args.layer:
+        do_update(i, 0, 0)
+    else:
+        do_update(i, args.x, args.y)
 f = open(args.outfile, 'w')
 a.writexml(f)
 f.close()
