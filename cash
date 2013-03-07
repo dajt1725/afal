@@ -48,9 +48,9 @@ for char in afal.character_list:
         if 'abbrev' in i:
             text = i['abbrev']
         elif n == 1:
-            text = i['coin'].format(s='', es='')
+            text = i['coin'].format(s = '', es = '', y = 'y')
         else:
-            text = i['coin'].format(s='s', es='es')
+            text = i['coin'].format(s = 's', es = 'es', y = 'ies')
         coins += '{p}{n} {t}'.format(p=pre, n=n, t=text)
         pre = npre
 
