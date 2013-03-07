@@ -792,8 +792,8 @@
     <path class="stairs-ew" d="m1690 960 10-10v90l-10-10z"/>
     <path class="stairs-ns-a" d="m1680 950h20l-10 10h-20z"/>
     <path class="stairs-ew" d="m1670 940 10-10v20l-10 10z"/>
-    <path class="stairs-ew" d="m1550 1113 20-3v10l-20-3z">
-      <title>To L1-230</title>
+    <path class="stairs-ew" d="m1550 1113 20-3v10l-20-3z" onclick="stairs('fluffy', 'um-l1-21')">
+      <title>To L1-210</title>
     </path>
     <rect class="feature" height="10" width="10" x="1950" y="1330">
       <title>&quot;We never go this way because it would make us dead.&quot;</title>
@@ -993,13 +993,13 @@
     <path class="corr" d="m1630 1210v10h10v40h10 10v-20h-10v-20-10h-20z"/>
     <rect class="room" height="50" width="50" x="1580" y="1210"/>
     <rect class="room" height="50" width="20" x="1660" y="1210"/>
-    <path class="stairs-ns" d="m1590 1200h10l-3 10h-4z">
+    <path class="stairs-ns" d="m1590 1200h10l-3 10h-4z" onclick="stairs('um-l1-24', 'um-l1-21')">
       <title>To L1-210</title>
     </path>
-    <rect height="10" style="fill:url(#stairs-sw);fill-opacity:1;stroke:none" width="10" x="1580" y="1190">
+    <rect height="10" style="fill:url(#stairs-sw);fill-opacity:1;stroke:none" width="10" x="1580" y="1190" onclick="stairs('um-l1-24', 'um-l1-21')">
       <title>To L1-210</title>
     </rect>
-    <rect height="10" style="fill:url(#stairs-ne-a);fill-opacity:1;stroke:none" width="10" x="1590" y="1190">
+    <rect height="10" style="fill:url(#stairs-ne-a);fill-opacity:1;stroke:none" width="10" x="1590" y="1190" onclick="stairs('um-l1-24', 'um-l1-21')">
       <title>To L1-210</title>
     </rect>
     <path class="wall" d="m1590 1190h10v20h30v2v-2h20v30h10v-30h20v50h-40v-40h-10v-2v42h-50v-50h10v-10h-10v-10"/>
@@ -1012,22 +1012,22 @@
     <path class="room" d="m1530 1110v10 70h70v-70-10h-30v10h-30v-10h-10z">
       <title>Entrance to Minotaur Maze.</title>
     </path>
-    <path class="stairs-ew" d="m1520 1150 10 3v4l-10 3z">
+    <path class="stairs-ew" d="m1520 1150 10 3v4l-10 3z" onclick="stairs('um-l1-21', 'um-l1-20')">
       <title>To L1 -200</title>
     </path>
-    <path class="stairs-ew" d="m1550 1113 20-3v10l-20-3z">
-      <title>To L1-240</title>
+    <path class="stairs-ew" d="m1550 1113 20-3v10l-20-3z" onclick="stairs('um-l1-21', 'fluffy')">
+      <title>To Fluffy's map</title>
     </path>
-    <rect style="fill:url(#stairs-sw);fill-opacity:1;stroke:none" height="10" width="10" x="1580" y="1190">
+    <rect style="fill:url(#stairs-sw);fill-opacity:1;stroke:none" height="10" width="10" x="1580" y="1190" onclick="stairs('um-l1-21', 'um-l1-24')">
       <title>To L1-0240</title>
     </rect>
-    <rect height="10" style="fill:url(#stairs-ne-a);fill-opacity:1;stroke:none" width="10" x="1590" y="1190">
+    <rect height="10" style="fill:url(#stairs-ne-a);fill-opacity:1;stroke:none" width="10" x="1590" y="1190" onclick="stairs('um-l1-21', 'um-l1-24')">
       <title>To L1-240</title>
     </rect>
-    <path class="stairs-ns" d="m1590 1200h10l-3 10h-4z">
+    <path class="stairs-ns" d="m1590 1200h10l-3 10h-4z" onclick="stairs('um-l1-21', 'um-l1-24')">
       <title>To L1-240</title>
     </path>
-    <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z">
+    <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z" onclick="stairs('um-l1-21', 'um-l1-18')">
       <title>To L1-180</title>
     </path>
     <path class="wall" d="m1570 1120h-30v-10h-10v20h-30"/>
@@ -1046,12 +1046,14 @@
   <g id="um-l1-20" inkscape:groupmode="layer" inkscape:label="Level 1 -200" style="display:none">
     <path class="corr" d="m1510 1150v20h-10v-10h-10v10 10h20v20h20v-10h-10v-40z"/>
     <rect class="room" height="25" width="20" x="1530" y="1180"/>
-    <path class="stairs-ew" d="m1480 1160 10 3v4l-10 3z"/>
-    <path class="stairs-ew" d="m1520 1150 10 3v4l-10 3z">
-      <title>To L1 -210</title>
+    <path class="stairs-ew" d="m1480 1160 10 3v4l-10 3z" onclick="stairs('um-l1-20','um-l1-19')">
+      <title>To Level 1 -190</title>
+    </path>
+    <path class="stairs-ew" d="m1520 1150 10 3v4l-10 3z" onclick="stairs('um-l1-20','um-l1-21')">
+      <title>To Level 1 -210</title>
     </path>
     <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z">
-      <title>To L1 -180</title>
+      <title>Level 1 -180 to -210</title>
     </path>
     <path class="wall" d="m1530 1160h-10v30h10v-10h20v25h-20v-5h-20v-20h-20v-10h-10"/>
     <path class="wall" d="m1530 1150h-20v20h-10v-10h-20"/>
@@ -1071,20 +1073,20 @@
     <rect class="room" height="30" width="30" x="1460" y="1180"/>
     <rect class="room" height="20" width="40" x="1540" y="1040"/>
     <rect class="room" height="40" width="30" x="1580" y="1010"/>
-    <path class="stairs-ew" d="m1490 1223 20-3v10l-20-3z">
-      <title>To L1-170</title>
+    <path class="stairs-ew" d="m1550 1020 30 3v4l-30 3z" onclick="stairs('um-l1-19', 'um-l1-16')">
+      <title>To Level 1 -160</title>
     </path>
-    <path class="stairs-ew" d="m1550 1020 30 3v4l-30 3z">
-      <title>To L1 -160</title>
+    <path class="stairs-ew" d="m1490 1223 20-3v10l-20-3z" onclick="stairs('um-l1-19', 'um-l1-17')">
+      <title>To Level 1 -170</title>
     </path>
-    <path class="stairs-ew" d="m1480 1160 10 3v4l-10 3z">
-      <title>To L1-200</title>
+    <path class="stairs-ew" d="m1530 1050 10 3v4l-10 3z" onclick="stairs('um-l1-19', 'um-l1-18')">
+      <title>To Level 1 -180</title>
+    </path>
+    <path class="stairs-ew" d="m1480 1160 10 3v4l-10 3z" onclick="stairs('um-l1-19', 'um-l1-20')">
+      <title>To Level 1 -200</title>
     </path>
     <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z">
-      <title>To L1 -180</title>
-    </path>
-    <path class="stairs-ew" d="m1530 1050 10 3v4l-10 3z">
-      <title>To L1-180</title>
+      <title>Level 1 -180 to -210</title>
     </path>
     <path class="wall" d="m1490 1170h-10v10h-2h12v30h-10v10h30"/>
     <path class="wall" d="m1490 1160h-20v20h2h-12v12v-2h-10v-20h10v-20h-30v20h10v10h-10v50h-10v30h30v-30h-10v-20h10v-10h10v-2v12h10v20h40"/>
@@ -1112,29 +1114,29 @@
     <rect class="feature-bad" height="10" width="30" x="1440" y="1130">
       <title>Sliding stairs</title>
     </rect>
-    <path class="stairs-ew" d="m1440 1133 28-2v8l-28-2z">
-      <title>To Level 1 -150</title>
+    <path class="stairs-ew" d="m1440 1133 28-2v8l-28-2z" onclick="stairs('um-l1-18','um-l1-14')">
+      <title>To Level 1 -140</title>
+    </path>
+    <path class="stairs-ns" d="m1583 1090h4l3 10h-10z" onclick="stairs('um-l1-18','um-l1-17')">
+      <title>To Level 1 -170</title>
+    </path>
+    <path class="stairs-ew" d="m1500 1103 20-3v10l-20-3z" onclick="stairs('um-l1-18','um-l1-17')">
+      <title>To Level 1 -170</title>
+    </path>
+    <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z" onclick="stairs('um-l1-18','um-l1-18')">
+      <title>To Level 1 -180</title>
+    </path>
+    <path class="stairs-ew" d="m1530 1050 10 3v4l-10 3z" onclick="stairs('um-l1-18','um-l1-19')">
+      <title>To Level 1 -190</title>
+    </path>
+    <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z" onclick="stairs('um-l1-18','um-l1-21')">
+      <title>To Level 1 -210</title>
     </path>
     <path class="stairs-ew" d="m1550 1020 30 3v4l-30 3z">
-      <title>To L1 -160</title>
-    </path>
-    <path class="stairs-ns" d="m1583 1090h4l3 10h-10z">
-      <title>To L1 -170</title>
-    </path>
-    <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z">
-      <title>To L1 -180</title>
-    </path>
-    <path class="stairs-ew" d="m1530 1050 10 3v4l-10 3z">
-      <title>To L1 -190</title>
-    </path>
-    <path class="stairs-ew" d="m1500 1130 30 3v4l-30 3z">
-      <title>To L1-210</title>
-    </path>
-    <path class="stairs-ew" d="m1500 1103 20-3v10l-20-3z">
-      <title>To L1-170</title>
+      <title>Level 1 -160 to -190</title>
     </path>
     <path class="stairs-ew" d="m1490 1223 20-3v10l-20-3z">
-      <title>To L1 -190</title>
+      <title>Level 1 -170 to -190</title>
     </path>
     <path class="wall" d="m1468 1140h-28v10h-20v-30h20v10h28"/>
     <path class="wall" d="m1580 1100v-20h20v20"/>
@@ -1159,40 +1161,42 @@
     <rect class="room" height="20" width="30" x="1570" y="1160"/>
     <rect class="room" height="50" width="40" x="1550" y="1110"/>
     <rect class="room" height="10" width="10" x="1530" y="1070"/>
-    <path class="stairs-ew" d="m1540 1140 10 3v4l-10 3z">
-      <title>To L1 -160</title>
-    </path>
-    <path class="stairs-ew" d="m1590 1143 20-3v10l-20-3z">
-      <title>To L1 -150</title>
-    </path>
-    <path class="stairs-ew" d="m1540 1213 20-3v10l-20-3z">
-      <title>To L1 -150</title>
-    </path>
-    <path class="stairs-ew" d="m1490 1223 20-3v10l-20-3z">
-      <title>To L1 -190</title>
-    </path>
-    <path class="stairs-ns" d="m1553 1180h4l3 10h-10z">
-      <title>To L1 -160</title>
-    </path>
-    <path class="stairs-ew" d="m1590 1123 20-3v10l-20-3z">
-      <title>To L1 -150</title>
-    </path>
-    <path class="stairs-ew" d="m1570 1100 10 3v4l-10 3z">
-      <title>To L1 -160</title>
-    </path>
-    <path class="stairs-ns" d="m1583 1090h4l3 10h-10z">
-      <title>To L1-180</title>
-    </path>
-    <path class="stairs-ew" d="m1440 1133 40-3v10l-40-3z">
+    <path class="stairs-ew" d="m1590 1143 20-3v10l-20-3z" onclick="stairs('um-l1-17', 'um-l1-15')">
       <title>To Level 1 -150</title>
     </path>
+    <path class="stairs-ew" d="m1540 1213 20-3v10l-20-3z" onclick="stairs('um-l1-17', 'um-l1-15')">
+      <title>To Level 1 -150</title>
+    </path>
+    <path class="stairs-ew" d="m1590 1123 20-3v10l-20-3z" onclick="stairs('um-l1-17', 'um-l1-15')">
+      <title>To Level 1 -150</title>
+    </path>
+    <path class="stairs-ew" d="m1540 1140 10 3v4l-10 3z" onclick="stairs('um-l1-17', 'um-l1-16')">
+      <title>To Level 1 -160</title>
+    </path>
+    <path class="stairs-ns" d="m1553 1180h4l3 10h-10z" onclick="stairs('um-l1-17', 'um-l1-16')">
+      <title>To Level 1 -160</title>
+    </path>
+    <path class="stairs-ew" d="m1570 1100 10 3v4l-10 3z" onclick="stairs('um-l1-17', 'um-l1-16')">
+      <title>To Level 1 -160</title>
+    </path>
+    <path class="stairs-ns" d="m1583 1090h4l3 10h-10z" onclick="stairs('um-l1-17', 'um-l1-18')">
+      <title>To Level 1 -180</title>
+    </path>
+    <path class="stairs-ew" d="m1500 1103 20-3v10l-20-3z" onclick="stairs('um-l1-17', 'um-l1-18')">
+      <title>To Level 1 -180</title>
+    </path>
+    <path class="stairs-ew" d="m1490 1223 20-3v10l-20-3z" onclick="stairs('um-l1-17', 'um-l1-19')">
+      <title>To Level 1 -190</title>
+    </path>
+    <path class="stairs-ew" d="m1440 1133 40-3v10l-40-3z">
+      <title>Level 1 -140 to -180</title>
+    </path>
     <path class="stairs-ew" d="m1550 1020 30 3v4l-30 3z">
-      <title>To L1 -160</title>
+      <title>Level 1 -160 to -190</title>
     </path>
     <rect class="feature" height="40" width="30" x="1520" y="1080">
       <title>5' Ceiling</title>
     </rect>
-    <path class="stairs-ew" d="m1500 1103 20-3v10l-20-3z"/>
     <path class="wall" d="m1490 1230h50v-10l20 0m50-80-20-0.1611v-10l20 0"/>
     <path class="wall" d="m1510 1208v12h-20v-30h20v12v-2h30v10l20 0m50-60.1611h-20v10h-1h11v20h-40v-10v20"/>
     <path class="wall" d="m1610 1120h-20v-10h-40v30h-10"/>
@@ -1225,8 +1229,11 @@
     <rect class="room" height="30" width="30" x="1450" y="990"/>
     <rect class="room" height="20" width="30" x="1590" y="970"/>
     <rect class="room" height="30" width="30" x="1530" y="1040"/>
-    <path class="stairs-ew" d="m1470 1060 20 3v4l-20 3z" onclick="stairs('um-l1-16', 'um-l1-14')">
+    <path class="stairs-ew" d="m1490 1130 20 3v4l-20 3z" onclick="stairs('um-l1-16', 'um-l1-14')">
       <title>To Level 1 -140</title>
+    </path>
+    <path class="stairs-ew" d="m1470 1060 20 3v4l-20 3z" onclick="stairs('um-l1-16', 'um-l1-15')">
+      <title>To Level 1 -150</title>
     </path>
     <rect height="10" style="fill:url(#stairs-ne);fill-opacity:1;stroke:none" width="10" x="1510" y="1090" onclick="stairs('um-l1-16', 'um-l1-15')">
       <title>To Level 1 -150</title>
@@ -1255,7 +1262,6 @@
     <path class="stairs-ew" d="m1440 1133 40-3v10l-40-3z">
       <title>Level 1 -140 to -180</title>
     </path>
-    <path class="stairs-ew" d="m1490 1130 20 3v4l-20 3z"/>
     <path class="wall" d="m1490 1140h60v-30h30"/>
     <path class="wall" d="m1510 1090h10v10h42-12v-20h30v20h-12"/>
     <path class="wall" d="m1510 1100v30h-20"/>
@@ -1312,29 +1318,26 @@
     <rect class="room" height="30" width="20" x="1470" y="1030"/>
     <rect class="room" height="20" width="20" x="1510" y="1030"/>
     <rect class="room" height="30" width="20" x="1470" y="1070"/>
-    <path class="stairs-ew" d="m1590 1123 20-3v10l-20-3z" onclick="stairs('um-l1-15', 'um-l1-17')">
-      <title>To Level 1 -170</title>
+    <path class="stairs-ew" d="m1450 1134 80-4v10l-80-3z" onclick="stairs('um-l1-15', 'um-l1-8')">
+      <title>To Level 1 -80</title>
     </path>
     <path class="stairs-ew" d="m1560 1110 50 3v4l-50 3z" onclick="stairs('um-l1-15', 'um-l1-10')">
       <title>To Level 1 -100</title>
+    </path>
+    <path class="stairs-ew" d="m1470 1060 20 3v4l-20 3z" onclick="stairs('um-l1-15', 'um-l1-16')">
+      <title>To Level 1 -160</title>
+    </path>
+    <rect height="10" style="fill:url(#stairs-ne);fill-opacity:1;stroke:none" width="10" x="1510" y="1090" onclick="stairs('um-l1-15', 'um-l1-16')">
+      <title>To Level 1 -160</title>
+    </rect>
+    <path class="stairs-ew" d="m1590 1123 20-3v10l-20-3z" onclick="stairs('um-l1-15', 'um-l1-17')">
+      <title>To Level 1 -170</title>
     </path>
     <path class="stairs-ew" d="m1590 1143 20-3v10l-20-3z" onclick="stairs('um-l1-15', 'um-l1-17')">
       <title>To Level 1 -170</title>
     </path>
     <path class="stairs-ew" d="m1540 1213 20-3v10l-20-3z" onclick="stairs('um-l1-15', 'um-l1-17')">
       <title>To Level 1 -170</title>
-    </path>
-    <rect height="10" style="fill:url(#stairs-ne);fill-opacity:1;stroke:none" width="10" x="1510" y="1090" onclick="stairs('um-l1-15', 'um-l1-16')">
-      <title>To Level 1 -160</title>
-    </rect>
-    <path class="stairs-ew" d="m1470 1060 20 3v4l-20 3z" onclick="stairs('um-l1-15', 'um-l1-17')">
-      <title>To Level 1 -170</title>
-    </path>
-    <path class="stairs-ew" d="m1450 1134 80-4v10l-80-3z" onclick="stairs('um-l1-15', 'um-l1-8')">
-      <title>To Level 1 -80</title>
-    </path>
-    <path class="stairs-ew" d="m1470 1060 20 3v4l-20 3z">
-      <title>Level 1 -140 to -160</title>
     </path>
     <rect class="feature" height="10" width="12" x="1448" y="1110"/>
     <rect class="feature-bad" height="10" width="10" x="1430" y="1040"/>
@@ -1373,17 +1376,14 @@
     <rect class="feature-bad" height="10" width="40" x="1440" y="1130">
       <title>Sliding Stairs</title>
     </rect>
-    <path class="stairs-ew" d="m1440 1133 40-3v10l-40-3z" onclick="stairs('um-l1-14', 'um-l1-18')">
-      <title>To Level 1 -180</title>
-    </path>
     <path class="stairs-ew" d="m1490 1113 20-3v10l-20-3z" onclick="stairs('um-l1-14', 'um-l1-12')">
       <title>To Level 1 -120</title>
     </path>
     <path class="stairs-ew" d="m1490 1130 20 3v4l-20 3z" onclick="stairs('um-l1-14', 'um-l1-16')">
       <title>To Level 1 -160</title>
     </path>
-    <path class="stairs-ew" d="m1470 1060 20 3v4l-20 3z" onclick="stairs('um-l1-14', 'um-l1-16')">
-      <title>To Level 1 -160</title>
+    <path class="stairs-ew" d="m1440 1133 40-3v10l-40-3z" onclick="stairs('um-l1-14', 'um-l1-18')">
+      <title>To Level 1 -180</title>
     </path>
     <path class="stairs-ew" d="m1560 1110 50 3v4l-50 3z">
       <title>Level 1 -100 to -150</title>
