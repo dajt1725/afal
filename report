@@ -243,9 +243,9 @@ def print_char(char, verbose = False):
                 name = i['abbrev'] if 'abbrev' in i else i['coin']
                 n = i['quantity']
                 if n == 1:
-                    name = name.format(s='', es='')
+                    name = name.format(s = '', es = '', y = 'y')
                 else:
-                    name = name.format(s='s', es='es')
+                    name = name.format(s = 's', es = 'es', y = 'ies')
                 text += sep.format(n = n, name = name);
                 sep = ', {n} {name}'
             afal.pw(f[7].format(text=text), **fmt)
@@ -557,9 +557,9 @@ def print_journal(cond, show_sub = False):
         by = e['by']
         to = e.get('to')
         if len(by) > 1 or (to is not None and len(to) > 1):
-            f = {'each': 'each ', 'a': '', 's': 's'}
+            f = {'each': 'each ', 'a': '', 's': 's', 'y': 'ies'}
         else:
-            f = {'each': '', 'a': 'a ', 's': ''}
+            f = {'each': '', 'a': 'a ', 's': '', 'y': 'y'}
         f['by'] = list_to_txt(by)
         f['to'] = list_to_txt(to)
         if afal_config.text:
