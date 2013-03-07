@@ -511,7 +511,7 @@ def do_divy(d):
                 break
         if char:
             pools_by_share[share].append({'members': [char], 'coins': tmp})
-    print "Debug: pools_by_share", pools_by_share
+#    print "Debug: pools_by_share", pools_by_share
     if len(d) > 0:
         raise ValueError("Character(s) {d} not in party".format(d = d.keys()))
     if cash:
@@ -582,10 +582,10 @@ def do_divy(d):
     l.sort(reverse = True)
     for i in l:
         for j in pools_by_size[i]:
-            print "Debug: appending ", j
+#            print "Debug: appending ", j
             pools.append(j)
 
-    print "Debug: pools", pools
+#    print "Debug: pools", pools
     for i in coins:
         if i == 'value_cp':
             continue
@@ -848,7 +848,7 @@ def do_loop(d):
 
 
 def do_coin(d):
-    check_dict(d, must = ('name', 'copper_equiv'), may = ('common', 'abbrev', 'note'))
+    check_dict(d, must = ('name', 'copper_equiv'), may = ('common', 'abbrev', 'note', 'date'))
     afal.insert_coin(d['name'], d.get('abbrev'), d['copper_equiv'], d.get('common', False), d.get('note'))
 
 
