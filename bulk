@@ -238,7 +238,7 @@ def do_pay(d):
     if amount_cp > owed:
         if not inexact:
             if amount_cp - owed < 3:
-                sys.stderr.write("\nWARNING: {date} {by} paying {to} lost track of {lost} out of {owed}\n".format( date = date, by = by, to = to, lost = amount_cp - owed, owed = afal.cp_to_str(owed)))
+                sys.stderr.write("\nWARNING: {date} {by} paying {to} overpaid {lost} out of {owed} (should go to party)\n".format( date = date, by = by, to = to, lost = amount_cp - owed, owed = afal.cp_to_str(owed)))
             else:
                 sys.stderr.write("\nWARNING: {date} {by} only owes {owed} not {amount} to {to}\n".format(date = date, by = by, owed = afal.cp_to_str(owed), amount = afal.cp_to_str(amount_cp), to = to))
         amount_cp = owed
@@ -272,7 +272,7 @@ def do_pay(d):
         this_cp = afal.divide_cp(this_owed, amount_cp, owed)
         if abs(this_cp - this_owed) < 3:
             if this_cp != this_owed:
-                sys.stderr.write("\nWARNING: {date} {by} paying {to} lost track of a payable cp or two: {cp} {lost}\n".format(date = date, by = i['by'], to = i['to'], cp = afal.cp_to_str(this_cp), lost = this_cp - this_owed))
+                sys.stderr.write("\nWARNING: {date} {by} paying {to} underpaid {cp} {lost} (should come from party)\n".format(date = date, by = i['by'], to = i['to'], cp = afal.cp_to_str(this_cp), lost = this_cp - this_owed))
             tmp = {'date': date, 'debt_id': i['debt_id'], 'by': i['by'], 'to': i['to'], 'amount_cp': i['amount_cp'], 'item': i.get('item'), 'part_of': part_of, 'note': note, 'verb': 'paid off'}
             if to in todel:
                 todel[to].append(tmp)
@@ -608,7 +608,7 @@ def do_divy(d):
             j['coins']['value_cp'] += tmp * n * cpe
             j['amount_cp'] -= n * cpe
         if coins[i]:
-            raise ValueError("coins didn't divide evenly")
+            raise ValueError("coins didn't divide evenly: {n} {i}".format(n=coins[i], i=i))
 
     for i in bank:
         cpe = i['copper_equiv']
