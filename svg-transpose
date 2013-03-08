@@ -6,39 +6,60 @@ import re
 unneeded_attributes = {
  'inkscape:connector-curvature': re.compile('^0$'),
  'sodipodi:nodetypes': re.compile('^c*$'),
- 'inkscape:label': re.compile('^$|^[^U]'),
+ 'inkscape:label': re.compile('(text|path|tspan|title|rect|circle)[-0-9]+$'),
  'sodipodi:linespacing': re.compile(r'^\d+%$')
 }
 
 unneeded_byname = {
- 'circle': ('sodipodi:cx', 'sodipodi:cy', 'sodipodi:rx', 'sodipodi:ry')
+ 'circle': ('sodipodi:cx', 'sodipodi:cy', 'sodipodi:rx', 'sodipodi:ry'),
+ 'title': ('style', 'id')
 }
 
-id_regex = re.compile('(text|path|tspan|title|rect|circle)\d+$')
+id_regex = re.compile('(text|path|tspan|title|rect|circle)[-0-9]+$')
 
 ###### path parsing code
+style_re1 = re.compile(";display:inline$")
+style_repl1 = ''
+style_re2 = re.compile(";display:inline;")
+style_repl2 = ';'
+style_re3 = re.compile("^display:inline;")
+style_repl3 = ''
+rem_style = re.compile('#pattern[-0-9]{2,}')
+
 style_to_class = {
- 'fill:url(#pattern-floor-corr);stroke:none': 'corr',
- 'fill:url(#pattern-floor-room);stroke:none': 'room',
- 'fill:url(#pattern-floor-orange);stroke:#ffff00;stroke-width:0.5px': 'feature',
- 'fill:url(#pattern-floor-red);stroke:#ffff00;stroke-width:0.5px': 'feature-bad',
- 'fill:url(#pattern-floor-dark-grey);fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'pit',
- 'fill:url(#pattern-floor-blue);stroke:#ffff00;stroke-width:0.5px': 'feature-water',
- 'fill:url(#pattern-floor-room);stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'room-alt',
- 'fill:url(#pattern-floor-yellow);stroke:#000000;stroke-width:0.5px': 'feature-sand',
- 'fill:url(#pattern-floor-reddish);stroke:none': 'feature-null-magic',
- 'fill:url(#pattern-floor-green);stroke:#ffff00;stroke-width:0.5px': 'feature-green',
- 'fill:url(#pattern-floor-purple);stroke:#ffff00;stroke-width:0.5px': 'feature-purple',
+ 'font-size:14px;fill:#000000': None,
+ 'font-size:14px;fill:black': None,
+ 'font-size:14px;fill:red': None,
+ 'font-size:18px;fill:#000000': None,
+ 'fill:url(#stairs-ne);fill-opacity:1;stroke:none': None,
+ 'fill:url(#stairs-ne-a);fill-opacity:1;stroke:none': None,
+ 'fill:url(#stairs-sw);fill-opacity:1;stroke:none': None,
+ 'fill:url(#stairs-ne-warped-1);fill-opacity:1;stroke:none': None,
+
+ 'fill:url(#floor-corr);stroke:none': 'corr',
+ 'fill:url(#floor-room);stroke:none': 'room',
+ 'fill:url(#floor-orange);stroke:#ffff00;stroke-width:0.5px': 'feature',
+ 'fill:url(#floor-red);stroke:#ffff00;stroke-width:0.5px': 'feature-bad',
+ 'fill:url(#floor-dark-grey);fill-opacity:1;stroke:#ffff00;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'pit',
+ 'fill:url(#floor-blue);stroke:#ffff00;stroke-width:0.5px': 'feature-water',
+ 'fill:url(#floor-room);stroke:#000000;stroke-width:1;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none': 'room-alt',
+ 'fill:url(#floor-yellow);stroke:#000000;stroke-width:0.5px': 'feature-sand',
+ 'fill:url(#floor-reddish);stroke:none': 'feature-null-magic',
+ 'fill:url(#floor-green);stroke:#ffff00;stroke-width:0.5px': 'feature-green',
+ 'fill:url(#floor-purple);stroke:#ffff00;stroke-width:0.5px': 'feature-purple',
 
  'fill:#edd567;stroke:none': 'corr',
  'fill:#edb667;stroke:none': 'room',
  'fill:#0000ff;stroke:#ffff00;stroke-width:0.5px': 'feature-water',
- 'fill:url(#pattern-stairs-ew);stroke:none': 'stairs-ew',
  'fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1': 'wall',
  'fill:#e2c022;stroke:#000000;stroke-width:0.5px': 'door',
- 'fill:url(#pattern-stairs-ns);stroke:none': 'stairs-ns',
+ 'fill:url(#stairs-ew);stroke:none': 'stairs-ew',
+ 'fill:url(#stairs-ew-a);stroke:none': 'stairs-ew-a',
+ 'fill:url(#stairs-ns);stroke:none': 'stairs-ns',
+ 'fill:url(#stairs-ns-a);stroke:none': 'stairs-ns-a',
  'fill:#ffa500;stroke:#ffff00;stroke-width:0.5px': 'feature',
  'font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans': 'name',
+ 'font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans': 'name',
  'fill:#ff0000;stroke:#ffff00;stroke-width:0.5px': 'feature-bad',
  'fill:#ff0000;fill-opacity:1;stroke:#feff04;stroke-width:0.5px;stroke-opacity:1': 'feature-bad',
  'fill:#683910;stroke:#000000;stroke-width:0.5px': 'sec-door',
@@ -164,6 +185,26 @@ def path_to_list(p):
             if len(v)>0:
                 ret.append(v)
     return ret
+
+
+def round(n):
+    try:
+        i = float(n)
+    except:
+        return n
+    f = i - int(i)
+    if f > 0.0 and f < 0.3:
+        i = int(i)
+        print "Rounding {n} down to {i}".format(n = n, i = i)
+    elif f > 0.7:
+        i = 1 + int(i)
+        print "Rounding {n} up to {i}".format(n = n, i = i)
+    elif f != 0:
+        print "Not rounding {n} up or down".format(n = n)
+    if i == float(int(i)):
+        i = int(i)
+    return i
+
 
 # takes a path list (as created by path_to_list) and turns all the
 # absolute positioning commands into relative ones.
@@ -411,9 +452,14 @@ def list_to_path(l):
     needs = False
     for i in l:
         if i[0] in 'mMlLhHvV':
-            for j in i[1:]:
-                if int(float(j)) != float(j):
-                    print "fractional coordinate ",j
+            if args.fraction:
+                for j in range(1,len(i)):
+                    i[j] = round(i[j])
+            else:
+                for j in i[1:]:
+                    if int(float(j)) != float(j):
+                        print "fractional coordinate ",j
+
         for j in i:
             j = str(j)
             if needs and j[0].isdigit():
@@ -431,53 +477,71 @@ def list_to_path(l):
 def upd(n,a,d):
     v = n.getAttribute(a)
     if v is not None and v != '':
-        t = float(v)+d
-        if t == float(int(t)):
-            t = int(t)
+        try:
+            i = float(v) + d
+        except:
+            return
+        if args.fraction:
+            i = round(i)
+        elif i == float(int(i)):
+            i = int(i)
         if args.verbose:
-            print "updating",a,'(',v,')','by',d,'to',t
-        n.setAttribute(a,str(t))
+            print "updating",a,'(',v,')','by',d,'to',i
+        n.setAttribute(a,str(i))
 
 def do_update(n,dx,dy):
-# We never update patterns
+# We never update patterns, even though we should
     if n.nodeName == 'pattern':
         return
 # We ignore g elements, but update their children
-    if n.attributes and n.nodeName != 'g':
+    if n.attributes:
+        prname = "{o} {id}".format(o=n.nodeName, id=n.getAttribute("id"))
         if args.verbose:
-            print n.nodeName,n.getAttribute("id")
-        if args.style:
+            print prname
+        if args.style and n.nodeName != 'g':
             ele_class = n.attributes.getNamedItem('class')
+            if ele_class:
+                if args.verbose:
+                    print "class",ele_class.specified,ele_class.value
+                ele_class = ele_class.value
             ele_style = n.attributes.getNamedItem('style')
-            if args.verbose and ele_class:
-                print "class",ele_class.specified,ele_class.value
-            if args.verbose and ele_style:
-                print "style", ele_style.specified,ele_style.value
-            if ele_style and ele_style.value != '':
-                if not ele_class or ele_class.value == '':
-                   t = style_to_class.get(ele_style.value)
-                   if t:
-                       if args.verbose:
-                           print "Replacing style", ele_style.value, "with class", t
-                       n.setAttribute('class',t)
-                       n.removeAttribute('style')
-                   else:
-                       print "No known class for style", ele_style.value
-                elif style_to_class.get(ele_style.value) == ele_class.value:
+            if ele_style:
+                if args.verbose:
+                    print "style", ele_style.specified,ele_style.value
+                ele_style = ele_style.value
+            if ele_style and ele_style != '':
+                v = style_re1.sub(style_repl1, ele_style)
+                v = style_re2.sub(style_repl2, v)
+                v = style_re3.sub(style_repl3, v)
+                if not ele_class or ele_class == '':
+                    if v in style_to_class:
+                        t = style_to_class[v]
+                        if t:
+                            if args.verbose:
+                                print "Replacing style", ele_style, "with class", t
+                            n.setAttribute('class', t)
+                            n.removeAttribute('style')
+                    else:
+                        print prname,"no known class for style", ele_style, v
+                elif style_to_class.get(v) == ele_class:
                     if args.verbose:
-                        print "removing style",ele_style.value,"for class",ele_class.value
+                        print "removing style",ele_style,"for class",ele_class
                     n.removeAttribute('style')
                 else:
-                    print "style ",ele_style.value, "!= class style for",ele_class.value
+                    print prname,"class",ele_class,"but style",ele_style, v
+                    n.removeAttribute('style')
         t = n.getAttribute('transform')
-        if t is not None and t!= '':
-            r = re.match(r'translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
+        if t is not None:
+            r = re.match(r'^translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
             if r:
-                dx += float(r.group(1))
-                dy += float(r.group(2))
-                n.removeAttribute('transform')
-            else:
-                print "Unknown transform",t
+                x = float(r.group(1))
+                y = float(r.group(2))
+                if x != 0 or y != 0:
+                    dx += x
+                    dy += y
+                    n.removeAttribute('transform')
+            elif t != '' and t != 'matrix(0,1,-1,0,0,0)':
+                print prname, "ignoring unknown transform", t
         if args.box:
             if n.nodeName == 'rect':
                 x = float(n.getAttribute('x'))
@@ -485,7 +549,8 @@ def do_update(n,dx,dy):
                 x1 = x + float(n.getAttribute('width'))
                 y1 = y + float(n.getAttribute('height'))
                 if _in([x, y], args.box) or _in([x1, y], args.box) or _in([x, y1], args.box) or _in([x1, y1], args.box):
-                    print "Transposing rect",x,y,x1,y1
+                    if args.verbose:
+                        print "Transposing rect",x,y,x1,y1
                     if x >= args.box[0] and x <= args.box[2]:
                         upd(n, 'x', dx)
                         if x1 < args.box[0] or x1 > args.box[2]:
@@ -508,19 +573,22 @@ def do_update(n,dx,dy):
                 if _in([n.getAttribute('x'), n.getAttribute('y')], args.box):
                     upd(n, 'x', dx)
                     upd(n, 'y', dy)
-            elif n.nodeName == 'path' or n.nodeName == 'title':
+            elif n.nodeName == 'path' or n.nodeName == 'title' or n.nodeName == 'g':
                 pass
             else:
-                print "Unknown nodeName",n.nodeName
+                print prname,"unknown nodeName"
         else:
-            if dx != 0:
-                upd(n,'x',dx)
-                upd(n,'cx',dx)
-                upd(n,'sodipodi:cx',dx)
-            if dy != 0:
-                upd(n,'y',dy)
-                upd(n,'cy',dy)
-                upd(n,'sodipodi:cy',dy)
+            if args.fraction:
+                upd(n, 'width', 0)
+                upd(n, 'height', 0)
+            if dx != 0 or args.fraction:
+                upd(n,'x', dx)
+                upd(n,'cx', dx)
+                upd(n,'sodipodi:cx', dx)
+            if dy != 0 or args.fraction:
+                upd(n,'y', dy)
+                upd(n,'cy', dy)
+                upd(n,'sodipodi:cy', dy)
         d = n.getAttribute('d')
         if d is not None and d != '':
             if args.path:
@@ -549,7 +617,7 @@ def do_update(n,dx,dy):
                 d_new = None
             if d_new:
                 if args.verbose:
-                    print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
+                    print prname+': "'+d+'"','"'+d_new+'"'
                 n.setAttribute('d',d_new)
         if args.unneeded:
             i = n.attributes.getNamedItem('id')
@@ -560,21 +628,17 @@ def do_update(n,dx,dy):
                 if not attr or not unneeded_attributes[attr_name].search(attr.value):
                     continue
                 if args.verbose:
-                    print "removing",attr.name,attr.value
+                    print prname,"removing",attr.name,attr.value
                 n.attributes.removeNamedItem(attr_name)
             if n.nodeName in unneeded_byname:
                 for i in unneeded_byname[n.nodeName]:
                     if n.attributes.getNamedItem(i):
                         n.attributes.removeNamedItem(i)
 
-#    elif args.verbose:
-#        print n.nodeName
     if args.layer and n.nodeName == 'g':
         attr = n.attributes.getNamedItem('inkscape:groupmode')
         i = n.attributes.getNamedItem('id')
-#        print "checking group", attr, i
         if attr and attr.value == 'layer' and i and i.value == args.layer:
-#            print "layer found"
             dx += args.x
             dy += args.y
 
@@ -582,14 +646,15 @@ def do_update(n,dx,dy):
         do_update(i,dx,dy)
 
 parser = argparse.ArgumentParser("transform the specified svg file by the specified amounts")
-parser.add_argument("--verbose", "-v", help = "print progress messages", action = 'store_true', default = False)
-parser.add_argument("--unneeded", "-u", help = "remove unneeded attributes elements", action = 'store_true', default = False)
-parser.add_argument("--style", "-s", help = "remove/edit style elements", action = 'store_true', default = False)
-parser.add_argument("--path", "-p", help = "edit paths", action = 'store_true', default = False)
-parser.add_argument('--x', '-x', type=int, default=0, help='translate x by')
 parser.add_argument('--box', '-r', type = int, nargs = 4, default = None, help = 'Only transpose elements within the specified box {min_x, min_y, max_x, max_y}')
-parser.add_argument('--layer', '-l', default=None, help='Only transpose specified layer');
-parser.add_argument('--y', '-y', type=int, default=0, help='translate y by')
+parser.add_argument("--fraction", "-f", help = "round fractional coordinates up/down", action = 'store_true', default = False)
+parser.add_argument('--layer', '-l', default = None, help = 'Only transpose specified layer');
+parser.add_argument("--path", "-p", help = "edit paths", action = 'store_true', default = False)
+parser.add_argument("--style", "-s", help = "remove/edit style elements", action = 'store_true', default = False)
+parser.add_argument("--unneeded", "-u", help = "remove unneeded attributes elements", action = 'store_true', default = False)
+parser.add_argument("--verbose", "-v", help = "print progress messages", action = 'store_true', default = False)
+parser.add_argument('--x', '-x', type = int, default = 0, help = 'translate x by')
+parser.add_argument('--y', '-y', type = int, default = 0, help = 'translate y by')
 parser.add_argument("infile", help = "file to read")
 parser.add_argument("outfile", help = "file to write")
 args = parser.parse_args()
