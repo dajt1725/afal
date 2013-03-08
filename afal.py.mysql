@@ -399,9 +399,9 @@ def coins_to_str(s):
         for j in i:
             n = j[0]
             if n == 1:
-                coin = j[1].format(s='', es='')
+                coin = j[1].format(s='', es='', y='y')
             else:
-                coin = j[1].format(s='s', es='es')
+                coin = j[1].format(s='s', es='es', y='ies')
             ret += '{sep}{n} {coin}'.format(sep = sep, n = n, coin = coin)
             sep = nsep
     return ret
@@ -480,8 +480,8 @@ def get_coins():
             ret_bycpe[i[2]] = [tmp]
         ret_byname[i[1]] = tmp
         ret_byname[i[1].lower()] = tmp
-        ret_byname[i[1].format(s='', es='').lower()] = tmp
-        ret_byname[i[1].format(s='s', es='es').lower()] = tmp
+        ret_byname[i[1].format(s='', es='', y='y').lower()] = tmp
+        ret_byname[i[1].format(s='s', es='es', y='ies').lower()] = tmp
         ret_byid[i[0]] = tmp
     return (ret_byname, ret_bycpe, ret_byid)
 
@@ -496,16 +496,11 @@ def get_char_money(char):
     for i in resp:
         id = i[0]
         t = coins_byid[id]
-        tmp = {}
-        tmp['money_id'] = id
-        tmp['coin'] = t['coin']
-        tmp['copper_equiv'] = t['copper_equiv']
-        tmp['common_use'] = t['common_use']
+        tmp = {'money_id': id, 'coin': t['coin'], 'copper_equiv': t['copper_equiv'], 'common_use': t['common_use'], 'quantity': int(i[1])}
         if 'abbrev' in t:
             tmp['abbrev'] = t['abbrev']
         if 'note' in t:
             tmp['note'] = t['note']
-        tmp['quantity'] = int(i[1])
         ret.append(tmp)
     return ret
 
@@ -514,10 +509,6 @@ def char_find_money(char, amount_cp):
     ret = {'value_cp': amount_cp}
     x = get_char_money(char)
     for i in x:
-        if 'abbrev' in i:
-            name = i['abbrev']
-        else:
-            name = i['coin']
         if not i['common_use']:
             continue
         cpe = i['copper_equiv']
@@ -530,12 +521,16 @@ def char_find_money(char, amount_cp):
             n = q
         if n == 0:
             continue
+        if 'abbrev' in i:
+            name = i['abbrev']
+        else:
+            name = i['coin']
         ret[name] = n
         amount_cp -= n * cpe
         if amount_cp == 0:
             break
     if amount_cp:
-        pw("Error: getting {a} ({l} left) from {x} got {r}".format(a = ret['value_cp'], l = amount_cp, x = x, r = ret), max = 130)
+#        pw("Error: getting {a} ({l} left) from {x} got {r}".format(a = ret['value_cp'], l = amount_cp, x = x, r = ret), max = 130)
         raise ValueError("Char {char} needs {amount_cp} change".\
 format(char = char, amount_cp = amount_cp))
     return ret
@@ -546,24 +541,30 @@ def invent_money(amount_cp):
     ret = {'value_cp': amount_cp}
     l = coins_bycpe.keys()
     l.sort(reverse = True)
+    print "invent money list",l
     for i in l:
-        if not i['common_use']:
+        if i > amount_cp:
             continue
-        cpe = i['copper_equiv']
-        if cpe > amount_cp:
-            continue
-        n = int(amount_cp / cpe)
-        if 'abbrev' in i:
-            ret[i['abbrev']] = n
-        else:
-            ret[i['coin']] = n
-        amount_cp -= n
+        for j in coins_bycpe[i]:
+#            print "invent money",j
+            if not j['common_use']:
+                continue
+            n = int(amount_cp / i)
+#            print "inventing",n,j['coin']
+            if n == 0:
+                continue
+            if 'abbrev' in j:
+                ret[j['abbrev']] = n
+            else:
+                ret[j['coin']] = n
+            amount_cp -= n * i
+            if amount_cp == 0:
+                break
         if amount_cp == 0:
             break
     if amount_cp > 0:
         raise ValueError("Can't Happen")
     return ret
-
 
 def char_change_money(char, dir, d):
     global coins_byname
