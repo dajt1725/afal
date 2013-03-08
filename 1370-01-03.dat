@@ -164,7 +164,7 @@ date=Ches 3 1370
 ,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3b-1370
 ,,name=Potion *4;note=Identify
-,,name=Jug of Liquid Magic
+,,name=Jug of Liquid Magic  #1
 ,,holder=Auction
 ,,,name=Scroll (MU)  #7;note=L1: Unseen Servant *3
 ,,,name=Scroll (MU)  #8;note=L2: Levatate *4
@@ -202,7 +202,8 @@ date=Ches 3 1370
 ,,name=Magic Tent;owner=AFAL;note=Sleeps 8, acts as a Ring of Warmth for the inhabitants
 ,,name=Magic Cooking Set;owner=AFAL
 ,,name=Gem: lots;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
-,,name=Jug of Liquid Magic *2
+,,name=Jug of Liquid Magic  #2
+,,name=Jug of Liquid Magic  #3
 ,party;type=AFAL;name=Ches-3d-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1
 ,find;found=Ches-3d-1370
 ,,name=Shameful Tome of Dishonerable Attacks;note=Identify
