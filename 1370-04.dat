@@ -374,7 +374,7 @@ date=Tarsakh 21, 1370
 ,sell;to=Someone;item=Potion of Enlarge;cash=48000vcp;note=240gp
 ,sell;to=Someone;item=Potion of Longevitiy;cash=906800vcp;note=4534gp
 ,sell;to=Someone;item=Potion of Love ("Philter");cash=78000vcp;note=390gp
-,sell;to=Someone;item=Potion of Lust;cash=78000vcp;note=390gp
+,sell;to=Someone;item=Potion of Lust;cash=76000vcp;note=380gp
 ,sell;to=Someone;item=Potion of Murdoch's Insect Ward;cash=76000vcp;note=380gp
 ,sell;to=Someone;item=Potion of Sweet Water;cash=91200vcp;note=456gp
 ,sell;to=Someone;item=Potion of Undead Control (Skeleton);cash=580000vcp;note=2900gp
