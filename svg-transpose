@@ -17,6 +17,12 @@ unneeded_byname = {
 id_regex = re.compile('(text|path|tspan|title|rect|circle)\d+$')
 
 ###### path parsing code
+style_re1 = re.compile(";display:inline$")
+style_repl1 = ''
+style_re2 = re.compile(";display:inline;")
+style_repl2 = ';'
+style_re3 = re.compile("^display:inline;")
+style_repl3 = ''
 style_to_class = {
  'fill:url(#pattern-floor-corr);stroke:none': 'corr',
  'fill:url(#pattern-floor-room);stroke:none': 'room',
@@ -33,12 +39,15 @@ style_to_class = {
  'fill:#edd567;stroke:none': 'corr',
  'fill:#edb667;stroke:none': 'room',
  'fill:#0000ff;stroke:#ffff00;stroke-width:0.5px': 'feature-water',
- 'fill:url(#pattern-stairs-ew);stroke:none': 'stairs-ew',
  'fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1': 'wall',
  'fill:#e2c022;stroke:#000000;stroke-width:0.5px': 'door',
+ 'fill:url(#pattern-stairs-ew);stroke:none': 'stairs-ew',
+ 'fill:url(#pattern-stairs-ew-a);stroke:none': 'stairs-ew-a',
  'fill:url(#pattern-stairs-ns);stroke:none': 'stairs-ns',
+ 'fill:url(#pattern-stairs-ns-a);stroke:none': 'stairs-ns-a',
  'fill:#ffa500;stroke:#ffff00;stroke-width:0.5px': 'feature',
  'font-size:6px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans': 'name',
+ 'font-size:8px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans': 'name',
  'fill:#ff0000;stroke:#ffff00;stroke-width:0.5px': 'feature-bad',
  'fill:#ff0000;fill-opacity:1;stroke:#feff04;stroke-width:0.5px;stroke-opacity:1': 'feature-bad',
  'fill:#683910;stroke:#000000;stroke-width:0.5px': 'sec-door',
@@ -443,10 +452,11 @@ def do_update(n,dx,dy):
     if n.nodeName == 'pattern':
         return
 # We ignore g elements, but update their children
-    if n.attributes and n.nodeName != 'g':
+    if n.attributes:
+        prname = "{o} {id}".format(o=n.nodeName, id=n.getAttribute("id"))
         if args.verbose:
-            print n.nodeName,n.getAttribute("id")
-        if args.style:
+            print prname
+        if args.style and n.nodeName != 'g':
             ele_class = n.attributes.getNamedItem('class')
             ele_style = n.attributes.getNamedItem('style')
             if args.verbose and ele_class:
@@ -454,21 +464,24 @@ def do_update(n,dx,dy):
             if args.verbose and ele_style:
                 print "style", ele_style.specified,ele_style.value
             if ele_style and ele_style.value != '':
+                v = style_re1.sub(style_repl1, ele_style.value)
+                v = style_re2.sub(style_repl2, v)
+                v = style_re3.sub(style_repl3, v)
                 if not ele_class or ele_class.value == '':
-                   t = style_to_class.get(ele_style.value)
-                   if t:
-                       if args.verbose:
-                           print "Replacing style", ele_style.value, "with class", t
-                       n.setAttribute('class',t)
-                       n.removeAttribute('style')
-                   else:
-                       print "No known class for style", ele_style.value
-                elif style_to_class.get(ele_style.value) == ele_class.value:
+                    t = style_to_class.get(v)
+                    if t:
+                        if args.verbose:
+                            print "Replacing style", ele_style.value, "with class", t
+                        n.setAttribute('class',t)
+                        n.removeAttribute('style')
+                    else:
+                        print prname,"no known class for style", ele_style.value,v
+                elif style_to_class.get(v) == ele_class.value:
                     if args.verbose:
                         print "removing style",ele_style.value,"for class",ele_class.value
                     n.removeAttribute('style')
                 else:
-                    print "style ",ele_style.value, "!= class style for",ele_class.value
+                    print prname,"style",ele_style.value, "!= class style for",ele_class.value,v
         t = n.getAttribute('transform')
         if t is not None and t!= '':
             r = re.match(r'translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
@@ -477,7 +490,7 @@ def do_update(n,dx,dy):
                 dy += float(r.group(2))
                 n.removeAttribute('transform')
             else:
-                print "Unknown transform",t
+                print prname, "ignoring unknown transform",t
         if args.box:
             if n.nodeName == 'rect':
                 x = float(n.getAttribute('x'))
@@ -485,7 +498,8 @@ def do_update(n,dx,dy):
                 x1 = x + float(n.getAttribute('width'))
                 y1 = y + float(n.getAttribute('height'))
                 if _in([x, y], args.box) or _in([x1, y], args.box) or _in([x, y1], args.box) or _in([x1, y1], args.box):
-                    print "Transposing rect",x,y,x1,y1
+                    if args.verbose:
+                        print "Transposing rect",x,y,x1,y1
                     if x >= args.box[0] and x <= args.box[2]:
                         upd(n, 'x', dx)
                         if x1 < args.box[0] or x1 > args.box[2]:
@@ -508,10 +522,10 @@ def do_update(n,dx,dy):
                 if _in([n.getAttribute('x'), n.getAttribute('y')], args.box):
                     upd(n, 'x', dx)
                     upd(n, 'y', dy)
-            elif n.nodeName == 'path' or n.nodeName == 'title':
+            elif n.nodeName == 'path' or n.nodeName == 'title' or n.nodeName == 'g':
                 pass
             else:
-                print "Unknown nodeName",n.nodeName
+                print prname,"unknown nodeName"
         else:
             if dx != 0:
                 upd(n,'x',dx)
@@ -549,7 +563,7 @@ def do_update(n,dx,dy):
                 d_new = None
             if d_new:
                 if args.verbose:
-                    print n.nodeName,n.getAttribute("id"),'"'+d+'"','"'+d_new+'"'
+                    print prname+': "'+d+'"','"'+d_new+'"'
                 n.setAttribute('d',d_new)
         if args.unneeded:
             i = n.attributes.getNamedItem('id')
@@ -560,23 +574,23 @@ def do_update(n,dx,dy):
                 if not attr or not unneeded_attributes[attr_name].search(attr.value):
                     continue
                 if args.verbose:
-                    print "removing",attr.name,attr.value
+                    print prname,"removing",attr.name,attr.value
                 n.attributes.removeNamedItem(attr_name)
             if n.nodeName in unneeded_byname:
                 for i in unneeded_byname[n.nodeName]:
                     if n.attributes.getNamedItem(i):
                         n.attributes.removeNamedItem(i)
 
-#    elif args.verbose:
-#        print n.nodeName
-    if args.layer and n.nodeName == 'g':
-        attr = n.attributes.getNamedItem('inkscape:groupmode')
-        i = n.attributes.getNamedItem('id')
-        print "checking group", attr, i
-        if attr and attr.value == 'layer' and i and i.value == args.layer:
-            print "layer found"
-            dx += args.x
-            dy += args.y
+        if args.layer and n.nodeName == 'g':
+            attr = n.attributes.getNamedItem('inkscape:groupmode')
+            i = n.attributes.getNamedItem('id')
+            if args.verbose:
+                print "checking group", attr, i
+            if attr and attr.value == 'layer' and i and i.value == args.layer:
+                if args.verbose:
+                    print "layer "+args.layer+" found"
+                dx += args.x
+                dy += args.y
 
     for i in n.childNodes:
         do_update(i,dx,dy)
