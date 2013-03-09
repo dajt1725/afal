@@ -249,9 +249,9 @@ date=13 Tarsakh 1370
 ,pay;by=Maanamere;to=Misery;cash=2 Gems: Garnet 500gp, 4 Gems: Zircon 65gp, 4\
  Gems: Carnelian 50gp, 4 Gems: Sardonyx 50gp, 2 Harbor Moons, 300gp
 ,pay;by=Darius;to=Misery;cash=2 Gems: Garnet 500gp, 4 Gems: Zircon 65gp,\
- 1 harbor moon, 35gp, 104cp
+ 1 harbor moon, 35gp, 103cp
 ,pay;by=Darius;to=Denyae;cash=4 Gems: Carnelian 50gp, 4 Gems: Sardonyx 50gp, 5\
- Harbor Moons, 599gp, 102cp
+ Harbor Moons, 599gp, 103cp
 ,trade;by=Misery;to=Steve;cash=1gp;for=20sp
 ,trade;by=Misery;to=Brogan;for=10cp, 9sp, 1ep
 ,pay;by=Misery
@@ -266,15 +266,15 @@ date=13 Tarsakh 1370
 ,,to=Deringa
 ,,to=Staric;cash=4 Gems: Carnelian 50gp, 11gp, 111cp
 ,,to=Steve
-,,to=Theo;cash=3 Gems: Zircon 65gp, 3gp, 1cp
+,,to=Theo;cash=3 Gems: Zircon 65gp, 3gp
 ,give;by=Maanamere;to=AFAL;cash=1 harbor moon;note=to reimburse for expenses
 ,trade;by=Denyae;to=Henkles;cash=15 harbor moons, 18 Toals, 206gp, 600cp, 40sp, 6ep;for=2 gems: Garnet 500gp
 ,give;by=AFAL;to=Henkles;cash=137gp;note=to reimburse for expenses
 ,pay;by=Henkles
 ,,to=Brogan;cash=4 Gems: Sardonyx 50gp,70gp,171cp
 ,,to=Denyae;cash=270gp,171cp
-,,to=Deringa;cash=135gp,86cp
-,,to=Dexter;cash=240gp,24cp
+,,to=Deringa;cash=135gp,85cp
+,,to=Dexter;cash=240gp,23cp
 ,,to=Staric;cash=192gp,46cp
 ,,to=Steve;cash=17gp,175cp
 ,trade;to=Henkles
@@ -294,7 +294,7 @@ date=13 Tarsakh 1370
 date=Tarsakh 16, 1370;find;found=AFAL;name=Augury Sticks;holder=AFAL
 date=Tarsakh 18, 1370;give;by=Maanamere;to=Someone;amount=810gp,5sp;note=rent warehouse, oil of cloves, maps and charts, hammock
 date=Tarsakh 20, 1370
-,party;type=AFAL;name=Tarsakh-20a-1370;Brogan=1;Darius=1;Denyae=1;Deringa=0.5;Dexter=1;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
+,party;type=AFAL;name=Tarsakh-20a-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Deringa=0.5;Dexter=1;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
 ,find;found=Tarsakh-20a-1370
 ,,name=3x Giant Spider poison sacks
 ,,name=Bracers of Inititive (Moderate);note=Ag part ID Tarsakh 24 1370
@@ -374,7 +374,7 @@ date=Tarsakh 21, 1370
 ,sell;to=Someone;item=Potion of Enlarge;cash=48000vcp;note=240gp
 ,sell;to=Someone;item=Potion of Longevitiy;cash=906800vcp;note=4534gp
 ,sell;to=Someone;item=Potion of Love ("Philter");cash=78000vcp;note=390gp
-,sell;to=Someone;item=Potion of Lust;cash=76000vcp;note=380gp
+,sell;to=Someone;item=Potion of Lust;cash=56000vcp;note=280gp
 ,sell;to=Someone;item=Potion of Murdoch's Insect Ward;cash=76000vcp;note=380gp
 ,sell;to=Someone;item=Potion of Sweet Water;cash=91200vcp;note=456gp
 ,sell;to=Someone;item=Potion of Undead Control (Skeleton);cash=580000vcp;note=2900gp
@@ -393,23 +393,26 @@ date=Tarsakh 21, 1370
 ,sell;to=Someone;item=Staff of the Serpent;cash=10360000vcp;note=51800gp
 ,sell;to=Someone;item=+1 Bastard Sword  #2;cash=541200vcp;note=2706gp
 ,sell;to=Someone;item=+1 Scimitar  #2;cash=460000vcp;note=2300gp
-#  340gp +1 Banded	 180 +1 Dagger  #1	 194gp,2sp #4
-#  170gp #5		 300 +1 Pick		 340 +1 Glaive
-#  361gp,1ep xbow	 210 +1 Shield		 310 +1 Shield
-#  330 +1 Studded	 220 Amulet		  53 Bottle
-#   31 Det Magic	  99 Oil		  61gp, 1sp Claraudience
-#   25gp Enlarge	 226gp,14sp Longevity	  39 love
-#   39 lust		  38 Insect Ward	  45gp,12sp Sweet Water
-#  290 Undead Control	  25 Ventriloquism	2258gp,9sp Youth
-#   83 C#1		  94 C#2		 220 C#8
-#  510 C#9		 240 C12		  39 MU#5
-#  80 MU#6		  85 MU#7		 230 MU#8
-#  80 MU#9		5180 Staff		 270gp,12sp Bastard Sword
-# 230gp +1 Scimitar	13528 Total
-,give;by=AFAL;to=Someone;cash=2710600vcp;note=Fee for auction
-# ,give;to=Someone;by=AFAL;cash=12 toals, 1gp;note=for unsold dust
+#  340gp +1 Banded	 180 +1 Dagger  #1	  194gp,2sp #4
+#  170gp #5		 300 +1 Pick		  340 +1 Glaive
+#  361gp,1ep xbow	 210 +1 Shield		  310 +1 Shield
+#  330 +1 Studded	 220 Amulet		   53 Bottle
+#   31 Det Magic	  99 Oil		   61gp, 4sp Claraudience
+#   25gp Enlarge	 226gp,14sp Longevity	   39 love
+#   28 lust		  38 Insect Ward	   45gp,12sp Sweet Water
+#  290 Undead Control	  25 Ventriloquism	 2258gp,9sp Youth
+#   83 C#1		  94 C#2		  220 C#8
+#  510 C#9		 240 C12		   39 MU#5
+#  80 MU#6		  85 MU#7		  230 MU#8
+#  80 MU#9		5180 Staff		  270gp,12sp Bastard Sword
+# 230gp +1 Scimitar	  25 Unsold powder        4060.95 column fee
+# 2558.5 Column fee    6922.7 Column fee	13542.15 Total
+# 25575 column gross  71164 column gross          63194 column gross
+# Total gross: 31986600vcp   net 29278170vcp
+,give;by=AFAL;to=Someone;cash=2708430vcp;note=Fee for auction
 ,coin;name=Letter of Credit 10000gp;copper_equiv=2000000
 ,coin;name=Gem{s}: Rub{y} 1000gp;copper_equiv=200000
+,find;found=AFAL;name=Letter of Credit 146390gp, 1ep, 7sp;note=loot from auction
 ,give;by=Someone;to=AFAL;cash=Letter of Credit 10000gp,5 Gems: Rubies 1000gp;note=so Ag and Tristan could get change
 ,give;by=AFAL;to=Someone;cash=3000000vcp;note=actually given to Ag, Tristan and Ursula
 ,sell;to=Someone;item=Dagger of Hurting  #4;cash=1000000vcp;note=5000gp
@@ -418,10 +421,19 @@ date=Tarsakh 21, 1370
 date=Tarsakh 22 1370
 ,party;type=AFAL;name=Tarsakh-22-1370;\
 Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
-,give;by=AFAL;to=Someone;amount=250gp;note=For Holy Water
+,commit
+,give;by=Staric;to=Someone;cash=250gp;note=For Holy Water
 ,find;found=Tarsakh-22-1370
 ,,name=Holy Water  #1
-,,name=9x Holy Water
+,,name=Holy Water  #2;holder=Henkles
+,,name=Holy Water  #3;holder=Henkles
+,,name=Holy Water  #4;holder=Henkles
+,,name=Holy Water  #5;holder=Henkles
+,,name=Holy Water  #6;holder=Henkles
+,,name=Holy Water  #7;holder=Henkles
+,,name=Holy Water  #8;holder=Henkles
+,,name=Holy Water  #9;holder=Henkles
+,,name=Holy Water  #10;holder=Henkles
 ,,name=Boots of Levitation;note=Steve,Ag,Tristan part ID Tarsakh 24 1370;value=15000gp
 ,,name=Ring of Protection (Moderate)  #2;note=Steve failed, Ag ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Fire Resistance  #3;note=Steve, Staric id Tarsakh 24 1370;value=5000gp
@@ -434,29 +446,47 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,coin;name=mithril piece{s};abbrev=mp;copper_equiv=10000
 ,give;by=Someone;to=Tarsakh-22-1370;cash=3cp,8sp, 21gp, 3 toal, 25 Harbor Moons, 25 mithril pieces;note=Cash on A.
 ,give;by=Someone;to=Tarsakh-20a-1370;cash=1000gp;note=For smoke powder work so far
-,divy;by=Kythorn-16-1369;cash=178400vcp;note=892gp for Potion of Ventriloquism, Scroll of Whirling Blade
-,divy;by=Eleasias-16-1369;cash=432000vcp;note=2160gp for scroll of continual darkness
-,divy;by=Marpenoth-1-1369;cash=806196vcp;note=4031gp for three items with 4vcp for the party
-,divy;by=Marpenoth-23-1369;cash=82080vcp;note=410gp,8sp for Potion of Sweet Water
-,divy;by=Marpenoth-26-1369;cash=95400vcp;note=477gp for Bottle of Breaking
-,divy;by=Uktar-12b-1369;cash=592396vcp;note=2962gp for two potions with 4vcp for the party
-,divy;by=Nightal-3-1369;cash=396000vcp;note=1980gp for Amulet of Turning Res
-,divy;by=Nightal-12-1369;cash=324000vcp;note=1620gp for +1 Dagger from Staros
-,divy;by=Nightal-17-1369;cash=484200vcp;note=2421gp for +1 Scimitar, scroll of Delay Death
-,divy;by=Nightal-24-1369;cash=1314000vcp;note=6570gp for Two cleric scrolls
-,divy;by=Hammer-9-1370;cash=144000vcp;note=720gp for scroll whirling blade
-,divy;by=Hammer-13-1370;cash=1223989vcp;note=6120gp for banded mail and glaive and 11vcp to the party
-,divy;by=Hammer-20-1370;cash=1000076vcp;note=5000gp,8sp for crossbow and dagger and 4 vc4 to the party
-,divy;by=Alturiak-29-1370;cash=70200vcp;note=351gp for Potion of Love
-,divy;by=Ches-3b-1370;cash=711000vcp;note=3555gp for scrolls
-,divy;by=Ches-3c-1370;cash=9679749vcp;note=48398gp, 1ep, 5sp for Youth, Longevity, Claraudience, Lust, Det Magic Powder, and lots of stuff and 1vcp to the party
-,divy;by=Ches-25-1370;cash=558000vcp;note=2790gp for +1 Shield
+,dividend;by=Kythorn-16-1369;cash=178400vcp;note=892gp for Potion of Ventriloquism, Scroll of Whirling Blade
+,dividend;by=Eleasias-16-1369;cash=432000vcp;note=2160gp for scroll of continual darkness
+,dividend;by=Marpenoth-1-1369;cash=806196vcp;note=4031gp for three items with 4vcp for the party
+,dividend;by=Marpenoth-23-1369;cash=82080vcp;note=410gp,8sp for Potion of Sweet Water
+,dividend;by=Marpenoth-26-1369;cash=95400vcp;note=477gp for Bottle of Breaking
+,dividend;by=Uktar-12b-1369;cash=592396vcp;note=2962gp for two potions with 4vcp for the party
+,dividend;by=Nightal-3-1369;cash=396000vcp;note=1980gp for Amulet of Turning Res
+,dividend;by=Nightal-12-1369;cash=324000vcp;note=1620gp for +1 Dagger from Staros
+,dividend;by=Nightal-17-1369;cash=484200vcp;note=2421gp for +1 Scimitar, scroll of Delay Death
+,dividend;by=Nightal-24-1369;cash=1314000vcp;note=6570gp for Two cleric scrolls
+,dividend;by=Hammer-9-1370;cash=144000vcp;note=720gp for scroll whirling blade
+,dividend;by=Hammer-13-1370;cash=1223989vcp;note=6120gp for banded mail and glaive and 11vcp to the party
+,dividend;by=Hammer-20-1370;cash=1000076vcp;note=5000gp,8sp for crossbow and dagger and 4 vc4 to the party
+,dividend;by=Alturiak-29-1370;cash=70200vcp;note=351gp for Potion of Love
+,dividend;by=Ches-3b-1370;cash=711000vcp;note=3555gp for scrolls
+,dividend;by=Ches-3c-1370;cash=9652753vcp;note=48263gp, 1ep, 5sp for Youth, Longevity, Claraudience, Lust, Det Magic Powder, and lots of stuff and 15vcp to the party
+,dividend;by=Ches-25-1370;cash=558000vcp;note=2790gp for +1 Shield
 ,trade;by=AFAL;to=Steve;cash=Letter of Credit 10000gp;for=2000000vcp
 ,trade;by=AFAL;to=Henkles;cash=5 Gems: rubies 1000gp;for=1000000vcp
-,divy;by=Ches-30-1370;cash=10907280vcp;note=54536gp,8sp for +1 Pick, Staff, Oil, Bastard Sword, Medium Shield and lots of stuff
-,divy;by=Tarsakh-4-1370;cash=36gp,298800vcp;note=1530gp for +1 Dagger  #5
-,pay;by=Ag
-,pay;by=Tristan
+,dividend;by=Ches-30-1370;cash=10907280vcp;note=54536gp,8sp for +1 Pick, Staff, Oil, Bastard Sword, Medium Shield and lots of stuff
+,dividend;by=Tarsakh-4-1370;cash=306000vcp;note=1530gp for +1 Dagger  #5
+,pay;by=Ag;to=Darius;cash=566660vcp
+,pay;by=Ag;to=Denyae;cash=245788vcp
+,pay;by=Ag;to=Deringa;cash=14599vcp
+,pay;by=Ag;to=Dexter;cash=258104vcp
+,pay;by=Ag;to=Henkles;cash=312209vcp
+,pay;by=Ag;to=Maanamere;cash=566660vcp
+,pay;by=Ag;to=Misery;cash=433180vcp
+,pay;by=Ag;to=Staric;cash=66741vcp
+,pay;by=Ag;to=Steve;cash=410236vcp
+,pay;by=Ag;to=Tristan;cash=133481vcp
+,pay;by=Tristan;to=Darius;cash=412102vcp
+,pay;by=Tristan;to=Denyae;cash=107261vcp
+,pay;by=Tristan;to=Deringa;cash=54066vcp
+,pay;by=Tristan;to=Dexter;cash=119798vcp
+,pay;by=Tristan;to=Henkles;cash=171053vcp
+,pay;by=Tristan;to=Maanamere;cash=136788vcp
+,pay;by=Tristan;to=Misery;cash=205181vcp
+,pay;by=Tristan;to=Staric;cash=103461vcp
+,pay;by=Tristan;to=Steve;cash=263915vcp
+,pay;by=Tristan;to=Theo;cash=68393vcp
 ,pay;by=Ursula;to=Darius;cash=163836vcp
 ,pay;by=Ursula;to=Denyae;cash=112976vcp
 ,pay;by=Ursula;to=Deringa;cash=112976vcp
@@ -464,20 +494,43 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,pay;by=Ursula;to=Henkles;cash=225956vcp
 ,pay;by=Ursula;to=Staric;cash=112976vcp
 ,pay;by=Ursula;to=Steve;cash=225952vcp
-,pay;by=Maanamere
-,pay;by=Misery
-,pay;by=Darius
+,pay;by=Maanamere;to=Darius;cash=28308vcp
+,pay;by=Maanamere;to=Denyae;cash=23415vcp
+,pay;by=Maanamere;to=Deringa;cash=74925vcp
+,pay;by=Maanamere;to=Dexter;cash=720715vcp
+,pay;by=Maanamere;to=Henkles;cash=648682vcp
+,pay;by=Maanamere;to=Misery;cash=105376vcp
+,pay;by=Maanamere;to=Staric;cash=126435vcp
+,pay;by=Maanamere;to=Steve;cash=675056vcp
+,pay;by=Misery;to=Henkles;cash=297944vcp
+,pay;by=Misery;to=Steve;cash=18516vcp
+,pay;by=Darius;to=Steve;cash=326042vcp
+,pay;by=Darius;to=Dexter;cash=257011vcp
+,pay;by=Darius;to=Henkles;cash=271924vcp
 ,give;by=Dexter;to=Staric;amount=800gp;note=debt for Nose Ring
 ,give;by=AFAL;to=Steve;amount=1150gp;note=debt for arrows
+,give;by=AFAL;to=Staric;amount=250gp;note=for holy water
 ,give;by=AFAL;to=Henkles;amount=1670gp;note=repay debts for Eversmoking Bottle,auction,Undermountain
-,give;by=AFAL;to=Someone;amount=200gp;note=pearls for Identify
-,give;by=AFAL;to=Destroyed;cash=2 Gems: pearl 100gp;note=used for identifies
-,sell;to=Ag;item=+2/+3 (L) Dagger;cash=400000vcp
-,sell;to=Ag;item=Ring of Invisibility;cash=60000vcp;debt=7200gp
-,sell;to=Maanamere;item=Ring of Shocking Grasp;cash=1000000vcp
-,sell;to=Denyae;item=+1/+3 (Trolls) Long Sword;cash=600000vcp
-,dividend;by=Tarsakh-12-1370;cash=1000000vcp
-,dividend;by=Tarsakh-20a-1370;cash=60000vcp
-,dividend;by=Tarsakh-22-1370;cash=1000000vcp
-,lend;to=Denyae;item=Amulet of Proof Against Detection and Location
+,lend;to=Brogan;item=Glass Sphere of Wall of Force  #1
 ,lend;to=Brogan;item=Glass Sphere of Wall of Force  #2
+,sell;to=Maanamere;item=Ring of Shocking Grasp;cash=1000000vcp
+,dividend;by=Tarsakh-12-1370;cash=1000000vcp
+,sell;to=Denyae;item=+1/+3 (Trolls) Long Sword;cash=600000vcp
+,sell;to=Ag;item=+2/+3 (L) Dagger;cash=400000vcp
+date=Tarsakh 23, 1370
+,give;by=AFAL;to=Destroyed;cash=2 Gems: pearl 100gp;note=used for identifies
+,trade;by=Steve;to=Henkles;cash=23 Harbor Moons;for=1150gp
+,give;by=Henkles;to=Someone;amount=200gp;note=pearls for Identify
+,lend;to=Denyae;item=Amulet of Proof Against Detection and Location
+,dividend;by=Tarsakh-22-1370;cash=1000000vcp
+,sell;to=Ag;item=Ring of Invisibility;debt=7500gp
+,pay;by=Ag;to=Deringa;cash=9402vcp
+,pay;by=Ag;to=Staric;cash=9402vcp
+,pay;by=Ag;to=Brogan;cash=18801vcp
+,pay;by=Ag;to=Darius;cash=18801vcp
+,pay;by=Ag;to=Denyae;cash=18801vcp
+,pay;by=Ag;to=Dexter;cash=18801vcp
+,pay;by=Ag;to=Henkles;cash=18801vcp
+,pay;by=Ag;to=Maanamere;cash=18801vcp
+,pay;by=Ag;to=Steve;cash=18801vcp
+,pay;by=Ag;to=Tristan;cash=18801vcp
