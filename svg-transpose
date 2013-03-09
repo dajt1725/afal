@@ -28,6 +28,7 @@ rem_style = re.compile('#pattern[-0-9]{2,}')
 
 style_to_class = {
  'font-size:14px;fill:#000000': None,
+ 'font-size:14px;fill:#ff0000': None,
  'font-size:14px;fill:black': None,
  'font-size:14px;fill:red': None,
  'font-size:18px;fill:#000000': None,
