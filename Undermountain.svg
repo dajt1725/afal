@@ -468,7 +468,7 @@
     <rect class="corr" height="50" width="10" x="1650" y="250"/>
     <path class="corr" d="m1390 240h10v10h-10zm-10-20h10v50h-10z"/>
     <rect class="corr" height="10" width="10" x="1380" y="140"/>
-    <path class="corr" d="m1500 280v50 10c-138.4861 0 175.3201 0 210 0v-10h-200v-50zm10 30v10h10v-10z" id="fixme-path5739"/>
+    <path class="corr" d="m 1500,280 0,60 210,0 0,-10 -200,0 0,-50 z m 10,30 0,10 10,0 0,-10 z" id="path5739"/>
     <path class="corr" d="m1540 210v10h10v30h20v-10h-10v-20h80v-10z"/>
     <path class="corr" d="m1730 140v10 120h-20v10h20v60h10v-190h10v30h130v-30h60v170h10v-160h30v-10h-30v-10h-80v30h-40v-10h-10v10h-60v-30z"/>
     <path class="corr" d="m1890 160v30h-140v140h90v10h-10v10h20v-40h-10v10h-80v-120h110v120h10v-120h10v110h10v-140h20v30h10v-40z"/>
@@ -1897,9 +1897,9 @@
     <path class="stairs-ew" d="m1740 1943 20-3v10l-20-3z"/>
     <path class="stairs-ns" d="m1093 2450h4l3 10h-10z"/>
     <path class="stairs-ns" d="m1480 1920h10l-3 10h-4l-3-10z"/>
-    <path class="stairs-ns" d="m1513 1920h4l3 30h-10l3-30z"/>
-    <path class="stairs-ns" d="m1640 1940h10l-3 20h-4z"/>
-    <path class="stairs-ns" d="m1770 1930h10l-3 10h-4z"/>
+    <path class="stairs-ns" d="m1513 1920h4l3 30h-10l3-30z" onclick="stairs('um-l1-l1','um-l1-m')"/>
+    <path class="stairs-ns" d="m1640 1940h10l-3 20h-4z" onclick="stairs('um-l1-l1','um-l1-m')"/>
+    <path class="stairs-ns" d="m1770 1930h10l-3 10h-4z" onclick="stairs('um-l1-l1','um-l1-m')"/>
     <path class="stairs-ns" d="m890 2270h10l-3 20h-4z"/>
     <path class="stairs-ns" d="m55 3120h160l5 20h-170z"/>
     <!-- Pits and floor features start here -->
@@ -1977,13 +1977,13 @@
     <path class="wall" d="m158 2880h22v-20h20v112"/>
     <path class="wall" d="m1510 1950v-30h-20v10h10v10h-10v20h-30v10h20v30h-60v20h30v10h10"/>
     <path class="wall" d="m1520 1950v-40h-90v2"/>
-    <path class="wall" d="m1640 1940c0 40 0 40 0 40h-10v20h30v-20h-10v-10h20v10h12"/>
+    <path class="wall" d="m 1640,1940 0,40 -10,0 0,20 30,0 0,-20 -10,0 0,-10 20,0 0,10 12,0"/>
     <path class="wall" d="m1650 1940v20h20v-10h30v10h30v-60h2-12v-12 2h-22 2v50h-30v-50h22-2v-10h30v2-12h30v30h-12 2v60h32"/>
     <path class="wall" d="m180 3010h20v-32"/>
     <path class="wall" d="m182 3220h-2v-10h30v-50h2-74"/>
     <path class="wall" d="m1770 1930v10h-10-50v10h50v10"/>
-    <path class="wall" d="m1779 1960h11v-20h-10v-10"/>
-    <path class="wall" d="m1790 1960v20h-30v-10h-60v10h-10"/>
+    <path class="wall" d="m1778 1960h12v-20h-10v-10"/>
+    <path class="wall" d="m1790 1960v20h-30v-10h-60v10h-12"/>
     <path class="wall" d="m190 3520h20v-110h12-12v-30h12-2v-20h2-2v-60h20v-22"/>
     <path class="wall" d="m200 2810v40h-20v-20h-22"/>
     <path class="wall" d="m210 2978v32h20"/>
@@ -2142,7 +2142,7 @@
     <rect class="feature" height="2" id="discontiguous-floor" width="10" x="890" y="2318">
       <title>The North corridor floor is 10' above the E/W corridor floor.</title>
     </rect>
-    <rect class="feature" height="3" id="ladder-1" width="6" x="1742" y="1872">
+    <rect class="feature" height="3" id="ladder-1" onclick="stairs('um-l1-l1','um-l1-m')" width="6" x="1742" y="1872">
       <title>This is a ladder to room above</title>
     </rect>
     <rect class="feature" height="9" id="cage-1" width="8" x="1680" y="1906">
@@ -2528,11 +2528,11 @@
     <path class="stairs-ew" d="m1600 1910 30 3v4l-30 3z"/>
     <path class="stairs-ew" d="m1700 1910 10 3v4l-10 3z"/>
     <path class="stairs-ew" d="m1750 340 30 3v4l-30 3z" onclick="stairs('um-l1-m','um-l2-m')"/>
-    <path class="stairs-ns" d="m1513 1920h4l3 30h-10z"/>
+    <path class="stairs-ns" d="m1513 1920h4l3 30h-10z" onclick="stairs('um-l1-m','um-l1-l1')"/>
     <path class="stairs-ns" d="m1543 1180h4l3 20h-10z" id="stairs-falling">
       <title>The Falling Stairs</title>
     </path>
-    <path class="stairs-ns" d="m1640 1940h10l-3 20h-4z"/>
+    <path class="stairs-ns" d="m1640 1940h10l-3 20h-4z" onclick="stairs('um-l1-m','um-l1-l1')"/>
     <path class="stairs-ns" d="m1730 1970h10l-3 20h-4z"/>
     <path class="stairs-ns" d="m1740 1790h10l-3 20h-4z"/>
     <path class="stairs-ns" d="m1740 1790h10l-3 20h-4z" id="stairs-dexter-a"/>
@@ -2540,7 +2540,7 @@
     <path class="stairs-ns" d="m1750 450h10l-4 160h-2z"/>
     <path class="stairs-ns" d="m1753 1970h3l4 20h-10z"/>
     <path class="stairs-ns" d="m1770 1880h10l-3 10h-4z"/>
-    <path class="stairs-ns" d="m1770 1930h10l-3 10h-4z"/>
+    <path class="stairs-ns" d="m1770 1930h10l-3 10h-4z" onclick="stairs('um-l1-m','um-l1-l1')"/>
     <rect class="pit" height="10" id="pit-rock-lobster-a" width="10" x="2700" y="670">
       <title>This pit has a nasty robot lobster in it.</title>
     </rect>
@@ -3040,7 +3040,7 @@
     <rect class="feature" height="6" id="cooking-platform" width="6" x="1062" y="1302">
       <title>All mistakes in jumping between columns result in one being teleported here.  It sinks under weight.  After a minute or so it teleports you back to the entrance.</title>
     </rect>
-    <rect class="feature" height="6" id="trapdoor-in-floor" width="6" x="1742" y="1872">
+    <rect class="feature" height="6" id="trapdoor-in-floor" onclick="stairs('um-l1-m','um-l1-l1')" width="6" x="1742" y="1872">
       <title>This trapdoor opens onto a ladder that leads to the room below.</title>
     </rect>
     <rect class="feature" height="7" id="statue-of-mask" width="6" x="1123" y="1376">
