@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="Undermountain.svg" style="display:inline" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="um2.svg" style="display:inline" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Anything For A Laugh's map of Undermountain</title>
   <script type="text/ecmascript"><![CDATA[
       function toggleLayer(e,n) {
@@ -6,17 +6,17 @@
         var state = l.getAttributeNS(null,'style');
         if (state == 'display:inline') {
           l.setAttributeNS(null,'style','display:none');
-          e.target.setAttributeNS(null,'style','font-size:14px;fill:#ff0000');
+          e.target.setAttributeNS(null,'style','font-size:10px;fill:#ff0000');
         } else {
           l.setAttributeNS(null,'style','display:inline');
-          e.target.setAttributeNS(null,'style','font-size:14px;fill:#000000');
+          e.target.setAttributeNS(null,'style','font-size:10px;fill:#000000');
         }
       }
       function stairs(n1, n2) {
         document.getElementById(n1).setAttributeNS(null, 'style', 'display:none');
-        document.getElementById('b-'+n1).setAttributeNS(null, 'style', 'font-size:14px;fill:#ff0000');
+        document.getElementById('b-'+n1).setAttributeNS(null, 'style', 'font-size:10px;fill:#ff0000');
         document.getElementById(n2).setAttributeNS(null, 'style', 'display:inline');
-        document.getElementById('b-'+n2).setAttributeNS(null, 'style', 'font-size:14px;fill:#000000');
+        document.getElementById('b-'+n2).setAttributeNS(null, 'style', 'font-size:10px;fill:#000000');
       }
 // from http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
       function getScrollXY() {
@@ -48,90 +48,94 @@
   <defs id="defs4">
     <pattern id="stairs-ne-warped-1" inkscape:collect="always" patternTransform="matrix(1.5508062,0,0,1.5508062,521,154)" xlink:href="#stairs-ne"/>
     <pattern height="1" id="stairs-ew" patternUnits="userSpaceOnUse" width="2">
-      <rect height="1" style="fill:black;stroke:none" width="1" x="0" y="0"/>
+      <rect height="1" style="fill:#0f0f0f;stroke:none" width="1" x="0" y="0"/>
       <rect height="1" style="fill:#edd567;stroke:none" width="1" x="1" y="0"/>
     </pattern>
     <pattern height="2" id="stairs-ns" patternUnits="userSpaceOnUse" width="1">
-      <rect height="1" style="fill:black;stroke:none" width="1" x="0" y="0"/>
+      <rect height="1" style="fill:#0f0f0f;stroke:none" width="1" x="0" y="0"/>
       <rect height="1" style="fill:#edd567;stroke:none" width="1" x="0" y="1"/>
     </pattern>
     <pattern height="1" id="stairs-ew-a" patternUnits="userSpaceOnUse" width="2">
       <rect height="1" style="fill:#edd567;stroke:none" width="1" x="0" y="0"/>
-      <rect height="1" style="fill:#000000;stroke:none" width="1" x="1" y="0"/>
+      <rect height="1" style="fill:#0f0f0f;stroke:none" width="1" x="1" y="0"/>
     </pattern>
     <pattern height="2" id="stairs-ns-a" patternUnits="userSpaceOnUse" width="1">
       <rect height="1" style="fill:#edd567;stroke:none" width="1" x="0" y="0"/>
-      <rect height="1" style="fill:#000000;stroke:none" width="1" x="0" y="1"/>
+      <rect height="1" style="fill:#0f0f0f;stroke:none" width="1" x="0" y="1"/>
     </pattern>
     <pattern height="20" id="stairs-circ" patternUnits="userSpaceOnUse" width="20">
-      <path d="m 10,10 l  -10,-10 2.5,0 z l   -5,-10 2.5,0 z l   0,-10 2.5,0 z l  5,-10 2.5,0 z l  -7.5,10 2.5,0 z l  -2.5,10 2.5,0 z l  2.5,10 2.5,0 z l 7.5,10 2.5,0 z l   10,-10 0,2.5 z l    10,-5 0,2.5 z l    10,0 0,2.5 z l 10,5 0,2.5 z l -10,-7.5 0,2.5 z l -10,-2.5 0,2.5 z l -10,2.5 0,2.5 z l -10,7.5 0,2.5 z" style="fill:#000000;stroke:none"/>
+      <path d="m 10,10 l  -10,-10 2.5,0 z l   -5,-10 2.5,0 z l   0,-10 2.5,0 z l  5,-10 2.5,0 z l  -7.5,10 2.5,0 z l  -2.5,10 2.5,0 z l  2.5,10 2.5,0 z l 7.5,10 2.5,0 z l   10,-10 0,2.5 z l    10,-5 0,2.5 z l    10,0 0,2.5 z l 10,5 0,2.5 z l -10,-7.5 0,2.5 z l -10,-2.5 0,2.5 z l -10,2.5 0,2.5 z l -10,7.5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
       <path d="m 10,10 l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l   -10,10 2.5,0 z l    -5,10 2.5,0 z l    0,10 2.5,0 z l    5,10 2.5,0 z l  10,-7.5 0,2.5 z l  10,-2.5 0,2.5 z l  10,2.5 0,2.5 z l  10,7.5 0,2.5 z l  -10,-10 0,2.5 z l   -10,-5 0,2.5 z l   -10,0 0,2.5 z l   -10,5 0,2.5 z" style="fill:#edd567;stroke:none"/>
     </pattern>
     <pattern height="20" id="stairs-circ-a" patternUnits="userSpaceOnUse" width="20">
       <path d="m 10,10 l  -10,-10 2.5,0 z l   -5,-10 2.5,0 z l   0,-10 2.5,0 z l  5,-10 2.5,0 z l  -7.5,10 2.5,0 z l  -2.5,10 2.5,0 z l  2.5,10 2.5,0 z l 7.5,10 2.5,0 z l   10,-10 0,2.5 z l    10,-5 0,2.5 z l    10,0 0,2.5 z l 10,5 0,2.5 z l -10,-7.5 0,2.5 z l -10,-2.5 0,2.5 z l -10,2.5 0,2.5 z l -10,7.5 0,2.5 z" style="fill:#edd567;stroke:none"/>
-      <path d="m 10,10 l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l   -10,10 2.5,0 z l    -5,10 2.5,0 z l    0,10 2.5,0 z l    5,10 2.5,0 z l  10,-7.5 0,2.5 z l  10,-2.5 0,2.5 z l  10,2.5 0,2.5 z l  10,7.5 0,2.5 z l  -10,-10 0,2.5 z l   -10,-5 0,2.5 z l   -10,0 0,2.5 z l   -10,5 0,2.5 z" style="fill:#000000;stroke:none"/>
+      <path d="m 10,10 l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l   -10,10 2.5,0 z l    -5,10 2.5,0 z l    0,10 2.5,0 z l    5,10 2.5,0 z l  10,-7.5 0,2.5 z l  10,-2.5 0,2.5 z l  10,2.5 0,2.5 z l  10,7.5 0,2.5 z l  -10,-10 0,2.5 z l   -10,-5 0,2.5 z l   -10,0 0,2.5 z l   -10,5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-ne" patternUnits="userSpaceOnUse" width="10">
       <path d="m 0,10 l  0,-10 2.5,0 z l  5,-10 2.5,0 z l 10,-10 0,2.5 z l  10,-5 0,2.5 z" style="fill:#edd567;stroke:none"/>
-      <path d="m 0,10 l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l 10,-7.5 0,2.5 z l 10,-2.5 0,2.5 z" style="fill:#000000;stroke:none"/>
+      <path d="m 0,10 l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l 10,-7.5 0,2.5 z l 10,-2.5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-se" patternUnits="userSpaceOnUse" width="10">
       <path d="m 0,0 l  10,0 0,2.5 z l  10,5 0,2.5 z l 2.5,10 2.5,0 z l 7.5,10 2.5,0 z" style="fill:#edd567;stroke:none"/>
-      <path d="m 0,0 l 10,2.5 0,2.5 z l 10,7.5 0,2.5 z l 0,10 2.5,0 z l 5,10 2.5,0 z" style="fill:#000000;stroke:none"/>
+      <path d="m 0,0 l 10,2.5 0,2.5 z l 10,7.5 0,2.5 z l 0,10 2.5,0 z l 5,10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-sw" patternUnits="userSpaceOnUse" width="10">
       <path d="m 10,0 l   0,10 -2.5,0 z l  -5,10 -2.5,0 z l -10,10 0,-2.5 z l -10,5  0,-2.5 z" style="fill:#edd567;stroke:none"/>
-      <path d="m 10,0 l -2.5,10 -2.5,0 z l -7.5,10 -2.5,0 z l -10,7.5 0,-2.5 z l -10,2.5 0,-2.5 z" style="fill:#000000;stroke:none"/>
+      <path d="m 10,0 l -2.5,10 -2.5,0 z l -7.5,10 -2.5,0 z l -10,7.5 0,-2.5 z l -10,2.5 0,-2.5 z" style="fill:#0f0f0f;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-nw" patternUnits="userSpaceOnUse" width="10">
       <path d="m 10,10 l -10,0 0,-2.5 z l -10,-5 0,-2.5 z l -10,-10 2.5,0 z l -5,-10 2.5,0 z" style="fill:#edd567;stroke:none"/>
-      <path d="m 10,10 l -10,-2.5 0,-2.5 z l -10,-7.5 0,-2.5 z l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z" style="fill:#000000;stroke:none"/>
+      <path d="m 10,10 l -10,-2.5 0,-2.5 z l -10,-7.5 0,-2.5 z l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-ne-a" patternUnits="userSpaceOnUse" width="10">
-      <path d="m 0,10 l  0,-10 2.5,0 z l  5,-10 2.5,0 z l 10,-10 0,2.5 z l  10,-5 0,2.5 z" style="fill:#000000;stroke:none"/>
+      <path d="m 0,10 l  0,-10 2.5,0 z l  5,-10 2.5,0 z l 10,-10 0,2.5 z l  10,-5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
       <path d="m 0,10 l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l 10,-7.5 0,2.5 z l 10,-2.5 0,2.5 z" style="fill:#edd567;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-se-a" patternUnits="userSpaceOnUse" width="10">
-      <path d="m 0,0 l  10,0 0,2.5 z l  10,5 0,2.5 z l 2.5,10 2.5,0 z l 7.5,10 2.5,0 z" style="fill:#000000;stroke:none"/>
+      <path d="m 0,0 l  10,0 0,2.5 z l  10,5 0,2.5 z l 2.5,10 2.5,0 z l 7.5,10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
       <path d="m 0,0 l 10,2.5 0,2.5 z l 10,7.5 0,2.5 z l 0,10 2.5,0 z l 5,10 2.5,0 z" style="fill:#edd567;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-sw-a" patternUnits="userSpaceOnUse" width="10">
-      <path d="m 10,0 l   0,10 -2.5,0 z l  -5,10 -2.5,0 z l -10,10 0,-2.5 z l -10,5  0,-2.5 z" style="fill:#000000;stroke:none"/>
+      <path d="m 10,0 l   0,10 -2.5,0 z l  -5,10 -2.5,0 z l -10,10 0,-2.5 z l -10,5  0,-2.5 z" style="fill:#0f0f0f;stroke:none"/>
       <path d="m 10,0 l -2.5,10 -2.5,0 z l -7.5,10 -2.5,0 z l -10,7.5 0,-2.5 z l -10,2.5 0,-2.5 z" style="fill:#edd567;stroke:none"/>
     </pattern>
     <pattern height="10" id="stairs-nw-a" patternUnits="userSpaceOnUse" width="10">
-      <path d="m 10,10 l -10,0 0,-2.5 z l -10,-5 0,-2.5 z l -10,-10 2.5,0 z l -5,-10 2.5,0 z" style="fill:#000000;stroke:none"/>
+      <path d="m 10,10 l -10,0 0,-2.5 z l -10,-5 0,-2.5 z l -10,-10 2.5,0 z l -5,-10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
       <path d="m 10,10 l -10,-2.5 0,-2.5 z l -10,-7.5 0,-2.5 z l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z" style="fill:#edd567;stroke:none"/>
     </pattern>
     <pattern height="10" id="floor-corr" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:#edd567;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:#edd567;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-room" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:#edb667;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:#edb667;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-orange" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:orange;stroke:black;stroke-width:0.25;stroke-opacity:.5;stroke-dasharray:3, 1" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:orange;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-yellow" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:yellow;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:yellow;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-green" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:green;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:green;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-purple" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:purple;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:purple;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-blue" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:blue;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:#0f0f3f;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-red" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:red;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:red;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-reddish" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:#ed7767;stroke:black;stroke-width:0.25;stroke-opacity:.5" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:#ed7767;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-dark-grey" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.75" style="fill:#505050;stroke:black;stroke-width:0.25" width="9.75" x="0.125" y="0.125"/>
+      <rect height="9.5" style="fill:#505050;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="100" id="agrid" patternUnits="userSpaceOnUse" width="100">
+      <path d="m0,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100M10,0v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100" style="fill:none;stroke:#0000ff;stroke-width:0.15px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"/>
+      <path d="m 100,0h-100v100" style="fill:none;stroke:#0000ff;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
     </pattern>
     <style id="style-um" type="text/css">
       *.corr {
@@ -186,7 +190,6 @@
       }
       *.pit {
         fill:url(#floor-dark-grey);
-        fill-opacity:1;
         stroke:yellow;
         stroke-width:1;
         stroke-miterlimit:4;
@@ -270,7 +273,7 @@
       }
     </style>
   </defs>
-  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="namedview59" inkscape:current-layer="um-l1-7" inkscape:cx="1521.75" inkscape:cy="2703.7221" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="743" inkscape:window-maximized="1" inkscape:window-width="1366" inkscape:window-x="0" inkscape:window-y="2" inkscape:zoom="3.1073384" pagecolor="#ffffff" showborder="true" showgrid="true">
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="namedview59" inkscape:current-layer="um-uk-1" inkscape:cx="161.27053" inkscape:cy="3282.83" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="1172" inkscape:window-maximized="1" inkscape:window-width="1920" inkscape:window-x="0" inkscape:window-y="1" inkscape:zoom="6.66" pagecolor="#888888" showborder="true" showgrid="true">
     <inkscape:grid color="#5555ff" empcolor="#0000a1" empopacity="0.25098039" empspacing="10" enabled="true" id="grid2985" opacity="0.1254902" snapvisiblegridlinesonly="false" type="xygrid" visible="true"/>
   </sodipodi:namedview>
   <metadata id="metadata7">
@@ -282,6 +285,9 @@
       </cc:Work>
     </rdf:RDF>
   </metadata>
+  <g id="bgrid" inkscape:groupmode="layer" inkscape:label="bgrid" style="display:inline">
+    <rect height="3800" style="fill:url(#agrid);fill-opacity:1;stroke:none" width="3800" x="0" y="0"/>
+  </g>
   <g id="um-uk-2" inkscape:groupmode="layer" inkscape:label="Unknown Area 2" style="display:none">
     <rect class="corr" height="10" width="40" x="40" y="290"/>
     <rect class="corr" height="10" width="10" x="160" y="250"/>
@@ -303,7 +309,98 @@
     <text class="name" x="21" xml:space="preserve" y="295"><tspan x="21" y="295">l2-a-2</tspan></text>
   </g>
   <g id="um-uk-1" inkscape:groupmode="layer" inkscape:label="Unknown Area 1" style="display:none">
-    <image height="182" width="254" x="89" xlink:href="data:image/png;base64,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 qO0Bl6jBAAAAAElFTkSuQmCC " y="330"/>
+    <image height="184" width="247" x="95" xlink:href="data:image/png;base64,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
+" y="326"/>
     <rect class="corr" height="10" width="20" x="130" y="540"/>
     <rect class="corr" height="10" width="10" x="300" y="320"/>
     <rect class="corr" height="20" width="10" x="470" y="190"/>
@@ -1444,7 +1541,7 @@
     <path class="wall" d="m1450 1120h60"/>
     <path class="wall" d="m1490 1110h60"/>
     <path class="wall" d="m1610 1120h-80"/>
-    <path class="wall" d="m1580 1100h60v-60h-17 2v-10h5v-20h-20v20h5v10h2-17v50h30h-50"/>
+    <path class="wall" d="m1580 1100h60v-60h-17 2v-10h5v-20h-20v20h5v10h2-17v50h30-50"/>
     <rect class="sec-door" height="2" width="6" x="1617" y="1039"/>
     <rect class="door" height="6" width="2" x="1509" y="1152"/>
     <text class="name" x="1575" xml:space="preserve" y="1157"><tspan sodipodi:role="line" x="1575" y="1157">43</tspan></text>
@@ -3163,38 +3260,39 @@
     <text class="name" x="2011" xml:space="preserve" y="1098"><tspan x="2011" y="1098">Animated</tspan><tspan x="2011" y="1105">Armor</tspan></text>
     <text class="name" x="1732" xml:space="preserve" y="2007"><tspan x="1732" y="2007">Metal</tspan><tspan x="1732" y="2014">Spiders</tspan></text>
     <text class="name" transform="matrix(0,1,-1,0,0,0)" x="1292" xml:space="preserve" y="-942"><tspan sodipodi:role="line" x="1292" y="-942">Menagerie</tspan></text>
-    <text class="name" x="1519" xml:space="preserve" y="1086"><tspan sodipodi:role="line" x="1519" y="1086">Somewhere around here is a secret library in a place</tspan><tspan sodipodi:role="line" x="1519" y="1094">where the corridor goes around a 30x30 area.</tspan></text>
+    <text class="name" x="1519" xml:space="preserve" y="1086"><tspan sodipodi:role="line" x="1519" y="1086">Somewhere around here is a secret library in a place</tspan><tspan sodipodi:role="line" x="1519" y="1093.5">where the corridor goes around a 30x30 area.</tspan></text>
     <text class="name" x="1604" xml:space="preserve" y="1196"><tspan sodipodi:role="line" x="1604" y="1196">This area appears to be on the old map that we found under the lightning statue.</tspan></text>
     <!-- Unclassified start here -->
   </g>
-  <g id="menu" inkscape:groupmode="layer" style="display:inline" transform="translate(0 0)">
-    <text style="font-size:18px;fill:#000000" x="20em" y="1em">Map of Undermountain as of Tarsakh 20 1370</text>
-    <text id="errortext" style="font-size:18px;fill:#000000" x="25em" y="2em">Click captions to toggle visibility.</text>
-    <text id="b-um-l1-m" onclick="toggleLayer(evt,'um-l1-m')" style="font-size:14px;fill:#000000" x="1em" y="4em">Level 1 Main</text>
-    <text id="b-um-l1-l1" onclick="toggleLayer(evt,'um-l1-l1')" style="font-size:14px;fill:#ff0000" x="8em" y="4em">Level 1 Lower 1</text>
-    <text id="b-um-l2-m" onclick="toggleLayer(evt,'um-l2-m')" style="font-size:14px;fill:#ff0000" x="1em" y="5em">Level 2 Main</text>
-    <text id="b-um-l2-l1" onclick="toggleLayer(evt,'um-l2-l1')" style="font-size:14px;fill:#ff0000" x="8em" y="5em">Level 2 Lower 1</text>
-    <text id="b-um-uk-1" onclick="toggleLayer(evt,'um-uk-1')" style="font-size:14px;fill:#ff0000" x="1em" y="6em">Unknown 1</text>
-    <text id="b-um-uk-2" onclick="toggleLayer(evt,'um-uk-2')" style="font-size:14px;fill:#ff0000" x="8em" y="6em">Unknown 2</text>
-    <text id="b-mythdranor" onclick="toggleLayer(evt,'mythdranor')" style="font-size:14px;fill:#ff0000" x="1em" y="7em">Myth Dranor</text>
-    <text id="b-um-l1-2" onclick="toggleLayer(evt,'um-l1-2')" style="font-size:14px;fill:#ff0000" x="1em" y="8em">Minotaur 2</text>
-    <text id="b-um-l1-3" onclick="toggleLayer(evt,'um-l1-3')" style="font-size:14px;fill:#ff0000" x="8em" y="8em">Minotaur 3</text>
-    <text id="b-um-l1-4" onclick="toggleLayer(evt,'um-l1-4')" style="font-size:14px;fill:#ff0000" x="15em" y="8em">Minotaur 4</text>
-    <text id="b-um-l1-5" onclick="toggleLayer(evt,'um-l1-5')" style="font-size:14px;fill:#ff0000" x="22em" y="8em">Minotaur 5</text>
-    <text id="b-um-l1-6" onclick="toggleLayer(evt,'um-l1-6')" style="font-size:14px;fill:#ff0000" x="1em" y="9em">Minotaur 6</text>
-    <text id="b-um-l1-7" onclick="toggleLayer(evt,'um-l1-7')" style="font-size:14px;fill:#ff0000" x="8em" y="9em">Minotaur 7</text>
-    <text id="b-um-l1-8" onclick="toggleLayer(evt,'um-l1-8')" style="font-size:14px;fill:#ff0000" x="15em" y="9em">Minotaur 8</text>
-    <text id="b-um-l1-10" onclick="toggleLayer(evt,'um-l1-10')" style="font-size:14px;fill:#ff0000" x="22em" y="9em">Minotaur 10</text>
-    <text id="b-um-l1-12" onclick="toggleLayer(evt,'um-l1-12')" style="font-size:14px;fill:#ff0000" x="1em" y="10em">Minotaur 12</text>
-    <text id="b-um-l1-14" onclick="toggleLayer(evt,'um-l1-14')" style="font-size:14px;fill:#ff0000" x="8em" y="10em">Minotaur 14</text>
-    <text id="b-um-l1-15" onclick="toggleLayer(evt,'um-l1-15')" style="font-size:14px;fill:#ff0000" x="15em" y="10em">Minotaur 15</text>
-    <text id="b-um-l1-16" onclick="toggleLayer(evt,'um-l1-16')" style="font-size:14px;fill:#ff0000" x="22em" y="10em">Minotaur 16</text>
-    <text id="b-um-l1-17" onclick="toggleLayer(evt,'um-l1-17')" style="font-size:14px;fill:#ff0000" x="1em" y="11em">Minotaur 17</text>
-    <text id="b-um-l1-18" onclick="toggleLayer(evt,'um-l1-18')" style="font-size:14px;fill:#ff0000" x="8em" y="11em">Minotaur 18</text>
-    <text id="b-um-l1-19" onclick="toggleLayer(evt,'um-l1-19')" style="font-size:14px;fill:#ff0000" x="15em" y="11em">Minotaur 19</text>
-    <text id="b-um-l1-20" onclick="toggleLayer(evt,'um-l1-20')" style="font-size:14px;fill:#ff0000" x="22em" y="11em">Minotaur 20</text>
-    <text id="b-um-l1-21" onclick="toggleLayer(evt,'um-l1-21')" style="font-size:14px;fill:#ff0000" x="1em" y="12em">Minotaur 21</text>
-    <text id="b-um-l1-24" onclick="toggleLayer(evt,'um-l1-24')" style="font-size:14px;fill:#ff0000" x="8em" y="12em">Minotaur 24</text>
-    <text id="b-fluffy" onclick="toggleLayer(evt,'fluffy')" style="font-size:14px;fill:#ff0000" x="15em" y="12em">Fluffy's Map</text>
+  <g id="menu" inkscape:groupmode="layer" style="display:inline" transform="translate(0,0)">
+    <text style="font-size:14px;fill:#000000" x="5em" y="1em">Map of Undermountain as of Tarsakh 20 1370</text>
+    <text id="errortext" style="font-size:14px;fill:#000000" x="5em" y="2em">Click captions to toggle visibility.</text>
+    <text id="b-um-l1-m" onclick="toggleLayer(evt,'um-l1-m')" style="font-size:10px;fill:#000000" x="1em" y="4em">Level 1 Main</text>
+    <text id="b-um-l1-l1" onclick="toggleLayer(evt,'um-l1-l1')" style="font-size:10px;fill:#ff0000" x="8em" y="4em">Lower 1</text>
+    <text id="b-um-l2-m" onclick="toggleLayer(evt,'um-l2-m')" style="font-size:10px;fill:#ff0000" x="15em" y="4em">Level 2 Main</text>
+    <text id="b-um-l2-l1" onclick="toggleLayer(evt,'um-l2-l1')" style="font-size:10px;fill:#ff0000" x="22em" y="4em">Lower 1</text>
+    <text id="b-bgrid" onclick="toggleLayer(evt,'bgrid')" style="font-size:10px;fill:#000000" x="29em" y="4em">Map Grid</text>
+    <text id="b-um-uk-1" onclick="toggleLayer(evt,'um-uk-1')" style="font-size:10px;fill:#ff0000" x="1em" y="5em">Unknown 1</text>
+    <text id="b-um-uk-2" onclick="toggleLayer(evt,'um-uk-2')" style="font-size:10px;fill:#ff0000" x="8em" y="5em">Unknown 2</text>
+    <text id="b-mythdranor" onclick="toggleLayer(evt,'mythdranor')" style="font-size:10px;fill:#ff0000" x="15em" y="5em">Myth Dranor</text>
+    <text id="b-um-l1-2" onclick="toggleLayer(evt,'um-l1-2')" style="font-size:10px;fill:#ff0000" x="1em" y="6em">Minotaur 2</text>
+    <text id="b-um-l1-3" onclick="toggleLayer(evt,'um-l1-3')" style="font-size:10px;fill:#ff0000" x="8em" y="6em">Minotaur 3</text>
+    <text id="b-um-l1-4" onclick="toggleLayer(evt,'um-l1-4')" style="font-size:10px;fill:#ff0000" x="15em" y="6em">Minotaur 4</text>
+    <text id="b-um-l1-5" onclick="toggleLayer(evt,'um-l1-5')" style="font-size:10px;fill:#ff0000" x="22em" y="6em">Minotaur 5</text>
+    <text id="b-um-l1-6" onclick="toggleLayer(evt,'um-l1-6')" style="font-size:10px;fill:#ff0000" x="29em" y="6em">Minotaur 6</text>
+    <text id="b-um-l1-7" onclick="toggleLayer(evt,'um-l1-7')" style="font-size:10px;fill:#ff0000" x="1em" y="7em">Minotaur 7</text>
+    <text id="b-um-l1-8" onclick="toggleLayer(evt,'um-l1-8')" style="font-size:10px;fill:#ff0000" x="8em" y="7em">Minotaur 8</text>
+    <text id="b-um-l1-10" onclick="toggleLayer(evt,'um-l1-10')" style="font-size:10px;fill:#ff0000" x="15em" y="7em">Minotaur 10</text>
+    <text id="b-um-l1-12" onclick="toggleLayer(evt,'um-l1-12')" style="font-size:10px;fill:#ff0000" x="22em" y="7em">Minotaur 12</text>
+    <text id="b-um-l1-14" onclick="toggleLayer(evt,'um-l1-14')" style="font-size:10px;fill:#ff0000" x="29em" y="7em">Minotaur 14</text>
+    <text id="b-um-l1-15" onclick="toggleLayer(evt,'um-l1-15')" style="font-size:10px;fill:#ff0000" x="1em" y="8em">Minotaur 15</text>
+    <text id="b-um-l1-16" onclick="toggleLayer(evt,'um-l1-16')" style="font-size:10px;fill:#ff0000" x="8em" y="8em">Minotaur 16</text>
+    <text id="b-um-l1-17" onclick="toggleLayer(evt,'um-l1-17')" style="font-size:10px;fill:#ff0000" x="15em" y="8em">Minotaur 17</text>
+    <text id="b-um-l1-18" onclick="toggleLayer(evt,'um-l1-18')" style="font-size:10px;fill:#ff0000" x="22em" y="8em">Minotaur 18</text>
+    <text id="b-um-l1-19" onclick="toggleLayer(evt,'um-l1-19')" style="font-size:10px;fill:#ff0000" x="29em" y="8em">Minotaur 19</text>
+    <text id="b-um-l1-20" onclick="toggleLayer(evt,'um-l1-20')" style="font-size:10px;fill:#ff0000" x="1em" y="9em">Minotaur 20</text>
+    <text id="b-um-l1-21" onclick="toggleLayer(evt,'um-l1-21')" style="font-size:10px;fill:#ff0000" x="8em" y="9em">Minotaur 21</text>
+    <text id="b-um-l1-24" onclick="toggleLayer(evt,'um-l1-24')" style="font-size:10px;fill:#ff0000" x="15em" y="9em">Minotaur 24</text>
+    <text id="b-fluffy" onclick="toggleLayer(evt,'fluffy')" style="font-size:10px;fill:#ff0000" x="22em" y="9em">Fluffy's Map</text>
   </g>
 </svg>
