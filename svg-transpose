@@ -11,11 +11,11 @@ unneeded_attributes = {
 }
 
 unneeded_byname = {
- 'circle': ('sodipodi:cx', 'sodipodi:cy', 'sodipodi:rx', 'sodipodi:ry'),
+ 'circle': ('sodipodi:cx', 'sodipodi:cy', 'sodipodi:rx', 'sodipodi:ry', 'd'),
  'title': ('style', 'id')
 }
 
-id_regex = re.compile('(text|path|tspan|title|rect|circle)[-0-9]+$')
+id_regex = re.compile('(text|path|tspan|title|rect|circle|image|script)[-0-9]+$')
 
 ###### path parsing code
 style_re1 = re.compile(";display:inline$")
@@ -27,11 +27,11 @@ style_repl3 = ''
 rem_style = re.compile('#pattern[-0-9]{2,}')
 
 style_to_class = {
+ 'font-size:10px;fill:#000000': None,
+ 'font-size:10px;fill:#ff0000': None,
+ 'font-size:10px;fill:black': None,
+ 'font-size:10px;fill:red': None,
  'font-size:14px;fill:#000000': None,
- 'font-size:14px;fill:#ff0000': None,
- 'font-size:14px;fill:black': None,
- 'font-size:14px;fill:red': None,
- 'font-size:18px;fill:#000000': None,
  'fill:url(#stairs-ne);fill-opacity:1;stroke:none': None,
  'fill:url(#stairs-ne-a);fill-opacity:1;stroke:none': None,
  'fill:url(#stairs-sw);fill-opacity:1;stroke:none': None,
