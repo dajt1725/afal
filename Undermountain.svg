@@ -110,8 +110,8 @@
     <pattern height="10" id="floor-orange" patternUnits="userSpaceOnUse" width="10">
       <rect height="9.5" style="fill:orange;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
-    <pattern height="10" id="floor-yellow" patternUnits="userSpaceOnUse" width="10">
-      <rect height="9.5" style="fill:yellow;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    <pattern height="10" id="floor-sand" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:#e0e000;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-green" patternUnits="userSpaceOnUse" width="10">
       <rect height="9.5" style="fill:green;stroke:none" width="9.5" x="0.25" y="0.25"/>
@@ -119,7 +119,7 @@
     <pattern height="10" id="floor-purple" patternUnits="userSpaceOnUse" width="10">
       <rect height="9.5" style="fill:purple;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
-    <pattern height="10" id="floor-blue" patternUnits="userSpaceOnUse" width="10">
+    <pattern height="10" id="floor-water" patternUnits="userSpaceOnUse" width="10">
       <rect height="9.5" style="fill:#1f1f6f;stroke:none" width="9.5" x="0.25" y="0.25"/>
     </pattern>
     <pattern height="10" id="floor-red" patternUnits="userSpaceOnUse" width="10">
@@ -158,7 +158,7 @@
         stroke-width:.5px
       }
       *.feature-sand {
-        fill:url(#floor-yellow);
+        fill:url(#floor-sand);
         stroke:black;
         stroke-width:.5px
       }
@@ -173,7 +173,7 @@
         stroke-width:.5px
       }
       *.feature-water {
-        fill:url(#floor-blue);
+        fill:url(#floor-water);
         stroke:yellow;
         stroke-width:.5px
       }
@@ -1852,7 +1852,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="corr" height="10" width="10" x="2710" y="640"/>
     <rect class="corr" height="10" width="10" x="2740" y="640"/>
     <rect class="corr" height="10" width="10" x="2740" y="670"/>
-    <path class="corr" d="m2760 700v20h-30v10h30v30h10 5v-10h-5v-50h-10z"/>
+    <path class="corr" d="m2760 700v20h-30v10h30v30h15v-10h-5v-50z"/>
     <path class="corr" d="m1440 1930v10h10v30h10v-30-10h-20z"/>
     <rect class="corr" height="10" width="90" x="1430" y="1910"/>
     <rect class="corr" height="10" width="10" x="1410" y="1960"/>
@@ -1923,11 +1923,11 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="room" height="30" width="30" x="1370" y="2130"/>
     <path class="room" d="m2750 670v10h-10v20h50v-20h-10v-10z"/>
     <rect class="room" height="50" id="cursd-room" width="30" x="2870" y="600"/>
-    <rect class="room" height="31" id="floor-doory-room" width="20" x="2820" y="600"/>
+    <rect class="room" height="30" id="floor-doory-room" width="20" x="2820" y="600"/>
     <rect class="room" height="40" id="floor-fence-room" width="30" x="2770" y="610"/>
     <rect class="room" height="30" id="floor-seascape-room" width="30" x="2700" y="710"/>
     <rect class="room" height="20" width="30" x="1630" y="1980"/>
-    <rect class="room" height="31" width="30" x="1720" y="1869"/>
+    <rect class="room" height="30" width="30" x="1720" y="1870"/>
     <rect class="room" height="40" width="30" x="1760" y="1940"/>
     <rect class="room" height="50" width="30" x="1670" y="1890"/>
     <rect class="room" height="50" width="30" x="1200" y="2360"/>
@@ -1973,7 +1973,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="room" height="50" width="40" x="120" y="3650"/>
     <rect class="room" height="60" width="170" x="50" y="3060"/>
     <rect class="room" height="60" width="50" x="220" y="3300"/>
-    <rect class="room" height="10" width="10" x="1635" y="1687">
+    <rect class="room" height="10" width="10" x="1635" y="1683">
       <title>This room has a looted couch and other debris in it.</title>
     </rect>
     <!-- Stairs start here -->
@@ -2077,7 +2077,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="wall" d="m1650 1940v20h20v-10h30v10h30v-60h2-12v-12 2h-22 2v50h-30v-50h22-2v-10h30v2-12h30v30h-12 2v60h32"/>
     <path class="wall" d="m180 3010h20v-32"/>
     <path class="wall" d="m182 3220h-2v-10h30v-50h2-74"/>
-    <path class="wall" d="m1770 1930v10h-10-50v10h50v10"/>
+    <path class="wall" d="m1770 1930v10h-10v2v-2h-50v10h50v-2v12"/>
     <path class="wall" d="m1778 1960h12v-20h-10v-10"/>
     <path class="wall" d="m1790 1960v20h-30v-10h-60v10h-12"/>
     <path class="wall" d="m190 3520h20v-110h12-12v-30h12-2v-20h2-2v-60h20v-22"/>
@@ -2119,7 +2119,10 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="wall" d="m868 2340h12v-20h10v-50"/>
     <path class="wall" d="m910 2290h-10v-20"/>
     <path class="wall" d="m940 2360h10v-20h10v-10h-70v10h10v40h-40v-12 2h-40v10h10v60h10v30h-10v40h10v30m-30 0v-30h10v-40h-10v-10h-40v-20h-10v10h-20v10h20v20h-30v-10h-100v80h10v-10h12"/>
-    <path class="wall" d="m1638 1697h-3v-10h10v10h-3c3.9774 1.8973 7.1858 3.6516 7 6h2v4h-2c-4.0343 7.5027-10.7112 10.736-17 0 0.4736-3.4825 1.7905-6.9845 6-10z" id="wall-spiral-staircase"/>
+    <circle class="feature" cx="1640" cy="1701.3963964" r="8.5">
+      <title>This is a spiral staircase, going down a long ways IIRC.</title>
+    </circle>
+    <path class="wall" d="m1637 1693h-2v-10h10v10h-3c4 0 6 3 7 6h2v4h-2c-3 11-18 9-18-2 0-6 3-7 6-8z" id="wall-spiral-staircase" sodipodi:nodetypes="ccccccccccsc"/>
     <!-- Doors start here -->
     <rect class="sec-door" height="6" id="s-door-seascape-a" width="2" x="2699" y="722"/>
     <rect class="sec-door" height="6" id="s-door-seascape-b" width="2" x="2729" y="722"/>
@@ -2223,16 +2226,16 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <circle class="column" cx="340" cy="2820" id="column-frost-spiders-2" r="1"/>
     <circle class="column" cx="350" cy="2820" id="column-frost-spiders-3" r="1"/>
     <circle class="column" cx="360" cy="2820" id="column-frost-spiders-4" r="1"/>
-    <path class="feature-bad" d="m2787 625h13m-30 0h13" id="fence-b">
+    <path class="feature-bad" d="m2787 625h13v2h-13zm-17 0h13v2h-13z" id="fence-b">
       <title>To avoid getting hit by a trap, you need to pass through the gap in this fence.</title>
     </path>
-    <path class="feature-bad" d="m2787 635h13m-30 0h13" id="fence-a">
+    <path class="feature-bad" d="m2787 635h13v2h-13zm-17 0h13v2h-13z" id="fence-a">
       <title>To avoid getting hit by a trap, you need to jump/climb over this fence.</title>
     </path>
-    <path class="feature-bad" d="m2870 620v10" id="trapped-step">
+    <path class="feature-bad" d="m2868 620v10h2v-10z" id="trapped-step">
       <title>Jump over this step to avoid the trap.</title>
     </path>
-    <rect class="feature" height="1" id="seascape-button" width="1" x="2719" y="739">
+    <rect class="feature" height="2" id="seascape-button" width="2" x="2719" y="738">
       <title>This button raises the floor so one can get at the secret doors, but can't leave through the north exit.</title>
     </rect>
     <rect class="feature" height="2" id="discontiguous-floor" width="10" x="890" y="2318">
@@ -2241,7 +2244,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="feature" height="3" id="ladder-1" onclick="stairs('um-l1-l1','um-l1-m')" width="6" x="1742" y="1872">
       <title>This is a ladder to room above</title>
     </rect>
-    <rect class="feature" height="9" id="cage-1" width="8" x="1680" y="1906">
+    <rect class="feature" height="9" id="cage-1" width="9" x="1680" y="1910">
       <title>This is a cage on chains that hangs from the ceiling.  It is lowered/raised by rotating the statue in the room above.</title>
     </rect>
     <rect class="feature-bad" height="6" id="trapped-door-a" width="2" x="159" y="3672">
@@ -2276,10 +2279,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="feature" height="10" width="6" x="1072" y="2490">
       <title>This is a tunnel/archway under the walkway.</title>
     </rect>
-    <circle class="feature" cx="1640" cy="1705" r="8.5">
-      <title>This is a spiral staircase, going down a long ways IIRC.</title>
-    </circle>
-    <rect class="feature" height="4" width="2" x="1649" y="1703">
+    <rect class="feature" height="4" width="2" x="1649" y="1699">
       <title>This compartment held a chest guarded by a little pict.</title>
     </rect>
     <circle class="feature" cx="155" cy="2855" r="6"/>
@@ -2299,20 +2299,18 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <text class="name" x="861" xml:space="preserve" y="2353"><tspan x="861" y="2353">Shriekers</tspan></text>
     <text class="name" x="282" xml:space="preserve" y="2853"><tspan x="282" y="2853">Puzzle</tspan><tspan x="282" y="2860">Lock</tspan></text>
     <text class="name" x="501" xml:space="preserve" y="2748"><tspan x="501" y="2748">Litch</tspan></text>
-    <text class="name" x="1121" xml:space="preserve" y="2337"><tspan sodipodi:role="line" x="1121" y="2337">Teleportal around</tspan><tspan sodipodi:role="line" x="1121" y="2344">here somewhere</tspan></text>
+    <text class="name" x="1121" xml:space="preserve" y="2337"><tspan sodipodi:role="line" x="1121" y="2337">Teleportal around</tspan><tspan sodipodi:role="line" x="1121" y="2344.5">here somewhere</tspan></text>
     <!-- Unclassified start here -->
   </g>
   <g id="um-l1-m" inkscape:groupmode="layer" inkscape:label="Level 1 Main" style="display:inline">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
-    <rect class="corr" height="70" width="10" x="1770" y="1590"/>
-    <path class="corr" d="m1750 1520v30h-40v10h25v10h5v80h-30v-30h10v-10h10v-14h-10v4h-10v10h-10v-20h-50v50h-50v10h50v20h10v-20h30v10h10v20h20v-10h2v-10h28v-30h5v-10h5v-70h6v-10h-6v-20zm-90 80h30v20h10v20h-40z"/>
-    <path class="corr" d="m1420 1110v10h-10v10h40v70h10 20v83h10v-83-10h-30v-60h10v-10h-20v-10h-10v10h-10v-10h-10z"/>
-    <path class="corr" d="m1000 1346v44h10 60v20h10 10v10h10v-10-10h-20v-30h-10v10h-60v-34z"/>
-    <path class="corr" d="m1130 1300v10h10v40h10v-10h30v10h-20v10 60h10v-60h50v-10h-30v-10h30v-10h130v-10-10h-10v10h-130v10h-60v-20h10v-10h-30z"/>
-    <path class="corr" d="m1420 1270v10 10h-10v20h10v40h10 10v10h60v50h-4v10h4 1 9v-60h10v-10h-70v-10h-20v-30-20-10h50v-10h-60z"/>
-    <path class="corr" d="m1520 1420v60h10 20v10h30v10h10v-30h-10v10h-20v-10h-30v-50h-10z"/>
-    <path class="corr" d="m1780 370v10 10h10v-10h20v-10h-30z"/>
+    <path d="m1750 1520v30h-40v10h25v10h5v80h-30v-30h10v-10h10v-14h-10v4h-10v10h-10v-20h-50v50h-50v10h50v20h10v-20h30v10h10v20h20v-10h2v-10h28v-30h5v-10h15v40h40v10h-20v20h-15v10h25v20h10v-10h40v-20h30v40h-50v-10h-20v10h-20v30h-40v-60h-80v10h50v5h10v-5h10v80h10v-20h50v-30h30v10h20v-10h40v-30h20v-10h-20v-20h-20v-20h-10v20h-20v20h-10v-30h-10v-20h30v-10h-50v-10h40v-10h-20v-20h10v-20h20v-10h-30v20h-10v20h-10v-20h-10v60h-10v-60h-10v20h-10v-60h6v-10h-6v-20zm-90 80h30v20h10v20h-40zm150 80h10v20h-10z" class="corr"/>
+    <path d="m1420 1110v10h-10v10h40v70h30v70h-60v20h-10v20h10v40h20v10h60v50h-4v10h14v-60h10v30h10v-40h40v-30h10v70h-20v50h30v-10h20v40h10v-20h110v10h-10v10h20v-10h60v30h-20v20h10v10h-30v10h50v10h20v30h20v-10h-10v-30h-20v-10h-20v-10h60v-190h-10v-20h10v-10h-20v50h10v110h-10v-10h-10v10h-90v-10h10v-10h-20v-10h5v-10h-15v-3h-10v13h-10v10h20v10h-100v-20h-40v10h-10v-30h20v-90h-40v-20h60v70h10v-60h20v-10h-20v-10h-50v-20h30v-10h-30v-90h10v-10h-10v-10h-10v20h-20v20h20v50h-40v120h-70v-10h-20v-60h50v3h10v-93h-30v-60h10v-10h-20v-10h-10v10h-10v-10zm110 130h30v40h-20v40h20v20h-30zm280 230h40v30h-40z" class="corr"/>
+    <path class="corr" d="m1000 1346v44h70v20h20v10h10v-20h-20v-30h-10v10h-60v-34z"/>
+    <path class="corr" d="m1130 1300v10h10v40h10v-10h30v10h-20v10v60h10v-60h50v-10h-30v-10h30v-10h130v-20h-10v10h-130v10h-60v-20h10v-10z"/>
+    <path class="corr" d="m1520 1420v60h30v10h30v10h10v-30h-10v10h-20v-10h-30v-50z"/>
+    <path class="corr" d="m1780 370v20h10v-10h20v-10z"/>
     <path class="corr" d="m1870 660v140h10v-10h5v-10h-5v-30h60v-10h10v-10h-70v-70z"/>
     <path class="corr" d="m2030 1150v20h-10v30h10v10 30h20v-30h10 20v-10h-20v-40h-20v-10h-10z"/>
     <path class="corr" d="m2130 1200v90h10 10v10h10v-10-10h-20v-80z"/>
@@ -2339,87 +2337,29 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="corr" height="30" width="10" x="2140" y="1450"/>
     <rect class="corr" height="10" width="10" x="2160" y="1130"/>
     <rect class="corr" height="10" width="10" x="2680" y="670"/>
-    <path class="corr" d="m1870,1050v40h-10v10h10v80h10v10h-10v10h20v-30h-10v-110h50v-10 z"/>
+    <path class="corr" d="m1870 1050v40h-10v10h10v80h10v10h-10v10h20v-30h-10v-110h50v-10z"/>
     <path class="corr" d="m1890 1090v10h-10v10h20v-10h30v-10z"/>
     <path class="corr" d="m1920 1120v10h-40v10h20v30h10v-20h30v10h20v-10h-10v-10h-20v-20z"/>
     <path class="corr" d="m2100 760v110h40v70h-50v10h50v20h-10v30h-30v-20h-10v10h-100-10-110v10h110v20h-70v20h-60v-5h-10v5h-10v40h-11v10h11v60h20v10h-20v70l10 1v9h10v-9l20-1v-10h-30v-50h20v-30h-20v-60h30v-30h50v-20h60v10h10v-10h20v-10h-20v-20h100v10h50v10h10v-20h-10v-20h10v-140h-40v-40h10v-10h-10v-30zm10 90h30v10h-30zm-270 200h20v20h-20z"/>
     <rect class="corr" height="25" width="10" x="1890" y="1205"/>
     <rect class="corr" height="10" width="20" x="2440" y="830"/>
-    <path class="corr" d="m2510 740v90h-20v10h30v-10-20h50v-10h-50v-30h60v-10h-10v-20h-10v20h-40v-20h-10z"/>
+    <path class="corr" d="m2510 740v90h-20v10h30v-30h50v-10h-50v-30h60v-10h-10v-20h-10v20h-40v-20z"/>
     <rect class="corr" height="10" width="10" x="2500" y="680"/>
-    <path class="corr" d="m2520 640v10 10h50v20h10v-30h-10-40v-10h-10z"/>
+    <path class="corr" d="m2520 640v20h50v20h10v-30h-50v-10z"/>
     <rect class="corr" height="10" width="40" x="2570" y="720"/>
-    <path class="corr" d="m2600 660v20h-20v10h20v10h50 10v-40h-10v30h-40v-30h-10z"/>
+    <path class="corr" d="m2600 660v20h-20v10h20v10h60v-40h-10v30h-40v-30z"/>
     <path class="corr" d="m2680 640v10h10v-10h-10z"/>
-    <path class="corr" d="m1560 1140v20h-20v20h20v50h-40v160h10v-150h30v40h-20v30 10h20v20h-30v10h40v-30h10v70h10v-70-10h-40v-20h60v70h10v-60h20v-10h-20v-10h-50v-20h30v-10h-30v-90h10v-10h-10v-10z"/>
-    <rect class="corr" height="10" width="15" x="1775" y="1690"/>
-    <rect class="corr" height="30" width="20" x="1790" y="1670"/>
-    <rect class="corr" height="10" width="10" x="1800" y="1710"/>
-    <rect class="corr" height="10" width="20" x="1810" y="1720"/>
-    <rect class="corr" height="10" width="50" x="1800" y="1700"/>
-    <rect class="corr" height="10" width="30" x="1780" y="1650"/>
-    <rect class="corr" height="10" width="50" x="1790" y="1620"/>
-    <path class="corr" d="m1670 1700v10h50v5h10v-5h10v50h10v-60z"/>
-    <rect class="corr" height="40" width="10" x="1740" y="1770"/>
-    <rect class="corr" height="10" width="50" x="1740" y="1760"/>
-    <rect class="corr" height="30" width="10" x="1790" y="1740"/>
-    <rect class="corr" height="10" width="20" x="1830" y="1740"/>
-    <rect class="corr" height="10" width="90" x="1790" y="1730"/>
-    <rect class="corr" height="30" width="10" x="1880" y="1710"/>
-    <rect class="corr" height="10" width="30" x="1880" y="1700"/>
-    <rect class="corr" height="10" width="10" x="1880" y="1690"/>
-    <rect class="corr" height="10" width="10" x="1840" y="1690"/>
-    <rect class="corr" height="10" width="50" x="1840" y="1680"/>
-    <rect class="corr" height="20" width="10" x="1860" y="1660"/>
-    <rect class="corr" height="30" width="10" x="1820" y="1670"/>
-    <rect class="corr" height="30" width="10" x="1810" y="1650"/>
-    <rect class="corr" height="10" width="10" x="1900" y="1510"/>
-    <rect class="corr" height="10" width="30" x="1820" y="1570"/>
-    <rect class="corr" height="10" width="60" x="1790" y="1640"/>
-    <rect class="corr" height="10" width="10" x="1790" y="1630"/>
-    <rect class="corr" height="10" width="10" x="1820" y="1580"/>
-    <rect class="corr" height="10" width="20" x="1810" y="1590"/>
-    <rect class="corr" height="10" width="10" x="1810" y="1600"/>
-    <rect class="corr" height="10" width="30" x="1790" y="1610"/>
-    <rect class="corr" height="20" width="10" x="1790" y="1590"/>
-    <rect class="corr" height="10" width="10" x="1760" y="1610"/>
-    <rect class="corr" height="10" width="10" x="1830" y="1550"/>
-    <rect class="corr" height="20" width="10" x="1830" y="1530"/>
-    <rect class="corr" height="10" width="20" x="1810" y="1530"/>
-    <rect class="corr" height="10" width="60" x="1760" y="1520"/>
-    <rect class="corr" height="10" width="20" x="1830" y="1560"/>
-    <rect class="corr" height="10" width="10" x="1790" y="1510"/>
-    <rect class="corr" height="10" width="70" x="1780" y="1500"/>
-    <rect class="corr" height="10" width="30" x="1780" y="1490"/>
-    <rect class="corr" height="20" width="10" x="1800" y="1470"/>
-    <rect class="corr" height="10" width="50" x="1800" y="1460"/>
-    <rect class="corr" height="10" width="30" x="1560" y="1390"/>
-    <rect class="corr" height="30" width="10" x="1560" y="1400"/>
-    <rect class="corr" height="10" width="30" x="1560" y="1430"/>
-    <rect class="corr" height="10" width="30" x="1580" y="1420"/>
-    <rect class="corr" height="50" width="10" x="1610" y="1420"/>
-    <rect class="corr" height="10" width="120" x="1620" y="1440"/>
-    <rect class="corr" height="10" width="15" x="1720" y="1410"/>
-    <rect class="corr" height="13" width="10" x="1710" y="1407"/>
-    <rect class="corr" height="10" width="30" x="1700" y="1420"/>
-    <rect class="corr" height="10" width="30" x="1720" y="1430"/>
-    <rect class="corr" height="10" width="120" x="1730" y="1450"/>
-    <rect class="corr" height="10" width="20" x="1720" y="1460"/>
-    <rect class="corr" height="10" width="10" x="1830" y="1440"/>
-    <rect class="corr" height="190" width="10" x="1850" y="1320"/>
-    <rect class="corr" height="40" width="10" x="1840" y="1300"/>
+    <rect class="corr" height="20" width="10" x="1900" y="1510"/>
     <rect class="corr" height="10" width="10" x="1880" y="1340"/>
     <rect class="corr" height="90" width="10" x="1870" y="1260"/>
     <rect class="corr" height="20" width="30" x="1880" y="1230"/>
     <rect class="corr" height="10" width="20" x="1870" y="1250"/>
-    <path class="corr" d="m1980 1100v100h-10-10v30h-50v10 30h-10-10v20h-50v10h70v10h-30v10h30v50h10v-10h10v-10h-10v-30h90 10 40v20h10 60 10v-30h-10v20h-60v-20h-10-40v-30h40v-30h50v20h20v-10h-10v-20h-20v-30h-10v30h-40v30h-50v20h10v20h-90v-20h-10-10v-10h20 60v-10h-60v-30h40 10v-30h10v20h10 30v20h10v-40h-10v10h-30v-60h14v-10h-4v-40h-10v-10z"/>
-    <rect class="corr" height="10" width="40" x="2350" y="910"/>
-    <rect class="corr" height="30" width="10" x="2390" y="890"/>
-    <rect class="corr" height="20" width="10" x="2390" y="840"/>
-    <rect class="corr" height="10" width="40" x="2370" y="830"/>
+    <path class="corr" d="m1980 1100v100h-20v30h-50v10v30h-20v20v10h20v10h-30v10h30v50h10v-10h10v-10h-10v-30h140v20h10h60h10v-30h-10v20h-60v-20h-50v-30h40v-30h50v20h20v-10h-10v-20h-20v-30h-10v30h-40v30h-50v20h10v20h-90v-20h-20v-10h20h60v-10h-60v-30h50v-30h10v20h40v20h10v-40h-10v10h-30v-60h14v-10h-4v-40h-10v-10z"/>
+    <path d="m2390 890v20h-40v10h50v-30z" class="corr"/>
+    <path d="m2370 830v10h20v20h10v-20h10v-10h-40z" class="corr"/>
     <rect class="corr" height="20" width="10" x="2310" y="850"/>
     <rect class="corr" height="10" width="30" x="2320" y="830"/>
-    <path class="corr" d="m2250 790h10v20h-10zm10-10h10v110h-10zm10 50h10v10h-10zm0 50h10v20h-10zm10 0h30v10h-30z"/>
+    <path d="m2260 780v10h-10v20h10v80h10v10h10v-10h30v-10h-40v-40h10v-10h-10v-50z" class="corr"/>
     <rect class="corr" height="40" width="20" x="2200" y="840"/>
     <path class="corr" d="m2040 780v20 10h10v30h-10v-20h-20v-10h10v-10h-20v20h-10v10h20v30h10v-10h20v10h-10v10h10v30h10v-40h10v-10h-10v-30h10v10h10v-50zm10 10h20v20h-10v-10h-10z"/>
     <path class="corr" d="m2030 950v20 10h20v-10h-10v-20h-10z"/>
@@ -2439,11 +2379,11 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="corr" height="10" width="10" x="2050" y="1050"/>
     <path class="corr" d="m1520 1880v10h10v60h-20v10h20 10v-40h60v-10h-60v-20-10h-20z"/>
     <path class="corr" d="m1700 1870v10h10v60h10v-60h10v-10h-30z"/>
-    <path class="corr" d="m1740 300v10h30v10 10h20v-10h-10v-20h-10z"/>
-    <path class="corr" d="m1810 610v10 10h10v-10h20v-10h-30z"/>
-    <path class="corr" d="m1870 270v10h10v40h-20v10h20v50h10v-80h10v-10h-10v-10-10h-20z"/>
+    <path class="corr" d="m1740 300v10h30v20h20v-10h-10v-20z"/>
+    <path class="corr" d="m1810 610v20h10v-10h20v-10z"/>
+    <path class="corr" d="m1870 270v10h10v40h-20v10h20v50h10v-80h10v-10h-10v-20z"/>
     <path class="corr" d="m1870 560v20h-10v10h20v10h20v-10h-10v-10h-10v-20h-10z"/>
-    <path class="corr" d="m1880 400v20 10h-10v10h10 20v30h-10v10h10v10h-10v10h10v30h10v-40h5v-10h-5v-30h10v3h10v-33h-10-10-10-10v-20h-10zm30 30h10v10h-10v-10z"/>
+    <path class="corr" d="m1880 400v20v10h-10v10h10h20v30h-10v10h10v10h-10v10h10v30h10v-40h5v-10h-5v-30h10v3h10v-33h-40v-20zm30 30h10v10h-10z"/>
     <rect class="corr" height="10" width="10" x="1830" y="250"/>
     <rect class="corr" height="10" width="10" x="1820" y="320"/>
     <rect class="corr" height="10" width="10" x="1740" y="340"/>
@@ -2468,8 +2408,8 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="room" d="m2120 870v50h-10v10h20v-60z"/>
     <rect class="room" height="60" width="60" x="1470" y="1110"/>
     <path class="room" d="m2640 610v20h-10v20h10v10h30v-10h10v-20h-10v-20h-30z" id="floor-couch-room"/>
-    <path class="room" d="m2590 610v20h-10v30h10 20v-50h-20z"/>
-    <path class="room" d="m2510 680v30h50 20v-20h-20v-10h-50z" id="floor-lizard-men"/>
+    <path class="room" d="m2590 610v20h-10v30h30v-50z"/>
+    <path d="m2510 680v60h60v-30h10v-20h-20v-10z" id="floor-lizard-men" class="room"/>
     <path class="room" d="m1080 1360v40h40v-10h10v-20h-10v-10h-40z"/>
     <path class="room" d="m1840 590v30h20v40h50v-50h-40v-20z"/>
     <path class="room" d="m2110 1170v10h-10-20v30h20v-20h20v-10-10h-10z"/>
@@ -2491,7 +2431,6 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="room" height="60" width="50" x="1310" y="1200"/>
     <rect class="room" height="71" width="20" x="2230" y="1319"/>
     <rect class="room" height="90" width="30" x="930" y="1290"/>
-    <rect class="room" height="30" width="60" x="2510" y="710"/>
     <rect class="room" height="60" width="30" x="2460" y="800"/>
     <rect class="room" height="30" width="30" x="2410" y="820"/>
     <rect class="room" height="30" width="20" x="1870" y="1200"/>
@@ -2503,8 +2442,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <rect class="room" height="70" width="60" x="1610" y="1670"/>
     <rect class="room" height="30" width="30" x="1770" y="1560"/>
     <rect class="room" height="30" width="10" x="1840" y="1600"/>
-    <rect class="room" height="20" width="30" x="2350" y="840"/>
-    <rect class="room" height="30" width="40" x="2360" y="860"/>
+    <path d="m2350 840v20h10v30h40v-30h-20v-20h-30z" class="room"/>
     <rect class="room" height="50" width="40" x="2310" y="870"/>
     <rect class="room" height="30" width="40" x="2280" y="820"/>
     <path class="room" d="m2180 880v30c-8 0-8 10 0 10v10c-8 0-8 10 0 10v10c-8 0-8 10 0 10v20h10v10h40v-10h10v-20c7 0 7-10 0-10v-10c8 0 8-10 0-10v-10c8 0 8-10 0-10v-30zm10 10h40v10h-40z"/>
@@ -2526,12 +2464,10 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="room" d="m1735 190c-10 1-20 6-21 10h-14v10h-10v20h-50v50h190v-50h-50v-20h-10v-10h-15c-1-4-11-9-20-10z" id="room-lightning-and-mirror"/>
     <path class="room" d="m1740 1920v10h-10v30h30v-30-10h-20z"/>
     <path class="room" d="m1790 380v40h30v10h-40v20h30v20h60v10h20v-30h-20v-30h-10v-10h-10v-10h100v-20h-160z"/>
-    <rect class="room" height="10" width="30" x="1740" y="610"/>
-    <rect class="room" height="12" id="room-trapdoor-to-surface" width="14" x="1748" y="438"/>
+    <path d="m1740 610v10h10v20h30v-20h-10v-10z" class="room"/>
+    <rect class="room" height="11" id="room-trapdoor-to-surface" width="14" x="1748" y="439"/>
     <rect class="room" height="20" width="30" x="1790" y="630"/>
-    <rect class="room" height="20" width="20" x="1760" y="620"/>
     <rect class="room" height="20" width="40" x="1850" y="490"/>
-    <rect class="room" height="20" width="10" x="1750" y="620"/>
     <rect class="room" height="20" width="20" x="1760" y="1860"/>
     <rect class="room" height="20" width="20" x="1650" y="1860"/>
     <rect class="room" height="30" width="30" x="1830" y="310"/>
@@ -2552,7 +2488,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     </path>
     <rect class="room" height="20" width="20" x="1920" y="800"/>
     <path class="room-alt" d="m1600 1250c1-9 9.1276-15 20-15 11 0 20 10 20 20 0 11-10 20-20 20-5.3496 0-19-5-20-15" id="room-circular-pit" sodipodi:nodetypes="csssc"/>
-    <path class="room-alt" d="m1690 1920c-1.722 4.3442-4.3051 4.3442-8.5 4.6811-4.6732 0.3753-9.5-4.5032-9.5-8.9215 0-4.4183 4.3056-9 9-9 2.3472 0 8.139 1.1039 9 4" id="circular-dd-room" sodipodi:nodetypes="csssc"/>
+    <path class="room-alt" d="m1690 1920c-2 5-6 5-10 5-7 0-10-5.5817-10-10 0-4.4183 3-10 10-10 6 0 9 2 10 5.7596" id="circular-dd-room" sodipodi:nodetypes="csssc"/>
     <!-- Stairs/pits/floor features start here -->
     <rect class="feature-sand" height="40" id="floor-shield-room" width="40" x="2140" y="1020">
       <title>This floor is covered with sand, but don't mistake it for a sandbox.</title>
@@ -2710,7 +2646,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="wall" d="m1810 1660h-40v-40h-20v-20"/>
     <path class="wall" d="m1755 1630h-5v30h-40v10"/>
     <path class="wall" d="m1718 1680h2v-10h3"/>
-    <path class="wall" d="m1712 1680h-12v-22 2h-10v-10h-30v20h-2 12v30h80v60h40v-30h32m8 0v-10h-20v-10h40v-20h30v40h-40v10-10h-11"/>
+    <path class="wall" d="m1712 1680h-12v-22v2h-10v-10h-30v20h-2h12v30h80v60h40v-30h32m8 0v-10h-20v-10h40v-20h30v40h-40v10v-10h-12"/>
     <path class="wall" d="m1658 1740h12v-30h50v5"/>
     <path class="wall" d="m1652 1740h-14"/>
     <path class="wall" d="m1632 1740h-22v-70h42-2v-20h-50"/>
@@ -2774,7 +2710,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="wall" d="m1162 1290h-2v10h-70v-20h-50v20h-10v-30h10"/>
     <path class="wall" d="m1170 1420v-60h50v-10h-30v-10h30v-10h112"/>
     <path class="wall" d="m1262 1320h-52v10h-60v-20h10v10h40v-20h-30v-10h-2"/>
-    <path class="wall" d="m1310 1190v80h2-32v40h60v10h-71"/>
+    <path class="wall" d="m1310 1190v80h2h-32v40h60v10h-72"/>
     <path class="wall" d="m1320 1190v10h40v20h10v-20h50v60h-20v10h10v20h10v-20h60v2-72h-30v-70h-40v-2"/>
     <path class="wall" d="m1496 1410h4v-50h-60v-10h-20v-40h-10v10h-40v-50h20v-10h-20v-30h-10v30h-40v10h-2 2v30h10v-10h20v40h-12"/>
     <path class="wall" d="m1520 1230v122-2h-70v-10h-20v-60h50v-2 12"/>
@@ -2798,7 +2734,7 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="wall" d="m1760 1860h20v80"/>
     <path class="wall" d="m1760 640v-20h2-4"/>
     <path class="wall" d="m1770 1940v-10h-10v-30h10v-20h-10v-2 12h-12 2v30h10v40 30h10v40h-50v-40h10v-30-30h10v-12"/>
-    <path class="wall" d="m1780 340h-30v-30h20v20h60v10h30v-10h20v-2 52h-70v-10"/>
+    <path class="wall" d="m1780 340h-30v-30h20v20h60v10h30v-10h20v-2v52h-70v-10"/>
     <path class="wall" d="m1790 390h-10"/>
     <path class="wall" d="m1790 650v-10h-30-10v-20h2-12v-10h10v-160h-2v-11h14v11h-2v160h10v10h-2 12v10h30v-20h30v-40"/>
     <path class="wall" d="m1802 370h-22"/>
@@ -2819,11 +2755,10 @@ tDse4Jw0QaAQirhVM8hI1ETnCcotl4SETRAQkbhpuosgholG3H3IahNEnyjETVabIEaJQtwEQYxC
     <path class="wall" d="m1900 480v10"/>
     <path class="wall" d="m1900 500h-10v60h-10v20h10v10h10"/>
     <path class="wall" d="m1900 500v30"/>
-    <path class="wall" d="m1900 600h-20v-10h-10v20"/>
+    <path class="wall" d="m1900 600h-20v-10h-10v20h40v10"/>
     <path class="wall" d="m1908 660h2v-2"/>
     <path class="wall" d="m1910 430h10v10h-10z"/>
     <path class="wall" d="m1910 530v-40h-2 12"/>
-    <path class="wall" d="m1910 620v-10h-40v-20h20v6"/>
     <path class="wall" d="m1910 651v-21"/>
     <path class="wall" d="m1915 480h-5v-30h10v5"/>
     <path class="wall" d="m1918 380h32"/>
