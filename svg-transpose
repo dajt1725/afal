@@ -15,7 +15,7 @@ unneeded_byname = {
  'title': ('style', 'id')
 }
 
-id_regex = re.compile('(text|path|tspan|title|rect|circle|image|script)[-0-9]+$')
+id_regex = re.compile('(text|path|tspan|title|rect|circle|image|script|defs)[-0-9]+$')
 
 ###### path parsing code
 style_re1 = re.compile(";display:inline$")
@@ -504,9 +504,19 @@ def upd(n,a,d):
             print "updating",a,'(',v,')','by',d,'to',i
         n.setAttribute(a,str(i))
 
+def strip_ids(n):
+    if n.attributes is not None:
+        i = n.attributes.getNamedItem('id')
+        if i and i.value != '' and id_regex.match(i.value):
+            n.attributes.removeNamedItem('id')
+    for i in n.childNodes:
+        strip_ids(i)
+
 def do_update(n,dx,dy):
 # We never update patterns, even though we should
     if n.nodeName == 'pattern':
+        for i in n.childNodes:
+            strip_ids(i)
         return
 # We ignore g elements, but update their children
     if n.attributes:
