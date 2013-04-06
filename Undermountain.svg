@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="um1.svg" style="display:inline" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="Undermountain.svg" style="display:inline" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Anything For A Laugh's map of Undermountain</title>
   <script type="text/ecmascript"><![CDATA[
       function toggleLayer(e,n) {
@@ -281,7 +281,7 @@
       }
     </style>
   </defs>
-  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="namedview59" inkscape:current-layer="um-uk" inkscape:cx="1764.4622" inkscape:cy="2476.4463" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="972" inkscape:window-maximized="1" inkscape:window-width="1280" inkscape:window-x="0" inkscape:window-y="27" inkscape:zoom="1" pagecolor="#888888" showborder="true" showgrid="true">
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" id="namedview59" inkscape:current-layer="um-l2-m" inkscape:cx="1531.3063" inkscape:cy="3623.1385" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="972" inkscape:window-maximized="1" inkscape:window-width="1280" inkscape:window-x="0" inkscape:window-y="27" inkscape:zoom="5.55" pagecolor="#888888" showborder="true" showgrid="true">
     <inkscape:grid color="#5555ff" empcolor="#0000a1" empopacity="0.25098039" empspacing="10" enabled="true" id="grid2985" opacity="0.1254902" snapvisiblegridlinesonly="false" type="xygrid" visible="true"/>
   </sodipodi:namedview>
   <metadata id="metadata7">
@@ -395,7 +395,7 @@
   <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Level 2 Main" style="display:none">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
-    <path class="corr" d="m1550 170h10v30h-10zm0-30h10v20h-10zm-10 20h90v10h-90zm60 10h10v10h-10zm0-20h10v10h-10zm-30-10h60v10h-60z"/>
+    <path class="corr" d="m1550 140v60h10v-30h40v10h10v-10h20v-10h-20v-10h20v-10h-60v10h30v10h-40v-20z"/>
     <path class="corr" d="m1660 180h20v10h-20zm0-30h20v10h-20zm-10-30h10v70h-10z"/>
     <rect class="corr" height="10" width="10" x="1640" y="280"/>
     <rect class="corr" height="10" width="10" x="1570" y="290"/>
@@ -453,19 +453,20 @@
     <path class="stairs-ns" d="m1383 150h4l3 70h-10z"/>
     <path class="stairs-ew" d="m1420 230 10 3v4l-10 3z"/>
     <path class="stairs-ew" d="m1430 150 10 3v4l-10 3z"/>
-    <path class="stairs-ew" d="m1490 330 10 3v3l-10 4z"/>
+    <path class="stairs-ew" d="m1490 330 10 3v4l-10 3z"/>
     <path class="stairs-ew" d="m1510 263 10-3v10l-10-3z"/>
-    <path class="stairs-ew" d="m1510 164 10-4v10l-10-3z"/>
+    <path class="stairs-ew" d="m1510 163 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1710 330 20 3v4l-20 3z"/>
-    <path class="stairs-ew" d="m1750 340 80 4v3l-80 3z" onclick="stairs('um-l2-m','um-l1-m')"/>
+    <path class="stairs-ew" d="m1750 340 80 3v4l-80 3z" onclick="stairs('um-l2-m','um-l1-m')"/>
     <path class="stairs-ew" d="m1890 380 20 3v4l-20 3z"/>
-    <path class="stairs-ns" d="m1550 200h10l-3 10h-3z"/>
+    <path class="stairs-ns" d="m1550 200h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m1630 220h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m1813 210h4l3 30h-10z" id="lowering-stairs-a" onclick="stairs('um-l2-m','um-l2-l1')"/>
     <path class="stairs-ns" d="m1840 350h10l-3 30h-4z"/>
     <path class="stairs-ns" d="m1650 90h10l-3 30h-4z"/>
-    <path class="stairs-ew" d="m1630 163 20-3v10l-20-4z"/>
-    <path class="stairs-ew" d="m1370 233 10-3v10l-10-4z"/>
+    <path class="stairs-ew" d="m1630 163 20-3v10l-20-3z"/>
+    <path class="stairs-ew" d="m1370 233 10-3v10l-10-3z"/>
+    <path class="stairs-ew" d="m1540 163 10-3v10l-10-3z"/>
     <rect class="feature" height="20" id="teleportal-l2-a-1" width="20" x="1800" y="140">
       <title>Teleportal to somewhere.  Dunno exactly where to yet.  We currently call it teleportal-l2-a-2.</title>
     </rect>
