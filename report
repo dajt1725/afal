@@ -603,7 +603,7 @@ def print_full_character(c):
         if len(payable):
             print_debt(payable, 'to', 'Payable')
 # was primary=True
-        t = {'on': 'latest', 'char2': char}
+        t = {'char2': char}
         if journal_args is not None:
             t.update(journal_args)
         print_journal(t)
@@ -783,9 +783,13 @@ else:
     title = "Who knows what?"
     j = {}
     js = form.getfirst('start')
-    if js is not None and js.lower() != 'all':
-        j['starting_on'] = js
     je = form.getfirst('end')
+    if js is not None and js.lower() != 'all':
+	if (js == je):
+            j['on'] = js
+            je = None
+        else:
+            j['starting_on'] = js
     if je is not None and je.lower() != 'all':
         j['up_to'] = je
     jc = form.getfirst('char')
