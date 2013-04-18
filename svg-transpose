@@ -515,6 +515,8 @@ def upd(n,a,d):
             i = round(i)
         elif i == float(int(i)):
             i = int(i)
+        else:
+            print "fractional coordinate ",a,i
         if args.verbose:
             print "updating",a,'(',v,')','by',d,'to',i
         n.setAttribute(a,str(i))
@@ -583,14 +585,16 @@ def do_update(n,dx,dy):
             elif t != '' and t != 'matrix(0,1,-1,0,0,0)':
                 print prname, "ignoring unknown transform", t
         if args.box:
-            if n.nodeName == 'rect':
+            if dx == 0 and dy == 0:
+                pass
+            elif n.nodeName == 'rect':
                 x = float(n.getAttribute('x'))
                 y = float(n.getAttribute('y'))
                 x1 = x + float(n.getAttribute('width'))
                 y1 = y + float(n.getAttribute('height'))
                 if _in([x, y], args.box) or _in([x1, y], args.box) or _in([x, y1], args.box) or _in([x1, y1], args.box):
                     if args.verbose:
-                        print "Transposing rect",x,y,x1,y1
+                        print prname,"Transposing rect",x,y,x1,y1
                     if x >= args.box[0] and x <= args.box[2]:
                         upd(n, 'x', dx)
                         if x1 < args.box[0] or x1 > args.box[2]:
@@ -604,19 +608,27 @@ def do_update(n,dx,dy):
                     elif y1 >= args.box[1] and y1 <= args.box[3]:
                         upd(n, 'height', dy)
             elif n.nodeName == 'circle':
-                if _in([n.getAttribute('cx'), n.getAttribute('cy')], args.box):
+                x = float(n.getAttribute('cx'))
+                y = float(n.getAttribute('cy'))
+                if _in([x, y], args.box):
+                    if args.verbose:
+                        print prname,"Transposing circle",x,y
                     upd(n,'cx',dx)
                     upd(n,'sodipodi:cx',dx)
                     upd(n,'cy',dy)
                     upd(n,'sodipodi:cy',dy)
             elif n.nodeName == 'text' or n.nodeName == 'tspan':
-                if _in([n.getAttribute('x'), n.getAttribute('y')], args.box):
+                x = float(n.getAttribute('x'))
+                y = float(n.getAttribute('y'))
+                if _in([x, y], args.box):
+                    if args.verbose:
+                        print prname,"Transposing text",x,y
                     upd(n, 'x', dx)
                     upd(n, 'y', dy)
             elif n.nodeName == 'path' or n.nodeName == 'title' or n.nodeName == 'g':
                 pass
             else:
-                print prname,"unknown nodeName"
+                print prname,"unknown nodeName",n.nodeName
         else:
             if args.fraction:
                 upd(n, 'width', 0)
