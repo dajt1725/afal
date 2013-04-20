@@ -1,0 +1,390 @@
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="MythDranor.svg" style="display:inline" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <title>Anything For A Laugh's map of Myth Dranor</title>
+  <script type="text/ecmascript"><![CDATA[
+      function toggleLayer(e,n) {
+        var l = document.getElementById(n);
+        if (l.getAttributeNS(null,'style') == 'display:inline') {
+          l.setAttributeNS(null,'style','display:none');
+          e.target.setAttributeNS(null,'style','font-size:10px;fill:#ff0000');
+        } else {
+          l.setAttributeNS(null,'style','display:inline');
+          e.target.setAttributeNS(null,'style','font-size:10px;fill:#000000');
+        }
+      }
+      function stairs(n1, n2) {
+        document.getElementById(n1).setAttributeNS(null, 'style', 'display:none');
+        document.getElementById('b-'+n1).setAttributeNS(null, 'style', 'font-size:10px;fill:#ff0000');
+        document.getElementById(n2).setAttributeNS(null, 'style', 'display:inline');
+        document.getElementById('b-'+n2).setAttributeNS(null, 'style', 'font-size:10px;fill:#000000');
+      }
+// from http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
+      function getScrollXY() {
+      var scrOfX = 0, scrOfY = 0;
+      if( typeof( window.pageYOffset ) == 'number' ) {
+        scrOfY = window.pageYOffset;
+        scrOfX = window.pageXOffset;
+      } else if( document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+        scrOfY = document.body.scrollTop;
+        scrOfX = document.body.scrollLeft;
+      } else if( document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
+        scrOfY = document.documentElement.scrollTop;
+        scrOfX = document.documentElement.scrollLeft;
+      } else {
+        document.getElementById('errortext').firstChild.nodeValue = 'Unknown broser type';
+      }
+      return [ scrOfX+0.1, scrOfY ];
+    }
+
+    function moveMenu(evt) {
+      var scrollpos = getScrollXY();
+      document.getElementById('menu').transform.baseVal.getItem(0).setTranslate(scrollpos[0], scrollpos[1]);
+      document.getElementById('unmenu').transform.baseVal.getItem(0).setTranslate(scrollpos[0], scrollpos[1]);
+    }
+
+    window.onscroll = moveMenu;
+      ]]></script>
+  <defs>
+    <pattern id="stairs-ne-warped-1" inkscape:collect="always" patternTransform="matrix(1.5508062,0,0,1.5508062,521,154)" xlink:href="#stairs-ne"/>
+    <pattern height="1" id="stairs-ew" patternUnits="userSpaceOnUse" width="2">
+      <rect height="1.2" style="fill:#0f0f0f;stroke:none" width="1" x="0" y="-.1"/>
+      <rect height="1.2" style="fill:#edd567;stroke:none" width="1" x="1" y="-.1"/>
+    </pattern>
+    <pattern height="1" id="stairs-ew-a" patternUnits="userSpaceOnUse" width="2">
+      <rect height="1" style="fill:#edd567;stroke:none" width="1" x="0" y="0"/>
+      <rect height="1" style="fill:#0f0f0f;stroke:none" width="1" x="1" y="0"/>
+    </pattern>
+    <pattern height="2" id="stairs-ns" patternUnits="userSpaceOnUse" width="1">
+      <rect height="1" style="fill:#0f0f0f;stroke:none" width="1.2" x="-.1" y="0"/>
+      <rect height="1" style="fill:#edd567;stroke:none" width="1.2" x="-.1" y="1"/>
+    </pattern>
+    <pattern height="2" id="stairs-ns-a" patternUnits="userSpaceOnUse" width="1">
+      <rect height="1" style="fill:#edd567;stroke:none" width="1" x="0" y="0"/>
+      <rect height="1" style="fill:#0f0f0f;stroke:none" width="1" x="0" y="1"/>
+    </pattern>
+    <pattern height="20" id="stairs-circ" patternUnits="userSpaceOnUse" width="20">
+      <path d="m 10,10 l  -10,-10 2.5,0 z l   -5,-10 2.5,0 z l   0,-10 2.5,0 z l  5,-10 2.5,0 z l  -7.5,10 2.5,0 z l  -2.5,10 2.5,0 z l  2.5,10 2.5,0 z l 7.5,10 2.5,0 z l   10,-10 0,2.5 z l    10,-5 0,2.5 z l    10,0 0,2.5 z l 10,5 0,2.5 z l -10,-7.5 0,2.5 z l -10,-2.5 0,2.5 z l -10,2.5 0,2.5 z l -10,7.5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
+      <path d="m 10,10 l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l   -10,10 2.5,0 z l    -5,10 2.5,0 z l    0,10 2.5,0 z l    5,10 2.5,0 z l  10,-7.5 0,2.5 z l  10,-2.5 0,2.5 z l  10,2.5 0,2.5 z l  10,7.5 0,2.5 z l  -10,-10 0,2.5 z l   -10,-5 0,2.5 z l   -10,0 0,2.5 z l   -10,5 0,2.5 z" style="fill:#edd567;stroke:none"/>
+    </pattern>
+    <pattern height="20" id="stairs-circ-a" patternUnits="userSpaceOnUse" width="20">
+      <path d="m 10,10 l  -10,-10 2.5,0 z l   -5,-10 2.5,0 z l   0,-10 2.5,0 z l  5,-10 2.5,0 z l  -7.5,10 2.5,0 z l  -2.5,10 2.5,0 z l  2.5,10 2.5,0 z l 7.5,10 2.5,0 z l   10,-10 0,2.5 z l    10,-5 0,2.5 z l    10,0 0,2.5 z l 10,5 0,2.5 z l -10,-7.5 0,2.5 z l -10,-2.5 0,2.5 z l -10,2.5 0,2.5 z l -10,7.5 0,2.5 z" style="fill:#edd567;stroke:none"/>
+      <path d="m 10,10 l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l   -10,10 2.5,0 z l    -5,10 2.5,0 z l    0,10 2.5,0 z l    5,10 2.5,0 z l  10,-7.5 0,2.5 z l  10,-2.5 0,2.5 z l  10,2.5 0,2.5 z l  10,7.5 0,2.5 z l  -10,-10 0,2.5 z l   -10,-5 0,2.5 z l   -10,0 0,2.5 z l   -10,5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-ne" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 0,10 l  0,-10 2.5,0 z l  5,-10 2.5,0 z l 10,-10 0,2.5 z l  10,-5 0,2.5 z" style="fill:#edd567;stroke:none"/>
+      <path d="m 0,10 l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l 10,-7.5 0,2.5 z l 10,-2.5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-se" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 0,0 l  10,0 0,2.5 z l  10,5 0,2.5 z l 2.5,10 2.5,0 z l 7.5,10 2.5,0 z" style="fill:#edd567;stroke:none"/>
+      <path d="m 0,0 l 10,2.5 0,2.5 z l 10,7.5 0,2.5 z l 0,10 2.5,0 z l 5,10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-sw" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 10,0 l   0,10 -2.5,0 z l  -5,10 -2.5,0 z l -10,10 0,-2.5 z l -10,5  0,-2.5 z" style="fill:#edd567;stroke:none"/>
+      <path d="m 10,0 l -2.5,10 -2.5,0 z l -7.5,10 -2.5,0 z l -10,7.5 0,-2.5 z l -10,2.5 0,-2.5 z" style="fill:#0f0f0f;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-nw" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 10,10 l -10,0 0,-2.5 z l -10,-5 0,-2.5 z l -10,-10 2.5,0 z l -5,-10 2.5,0 z" style="fill:#edd567;stroke:none"/>
+      <path d="m 10,10 l -10,-2.5 0,-2.5 z l -10,-7.5 0,-2.5 z l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-ne-a" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 0,10 l  0,-10 2.5,0 z l  5,-10 2.5,0 z l 10,-10 0,2.5 z l  10,-5 0,2.5 z" style="fill:#0f0f0f;stroke:none"/>
+      <path d="m 0,10 l 2.5,-10 2.5,0 z l 7.5,-10 2.5,0 z l 10,-7.5 0,2.5 z l 10,-2.5 0,2.5 z" style="fill:#edd567;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-se-a" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 0,0 l  10,0 0,2.5 z l  10,5 0,2.5 z l 2.5,10 2.5,0 z l 7.5,10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
+      <path d="m 0,0 l 10,2.5 0,2.5 z l 10,7.5 0,2.5 z l 0,10 2.5,0 z l 5,10 2.5,0 z" style="fill:#edd567;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-sw-a" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 10,0 l   0,10 -2.5,0 z l  -5,10 -2.5,0 z l -10,10 0,-2.5 z l -10,5  0,-2.5 z" style="fill:#0f0f0f;stroke:none"/>
+      <path d="m 10,0 l -2.5,10 -2.5,0 z l -7.5,10 -2.5,0 z l -10,7.5 0,-2.5 z l -10,2.5 0,-2.5 z" style="fill:#edd567;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="stairs-nw-a" patternUnits="userSpaceOnUse" width="10">
+      <path d="m 10,10 l -10,0 0,-2.5 z l -10,-5 0,-2.5 z l -10,-10 2.5,0 z l -5,-10 2.5,0 z" style="fill:#0f0f0f;stroke:none"/>
+      <path d="m 10,10 l -10,-2.5 0,-2.5 z l -10,-7.5 0,-2.5 z l -7.5,-10 2.5,0 z l -2.5,-10 2.5,0 z" style="fill:#edd567;stroke:none"/>
+    </pattern>
+    <pattern height="10" id="floor-corr" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:#edd567;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-room" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:#edb667;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-orange" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:orange;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-sand" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:#e0e000;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-green" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:green;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-purple" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:purple;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-water" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:#63B8FF;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-red" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:red;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-reddish" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:#ed7767;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="10" id="floor-dark-grey" patternUnits="userSpaceOnUse" width="10">
+      <rect height="9.5" style="fill:#505050;stroke:none" width="9.5" x="0.25" y="0.25"/>
+    </pattern>
+    <pattern height="100" id="agrid" patternUnits="userSpaceOnUse" width="100">
+      <path d="m0,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100m-100,10h100M10,0v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100m10,-100v100" style="fill:none;stroke:#0000ff;stroke-width:0.15px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1"/>
+      <path d="m 0,0h100v100h-100v-100" style="fill:none;stroke:#0000ff;stroke-width:0.5px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"/>
+    </pattern>
+    <style id="style-um" type="text/css">
+      *.corr {
+        fill:url(#floor-corr);
+        stroke:none
+      }
+      *.room {
+        fill:url(#floor-room);
+        stroke:none
+      }
+      *.room-alt {
+        fill:url(#floor-room);
+        stroke:#000000;
+        stroke-width:1;
+        stroke-miterlimit:4;
+        stroke-opacity:1;
+        stroke-dasharray:none
+      }
+      *.feature {
+        fill:url(#floor-orange);
+        stroke:yellow;
+        stroke-width:.5px
+      }
+      *.feature-sand {
+        fill:url(#floor-sand);
+        stroke:black;
+        stroke-width:.5px
+      }
+      *.feature-green {
+        fill:url(#floor-green);
+        stroke:yellow;
+        stroke-width:.5px
+      }
+      *.feature-purple {
+        fill:url(#floor-purple);
+        stroke:yellow;
+        stroke-width:.5px
+      }
+      *.feature-water {
+        fill:url(#floor-water);
+        stroke:yellow;
+        stroke-width:.5px
+      }
+      *.feature-bad {
+        fill:url(#floor-red);
+        stroke:yellow;
+        stroke-width:.5px
+      }
+      *.feature-null-magic {
+        fill:url(#floor-reddish);
+        stroke:none
+      }
+      *.pit {
+        fill:url(#floor-dark-grey);
+        stroke:yellow;
+        stroke-width:1;
+        stroke-miterlimit:4;
+        stroke-opacity:1;
+        stroke-dasharray:none
+      }
+      *.wall {
+        fill:none;
+        stroke:#000000;
+        stroke-width:1px;
+        stroke-linecap:butt;
+        stroke-linejoin:miter;
+        stroke-opacity:1
+      }
+      *.door {
+        fill:#e2c022;
+        stroke:black;
+        stroke-width:0.5px
+      }
+      *.sec-door {
+        fill:#683910;
+        stroke:black;
+        stroke-width:0.5px
+      }
+      *.column {
+        fill:black;
+        stroke:none
+      }
+      *.feature-path {
+        fill:none;
+        stroke:yellow;
+        stroke-width:2px;
+        stroke-linecap:butt;
+        stroke-linejoin:miter;
+        stroke-opacity:1
+      }
+      *.stairs-ew {
+        fill:url(#stairs-ew);
+        stroke:none
+      }
+      *.stairs-ns {
+        fill:url(#stairs-ns);
+        stroke:none
+      }
+      *.stairs-ns-a {
+        fill:url(#stairs-ns-a);
+        stroke:none
+      }
+      *.stairs-ew-a {
+        fill:url(#stairs-ew-a);
+        stroke:none
+      }
+      *.bars {
+       fill:none;
+       stroke:#000000;
+       stroke-width:1;
+       stroke-linecap:butt;
+       stroke-linejoin:miter;
+       stroke-miterlimit:4;
+       stroke-opacity:1;
+       stroke-dasharray:3, 1;
+       stroke-dashoffset:0
+      }
+      *.name {
+       font-size:6px;
+       font-style:normal;
+       font-variant:normal;
+       font-weight:normal;
+       font-stretch:normal;
+       text-align:start;
+       line-height:125%;
+       letter-spacing:0px;
+       word-spacing:0px;
+       writing-mode:lr-tb;
+       text-anchor:start;
+       fill:#000000;
+       fill-opacity:1;
+       stroke:none;
+       font-family:Sans;
+       -inkscape-font-specification:Sans
+      }
+      *.ocorr {
+        fill:none;
+        stroke:#9b30ff;
+        stroke-width:3
+      }
+      *.oroom {
+        fill:#B452CD;
+        stroke:#DA70D6;
+        stroke-width:1;
+      }
+    </style>
+  </defs>
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" inkscape:current-layer="mythdranor" inkscape:cx="1900" inkscape:cy="3020" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="972" inkscape:window-maximized="1" inkscape:window-width="1280" inkscape:window-x="0" inkscape:window-y="27" pagecolor="#888888" showborder="true" showgrid="true">
+    <inkscape:grid color="#5555ff" empcolor="#0000a1" empopacity="0.25098039" empspacing="10" enabled="true" opacity="0.1254902" snapvisiblegridlinesonly="false" type="xygrid" visible="true"/>
+  </sodipodi:namedview>
+  <metadata>
+    <rdf:RDF>
+      <cc:Work rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+        <dc:title>Anything For A Laugh's map of Myth Dranor</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g id="bgrid" inkscape:groupmode="layer" inkscape:label="bgrid" style="display:inline">
+    <rect height="3800" style="fill:url(#agrid);fill-opacity:1;stroke:none" width="3800" x="0" y="0"/>
+  </g>
+  <g id="mythdranor" inkscape:groupmode="layer" inkscape:label="Myth Dranor" style="display:inline">
+    <path class="corr" d="m185 250v10h-115v20h115v60h20v-60h60v-20h-60v-10h-20z"/>
+    <rect class="corr" height="40" width="10" x="140" y="160"/>
+    <path class="corr" d="m140 220v10h-5v10h15v-20h-10z"/>
+    <path class="room" d="m180 190h30l20 10v20l-25 30h-20l-25-30v-20z"/>
+    <path class="room" d="m135 130 5-3h10l5 3v30h-20z"/>
+    <rect class="room" height="20" width="20" x="95" y="170"/>
+    <rect class="room" height="20" width="25" x="135" y="200"/>
+    <rect class="room" height="40" width="20" x="115" y="190"/>
+    <path d="m122 171h2l10 9v3h-5l-7-7z" style="fill:url(#stairs-ne-warped-1);fill-opacity:1;stroke:none"/>
+    <rect class="stairs-ew" height="5" width="7" x="115" y="171"/>
+    <rect class="stairs-ns" height="7" width="5" x="129" y="183"/>
+    <path class="wall" d="m70 278v2h2"/>
+    <path class="wall" d="m78 280h107v60"/>
+    <path class="wall" d="m70 262v-2h115v-10h2-2l-25-30v-12 12h-12 2v20h-15"/>
+    <path class="wall" d="m135 230h5v-10h2-7v10h-20v-40h15-1v-7l-7-7h-7v14h-20v-20h20v1h9l10 9v10h-1 2v10h5v-40h-5v-30l5-3h10l5 3v30h-5v40h10v2-2l20-10h30l20 10v2"/>
+    <path class="wall" d="m230 208v12l-25 30h-2 2v10h60"/>
+    <path class="wall" d="m265 280h-17"/>
+    <path class="wall" d="m242 280h-4"/>
+    <path class="wall" d="m232 280h-14"/>
+    <path class="wall" d="m212 280h-7v60"/>
+    <rect class="sec-door" height="2" width="6" x="142" y="219"/>
+    <rect class="sec-door" height="2" width="3" x="130" y="189"/>
+    <rect class="door" height="8" width="2" x="69" y="262"/>
+    <rect class="door" height="8" width="2" x="69" y="270"/>
+    <rect class="door" height="2" width="6" x="72" y="279"/>
+    <rect class="door" height="2" width="6" x="212" y="279"/>
+    <rect class="door" height="2" width="6" x="232" y="279"/>
+    <rect class="door" height="2" width="6" x="242" y="279"/>
+    <rect class="door" height="2" width="8" x="187" y="249"/>
+    <rect class="door" height="2" width="8" x="195" y="249"/>
+    <rect class="door" height="6" width="2" x="159" y="202"/>
+    <rect class="door" height="6" width="2" x="229" y="202"/>
+    <rect class="feature" height="6" width="6" x="112" y="272">
+      <title>Arrive here from Undermountain.</title>
+    </rect>
+    <rect class="feature" height="20" width="2" x="134" y="200">
+      <title>There's not much left of this curtain after the fight with the Silent Travellers.</title>
+    </rect>
+    <circle class="column" cx="190" cy="280" r="1"/>
+    <circle class="column" cx="190" cy="290" r="1"/>
+    <circle class="column" cx="190" cy="300" r="1"/>
+    <circle class="column" cx="190" cy="310" r="1"/>
+    <circle class="column" cx="190" cy="320" r="1"/>
+    <circle class="column" cx="190" cy="330" r="1"/>
+    <circle class="column" cx="190" cy="340" r="1"/>
+    <circle class="column" cx="200" cy="280" r="1"/>
+    <circle class="column" cx="200" cy="290" r="1"/>
+    <circle class="column" cx="200" cy="300" r="1"/>
+    <circle class="column" cx="200" cy="310" r="1"/>
+    <circle class="column" cx="200" cy="320" r="1"/>
+    <circle class="column" cx="200" cy="330" r="1"/>
+    <circle class="column" cx="200" cy="340" r="1"/>
+    <path class="feature" d="m200 240 20-30-12-10h-26l-12 10 20 30v-10l-13-20 5-5h25l7 5-14 20z">
+      <title>This is a big conference table.</title>
+    </path>
+    <rect class="feature" height="2" width="2" x="187" y="239"/>
+    <rect class="feature" height="2" width="2" x="184" y="236"/>
+    <rect class="feature" height="2" width="2" x="182" y="232"/>
+    <rect class="feature" height="2" width="2" x="178" y="228"/>
+    <rect class="feature" height="2" width="2" x="177" y="225"/>
+    <rect class="feature" height="2" width="2" x="176" y="222"/>
+    <rect class="feature" height="2" width="2" x="174" y="219"/>
+    <rect class="feature" height="2" width="2" x="172" y="216"/>
+    <rect class="feature" height="2" width="2" x="170" y="213"/>
+    <rect class="feature" height="2" width="2" x="168" y="210"/>
+    <rect class="feature" height="2" width="2" x="169" y="207"/>
+    <rect class="feature" height="2" width="2" x="170" y="204"/>
+    <rect class="feature" height="2" width="2" x="173" y="203"/>
+    <rect class="feature" height="2" width="2" x="177" y="200"/>
+    <rect class="feature" height="2" width="2" x="180" y="198"/>
+    <rect class="feature" height="2" width="2" x="184" y="197"/>
+    <rect class="feature" height="2" width="2" x="189" y="197"/>
+    <rect class="feature" height="2" width="2" x="194" y="197"/>
+    <rect class="feature" height="2" width="2" x="198" y="197"/>
+    <rect class="feature" height="2" width="2" x="202" y="197"/>
+    <rect class="feature" height="2" width="2" x="206" y="197"/>
+    <rect class="feature" height="2" width="2" x="211" y="200"/>
+    <rect class="feature" height="2" width="2" x="215" y="202"/>
+    <rect class="feature" height="2" width="2" x="218" y="205"/>
+    <text class="name" x="72" xml:space="preserve" y="288"><tspan sodipodi:role="line" x="72" y="288">&quot;Stairway up and east</tspan><tspan sodipodi:role="line" x="72" y="295.5">to a four-way intersection&quot;</tspan></text>
+  </g>
+  <g id="menu" inkscape:groupmode="layer" style="display:inline" transform="translate(0,0)">
+    <text onclick="document.getElementById('menu').setAttributeNS(null, 'style', 'display:none');document.getElementById('unmenu').setAttributeNS(null, 'style', 'display:inline')" style="font-size:14px;fill:#000000" x="4em" y="1em">Map of Myth Dranor as of Tarsakh 24 1370</text>
+    <text id="errortext" style="font-size:14px;fill:#000000" x="4em" y="2em">Click captions to toggle visibility.</text>
+    <text id="b-bgrid" onclick="toggleLayer(evt,'bgrid')" style="font-size:10px;fill:#000000" x="29em" y="4em">Map Grid</text>
+    <text id="b-mythdranor" onclick="toggleLayer(evt,'mythdranor')" style="font-size:10px;fill:#000000" x="15em" y="5em">Myth Dranor</text>
+  </g>
+  <g id="unmenu" style="display:none" transform="translate(0,0)">
+    <text onclick="document.getElementById('menu').setAttributeNS(null, 'style', 'display:inline');document.getElementById('unmenu').setAttributeNS(null, 'style', 'display:none')" style="font-size:14px;fill:#000000" x="4em" y="1em">M</text>
+  </g>
+</svg>
