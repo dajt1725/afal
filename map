@@ -41,7 +41,8 @@ else:
 print(afal.html_header.format(title = title))
 if map_name:
     print('  <h1>{m}</h1>\n'.format(m = map_name))
-    print(' <img style="background-color:#a0a0a0;border:3px solid black" src="/maps/{map_of}">\n'.format(map_of = map_of))
+    print('<object style="background:white" data="../maps/{map_of}" type="image/svg+xml">Map Goes Here</object>\n'.format(map_of = map_of))
+#    print(' <img style="background-color:#a0a0a0;border:3px solid black" src="/maps/{map_of}">\n'.format(map_of = map_of))
 print(
  ' </center>\n'
  ' </body>\n'
