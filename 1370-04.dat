@@ -35,12 +35,12 @@ date=2 Tarsakh 1370
 ,,to=Darius
 ,,,item=Fanny Pack of Holding;cash=4cp;debt=9499gp, 196cp
 ,,,item=Bracers of Defense AC 5  #2;cash=3cp;debt=14999gp, 197cp
-,,,item=+2 Ring of Protection;cash=5cp;debt=11999gp, 195cp
+,,,item=+2 Ring of Protection  #1;cash=5cp;debt=11999gp, 195cp
 ,,to=Denyae
 ,,,item=+1 Ring of Protection  #1;cash=10cp;debt=4999gp, 190cp
 ,,to=Dexter
 ,,,item=Weapon: Perditor Mortua;cash=4cp;debt=4999gp, 196cp
-,,,item=Ring of Fire Resistance;cash=10cp;debt=4999gp, 190cp
+,,,item=Ring of Fire Resistance  #1;cash=10cp;debt=4999gp, 190cp
 ,,,item=Ring of Warmth  #2;cash=9cp;debt=4999gp, 191cp
 ,,,item=Ring of Water Walking  #2;cash=1cp;debt=4999gp, 199cp
 ,,,item=Potion of Invisibility  #1;cash=500gp
@@ -121,7 +121,7 @@ Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,,name=Nonmagic  #4;holder=Sell;note=6 composite short bows, 6 spears, arrows
 ,,name=Poison: (Sleep), Pot of;note=2 round onset, 5-10 rounds duration,\
  expires around the 17th or so
-,,name=Shirt of Tackyness;note=Humanoids int >=7 suffer -2th,Darius id\
+,,name=Shirt of Tackiness;note=Humanoids int >=7 suffer -2th,Darius id\
  <d Tarsakh 8 1370>,fully id by testing <d Tarsakh 10 1370>
 ,,name=Dwarven Battle Tankard *2;value=20gp
 ,,name=Settlestone Hardsilver Mead;value=30gp
@@ -298,7 +298,7 @@ date=Tarsakh 20, 1370
 ,find;found=Tarsakh-20a-1370
 ,,name=3x Giant Spider poison sacks
 ,,name=Bracers of Inititive (Moderate);note=Ag part ID Tarsakh 24 1370
-,,name=Ring of Protection (Moderate)  #1;note=Steve ID Tarsakh 24 1370;value=12000gp
+,,name=+2 Ring of Protection  #2;note=Steve ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Invisibility;note=Steve and Staric ID Tarsakh 24 1370;value=7500gp
 ,,name=Magic Potion;note=Ag,Tristan,Staric failed Tarsakh 24 1370
 ,,name=+2 Broadsword;value=4000gp
@@ -435,8 +435,8 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,,name=Holy Water  #9;holder=Henkles
 ,,name=Holy Water  #10;holder=Henkles
 ,,name=Boots of Levitation;note=Steve,Ag,Tristan part ID Tarsakh 24 1370;value=15000gp
-,,name=Ring of Protection (Moderate)  #2;note=Steve failed, Ag ID Tarsakh 24 1370;value=12000gp
-,,name=Ring of Fire Resistance  #3;note=Steve, Staric id Tarsakh 24 1370;value=5000gp
+,,name=+2 Ring of Protection  #3;note=Steve failed, Ag ID Tarsakh 24 1370;value=12000gp
+,,name=Ring of Fire Resistance  #2;note=Steve, Staric id Tarsakh 24 1370;value=5000gp
 ,,name=Ring of Telekenisis 25#;note=Steve,Tristan,Staric ID Tarsakh 24 1370;value=10000gp
 ,,name=Bracers of Defense (Moderate);note=Ag, Tristan failed, Staric part ID Tarsakh 24 1370;value=15000gp
 ,,name=+1/+3 (Trolls) Long Sword;note=Tristan id Tarsakh 24 1370;value=3000gp
@@ -534,3 +534,38 @@ date=Tarsakh 23, 1370
 ,pay;by=Ag;to=Maanamere;cash=18801vcp
 ,pay;by=Ag;to=Steve;cash=18801vcp
 ,pay;by=Ag;to=Tristan;cash=18801vcp
+date=Tarsakh 24, 1370
+,sell;to=Darius;item=Shirt of Tackiness;debt=5000gp
+,sell;to=Darius;item=Ring of Fire Resistance  #2;debt=5000gp
+,sell;to=Henkles;item=Ring of Telekenisis 25#;debt=10000gp
+,commit
+,pay;by=Darius;cash=1900000vcp
+,pay;by=Henkles;cash=1733334vcp
+,lend;to=Staric;item=Ring of Magic Missiles
+,lend;to=Staric;item=Wand of Hurting
+,lend;to=Staric;item=+2 Ring of Protection  #3
+,lend;to=Tristan;item=Wand of Small Fires
+,lend;to=Brogan;item=+2 Ring of Protection  #2
+date=Tarsakh 25 1370
+,give;by=AFAL;to=Someone;cash=13 Gems: Violanes 12gp, 14 Gems: Agni Manis 10gp, 10 Gems: Algaes 10gp, 11 Gems: Chrysocollas 10gp, 8 Gems: Eye Agates 10gp, 17 Gems: Sharpstones 10gp, 12 Gems: Silkstones 10gp, 12 Gems: Tiger Eye Agates 10gp, 8ep;note=gems for Lin for getting information
+date=Tarsakh 26 1370
+,party;type=AFAL;name=Tarsakh-26-1370;Brogan=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Tristan=1
+,give;to=Destroyed;item=Carpet of Flying
+,give;to=Destroyed;item=Amulet of Proof Against Detection and Location
+,find;found=Tarsakh-26-1370;name=Copper Horse Statue 6gp;value=6gp
+,sell;to=Dexter;item=Copper Horse Statue 6gp;cash=1200vcp
+date=Tarsakh 27 1370
+,give;to=Someone;by=Henkles;amount=200000vcp;note=Heal on Tristan
+,sell;to=Denyae;item=Boots of Levitation;debt=3000000vcp
+,pay;by=Denyae;cash=2600000vcp
+,pay;by=Ag;cash=800000vcp
+,lend;to=Henkles;item=Scepter of Entrapment
+#date=Tarsakh 28 1370
+# We are Here
+,party;type=AFAL;name=Tarsakh-28-1370;Ag=1;Brogan=1;Dexter=1;Denyae=1;Steve=1;Staric=1;Henkles=1;Maanamere=1
+,give;by=AFAL;to=Someone;amount=9gp
+,give;by=Someone;to=Tarsakh-28-1370;cash=118cp,82sp,44gp
+,find;found=Tarsakh-28-1370;name=Nonmagic  #8;note=12 Scimitars,12 Short Bows
+,find;found=Tarsakh-28-1370;name=12' length of rusty chain
+,give;by=Someone;to=Tarsakh-28-1370;cash=3 toals, 5ep
+,find;found=Tarsakh-28-1370;name=Nonmagic #9;note=8 hammocks,tin plates and cups

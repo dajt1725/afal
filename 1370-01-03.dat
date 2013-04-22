@@ -234,7 +234,7 @@ date=Ches 30 1370
 ,give;to=Ches-30-1370;by=Someone;cash=2 Gem: Chrysoberyl 100gp
 ,find;found=Ches-30-1370
 ,,name=Nonmagic  #1;note=too much to list here
-,,name=Ring of Fire Resistance
+,,name=Ring of Fire Resistance  #1
 ,,name=Ebony Fly
 ,,name=Poison: Urds Teeth *3
 ,,name=+1/+3(Cold) Ring of Protection  #2;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
