@@ -180,6 +180,42 @@ def do_sell(d):
         do_give({'date': date, 'by': to, 'to': seller, 'cash': d.get('cash'), 'for': item, 'part_of': part_of, 'note': note})
 
 
+def divide_coins(coins, payout):
+    sys.stdout.write("paying {payout} with {coins}\n".format(payout = payout, coins = repr(coins)))
+    ret = {'value_cp': 0}
+    if payout > coins['value_cp']:
+        raise ValueError("payout {p} larger than coins value {v}".format(p=payout, v=coins['value_cp']))
+    tmp = {}
+    for i in coins:
+        if i == 'value_cp':
+            continue
+        cpe = afal.coins_byname[i]['copper_equiv']
+        if cpe in tmp:
+            tmp[cpe].append(i)
+        else:
+            tmp[cpe] = [i]
+    l = tmp.keys()
+    l.sort(reverse = True)
+    for j in l:
+        for i in tmp[j]:
+            n = int(payout/j)
+            if n == 0:
+                continue
+            coins[i] -= n
+            ret[i] = n
+            cpe = n * j
+	    coins['value_cp'] -= cpe
+            ret['value_cp'] += cpe
+            payout -= cpe
+    if ret['value_cp'] == 0:
+# Nothing got moved.  Move at least one coin
+        sys.stdout.write("Nothing got moved\n")
+    if payout > 0:
+        sys.stdout.write("paying {payout} not zero in {coins}\n".format(payout = payout, coins = repr(coins)))
+#        raise ValueError("payout should be zero not {p}".format(p = payout))
+    return ret
+
+
 def do_pay(d):
     inexact = False
     item = None
@@ -191,10 +227,12 @@ def do_pay(d):
         by = item_data['owner']
         amount_cp = item_data['value_cp']
     elif 'cash' in d:
-        check_dict(d, must = ('date', 'by', 'cash', 'to'), may = ('note', 'part_of'))
+        check_dict(d, must = ('date', 'by', 'cash'), may = ('to', 'note', 'part_of'))
         by = d['by']
         coins = afal.str_to_coins(d['cash'])
         amount_cp = coins['value_cp']
+        if 'to' not in d:
+            inexact = True
     elif 'by' in d:        
         check_dict(d, must = ('date', 'by'), may = ('amount_cp', 'amount', 'percent', 'virtual', 'to', 'note', 'part_of'))
         by = d['by']
@@ -215,6 +253,7 @@ def do_pay(d):
     if len(payable) == 0:
         sys.stderr.write("\n{date} {by} has not debts to pay\n".format(date = date, by = by))
         return
+    to_multiple = False
     if 'to' in d:
         to = d['to']
         ptmp = []
@@ -227,6 +266,7 @@ def do_pay(d):
         for debt in payable[1:]:
            if debt['to'] != to:
                to = 'debts'
+               to_multiple = True
                break
 
     date = d['date']
@@ -296,7 +336,10 @@ def do_pay(d):
                 if 'to' in d:
                     tmp['journal'] = False
                 if coins is not None:
-                    tmp['cash'] = coins
+                    if to_multiple:
+                        tmp['cash'] = divide_coins(coins, this_cp)
+                    else:
+                        tmp['cash'] = coins
                 if part_of is not None:
                     tmp['part_of'] = part_of
                 if note is not None:
