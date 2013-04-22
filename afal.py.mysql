@@ -735,7 +735,7 @@ def get_journal_dates(char = None):
     _check_warnings()
     if resp == None or len(resp)==0:
         return resp
-    ret=[]
+    ret=['latest']
     for i in resp:
         ret.append(date_to_str(i[0], False))
     return ret
@@ -1254,42 +1254,46 @@ def insert_debt(d):
 global coins_byname,coins_bycpe,coins_byid
 (coins_byname, coins_bycpe, coins_byid) = get_coins()
 
-def map_to_name(m):
-    ret = m
-    if len(ret)>4 and ret[-4:] == '.svg':
-        ret = ret[:-4]
-    return ret
+if 'QUERY_STRING' in os.environ:
+    def _map_to_name(m):
+        ret = m
+        if len(ret)>4 and ret[-4:] == '.svg':
+            ret = ret[:-4]
+        return ret
 
-maps = os.listdir("maps")
-maps.sort()
-map_names = []
-for i in maps:
-    map_names.append(map_to_name(i))
-character_list = get_characters('Current')
-party_list = get_parties()
-date_list = get_journal_dates()
-items_values = ('Unresolved','Party','Auction','Sell','Lent','Identify')
-items_texts = ('Unresolved Items', 'Party Items', 'Items to Auction', 'Items to Sell', 'Items Lent Out', 'Items to Identify')
-people_values = ('Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs')
-people_texts = ('Current AFAL Members', 'Former AFAL Members', 'Dead AFAL Members', 'People We Might Meet', "People We Probably Won't Meet", 'People We Have Killed')
+    maps = os.listdir("../maps")
+    maps.sort()
+    map_names = []
+    for i in maps:
+        map_names.append(_map_to_name(i))
+    character_list = get_characters('Current')
+    party_list = get_parties()
+    date_list = get_journal_dates()
+    items_values = ('Unresolved','Party','Auction','Sell','Lent','Identify')
+    items_texts = ('Unresolved Items', 'Party Items', 'Items to Auction', 'Items to Sell', 'Items Lent Out', 'Items to Identify')
+    people_values = ('Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs')
+    people_texts = ('Current AFAL Members', 'Former AFAL Members', 'Dead AFAL Members', 'People We Might Meet', "People We Probably Won't Meet", 'People We Have Killed')
 
-def _format_group(has_all, name_singular, name_plural, val_pre, values, texts):
-    ret = \
+    def _format_group(has_all, name_singular, name_plural, val_pre, sel, values, texts):
+        ret = \
  '    <optgroup label="{ns}">\n'.format(vp = val_pre,
  ns = name_singular, np = name_plural)
-    if has_all:
-        ret += \
+        if has_all:
+            ret += \
  '     <option value="{vp}All">All {np}</option>\n'.format(
  vp = val_pre, np = name_plural)
 
-    for v,t in zip(values,texts):
+        for v,t in zip(values,texts):
+            s = ''
+            if v == sel:
+                s = 'selected '
+            ret += \
+'      <option {s}value="{vp}{v}">{t}</option>\n'.format(s = s, vp = val_pre, v = v, t = t)
         ret += \
-'      <option value="{vp}{v}">{t}</option>\n'.format(vp = val_pre, v=v, t=t)
-    ret += \
 '     </optgroup>\n'
-    return ret
+        return ret
 
-html_header = (
+    html_header = (
  'Content-Type: text/html\n'
  '\n'
  '<html>\n'
@@ -1333,11 +1337,11 @@ html_header = (
 .format(
  background = afal_config.background,
  map_url = afal_config.map_url,
- char_group = _format_group(True, 'Character','Characters','char.',character_list, character_list),
- party_group = _format_group(True, 'Party','Parties', 'party.', party_list, party_list),
- items_group = _format_group(True, 'Items','Items','items.', items_values, items_texts),
- people_group = _format_group(True, 'Groups','Groups', 'people.', people_values, people_texts),
- dates_group = _format_group(True, 'Date','Dates','',date_list, date_list),
- maps_group = _format_group(False, 'Map','Maps', 'map.', maps, map_names)))
+ char_group = _format_group(True, 'Character', 'Characters', 'char.', '', character_list, character_list),
+ party_group = _format_group(True, 'Party', 'Parties', 'party.', '', party_list, party_list),
+ items_group = _format_group(True, 'Items', 'Items','items.', '', items_values, items_texts),
+ people_group = _format_group(True, 'Groups','Groups', 'people.', '', people_values, people_texts),
+ dates_group = _format_group(True, 'Date', 'Dates', '', 'latest', date_list, date_list),
+ maps_group = _format_group(False, 'Map', 'Maps', 'map.', '', maps, map_names)))
 
 ######## End
