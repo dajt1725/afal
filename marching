@@ -1,0 +1,87 @@
+#!/usr/bin/python
+from __future__ import print_function
+import afal_config
+import afal
+import cgi
+import cgitb
+import os
+import sys
+import string
+
+cgitb.enable()
+
+form = cgi.FieldStorage()
+todo = form.getfirst('todo')
+if todo is None or todo == '' or '.' not in todo:
+        os.execv('./menu', sys.argv)
+(cl, inst) = todo.split('.', 1)
+if cl != 'marching':
+        os.execv('./menu', sys.argv)
+marching = inst
+list = afal.get_marching(marching)
+title = 'Marching order for {marching}'.format(marching = marching)
+
+rows = 0
+cols = 0
+for i in list:
+    o = i['over'] + i['width']
+    d = i['down'] + i['height']
+    if o > cols:
+        cols = o
+    if d > rows:
+        rows = d
+
+colhdr = ''
+for i in range(1,cols+1):
+    colhdr += '<th>{i}'.format(i = i)
+
+print('''{hdr}
+    <h1>{marching}</h1>
+     <table class="marching">
+      <col width="0.5*"><col span="{cols}" width="20">
+      <thead>
+      <tr><td>{colhdr}
+      <tbody>'''.format(hdr = afal.html_header(title), marching = marching, cols = cols, colhdr = colhdr))
+for r in range(1, rows+1):
+    s = '      <tr><th>{r}'.format(r = r)
+    c = 1
+    while len(list) > 0 and list[0]['down'] == r:
+        p = list[0]
+        o = p['over']
+        if o == c:
+            pass
+        elif o == c + 1:
+            s += '<td>'
+            c += 1
+        else:
+            n = o - c 
+            s += '<td colspan ="{n}">'.format(n = n)
+            c += n
+        cl = p['race']
+        if cl is None:
+            cl = 'other'
+        elif 'Human' in cl:
+            cl = 'human'
+        elif 'Dwarf' in cl:
+            cl = 'dwarf'
+        elif '&frac12;' in cl:
+            if 'Elf' in cl:
+                cl = 'halfelf'
+            elif 'Orc' in cl:
+                cl = 'halforc'
+            else:
+                cl = 'halfhuman'
+        elif 'Elf' in cl:
+            cl = 'elf'
+        elif 'Orc' in cl:
+            cl = 'orc'
+        else:
+            cl = 'other'
+
+        wh = 'w{w}h{h}'.format(w = p['width'], h = p['height'])
+        title = string.join(filter(None, [p['race'], p['gender'], p['class'], p['hidden_note']]), ' ')
+        s += '<td rowspan="{h}" colspan="{w}" class="{cl} {wh}" title="{t}"><div>{ch}</div>'.format(w = p['width'], h = p['height'], ch = p['char'], cl = cl, t = title, wh = wh)
+        c += p['width']
+        list = list[1:]
+    print(s)
+print('    </table>\n' + afal.html_footer())
