@@ -1,4 +1,4 @@
-<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="MythDranor.svg" style="display:inline" version="1.1" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="500" id="svg2" inkscape:version="0.48.4 r9939" sodipodi:docname="MythDranor.svg" style="display:inline" version="1.1" width="500" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
   <title>Anything For A Laugh's map of Myth Dranor</title>
   <script type="text/ecmascript"><![CDATA[
       function toggleLayer(e,n) {
@@ -281,7 +281,7 @@
       }
     </style>
   </defs>
-  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" inkscape:current-layer="mythdranor" inkscape:cx="1900" inkscape:cy="3020" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="972" inkscape:window-maximized="1" inkscape:window-width="1280" inkscape:window-x="0" inkscape:window-y="27" pagecolor="#888888" showborder="true" showgrid="true">
+  <sodipodi:namedview bordercolor="#666666" borderopacity="1.0" fit-margin-bottom="20" fit-margin-left="20" fit-margin-right="20" fit-margin-top="20" inkscape:current-layer="mythdranor" inkscape:cx="100" inkscape:cy="20" inkscape:document-units="px" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:window-height="972" inkscape:window-maximized="1" inkscape:window-width="1280" inkscape:window-x="0" inkscape:window-y="27" pagecolor="#888888" showborder="true" showgrid="true">
     <inkscape:grid color="#5555ff" empcolor="#0000a1" empopacity="0.25098039" empspacing="10" enabled="true" opacity="0.1254902" snapvisiblegridlinesonly="false" type="xygrid" visible="true"/>
   </sodipodi:namedview>
   <metadata>
@@ -294,7 +294,7 @@
     </rdf:RDF>
   </metadata>
   <g id="bgrid" inkscape:groupmode="layer" inkscape:label="bgrid" style="display:inline">
-    <rect height="3800" style="fill:url(#agrid);fill-opacity:1;stroke:none" width="3800" x="0" y="0"/>
+    <rect height="500" style="fill:url(#agrid);fill-opacity:1;stroke:none" width="500" x="0" y="0"/>
   </g>
   <g id="mythdranor" inkscape:groupmode="layer" inkscape:label="Myth Dranor" style="display:inline">
     <path class="corr" d="m185 250v10h-115v20h115v60h20v-60h60v-20h-60v-10h-20z"/>
