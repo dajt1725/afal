@@ -18,9 +18,13 @@ create table fr_character (
 ) engine=innodb;
 create table fr_marching (
 	marching_name varchar(128) not null,
-	pos char(2) not null,
-	char_name varchar(128) references fr_character,
-	primary key(marching_name, pos),
+	char_name varchar(128) not null references fr_character,
+	over tinyint unsigned not null,
+	down tinyint unsigned not null,
+	width tinyint unsigned not null default 1,
+	height tinyint unsigned not null default 1,
+	primary key(marching_name, char_name),
+	key (marching name, over, down),
 	foreign key (char_name) references fr_character(char_name)
 ) engine=innodb;
 create table fr_party (

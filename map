@@ -11,40 +11,16 @@ cgitb.enable()
 
 form = cgi.FieldStorage()
 todo = form.getfirst('todo')
-map_of = None
-if todo and todo != '':
-    if todo == 'Cash':
-        os.execv('./cash', sys.argv)
-    elif todo == 'Debt':
-        os.execv('./summary', sys.argv)
-    elif todo == 'All' or todo == 'Journal':
-        os.execv('./report', sys.argv)
-    elif todo == 'Noop':
-        pass
-    else:
-        i = todo.index('.')
-        if i > 0:
-            cl = todo[:i]
-            inst = todo[i+1:]
-            if cl == 'char' or cl == 'items' or cl == 'party' or cl == 'people':
-               os.execv('./report', sys.argv)
-            elif cl == 'map':
-                map_of = inst
+if todo is None or todo == '' or '.' not in todo:
+        os.execv('./menu', sys.argv)
+(cl, inst) = todo.split('.', 1)
+if cl != 'map':
+        os.execv('./menu', sys.argv)
+map_of = inst
+map_name = afal._map_to_name(map_of)
+title = 'AFAL map of ' + map_name
 
-if map_of is not None:
-    map_name = afal.map_to_name(map_of)
-    title = 'AFAL map of ' + map_name
-else:
-    title = 'AFAL Menu'
-    map_name = None
-
-print(afal.html_header.format(title = title))
-if map_name:
-    print('  <h1>{m}</h1>\n'.format(m = map_name))
-    print('<object style="background:white" data="../maps/{map_of}" type="image/svg+xml">Map Goes Here</object>\n'.format(map_of = map_of))
-#    print(' <img style="background-color:#a0a0a0;border:3px solid black" src="/maps/{map_of}">\n'.format(map_of = map_of))
-print(
- ' </center>\n'
- ' </body>\n'
- '</html>\n')
-######## End
+print('''{hdr}
+   <h1>{map_name}</h1>
+   <object style="background:white" width="100%" height="86%" data="../maps/{map_of}" type="image/svg+xml">Map Goes Here</object>
+{ftr}'''.format(hdr = afal.html_header(title), map_name = map_name, map_of = map_of, ftr = afal.html_footer()))

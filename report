@@ -7,7 +7,8 @@ import afal
 import cgi
 import cgitb
 import re
-
+import sys
+import os
 
 def format_share(s):
     if float(s) == 1.0:
@@ -59,8 +60,8 @@ def format_date(d):
         return df
     dt = afal.date_to_str(d, True)
     if df in afal.date_list:
-        return '<a href="{report}?journal=Show&start=date.{df}&end=date.{df}">{dt}</a>'.format(
- report = afal_config.report, df = df, dt = dt)
+        return '<a href="{report}?todo=Journal&start={df}&end={df}">{dt}</a>'.format(
+ report = afal_config.report_url, df = df, dt = dt)
     return '<a href="{logs}{l}.html">{dt}</a>'.format(logs = afal_config.logs,
  l = re.sub(' ', '_', re.sub(' Festival|[a-z]*,', '', df)), dt = dt)
 
@@ -69,16 +70,16 @@ def format_character(c):
     if afal_config.text or c not in afal.character_list:
         return c
     else:
-        return '<a href="{report}?generate=Show&todo=char.{c}">{c}</a>'.format(
- report = afal_config.report, c = c)
+        return '<a href="{report}?todo=char.{c}">{c}</a>'.format(
+ report = afal_config.report_url, c = c)
 
 
 def format_party(p):
     if afal_config.text:
         return p
     elif p in afal.party_list:
-        return '<a href="{report}?generate=Show&todo=party.{p}">{p}</a>'.format(
- report = afal_config.report, p = p)
+        return '<a href="{report}?todo=party.{p}">{p}</a>'.format(
+ report = afal_config.report_url, p = p)
     else:
         return format_character(p)
 
@@ -770,7 +771,7 @@ if afal_config.text:
         args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
         args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs',
  'InactiveNPCs', 'DeadNPCs']
-    trailer = ''
+    footer = ''
 else:
     fmt = { }
     fmt_neol = { 'end': '' }
@@ -842,12 +843,8 @@ else:
             args.journal = True
             args.items = ['Unresolved', 'Party', 'Sell', 'Auction', 'Identify', 'Lent']
             args.members = ['Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs']
-    afal.pw(afal.html_header.format(title = title, add_menu = ''), **fmt)
-    trailer = \
- '   <br><b><a href="{menu_url}">Return to Menu</a></b><br>\n'\
- '  </center>\n'\
- ' </body>\n'\
- '</html>\n'
+    afal.pw(afal.html_header(title), **fmt)
+    footer = afal.html_footer()
 
 
 if args.character:
@@ -869,5 +866,5 @@ if args.members:
     for i in args.members:
         print_people(i)
 
-afal.pw(trailer.format(menu_url = afal_config.menu_url), **fmt)
+afal.pw(footer, **fmt)
 afal.fini()

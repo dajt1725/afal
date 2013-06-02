@@ -1043,6 +1043,26 @@ def char_leave_parties(date, char, note = None):
     journal(date, char, None, None, None, text)
 
 
+# ranks is a list of lists.  Each sublist contains Char_name, over, down, width, height
+def insert_marching(name, ranks):
+    """"insert a party marching order into the database"""
+
+    for i in ranks:
+        cur.execute('insert into fr_marching (marching_name, char_name, over, down, width, height) values (%(m)s, %(c)s, %(o)s, %(d)s, %(w)s, %(h)s)', {'m': name, 'c': i['char'], 'o': i['over'], 'd': i['down'], 'w': i['width'], 'h': i['height']})
+        check_warnings()
+
+
+def get_marching(name):
+    """ get the specified marching order from the database, returning a list-of-lists of characters"""
+
+    ret = []
+    cur.execute('select char_name, race, gender, class, hidden_note, over, down, width, height from fr_marching natural join fr_character where marching_name = %(name)s order by down, over', { 'name': name })
+    n = 0
+    resp = cur.fetchall()
+    for (cn, r, g, cl, hn, o, d, w, h) in resp:
+        ret.append({'char': cn, 'race': r, 'gender': g, 'class': cl, 'hidden_note': hn, 'over': o, 'down': d, 'width': w, 'height': h})
+    return ret
+
 ########## Items
 
 
@@ -1289,59 +1309,131 @@ if 'QUERY_STRING' in os.environ:
                 s = 'selected '
             ret += \
 '      <option {s}value="{vp}{v}">{t}</option>\n'.format(s = s, vp = val_pre, v = v, t = t)
-        ret += \
-'     </optgroup>\n'
+        ret += '     </optgroup>'
         return ret
 
-    html_header = (
- 'Content-Type: text/html\n'
- '\n'
- '<html>\n'
- ' <head><title>{{title}}</title><META http-equiv="Content-Script-Type" content="text/javascript"></head>\n'
- ' <body background="{background}">\n'
- '  <center>\n'
- '   <form action="{map_url}" method="GET">\n'
- '    <noscript>\n'
- '     <input type="submit" name="generate" value="Show"/>\n'
- '    </noscript>\n'
- '   <label for="start">From</label>\n'
- '   <select name="start">\n'
- '{dates_group}\n'
- '   </select>\n'
- '   <label for="end">to</label>\n'
- '   <select name="end">\n'
- '{dates_group}\n'
- '   </select>\n'
- '   <label for="char">involving</label>\n'
- '   <select name="char">\n'
- '{char_group}\n'
- '   </select>\n'
- '   <select name="todo" onchange=\'this.form.submit()\'>\n'
- '    <option selected label="Choose" value="Noop">Pick Something</option>\n'
- '    <optgroup label="Executive Summary">\n'
- '    <option label="Cash" value="Cash">Cash Summary</option>\n'
- '    <option label="Debt" value="Debt">Debt Summary</option>\n'
- '   </optgroup>\n'
- '   <optgroup label="Show it all">\n'
- '    <option label="Everything" value="All">Everything</option>\n'
- '    <option label="Journal" value="Journal">Journal</option>\n'
- '   </optgroup>\n'
- '{char_group}\n'
- '{maps_group}\n'
- '{party_group}\n'
- '{items_group}\n'
- '{people_group}\n'
- '   </select>\n'
- '  </form>\n'
- '  <hr />'
-.format(
+    def html_header(title):
+        return """Content-Type: text/html
+
+<html>
+ <head>
+  <title>{title}</title><META http-equiv="Content-Script-Type" content="text/javascript">
+  <style type="text/css">
+      .marching {{
+        text-align: center;
+      }}
+      .marching th,.marching td,.marching div {{
+        width: 20px;
+        height: 20px;
+      }}
+      .w3h3 {{
+        width: 60px;
+        height: 60px;
+      }}
+      .w3h6 {{
+        width: 60px;
+        height: 120px;
+      }}
+      .w8h13 {{
+        width: 160px;
+        height: 260px;
+      }}
+      .w4h8 {{
+        width: 80px;
+        height: 160px;
+      }}
+      .w8h10 {{
+        width: 160px;
+        height: 200px;
+      }}
+      .human {{
+        background:black;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .dwarf {{
+        background:green;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .halfelf {{
+        background:#0000a0;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .halforc {{
+        background:#a00000;
+        color: yellow;
+      }}
+      .elf {{
+        background:blue;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .orc {{
+        background:red;
+        color: yellow;
+      }}
+      .other {{
+        background: yellow;
+        color: black;
+        text-align: center;
+        overflow: hidden;
+      }}
+  </style>
+ </head>
+ <body background="{background}">
+  <div align="center">
+   <form action="{menu_url}" method="GET">
+    <noscript>
+     <input type="submit" name="generate" value="Show"/>
+    </noscript>
+    <label for="start">From</label>
+    <select name="start">
+{dates_group}
+    </select>
+    <label for="end">to</label>
+    <select name="end">
+{dates_group}
+    </select>
+    <label for="char">involving</label>
+    <select name="char">
+{char_group}
+    </select>
+    <select name="todo" onchange='this.form.submit()'>
+     <option selected label="Choose" value="Noop">Pick Something</option>
+     <optgroup label="Executive Summary">
+      <option label="Cash" value="Cash">Cash Summary</option>
+      <option label="Debt" value="Debt">Debt Summary</option>
+     </optgroup>
+     <optgroup label="Show it all">
+      <option label="Everything" value="All">Everything</option>
+      <option label="Journal" value="Journal">Journal</option>
+     </optgroup>
+{char_group}
+{maps_group}
+{party_group}
+{items_group}
+{people_group}
+    </select>
+   </form>
+  </div>
+  <hr />
+  <div align="center">""".format(
+ title = title,
  background = afal_config.background,
- map_url = afal_config.map_url,
+ menu_url = afal_config.menu_url,
  char_group = _format_group(True, 'Character', 'Characters', 'char.', '', character_list, character_list),
  party_group = _format_group(True, 'Party', 'Parties', 'party.', '', party_list, party_list),
  items_group = _format_group(True, 'Items', 'Items','items.', '', items_values, items_texts),
  people_group = _format_group(True, 'Groups','Groups', 'people.', '', people_values, people_texts),
  dates_group = _format_group(True, 'Date', 'Dates', '', 'latest', date_list, date_list),
- maps_group = _format_group(False, 'Map', 'Maps', 'map.', '', maps, map_names)))
+ maps_group = _format_group(False, 'Map', 'Maps', 'map.', '', maps, map_names))
 
+    def html_footer():
+        return '   <br>\n  </div>\n  <hr />\n  <div align="center"><a href="{menu_url}"><b>Return to Menu</b></a></div>\n </body>\n</html>'.format(menu_url = afal_config.menu_url)
 ######## End

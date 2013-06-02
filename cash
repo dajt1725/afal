@@ -12,30 +12,25 @@ if afal_config.text:
     parser = argparse.ArgumentParser('Generate a cash summary')
     parser.add_argument('--width', '-w', type=int, default=130, help='width to wrap at')
     args = parser.parse_args()
-    header = 'Cash Summary as of {date}'
+    header = 'Cash Summary as of {date}'.format(date = date)
     line = '{char:10} {v:14} {c}'
-    trailer = ''
+    footer = ''
     wmax = args.width
 else:
     header = \
- afal.html_header.format(title='AFAL Cash Summary', add_menu = '')+\
- '  <h1>Anything For A Laugh</h1>\n'\
- '   <h2>Cash in hand as of {date}</h2>\n'\
- '   <a href="{menu_url}"><b>Return to Menu</b></a><br>\n'\
- '  </center><br>\n'\
- '  <table border="1"><tr><th>Character</th><th>Total</th><th>'\
- 'Coins</th></tr>'
+ afal.html_header('AFAL Cash Summary')+\
+ '   <h1>Anything For A Laugh</h1>\n'\
+ '   <h2>Cash in hand as of {date}</h2><br>\n'\
+ '   <table border="1"><tr><th>Character</th><th>Total</th><th>'\
+ 'Coins</th></tr>'.format(date = date)
     line = \
- '   <tr><td><a href="{report}?todo=char.{char}">' \
+ '    <tr><td><a href="{report_url}?todo=char.{char}">' \
  '{char}</a></td><td>{v}</td><td>{c}</td></tr>'
-    trailer = \
- '  </table>\n'\
- '  <br><center><a href="{menu_url}"><b>Return to Menu</b></a></center>\n'\
- ' </body>\n'\
- '</html>\n'
+    footer = \
+ '   </table>\n' + afal.html_footer()
     wmax = None
 
-afal.pw(header.format(menu_url = afal_config.menu_url, date = date), max=wmax, indent=4)
+afal.pw(header, max=wmax, indent=4)
 for char in afal.character_list:
     m = afal.get_char_money(char)
     value_cp = 0
@@ -56,6 +51,6 @@ for char in afal.character_list:
 
     if value_cp > 0:
         afal.pw(line.format(
- char = char, v = afal.cp_to_str(value_cp), c = coins, report = afal_config.report), max = wmax, indent=4)
-afal.pw(trailer.format(menu_url = afal_config.menu_url), max = wmax, indent = 4)
+ char = char, v = afal.cp_to_str(value_cp), c = coins, report_url = afal_config.report_url), max = wmax, indent=4)
+afal.pw(footer, max = wmax, indent = 4)
 afal.fini()

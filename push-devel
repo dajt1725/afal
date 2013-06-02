@@ -7,3 +7,4 @@ cp cash /var/www/devel/cash
 cp menu /var/www/devel/menu
 cp report /var/www/devel/report
 cp summary /var/www/devel/summary
+cp marching /var/www/devel/marching

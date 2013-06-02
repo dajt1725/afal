@@ -4,13 +4,29 @@ import afal_config
 import afal
 import cgi
 import cgitb
+import os
+import sys
 
 cgitb.enable()
+form = cgi.FieldStorage()
+todo = form.getfirst('todo')
+if todo is None or todo == '' or todo == 'Noop':
+    pass
+elif todo == 'Cash':
+    os.execv('./cash', sys.argv)
+elif todo == 'Debt':
+    os.execv('./summary', sys.argv)
+elif todo == 'All' or todo == 'Journal':
+    os.execv('./report', sys.argv)
+elif '.' in todo:
+    (cl, inst) = todo.split('.', 1)
+    if cl == 'char' or cl == 'items' or cl == 'party' or cl == 'people':
+       os.execv('./report', sys.argv)
+    elif cl == 'map':
+        os.execv('./map', sys.argv)
+    elif cl == 'marching':
+        os.execv('./marching', sys.argv)
+else:
+    sys.stderr.write("Unknown todo {t} in menu".format(t = todo))
 
-
-print(
- afal.html_header.format(title = 'AFAL Report Menu', add_menu = '')
- + '  </center>\n'
- + ' </body>\n'
- + '</html>\n'
-)
+print(afal.html_header('AFAL Report Menu') + afal.html_footer())

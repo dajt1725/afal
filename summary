@@ -10,13 +10,13 @@ date = afal.date_list[-1]
 if afal_config.text:
     header = \
 'Debt summary as of {date}\n' \
-'Character  Receivable     Payable        Cash           Net'
+'Character  Receivable     Payable        Cash           Net'.format(date = date)
     neg = '({v})'
     line = '{char:10} {r:14} {p:14} {c:14} {n:14}'
     trailer = ''
 else:
     header = \
- afal.html_header.format(title = 'AFAL Debt Summary', add_menu = '') + \
+ afal.html_header('AFAL Debt Summary') + \
  '  <h1>Anything For A Laugh</h1>\n' \
  '   <h2>Debt Summary Report as of {date}</h2>\n' \
  '  <table border="1"><tr><th>Character</th><th>Receivable</th><th>' \
@@ -26,14 +26,10 @@ else:
  '   <tr><td><a href="{report}?todo=char.{char}">' \
  '{char}</a></td><td>{r}</td><td>{p}</td><td>{c}</td><td>{n}</td></tr>'
     trailer = \
- '  </table>\n' \
- '  <br><a href="{menu_url}"><b>Return to Menu</b></a></center>\n' \
- ' </body>\n' \
- '</html>\n'
+ '  </table>\n' + afal.html_footer()
 
 
-print(header.format(menu_url = afal_config.menu_url,
- date = date))
+print(header)
 for char in afal.character_list:
     c = afal.get_char_data(char)['cash_cp']
     if c is None:
@@ -54,6 +50,6 @@ for char in afal.character_list:
         continue
     print(line.format(
  char = char, r = afal.cp_to_str(r), p = afal.cp_to_str(p),
- c = afal.cp_to_str(c), n = n, report = afal_config.report))
-print(trailer.format(menu_url=afal_config.menu_url))
+ c = afal.cp_to_str(c), n = n, report = afal_config.report_url))
+print(trailer)
 afal.fini()
