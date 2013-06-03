@@ -15,7 +15,7 @@ if todo is None or todo == '' or todo == 'Noop':
 elif todo == 'Cash':
     os.execv('./cash', sys.argv)
 elif todo == 'Debt':
-    os.execv('./summary', sys.argv)
+    os.execv('./debt', sys.argv)
 elif todo == 'All' or todo == 'Journal':
     os.execv('./report', sys.argv)
 elif '.' in todo:

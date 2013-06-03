@@ -8,6 +8,6 @@ EOF
 mysql -uafal -pBuffyStewart afal_devel < afal-schema.sql.mysql
 ./bulk -v 1369-01-06.dat 1369-07-09.dat 1369-10-12.dat 1370-01-03.dat 1370-04.dat > bulk.devel.out 2> bulk.devel.err
 ./report > report.devel.out
-./summary >> report.devel.out
+./debt >> report.devel.out
 ./cash >> report.devel.out
 echo Done

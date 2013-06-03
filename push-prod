@@ -4,4 +4,5 @@ cp afal_config.py.prod /var/www/prod/afal_config.py
 cp cash /var/www/prod/cash
 cp menu /var/www/prod/menu
 cp report /var/www/prod/report
-cp summary /var/www/prod/summary
+cp debt /var/www/prod/debt
+cp marching /var/www/prod/marching

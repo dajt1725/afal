@@ -22,14 +22,14 @@ date=Hammer 15 1370
 #,writeoff;Theo
 ,party;type=AFAL;name=Hammer-15-1370;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Steve=1;Maanamere=1;Stalker=1;Moogh=1
 ,find;found=Hammer-15-1370;name=Animal: Light War Horse *4;note=1 killed on <d Alturiak 6 1370>, sold for ~68gp, 84cp each
-date=Hammer 17 1370;meet;association=AFAL;status=active\
+date=Hammer 17 1370;meet;association=AFAL;status=inactive\
 ;name=Deringa;fullname=Deringa Eagleshield;race=Human(?);gender=Female\
 ;class=Rich Kid?  Groupie?;alignment=Chaotic Good;cash=21cp\
 ;picture=Deringa.png;large_picture=Deringa_lg.png\
 ;characteristics=Cute, clever, very quick, very short,\
  short, bleached hair w/purple patch, blue eyes, 5'1&quot\;, 102 lbs.\
 ;equipment=expensive clothes, bracers, Dagger, +1 Sling,\
- nose ring, 14 earings (left ear), Wand of Hurting (Party Item)\
+ nose ring, 14 earings (left ear)\
 ;note=Childhood friend of Staric Ammakyl, overheard Staric &amp\; Dagar\
  Jhansczil discussing the powers of the\
  <a href="/logs/log_Marpenoth_28_1369.html">Reverential</a>\
@@ -125,16 +125,17 @@ date=Alturiak 5 1370
 ;picture=ag.jpg;cash=25cp\
 ;characteristics=brown hair, blue eyes, 5'7&quot\;, 128lbs.,\
  wise beyond his years\
-;equipment=Bracers of defense AC 5, +1 Ring of Protection, Gloves of Mask,\
- <i>Shadowfang</i> - magically dark longsword, +1/+3(backstab) Long Sword\
+;equipment=Bracers of defense AC 5, +1 Ring of Protection, Ring of Invisibility,\
+ Gloves of Mask, <i>Shadowfang</i> - magically dark longsword, +1/+3(backstab) Long Sword\
  (Party Item) , picks &amp\; tools, many daggers, dark blue cloak\
 ;note=Joined party in Silverymoon, <d Alturiak 5 1370>.
 ,,name=Tristan;player=Alex;race=&frac12\; Elf;gender=Male\
 ;class=Spec Pr - Tempus (BattleForge) / Wizard;alignment=Chaotic Good\
 ;cash=21cp\
 ;characteristics=Not known at this time.\
-;equipment=+1 plate mail, +1 shield, +1/+2 (half *)/+3(Humans) Bastard Sword,\
- <i>Ghoulbreaker</i>, Dagger of Hurting\
+;equipment=+1 plate mail, +1 shield, Ring of Telekinesis 25#,\
+ Ring, +1/+2 (half *)/+3(Humans) Bastard Sword,\
+ <i>Ghoulbreaker</i>, Dagger of Fly\
 ;note=Originally Gail's character, played by Andrew and now Alex.\
  Tristan joined the party on <d Alturiak 5 1370>.
 ,lend;to=Ag;item=Chardalyn

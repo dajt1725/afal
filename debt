@@ -20,7 +20,7 @@ else:
  '  <h1>Anything For A Laugh</h1>\n' \
  '   <h2>Debt Summary Report as of {date}</h2>\n' \
  '  <table border="1"><tr><th>Character</th><th>Receivable</th><th>' \
- 'Payable</th><th>Cash</th><th>Net</th></tr>'
+ 'Payable</th><th>Cash</th><th>Net</th></tr>'.format(date = date)
     neg = '<font color="red">({v})</font>'
     line = \
  '   <tr><td><a href="{report}?todo=char.{char}">' \

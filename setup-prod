@@ -9,6 +9,6 @@ rm afal_config.py
 ln -s afal_config.py.prod afal_config.py
 ./bulk -v 1369-01-06.dat 1369-07-09.dat 1369-10-12.dat 1370-01-03.dat 1370-04.dat > bulk.prod.out
 ./report > report.prod.out
-./summary >> report.prod.out
+./debt >> report.prod.out
 ./cash >> report.prod.out
 echo Done

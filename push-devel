@@ -6,5 +6,5 @@ cp map /var/www/devel/map
 cp cash /var/www/devel/cash
 cp menu /var/www/devel/menu
 cp report /var/www/devel/report
-cp summary /var/www/devel/summary
+cp debt /var/www/devel/debt
 cp marching /var/www/devel/marching

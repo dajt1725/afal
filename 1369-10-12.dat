@@ -70,14 +70,13 @@ date=28 Marpenoth 1369
 ,,name=Scroll (MU)  #2;note=Enchanted Weapon, Magic Mirror, Globe of Invulnerability;owner=AFAL
 ,,name=Potion of Healing in twisted vial;note=Darius id <d Marpenoth 28 1369>;holder=Misery;owner=AFAL
 date=Uktar 8 1369
-,meet;association=AFAL;status=active;name=Ursula;fullname=Ursula la Bim\
+,meet;association=AFAL;status=inactive;name=Ursula;fullname=Ursula la Bim\
 ;player=Sue;race=Human;gender=Female;class=Specialty Mage(Houri);alignment=Neutral Good\
 ;picture=ursula05.jpg;cash=23cp\
 ;characteristics=Attractive, long brown hair, 5'9&quot\;, 130lbs.,\
  badly scarred leg\
 ;equipment=alluring clothing, Bracers of Defense AC 6, +2 Ring of Protection,\
- Ring of Warmth, +2 Dagger, Dagger of Hurting, Wand of Small Fires\
- (Party Item), Horn of Bubbles.\
+ Ring of Warmth, +2 Dagger, Horn of Bubbles.\
 ;note=Currently spends a lot of time hanging around Fair Winds.\
  Ursula joined the party on <d Uktar 8 1369>.
 ,lend;to=Ursula;item=Potion of Stoneskin  #2
@@ -168,8 +167,9 @@ date=12 Uktar 1369;
 ;large_picture=Staric_lg.png;cash=1cp\
 ;characteristics=Handsome, quick and athletic,\
  short brown/dk blonde hair, brown eyes, 5'9&quot\;, 174 lbs.\
-;equipment=bracers, longsword, longbow, lute, dagger, recorder, Wand of\
- Lightning Fan (party item)\
+;equipment=bracers, Ring of Missiles (party item),\
+ Ring of Protection (party item), longsword,\
+ longbow, lute, dagger, recorder, Wand of Lightning Fan (party item)\
 ;note=The least annoying member of The Shining Sons, who we met on <d Uktar\
  12 1369>, Staric was with Dagar Jhansczil when they accidentally used the\
  Helm of Beefy Will to dispell the charms they were under from The\
@@ -299,8 +299,8 @@ date=Uktar 13 1369
 ;characteristics=Strong, clever, very quick,\
  very short, curly brown/dk blonde hair, grey eyes, 5'7&quot\;, 137 lbs.\
 ;equipment=+1 Plate mail, +1 Ring of Protection, <i>Thunderbolt</i> (unique bow),\
- longsword, short sword, various magic arrows,\
- Shield inscribed with Scroll of Summon Mystic Moose, Carpet of Flying (Party item),\
+ +1/+3 (trolls) longsword, Boots of Levetation, short sword,\
+ various magic arrows, Shield inscribed with Scroll of Summon Mystic Moose,\
  Necklace of Darkness (Party item)\
 ;note=Rescued from minotaur labrynth by AFAL.\
  Offered to work for party for a&frac14\;-share of treasure for &quot\;a\
@@ -451,8 +451,8 @@ date=5 Nightal 1369
 ,,name=Black Dragon Hide Boots  #1;owner=Misery
 ,,name=Black Dragon Hide Boots  #2;owner=Dexter
 date=Nightal 8 1369
-,meet;association=lieutenant of Dread William;status=active;name=Arcturagana\
-;race=Moon Elf;gender=Female;class=Vampire/Ranger;alignment=Chaotic Evil\
+,meet;association=lieutenant of Dread William;status=dead;name=Arcturagana\
+;race=Moon Elf/Swanmae;gender=Female;class=Vampire/Ranger;alignment=Chaotic Evil\
 ;equipment=bow, magic sword and dagger, others unknown\
 ;characteristics=beautiful, but everything else is forgotten.  Can turn into\
  a swan at will.\
@@ -475,7 +475,7 @@ date=12 Nightal 1369
 ,,name=Potions of Minor Healing and Regeneration
 date=Nightal 13 1369;meet;name=Lin;status=active\
 ;fullname=Linlenasni &quot\;Lin&quot\; Rineireirael;association=The Blue Dolphin Bar\
-race=Gold Elf;gender=Male;class=Bartender/Undead Hunter\
+;race=Gold Elf;gender=Male;class=Bartender/Undead Hunter\
 ;characteristics=Handsome, 5x10y with a ruddy complexion, shoulder length silver hair, and a piercing violet eyes.\
 ;note=First encountered on <d Nightal 13 1369>. Encountered on <d Nightal 19\
  1369>, where he told me he had found one of Acturagana's lairs, and on\
@@ -533,7 +533,7 @@ date=24 Nightal 1369
 ,give;to=Maanamere;item=+2 Long Sword
 date=Nightal 26 1369
 ,writeoff;Narthan;Cassie;note=and ran away from the vampires
-,meet;status=active;association=AFAL;name=Theo;fullname=Theophrastus\
+,meet;status=inactive;association=AFAL;name=Theo;fullname=Theophrastus\
  &quot\;Theo&quot\; Philippus Aureolus Bombast von Hohenheim\
 ;player=David;race=Human;gender=Male;class=Spellcaster, Halruaan\
 ;alignment=Lawful Neutral;cash=1cp\

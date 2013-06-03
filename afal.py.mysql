@@ -448,7 +448,7 @@ def divide_cp(share, total, shares):
 def insert_coin(coin, abbrev, copper_equiv, common=True, note = None):
     global coins_byname,coins_bycpe,coins_byid
     cur.execute(
- ' insert into fr_money_type (coin, abbrev, copper_equiv, common_use, note) '
+ ' insert into fr_money_type (coin, abbrev, copper_equiv, priority, note) '
  ' values ( %(coin)s, %(abbrev)s, %(copper_equiv)s, %(common)s, %(note)s)',
  { 'coin': coin, 'abbrev': abbrev, 'copper_equiv': copper_equiv, 'common': common, 'note': note})
     _check_warnings()
@@ -457,7 +457,7 @@ def insert_coin(coin, abbrev, copper_equiv, common=True, note = None):
     return ret
 
 def get_coins():
-    cur.execute('select money_id, coin, copper_equiv, common_use, abbrev, note from fr_money_type order by copper_equiv desc')
+    cur.execute('select money_id, coin, copper_equiv, priority, abbrev, note from fr_money_type order by copper_equiv desc')
     resp = cur.fetchall()
     ret_byname = {}
     ret_bycpe = {}
@@ -467,7 +467,7 @@ def get_coins():
         tmp['money_id'] = i[0]
         tmp['coin'] = i[1]
         tmp['copper_equiv'] = i[2]
-        tmp['common_use'] = i[3]
+        tmp['priority'] = i[3]
         if i[4] is not None:
             tmp['abbrev'] = i[4]
             ret_byname[i[4]] = tmp
@@ -489,14 +489,14 @@ def get_coins():
 def get_char_money(char):
     cur.execute('select m.money_id, m.quantity from '
  ' fr_char_money as m natural join fr_money_type as t where m.owner ='
- ' %(char)s order by t.copper_equiv desc, t.coin', {'char':char})
+ ' %(char)s order by t.priority, t.copper_equiv desc, t.coin', {'char':char})
     resp = cur.fetchall()
     _check_warnings()
     ret = []
     for i in resp:
         id = i[0]
         t = coins_byid[id]
-        tmp = {'money_id': id, 'coin': t['coin'], 'copper_equiv': t['copper_equiv'], 'common_use': t['common_use'], 'quantity': int(i[1])}
+        tmp = {'money_id': id, 'coin': t['coin'], 'copper_equiv': t['copper_equiv'], 'priority': t['priority'], 'quantity': int(i[1])}
         if 'abbrev' in t:
             tmp['abbrev'] = t['abbrev']
         if 'note' in t:
@@ -509,7 +509,7 @@ def char_find_money(char, amount_cp):
     ret = {'value_cp': amount_cp}
     x = get_char_money(char)
     for i in x:
-        if not i['common_use']:
+        if i['priority'] == 0:
             continue
         cpe = i['copper_equiv']
         if cpe > amount_cp:
@@ -547,7 +547,7 @@ def invent_money(amount_cp):
             continue
         for j in coins_bycpe[i]:
 #            print "invent money",j
-            if not j['common_use']:
+            if j['priority'] == 1 or j['priority'] == 0:
                 continue
             n = int(amount_cp / i)
 #            print "inventing",n,j['coin']
@@ -1043,13 +1043,22 @@ def char_leave_parties(date, char, note = None):
     journal(date, char, None, None, None, text)
 
 
+def get_marching_names():
+    ret = []
+    cur.execute('select distinct marching_name from fr_marching order by marching_name')
+    resp = cur.fetchall()
+    for i in resp:
+        ret.append(i[0])
+    return ret
+
+
 # ranks is a list of lists.  Each sublist contains Char_name, over, down, width, height
 def insert_marching(name, ranks):
     """"insert a party marching order into the database"""
 
     for i in ranks:
         cur.execute('insert into fr_marching (marching_name, char_name, over, down, width, height) values (%(m)s, %(c)s, %(o)s, %(d)s, %(w)s, %(h)s)', {'m': name, 'c': i['char'], 'o': i['over'], 'd': i['down'], 'w': i['width'], 'h': i['height']})
-        check_warnings()
+        _check_warnings()
 
 
 def get_marching(name):
@@ -1273,6 +1282,10 @@ def insert_debt(d):
 
 global coins_byname,coins_bycpe,coins_byid
 (coins_byname, coins_bycpe, coins_byid) = get_coins()
+character_list = get_characters('Current')
+party_list = get_parties()
+date_list = get_journal_dates()
+marching_names = get_marching_names()
 
 if 'QUERY_STRING' in os.environ:
     def _map_to_name(m):
@@ -1286,9 +1299,6 @@ if 'QUERY_STRING' in os.environ:
     map_names = []
     for i in maps:
         map_names.append(_map_to_name(i))
-    character_list = get_characters('Current')
-    party_list = get_parties()
-    date_list = get_journal_dates()
     items_values = ('Unresolved','Party','Auction','Sell','Lent','Identify')
     items_texts = ('Unresolved Items', 'Party Items', 'Items to Auction', 'Items to Sell', 'Items Lent Out', 'Items to Identify')
     people_values = ('Current', 'Former', 'Dead', 'ActiveNPCs', 'InactiveNPCs', 'DeadNPCs')
@@ -1419,6 +1429,7 @@ if 'QUERY_STRING' in os.environ:
 {party_group}
 {items_group}
 {people_group}
+{marching_group}
     </select>
    </form>
   </div>
@@ -1432,7 +1443,8 @@ if 'QUERY_STRING' in os.environ:
  items_group = _format_group(True, 'Items', 'Items','items.', '', items_values, items_texts),
  people_group = _format_group(True, 'Groups','Groups', 'people.', '', people_values, people_texts),
  dates_group = _format_group(True, 'Date', 'Dates', '', 'latest', date_list, date_list),
- maps_group = _format_group(False, 'Map', 'Maps', 'map.', '', maps, map_names))
+ maps_group = _format_group(False, 'Map', 'Maps', 'map.', '', maps, map_names),
+ marching_group = _format_group(False, 'Marching Order', 'Marching Orders', 'marching.', '', marching_names, marching_names))
 
     def html_footer():
         return '   <br>\n  </div>\n  <hr />\n  <div align="center"><a href="{menu_url}"><b>Return to Menu</b></a></div>\n </body>\n</html>'.format(menu_url = afal_config.menu_url)

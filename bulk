@@ -655,7 +655,7 @@ def do_divy(d):
 
     for i in bank:
         cpe = i['copper_equiv']
-        if not i['common_use']:
+        if i['priority'] == 0 or i['priority'] == 1:
             continue
         for j in pools:
             a = j['amount_cp']
@@ -879,9 +879,9 @@ def do_loop(d):
             for i in loop:
                 if i[1] < m:
                     m = i[1]
-            afal.pw("loop: ", afal.cp_to_str(m), max = 130)
+#            afal.pw("loop: ", afal.cp_to_str(m), max = 130)
             for i in loop:
-                afal.pw(" ", i[0], 'owes', afal.cp_to_str(i[1]), 'to', i[2], max = 130)
+#                afal.pw(" ", i[0], 'owes', afal.cp_to_str(i[1]), 'to', i[2], max = 130)
                 if chars[i[0]]['debts'][i[2]] == m:
                    del chars[i[0]]['debts'][i[2]]
                 else:
@@ -891,8 +891,8 @@ def do_loop(d):
 
 
 def do_coin(d):
-    check_dict(d, must = ('name', 'copper_equiv'), may = ('common', 'abbrev', 'note', 'date'))
-    afal.insert_coin(d['name'], d.get('abbrev'), d['copper_equiv'], d.get('common', False), d.get('note'))
+    check_dict(d, must = ('name', 'copper_equiv'), may = ('priority', 'abbrev', 'note', 'date'))
+    afal.insert_coin(d['name'], d.get('abbrev'), d['copper_equiv'], d.get('priority', 0), d.get('note'))
 
 
 def do_trade(d):
@@ -945,7 +945,7 @@ def do_cons(d):
         wi_coins = afal.get_char_money(wi_char)
         wi_q_table = {}
         for i in wi_coins:
-            if i['common_use']:
+            if i['priority']:
                 wi_q_table[i['coin'].format(s = '', es = '')] = i['quantity']
         by_coins = afal.get_char_money(by_char)
         afal.pw("by", by_char, by_coins, "with", wi_char, wi_coins, wi_q_table, max = 130)
@@ -958,7 +958,7 @@ def do_cons(d):
 #            print 'start', by_coins
             while len(by_coins) > 0:
                 by_coin = by_coins.pop()
-                if not by_coin['common_use']:
+                if by_coin['priority'] == 0:
                     continue
                 by_name = by_coin['coin'].format(s = '', es = '')
                 by_fname = by_coin['coin']
@@ -1062,6 +1062,18 @@ def do_commit(d):
         afal.commit()
 
 
+def do_marching(d):
+    check_dict(d, must=('name',))
+    ranks = []
+    name = d.pop('name')
+    if 'date' in d:
+        del d['date']
+    for ch in d:
+        l = d[ch].split(' ',3)
+        l = {'char': ch, 'over':l[0], 'down':l[1], 'width': l[2], 'height': l[3]}
+        ranks.append(l)
+    afal.insert_marching(name, ranks)
+
 do_something.last_date = None
 do_something.commit = False
 
@@ -1080,6 +1092,7 @@ can_do = {
  'lend': do_lend,
  'loop': do_loop,
  'meet': do_meet,
+ 'marching': do_marching,
  'party': do_party,
  'pay': do_pay,
  'sell': do_sell,

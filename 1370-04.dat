@@ -1,5 +1,5 @@
 date=1 Tarsakh 1370
-,system;cmd=mysqldump -uafal -pBuffyStewart -r dump.1370-4-01.sql afal_devel
+# ,system;cmd=mysqldump -uafal -pBuffyStewart -r dump.1370-04-01.sql afal_devel
 ,meet;association=AFAL;status=active;name=Brogan;alignment=Lawful Good;\
 gender=Male;player=Andrew;race=Hill Dwarf;fullname=Brogan Blackroot;\
 picture=Brogan.png;large_picture=Brogan2.jpg;cash=1cp;\
@@ -182,7 +182,7 @@ date=12 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-12-1370;Darius=1;Denyae=1;Deringa=.5;Dexter=1;\
 Henkles=1;Maanamere=1;Staric=.5
 ,find;found=Tarsakh-12-1370
-,,name=Ring of Shocking Grasp;value=5000gp
+,,name=Ring of Shocking Grasp  #1;value=5000gp
 ,,name=Plain Brass Ring *2
 ,,name=Brass Key
 ,,name=Scepter of Entrapment
@@ -215,7 +215,7 @@ Henkles=1;Maanamere=1;Staric=.5
 #,trade;by=Tristan;to=Brogan;for=2ep, 2sp, 180cp
 ,trade;by=Tristan;to=AFAL;cash=3 harbor moons;for=150gp
 ,pay;by=Tristan;percent=90
-,trade;by=Ursula;to=AFAL;cash=1 harbor moon, 4pp;for=64gp, 12ep
+,trade;by=Ursula;to=AFAL;cash=1 harbor moon, 7 toals, 1pp;for=63gp, 12ep
 ,trade;by=Ursula;to=Tristan;for=150cp
 ,trade;by=Ursula;to=Henkles;for=12sp, 80cp
 ,pay;by=Ursula;percent=90
@@ -234,11 +234,12 @@ date=13 Tarsakh 1370
 ,sell;to=Brogan;item=Dwarven Battle Tankard *2;cash=20gp
 ,trade;by=Brogan;to=Tarsakh-12-1370;for=2 Gem: Spinel 500gp
 ,trade;by=Denyae;to=Tarsakh-12-1370;cash=2 finely made gold chains 130gp,\
- 17 harbor moons, 1890gp;for=6 Gem: Spinel 500gp
+ 17 harbor moons, 5 toals, 1880gp;for=6 Gem: Spinel 500gp
 ,trade;by=Deringa;to=Tarsakh-12-1370\
 ;for=2 finely made gold chains 130gp, 4 Gems: Citrine 75gp, 2 Gems: Carnelian 50gp, 9 Gems: Sardonyx 50gp\
-;cash=5 Harbor Moons, 55 pp, 42 Toals, 494 gp, 310cp, 29sp, 8ep
-,trade;by=Staric;to=Tarsakh-12-1370;cash=787gp, 4 harbor moons,200cp,10sp,3ep;for=18 gems: moonstone 55gp
+;cash=5 Harbor Moons, 71 pp, 9 Toals, 480 gp, 310cp, 29sp, 8ep
+,trade;by=Theo;to=Tarsakh-12-1370;cash=10 toals;for=20gp
+,trade;by=Staric;to=Tarsakh-12-1370;cash=1 pp, 702gp, 5 harbor moons, 15 toals, 200cp,10sp,3ep;for=18 gems: moonstone 55gp
 ,dividend;by=Tarsakh-12-1370;cash=36 harbor moons, 48 toals, 3840gp, 36sp, 440cp,\
  24 gem: carnelian 50gp, 24 gem: sardonyx 50gp, 24 gem: zircon 65gp, 12 gem:\
  garnet 500gp;note=gems=15800gp, expenses -119gp, snake 20gp=15701 total\
@@ -268,7 +269,7 @@ date=13 Tarsakh 1370
 ,,to=Steve
 ,,to=Theo;cash=3 Gems: Zircon 65gp, 3gp
 ,give;by=Maanamere;to=AFAL;cash=1 harbor moon;note=to reimburse for expenses
-,trade;by=Denyae;to=Henkles;cash=15 harbor moons, 18 Toals, 206gp, 600cp, 40sp, 6ep;for=2 gems: Garnet 500gp
+,trade;by=Denyae;to=Henkles;cash=15 harbor moons, 8 Toals, 226gp, 600cp, 40sp, 6ep;for=2 gems: Garnet 500gp
 ,give;by=AFAL;to=Henkles;cash=137gp;note=to reimburse for expenses
 ,pay;by=Henkles
 ,,to=Brogan;cash=4 Gems: Sardonyx 50gp,70gp,171cp
@@ -282,11 +283,11 @@ date=13 Tarsakh 1370
 ,,by=Darius;cash=8 Toals;for=16gp
 ,,by=Theo;cash=10 Harbor Moons;for=4 gems: zircon 65gp, 4 gems: Carnelian 50gp, 40gp
 ,trade;to=AFAL
-,,by=Staric;cash=4 Harbor Moons,5 toals;for=40pp, 10gp
+,,by=Staric;cash=3 Harbor Moons,4 toals;for=30pp, 8gp
 ,,by=Deringa;cash=3 Harbor Moons, 4 Toals;for=158gp
 ,,by=Theo;cash=1 Harbor Moon;for=50gp
-,,by=Steve;cash=3 Harbor Moons;for=150gp
-,lend;to=Maanamere;item=Ring of Shocking Grasp
+,,by=Steve;cash=3 Harbor Moons;for=30pp
+,lend;to=Maanamere;item=Ring of Shocking Grasp  #1
 ,lend;to=Denyae;item=Scepter of Entrapment
 ,give;item=Potion of Shopping  #1;to=Destroyed;note=used by Brogan
 ,give;by=Brogan;to=Someone;cash=1 Gem: Spinel 500gp;note=Down payment on ammo
@@ -297,7 +298,7 @@ date=Tarsakh 20, 1370
 ,party;type=AFAL;name=Tarsakh-20a-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Deringa=0.5;Dexter=1;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
 ,find;found=Tarsakh-20a-1370
 ,,name=3x Giant Spider poison sacks
-,,name=Bracers of Inititive (Moderate);note=Ag part ID Tarsakh 24 1370
+,,name=Bracers of Defense AC4;note=Ag (mis-)part ID Tarsakh 24 1370  Henkles identified through testing
 ,,name=+2 Ring of Protection  #2;note=Steve ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Invisibility;note=Steve and Staric ID Tarsakh 24 1370;value=7500gp
 ,,name=Magic Potion;note=Ag,Tristan,Staric failed Tarsakh 24 1370
@@ -355,7 +356,7 @@ date=Tarsakh 21, 1370
 ,give;to=Someone;by=AFAL;cash=17 Harbor Moons
 ,give;to=Someone;by=Steve;cash=1150gp;note=loan to party for arrows
 ,find;found=Tarsakh-21-1370;name=6* +3 Sheaf Arrow;value=2000gp
-,coin;name=virtual copper piece{s};abbrev=vcp;copper_equiv=1;common
+,coin;name=virtual copper piece{s};abbrev=vcp;copper_equiv=1;priority=1
 ,sell;to=Someone;item=+1 Banded Mail;cash=680000vcp;note=3400gp
 ,sell;to=Someone;item=+1 Dagger  #1;cash=360000vcp;note=1800gp
 ,sell;to=Someone;item=+1 Dagger  #4;cash=388200vcp;note=1941gp
@@ -421,7 +422,6 @@ date=Tarsakh 21, 1370
 date=Tarsakh 22 1370
 ,party;type=AFAL;name=Tarsakh-22-1370;\
 Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
-,commit
 ,give;by=Staric;to=Someone;cash=250gp;note=For Holy Water
 ,find;found=Tarsakh-22-1370
 ,,name=Holy Water  #1
@@ -438,7 +438,7 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,,name=+2 Ring of Protection  #3;note=Steve failed, Ag ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Fire Resistance  #2;note=Steve, Staric id Tarsakh 24 1370;value=5000gp
 ,,name=Ring of Telekenisis 25#;note=Steve,Tristan,Staric ID Tarsakh 24 1370;value=10000gp
-,,name=Bracers of Defense (Moderate);note=Ag, Tristan failed, Staric part ID Tarsakh 24 1370;value=15000gp
+,,name=Bracers of Defense AC5  #3;note=Ag, Tristan failed, Staric part ID Tarsakh 24 1370;value=15000gp
 ,,name=+1/+3 (Trolls) Long Sword;note=Tristan id Tarsakh 24 1370;value=3000gp
 ,,name=+2/+3 (L) Dagger;note=Tristan ID Tarsakh 24 1370;value=2000gp;
 ,,name=Amulet of Proof Against Detection and Location;note=Steve part ID Tarsakh 24 1370;value=15000gp
@@ -513,13 +513,13 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,give;by=AFAL;to=Henkles;amount=1670gp;note=repay debts for Eversmoking Bottle,auction,Undermountain
 ,lend;to=Brogan;item=Glass Sphere of Wall of Force  #1
 ,lend;to=Brogan;item=Glass Sphere of Wall of Force  #2
-,sell;to=Maanamere;item=Ring of Shocking Grasp;cash=1000000vcp
+,sell;to=Maanamere;item=Ring of Shocking Grasp  #1;cash=1000000vcp
 ,dividend;by=Tarsakh-12-1370;cash=1000000vcp
 ,sell;to=Denyae;item=+1/+3 (Trolls) Long Sword;cash=600000vcp
 ,sell;to=Ag;item=+2/+3 (L) Dagger;cash=400000vcp
 date=Tarsakh 23, 1370
 ,give;by=AFAL;to=Destroyed;cash=2 Gems: pearl 100gp;note=used for identifies
-,trade;by=Steve;to=Henkles;cash=23 Harbor Moons;for=1150gp
+,trade;by=Steve;to=Henkles;cash=22 Harbor Moons;for=1100gp
 ,give;by=Henkles;to=Someone;amount=200gp;note=pearls for Identify
 ,lend;to=Denyae;item=Amulet of Proof Against Detection and Location
 ,dividend;by=Tarsakh-22-1370;cash=1000000vcp
@@ -538,7 +538,6 @@ date=Tarsakh 24, 1370
 ,sell;to=Darius;item=Shirt of Tackiness;debt=5000gp
 ,sell;to=Darius;item=Ring of Fire Resistance  #2;debt=5000gp
 ,sell;to=Henkles;item=Ring of Telekenisis 25#;debt=10000gp
-,commit
 ,pay;by=Darius;cash=1900000vcp
 ,pay;by=Henkles;cash=1733334vcp
 ,lend;to=Staric;item=Ring of Magic Missiles
@@ -560,12 +559,31 @@ date=Tarsakh 27 1370
 ,pay;by=Denyae;cash=2600000vcp
 ,pay;by=Ag;cash=800000vcp
 ,lend;to=Henkles;item=Scepter of Entrapment
-#date=Tarsakh 28 1370
-# We are Here
-,party;type=AFAL;name=Tarsakh-28-1370;Ag=1;Brogan=1;Dexter=1;Denyae=1;Steve=1;Staric=1;Henkles=1;Maanamere=1
+,system;cmd=mysqldump -uafal -pBuffyStewart -r dump.1370-04-28.sql afal_devel
+date=Tarsakh 28 1370
+,party;type=AFAL;name=Tarsakh-28a-1370;Ag=1;Brogan=1;Dexter=1;Denyae=1;Henkles=1;Maanamere=1;Staric=1;Steve=1;Tristan=1
 ,give;by=AFAL;to=Someone;amount=9gp
-,give;by=Someone;to=Tarsakh-28-1370;cash=118cp,82sp,44gp
-,find;found=Tarsakh-28-1370;name=Nonmagic  #8;note=12 Scimitars,12 Short Bows
-,find;found=Tarsakh-28-1370;name=12' length of rusty chain
-,give;by=Someone;to=Tarsakh-28-1370;cash=3 toals, 5ep
-,find;found=Tarsakh-28-1370;name=Nonmagic #9;note=8 hammocks,tin plates and cups
+,give;by=Someone;to=Tarsakh-28a-1370;cash=118cp,82sp,44gp
+,find;found=Tarsakh-28a-1370;name=Nonmagic  #8;note=12 Scimitars,12 Short Bows
+,find;found=Tarsakh-28a-1370;name=12' length of rusty chain
+,give;by=Someone;to=Tarsakh-28a-1370;cash=3 toals, 5ep
+,find;found=Tarsakh-28a-1370;name=Nonmagic #9;note=8 hammocks,tin plates and cups
+,party;type=AFAL;name=Tarsakh-28b-1370;Brogan=1;Denyae=1;Henkles=1;Staric=1;Steve=1;Tristan=1
+,give;by=Someone;to=Tarsakh-28b-1370;cash=1 Toal,79sp, 18ep
+,party;type=AFAL;name=Tarsakh-28c-1370;Brogan=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
+,find;found=Tarsakh-28c-1370;name=Nonmagic  #10;note=3 suits full plate armor,2 scimitars,moldy backpack
+,find;found=Tarsakh-28c-1370;name=Ring of Shocking Grasp  #2;holder=Henkles
+,give;by=Someone;to=Tarsakh-28c-1370;cash=1 Toal
+,party;type=AFAL;name=Tarsakh-28d-1370;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
+,marching;name=Tarsakh-28d-1370;Henkles=4 1 3 3;Steve=1 4 3 3;Tristan=7 4 3 3;Staric=4 7 3 3
+,give;by=Someone;to=Tarsakh-28d-1370;cash=236gp
+,find;found=Tarsakh-28d-1370;name=6x Silver Trade Bar
+# We are Here
+,sell;to=Henkles;item=Bracers of Defense AC4;debt=18000gp
+,sell;to=Tristan;item=Ring of Telekenisis 25#;debt=10000gp
+,sell;to=Henkles;item=Ring of Shocking Grasp  #2;debt=4999gp,199cp;cash=1cp
+,cancel;Henkles;Tristan
+,loop
+,pay;by=Tristan
+,pay;by=Henkles
+,pay;by=Ag

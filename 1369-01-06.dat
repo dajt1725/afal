@@ -1,11 +1,11 @@
 # Hammer-1 through Kythorn-30, incl Midinter and Greengrass
-coin;name=Copper piece{s};abbrev=cp;copper_equiv=1;common
-coin;name=Silver piece{s};abbrev=sp;copper_equiv=10;common
-coin;name=Electrum piece{s};abbrev=ep;copper_equiv=100;common
-coin;name=Gold piece{s};abbrev=gp;copper_equiv=200;common
-coin;name=Toal{s};copper_equiv=400;note=waterdeep only;common
-coin;name=Platinum piece{s};abbrev=pp;copper_equiv=1000;common
-coin;name=Harbor Moon{s};copper_equiv=10000;common;note=only worth half as much outside waterdeep
+coin;name=Copper piece{s};abbrev=cp;copper_equiv=1;priority=3
+coin;name=Silver piece{s};abbrev=sp;copper_equiv=10;priority=3
+coin;name=Electrum piece{s};abbrev=ep;copper_equiv=100;priority=3
+coin;name=Gold piece{s};abbrev=gp;copper_equiv=200;priority=3
+coin;name=Toal{s};copper_equiv=400;note=waterdeep only;priority=2
+coin;name=Platinum piece{s};abbrev=pp;copper_equiv=1000;priority=3
+coin;name=Harbor Moon{s};copper_equiv=10000;priority=2;note=only worth half as much outside waterdeep
 coin;name=Sembian Steel piece{s};copper_equiv=1
 coin;name=triangular Electrum piece{s};copper_equiv=100;note=found in Undermountain
 coin;name=Gem{s}: Bloodstone 5gp;copper_equiv=1000
@@ -48,8 +48,8 @@ date=Ches 1 1369;meet;association=AFAL
 ;characteristics=Clever, quick, short dk-blond hair, reddish beard, grey eyes,\
  5'9&frac12\;&quot\;, 160lbs.\
 ;equipment=Wizardly robe and hat, Bracers of Defense AC5, +2 Ring of\
- Protection, Sling, <i>Urgoth</i> Belt Dagger of Doom, Fanny Pack of Holding,\
- Tenser's Throw Rug, Ring of Kobolds\
+ Protection, Shirt of Tackiness, Sling, <i>Urgoth</i> Belt Dagger of Doom,\
+ Fanny Pack of Holding, Tenser's Throw Rug, Ring of Kobolds\
 ;note=Some clerical spellcasting ability (lay priest of Mystra),\
  blunt weapon restriction, a phobia of snakes, and tongue-tied around women.\
  Darius is one of the founding party members.
@@ -69,7 +69,8 @@ date=Ches 1 1369;meet;association=AFAL
 ;picture=henkles.jpg;large_picture=henkles_lg.jpg\
 ;cash=11pp, 6 toals, 95 gp, 6SP, 20 copper pieces\
 ;characteristics=Very strong and fast, brown hair &amp\; eyes, 6'2&quot\;, 220#\
-;equipment=+1 Plate mail, +1/+3(Saves) Ring of Prot., Ring of Projection,\
+;equipment=Bracers of Defense AC4, +1/+3(Saves) Ring of Prot.,\
+ Ring of Projection, Ring of Shocking Grasp,\
  Ioun Stone of Protection, White Scarf of Warmth, <i>Silver Strike</i>\
  +2/+4(level draining or negative energy creatures) unique short sword,\
  <a href="/Balthazar.wav"><i>Balthazar, Hellspawn of Terror</i></a> (+1 Sh Swd),\
@@ -128,7 +129,7 @@ date=Greengrass Festival 1369;meet;association=AFAL
 ;picture=Steve.png;large_picture=Steve_lg.png;cash=41cp\
 ;characteristics=Personable, 5'5&quot\;, 121lbs.\
 ;equipment=Green Dragon hide armor, +1/+3(cold) Ring of Protection, Ring of\
- Missiles (Party Item), Ring of Water Walking, Ring of Gargoyles (Party Item),\
+ Ring of Water Walking, Ring of Gargoyles (Party Item),\
  Cloak of Elvenkind, +1/+2(lawful) Longsword, trident, javelins,\
  +1 light crossbow, lyre, Staff of Phantasmal Firebals (Party Item)\
 ;note=Lacks the usual &frac12\;elf bonus vs. sleep or for secret doors.\
@@ -202,8 +203,8 @@ date=10 Kythorn 1369
  His hair is shoulder length and generally worn loose.\
  When adventuring though, he keeps it tied back so as to not cause an\
  obstruction. He has exceptionally good posture and is in great shape.\
-;equipment=+1 Full Plate Mail, +1/+3(cold) Ring of Prot., +2 Long Sword,\
- <i>Binky</i> (unique magic axe), bow, some +1 arrows\
+;equipment=+1 Full Plate Mail, +1/+3(cold) Ring of Prot., Ring of Shocking Grasp,\
+ +2 Long Sword, <i>Binky</i> (unique magic axe), bow, some +1 arrows\
 ;note=Fear of heights.\
  Lacks the typical ranger two-handed fighting bonus, but Binky compensates.\
  Originally from the Coldwood.\
