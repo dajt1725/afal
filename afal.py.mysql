@@ -1327,7 +1327,9 @@ if 'QUERY_STRING' in os.environ:
 
 <html>
  <head>
-  <title>{title}</title><META http-equiv="Content-Script-Type" content="text/javascript">
+  <title>{title}</title>
+  <META http-equiv="Content-Script-Type" content="text/javascript">
+  <META HTTP-EQUIV="Content-Language" Content="en">
   <style type="text/css">
       .marching {{
         text-align: center;
@@ -1396,7 +1398,7 @@ if 'QUERY_STRING' in os.environ:
       }}
   </style>
  </head>
- <body background="{background}">
+ <body background="{background}" lang="en">
   <div align="center">
    <form action="{menu_url}" method="GET">
     <noscript>
