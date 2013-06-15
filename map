@@ -19,8 +19,12 @@ if cl != 'map':
 map_of = inst
 map_name = afal._map_to_name(map_of)
 title = 'AFAL map of ' + map_name
+with open('maps/' + map_of, 'r') as f:
+    map = f.read()
 
 print('''{hdr}
    <h1>{map_name}</h1>
-   <object style="background:white" width="100%" height="86%" data="../maps/{map_of}" type="image/svg+xml">Map Goes Here</object>
-{ftr}'''.format(hdr = afal.html_header(title), map_name = map_name, map_of = map_of, ftr = afal.html_footer()))
+   <div style="background:white;  overflow:hidden;  width:100%;  height:100%;">
+{map}
+   </div>
+{ftr}'''.format(hdr = afal.html_header(title), map = map, map_name = map_name, map_of = map_of, ftr = afal.html_footer()))
