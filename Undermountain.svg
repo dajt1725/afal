@@ -2,13 +2,13 @@
   <title>Anything For A Laugh's map of Undermountain</title>
   <script type="text/ecmascript"><![CDATA[
       var scaling = 1;
+      var verbose = 0;
       var m; // menu
       var um; // unmenu
       var u; // Undermountain.svg
       var p; // parent node of the svg
       var w;
       var h;
-      var v;
       function toggleLayer(e, n) {
         var l = document.getElementById(n).style;
         if (l.display == 'inline') {
@@ -25,66 +25,226 @@
         document.getElementById(n2).style.display = 'inline';
         document.getElementById('b-'+n2).style.fill = '#000000';
       }
+    // shift the map so that map coords x,y are at the top-left corner of the window
     function newView(x,y) {
       var nx,ny;
+      if (verbose) {
+        alert("going to "+x+" "+y);
+      }
       if (p == u) {
-        var ox,oy;
-        ox = window.pageXOffset;
-        oy = window.pageYOffset;
-        window.scrollTo(x, y);
+        window.scrollTo(x * scaling, y * scaling);
         nx = window.pageXOffset/scaling;
         ny = window.pageYOffset/scaling;
       } else {
-        v.x = x;
-        v.y = y;
-        nx = x;
-        ny = y;
+        p.scrollLeft = x * scaling;
+        p.scrollTop = y * scaling;
+        nx = p.scrollLeft / scaling;
+        ny = p.scrollTop / scaling;
       }
       var newtrans = 'translate(' + nx + ',' + ny + '), scale(' + 1 / scaling + ')'
       m.setAttributeNS(null, 'transform', newtrans);
       um.setAttributeNS(null, 'transform', newtrans);
     }
 
-    function rEsIzE(evt, by) {
-      var os,x,y;
-      os = scaling;
-      scaling *= by;
+    // window width in map locations
+    function getWidth() {
+      var ret;
       if (p == u) {
-        x = window.scrollX / window.scrollMaxX;
-        y = window.scrollY / window.scrollMaxY;
-        w.value *= by;
-        h.value *= by;
-        x *= window.scrollMaxX;
-        y *= window.scrollMaxY;
+        ret = window.innerWidth;
       } else {
-        x = v.x + p.clientWidth/os/2 - p.clientWidth/scaling/2;
-        y = v.y + p.clientHeight/os/2 - p.clientHeight/scaling/2;
-        w.value *= by;
-        h.value *= by;
+        ret = p.clientWidth;
       }
-      newView(x, y);
+      return ret / scaling;
+    }
+    function getHeight() {
+      var ret;
+      if (p == u) {
+        ret = window.innerHeight;
+      } else {
+        ret = p.clientHeight;
+      }
+      return ret / scaling;
+    }
+    // return the current value from newView()
+    function getX() {
+      var ret;
+      if (p == u) {
+        ret = window.pageXOffset;
+      } else {
+        ret = p.scrollLeft;
+      }
+      return ret / scaling;
+    }
+    function getY() {
+      var ret;
+      if (p == u) {
+        ret = window.pageYOffset;
+      } else {
+        ret = p.scrollTop;
+      }
+      return ret / scaling;
+    }
+    // return the x or y position of the map location in the center of the window
+    function getCenterX() {
+      return getX() + getWidth() / 2;
+    }
+    function getCenterY() {
+      return getY() + getHeight() / 2;
+    }
+      
+    // return the largest value that can be passed to newView()
+    function getMaxX() { 
+      var ret;
+
+      if (window.scrollMaxX) {
+        ret = window.scrollMaxX;
+        if (verbose) {
+          alert("getMaxX scrollMaxX "+ret);
+        }
+      } else {
+        var innerw;
+        if (u != p && p.clientWidth) {
+          innerw = p.clientWidth;
+          if (verbose) {
+            alert("getMaxX innerw = p.clientWidth "+innerw);
+          }
+        } else if (window.innerWidth) {
+          innerw = window.innerWidth;
+          if (verbose) {
+            alert("getMaxX innerw = window.innerWidth "+innerw);
+          }
+        } else if (u.clientWidth) {
+          innerw = u.clientWidth;
+          if (verbose) {
+            alert("getMaxX innerw = u.clientWidth "+innerw);
+          }
+        } else {
+          alert("unknown max in getMaxX()");
+          innerw = 0;
+        }
+        if (u.scrollWidth > u.offsetWidth) { // all but Explorer Mac 
+          ret = u.scrollWidth - innerw; 
+          if (verbose) {
+            alert("getMaxX u.scrollWidth "+u.scrollWidth + ", ret "+ret);
+          }
+        } else { 
+          // works in Explorer 6 Strict, Mozilla (not FF) and Safari 
+          ret = u.offsetWidth - innerw; 
+          if (verbose) {
+            alert("getMaxX u.offsetWidth "+u.offsetWidth+", ret "+ret);
+          }
+        } 
+      }
+      return ret / scaling; 
+    }
+    function getMaxY() { 
+      var ret;
+
+      if (window.scrollMaxY) { // Firefox 
+        ret = window.scrollMaxY; 
+        if (verbose) {
+          alert("getMaxY scrollMaxY "+ret);
+        }
+      } else {
+        var innerh;
+
+        if (u != p && p.clientHeight) {
+          innerh = p.clientHeight;
+          if (verbose) {
+            alert("getMaxY innerh = p.clientHeight "+innerh);
+          }
+        } else if (window.innerHeight) {
+          innerh = window.innerHeight;
+          if (verbose) {
+            alert("getMaxY innerh = window.innerHeight "+innerh);
+          }
+        } else if (u.clientHeight) {
+          innerh = u.clientHeight;
+          if (verbose) {
+            alert("getMaxY innerh = u.clientHeight "+innerh);
+          }
+        } else {
+          alert("Unknown max in getMaxY()");
+          innerh = 0;
+        }
+        if (u.scrollHeight > u.offsetHeight){ // all but Explorer Mac 
+          ret = u.scrollHeight - innerh; 
+          if (verbose) {
+            alert("getMaxY u.scrollHeight "+u.scrollHeight + ", ret "+ret);
+          }
+        } else { 
+          // works in Explorer 6 Strict, Mozilla (not FF) and Safari 
+          ret = u.offsetHeight - innerh; 
+          if (verbose) {
+            alert("getMaxY u.offsetHeight "+u.offsetHeight+", ret "+ret);
+          }
+        }
+      } 
+      return ret / scaling; 
+    }
+
+    function rEsIzE(evt, by) {
+      var x,y;
+      var os,ow,oh,nw,nh,sw,sh,nsw,nsh,nx,ny;
+      os = scaling;
+      x = getCenterX();
+      y = getCenterY();
+      scaling *= by;
+      // setting [wh].value directly does not seem to work, so do it the hard way.
+      u.setAttributeNS(null,'width', w.value * by);
+      u.setAttributeNS(null,'height', h.value * by);
+      newView(x - getWidth()/2, y - getHeight()/2);
+      //if (p == u) {
+        //ow = getScrollMaxX();
+        //oh = getScrollMaxY();
+        //nw = getScrollMaxX();
+        //nh = getScrollMaxY();
+        //sw = window.innerWidth;
+        //sh = window.innerHeight;
+      //} else {
+        //ow = p.scrollWidth;
+        //oh = p.scrollHeight;
+        //x = p.scrollLeft;
+        //y = p.scrollTop;
+        //// setting [wh].value directly does not seem to work, so do it the hard way.
+        //u.setAttributeNS(null,'width', w.value * by);
+        //u.setAttributeNS(null,'height', h.value * by);
+        //nw = p.scrollWidth;
+        //nh = p.scrollHeight;
+        //sw = 0; //p.clientWidth;
+        //sh = 0; //p.clientHeight;
+      //}
+      //nsw = ( sw / os - sw / scaling) / 2;
+      //nsh = ( sh / os - sh / scaling) / 2;
+      //nx = x * nw / ow;
+      //ny = y * nh / oh;
+      //alert("resize "+ow+" "+oh+" to "+nw+" "+nh+" pos "+x+" "+y+" to "+nx+" "+ny+" center "+sw+" "+sh+" new "+nsw+", "+nsh);
     }
     function sCrOlL(evt, xby, yby) {
       var x,y;
-      if (p == u) {
-        x = window.pageXOffset + xby * window.innerWidth / 6;
-        y = window.pageYOffset + yby * window.innerHeight / 6;
-      } else {
-        x = v.x + xby*p.clientWidth/scaling/6;
-        y = v.y + yby*p.clientHeight/scaling/6;
-      }
+      x = getX() + xby * getWidth()/6;
+      y = getY() + yby * getHeight()/6;
+      //if (p == u) {
+        //x = window.pageXOffset + xby * window.innerWidth / 6;
+        //y = window.pageYOffset + yby * window.innerHeight / 6;
+      //} else {
+        //x = p.scrollLeft/scaling + xby*p.clientWidth/scaling/6;
+        //y = p.scrollTop/scaling + yby*p.clientHeight/scaling/6;
+      //}
       newView(x, y);
     }
     function mOvEtO(evt,xto,yto) {
       var x,y, ww, wh;
-      if (p == u) {
-        ww = window.scrollMaxX/2;
-        wh = window.scrollMaxY/2;
-        //alert(ww+', '+wh)
-      } else {
-        ww = (v.width - p.clientWidth/scaling)/2;
-        wh = (v.height - p.clientHeight/scaling)/2;
-      }
+      ww = getMaxX()/2;
+      wh = getMaxY()/2;
+      //if (p == u) {
+        //ww = getScrollMaxX()/2;
+        //wh = getScrollMaxY()/2;
+        //// alert(ww+', '+wh)
+      //} else {
+        //ww = (v.width - p.clientWidth/scaling)/2;
+        //wh = (v.height - p.clientHeight/scaling)/2;
+      //}
       x = ww + xto * ww;
       y = wh + yto * wh;
       newView(x,y);
@@ -98,12 +258,29 @@
         m.style.display = 'inline';
       }
     }
+    function tIcK(evt, x, y) {
+      var ox, oy;
+      ox = getX();
+      oy = getY();
+      newView(ox + x, oy + y);
+    }
     function kEy(evt) {
       var c;
       c = evt.charCode;
       if (!c)
         c = evt.keyCode;
       switch (c) {
+      case 105: document.getElementById('errortext').firstChild.nodeValue = "at "+getX()+" "+getY()+", center "+getCenterX()+" "+getCenterY()+", max "+getMaxX()+" "+getMaxY()+", screen "+getWidth()+" "+getHeight()+", scaling "+scaling; break; // i
+      case 118: verbose = !verbose; break; // v
+      case 39: tIcK(evt,-1,-1); break; // '
+      case 44: tIcK(evt,0,-1); break; // ,
+      case 46: tIcK(evt,1,-1); break; // .
+      case 97: tIcK(evt,-1,0); break; // a
+      case 111: tIcK(evt,0,0); break; // o
+      case 101: tIcK(evt,1,0); break; // e
+      case 59: tIcK(evt,-1,1); break; // ;
+      case 113: tIcK(evt,0,1); break; // q
+      case 106: tIcK(evt,1,1); break; // j
       case 49: mOvEtO(evt,-1,1); break; // 1
       case 50: mOvEtO(evt,0,1); break; // 2
       case 51: mOvEtO(evt,1,1); break; // 3
@@ -114,9 +291,11 @@
       case 56: mOvEtO(evt,0,-1); break; // 8
       case 57: mOvEtO(evt,1,-1); break; // 9
       case 61: rEsIzE(evt, 1/scaling); break; // =
-      case 66: case 98: rEsIzE(evt,1.1); break; // b B
+      case 66: rEsIzE(evt,2); break; // B
+      case 98: rEsIzE(evt,1.1); break; // b
       case 77: case 109: sWaPm(evt); break; // m M
-      case 83: case 115: rEsIzE(evt,0.9); break; // s S
+      case 83: rEsIzE(evt,0.5); break; // S
+      case 115: rEsIzE(evt,0.9); break; // s
       case 76: sCrOlL(evt,-2,0); break; // L
       case 108: sCrOlL(evt,-1,0); break; // l
       case 82: sCrOlL(evt,2,0); break; // R
@@ -130,7 +309,10 @@
     function moveMenu(evt) {
 // from http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
       var x = 0, y = 0;
-      if( typeof( window.pageYOffset ) == 'number' ) {
+      if (p != u) {
+        x = p.scrollLeft;
+        y = p.scrollTop;
+      } else if( typeof( window.pageYOffset ) == 'number' ) {
         // Firefox on RHEL-6    alert('a');
         x = window.pageXOffset;
         y = window.pageYOffset;
@@ -160,12 +342,13 @@
       um.setAttributeNS(null, 'transform', 'translate(0,0) scale(1)');
       u = document.getElementById('Undermountain');
       h = u.height.baseVal;
-      v = u.viewBox.baseVal;
       w = u.width.baseVal;
       p = u.parentElement;
       if (!p) {
         p = u;
         window.onscroll = moveMenu;
+      } else {
+        p.onscroll = moveMenu;
       }
     }
   ]]></script>
@@ -2645,11 +2828,11 @@
       <title>This water-filled room had a giant gar in it.</title>
     </path>
     <rect class="feature-bad" height="10" id="t-l1a1" width="10" x="1960" y="1150">
-      <title>Teleportal l1a1: &quot;If you're reading this, it's already too late&quot;</title>
+      <title>Teleportal to l1a2: &quot;If you're reading this, it's already too late&quot;</title>
     </rect>
     <text class="name" x="1956" y="1158">l1a1</text>
     <rect class="feature" height="8" id="t-l1a2" width="8" x="2071" y="1131">
-      <title>Teleportal l1a2: The &quot;too late&quot; teleportal dumps you here.</title>
+      <title>Teleportal from l1a1: The &quot;too late&quot; teleportal dumps you here.</title>
     </rect>
     <text class="name" x="2065" y="1138">l1a2</text>
     <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1280">
