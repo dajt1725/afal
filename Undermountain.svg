@@ -1,97 +1,76 @@
 <?xml version="1.0" ?><!-- Created with Inkscape (http://www.inkscape.org/) --><svg height="3800" id="Undermountain" inkscape:version="0.47 r22583" sodipodi:docname="Undermountain.svg" style="display:inline" version="1.1" viewBox="0 0 3800 3800" width="3800" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" onload="sTaRt()">
   <title>Anything For A Laugh's map of Undermountain</title>
   <script type="text/ecmascript"><![CDATA[
-      var scaling = 1;
-      var verbose = 0;
-      var m; // menu
-      var um; // unmenu
-      var u; // Undermountain.svg
-      var p; // parent node of the svg
-      var w;
-      var h;
-      function toggleLayer(e, n) {
-        var l = document.getElementById(n).style;
-        if (l.display == 'inline') {
-          l.display = 'none';
-          e.target.style.fill = '#ff0000';
-        } else {
-          l.display = 'inline';
-          e.target.style.fill = '#000000';
-        }
-      }
-      function stairs(n1, n2) {
-        document.getElementById(n1).style.display = 'none';
-        document.getElementById('b-'+n1).style.fill = '#ff0000';
-        document.getElementById(n2).style.display = 'inline';
-        document.getElementById('b-'+n2).style.fill = '#000000';
-      }
-    // shift the map so that map coords x,y are at the top-left corner of the window
+    var scaling = 1;
+    var verbose = 0;
+    var m; // menu
+    var um; // unmenu
+    var u; // Undermountain.svg
+    var p; // parent node of the svg
+    // helper function to set map locations
+    function moveMap(x,y) {
+      var newtrans = 'translate(' + x + ',' + y + '), scale(' + 1 / scaling + ')'
+      m.setAttributeNS(null, 'transform', newtrans);
+      um.setAttributeNS(null, 'transform', newtrans);
+    }
+
+    // shift the map so that map location x,y is at the top-left corner of the window
     function newView(x,y) {
       var nx,ny;
       if (verbose) {
         alert("going to "+x+" "+y);
       }
-      if (p == u) {
-        window.scrollTo(x * scaling, y * scaling);
-        nx = window.pageXOffset/scaling;
-        ny = window.pageYOffset/scaling;
-      } else {
+      if (p) {
         p.scrollLeft = x * scaling;
         p.scrollTop = y * scaling;
         nx = p.scrollLeft / scaling;
         ny = p.scrollTop / scaling;
+      } else {
+        window.scrollTo(x * scaling, y * scaling);
+        nx = window.pageXOffset/scaling;
+        ny = window.pageYOffset/scaling;
       }
-      var newtrans = 'translate(' + nx + ',' + ny + '), scale(' + 1 / scaling + ')'
-      m.setAttributeNS(null, 'transform', newtrans);
-      um.setAttributeNS(null, 'transform', newtrans);
+      moveMap(nx,ny);
     }
 
     // window width in map locations
-    function getWidth() {
+    function getWidth(div) {
       var ret;
-      if (p == u) {
-        ret = window.innerWidth;
-      } else {
+      if (p) {
         ret = p.clientWidth;
-      }
-      return ret / scaling;
-    }
-    function getHeight() {
-      var ret;
-      if (p == u) {
-        ret = window.innerHeight;
       } else {
-        ret = p.clientHeight;
+        ret = window.innerWidth;
       }
-      return ret / scaling;
+      return ret / div / scaling;
+    }
+    function getHeight(div) {
+      var ret;
+      if (p) {
+        ret = p.clientHeight;
+      } else {
+        ret = window.innerHeight;
+      }
+      return ret / div / scaling;
     }
     // return the current value from newView()
     function getX() {
       var ret;
-      if (p == u) {
-        ret = window.pageXOffset;
-      } else {
+      if (p) {
         ret = p.scrollLeft;
+      } else {
+        ret = window.pageXOffset;
       }
       return ret / scaling;
     }
     function getY() {
       var ret;
-      if (p == u) {
-        ret = window.pageYOffset;
-      } else {
+      if (p) {
         ret = p.scrollTop;
+      } else {
+        ret = window.pageYOffset;
       }
       return ret / scaling;
     }
-    // return the x or y position of the map location in the center of the window
-    function getCenterX() {
-      return getX() + getWidth() / 2;
-    }
-    function getCenterY() {
-      return getY() + getHeight() / 2;
-    }
-      
     // return the largest value that can be passed to newView()
     function getMaxX() { 
       var ret;
@@ -103,7 +82,7 @@
         }
       } else {
         var innerw;
-        if (u != p && p.clientWidth) {
+        if (p && p.clientWidth) {
           innerw = p.clientWidth;
           if (verbose) {
             alert("getMaxX innerw = p.clientWidth "+innerw);
@@ -148,7 +127,7 @@
       } else {
         var innerh;
 
-        if (u != p && p.clientHeight) {
+        if (p && p.clientHeight) {
           innerh = p.clientHeight;
           if (verbose) {
             alert("getMaxY innerh = p.clientHeight "+innerh);
@@ -185,69 +164,19 @@
 
     function rEsIzE(evt, by) {
       var x,y;
-      var os,ow,oh,nw,nh,sw,sh,nsw,nsh,nx,ny;
-      os = scaling;
-      x = getCenterX();
-      y = getCenterY();
+      x = getX() + getWidth(2);
+      y = getY() + getHeight(2);
       scaling *= by;
       // setting [wh].value directly does not seem to work, so do it the hard way.
-      u.setAttributeNS(null,'width', w.value * by);
-      u.setAttributeNS(null,'height', h.value * by);
-      newView(x - getWidth()/2, y - getHeight()/2);
-      //if (p == u) {
-        //ow = getScrollMaxX();
-        //oh = getScrollMaxY();
-        //nw = getScrollMaxX();
-        //nh = getScrollMaxY();
-        //sw = window.innerWidth;
-        //sh = window.innerHeight;
-      //} else {
-        //ow = p.scrollWidth;
-        //oh = p.scrollHeight;
-        //x = p.scrollLeft;
-        //y = p.scrollTop;
-        //// setting [wh].value directly does not seem to work, so do it the hard way.
-        //u.setAttributeNS(null,'width', w.value * by);
-        //u.setAttributeNS(null,'height', h.value * by);
-        //nw = p.scrollWidth;
-        //nh = p.scrollHeight;
-        //sw = 0; //p.clientWidth;
-        //sh = 0; //p.clientHeight;
-      //}
-      //nsw = ( sw / os - sw / scaling) / 2;
-      //nsh = ( sh / os - sh / scaling) / 2;
-      //nx = x * nw / ow;
-      //ny = y * nh / oh;
-      //alert("resize "+ow+" "+oh+" to "+nw+" "+nh+" pos "+x+" "+y+" to "+nx+" "+ny+" center "+sw+" "+sh+" new "+nsw+", "+nsh);
+      u.setAttributeNS(null,'width', u.width.baseVal.value * by);
+      u.setAttributeNS(null,'height', u.height.baseVal.value * by);
+      newView(x - getWidth(2), y - getHeight(2));
     }
     function sCrOlL(evt, xby, yby) {
-      var x,y;
-      x = getX() + xby * getWidth()/6;
-      y = getY() + yby * getHeight()/6;
-      //if (p == u) {
-        //x = window.pageXOffset + xby * window.innerWidth / 6;
-        //y = window.pageYOffset + yby * window.innerHeight / 6;
-      //} else {
-        //x = p.scrollLeft/scaling + xby*p.clientWidth/scaling/6;
-        //y = p.scrollTop/scaling + yby*p.clientHeight/scaling/6;
-      //}
-      newView(x, y);
+      newView(getX() + xby * getWidth(6), getY() + yby * getHeight(6));
     }
     function mOvEtO(evt,xto,yto) {
-      var x,y, ww, wh;
-      ww = getMaxX()/2;
-      wh = getMaxY()/2;
-      //if (p == u) {
-        //ww = getScrollMaxX()/2;
-        //wh = getScrollMaxY()/2;
-        //// alert(ww+', '+wh)
-      //} else {
-        //ww = (v.width - p.clientWidth/scaling)/2;
-        //wh = (v.height - p.clientHeight/scaling)/2;
-      //}
-      x = ww + xto * ww;
-      y = wh + yto * wh;
-      newView(x,y);
+      newView(xto * getMaxX(), yto * getMaxY());
     }
     function sWaPm(evt) {
       if (m.style.display == 'inline') {
@@ -259,10 +188,7 @@
       }
     }
     function tIcK(evt, x, y) {
-      var ox, oy;
-      ox = getX();
-      oy = getY();
-      newView(ox + x, oy + y);
+      newView(getX() + x, getY() + y);
     }
     function kEy(evt) {
       var c;
@@ -270,7 +196,7 @@
       if (!c)
         c = evt.keyCode;
       switch (c) {
-      case 105: document.getElementById('errortext').firstChild.nodeValue = "at "+getX()+" "+getY()+", center "+getCenterX()+" "+getCenterY()+", max "+getMaxX()+" "+getMaxY()+", screen "+getWidth()+" "+getHeight()+", scaling "+scaling; break; // i
+      case 105: document.getElementById('errortext').firstChild.nodeValue = "at "+getX()+" "+getY()+", max "+getMaxX()+" "+getMaxY()+", screen "+getWidth(1)+" "+getHeight(1)+", scaling "+scaling; break; // i
       case 118: verbose = !verbose; break; // v
       case 39: tIcK(evt,-1,-1); break; // '
       case 44: tIcK(evt,0,-1); break; // ,
@@ -281,15 +207,15 @@
       case 59: tIcK(evt,-1,1); break; // ;
       case 113: tIcK(evt,0,1); break; // q
       case 106: tIcK(evt,1,1); break; // j
-      case 49: mOvEtO(evt,-1,1); break; // 1
-      case 50: mOvEtO(evt,0,1); break; // 2
+      case 49: mOvEtO(evt,0,1); break; // 1
+      case 50: mOvEtO(evt,0.5,1); break; // 2
       case 51: mOvEtO(evt,1,1); break; // 3
-      case 52: mOvEtO(evt,-1,0); break; // 4
-      case 53: mOvEtO(evt,0,0); break; // 5
-      case 54: mOvEtO(evt,1,0); break; // 6
-      case 55: mOvEtO(evt,-1,-1); break; // 7
-      case 56: mOvEtO(evt,0,-1); break; // 8
-      case 57: mOvEtO(evt,1,-1); break; // 9
+      case 52: mOvEtO(evt,0,0.5); break; // 4
+      case 53: mOvEtO(evt,0.5,0.5); break; // 5
+      case 54: mOvEtO(evt,1,0.5); break; // 6
+      case 55: mOvEtO(evt,0,0); break; // 7
+      case 56: mOvEtO(evt,0.5,0); break; // 8
+      case 57: mOvEtO(evt,1,0); break; // 9
       case 61: rEsIzE(evt, 1/scaling); break; // =
       case 66: rEsIzE(evt,2); break; // B
       case 98: rEsIzE(evt,1.1); break; // b
@@ -306,10 +232,47 @@
       case 100: sCrOlL(evt,0,1); break; // d
       }
     }
+    function warpTo(n1, n2) {
+      var tfm = document.getElementById(n1);
+      var xfm = tfm.getAttributeNS(null,'xPos');
+      var yfm = tfm.getAttributeNS(null,'yPos');
+      if (!xfm) {
+        xfm = tfm.x.baseVal.value + tfm.width.baseVal.value/2;
+        yfm = tfm.y.baseVal.value + tfm.height.baseVal.value/2;
+      }
+      xfm -= getX();
+      yfm -= getY();
+      var lfm = tfm.parentElement;
+      while (lfm.getAttributeNS('http://www.inkscape.org/namespaces/inkscape', 'groupmode') != 'layer') {
+        lfm = lfm.parentElement;
+      }
+
+      var tto = document.getElementById(n2);
+      var xto = tto.getAttributeNS(null,'xPos');
+      var yto = tto.getAttributeNS(null,'yPos');
+      if (!xto) {
+        xto = tto.x.baseVal.value + tto.width.baseVal.value/2;
+        yto = tto.y.baseVal.value + tto.height.baseVal.value/2;
+      }
+      var lto = tto.parentElement;
+      while (lto.getAttributeNS('http://www.inkscape.org/namespaces/inkscape', 'groupmode') != 'layer') {
+        lto = lto.parentElement;
+      }
+
+      if (lfm != lto) {
+        if (lto.style.display == 'none') {
+          lto.style.display = 'inline';
+          document.getElementById('b-'+lto.id).style.fill = '#000000';
+          lfm.style.display = 'none';
+          document.getElementById('b-'+lfm.id).style.fill = '#ff0000';
+        }
+      }
+      newView(xto - xfm, yto - yfm);
+    }
     function moveMenu(evt) {
 // from http://www.howtocreate.co.uk/tutorials/javascript/browserwindow
       var x = 0, y = 0;
-      if (p != u) {
+      if (p) {
         x = p.scrollLeft;
         y = p.scrollTop;
       } else if( typeof( window.pageYOffset ) == 'number' ) {
@@ -330,26 +293,36 @@
       }
       x /= scaling;
       y /= scaling;
-      var newtrans = 'translate(' + x + ',' + y + '), scale(' + 1 / scaling + ')'
-      m.setAttributeNS(null, 'transform', newtrans);
-      um.setAttributeNS(null, 'transform', newtrans);
+      moveMap(x,y);
     }
     function sTaRt() {
       document.documentElement.addEventListener('keypress',kEy,false);
       m = document.getElementById('menu');
-      m.setAttributeNS(null, 'transform', 'translate(0,0) scale(1)');
       um = document.getElementById('unmenu');
-      um.setAttributeNS(null, 'transform', 'translate(0,0) scale(1)');
+      moveMap(0,0);
       u = document.getElementById('Undermountain');
-      h = u.height.baseVal;
-      w = u.width.baseVal;
       p = u.parentElement;
-      if (!p) {
-        p = u;
-        window.onscroll = moveMenu;
-      } else {
+      if (p) {
         p.onscroll = moveMenu;
+      } else {
+        window.onscroll = moveMenu;
       }
+    }
+    function toggleLayer(e, n) {
+      var l = document.getElementById(n).style;
+      if (l.display == 'inline') {
+        l.display = 'none';
+        e.target.style.fill = '#ff0000';
+      } else {
+        l.display = 'inline';
+        e.target.style.fill = '#000000';
+      }
+    }
+    function stairs(n1, n2) {
+      document.getElementById(n1).style.display = 'none';
+      document.getElementById('b-'+n1).style.fill = '#ff0000';
+      document.getElementById(n2).style.display = 'inline';
+      document.getElementById('b-'+n2).style.fill = '#000000';
     }
   ]]></script>
   <defs>
@@ -644,7 +617,11 @@
     <rect class="corr" height="10" width="10" x="1840" y="330"/>
     <rect class="corr" height="10" width="10" x="1780" y="330"/>
     <rect class="room" height="30" width="50" x="1790" y="310"/>
-    <path class="stairs-ns" d="m1813 410h4l3 30h-10z" onclick="stairs('um-l2-l1','um-l2-m')"/>
+    <g onclick="warpTo('s-2l1-2m','s-2m-2l1')">
+      <title>These stairs raise into the ceiling until the lever is pulled.</title>
+      <rect class="feature" height="30" width="10" x="1810" y="410" id="s-2l1-2m"/>
+      <path class="stairs-ns" d="m1813 410h4l3 30h-10z"/>
+    </g>
     <path class="wall" d="m1810 440v-100h-30"/>
     <path class="wall" d="m1820 440v-100h30"/>
     <path class="wall" d="m1780 330h10v-20h50v20h10"/>
@@ -784,11 +761,15 @@
     <path class="stairs-ew" d="m1510 463 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1510 363 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1710 530 20 3v4l-20 3z"/>
-    <path class="stairs-ew" d="m1750 540 80 3v4l-80 3z" onclick="stairs('um-l2-m','um-l1-m')"/>
+    <path class="stairs-ew" d="m1750 540 80 3v4l-80 3z" id="s-2m-1m" onclick="warpTo('s-2m-1m','s-1m-2m')" xPos="1790" yPos="545"/>
     <path class="stairs-ew" d="m1890 580 20 3v4l-20 3z"/>
     <path class="stairs-ns" d="m1550 400h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m1630 420h10l-3 10h-4z"/>
-    <path class="stairs-ns" d="m1813 410h4l3 30h-10z" id="lowering-stairs-a" onclick="stairs('um-l2-m','um-l2-l1')"/>
+    <g onclick="warpTo('s-2m-2l1','s-2l1-2m')">
+      <title>This section of floor turns into stairs when the lever is pulled.</title>
+      <rect class="feature" height="30" width="10" x="1810" y="410" id="s-2m-2l1"/>
+      <path class="stairs-ns" d="m1813 410h4l3 30h-10z"/>
+    </g>
     <path class="stairs-ns" d="m1840 550h10l-3 30h-4z"/>
     <path class="stairs-ns" d="m1650 290h10l-3 30h-4z"/>
     <path class="stairs-ew" d="m1630 363 20-3v10l-20-3z"/>
@@ -804,21 +785,27 @@
     <rect class="feature-bad" height="30" width="30" x="1270" y="340">
       <title>This room is divided into black and white squares, checkerboard style.  The black squares can turn into solid darkness when they are stepped on.  Either the black or white squares (depending on the position of the lever) will zap lightning throughtout the room.</title>
     </rect>
-    <rect class="feature" height="20" id="t-l2c1" width="30" x="1130" y="340">
-      <title>Teleportal to/from l2c2.</title>
-    </rect>
-    <rect class="feature" height="20" id="t-l2b1" width="20" x="1310" y="580">
-      <title>Teleportal to/from l2b2.</title>
-    </rect>
+    <g onclick="warpTo('t-e1','t-e2')">
+      <title>Teleportal to/from e2.</title>
+      <rect class="feature" height="20" id="t-e1" width="30" x="1130" y="340"/>
+      <text class="name" x="1143" y="352">e1</text>
+    </g>
+    <g onclick="warpTo('t-d1','t-d2')">
+      <title>Teleportal to/from d2.</title>
+      <rect class="feature" height="20" id="t-d1" width="20" x="1310" y="580"/>
+      <text class="name" x="1316" y="592">d1</text>
+    </g>
     <rect class="feature" height="30" width="30" x="1125" y="820">
       <title>This scaffold reaches up high enough for someone to paint on the 40' ceiling.</title>
     </rect>
     <path class="feature" d="m1630 50h50v30h-10v10h10v30h-50v-30h10v-10h-10z">
       <title>This appears to be the Cube Farm incubator.</title>
     </path>
-    <rect class="feature" height="20" id="t-l2a1" width="20" x="1800" y="340">
-      <title>Teleportal to/from l2a2.</title>
-    </rect>
+    <g onclick="warpTo('t-c1','t-c2')">
+      <title>Teleportal to/from c2.</title>
+      <rect class="feature" height="20" id="t-c1" width="20" x="1800" y="340"/>
+      <text class="name" x="1805" y="352">c1</text>
+    </g>
     <rect class="feature" height="20" id="feature-unknown" width="30" x="1690" y="380">
       <title>This was marked on the Smoke Powder smugglers' map.  Dunno what it is yet.</title>
     </rect>
@@ -985,11 +972,8 @@
     <text class="name" x="1579" y="454">256</text>
     <text class="name" x="1680" y="441">219a</text>
     <text class="name" x="1494" y="356">258</text>
-    <text class="name" x="1800" y="353">l2a1</text>
     <text class="name" x="1670" y="508">Teleportal?</text>
     <text class="name" x="1571" y="478"><tspan x="1571" y="478">Smoke</tspan><tspan x="1571" y="485">Powder</tspan></text>
-    <text class="name" x="1311" y="592">l2b1</text>
-    <text class="name" x="1134" y="354">l2c1</text>
     <text class="name" x="1272" y="392">Bupkis</text>
     <text class="name" x="1325" y="417">Empty</text>
     <text class="name" x="1343" y="373">Crates</text>
@@ -2827,14 +2811,16 @@
     <path class="feature-water" d="m2040 1120v10h-10v20h60v-20h-30v-10h-20z">
       <title>This water-filled room had a giant gar in it.</title>
     </path>
-    <rect class="feature-bad" height="10" id="t-l1a1" width="10" x="1960" y="1150">
-      <title>Teleportal to l1a2: &quot;If you're reading this, it's already too late&quot;</title>
-    </rect>
-    <text class="name" x="1956" y="1158">l1a1</text>
-    <rect class="feature" height="8" id="t-l1a2" width="8" x="2071" y="1131">
-      <title>Teleportal from l1a1: The &quot;too late&quot; teleportal dumps you here.</title>
-    </rect>
-    <text class="name" x="2065" y="1138">l1a2</text>
+    <g onclick="warpTo('t-a1','t-a2')">
+      <title>Teleportal to a2: &quot;If you're reading this, it's already too late&quot;</title>
+      <rect class="feature-bad" height="10" id="t-a1" width="10" x="1960" y="1150"/>
+      <text class="name" x="1961" y="1158">a1</text>
+    </g>
+    <g onclick="warpTo('t-a2','t-a1')">
+      <title>Teleportal from a1: The &quot;too late&quot; teleportal dumps you here.</title>
+      <rect class="feature" height="8" id="t-a2" width="8" x="2071" y="1131"/>
+      <text class="name" x="2071" y="1138">a2</text>
+    </g>
     <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1280">
       <title>This room is filled with boiling oil. *and* magic only works above the pillars.</title>
     </rect>
@@ -2856,7 +2842,7 @@
     <path class="stairs-ew" d="m1090 1300 40 3v4l-40 3z"/>
     <path class="stairs-ew" d="m1600 1910 30 3v4l-30 3z"/>
     <path class="stairs-ew" d="m1700 1910 10 3v4l-10 3z"/>
-    <path class="stairs-ew" d="m1760 340 30 3v4l-30 3z" onclick="stairs('um-l1-m','um-l2-m')"/>
+    <path class="stairs-ew" d="m1760 340 30 3v4l-30 3z" id="s-1m-2m" onclick="warpTo('s-1m-2m','s-2m-1m')" xPos="1775" yPos="345"/>
     <path class="stairs-ns" d="m1513 1920h4l3 30h-10z" onclick="stairs('um-l1-m','um-l1-l1')"/>
     <rect class="feature" x="1540" y="1180" width="10" height="20"/>
     <path class="stairs-ns" d="m1543 1180h4l3 20h-10z" id="stairs-falling">
@@ -2890,12 +2876,16 @@
     <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="820">
       <title>This chair made out of bones used to have arms that turned into poison-spitting snakes and it was covered in gems.</title>
     </rect>
-    <rect class="feature" height="10" id="t-l1b1" width="10" x="1820" y="1620">
-      <title>Teleportal to/from l1b2.</title>
-    </rect>
-    <rect class="feature" height="10" id="t-l1b2" width="10" x="1800" y="1720">
-      <title>Teleportal to/from l1b1.</title>
-    </rect>
+    <g onclick="warpTo('t-b1','t-b2')">
+      <title>Teleportal to/from b2.</title>
+      <rect class="feature" height="10" id="t-b1" width="10" x="1820" y="1620"/>
+      <text class="name" x="1821" y="1628">b1</text>
+    </g>
+    <g onclick="warpTo('t-b2','t-b1')">
+      <title>Teleportal to/from b1.</title>
+      <rect class="feature" height="10" id="t-b2" width="10" x="1800" y="1720"/>
+      <text class="name" x="1801" y="1728">b2</text>
+    </g>
     <rect class="feature" height="10" width="10" x="1940" y="970">
       <title>Privy</title>
     </rect>
@@ -3509,8 +3499,6 @@
     <text class="name" x="1732" y="2007"><tspan x="1732" y="2007">Metal</tspan><tspan x="1732" y="2014">Spiders</tspan></text>
     <text class="name" transform="matrix(0,1,-1,0,0,0)" x="1292" y="-942">Menagerie</text>
     <text class="name" x="1519" y="1086"><tspan sodipodi:role="line" x="1519" y="1086">Somewhere around here is a secret library in a place</tspan><tspan sodipodi:role="line" x="1519" y="1093.5">where the corridor goes around a 30x30 area.</tspan></text>
-    <text class="name" x="1801" y="1728">l1b2</text>
-    <text class="name" x="1821" y="1628">l1b1</text>
     <!-- Unclassified start here -->
   </g>
   <g id="um-uk" inkscape:groupmode="layer" inkscape:label="Unknown Areas" style="display:inline">
@@ -3552,25 +3540,26 @@
       <rect class="oroom" height="50" width="40" x="1660" y="1250"/>
       <text style="font-size:34px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans" x="1757" xml:space="preserve" y="1298"><tspan sodipodi:role="line" x="1757" y="1298">*</tspan></text>
     </g>
-    <g id="uk-l2-a">
-      <rect class="corr" height="10" width="40" x="40" y="290"/>
-      <rect class="corr" height="10" width="10" x="160" y="250"/>
-      <rect class="corr" height="10" width="10" x="190" y="220"/>
-      <path class="corr" d="m130 260v30h10v-20h10v-10h-20z"/>
-      <rect class="corr" height="10" width="10" x="80" y="280"/>
-      <rect class="corr" height="10" width="10" x="100" y="280"/>
-      <rect class="room" height="40" width="40" x="160" y="180"/>
-      <rect class="room" height="20" width="40" x="160" y="230"/>
-      <path class="room" d="m40 270h-30v-20h30l10 10h40v20h-40z"/>
-      <rect class="room" height="40" width="50" x="150" y="260"/>
-      <rect class="room" height="20" width="60" x="80" y="290"/>
-      <rect class="feature" height="20" id="t-l2a2" width="20" x="20" y="280">
-        <title>Teleportal to/from l2a1.</title>
-      </rect>
-      <path class="wall" d="m10 250h30l10 10h40v30h10v-10h2"/>
-      <path class="wall" d="m108 280h2v10h20v-30h30v-30h30v-10h-30v-40h40v70h-30v10h30v40h-50v-30h-10v40h-60v-10h-60v-20h20v10h40v-10h-30l-10-10h-30"/>
-      <rect class="door" height="2" width="6" x="102" y="279"/>
-      <text class="name" x="22" y="295">l2a2</text>
+    <g id="uk-l2-c">
+      <rect class="corr" height="10" width="40" x="540" y="390"/>
+      <rect class="corr" height="10" width="10" x="660" y="350"/>
+      <rect class="corr" height="10" width="10" x="690" y="320"/>
+      <path class="corr" d="m630 360v30h10v-20h10v-10h-20z"/>
+      <rect class="corr" height="10" width="10" x="580" y="380"/>
+      <rect class="corr" height="10" width="10" x="600" y="380"/>
+      <rect class="room" height="40" width="40" x="660" y="280"/>
+      <rect class="room" height="20" width="40" x="660" y="330"/>
+      <path class="room" d="m540 370h-30v-20h30l10 10h40v20h-40z"/>
+      <rect class="room" height="40" width="50" x="650" y="360"/>
+      <rect class="room" height="20" width="60" x="580" y="390"/>
+      <g onclick="warpTo('t-c2','t-c1')">
+        <title>Teleportal to/from c1.</title>
+        <rect class="feature" height="20" id="t-c2" width="20" x="520" y="380"/>
+        <text class="name" x="526" y="392">c2</text>
+      </g>
+      <path class="wall" d="m510 350h30l10 10h40v30h10v-10h2"/>
+      <path class="wall" d="m608 380h2v10h20v-30h30v-30h30v-10h-30v-40h40v70h-30v10h30v40h-50v-30h-10v40h-60v-10h-60v-20h20v10h40v-10h-30l-10-10h-30"/>
+      <rect class="door" height="2" width="6" x="602" y="379"/>
     </g>
     <g id="uk-l2-1">
       <image height="184" width="247" x="95"
@@ -7308,24 +7297,26 @@ GxvdWnilYbEyWPtgENyq0TWR8UDWVQDnHPb1RrcWYTQ45gtIdrxdGC53PUb3dkC4Y0wO+2KhrFBc
 ir7Y9eKCV/brDGzt29Ya32s85kXwRjYeljtT4sFYhHPuZ4Pp13g6NyiWDw3vLfJ4bxfWG6NeDKuJ
 4kveF7teDE98xM8Y2wU/MjhZa2+Pb4ROWBpN5//43pkIKxTS9UuDm3zd60Pnt/oHDR/fQW/3/wn/
 C5u4zhGaK5fhAAAAAElFTkSuQmCC" y="610"/>
-    <g id="uk-l2-b">
-      <rect class="feature" height="10" id="t-l2b2" width="20" x="600" y="270">
-        <title>Teleportal to/from l2b1.</title>
-      </rect>
-      <rect class="corr" height="10" width="60" x="620" y="270"/>
-      <path class="wall" d="m680 270v10"/>
-      <text class="name" x="600" y="276">l2b2</text>
+    <g id="uk-l2-d">
+      <g onclick="warpTo('t-d2','t-d1')">
+        <title>Teleportal to/from d1.</title>
+        <rect class="feature" height="10" id="t-d2" width="20" x="800" y="370"/>
+        <text class="name" x="806" y="377">d2</text>
+      </g>
+      <rect class="corr" height="10" width="60" x="820" y="370"/>
+      <path class="wall" d="m880 370v10"/>
     </g>
-    <g id="uk-l2-c">
-      <path class="corr" d="m550 170v10h-10v10h10v110h-30v30h10v-10h30v10h10v-140h10v-10h-20v-10h-10z"/>
-      <rect class="feature" height="20" id="t-l2c2" width="20" x="560" y="330">
-        <title>Teleportal to/from l2c1.</title>
-      </rect>
-      <path class="wall" d="m540 180h10v-10"/>
-      <path class="wall" d="m560 170v10h20"/>
-      <path class="wall" d="m540 190h10v110h-30v30"/>
-      <path class="wall" d="m530 330v-10h30v30h20v-20h-10v-140h10"/>
-      <text class="name" x="562" y="341">l2c2</text>
+    <g id="uk-l2-e">
+      <path class="corr" d="m750 170v10h-10v10h10v110h-30v30h10v-10h30v10h10v-140h10v-10h-20v-10h-10z"/>
+      <g onclick="warpTo('t-e2','t-e1')">
+        <title>Teleportal to/from e1.</title>
+        <rect class="feature" height="20" id="t-e2" width="20" x="760" y="330"/>
+        <text class="name" x="766" y="343">e2</text>
+      </g>
+      <path class="wall" d="m740 180h10v-10"/>
+      <path class="wall" d="m760 170v10h20"/>
+      <path class="wall" d="m740 190h10v110h-30v30"/>
+      <path class="wall" d="m730 330v-10h30v30h20v-20h-10v-140h10"/>
     </g>
   </g>
   <g id="menu" inkscape:groupmode="layer" style="display:inline" transform="translate(0,0)">
