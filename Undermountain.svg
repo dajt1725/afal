@@ -651,7 +651,9 @@
   <g id="um-l2-m" inkscape:groupmode="layer" inkscape:label="Level 2 Main" style="display:none">
     <!-- Corridors, rooms, stairs, pits, walls, doors, features, names -->
     <!-- Corridors start here -->
-    <path class="corr" d="m1640 220h-20v-20h10v10h50v-10h-90v-30h10v-10h-10v-30h10v-10h-10v-30h10v-20h10v-10h10v10h10v10h-20v20h-10v10h10v30l-10-1v11h10v30h-10v10h10v-20h10v-10h-10v-30h10v-10h-10v-30h10v-10h10v20h-10v10h10v30h-10v10h10v30l-10 1v9h10v-20h10v-10h-10v-30h10v-10h10v10h10v-10h10v20h-10v20h-10v-20h-10v10h10v30h-10v10h10v-20h10v20h10v-10h-10v-30h10v-20h10v-20h10v-10h-10v-30h10v20h10v30h-10v20h-10v20h-10v10h10v20h10v-10h-10v-30h10v-20h10v30h-10v10h10v20h10v-10h-10v-30h10v-10h-10v-30h20v10h-10v10h10v30h-10v10h10v30h-30v20h-20v30h-10v-30h-10v30h-10z"/>
+    <path class="corr" d="m1640 220h-20v-20h10v10h50v-10h-90v-30h10v-10h-10v-30h10v-10h-10v-30h10v-20h10v-10h10v10h10v10h-20v20h-10v10h10v30l-10-1v11h10v30h-10v10h10v-20h10v-10h-10v-30h10v-10h-10v-30h10v-10h10v20h-10v10h10v30h-10v10h10v30l-10 1v9h10v-20h10v-10h-10v-30h10v-10h10v10h10v-10h10v20h-10v20h-10v-20h-10v10h10v30h-10v10h10v-20h10v20h10v-10h-10v-30h10v-20h10v-20h10v-10h-10v-30h10v20h10v30h-10v20h-10v20h-10v10h10v20h10v-10h-10v-30h10v-20h10v30h-10v10h10v20h10v-10h-10v-30h10v-10h-10v-30h20v10h-10v10h10v30h-10v10h10v30h-30v20h-20v30h-10v-30h-10v30h-10z">
+      <title>Cube Farm full of gelatenous cubes.</title>
+    </path>
     <path class="corr" d="m1550 340v60h10v-30h40v10h10v-10h20v-10h-20v-10h20v-10h-60v10h30v10h-40v-20z"/>
     <path class="corr" d="m1660 380h20v10h-20zm0-30h20v10h-20zm-10-30h10v70h-10z"/>
     <rect class="corr" height="10" width="10" x="1640" y="480"/>
