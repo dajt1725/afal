@@ -7,6 +7,14 @@
     var um; // unmenu
     var u; // Undermountain.svg
     var p; // parent node of the svg
+    var w; // warning text
+
+    function warnUser(t) {
+      if (!t) {
+        t = 'Click captions to toggle visibility.';
+      }
+      w.nodeValue = t;
+    }
     // helper function to set map locations
     function moveMap(x,y) {
       var newtrans = 'translate(' + x + ',' + y + '), scale(' + 1 / scaling + ')'
@@ -29,6 +37,11 @@
         window.scrollTo(x * scaling, y * scaling);
         nx = window.pageXOffset/scaling;
         ny = window.pageYOffset/scaling;
+      }
+      if (Math.floor(x) != Math.floor(nx) || Math.floor(y) != Math.floor(ny)) {
+        warnUser("Can't scroll that far.");
+      } else {
+        warnUser(null);
       }
       moveMap(nx,ny);
     }
@@ -196,7 +209,7 @@
       if (!c)
         c = evt.keyCode;
       switch (c) {
-      case 105: document.getElementById('errortext').firstChild.nodeValue = "at "+getX()+" "+getY()+", max "+getMaxX()+" "+getMaxY()+", screen "+getWidth(1)+" "+getHeight(1)+", scaling "+scaling; break; // i
+      case 105: warnUser("at "+getX()+" "+getY()+", max "+getMaxX()+" "+getMaxY()+", screen "+getWidth(1)+" "+getHeight(1)+", scaling "+scaling); break; // i
       case 118: verbose = !verbose; break; // v
       case 39: tIcK(evt,-1,-1); break; // '
       case 44: tIcK(evt,0,-1); break; // ,
@@ -232,7 +245,7 @@
       case 100: sCrOlL(evt,0,1); break; // d
       }
     }
-    function warpTo(n1, n2) {
+    function warpTo(n1, n2, turnoff) {
       var tfm = document.getElementById(n1);
       var xfm = tfm.getAttributeNS(null,'xPos');
       var yfm = tfm.getAttributeNS(null,'yPos');
@@ -267,6 +280,10 @@
           document.getElementById('b-'+lfm.id).style.fill = '#ff0000';
         }
       }
+      if (turnoff) {
+        document.getElementById(turnoff).style.display = 'none';
+        document.getElementById('b-'+turnoff).style.fill = '#ff0000';
+      }
       newView(xto - xfm, yto - yfm);
     }
     function moveMenu(evt) {
@@ -289,7 +306,7 @@
         y = document.documentElement.scrollTop;
       } else {
         // alert('d');
-        document.getElementById('errortext').firstChild.nodeValue = 'Unknown broser type';
+        warnUser('Unknown browser type');
       }
       x /= scaling;
       y /= scaling;
@@ -299,7 +316,7 @@
       document.documentElement.addEventListener('keypress',kEy,false);
       m = document.getElementById('menu');
       um = document.getElementById('unmenu');
-      moveMap(0,0);
+      w = document.getElementById('errortext').firstChild;
       u = document.getElementById('Undermountain');
       p = u.parentElement;
       if (p) {
@@ -307,6 +324,7 @@
       } else {
         window.onscroll = moveMenu;
       }
+      moveMap(0,0);
     }
     function toggleLayer(e, n) {
       var l = document.getElementById(n).style;
@@ -617,7 +635,7 @@
     <rect class="corr" height="10" width="10" x="1840" y="330"/>
     <rect class="corr" height="10" width="10" x="1780" y="330"/>
     <rect class="room" height="30" width="50" x="1790" y="310"/>
-    <g onclick="warpTo('s-2l1-2m','s-2m-2l1')">
+    <g onclick="warpTo('s-2l1-2m','s-2m-2l1', 'um-l1-m')">
       <title>These stairs raise into the ceiling until the lever is pulled.</title>
       <rect class="feature" height="30" width="10" x="1810" y="410" id="s-2l1-2m"/>
       <path class="stairs-ns" d="m1813 410h4l3 30h-10z"/>
@@ -761,11 +779,11 @@
     <path class="stairs-ew" d="m1510 463 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1510 363 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1710 530 20 3v4l-20 3z"/>
-    <path class="stairs-ew" d="m1750 540 80 3v4l-80 3z" id="s-2m-1m" onclick="warpTo('s-2m-1m','s-1m-2m')" xPos="1790" yPos="545"/>
+    <path class="stairs-ew" d="m1750 540 80 3v4l-80 3z" id="s-2m-1m" onclick="warpTo('s-2m-1m','s-1m-2m', null)" xPos="1790" yPos="545"/>
     <path class="stairs-ew" d="m1890 580 20 3v4l-20 3z"/>
     <path class="stairs-ns" d="m1550 400h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m1630 420h10l-3 10h-4z"/>
-    <g onclick="warpTo('s-2m-2l1','s-2l1-2m')">
+    <g onclick="warpTo('s-2m-2l1','s-2l1-2m', 'um-l1-m')">
       <title>This section of floor turns into stairs when the lever is pulled.</title>
       <rect class="feature" height="30" width="10" x="1810" y="410" id="s-2m-2l1"/>
       <path class="stairs-ns" d="m1813 410h4l3 30h-10z"/>
@@ -785,12 +803,12 @@
     <rect class="feature-bad" height="30" width="30" x="1270" y="340">
       <title>This room is divided into black and white squares, checkerboard style.  The black squares can turn into solid darkness when they are stepped on.  Either the black or white squares (depending on the position of the lever) will zap lightning throughtout the room.</title>
     </rect>
-    <g onclick="warpTo('t-e1','t-e2')">
+    <g onclick="warpTo('t-e1','t-e2', 'um-l1-m')">
       <title>Teleportal to/from e2.</title>
       <rect class="feature" height="20" id="t-e1" width="30" x="1130" y="340"/>
       <text class="name" x="1143" y="352">e1</text>
     </g>
-    <g onclick="warpTo('t-d1','t-d2')">
+    <g onclick="warpTo('t-d1','t-d2', 'um-l1-m')">
       <title>Teleportal to/from d2.</title>
       <rect class="feature" height="20" id="t-d1" width="20" x="1310" y="580"/>
       <text class="name" x="1316" y="592">d1</text>
@@ -801,7 +819,7 @@
     <path class="feature" d="m1630 50h50v30h-10v10h10v30h-50v-30h10v-10h-10z">
       <title>This appears to be the Cube Farm incubator.</title>
     </path>
-    <g onclick="warpTo('t-c1','t-c2')">
+    <g onclick="warpTo('t-c1','t-c2', 'um-l1-m')">
       <title>Teleportal to/from c2.</title>
       <rect class="feature" height="20" id="t-c1" width="20" x="1800" y="340"/>
       <text class="name" x="1805" y="352">c1</text>
@@ -1159,51 +1177,82 @@
     <path class="stairs-ew" d="m1550 1113 20-3v10l-20-3z" onclick="stairs('fluffy', 'um-l1-21')">
       <title>To L1-210</title>
     </path>
-    <rect class="feature" height="10" width="10" x="1950" y="1330">
-      <title>&quot;We never go this way because it would make us dead.&quot;</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="2150" y="1390">
-      <title>&quot;We never go that way, don't know why.&quot;</title>
-    </rect>
-    <rect class="feature" height="20" width="20" x="2180" y="720">
-      <title>&quot;We never go that way, don't know why.&quot;</title>
-    </rect>
-    <rect class="feature" height="20" width="10" x="2090" y="740">
-      <title>Here there be troll.</title>
-    </rect>
-    <rect class="feature" height="20" width="10" x="1680" y="1460">
+    <g>
       <title>This way to Skullport.</title>
-    </rect>
-    <rect class="feature" height="20" width="20" x="1880" y="1510">
-      <title>&quot;We never go this way.  I don't know why.&quot;</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="1910" y="1770">
-      <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="20" width="10" x="1500" y="860">
-      <title>&quot;We never go this way.  I don't know why.&quot;</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="2000" y="1220">
+      <rect class="feature" height="20" width="10" x="1680" y="1460"/>
+      <text class="name" x="1683" y="1472">B</text>
+    </g>
+    <g>
+      <title>&quot;We never go that way, don't know why.&quot;</title>
+      <rect class="feature" height="10" width="10" x="2150" y="1390"/>
+      <text class="name" x="2153" y="1397">C</text>
+      <rect class="feature" height="20" width="20" x="2180" y="720"/>
+      <text class="name" x="2188" y="732">C</text>
+      <rect class="feature" height="20" width="20" x="1880" y="1510"/>
+      <text class="name" x="1888" y="1522">C</text>
+      <rect class="feature" height="20" width="10" x="1500" y="860"/>
+      <text class="name" x="1503" y="872">C</text>
+    </g>
+    <g>
+      <title>Food and nasty bats in here.</title>
+      <rect class="feature" height="20" width="20" x="1660" y="980"/>
+      <text class="name" x="1668" y="992">D</text>
+    </g>
+    <g>
+      <title>Fi'i'tharg Lair.  Frog thing?  Ogres leave it tribute.</title>
+      <rect class="feature" height="20" width="20" x="1800" y="1220"/>
+      <text class="name" x="1808" y="1234">E</text>
+    </g>
+    <g>
       <title>&quot;We never go this way because it would make us dead.&quot;</title>
-    </rect>
-    <rect class="feature" height="20" width="10" x="2100" y="1030">
+      <rect class="feature" height="10" width="10" x="1950" y="1330"/>
+      <rect class="feature" height="10" width="10" x="2000" y="1220"/>
+      <text class="name" x="2003" y="1228">F</text>
+      <text class="name" x="1953" y="1338">F</text>
+    </g>
+    <g>
+      <title>Here there be troll.</title>
+      <rect class="feature" height="20" width="10" x="2090" y="740"/>
+      <text class="name" x="2093" y="753">G</text>
+    </g>
+    <g>
       <title>Ogre camp/lair.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="2220" y="1260">
+      <rect class="feature" height="20" width="10" x="2100" y="1030"/>
+      <text class="name" x="2103" y="1042">H</text>
+    </g>
+    <g>
       <title>Ogre Leaders' Quarters.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="1930" y="1770">
+      <rect class="feature" height="10" width="10" x="2220" y="1260"/>
+      <text class="name" x="2223" y="1268">I</text>
+    </g>
+    <g>
       <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="2030" y="1770">
-      <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="2010" y="1770">
-      <title>These all connect somehow.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="2040" y="1660">
+      <rect class="feature" height="10" width="10" x="1910" y="1770"/>
+      <rect class="feature" height="10" width="10" x="1930" y="1770"/>
+      <rect class="feature" height="10" width="10" x="2030" y="1770"/>
+      <rect class="feature" height="10" width="10" x="2010" y="1770"/>
+      <text class="name" x="1915" y="1776">J</text>
+      <text class="name" x="1935" y="1775">J</text>
+      <text class="name" x="2033" y="1776">J</text>
+      <text class="name" x="2013" y="1775">J</text>
+    </g>
+    <g>
       <title>Good area to hunt giant lizards.</title>
-    </rect>
+      <rect class="feature" height="10" width="10" x="2040" y="1660"/>
+      <rect class="feature" height="10" width="10" x="1910" y="790"/>
+      <text class="name" x="2043" y="1667">K</text>
+      <text class="name" x="1913" y="797">K</text>
+    </g>
+    <g>
+      <title>Strange lights here.</title>
+      <rect class="feature" height="10" width="10" x="1860" y="950"/>
+      <text class="name" x="1862" y="956">L</text>
+    </g>
+    <g>
+      <title>Bigass spiders here, at least two, maybe five.  White fuzzy cold kind.</title>
+      <rect class="feature" height="10" width="10" x="2100" y="1540"/>
+      <text class="name" x="2103" y="1548">M</text>
+    </g>
     <path class="wall" d="m1970 1388v2h10v10h-50v30h-10v-120h70v10h-20v10h-20"/>
     <path class="wall" d="m1950 1340h20v42"/>
     <path class="wall" d="m2012 1370h-2v10h-10v-70h40l10 10v10h10v10h2-12v30h10v10h2-42v-10h-2 22v-50h-30v20h20v10h-20v20z"/>
@@ -1273,21 +1322,6 @@
     </path>
     <rect class="feature" height="20" width="2" x="2051" y="1010"/>
     <rect class="feature" height="20" width="2" x="1766" y="850"/>
-    <rect class="feature" height="10" width="10" x="1910" y="790">
-      <title>Good area to hunt giant lizards.</title>
-    </rect>
-    <rect class="feature" height="17" width="17" x="1661" y="986">
-      <title>Food and nasty bats in here.</title>
-    </rect>
-    <rect class="feature" height="20" width="21" x="1801" y="1221">
-      <title>Fi'i'tharg Lair.  Frog thing?  Ogres leave it tribute.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="1860" y="950">
-      <title>Strange lights here.</title>
-    </rect>
-    <rect class="feature" height="10" width="10" x="2100" y="1540">
-      <title>Bigass spiders here, at least two, maybe five.  White fuzzy cold kind.</title>
-    </rect>
     <path class="feature" d="m1810 1258-3 12h6z"/>
     <path class="feature" d="m1810 1308-3 12h6z"/>
     <path class="feature" d="m1652 995-12-3v6z"/>
@@ -1332,26 +1366,6 @@
       <circle class="column" cx="1900" cy="1265" r="4"/>
       <circle class="column" cx="1900" cy="1280" r="4"/>
     </g>
-    <text class="name" x="1682" y="1480">B</text>
-    <text class="name" x="1502" y="868">C</text>
-    <text class="name" x="2188" y="732">C</text>
-    <text class="name" x="1888" y="1519">C</text>
-    <text class="name" x="2153" y="1396">C</text>
-    <text class="name" x="1667" y="996">D</text>
-    <text class="name" x="1810" y="1232">E</text>
-    <text class="name" x="2005" y="1227">F</text>
-    <text class="name" x="1953" y="1339">F</text>
-    <text class="name" x="2092" y="756">G</text>
-    <text class="name" x="2224" y="1269">I</text>
-    <text class="name" x="1915" y="1776">J</text>
-    <text class="name" x="1935" y="1775">J</text>
-    <text class="name" x="2033" y="1776">J</text>
-    <text class="name" x="2013" y="1775">J</text>
-    <text class="name" x="2043" y="1667">K</text>
-    <text class="name" x="2102" y="1047">H</text>
-    <text class="name" x="1913" y="797">K</text>
-    <text class="name" x="1862" y="956">L</text>
-    <text class="name" x="2102" y="1546">M</text>
   </g>
   <g id="um-l1-24" inkscape:groupmode="layer" inkscape:label="Level 1 -240" style="display:none">
     <path class="corr" d="m1630 1210v10h10v40h20v-20h-10v-30h-20z"/>
@@ -1403,7 +1417,11 @@
       <circle class="column" cx="1540" cy="1120" r="2"/>
       <circle class="column" cx="1570" cy="1120" r="2"/>
     </g>
-    <text class="name" x="1564" y="1153">A</text>
+    <g>
+      <title>Entrance to minotaur maze.</title>
+      <rect class="feature" x="1550" y="1140" width="20" height="20"/>
+      <text class="name" x="1564" y="1150">A</text>
+    </g>
     <text class="name" x="1554" y="1197">89</text>
     <text class="name" x="1503" y="1125">91</text>
   </g>
@@ -2811,12 +2829,12 @@
     <path class="feature-water" d="m2040 1120v10h-10v20h60v-20h-30v-10h-20z">
       <title>This water-filled room had a giant gar in it.</title>
     </path>
-    <g onclick="warpTo('t-a1','t-a2')">
+    <g onclick="warpTo('t-a1','t-a2', null)">
       <title>Teleportal to a2: &quot;If you're reading this, it's already too late&quot;</title>
       <rect class="feature-bad" height="10" id="t-a1" width="10" x="1960" y="1150"/>
       <text class="name" x="1961" y="1158">a1</text>
     </g>
-    <g onclick="warpTo('t-a2','t-a1')">
+    <g onclick="warpTo('t-a2','t-a1', null)">
       <title>Teleportal from a1: The &quot;too late&quot; teleportal dumps you here.</title>
       <rect class="feature" height="8" id="t-a2" width="8" x="2071" y="1131"/>
       <text class="name" x="2071" y="1138">a2</text>
@@ -2842,7 +2860,7 @@
     <path class="stairs-ew" d="m1090 1300 40 3v4l-40 3z"/>
     <path class="stairs-ew" d="m1600 1910 30 3v4l-30 3z"/>
     <path class="stairs-ew" d="m1700 1910 10 3v4l-10 3z"/>
-    <path class="stairs-ew" d="m1760 340 30 3v4l-30 3z" id="s-1m-2m" onclick="warpTo('s-1m-2m','s-2m-1m')" xPos="1775" yPos="345"/>
+    <path class="stairs-ew" d="m1760 340 30 3v4l-30 3z" id="s-1m-2m" onclick="warpTo('s-1m-2m','s-2m-1m', null)" xPos="1775" yPos="345"/>
     <path class="stairs-ns" d="m1513 1920h4l3 30h-10z" onclick="stairs('um-l1-m','um-l1-l1')"/>
     <rect class="feature" x="1540" y="1180" width="10" height="20"/>
     <path class="stairs-ns" d="m1543 1180h4l3 20h-10z" id="stairs-falling">
@@ -2876,12 +2894,12 @@
     <rect class="feature" height="10" id="bone-throne" width="10" x="1980" y="820">
       <title>This chair made out of bones used to have arms that turned into poison-spitting snakes and it was covered in gems.</title>
     </rect>
-    <g onclick="warpTo('t-b1','t-b2')">
+    <g onclick="warpTo('t-b1','t-b2', null)">
       <title>Teleportal to/from b2.</title>
       <rect class="feature" height="10" id="t-b1" width="10" x="1820" y="1620"/>
       <text class="name" x="1821" y="1628">b1</text>
     </g>
-    <g onclick="warpTo('t-b2','t-b1')">
+    <g onclick="warpTo('t-b2','t-b1', null)">
       <title>Teleportal to/from b1.</title>
       <rect class="feature" height="10" id="t-b2" width="10" x="1800" y="1720"/>
       <text class="name" x="1801" y="1728">b2</text>
@@ -3552,7 +3570,7 @@
       <path class="room" d="m540 370h-30v-20h30l10 10h40v20h-40z"/>
       <rect class="room" height="40" width="50" x="650" y="360"/>
       <rect class="room" height="20" width="60" x="580" y="390"/>
-      <g onclick="warpTo('t-c2','t-c1')">
+      <g onclick="warpTo('t-c2','t-c1', 'um-l1-m')">
         <title>Teleportal to/from c1.</title>
         <rect class="feature" height="20" id="t-c2" width="20" x="520" y="380"/>
         <text class="name" x="526" y="392">c2</text>
@@ -7298,7 +7316,7 @@ ir7Y9eKCV/brDGzt29Ya32s85kXwRjYeljtT4sFYhHPuZ4Pp13g6NyiWDw3vLfJ4bxfWG6NeDKuJ
 4kveF7teDE98xM8Y2wU/MjhZa2+Pb4ROWBpN5//43pkIKxTS9UuDm3zd60Pnt/oHDR/fQW/3/wn/
 C5u4zhGaK5fhAAAAAElFTkSuQmCC" y="610"/>
     <g id="uk-l2-d">
-      <g onclick="warpTo('t-d2','t-d1')">
+      <g onclick="warpTo('t-d2','t-d1', 'um-l1-m')">
         <title>Teleportal to/from d1.</title>
         <rect class="feature" height="10" id="t-d2" width="20" x="800" y="370"/>
         <text class="name" x="806" y="377">d2</text>
@@ -7308,7 +7326,7 @@ C5u4zhGaK5fhAAAAAElFTkSuQmCC" y="610"/>
     </g>
     <g id="uk-l2-e">
       <path class="corr" d="m750 170v10h-10v10h10v110h-30v30h10v-10h30v10h10v-140h10v-10h-20v-10h-10z"/>
-      <g onclick="warpTo('t-e2','t-e1')">
+      <g onclick="warpTo('t-e2','t-e1', 'um-l1-m')">
         <title>Teleportal to/from e1.</title>
         <rect class="feature" height="20" id="t-e2" width="20" x="760" y="330"/>
         <text class="name" x="766" y="343">e2</text>
@@ -7320,14 +7338,10 @@ C5u4zhGaK5fhAAAAAElFTkSuQmCC" y="610"/>
     </g>
   </g>
   <g id="menu" inkscape:groupmode="layer" style="display:inline" transform="translate(0,0)">
-    <text onclick="rEsIzE(evt, 1.1)" style="font-size:14px;fill:#000000" x="1em" y="1em">B</text>
-    <text onclick="sCrOlL(evt, -1,  0)" style="font-size:14px;fill:#000000" x="2em" y="1em">L</text>
-    <text onclick="sCrOlL(evt,  1,  0)" style="font-size:14px;fill:#000000" x="3em" y="1em">R</text>
-    <text onclick="rEsIzE(evt, 0.9)" style="font-size:14px;fill:#000000" x="1em" y="2em">S</text>
-    <text onclick="sCrOlL(evt,   0,-1)" style="font-size:14px;fill:#000000" x="2em" y="2em">U</text>
-    <text onclick="sCrOlL(evt,   0, 1)" style="font-size:14px;fill:#000000" x="3em" y="2em">D</text>
-    <text onclick="document.getElementById('menu').style.display = 'none';document.getElementById('unmenu').style.display = 'inline'" style="font-size:14px;fill:#000000" x="14em" y="1em">Map of Undermountain as of Tarsakh 28 1370</text>
-    <text id="errortext" style="font-size:14px;fill:#000000" x="14em" y="2em">Click captions to toggle visibility.</text>
+    <text onclick="rEsIzE(evt, 1.1)" style="font-size:28px;fill:#000000" x="1em" y="1em">B</text>
+    <text onclick="rEsIzE(evt, 0.9)" style="font-size:28px;fill:#000000" x="3em" y="1em">S</text>
+    <text onclick="document.getElementById('menu').style.display = 'none';document.getElementById('unmenu').style.display = 'inline'" style="font-size:14px;fill:#000000" x="10em" y="1em">Map of Undermountain as of Tarsakh 28 1370</text>
+    <text id="errortext" style="font-size:14px;fill:#000000" x="10em" y="2em">Click captions to toggle visibility.</text>
     <text id="b-um-l1-m" onclick="toggleLayer(evt,'um-l1-m')" style="font-size:10px;fill:#000000" x="1em" y="4em">Level 1 Main</text>
     <text id="b-um-l1-l1" onclick="toggleLayer(evt,'um-l1-l1')" style="font-size:10px;fill:#ff0000" x="8em" y="4em">Lower 1</text>
     <text id="b-um-l2-m" onclick="toggleLayer(evt,'um-l2-m')" style="font-size:10px;fill:#ff0000" x="15em" y="4em">Level 2 Main</text>
@@ -7355,6 +7369,6 @@ C5u4zhGaK5fhAAAAAElFTkSuQmCC" y="610"/>
     <text id="b-fluffy" onclick="toggleLayer(evt,'fluffy')" style="font-size:10px;fill:#ff0000" x="22em" y="9em">Fluffy's Map</text>
   </g>
   <g id="unmenu" style="display:none" transform="translate(0,0)">
-    <text onclick="document.getElementById('menu').style.display = 'inline';document.getElementById('unmenu').style.display = 'none'" style="font-size:14px;fill:#000000" x="4em" y="1em">M</text>
+    <text onclick="document.getElementById('menu').style.display = 'inline';document.getElementById('unmenu').style.display = 'none'" style="font-size:14px;fill:#000000" x="10em" y="1em">M</text>
   </g>
 </svg>
