@@ -245,10 +245,14 @@
       case 100: sCrOlL(evt,0,1); break; // d
       }
     }
+    // Change layers and/or position so that the element named n2 is in the
+    // window where the element named n1 was.  If n1 and n2 are on different
+    // layers, n1's layer is made invisible, and n2's layer is visible.  Also
+    // if turnoff is non-null, that layer is made invisible too.
     function warpTo(n1, n2, turnoff) {
       var tfm = document.getElementById(n1);
-      var xfm = tfm.getAttributeNS(null,'xPos');
-      var yfm = tfm.getAttributeNS(null,'yPos');
+      var xfm = tfm.getAttribute('xpos');
+      var yfm = tfm.getAttribute('ypos');
       if (!xfm) {
         xfm = tfm.x.baseVal.value + tfm.width.baseVal.value/2;
         yfm = tfm.y.baseVal.value + tfm.height.baseVal.value/2;
@@ -256,19 +260,19 @@
       xfm -= getX();
       yfm -= getY();
       var lfm = tfm.parentElement;
-      while (lfm.getAttributeNS('http://www.inkscape.org/namespaces/inkscape', 'groupmode') != 'layer') {
+      while (lfm.getAttribute('inkscape:groupmode') != 'layer') {
         lfm = lfm.parentElement;
       }
 
       var tto = document.getElementById(n2);
-      var xto = tto.getAttributeNS(null,'xPos');
-      var yto = tto.getAttributeNS(null,'yPos');
+      var xto = tto.getAttribute('xpos');
+      var yto = tto.getAttribute('ypos');
       if (!xto) {
         xto = tto.x.baseVal.value + tto.width.baseVal.value/2;
         yto = tto.y.baseVal.value + tto.height.baseVal.value/2;
       }
       var lto = tto.parentElement;
-      while (lto.getAttributeNS('http://www.inkscape.org/namespaces/inkscape', 'groupmode') != 'layer') {
+      while (lto.getAttribute('inkscape:groupmode') != 'layer') {
         lto = lto.parentElement;
       }
 
@@ -781,7 +785,7 @@
     <path class="stairs-ew" d="m1510 463 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1510 363 10-3v10l-10-3z"/>
     <path class="stairs-ew" d="m1710 530 20 3v4l-20 3z"/>
-    <path class="stairs-ew" d="m1750 540 80 3v4l-80 3z" id="s-2m-1m" onclick="warpTo('s-2m-1m','s-1m-2m', null)" xPos="1790" yPos="545"/>
+    <path class="stairs-ew" d="m1750 540 80 3v4l-80 3z" id="s-2m-1m" onclick="warpTo('s-2m-1m','s-1m-2m', null)" xpos="1790" ypos="545"/>
     <path class="stairs-ew" d="m1890 580 20 3v4l-20 3z"/>
     <path class="stairs-ns" d="m1550 400h10l-3 10h-4z"/>
     <path class="stairs-ns" d="m1630 420h10l-3 10h-4z"/>
@@ -2862,7 +2866,7 @@
     <path class="stairs-ew" d="m1090 1300 40 3v4l-40 3z"/>
     <path class="stairs-ew" d="m1600 1910 30 3v4l-30 3z"/>
     <path class="stairs-ew" d="m1700 1910 10 3v4l-10 3z"/>
-    <path class="stairs-ew" d="m1760 340 30 3v4l-30 3z" id="s-1m-2m" onclick="warpTo('s-1m-2m','s-2m-1m', null)" xPos="1775" yPos="345"/>
+    <path class="stairs-ew" d="m1760 340 30 3v4l-30 3z" id="s-1m-2m" onclick="warpTo('s-1m-2m','s-2m-1m', null)" xpos="1775" ypos="345"/>
     <path class="stairs-ns" d="m1513 1920h4l3 30h-10z" onclick="stairs('um-l1-m','um-l1-l1')"/>
     <rect class="feature" x="1540" y="1180" width="10" height="20"/>
     <path class="stairs-ns" d="m1543 1180h4l3 20h-10z" id="stairs-falling">
