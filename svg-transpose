@@ -24,7 +24,6 @@ style_re2 = re.compile(";display:inline;")
 style_repl2 = ';'
 style_re3 = re.compile("^display:inline;")
 style_repl3 = ''
-rem_style = re.compile('#pattern[-0-9]{2,}')
 
 style_to_class = {
  'font-size:10px;fill:#000000': None,
@@ -717,6 +716,5 @@ for i in a.childNodes:
         do_update(i, 0, 0)
     else:
         do_update(i, args.x, args.y)
-f = open(args.outfile, 'w')
-a.writexml(f)
-f.close()
+with open(args.outfile, 'w') as f:
+    a.writexml(f)

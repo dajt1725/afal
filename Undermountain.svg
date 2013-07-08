@@ -2848,7 +2848,7 @@
     <rect class="feature-bad" height="50" id="cooking-room-boiling-oil" width="50" x="1040" y="1280">
       <title>This room is filled with boiling oil. *and* magic only works above the pillars.</title>
     </rect>
-    <rect class="stairs-ns" height="10" width="10" x="1940" y="280"/>
+    <path class="stairs-ns" d="m1943 280h4l3 10h-10z"/>
     <rect class="stairs-ew" height="10" width="20" x="1920" y="1290"/>
     <path class="stairs-ns" d="m2310 810h10l-3 10h-4z"/>
     <path class="stairs-ew" d="m2720 670 20 3v4l-20 3z" id="stairs-cursd-c-u" onclick="stairs('um-l1-m','um-l1-l1')"/>
