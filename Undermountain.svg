@@ -4430,7 +4430,7 @@
       <rect class="sec-door" height="2" width="6" x="1562" y="459"/>
     </g>
   </g>
-  <g id="menu" inkscape:groupmode="layer" style="display:none" transform="translate(0,0)">
+  <g id="menu" inkscape:groupmode="layer" style="display:inline" transform="translate(0,0)">
     <text onclick="rEsIzE(evt, 1.1)" style="font-size:28px;fill:#000000" x="1em" y="1em">B</text>
     <text onclick="rEsIzE(evt, 0.9)" style="font-size:28px;fill:#000000" x="3em" y="1em">S</text>
     <text onclick="document.getElementById('menu').style.display = 'none';document.getElementById('unmenu').style.display = 'inline'" style="font-size:14px;fill:#000000" x="10em" y="1em">Map of Undermountain as of Greengrass Festival 1370</text>
