@@ -3,6 +3,12 @@ import argparse
 from xml.dom.minidom import parse, parseString
 import re
 
+#
+# Notes on using:
+# To allow box transforms to work correctly, make sure the origin (0,0)
+# is not in the box, else all your relative paths will get transformed, whether
+# you want them to or not.
+
 unneeded_attributes = {
  'inkscape:connector-curvature': re.compile('^0$'),
  'sodipodi:nodetypes': re.compile('^c*$'),
@@ -37,6 +43,7 @@ style_to_class = {
  'fill:url(#stairs-ne-warped-1);fill-opacity:1;stroke:none': None,
  'fill:url(#agrid);fill-opacity:1;stroke:none': None,
  'display:inline': None,
+ 'display:none': None,
  'font-size:34px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans;-inkscape-font-specification:Sans': None,
 
  'fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1': 'wall',
@@ -312,6 +319,8 @@ def abs_list_to_rel(l):
     return ret
 
 def _in(p, r):
+    if not r:
+        return True
     if p[0] >= r[0] and p[0] <= r[2] and p[1] >= r[1] and p[1] <= r[3]:
         return True
     else:
@@ -326,10 +335,12 @@ def _a(a, b):
 def _cond_rel_mv(cur, box, to_new, d, nd):
     ret = [0, 0]
     new_pos = _a(cur, to_new)
-    if not _in(cur, box) and _in(new_pos, box):
+    i1 = _in(cur, box)
+    i2 = _in(new_pos, box)
+    if not i1 and i2:
         new_pos = _a(new_pos, d)
         ret = d
-    elif _in(cur, box) and not _in(new_pos, box):
+    elif i1 and not i2:
         ret = nd
     return (new_pos, ret)
 
@@ -419,11 +430,15 @@ def cond_transpose_list(l, r, d):
                 i[j] = c[1]
         elif ch == 'z' or ch == 'Z':
             c = s
+            ch = u'z'
         else:
             print "Unknown movement char "+ch+" in path"
-        t = [ch]
-        t.extend(i)
-        ret.append(t)
+        if ch == 'z':
+            ret.extend(ch)
+        else:
+            t = [ch]
+            t.extend(i)
+            ret.append(t)
     return ret
 
 
@@ -509,29 +524,34 @@ def list_to_path(l):
 ####### xy transform
 
 def upd(n,a,d):
+    if not n.attributes:
+        return
     v = n.getAttribute(a)
-    if v is not None and v != '':
-        try:
-            i = float(v) + d
-        except:
-            return
-        if args.fraction:
-            i = round(i)
-        elif i == float(int(i)):
-            i = int(i)
-        else:
-            print "fractional coordinate ",a,i
-        if args.verbose:
-            print "updating",a,'(',v,')','by',d,'to',i
-        n.setAttribute(a,str(i))
+    if not v:
+        return
+    try:
+        i = float(v) + d
+    except:
+        return
+    if args.fraction:
+        i = round(i)
+    elif i == float(int(i)):
+        i = int(i)
+    else:
+        print "fractional coordinate ",a,i
+    if args.verbose:
+        print "updating",a,'(',v,')','by',d,'to',i
+    n.setAttribute(a,str(i))
+
 
 def strip_ids(n):
     if n.attributes is not None:
-        i = n.attributes.getNamedItem('id')
-        if i and i.value != '' and id_regex.match(i.value):
-            n.attributes.removeNamedItem('id')
+        i = n.getAttribute('id')
+        if i and id_regex.match(i):
+            n.removeAttribute('id')
     for i in n.childNodes:
         strip_ids(i)
+
 
 def do_update(n,dx,dy):
 # We never update patterns, even though we should
@@ -539,164 +559,192 @@ def do_update(n,dx,dy):
         for i in n.childNodes:
             strip_ids(i)
         return
-# We ignore g elements, but update their children
+
     if n.attributes:
-        prname = "{o} {id}".format(o=n.nodeName, id=n.getAttribute("id"))
-        if args.verbose:
-            print prname
-        if args.style and n.nodeName != 'g':
-            ele_class = n.attributes.getNamedItem('class')
-            if ele_class:
-                if args.verbose:
-                    print "class",ele_class.specified,ele_class.value
-                ele_class = ele_class.value
-            ele_style = n.attributes.getNamedItem('style')
-            if ele_style:
-                if args.verbose:
-                    print "style", ele_style.specified,ele_style.value
-                ele_style = ele_style.value
-            if ele_style and ele_style != '':
-                v = style_re1.sub(style_repl1, ele_style)
-                v = style_re2.sub(style_repl2, v)
-                v = style_re3.sub(style_repl3, v)
-                if not ele_class or ele_class == '':
-                    if v in style_to_class:
-                        t = style_to_class[v]
-                        if t:
-                            if args.verbose:
-                                print "Replacing style", ele_style, "with class", t
-                            n.setAttribute('class', t)
-                            n.removeAttribute('style')
-                    else:
-                        print prname,"no known class for style", ele_style
-                elif style_to_class.get(v) == ele_class:
-                    if args.verbose:
-                        print "removing style", ele_style, "for class", ele_class
-                    n.removeAttribute('style')
-                else:
-                    print prname, "class", ele_class,"but style", ele_style
-                    n.removeAttribute('style')
+        id = n.getAttribute('id')
+    else:
+        id = ''
+    prname = "{o} {id}".format(o=n.nodeName, id=id)
+
+    if n.attributes and args.style:
+        ele_class = n.getAttribute('class')
+        ele_style = n.getAttribute('style')
+        if ele_style:
+             v = style_re1.sub(style_repl1, ele_style)
+             v = style_re2.sub(style_repl2, v)
+             v = style_re3.sub(style_repl3, v)
+             c = style_to_class.get(v) 
+             if not ele_class:
+                 if c:
+                     if args.verbose:
+                         print prname,"Replacing style", ele_style, "with class", c
+                     n.setAttribute('class', c)
+                     n.removeAttribute('style')
+                 elif v not in style_to_class:
+                     print prname,"no known class for style", ele_style
+             elif c == ele_class:
+                 if args.verbose:
+                     print prname,"removing style", ele_style, "for class", ele_class
+                 n.removeAttribute('style')
+             else:
+                 print prname, "class", ele_class,"but style", ele_style
+                 n.removeAttribute('style')
+
+    if n.attributes and args.unneeded:
+        if id and id_regex.match(id):
+            n.removeAttribute('id')
+        for attr_name in unneeded_attributes.keys():
+            attr = n.getAttribute(attr_name)
+            if not attr or not unneeded_attributes[attr_name].search(attr):
+                continue
+            if args.verbose:
+                print prname,"removing",attr_name,attr
+            n.removeAttribute(attr_name)
+        if n.nodeName in unneeded_byname:
+            for i in unneeded_byname[n.nodeName]:
+                if n.getAttribute(i):
+                    n.removeAttribute(i)
+
+    t = None
+    if n.attributes:
         t = n.getAttribute('transform')
-        if t is not None:
-            r = re.match(r'^translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
-            if r:
-                x = float(r.group(1))
-                y = float(r.group(2))
-                if x != 0 or y != 0:
-                    dx += x
-                    dy += y
-                    n.removeAttribute('transform')
-            elif t != '' and t != 'matrix(0,1,-1,0,0,0)':
-                print prname, "ignoring unknown transform", t
-        if args.box:
-            if dx == 0 and dy == 0:
-                pass
-            elif n.nodeName == 'rect':
-                x = float(n.getAttribute('x'))
-                y = float(n.getAttribute('y'))
+
+    if t:
+        r = re.match(r'^translate\((-?\d+\.?\d*),(-?\d+\.?\d*)\)$',t)
+        if r:
+            x = float(r.group(1))
+            y = float(r.group(2))
+            if x != 0 or y != 0:
+                dx += x
+                dy += y
+                n.removeAttribute('transform')
+                if args.verbose:
+                    print prname, "transposing by ",x,y
+        elif t != 'matrix(0,1,-1,0,0,0)':
+            print prname, "ignoring unknown transform", t
+
+    if args.fraction:
+        upd(n, 'width', 0)
+        upd(n, 'height', 0)
+        upd(n,'x', 0)
+        upd(n,'cx', 0)
+        upd(n,'sodipodi:cx', 0)
+        upd(n,'y', 0)
+        upd(n,'cy', 0)
+        upd(n,'sodipodi:cy', 0)
+    
+    if n.nodeName == 'rect':
+        if dx or dy:
+            x = float(n.getAttribute('x'))
+            y = float(n.getAttribute('y'))
+            i1 = _in([x, y], args.box)
+            if i1:
+                if args.verbose:
+                    print prname,"Transposing rect at ", x, y
+                upd(n, 'x', dx)
+                upd(n, 'y', dy)
+            if args.box:
                 x1 = x + float(n.getAttribute('width'))
                 y1 = y + float(n.getAttribute('height'))
-                if _in([x, y], args.box) or _in([x1, y], args.box) or _in([x, y1], args.box) or _in([x1, y1], args.box):
-                    if args.verbose:
-                        print prname,"Transposing rect",x,y,x1,y1
+                i2 = _in([x1, y], args.box)
+                i3 = _in([x, y1], args.box)
+                i4 = _in([x1, y1], args.box)
+                if i1 and i2 and i3 and i4:
+                    pass
+                elif i1 or i2 or i3 or i4:
                     if x >= args.box[0] and x <= args.box[2]:
-                        upd(n, 'x', dx)
                         if x1 < args.box[0] or x1 > args.box[2]:
                             upd(n, 'width', -dx)
                     elif x1 >= args.box[0] and x1 <= args.box[2]:
                         upd(n, 'width', dx)
                     if y >= args.box[1] and y <= args.box[3]:
-                        upd(n, 'y', dy)
                         if y1 < args.box[1] or y1 > args.box[3]:
                             upd(n, 'height', -dy)
                     elif y1 >= args.box[1] and y1 <= args.box[3]:
                         upd(n, 'height', dy)
-            elif n.nodeName == 'circle':
-                x = float(n.getAttribute('cx'))
-                y = float(n.getAttribute('cy'))
-                if _in([x, y], args.box):
-                    if args.verbose:
-                        print prname,"Transposing circle",x,y
-                    upd(n,'cx',dx)
-                    upd(n,'sodipodi:cx',dx)
-                    upd(n,'cy',dy)
-                    upd(n,'sodipodi:cy',dy)
-            elif n.nodeName == 'text' or n.nodeName == 'tspan':
+
+    elif n.nodeName == 'circle':
+        if dx or dy:
+            x = float(n.getAttribute('cx'))
+            y = float(n.getAttribute('cy'))
+            if _in([x, y], args.box):
+                if args.verbose:
+                    print prname,"Transposing circle at",x,y
+                upd(n,'cx',dx)
+                upd(n,'sodipodi:cx',dx)
+                upd(n,'cy',dy)
+                upd(n,'sodipodi:cy',dy)
+
+    elif n.nodeName == 'text' or n.nodeName == 'tspan' or n.nodeName == 'image':
+        if dx or dy:
+            try:
                 x = float(n.getAttribute('x'))
                 y = float(n.getAttribute('y'))
                 if _in([x, y], args.box):
                     if args.verbose:
-                        print prname,"Transposing text",x,y
+                        print prname,"Transposing text at",x,y
                     upd(n, 'x', dx)
                     upd(n, 'y', dy)
-            elif n.nodeName == 'path' or n.nodeName == 'title' or n.nodeName == 'g':
+            except:
                 pass
-            else:
-                print prname,"unknown nodeName",n.nodeName
-        else:
-            if args.fraction:
-                upd(n, 'width', 0)
-                upd(n, 'height', 0)
-            if dx != 0 or args.fraction:
-                upd(n,'x', dx)
-                upd(n,'cx', dx)
-                upd(n,'sodipodi:cx', dx)
-            if dy != 0 or args.fraction:
-                upd(n,'y', dy)
-                upd(n,'cy', dy)
-                upd(n,'sodipodi:cy', dy)
+
+    elif n.nodeName == 'path':
         d = n.getAttribute('d')
-        if d is not None and d != '':
+        if d:
             if args.path:
-#                print n.nodeName,n.getAttribute("id")
-#                print "original path '" + d + "'"
-                l = path_to_list(d)
-#                print "list",l
-                l = abs_list_to_rel(l)
-#                print "rel",l
-                l = optimize_list(l)
-#                print "optimized",l
-                if dx != 0 or dy != 0:
+                l1 = path_to_list(d)
+                rl1 = repr(l1)
+                l2 = abs_list_to_rel(l1)
+                rl2 = repr(l2)
+                l3 = optimize_list(l2)
+                rl3 = repr(l3)
+                if dx or dy:
                     if args.box:
-#                        print "transposing",args.box,"by",[dx, dy]
-                        l = cond_transpose_list(l, args.box, [dx, dy])
-#                        print "transposed",l
+                        l4 = cond_transpose_list(l3, args.box, [dx, dy])
                     else:
-                        l = transpose_list(l,dx,dy)
-#                    print "transposed",l
-                d_new = list_to_path(l)
-            elif dx!= 0 or dy!= 0:
+                        l4 = transpose_list(l3,dx,dy)
+                    rl4 = repr(l4)
+                else:
+                    l4 = l3
+                    rl4 = rl3
+                if args.verbose:
+                    if rl1 != rl2:
+                        print prname,"abs->rel"
+                        print rl1
+                        print rl2
+                    if rl2 != rl3:
+                        print prname,"optimized"
+                        print rl2
+                        print rl3
+                    if rl3 != rl4:
+                        print prname,"transposed"
+                        print rl3
+                        print rl4
+                d_new = list_to_path(l4)
+            elif dx or dy:
                 if args.box:
                     print "You must use --path with --box"
                 d_new = transpose_path(d,dx,dy)
             else:
                 d_new = None
-            if d_new:
+            if d_new and d != d_new:
                 if args.verbose:
-                    print prname+': "'+d+'"','"'+d_new+'"'
+                    print prname,'changing "'+d+'" to "'+d_new+'"'
                 n.setAttribute('d',d_new)
-        if args.unneeded:
-            i = n.attributes.getNamedItem('id')
-            if i and i.value != '' and id_regex.match(i.value):
-                n.attributes.removeNamedItem('id')
-            for attr_name in unneeded_attributes.keys():
-                attr = n.attributes.getNamedItem(attr_name)
-                if not attr or not unneeded_attributes[attr_name].search(attr.value):
-                    continue
-                if args.verbose:
-                    print prname,"removing",attr.name,attr.value
-                n.attributes.removeNamedItem(attr_name)
-            if n.nodeName in unneeded_byname:
-                for i in unneeded_byname[n.nodeName]:
-                    if n.attributes.getNamedItem(i):
-                        n.attributes.removeNamedItem(i)
 
-    if args.layer and n.nodeName == 'g':
-        attr = n.attributes.getNamedItem('inkscape:groupmode')
-        i = n.attributes.getNamedItem('id')
-        if attr and attr.value == 'layer' and i and i.value == args.layer:
-            dx += args.x
-            dy += args.y
+    elif n.nodeName == 'g':
+        if args.layer:
+            attr = n.getAttribute('inkscape:groupmode')
+            if attr == 'layer' and id and id == args.layer:
+                if args.verbose:
+                    print "found layer " + id
+                dx += args.x
+                dy += args.y
+
+    elif n.nodeName in ('title', 'svg', '#text', 'script', 'defs', 'style', 'sodipodi:namedview', 'inkscape:grid', 'metadata', 'rdf:RDF', 'cc:Work', 'dc:format', 'dc:type', 'dc:title', '#comment'):
+        pass
+    else:
+        print prname,"unknown nodeName",n.nodeName
 
     for i in n.childNodes:
         do_update(i,dx,dy)
