@@ -7,10 +7,10 @@ config = {
     'user':'afal_ro',
     'password':'BuffyStewart'
 }
-background = '/back3l07.gif'
-background_pc = '/back3l15.gif'
-background_npc = '/back3l16.gif'
-logs = "/logs/log_"
-report_url = '/prod/report'
-menu_url = '/prod/menu'
+background = '/afal_mirror/back3l07.gif'
+background_pc = '/afal_mirror/back3l15.gif'
+background_npc = '/afal_mirror/back3l16.gif'
+logs = "/afal_mirror/logs/log_"
+report_url = '/afal/report'
+menu_url = '/afal/menu'
 text = 'QUERY_STRING' not in os.environ
