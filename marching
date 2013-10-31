@@ -20,6 +20,74 @@ if cl != 'marching':
 marching = inst
 list = afal.get_marching(marching)
 title = 'Marching order for {marching}'.format(marching = marching)
+style = """  <style type="text/css">
+      .marching {{
+        text-align: center;
+      }}
+      .marching th,.marching td,.marching div {{
+        width: 20px;
+        height: 20px;
+      }}
+      .w3h3 {{
+        width: 60px;
+        height: 60px;
+      }}
+      .w3h6 {{
+        width: 60px;
+        height: 120px;
+      }}
+      .w8h13 {{
+        width: 160px;
+        height: 260px;
+      }}
+      .w4h8 {{
+        width: 80px;
+        height: 160px;
+      }}
+      .w8h10 {{
+        width: 160px;
+        height: 200px;
+      }}
+      .human {{
+        background:black;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .dwarf {{
+        background:green;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .halfelf {{
+        background:#0000a0;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .halforc {{
+        background:#a00000;
+        color: yellow;
+      }}
+      .elf {{
+        background:blue;
+        color: yellow;
+        text-align: center;
+        overflow: hidden;
+      }}
+      .orc {{
+        background:red;
+        color: yellow;
+      }}
+      .other {{
+        background: yellow;
+        color: black;
+        text-align: center;
+        overflow: hidden;
+      }}
+  </style>
+"""
 
 rows = 0
 cols = 0
@@ -41,7 +109,7 @@ print('''{hdr}
       <col width="0.5*"><col span="{cols}" width="20">
       <thead>
       <tr><td>{colhdr}
-      <tbody>'''.format(hdr = afal.html_header(title), marching = marching, cols = cols, colhdr = colhdr))
+      <tbody>'''.format(hdr = afal.html_header(title, style), marching = marching, cols = cols, colhdr = colhdr))
 for r in range(1, rows+1):
     s = '      <tr><th>{r}'.format(r = r)
     c = 1
