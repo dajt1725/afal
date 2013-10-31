@@ -8,9 +8,9 @@ config = {
     'password':'BuffyStewart'
 }
 background = '/mw-escher.gif'
-background_pc = '/back3l15.gif'
-background_npc = '/back3l16.gif'
-logs = "/logs/log_"
+background_pc = '/afal_mirror/back3l15.gif'
+background_npc = '/afal_mirror/back3l16.gif'
+logs = "/afal_mirror/logs/log_"
 report_url = '/devel/report'
 menu_url = '/devel/menu'
 text = 'QUERY_STRING' not in os.environ
