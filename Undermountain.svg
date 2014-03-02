@@ -4255,9 +4255,9 @@
     <path class="feature-path" d="m1655 1960-1-45-109 1v38h-20v-34" id="path-dexter-dance-d">
       <title>Dexter dance path.</title>
     </path>
-    <path class="feature" d="m2214.5 960a4.5 4.5 0 1 1-9 0 4.5 4.5 0 1 1 9 0z" sodipodi:cx="2210" sodipodi:cy="960" sodipodi:rx="4.5" sodipodi:ry="4.5" sodipodi:type="arc">
+    <circle class="feature" cx="2210" cy="960" r="5">
       <title>Something.</title>
-    </path>
+    </circle>
     <path class="feature" d="m2200 980h20l10 10h-40z">
       <title>Something too.</title>
     </path>
