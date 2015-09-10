@@ -58,7 +58,7 @@ date=28 Marpenoth 1369
 ,find;found=Marpenoth-28B-1369
 ,,name=Bracers of Initiative D8;holder=Misery;note=Darius failed, Cassie id <d Marpenoth 28 1369>
 ,,owner=Someone;xfrd=7 Uktar 1369
-,,,name=Boots of Elvinkind;value=3000gp
+,,,name=Boots of Elvenkind  #1;value=3000gp
 ,,,name=+1 Scimitar  #1;value=3000gp
 ,,,name=Weapon: Elf Hurtr;value=4500gp
 ,party;type=AFAL;name=Marpenoth-28C-1369;Darius=1;Dexter=1;Henkles=1;Steve=1;Stewart=1
@@ -342,7 +342,7 @@ date=Uktar 29 1369
 ,find;found=Denyae;holder=Denyae;name=Weapon: Thunderbolt
 date=Nightal 1 1369
 ,party;type=AFAL;name=Nightal-1-1369;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Stewart=1;Ursula=1
-,find;found=Nightal-1-1369;name=Cloak of Elvenkind;holder=Steve
+,find;found=Nightal-1-1369;name=Cloak of Elvenkind  #1;holder=Steve
 ,writeoff;Stewart;note=fall BOOM go down
 ,give
 ,,to=Someone;item=Rod of Caltrops

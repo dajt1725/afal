@@ -1,11 +1,11 @@
 set -e
 rm -f report.devel.out bulk.devel.out bulk.devel.err afal_config.py
 ln -s afal_config.py.devel.write afal_config.py
-mysql -uafal -pBuffyStewart afal_devel << EOF
+mysql -h127.0.0.1 -uafal -pBuffyStewart afal_devel << EOF
 drop database afal_devel;
 create database afal_devel;
 EOF
-mysql -uafal -pBuffyStewart afal_devel < afal-schema.sql.mysql
+mysql -h127.0.0.1 -uafal -pBuffyStewart afal_devel < afal-schema.sql.mysql
 ./bulk -v 1369-01-06.dat 1369-07-09.dat 1369-10-12.dat 1370-01-03.dat 1370-04.dat > bulk.devel.out 2> bulk.devel.err
 ./report > report.devel.out
 ./debt >> report.devel.out

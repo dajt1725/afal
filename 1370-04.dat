@@ -24,7 +24,7 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
 ,dividend;by=Ches-30-1370;cash=1908gp, 108sp
 ,sell;to=Dexter;item=Ebony Fly;cash=5000gp
 ,sell;to=Henkles;item=Poison: Urds Teeth *3;cash=105gp
-,trade;by=Darius;to=Ches-30-1370;for=2 Gem: Chrysoberyl 100gp
+,trade;by=Darius;to=Ches-30-1370;for=2 Gems: Chrysoberyls 100gp
 date=2 Tarsakh 1370
 ,give;to=Ches-30-1370;holder=Denyae;item=+1 Ring of Protection  #1
 ,sell
@@ -57,7 +57,7 @@ date=2 Tarsakh 1370
 ,,,item=+2 Whip;cash=4cp;debt=3499gp, 196cp
 ,,,item=+1 Composite Short Bow;cash=4cp;debt=3499gp, 196cp
 ,,to=Steve
-,,,item=Cloak of Elvenkind;cash=9cp;debt=5999gp, 191cp
+,,,item=Cloak of Elvenkind  #1;cash=9cp;debt=5999gp, 191cp
 ,,,item=+1 Light Crossbow  #1;cash=5cp;debt=2499gp,195cp
 ,,,item=+1/+2(Lawful) Long Sword;cash=4cp;debt=4049gp, 196cp
 ,,,item=+1/+3(Cold) Ring of Protection  #2;cash=6cp;debt=7499gp,194cp
@@ -77,19 +77,19 @@ date=3 Tarsakh 1370
 ,find;found=Tarsakh-3-1370;name=Nonmagic  #2;holder=Sell\
 ;note=City Guard Breastplate,Jeweled Dagger, Long Sword, Spear
 # I have no idea where these items came from
-,give;by=Someone;to=Maanamere;cash=2 Gem: Emerald 200gp, 2 Gem:\
- Carnelian 100gp, 1 Gem: Amber 90gp, 1 ring 500gp
+,give;by=Someone;to=Maanamere;cash=2 Gems: Emeralds 200gp, 2 Gems:\
+ Carnelians 100gp, 1 Gem: Amber 90gp, 1 ring 500gp
 ,pay;by=Maanamere;to=Steve;cash=pair of large opal earrings (750gp together\
  or 300gp each)
 ,pay;by=Maanamere;to=Darius;cash=1 platinum necklace 700gp
 ,pay;by=Darius;to=Dexter;cash=1 platinum necklace 700gp
 ,pay;by=Maanamere;to=Misery;cash=1 ring 500gp
 ,pay;by=Maanamere;to=Steve;cash=1 set silver candlesticks 500gp
-,pay;by=Maanamere;to=Steve;cash=2 Gem: Emerald 200gp
+,pay;by=Maanamere;to=Steve;cash=2 Gems: Emeralds 200gp
 ,pay;by=Maanamere;to=Henkles;cash=2 finely made gold chain 130gp
-,pay;by=Maanamere;to=Steve;cash=2 Gem: Carnelian 100gp
+,pay;by=Maanamere;to=Steve;cash=2 Gems: Carnelians 100gp
 ,pay;by=Maanamere;to=Misery;cash=Gem: Amber 90gp
-,pay;by=Maanamere;to=Steve;cash=8 Gem: Bloodstone 5gp
+,pay;by=Maanamere;to=Steve;cash=8 Gems: Bloodstones 5gp
 ,pay;by=Maanamere;to=Misery;cash=1 Gold Earring 20gp
 date=4 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-4-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1\
@@ -100,7 +100,7 @@ date=4 Tarsakh 1370
 ,,name=Nonmagic  #3;holder=Sell;note=Glaive, Broadsword, Short Bow, Chainmail,\
  Shield
 ,give;by=Someone;to=Tarsakh-4-1370;cash=17sp,42ep,1gp,7toal,2 harbor moon,2\
- Gem: Pearl 100gp
+ Gems: Pearls 100gp
 ,find;found=Maanamere;name=Suit of Ship Captain-ness;holder=Maanamere
 # Maanamere now owes AFAL 50gp
 ,give;by=AFAL;to=Someone;cash=1 Harbor Moon;note=for three boats, 9 barrels,\
@@ -131,10 +131,10 @@ Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
  <d Tarsakh 8 1370>
 ,,name=+2/+4 (level draining or negative plane) Mace
 ,,name=Nonmagic  #5;note=Dagger *2;holder=Sell
-,give;by=Someone;to=Tarsakh-7-1370;cash=27cp, 16sp, 6ep, 9toals, 3 Gem: Satan\
- Spar 10gp, 1 Gem: Corstal 45gp, 4 Gem: Banded Agate 10gp
+,give;by=Someone;to=Tarsakh-7-1370;cash=27cp, 16sp, 6ep, 9toals, 3 Gems: Satan\
+ Spars 10gp, 1 Gem: Corstal 45gp, 4 Gems: Banded Agates 10gp
 ,give;by=Someone;to=Tarsakh-7-1370;cash=23 Triangular Electrum Piece, 12 Gond\
- bells, 28 Gems: Moss Agate 25gp
+ bells, 28 Gems: Moss Agates 25gp
 ,sell;to=Someone;item=Nonmagic  #2;cash=247gp, 2325cp
 ,sell;to=Someone;item=Nonmagic  #3;cash=46toals
 ,sell;to=Someone;item=Nonmagic  #4;cash=5harbor moons, 180cp
@@ -165,8 +165,8 @@ date=11 Tarsakh 1370
 ,divy;by=Ches-3c-1370;amount=1000gp;note=for bolts of silk
 ,divy;by=Ches-30-1370;amount=5308gp\
 ;note=(total 5308gp) from Ebony Fly, Urds Teeth Poison, and 2x 100gp Gems
-,trade;by=Denyae;to=Tarsakh-7-1370;for=1 Gem: Corstal 45gp, 28 Gems: Moss Agate\
- 25gp, 4 Gems: Banded Agate 10gp, 3 Gems: Satan Spar 10gp, 15 Gond bells
+,trade;by=Denyae;to=Tarsakh-7-1370;for=1 Gem: Corstal 45gp, 28 Gems: Moss Agates\
+ 25gp, 4 Gems: Banded Agates 10gp, 3 Gems: Satan Spars 10gp, 15 Gond bells
 ,divy;by=Tarsakh-3-1370;amount=257gp, 125cp;note=from Nonmagic
 ,divy;by=Tarsakh-4-1370;amount=228gp, 170cp;note=from Nonmagic and Cash\
  (92gp nonmagic and 136gp, 170cp cash)
@@ -189,9 +189,9 @@ Henkles=1;Maanamere=1;Staric=.5
 ,,name=Glowing Glass Orb, 2.5' diamater
 ,,name=Wyvern head
 ,,name=Wyvern scales
-,give;by=Someone;to=Tarsakh-12-1370;cash=26 gem: carnelian 50gp,\
- 4 gem: citrine 75gp, 18 gem: moonstone 55gp, 33 gem: sardonyx 50gp,\
- 24 gem: zircon 65gp, 12 gem: garnet 500gp, 8 gem: spinel 500gp\
+,give;by=Someone;to=Tarsakh-12-1370;cash=26 Gems: Carnelians 50gp,\
+ 4 Gems: Citrines 75gp, 18 Gems: Moonstones 55gp, 33 Gems: Sardonyxes 50gp,\
+ 24 Gems: Zircons 65gp, 12 Gems: Garnets 500gp, 8 Gems: Spinels 500gp\
 ;note=from bone throne
 # AFAL now owes Henkles 18gp,5sp+119gp
 ,give;by=Henkles;to=Someone;amount=2 Harbor Moons, 9 Toals, 1gp\
@@ -236,43 +236,43 @@ date=13 Tarsakh 1370
 ,trade;by=Denyae;to=Tarsakh-12-1370;cash=2 finely made gold chains 130gp,\
  17 harbor moons, 5 toals, 1880gp;for=6 Gem: Spinel 500gp
 ,trade;by=Deringa;to=Tarsakh-12-1370\
-;for=2 finely made gold chains 130gp, 4 Gems: Citrine 75gp, 2 Gems: Carnelian 50gp, 9 Gems: Sardonyx 50gp\
+;for=2 finely made gold chains 130gp, 4 Gems: Citrines 75gp, 2 Gems: Carnelians 50gp, 9 Gems: Sardonyxes 50gp\
 ;cash=5 Harbor Moons, 71 pp, 9 Toals, 480 gp, 310cp, 29sp, 8ep
 ,trade;by=Theo;to=Tarsakh-12-1370;cash=10 toals;for=20gp
-,trade;by=Staric;to=Tarsakh-12-1370;cash=1 pp, 702gp, 5 harbor moons, 15 toals, 200cp,10sp,3ep;for=18 gems: moonstone 55gp
+,trade;by=Staric;to=Tarsakh-12-1370;cash=1 pp, 702gp, 5 harbor moons, 15 toals, 200cp,10sp,3ep;for=18 Gems: Moonstones 55gp
 ,dividend;by=Tarsakh-12-1370;cash=36 harbor moons, 48 toals, 3840gp, 36sp, 440cp,\
- 24 gem: carnelian 50gp, 24 gem: sardonyx 50gp, 24 gem: zircon 65gp, 12 gem:\
- garnet 500gp;note=gems=15800gp, expenses -119gp, snake 20gp=15701 total\
+ 24 Gems: Carnelians 50gp, 24 Gems: Sardonyxes 50gp, 24 Gems: Zircons 65gp, 12 Gems: Garnets 500gp;note=gems=15800gp, expenses -119gp, snake 20gp=15701 total\
  gems=9960gp, 36hm=1800, 12pp=60, 36toals=72, 3804gp, 252cp == total 15699gp, 164cp+160
-,trade;by=Dexter;to=Staric;cash=2 Gems: Garnet 500gp\
-;for=18 Gems: Moonstone 55gp, 10gp
-,trade;by=Dexter;to=AFAL;cash=300gp;for=6 Gems: Moonstone 50gp
-,pay;by=Maanamere;to=Misery;cash=2 Gems: Garnet 500gp, 4 Gems: Zircon 65gp, 4\
- Gems: Carnelian 50gp, 4 Gems: Sardonyx 50gp, 2 Harbor Moons, 300gp
-,pay;by=Darius;to=Misery;cash=2 Gems: Garnet 500gp, 4 Gems: Zircon 65gp,\
+,trade;by=Dexter;to=Staric;cash=2 Gems: Garnets 500gp\
+;for=18 Gems: Moonstones 55gp, 10gp
+,trade;by=Dexter;to=AFAL;cash=300gp;for=6 Gems: Moonstones 50gp
+,pay;by=Maanamere;to=Misery;cash=2 Gems: Garnets 500gp, 4 Gems: Zircons 65gp, 4\
+ Gems: Carnelians 50gp, 4 Gems: Sardonyxes 50gp, 2 Harbor Moons, 300gp
+,pay;by=Darius;to=Misery;cash=2 Gems: Garnets 500gp, 4 Gems: Zircons 65gp,\
  1 harbor moon, 35gp, 103cp
-,pay;by=Darius;to=Denyae;cash=4 Gems: Carnelian 50gp, 4 Gems: Sardonyx 50gp, 5\
+,pay;by=Darius;to=Denyae;cash=4 Gems: Carnelians 50gp, 4 Gems: Sardonyxes 50gp, 5\
  Harbor Moons, 599gp, 103cp
 ,trade;by=Misery;to=Steve;cash=1gp;for=20sp
+,commit
 ,trade;by=Misery;to=Brogan;for=10cp, 9sp, 1ep
 ,pay;by=Misery
-,,to=Denyae;cash= Gem: Garnet 500gp,Gem: Carnelian 50gp, 3gp, 100cp
+,,to=Denyae;cash=Gem: Garnet 500gp,Gem: Carnelian 50gp, 3gp, 100cp
 ,,to=Deringa;cash=Gem: Garnet 500gp,Gem: Carnelian 50gp, 3gp, 100cp
-,,to=Dexter;cash=2Gem: Garnet 500gp,2gem: sardonyx 50gp,4gp,13sp,26cp
-,,to=Staric;cash=2 gem: carnelian 50gp, 18gp, 12sp, 2cp
-,,to=Steve;cash=8 Gems: Zircon 65gp, 2 gems: sardonyx 50gp,3 harbor moons,350gp
+,,to=Dexter;cash=2 Gems: Garnets 500gp,2 Gems: Sardonyxes 50gp,4gp,13sp,26cp
+,,to=Staric;cash=2 Gems: Carnelians 50gp, 18gp, 12sp, 2cp
+,,to=Steve;cash=8 Gems: Zircons 65gp, 2 Gems: Sardonyxes 50gp,3 harbor moons,350gp
 ,pay;by=Dexter
 ,,to=Brogan
 ,,to=Denyae
 ,,to=Deringa
-,,to=Staric;cash=4 Gems: Carnelian 50gp, 11gp, 111cp
+,,to=Staric;cash=4 Gems: Carnelians 50gp, 11gp, 111cp
 ,,to=Steve
-,,to=Theo;cash=3 Gems: Zircon 65gp, 3gp
+,,to=Theo;cash=3 Gems: Zircons 65gp, 3gp
 ,give;by=Maanamere;to=AFAL;cash=1 harbor moon;note=to reimburse for expenses
-,trade;by=Denyae;to=Henkles;cash=15 harbor moons, 8 Toals, 226gp, 600cp, 40sp, 6ep;for=2 gems: Garnet 500gp
+,trade;by=Denyae;to=Henkles;cash=15 harbor moons, 8 Toals, 226gp, 600cp, 40sp, 6ep;for=2 Gems: Garnets 500gp
 ,give;by=AFAL;to=Henkles;cash=137gp;note=to reimburse for expenses
 ,pay;by=Henkles
-,,to=Brogan;cash=4 Gems: Sardonyx 50gp,70gp,171cp
+,,to=Brogan;cash=4 Gems: Sardonyxes 50gp,70gp,171cp
 ,,to=Denyae;cash=270gp,171cp
 ,,to=Deringa;cash=135gp,85cp
 ,,to=Dexter;cash=240gp,23cp
@@ -281,7 +281,7 @@ date=13 Tarsakh 1370
 ,trade;to=Henkles
 ,,by=Brogan;cash=2 harbor moons, 8 Toals;for=116gp
 ,,by=Darius;cash=8 Toals;for=16gp
-,,by=Theo;cash=10 Harbor Moons;for=4 gems: zircon 65gp, 4 gems: Carnelian 50gp, 40gp
+,,by=Theo;cash=10 Harbor Moons;for=4 Gems: Zircons 65gp, 4 gems: Carnelians 50gp, 40gp
 ,trade;to=AFAL
 ,,by=Staric;cash=3 Harbor Moons,4 toals;for=30pp, 8gp
 ,,by=Deringa;cash=3 Harbor Moons, 4 Toals;for=158gp
@@ -300,7 +300,7 @@ date=Tarsakh 20, 1370
 ,,name=3x Giant Spider poison sacks
 ,,name=Bracers of Defense AC4;note=Ag (mis-)part ID Tarsakh 24 1370  Henkles identified through testing
 ,,name=+2 Ring of Protection  #2;note=Steve ID Tarsakh 24 1370;value=12000gp
-,,name=Ring of Invisibility;note=Steve and Staric ID Tarsakh 24 1370;value=7500gp
+,,name=Ring of Invisibility  #1;note=Steve and Staric ID Tarsakh 24 1370;value=7500gp
 ,,name=Magic Potion;note=Ag,Tristan,Staric failed Tarsakh 24 1370
 ,,name=+2 Broadsword;value=4000gp
 ,,name=+1 Sickle;value=2000gp
@@ -345,7 +345,7 @@ date=Tarsakh 20, 1370
 ,sell;to=Someone;item=Nonmagic  #6;cash=7 Harbor Moons
 date=Tarsakh 21, 1370
 ,give;by=Henkles;to=Someone;cash=1 Harbor Moon;note=For bidder number, Steve put up the deposit
-,trade;by=Dexter;to=Denyae;cash=2 Gems: Garnet 500gp, 1 Gem: Zircon 65gp, 6 Gems: Sardonyx 50gp;for=1365gp
+,trade;by=Dexter;to=Denyae;cash=2 Gems: Garnets 500gp, Gem: Zircon 65gp, 6 Gems: Sardonyxes 50gp;for=1365gp
 ,give;to=Someone;by=Dexter;amount=1900gp
 ,give;to=Someone;by=Staric;amount=800gp;note=Loan to Dexter for Nose Ring
 ,find;found=Dexter;name=Nose Ring of Load Easement;value=2700gp
@@ -518,12 +518,12 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,sell;to=Denyae;item=+1/+3 (Trolls) Long Sword;cash=600000vcp
 ,sell;to=Ag;item=+2/+3 (L) Dagger;cash=400000vcp
 date=Tarsakh 23, 1370
-,give;by=AFAL;to=Destroyed;cash=2 Gems: pearl 100gp;note=used for identifies
+,give;by=AFAL;to=Destroyed;cash=2 Gems: pearls 100gp;note=used for identifies
 ,trade;by=Steve;to=Henkles;cash=22 Harbor Moons;for=1100gp
 ,give;by=Henkles;to=Someone;amount=200gp;note=pearls for Identify
 ,lend;to=Denyae;item=Amulet of Proof Against Detection and Location
 ,dividend;by=Tarsakh-22-1370;cash=1000000vcp
-,sell;to=Ag;item=Ring of Invisibility;debt=7500gp
+,sell;to=Ag;item=Ring of Invisibility  #1;debt=7500gp
 ,pay;by=Ag;to=Deringa;cash=9402vcp
 ,pay;by=Ag;to=Staric;cash=9402vcp
 ,pay;by=Ag;to=Brogan;cash=18801vcp
@@ -559,7 +559,6 @@ date=Tarsakh 27 1370
 ,pay;by=Denyae;cash=2600000vcp
 ,pay;by=Ag;cash=800000vcp
 ,lend;to=Henkles;item=Scepter of Entrapment
-,system;cmd=mysqldump -uafal -pBuffyStewart -r dump.1370-04-28.sql afal_devel
 date=Tarsakh 28 1370
 ,party;type=AFAL;name=Tarsakh-28a-1370;Ag=1;Brogan=1;Dexter=1;Denyae=1;Henkles=1;Maanamere=1;Staric=1;Steve=1;Tristan=1
 ,give;by=AFAL;to=Someone;amount=9gp
@@ -577,8 +576,8 @@ date=Tarsakh 28 1370
 ,party;type=AFAL;name=Tarsakh-28d-1370;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
 ,marching;name=Tarsakh-28d-1370;Henkles=4 1 3 3;Steve=1 4 3 3;Tristan=7 4 3 3;Staric=4 7 3 3
 ,give;by=Someone;to=Tarsakh-28d-1370;cash=236gp
-,find;found=Tarsakh-28d-1370;name=6x Silver Trade Bar
-# We are Here
+,coin;name=Silver Trade Bar{s} (25gp);copper_equiv=5000
+,give;by=Someone;to=Tarsakh-28d-1370;cash=6 Silver Trade Bars (25gp)
 ,sell;to=Henkles;item=Bracers of Defense AC4;debt=18000gp
 ,sell;to=Tristan;item=Ring of Telekenisis 25#;debt=10000gp
 ,sell;to=Henkles;item=Ring of Shocking Grasp  #2;debt=4999gp,199cp;cash=1cp
@@ -587,3 +586,18 @@ date=Tarsakh 28 1370
 ,pay;by=Tristan
 ,pay;by=Henkles
 ,pay;by=Ag
+date=Tarsakh 29 1370
+,give;by=Henkles;to=Someone;cash=5 Toals;note=10 people out of Undermountain
+,give;by=Henkles;to=Someone;cash=20 Harbor Moons;note=Heal on Brogan
+date=Tarsakh 30 1370
+,give;by=Henkles;to=Someone;cash=200000vcp;note=Heal on Maanamere
+,find;found=Brogan;name=Holy Water  #11
+,find;found=Brogan;name=Holy Water  #12
+,find;found=Brogan;name=Holy Water  #13
+,find;found=Brogan;name=Holy Water  #14
+,find;found=Brogan;name=Holy Water  #15
+,give;by=Steve;to=Someone;cash=2000000vcp;note=Escrow for Semblina
+date=Greengrass Festival 1370
+,give;by=Henkles;to=Someone;cash=50gp;note=Entrance fee to Skullport
+,give;by=Henkles;to=Someone;cash=10gp;note=Docking fee at Skullport
+,system;cmd=mysqldump -h127.0.0.1 -uafal -pBuffyStewart -r dump.checkpoint.sql afal_devel
