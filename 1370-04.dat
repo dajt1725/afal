@@ -1,5 +1,4 @@
 date=1 Tarsakh 1370
-# ,system;cmd=mysqldump -uafal -pBuffyStewart -r dump.1370-04-01.sql afal_devel
 ,meet;association=AFAL;status=active;name=Brogan;alignment=Lawful Good;\
 gender=Male;player=Andrew;race=Hill Dwarf;fullname=Brogan Blackroot;\
 picture=Brogan.png;large_picture=Brogan2.jpg;cash=1cp;\
@@ -600,4 +599,3 @@ date=Tarsakh 30 1370
 date=Greengrass Festival 1370
 ,give;by=Henkles;to=Someone;cash=50gp;note=Entrance fee to Skullport
 ,give;by=Henkles;to=Someone;cash=10gp;note=Docking fee at Skullport
-,system;cmd=mysqldump -h127.0.0.1 -uafal -pBuffyStewart -r dump.checkpoint.sql afal_devel

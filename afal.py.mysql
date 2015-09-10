@@ -319,7 +319,13 @@ def _find_coin(m):
     q = m.group(2)
     if q is None:
         q = 1
-    str_to_coins.coins[m.group(3)] = int(q)
+    else:
+        q = int(q)
+    c = m.group(3)
+    if c in str_to_coins.coins:
+        str_to_coins.coins[c] += q
+    else:
+        str_to_coins.coins[c] = q
     return ''
 
 

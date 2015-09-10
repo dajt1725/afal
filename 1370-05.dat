@@ -169,4 +169,4 @@ date=Mirtul 18 1370
 ,coin;name=Ladle 50gp;copper_equiv=10000
 ,give;to=Mirtul-18-1370;by=Someone;cash=Gem: Moss Agate 10gp, Gem: Blue Quartz 10gp, Gem: Rosaline 10gp, Gem: Woodtine 10gp, Gem: Sheen 10gp, Gem: Algae 10gp, Gem: Zarbrina 10gp, Gem: Goldline 10gp, Gem: Obsidian 10gp, Gem: Angi Mani 10gp, Gem: Satin Spar 10gp, Gem: Fire Agate 10gp, Gem: Flourospar 10gp, Gem: Azurite 10gp, Gem: Sandine 10gp, Gem: Nelvine 10gp, Gem: Moss Agate 10gp, Gem: Hyaline 10gp, Gem: Disthene 10gp, Gem: Zarbrina 10gp, Gem: Silkstone 10gp, Gem: Sandine 10gp, Gem: Sharpstone 10gp, Gem: Frost Agate 10gp, Gem: Moss Agate 10gp, Gem: Sheen 10gp, Gem: Hyaline 10gp, Gem: Nune 10gp, Ladle 50gp, Statue: Comedy Scene 1000gp, Statue: Duck 500gp, 2 Shells: Conches 10gp, 4 Shells: Opal Cowries 100gp, 3 Shells: Horned Helmets 50gp, 11964sp
 date=Mirtul 19 1370
-,party=name=Mirtul-19a-1370;type=AFAL;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
+,party;name=Mirtul-19a-1370;type=AFAL;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
