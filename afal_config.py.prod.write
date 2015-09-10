@@ -1,0 +1,16 @@
+#!/usr/bin/python
+# this is the production config
+import os
+
+config = {
+    'database':'afal',
+    'user':'afal',
+    'password':'BuffyStewart'
+}
+background = '/afal_mirror/back3l07.gif'
+background_pc = '/afal_mirror/back3l15.gif'
+background_npc = '/afal_mirror/back3l16.gif'
+logs = "/afal_mirror/logs/log_"
+report_url = '/afal/report'
+menu_url = '/afal/menu'
+text = 'QUERY_STRING' not in os.environ
