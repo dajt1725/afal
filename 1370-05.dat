@@ -14,19 +14,20 @@ date=Mirtul 1 1370
 ,coin;name=Gem{s}: Lapis Lazuli{s} 10gp;copper_equiv=2000
 ,coin;name=Gem{s}: Nune{s} 10gp;copper_equiv=2000
 ,coin;name=Gem{s}: Sunstone{s} 10gp;copper_equiv=2000
+,coin;name=Silver Ring{s} 10gp;copper_equiv=2000
 ,party;name=Mirtul-1a-1370;type=AFAL;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
 ,give;by=Someone;to=Mirtul-1a-1370;cash=8 gems: Nunes 10gp,6gp,37cp,1 gem: Peridot 500gp, 7 gems: Malacons 50gp, 4 gems: Corals 100gp, 8 Gems: Sunstones 10gp, 4gp,377cp,102sp,77ep,51gp
 ,find;found=Mirtul-1a-1370
 ,,name=10x +1 Sling Bullet  #1
 ,,name=Cloak of Elvenkind  #2
-,,name=+1 Studded Leather (half elf)  #1
+,,name=+1 Studded Leather (half elf)  #1;note=Auction
 ,,name=+1 Shield  #4
 ,,name=+1 Khopesh  #1
-,,name=Wand of Negation (misid as healing)  #1
-,,name=4x +2 Arrow  #1
+,,name=Wand of Negation  #1;note=Misid as healing
+,,name=4x +2 Arrow  #1;holder=Dexter
 ,,name=Potion  (Aleesre) #1
 ,,name=+1 Harpoon  #1
-,find;found=Henkles
+,find;found=Henkles;holder=Henkles;note=Auction
 ,,name=+1 Banded Mail (halfling)  #1
 ,,name=+1 Bastard Sword  #3
 ,give;by=Someone;to=Henkles;cash=5ep,5sp,8cp,4 gems: Sinhalites 100gp
@@ -34,7 +35,7 @@ date=Mirtul 1 1370
 ,give;by=Someone;to=Mirtul-1a-1370;amount=10gp;note=Sold 10x footmans mace and 10x javelin from the Furlong Street Thugs to a pawnshop
 ,give;by=Henkles;to=Someone;cash=3 gems: Rubies 1000gp;note=Down payment for starwheel short sword 2500 owed
 ,give;by=Henkles;to=Someone;cash=48gp;note=for ss
-,find;found=Henkles;name=Short Sword with spike-shooting pommel  #1
+,find;found=Henkles;name=Short Sword with spike-shooting pommel  #1;holder=Henkles
 ,give;by=Henkles;to=Someone;cash=16gp;note=commissioned orcish war darts
 ,party;name=Mirtul-1b-1370;type=AFAL;Darius=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
 ,find;found=Mirtul-1b-1370
@@ -44,27 +45,27 @@ date=Mirtul 1 1370
 ,,name=Scroll: faded  #2
 ,,name=Ring of Fire Resistance  #4
 ,,name=Ring of +3 Resistance Enchantment/Charm  #1
-,,name=+2 Full Plate (black w/spikes, tall semi-human)  #1
-,,name=+1 Bastard Sword  #4
-,,name=+1 Studded Leather (halfling)  #1
-,,name=+1 Broadsword  #1
+,,name=+2 Full Plate (black w/spikes, tall semi-human)  #1;note=Auction
+,,name=+1 Bastard Sword  #4;note=Auction
+,,name=+1 Studded Leather (halfling)  #1;note=Auction
+,,name=+1 Broadsword  #1;note=Auction
 ,,name=Ring of Fire Resistance  #3
 ,,name=Ring of Invisibility  #2
 ,,name=Potion of Heroism  #4
 ,,name=Potion of Invulnerability  #2
 ,,name=Dust of Appearance  #1
-,,name=+1 Splint Mail (dwarf)  #1
+,,name=+1 Splint Mail (dwarf)  #1;note=Auction
 ,,name=+1 Shield  #5
 ,,name=+3 Rapier  #1
 ,,name=6x +1 Darts  #1
 ,,name=+3 Studded Leather (human)  #1
 ,,name=+2 Shield  #2
-,,name=+1 (+3 v metal armor) Longsword  #1
-,,name=+2 Studded Leather (half elf)  #1
-,,name=+1 Morning Star  #1
+,,name=+1 (+3 v metal armor) Longsword  #1;note=Auction
+,,name=+2 Studded Leather (half elf)  #1;note=Auction
+,,name=+1 Morning Star  #1;note=Auction
 ,,name=Potion of Healing  #9
 ,,name=Potion (Deeeze)  #2
-,,name=Wand of Negation (misid as healing)  #2
+,,name=Wand of Negation  #2;note=misid as Healing
 ,,name=+3 Full Plate (elf 5foot)  #1
 ,,name=+2 Bardiche  #1
 ,,name=+1 Heavy Crossbow  #2
@@ -75,7 +76,7 @@ date=Mirtul 1 1370
 ,trade;by=Tristan;to=AFAL;for=10cp
 ,sell;to=Henkles;item=+3 Bola of Entanglement  #1;debt=9999gp,198cp;cash=2cp
 ,sell;to=Tristan;item=+2 Shield  #2;debt=3999gp,195cp;cash=5cp
-#,give;to=Mirtul-1b-1370;item=+1 Shield  #2
+,give;to=Mirtul-1b-1370;item=+1 Shield  #2;holder=Someone
 ,sell;to=Staric;item=Cloak of Elvenkind  #2;debt=8000gp
 ,sell;to=Staric;item=+3 Rapier  #1;debt=7999gp,197cp;cash=3cp
 ,sell;to=Henkles;item=+1 Harpoon  #1;debt=2500gp
@@ -90,7 +91,7 @@ date=Mirtul 1 1370
 ,pay;by=Staric
 ,pay;by=Tristan
 ,pay;by=Henkles
-,trade;by=Tristan;to=Mirtul-1b-1370;for=6 Gems: Rubies 1000gp,2 Gems: Jasmals 1000gp,Gem: Heliodor 500gp
+#,trade;by=Tristan;to=Mirtul-1b-1370;for=6 Gems: Rubies 1000gp,2 Gems: Jasmals 1000gp,Gem: Heliodor 500gp
 ,party;name=Mirtul-1c-1370;type=AFAL;Ag=1;Henkles=1;Denyae=1;Staric=1;Dexter=1;Steve=1;Darius=1;Tristan=1;Brogan=1
 ,find;found=Mirtul-1c-1370
 ,,name=Dagger with sticky blade
@@ -100,10 +101,9 @@ date=Mirtul 1 1370
 ,,name=Scroll: Protection from Acid
 ,,name=Scroll: faded  #3
 ,,name=Scroll: MU(1) Color Spray
-,,name=Vial of nonmagic liquid
-,,name=Big Axe
-,,name=Glass Sphere of 8d Fireball  #1;note=Darius ID Mirtul 13 1370
-,,name=Glass Sphere of Wall of Force 10foot diameter;note=Darius ID Mirtul 13 1370
+,,name=Nonmagic  #11;note=Vial of liquid, Big Axe
+,,name=Glass Sphere of 8d Fireball  #1;note=Darius ID Mirtul 13 1370;holder=Brogan
+,,name=Glass Sphere of Wall of Force  #3;note=Darius ID Mirtul 13 1370;holder=Brogan
 ,give;to=Mirtul-1c-1370;by=Someone;cash=38gp,23pp,3mp;note=From mind flayer
 ,give;to=Mirtul-1c-1370;by=Someone;cash=17gp,20sp,7cp;note=From minotaur
 ,give;to=Mirtul-1c-1370;by=Someone;cash=10gp;note=For bodies of muggers
@@ -111,16 +111,15 @@ date=Mirtul 1 1370
 date=Mirtul 7 1370
 ,give;to=Someone;by=Henkles;cash=20gp;note=Docking fee for Neverwinter
 #??? also other expenses here
+date=Mirtul 10 1370
+,sell;to=Tristan;item=Ring of Invisibility  #2;debt=7499gp,195cp;cash=5cp
+,pay;by=Tristan
 date=Mirtul 12 1370
 ,party;name=Mirtul-12-1370;type=AFAL;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
-,give;to=Mirtul-12-1370;by=Someone;cash=5ep,7sp
+,give;to=Mirtul-12-1370;by=Someone;cash=5ep,7sp,Silver Ring 10gp
 ,find;found=Mirtul-12-1370
-,,name=Silver ring 10gp
 ,,name=Ring of Water Resistance  #1;note=Darius ID Mirtul 13 1370
-,,name=50foot rope
-,,name=grapple
-,,name=spikes
-,,name=mallet
+,,name=Nonmagic  #12;note=50foot rope, grapple, spikes, mallet
 ,,name=Scroll (MU) Sleep, Mending, Feather Fall (ff used 12 Mirtul 1370)
 ,,name=Rod of Teleportal Control  #1;note=id by Darius Mirtul 17 1370
 date=Mirtul 16 1370
@@ -133,15 +132,19 @@ date=Mirtul 16 1370
 ,coin;name=Gem{s}: Opal{s} 1000gp;copper_equiv=200000
 ,coin;name=Statue: Hooded man with scimitar 40gp;copper_equiv=8000
 ,party;name=Mirtul-16-1370;type=AFAL;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
+,give;to=destroyed;item=Potion of Fire Breathing
 ,give;to=Mirtul-16-1370;by=Someone;cash=2 Gems: Jades 100gp, 2 Gems: Shoulong Amethysts 100gp, 1 Gem: Rock Crystal 100gp, 2 Gems: Amber 100gp, 3 Gems: Irtioses 100gp,1 Statue: Raven 500gp
 ,find;found=Mirtul-16-1370
 ,,name=Potion of Flying  #1;note=ID by Darius Mirtul 17 1370
 ,,name=Ring of Protection (fire)  #1;note=ID by Darius Mirtul 17 1370
 ,lend;item=Ring of Protection (fire)  #1;to=Brogan
 ,lend;item=Potion of Flying  #1;to=Steve
+date=Mirtul 17 1370
+,lend;item=Wand of Negation  #1;to=Denyae
+,lend;item=Wand of Negation  #2;to=Tristan
 date=Mirtul 18 1370
 ,party;name=Mirtul-18-1370;type=AFAL;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
-,give;to=Destroyed;item=Chardalyn  #1
+,give;to=destroyed;item=Chardalyn  #1
 ,give;to=Mirtul-18-1370;by=Someone;cash=Statue: Hooded man with scimitar 40gp, 2 Gems: Opals 1000gp
 ,coin;name=Gem{s}: Algae 10gp;copper_equiv=2000
 ,coin;name=Gem{s}: Angi Mani 10gp;copper_equiv=2000
@@ -170,3 +173,6 @@ date=Mirtul 18 1370
 ,give;to=Mirtul-18-1370;by=Someone;cash=Gem: Moss Agate 10gp, Gem: Blue Quartz 10gp, Gem: Rosaline 10gp, Gem: Woodtine 10gp, Gem: Sheen 10gp, Gem: Algae 10gp, Gem: Zarbrina 10gp, Gem: Goldline 10gp, Gem: Obsidian 10gp, Gem: Angi Mani 10gp, Gem: Satin Spar 10gp, Gem: Fire Agate 10gp, Gem: Flourospar 10gp, Gem: Azurite 10gp, Gem: Sandine 10gp, Gem: Nelvine 10gp, Gem: Moss Agate 10gp, Gem: Hyaline 10gp, Gem: Disthene 10gp, Gem: Zarbrina 10gp, Gem: Silkstone 10gp, Gem: Sandine 10gp, Gem: Sharpstone 10gp, Gem: Frost Agate 10gp, Gem: Moss Agate 10gp, Gem: Sheen 10gp, Gem: Hyaline 10gp, Gem: Nune 10gp, Ladle 50gp, Statue: Comedy Scene 1000gp, Statue: Duck 500gp, 2 Shells: Conches 10gp, 4 Shells: Opal Cowries 100gp, 3 Shells: Horned Helmets 50gp, 11964sp
 date=Mirtul 19 1370
 ,party;name=Mirtul-19a-1370;type=AFAL;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
+,give;to=destroyed;item=Potion of Flying  #1
+,give;to=destroyed;item=Shield with scroll of Summon Mystic Moose
+,give;to=destroyed;item=Potion of Growth

@@ -188,6 +188,7 @@ Henkles=1;Maanamere=1;Staric=.5
 ,,name=Glowing Glass Orb, 2.5' diamater
 ,,name=Wyvern head
 ,,name=Wyvern scales
+,give;to=AFAL;item=Glowing Glass Orb, 2.5' diamater
 ,give;by=Someone;to=Tarsakh-12-1370;cash=26 Gems: Carnelians 50gp,\
  4 Gems: Citrines 75gp, 18 Gems: Moonstones 55gp, 33 Gems: Sardonyxes 50gp,\
  24 Gems: Zircons 65gp, 12 Gems: Garnets 500gp, 8 Gems: Spinels 500gp\
@@ -288,7 +289,7 @@ date=13 Tarsakh 1370
 ,,by=Steve;cash=3 Harbor Moons;for=30pp
 ,lend;to=Maanamere;item=Ring of Shocking Grasp  #1
 ,lend;to=Denyae;item=Scepter of Entrapment
-,give;item=Potion of Shopping  #1;to=Destroyed;note=used by Brogan
+,give;item=Potion of Shopping  #1;to=destroyed;note=used by Brogan
 ,give;by=Brogan;to=Someone;cash=1 Gem: Spinel 500gp;note=Down payment on ammo
 ,give;by=Brogan;to=Someone;cash=12gp;note=food/drink/etc in Skullport
 date=Tarsakh 16, 1370;find;found=AFAL;name=Augury Sticks;holder=AFAL
@@ -297,7 +298,7 @@ date=Tarsakh 20, 1370
 ,party;type=AFAL;name=Tarsakh-20a-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Deringa=0.5;Dexter=1;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
 ,find;found=Tarsakh-20a-1370
 ,,name=3x Giant Spider poison sacks
-,,name=Bracers of Defense AC4;note=Ag (mis-)part ID Tarsakh 24 1370  Henkles identified through testing
+,,name=Bracers of Defense AC 4;note=Ag (mis-)part ID Tarsakh 24 1370  Henkles identified through testing
 ,,name=+2 Ring of Protection  #2;note=Steve ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Invisibility  #1;note=Steve and Staric ID Tarsakh 24 1370;value=7500gp
 ,,name=Magic Potion;note=Ag,Tristan,Staric failed Tarsakh 24 1370
@@ -347,11 +348,12 @@ date=Tarsakh 21, 1370
 ,trade;by=Dexter;to=Denyae;cash=2 Gems: Garnets 500gp, Gem: Zircon 65gp, 6 Gems: Sardonyxes 50gp;for=1365gp
 ,give;to=Someone;by=Dexter;amount=1900gp
 ,give;to=Someone;by=Staric;amount=800gp;note=Loan to Dexter for Nose Ring
-,find;found=Dexter;name=Nose Ring of Load Easement;value=2700gp
+,find;found=Dexter;name=Nose Ring of Load Easement;value=2700gp;holder=Someone
 ,party;type=AFAL;name=Tarsakh-21-1370;Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Tristan=1
 ,give;to=Someone;by=Henkles;cash=32 Harbor Moons;note=loan to party for Eversmoking Bottle
 ,give;to=Someone;by=AFAL;cash=4 Harbor Moons
 ,find;found=Tarsakh-21-1370;name=Eversmoking Bottle;value=1800gp
+,give;to=AFAL;item=Eversmoking Bottle;holder=Dexter
 ,give;to=Someone;by=AFAL;cash=17 Harbor Moons
 ,give;to=Someone;by=Steve;cash=1150gp;note=loan to party for arrows
 ,find;found=Tarsakh-21-1370;name=6* +3 Sheaf Arrow;value=2000gp
@@ -437,11 +439,11 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,,name=+2 Ring of Protection  #3;note=Steve failed, Ag ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Fire Resistance  #2;note=Steve, Staric id Tarsakh 24 1370;value=5000gp
 ,,name=Ring of Telekenisis 25#;note=Steve,Tristan,Staric ID Tarsakh 24 1370;value=10000gp
-,,name=Bracers of Defense AC5  #3;note=Ag, Tristan failed, Staric part ID Tarsakh 24 1370;value=15000gp
+,,name=Bracers of Defense AC 5  #3;note=Ag, Tristan failed, Staric part ID Tarsakh 24 1370,Auction;value=15000gp
 ,,name=+1/+3 (Trolls) Long Sword;note=Tristan id Tarsakh 24 1370;value=3000gp
 ,,name=+2/+3 (L) Dagger;note=Tristan ID Tarsakh 24 1370;value=2000gp;
 ,,name=Amulet of Proof Against Detection and Location;note=Steve part ID Tarsakh 24 1370;value=15000gp
-,give;to=Destroyed;item=Holy Water  #1;note=used on Arcturagana
+,give;to=destroyed;item=Holy Water  #1;note=used on Arcturagana
 ,coin;name=mithril piece{s};abbrev=mp;copper_equiv=10000
 ,give;by=Someone;to=Tarsakh-22-1370;cash=3cp,8sp, 21gp, 3 toal, 25 Harbor Moons, 25 mithril pieces;note=Cash on A.
 ,give;by=Someone;to=Tarsakh-20a-1370;cash=1000gp;note=For smoke powder work so far
@@ -517,7 +519,7 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,sell;to=Denyae;item=+1/+3 (Trolls) Long Sword;cash=600000vcp
 ,sell;to=Ag;item=+2/+3 (L) Dagger;cash=400000vcp
 date=Tarsakh 23, 1370
-,give;by=AFAL;to=Destroyed;cash=2 Gems: pearls 100gp;note=used for identifies
+,give;by=AFAL;to=destroyed;cash=2 Gems: pearls 100gp;note=used for identifies
 ,trade;by=Steve;to=Henkles;cash=22 Harbor Moons;for=1100gp
 ,give;by=Henkles;to=Someone;amount=200gp;note=pearls for Identify
 ,lend;to=Denyae;item=Amulet of Proof Against Detection and Location
@@ -548,8 +550,8 @@ date=Tarsakh 25 1370
 ,give;by=AFAL;to=Someone;cash=13 Gems: Violanes 12gp, 14 Gems: Agni Manis 10gp, 10 Gems: Algaes 10gp, 11 Gems: Chrysocollas 10gp, 8 Gems: Eye Agates 10gp, 17 Gems: Sharpstones 10gp, 12 Gems: Silkstones 10gp, 12 Gems: Tiger Eye Agates 10gp, 8ep;note=gems for Lin for getting information
 date=Tarsakh 26 1370
 ,party;type=AFAL;name=Tarsakh-26-1370;Brogan=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Tristan=1
-,give;to=Destroyed;item=Carpet of Flying
-,give;to=Destroyed;item=Amulet of Proof Against Detection and Location
+,give;to=destroyed;item=Carpet of Flying 3x5
+,give;to=destroyed;item=Amulet of Proof Against Detection and Location
 ,find;found=Tarsakh-26-1370;name=Copper Horse Statue 6gp;value=6gp
 ,sell;to=Dexter;item=Copper Horse Statue 6gp;cash=1200vcp
 date=Tarsakh 27 1370
@@ -577,7 +579,7 @@ date=Tarsakh 28 1370
 ,give;by=Someone;to=Tarsakh-28d-1370;cash=236gp
 ,coin;name=Silver Trade Bar{s} (25gp);copper_equiv=5000
 ,give;by=Someone;to=Tarsakh-28d-1370;cash=6 Silver Trade Bars (25gp)
-,sell;to=Henkles;item=Bracers of Defense AC4;debt=18000gp
+,sell;to=Henkles;item=Bracers of Defense AC 4;debt=18000gp
 ,sell;to=Tristan;item=Ring of Telekenisis 25#;debt=10000gp
 ,sell;to=Henkles;item=Ring of Shocking Grasp  #2;debt=4999gp,199cp;cash=1cp
 ,cancel;Henkles;Tristan

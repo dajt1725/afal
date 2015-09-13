@@ -1152,21 +1152,21 @@ def get_items(kind, match = None):
     elif kind == 'Party':
         clause = 'where owned_by = %(party)s'
     elif kind == 'Auction':
-        clause = 'where held_by = %(auction)s or note like "%%Auction%%"'
+        clause = 'where owned_by != "Someone" and (held_by = %(auction)s or note like "%%Auction%%")'
     elif kind == 'Sell':
         clause = 'where held_by = %(sell)s or note like "%%Sell%%"'
     elif kind == 'Lent':
         clause = 'where held_by is not NULL and held_by != owned_by'
     elif kind == 'Identify':
         clause = 'where note like "%%Identify%%"'
-    elif kind == 'All':
-        pass
     elif kind == 'Found_by':
         clause = 'where found_by = %(match)s'
     elif kind == 'Owned_by':
         clause = 'where owned_by = %(match)s'
     elif kind == 'Held_by':
         clause = 'where held_by = %(match)s'
+    elif kind == 'All':
+        clause = 'where owned_by != "Someone" and owned_by != "destroyed"'
     cur.execute("select "
  " item_name, found_by, owned_by, held_by, date_found, date_xfrd, note, value_cp "
  " from fr_item " + clause + " order by item_name",
