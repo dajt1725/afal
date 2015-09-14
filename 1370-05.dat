@@ -24,7 +24,7 @@ date=Mirtul 1 1370
 ,,name=+1 Shield  #4
 ,,name=+1 Khopesh  #1
 ,,name=Wand of Negation  #1;note=Misid as healing
-,,name=4x +2 Arrow  #1;holder=Dexter
+,,name=+2 Arrow (Sheaf)  #2;holder=Dexter;note=4x
 ,,name=Potion  (Aleesre) #1
 ,,name=+1 Harpoon  #1
 ,find;found=Henkles;holder=Henkles;note=Auction
@@ -114,7 +114,11 @@ date=Mirtul 7 1370
 date=Mirtul 10 1370
 ,sell;to=Tristan;item=Ring of Invisibility  #2;debt=7499gp,195cp;cash=5cp
 ,pay;by=Tristan
+,give;by=Someone;to=AFAL;cash=650gp;note=deposit on fallen tower dungeon
+,give;by=Maanamere;to=Someone;cash=28gp,1ep;note=Wages for Sailors
 date=Mirtul 12 1370
+,coin;name=Letter of Credit 1000gp;copper_equiv=200000
+,give;by=Someone;to=AFAL;cash=1500gp;note=To purser on entry
 ,party;name=Mirtul-12-1370;type=AFAL;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
 ,give;to=Mirtul-12-1370;by=Someone;cash=5ep,7sp,Silver Ring 10gp
 ,find;found=Mirtul-12-1370
@@ -122,6 +126,8 @@ date=Mirtul 12 1370
 ,,name=Nonmagic  #12;note=50foot rope, grapple, spikes, mallet
 ,,name=Scroll (MU) Sleep, Mending, Feather Fall (ff used 12 Mirtul 1370)
 ,,name=Rod of Teleportal Control  #1;note=id by Darius Mirtul 17 1370
+,give;to=AFAL;by=Someone;cash=2500gp,Letter of Credit 1000gp;note=fee for returning the chests
+,give;to=AFAL;by=Someone;cash=400gp;note=Fee for bringing employers to the teleportal
 date=Mirtul 16 1370
 ,coin;name=Gem{s}: Jade{s} 100gp;copper_equiv=20000
 ,coin;name=Gem{s}: Shoulong Amethyst{s} 100gp;copper_equiv=20000
@@ -176,3 +182,5 @@ date=Mirtul 19 1370
 ,give;to=destroyed;item=Potion of Flying  #1
 ,give;to=destroyed;item=Shield with scroll of Summon Mystic Moose
 ,give;to=destroyed;item=Potion of Growth
+,give;to=Steve;by=AFAL;cash=2 Gems: Jasmals 1000gp, 2 Gems: Opals 1000gp, 6 Gems: Rubies 1000gp;note=repayment on escrow for Semblina
+,give;to=Henkles;by=AFAL;cash=1 Letter of Credit 1000gp, Gem: Heliodor 500gp, 368000vcp;note=repayment on pearls, 3 heals, undermountain, skullport, docking in Neverwinter

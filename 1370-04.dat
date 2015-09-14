@@ -22,7 +22,7 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
 ,give;by=AFAL;to=Someone;amount=300gp;note=pearls for Identify
 ,dividend;by=Ches-30-1370;cash=1908gp, 108sp
 ,sell;to=Dexter;item=Ebony Fly;cash=5000gp
-,sell;to=Henkles;item=Poison: Urds Teeth *3;cash=105gp
+,sell;to=Henkles;item=Poison: Urds Teeth  #1;cash=105gp
 ,trade;by=Darius;to=Ches-30-1370;for=2 Gems: Chrysoberyls 100gp
 date=2 Tarsakh 1370
 ,give;to=Ches-30-1370;holder=Denyae;item=+1 Ring of Protection  #1
@@ -356,7 +356,7 @@ date=Tarsakh 21, 1370
 ,give;to=AFAL;item=Eversmoking Bottle;holder=Dexter
 ,give;to=Someone;by=AFAL;cash=17 Harbor Moons
 ,give;to=Someone;by=Steve;cash=1150gp;note=loan to party for arrows
-,find;found=Tarsakh-21-1370;name=6* +3 Sheaf Arrow;value=2000gp
+,find;found=Tarsakh-21-1370;name=+3 Sheaf Arrow  #1;value=2000gp;note=6x
 ,coin;name=virtual copper piece{s};abbrev=vcp;copper_equiv=1;priority=1
 ,sell;to=Someone;item=+1 Banded Mail;cash=680000vcp;note=3400gp
 ,sell;to=Someone;item=+1 Dagger  #1;cash=360000vcp;note=1800gp
@@ -370,7 +370,7 @@ date=Tarsakh 21, 1370
 ,sell;to=Someone;item=+1 Studded Leather Armor;cash=660000vcp;note=3300gp
 ,sell;to=Someone;item=Amulet of Turning Resistance;cash=440000vcp;note=2200gp
 ,sell;to=Someone;item=Bottle of Breaking;cash=106000vcp;note=530gp
-,sell;to=Someone;item=Detect Magic powder *10;cash=62000vcp;note=310gp
+,sell;to=Someone;item=Dust of Detect Magic;cash=62000vcp;note=310gp
 ,sell;to=Someone;item=Oil of Slipperiness;cash=198000vcp;note=990gp
 ,sell;to=Someone;item=Potion of Claraudience;cash=122400vcp;note=612gp
 ,sell;to=Someone;item=Potion of Enlarge;cash=48000vcp;note=240gp
@@ -590,13 +590,14 @@ date=Tarsakh 28 1370
 date=Tarsakh 29 1370
 ,give;by=Henkles;to=Someone;cash=5 Toals;note=10 people out of Undermountain
 ,give;by=Henkles;to=Someone;cash=20 Harbor Moons;note=Heal on Brogan
+,give;to=destroyed;item=2x barrel of smoke powder
 date=Tarsakh 30 1370
 ,give;by=Henkles;to=Someone;cash=200000vcp;note=Heal on Maanamere
-,find;found=Brogan;name=Holy Water  #11
-,find;found=Brogan;name=Holy Water  #12
-,find;found=Brogan;name=Holy Water  #13
-,find;found=Brogan;name=Holy Water  #14
-,find;found=Brogan;name=Holy Water  #15
+,find;found=Brogan;name=Holy Water  #11;holder=Brogan
+,find;found=Brogan;name=Holy Water  #12;holder=Brogan
+,find;found=Brogan;name=Holy Water  #13;holder=Brogan
+,find;found=Brogan;name=Holy Water  #14;holder=Brogan
+,find;found=Brogan;name=Holy Water  #15;holder=Brogan
 ,give;by=Steve;to=Someone;cash=2000000vcp;note=Escrow for Semblina
 date=Greengrass Festival 1370
 ,give;by=Henkles;to=Someone;cash=50gp;note=Entrance fee to Skullport

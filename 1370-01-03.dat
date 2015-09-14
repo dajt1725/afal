@@ -56,15 +56,15 @@ date=Hammer 20 1370
 ,,,name=+1 Dagger  #4;value=1400gp
 ,,,name=+1 Heavy Crossbow;note=bolts:1sp,.1#,dmg 1-10/1-10,S,P\; bow: 50gp, 14#, M, speed 11, RoF 1/2, Range 8/16/24;value=2700gp
 ,,holder=Maanamere;owner=AFAL
-,,,name=+1 Arrow (Sheaf) *3  #1
-,,,name=Sleep Gas Grenade (M) *2  #1
+,,,name=+1 Arrow (Sheaf)  #2;note=3x
+,,,name=Sleep Gas Grenade (M)  #1;note=2x
 ,,holder=Denyae;owner=AFAL
-,,,name=+1 Arrow (Sheaf) *12
-,,,name=Sleep Gas Grenade (M) *2  #2
+,,,name=+1 Arrow (Sheaf)  #3;note=12x
+,,,name=Sleep Gas Grenade (M)  #2;note=was 2 but one used on Mirtul 19 1370
 ,,name=+1 Light Crossbow  #3;owner=Someone;xfrd=30 Hammer 1370;note=Given to the orc chieftan
-,,name=+1 Arrow (Sheaf) *6;holder=Dexter;owner=AFAL
-,,name=+1 Arrow (Sheaf) *3  #2;holder=Henkles;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2  #3;owner=AFAL
+,,name=+1 Arrow (Sheaf)  #4;holder=Dexter;owner=AFAL;note=6x
+,,name=+1 Arrow (Sheaf)  #5;holder=Henkles;owner=AFAL;note=3x
+,,name=Sleep Gas Grenade (M)  #3;owner=AFAL;note=2x
 ,,name=Potion of Gaseous Form  #2;note=AgL7Fail id, Darius id <d Tarsakh 8 1370>
 ,meet;association=AFAL;status=inactive
 ,,name=Alril;fullname=Alril Elarorrieth;race=Moon Elf;gender=Male\
@@ -142,7 +142,7 @@ date=Alturiak 5 1370
 ,lend;to=Tristan;item=+1 Shield  #2
 ,lend;to=Tristan;item=Dagger of Hurting  #4
 ,lend;to=Tristan;item=+1 Plate Mail (Half Elf)
-,lend;to=Tristan;item=Sleep Gas Grenade (M) *2  #3
+,lend;to=Tristan;item=Sleep Gas Grenade (M)  #3;note=2x
 date=Alturiak 6 1370
 ,meet;name=Morgath the Stable;status=active\
 ;association=Miresk&apos\;s school of Thaumaturgy;race=Human?;gender=Male\
@@ -183,8 +183,8 @@ date=Ches 3 1370
 ,,,name=Potion of Longevitiy;value=1000gp
 ,,,name=Potion of Claraudience;value=400gp
 ,,,name=Potion of Lust
-,,,name=Detect Magic powder *10;note=Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
-,,,name=Brighten lamps powder *10;note=Green odorless powder: increases lamp oil light by 20'
+,,,name=Dust of Detect Magic;note=10x uses, Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
+,,,name=Dust of Brighten Lamplight;note=10x uses, Green odorless powder: increases lamp oil light by 20'
 ,,name=Scroll (MU)  #10;note=5 spells: 5) Zwei's 2nd extension, 6) Sadebreth's reincarnation - id'd, 7) Yong's dissipation, 7) Noanar's delayed fireball - id'd, 8) Lucke's 6th monster summons
 ,,name=Scroll (MU)  #11;note=2 spells: 3) Nalevac's deep sight, 4) Zwei's 1st extension
 ,,name=Scroll (MU)  #12;note=4 spells: 3) Gwynn's vampirism, 8) Lucke's 6th monster summons, 8) Kutson's antipathy/sympathy, 10) Proctiv's move mountain
@@ -197,9 +197,9 @@ date=Ches 3 1370
 ,,name=Oil of Disenchantment
 ,,name=Potion of Stone Giant Strength
 ,,name=Potion *3;note=Identify,TristanL5Fail
-,,name=Detect Invisible powder *10;note=Grey powder black flecks, smells of rain
-,,name=Knockout powder *10;note=Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
-,,name=Make Insubstantial powder *10;note=Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
+,,name=Dust of Detect Invisible;note=10x uses, Grey powder black flecks, smells of rain
+,,name=Dust of Knockout;note=10x uses, Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
+,,name=Dust of Make Insubstantial;note=10x uses, Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
 ,,name=Magic Tent;owner=AFAL;note=Sleeps 8, acts as a Ring of Warmth for the inhabitants
 ,,name=Magic Cooking Set;owner=AFAL
 ,,name=Gem: lots;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
@@ -209,7 +209,7 @@ date=Ches 3 1370
 ,find;found=Ches-3d-1370
 ,,name=Shameful Tome of Dishonerable Attacks;note=Identify
 ,,name=Wand of Lightning Fan;holder=Darius;owner=AFAL
-,,name=Dart of Human Slaying *3(1 used);holder=Henkles;owner=AFAL
+,,name=Dart of Human Slaying;holder=Henkles;owner=AFAL;note=3x, 1x used, so 2x left
 ,,name=Ioun Stones;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 date=Ches 7 1370
 ,writeoff;Chusnog;Oguch;Stalker;note=because the orc village is nice this time of year
@@ -237,20 +237,20 @@ date=Ches 30 1370
 ,,name=Nonmagic  #1;note=too much to list here
 ,,name=Ring of Fire Resistance  #1
 ,,name=Ebony Fly
-,,name=Poison: Urds Teeth *3
+,,name=Poison: Urds Teeth  #1;note=3x uses
 ,,name=+1/+3(Cold) Ring of Protection  #2;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1 Ring of Protection  #3;holder=Ag;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1/+3(Saves) Ring of Protection;holder=Henkles;note=Fully id by testing <d Tarsakh 10 1370>
-,,name=+1 Arrow (Flight) *10;holder=Denyae;owner=AFAL
-,,name=+1 Arrow (Flight) *6;holder=Dexter;owner=AFAL
-,,name=+1 Arrow (Flight) *2  #1;holder=Maanamere;owner=AFAL
-,,name=+1 Arrow (Flight) *2  #2;holder=Henkles;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2  #4;owner=AFAL;xfrd=30 Ches 1370
-,,name=Sleep Gas Grenade (M) *2  #5;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2  #6;holder=Dexter;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2  #7;holder=Deringa;owner=AFAL
+,,name=+1 Arrow (Flight)  #6;holder=Denyae;owner=AFAL;note=10x
+,,name=+1 Arrow (Flight)  #7;holder=Dexter;owner=AFAL;note=6x
+,,name=+1 Arrow (Flight)  #8;holder=Maanamere;owner=AFAL;note=2x
+,,name=+1 Arrow (Flight)  #9;holder=Henkles;owner=AFAL;note=2x
+,,name=Sleep Gas Grenade (M)  #4;owner=AFAL;xfrd=30 Ches 1370;note=2x
+,,name=Sleep Gas Grenade (M)  #5;owner=AFAL;note=2x
+,,name=Sleep Gas Grenade (M)  #6;holder=Dexter;owner=AFAL;note=2x
+,,name=Sleep Gas Grenade (M)  #7;holder=Deringa;owner=AFAL;note=2x
 ,,name=Wand of Hurting;holder=Deringa;owner=AFAL
-,,name=Sleep Gas Grenade (M) *2  #8;holder=Staric;owner=AFAL
+,,name=Sleep Gas Grenade (M)  #8;holder=Staric;owner=AFAL;note=2x
 ,,holder=Auction
 ,,,name=+1 Medium Shield;note=10gp?, 10#;value=2500gp
 ,,,name=+1 Footmans Pick;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp

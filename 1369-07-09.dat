@@ -72,7 +72,7 @@ date=Eleint 17 1369
 date=19 Eleint 1369
 ,party;type=AFAL;name=Eleint-19-1369;Cassie=1;Darius=1;Dexter=1;Henkles=1;Maanamere=1;Misery=1;Narthan=0;Steve=1;Stewart=1
 ,find;found=Eleint-19-1369
-,,name=Arrow (Sheaf) of Holding *2;note=Steve failed, Darius id <d Eleint 20 1369>;owner=AFAL
+,,name=Arrow (Sheaf) of Holding  #1;note=2x, Steve failed, Darius id <d Eleint 20 1369>;owner=AFAL
 ,,name=+2 Shield;holder=Narthan;note=Narthan id <d Eleint 19 1369>
 ,,name=Ring of Teleport Adventurer Into Undermountain;note=Steve, Darius part id on <d Eleint 20 1369>;owner=Someone;xfrd=27 Eleint 1369
 ,,name=Oil of Firey Burning;owner=destroyed;xfrd=12 Uktar 1369;note=Used by Steve, Temple id <d Eleint 27 1369>

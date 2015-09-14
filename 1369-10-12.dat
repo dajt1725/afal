@@ -141,8 +141,8 @@ date=12 Uktar 1369;
 ,,name=Fanny Pack of Holding;holder=Darius
 ,,name=Tenser's Throw Rug;holder=Darius;owner=AFAL
 ,,name=Shield with scroll of Summon Mystic Moose;owner=AFAL
-,,name=+2 Arrow (Flight) *4;owner=AFAL
-,,name=Arrow (Flight) of Darkness;owner=AFAL
+,,name=+2 Arrow (Flight)  #1;owner=AFAL;note=4x
+,,name=Arrow (Flight) of Darkness  #1;owner=AFAL
 ,,name=Preserved Green Dragon Breath;holder=Stewart;note=Blew up with Stewart
 ,,name=Potion of Heroism  #3;owner=AFAL
 ,,name=Scroll (C) *2;owner=Someone;xfrd=13 Uktar 1369;value=3300gp
@@ -310,10 +310,10 @@ date=Uktar 13 1369
  Has earned the emnity of the vampire lord Dread William of the South Moors.\
  Offered full party membership on <d Ches 21 1370>.
 ,lend;to=Denyae
-,,item=Arrow (Sheaf) of Holding *2
+,,item=Arrow (Sheaf) of Holding  #1;note=2x
 ,,item=Shield with scroll of Summon Mystic Moose
-,,item=+2 Arrow (Flight) *4
-,,item=Arrow (Flight) of Darkness
+,,item=+2 Arrow (Flight)  #1
+,,item=Arrow (Flight) of Darkness  #1
 ,find;found=Henkles;holder=Henkles;name=Weapon: Balthazar Hellspawn of Terror;xfrd=13 Uktar 1369;value=4000gp
 ,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small)  #1;note=Darius cast Fireball <d Uktar 24 1369>
 ,find;found=AFAL;date_found=Uktar 13 1369;name=Chardalyn (small)  #2;note=Darius cast Snilloc's Snowball Swarm on <d Uktar 24 1369>;owner=destroyed;xfrd=Nightal 1 1369
@@ -471,7 +471,7 @@ date=12 Nightal 1369
 ,party;type=AFAL;name=Nightal-12-1369;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Maanamere=1;Misery=1;Steve=1;Ursula=1
 ,find;found=Nightal-12-1369
 ,,name=+1 Dagger  #1;note=From Staros;holder=Auction;value=1400gp
-,,name=+1 Arrow (Sheaf);holder=Denyae;note=From Staros;owner=AFAL
+,,name=+1 Arrow (Sheaf)  #1;holder=Denyae;note=From Staros;owner=AFAL
 ,,name=Potions of Minor Healing and Regeneration
 date=Nightal 13 1369;meet;name=Lin;status=active\
 ;fullname=Linlenasni &quot\;Lin&quot\; Rineireirael;association=The Blue Dolphin Bar\
