@@ -1,8 +1,8 @@
 B=1369-01-06.dat 1369-07-09.dat 1369-10-12.dat 1370-01-03.dat 1370-04.dat 1370-05.dat
 D=-h127.0.0.1 -uafal -pBuffyStewart afal_devel
 P=-h127.0.0.1 -uafal -pBuffyStewart afal
-W=/cygdrive/c/Apache24
-H=$W/htdocs
+W=/var/www
+H=$W/html
 X=$W/devel
 Y=$W/afal
 M=MythDranor.svg Undermountain.svg
@@ -30,10 +30,7 @@ devel-retry:
 
 prod-setup:
 	rm -f afal_config.py report.prod.out bulk.prod.out bulk.prod.err
-	mysql $P << EOF \
-		drop database afal; \
-		create database afal; \
-		EOF
+	mysql $D -e 'drop database afal;' -e 'create database afal;'
 	mysql $P < afal-schema.sql.mysql
 	ln -s afal_config.py.prod.write afal_config.py
 	./bulk -v $B > bulk.prod.out

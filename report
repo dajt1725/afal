@@ -87,15 +87,17 @@ def format_party(p):
 def party_to_log(p):
     return '<a href="{logs}{l}.html">'.format(logs = afal_config.logs, l = re.sub(r'([^-]*-)?([^-]+)-(Festival|[0-9]+)[A-Za-z]?-([^-]+)', r'\2_\3_\4', p))
 
-def format_item(i, party = None):
+def format_item(i, party = None, q = None):
     if afal_config.text:
-        return i
+        ret = i
     else:
         if party is None:
             tmp = afal.get_item_data(i)
             party = tmp['finder']
-        return party_to_log(party) + i + '</a>'
-
+        ret = party_to_log(party) + i + '</a>'
+    if q is not None:
+        ret += ' ' + str(q)
+    return ret
 
 def fmt_date(m):
     return format_date(afal.str_to_date(m.group(1)))
@@ -483,7 +485,12 @@ def print_items(items, verb, show_note = False, show_finder = False, show_owner 
     afal.pw(group_hdr.format(text=format_plural(items, verb)), **fmt_group_header)
     afal.pw(table_hdr.format(**f), **fmt_neol)
     for i in items:
-        f['item'] = format_item(i['item'], party = i['finder'])
+        q = None
+        if i.get('note'):
+            qm = re.match(r'(\d+[^,]+)(\,|$)', i['note'])
+            if qm is not None:
+                q = qm.group(1)
+        f['item'] = format_item(i['item'], party = i['finder'], q = q)
         if show_note:
             f['note'] = get_item_entry('note', i, f, munge_html)
         if show_value:
