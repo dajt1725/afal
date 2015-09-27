@@ -30,7 +30,7 @@ devel-retry:
 
 prod-setup:
 	rm -f afal_config.py report.prod.out bulk.prod.out bulk.prod.err
-	mysql $D -e 'drop database afal;' -e 'create database afal;'
+	mysql $P -e 'drop database afal;' -e 'create database afal;'
 	mysql $P < afal-schema.sql.mysql
 	ln -s afal_config.py.prod.write afal_config.py
 	./bulk -v $B > bulk.prod.out
