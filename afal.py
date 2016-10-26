@@ -798,14 +798,20 @@ def get_journal(cond = None):
     if 'starting_on' in cond:
         if 'on' in cond:
             raise KeyError("Can't have both 'starting_on' and 'on' in condition")
-        clause += pre + ' date >= %(s_o)s '
-        args['s_o'] = str_to_date(cond['starting_on'])
+        if cond['starting_on'].lower() == 'latest':
+            clause += pre + ' date = (select max(date) from fr_journal {char_clause}) '.format(char_clause = char_clause)
+        else:
+            clause += pre + ' date >= %(s_o)s '
+            args['s_o'] = str_to_date(cond['starting_on'])
         pre = npre
     if 'up_to' in cond:
         if 'on' in cond:
             raise KeyError("Can't have both 'up_to' and 'on' in condition")
-        clause += pre + ' date <= %(u_t)s '
-        args['u_t'] = str_to_date(cond['up_to'])
+        if cond['up_to'].lower() == 'latest':
+            pass
+        else:
+            clause += pre + ' date <= %(u_t)s '
+            args['u_t'] = str_to_date(cond['up_to'])
         pre = npre
     if 'cash' in cond:
         clause += pre + ' cash_cp > 0 '
