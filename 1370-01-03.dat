@@ -164,7 +164,10 @@ date=Ches 3 1370
  130gp, platinum necklace 700gp
 ,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
 ,find;found=Ches-3b-1370
-,,name=Potion *4;note=Identify
+,,name=Magic Potion (3b #1);note=Identify
+,,name=Magic Potion (3b #2);note=Identify
+,,name=Magic Potion (3b #3);note=Identify
+,,name=Magic Potion (3b #4);note=Identify
 ,,name=Jug of Liquid Magic  #1
 ,,holder=Auction
 ,,,name=Scroll (MU)  #7;note=L1: Unseen Servant *3
@@ -196,7 +199,9 @@ date=Ches 3 1370
 ,,name=Potion of Polymorph Self  #2
 ,,name=Oil of Disenchantment
 ,,name=Potion of Stone Giant Strength
-,,name=Potion *3;note=Identify,TristanL5Fail
+,,name=Magic Potion (3c) #1;note=Identify,TristanL5Fail
+,,name=Magic Potion (3c) #2;note=Identify,TristanL5Fail
+,,name=Magic Potion (3c) #3;note=Identify,TristanL5Fail
 ,,name=Dust of Detect Invisible;note=10x uses, Grey powder black flecks, smells of rain
 ,,name=Dust of Knockout;note=10x uses, Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
 ,,name=Dust of Make Insubstantial;note=10x uses, Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
