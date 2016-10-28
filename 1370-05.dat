@@ -25,7 +25,7 @@ date=Mirtul 1 1370
 ,,name=+1 Khopesh  #1
 ,,name=Wand of Negation  #1;note=Misid as healing
 ,,name=+2 Arrow (Sheaf)  #2;holder=Dexter;note=4x
-,,name=Potion  (Aleesre) #1
+,,name=Magic Potion  (Aleesre) #1;note=Identify
 ,,name=+1 Harpoon  #1
 ,find;found=Henkles;holder=Henkles;note=Auction
 ,,name=+1 Banded Mail (halfling)  #1
@@ -64,13 +64,13 @@ date=Mirtul 1 1370
 ,,name=+2 Studded Leather (half elf)  #1;note=Auction
 ,,name=+1 Morning Star  #1;note=Auction
 ,,name=Potion of Healing  #9
-,,name=Potion (Deeeze)  #2
+,,name=Magic Potion (Deeeze)  #2;note=Identify
 ,,name=Wand of Negation  #2;note=misid as Healing
 ,,name=+3 Full Plate (elf 5foot)  #1
 ,,name=+2 Bardiche  #1
 ,,name=+1 Heavy Crossbow  #2
-,,name=Potion (Linael)  #1
-,,name=Ring (Linael)  #1
+,,name=Magic Potion (Linael)  #1;note=Identify
+,,name=Magic Ring (Linael)  #1;note=Identify
 ,,name=+3 Bola of Entanglement  #1
 ,give;by=Someone;to=Mirtul-1b-1370;cash=4 gems: Rubies 1000gp,9 gems: Corals 100gp, 9 gems: Fire Agates 10gp, 5gp, 1 gem: Heliodor 500gp, 5 gems: Nunes 10gp, 6ep, 5sp, 2 gems: Tourmalines 100gp, 9 gems: Banded Agates 10gp, 7gp, 9sp, 9 gems: Laerals Tears 100gp, 10mp, 4 gems: Pearls 250gp, 5 gems: Laerals Tears 100gp, 4 toals, 16sp, 2 gems: Jasmals 1000gp, 18 gems: Lapis Lazulis 10gp
 ,trade;by=Tristan;to=AFAL;for=10cp
@@ -96,7 +96,7 @@ date=Mirtul 1 1370
 ,find;found=Mirtul-1c-1370
 ,,name=Dagger with sticky blade
 ,,name=Potion of Healing  #10;note=Darius ID Mirtul 13 1370
-,,name=Potion  #mf2;note=Darius Failed ID Mirtul 13 1370
+,,name=Magic Potion  #mf2;note=Identify, Darius Failed ID Mirtul 13 1370
 ,,name=Potion of Polymorph Self  #4;note=Darius ID Mirtul 13 1370
 ,,name=Scroll: Protection from Acid
 ,,name=Scroll: faded  #3
@@ -178,9 +178,58 @@ date=Mirtul 18 1370
 ,coin;name=Ladle 50gp;copper_equiv=10000
 ,give;to=Mirtul-18-1370;by=Someone;cash=Gem: Moss Agate 10gp, Gem: Blue Quartz 10gp, Gem: Rosaline 10gp, Gem: Woodtine 10gp, Gem: Sheen 10gp, Gem: Algae 10gp, Gem: Zarbrina 10gp, Gem: Goldline 10gp, Gem: Obsidian 10gp, Gem: Angi Mani 10gp, Gem: Satin Spar 10gp, Gem: Fire Agate 10gp, Gem: Flourospar 10gp, Gem: Azurite 10gp, Gem: Sandine 10gp, Gem: Nelvine 10gp, Gem: Moss Agate 10gp, Gem: Hyaline 10gp, Gem: Disthene 10gp, Gem: Zarbrina 10gp, Gem: Silkstone 10gp, Gem: Sandine 10gp, Gem: Sharpstone 10gp, Gem: Frost Agate 10gp, Gem: Moss Agate 10gp, Gem: Sheen 10gp, Gem: Hyaline 10gp, Gem: Nune 10gp, Ladle 50gp, Statue: Comedy Scene 1000gp, Statue: Duck 500gp, 2 Shells: Conches 10gp, 4 Shells: Opal Cowries 100gp, 3 Shells: Horned Helmets 50gp, 11964sp
 date=Mirtul 19 1370
-,party;name=Mirtul-19a-1370;type=AFAL;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
+,party;name=Mirtul-19-20-1370;type=AFAL;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
+,find;found=Mirtul-19-20-1370;name=Nonmagic  #13: 4x Lizard Man stone carving (chess piece)
+,coin;name=Gem{s}: Lynx Eye{s} 10gp;copper_equiv=2000
+,coin;name=Gem{s}: Wonderstone{s} 10gp;copper_equiv=2000
+,coin;name=Gem{s}: Crown{s} of Silver 10gp;copper_equiv=2000
+,coin;name=Gem{s}: Skydrop{s} 13gp;copper_equiv=2600
+,coin;name=Gem{s}: Chalcedon{y} 25gp;copper_equiv=5000
+,coin;name=Gem{s}: Fire Agate{s} 30gp;copper_equiv=6000
+,coin;name=Gem{s}: Orprase{s} 50gp;copper_equiv=10000
+,coin;name=Gem{s}: Ulvaen{s} 100gp;copper_equiv=20000
+,give;to=Mirtul-19-20-1370;by=Someone;cash=246cp, 549sp, 89ep, 2 Gems: Lynx Eyes 10gp, 5 Gems: Sheens 10gp, 3 Gems: Wonderstones 10gp, 1 Gem: Skydrop 13gp, 2 Gems: Chalcedonies 25gp, 7 Gems: Fire Agates 30gp, 1 Gem: Orprase 50gp, 1 Gem: Chrysoberyl 100gp, 1 Gem: Ulvaen 100gp
 ,give;to=destroyed;item=Potion of Flying  #1
 ,give;to=destroyed;item=Shield with scroll of Summon Mystic Moose
 ,give;to=destroyed;item=Potion of Growth
+# 1 used, 1 left now   ,give;to=destroyed;item=Sleep Gas Grenade (M)  #2
+,coin;name=Gem{s}: Chalcedony{s} 50gp;copper_equiv=10000
+,coin;name=Gem{s}: Horn Coral{s} 500gp;copper_equiv=100000
+,give;to=Mirtul-19-20-1370;by=Someone;cash=1 Gem: Horn Coral 500gp, 7 Gems: Chalcedonys 50gp, 7pp
+,find;found=Mirtul-19-20-1370
+,,name=Magic Potion: Captian  #1;note=Identify
+,,name=Magic Ring: Captain  #1;note=Identify
+,,name=Magic Ring: Captain  #2;note=Identify
+,,name=+1 Studded Leather Armor (captain)  #1
+,,name=+2 Shield  #3
+,,name=+1 Cutlass  #1
 ,give;to=Steve;by=AFAL;cash=2 Gems: Jasmals 1000gp, 2 Gems: Opals 1000gp, 6 Gems: Rubies 1000gp;note=repayment on escrow for Semblina
 ,give;to=Henkles;by=AFAL;cash=1 Letter of Credit 1000gp, Gem: Heliodor 500gp, 368000vcp;note=repayment on pearls, 3 heals, undermountain, skullport, docking in Neverwinter
+date=Mirtul 20 1370
+# Maanamere gets ship repairs started, pays some wages to crew.
+,find;found=Mirtul-19-20-1370
+,,name=Nonmagic: Statue: Maask's
+,,name=Ships log to the Prawn Shredder
+,,name=Crate of high-quality surveying equipment;note=stashed in the snake dungeon
+,,name=12 barrels of dried flowers;note=stashed in the snake dungeon
+,,name=+1 Studded Leather Armor (unknown)  #1
+,,name=+1/+2(Large) Dagger  #1
+,,name=+1 Shield  #6
+,coin;name=Gem{s}: Corstal{s} 10gp;copper_equiv=2000
+,give;by=Someone;to=Mirtul-19-20-1370;cash=7gp, 8cp, 1 Gem: Corstal 10gp
+date=Mirtul 21 1370
+,give;by=AFAL;to=Someone;amount=200gp;note=2x Detect Charm for the party
+,find;found=Maanamere;name=Magic Boots (+1 movement, but feet are always cold);note=Identify, Accidentally enchanted by Darius
+date=Mirtul 22 1370
+,give;by=AFAL;to=Someone;cash=1 Statue: Comedy Scene 1000gp, 1 Statue: Duck 500gp, 1 Statue: Raven 500gp, 1 Statue: Hooded man with scimitar 40gp,3960gp;note=$6kgp for repairs to Star Chaser
+date=Mirtul 24 1370
+,find;found=AFAL
+,,name=Nonmagic #14: Wizard lab supplies: Powdered satyr hooves, Gloves of snakeskin, Human skull, Magical beast fur, Small pouch of snake scales(?), Silk pouch labeled "Kara Tur" not opened, Spirit gum in round tin
+date=Mirtul 25 1370
+,give;by=Someone;to=AFAL;cash=1250gp
+date=Mirtul 27 1370
+,give;by=AFAL;to=Someone;amount=8gp;note=pilot and docking fee at Luskan
+,give;by=Someone;to=Maanamere;cash=125gp;note=payment for delivering barrels
+date=Mirtul 30 1370
+,give;by=AFAL;to=Someone;amount=181gp;note=berthing, bribe
+,find;found=AFAL;name=Plot Coupon  #1: 50# green corstal;note=5 sacks of 20-30# of rock and corstal
