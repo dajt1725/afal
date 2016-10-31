@@ -76,7 +76,7 @@ create table fr_journal (
 	virtual_cp integer unsigned,
 	description text not null,
 	foreign key (part_of) references fr_journal(journal_id)
-)engine=innodb, auto_increment=1000000;
+)engine=innodb, auto_increment=1000001;
 create table fr_journ_by (
 	made_by varchar(128) not null references fr_party,
         journal_id integer unsigned not null references fr_journal,
