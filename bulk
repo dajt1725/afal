@@ -164,7 +164,7 @@ def do_sell(d):
 
 
 def divide_coins(coins, payout):
-    sys.stdout.write("paying {payout} with {coins}\n".format(payout = payout, coins = repr(coins)))
+#    sys.stdout.write("paying {payout} with {coins}\n".format(payout = payout, coins = repr(coins)))
     ret = {'value_cp': 0}
     if payout > coins['value_cp']:
         raise ValueError("payout {p} larger than coins value {v}".format(p=payout, v=coins['value_cp']))
@@ -1054,7 +1054,11 @@ def do_something(d):
         do_something.last_date = date
     todo = doable.pop()
     del d[todo]
-    can_do[todo](d)
+    try:
+        can_do[todo](d)
+    except:
+        sys.stderr.write("\nEXCEPTION executing " + repr(todo) + " on " + repr(d) + ".\n")
+        raise
     if do_commit.commit:
         afal.commit()
 
