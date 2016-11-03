@@ -1,11 +1,11 @@
 #!/usr/bin/python
 from __future__ import print_function
 import afal_config
-import afal
+import afall
 import cgitb
 
 cgitb.enable()
-date = afal.date_list[-1]
+date = afall.date_list[-1]
 
 if afal_config.text:
     header = \
@@ -16,7 +16,7 @@ if afal_config.text:
     trailer = ''
 else:
     header = \
- afal.html_header('AFAL Debt Summary') + \
+ afall.html_header('AFAL Debt Summary') + \
  '  <h1>Anything For A Laugh</h1>\n' \
  '   <h2>Debt Summary Report as of {date}</h2>\n' \
  '  <table border="1"><tr><th>Character</th><th>Receivable</th><th>' \
@@ -26,30 +26,30 @@ else:
  '   <tr><td><a href="{report}?todo=char.{char}">' \
  '{char}</a></td><td>{r}</td><td>{p}</td><td>{c}</td><td>{n}</td></tr>'
     trailer = \
- '  </table>\n' + afal.html_footer()
+ '  </table>\n' + afall.html_footer()
 
 
 print(header)
-for char in afal.character_list:
-    c = afal.get_char_data(char)['cash_cp']
+for char in afall.character_list:
+    c = afall.get_char_data(char)['cash_cp']
     if c is None:
         continue
     p = 0
-    for debt in afal.get_char_debts(char, "Payable"):
+    for debt in afall.get_char_debts(char, "Payable"):
         p += debt['amount_cp']
     r = 0
-    for debt in afal.get_char_debts(char, "Receivable"):
+    for debt in afall.get_char_debts(char, "Receivable"):
         r += debt['amount_cp']
     if c + r > p:
-        n = afal.cp_to_str(c + r - p)
+        n = afall.cp_to_str(c + r - p)
     elif p > c + r:
-        n = neg.format(v = afal.cp_to_str(p - r - c))
+        n = neg.format(v = afall.cp_to_str(p - r - c))
     else:
         n = 'Flat Broke'
     if p == 0 and r == 0 and c == 0:
         continue
     print(line.format(
- char = char, r = afal.cp_to_str(r), p = afal.cp_to_str(p),
- c = afal.cp_to_str(c), n = n, report = afal_config.report_url))
+ char = char, r = afall.cp_to_str(r), p = afall.cp_to_str(p),
+ c = afall.cp_to_str(c), n = n, report = afal_config.report_url))
 print(trailer)
-afal.fini()
+afall.fini()

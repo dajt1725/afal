@@ -3,11 +3,11 @@ from __future__ import print_function
 import argparse
 import cgitb
 import afal_config
-import afal
+import afall
 
 cgitb.enable()
-date = afal.date_list[-1]
-afal.character_list.insert(0,afal.party)
+date = afall.date_list[-1]
+afall.character_list.insert(0,afall.party)
 if afal_config.text:
     parser = argparse.ArgumentParser('Generate a cash summary')
     parser.add_argument('--width', '-w', type=int, default=130, help='width to wrap at')
@@ -18,7 +18,7 @@ if afal_config.text:
     wmax = args.width
 else:
     header = \
- afal.html_header('AFAL Cash Summary')+\
+ afall.html_header('AFAL Cash Summary')+\
  '   <h1>Anything For A Laugh</h1>\n'\
  '   <h2>Cash in hand as of {date}</h2><br>\n'\
  '   <table border="1"><tr><th>Character</th><th>Total</th><th>'\
@@ -27,12 +27,12 @@ else:
  '    <tr><td><a href="{report_url}?todo=char.{char}">' \
  '{char}</a></td><td>{v}</td><td>{c}</td></tr>'
     footer = \
- '   </table>\n' + afal.html_footer()
+ '   </table>\n' + afall.html_footer()
     wmax = None
 
-afal.pw(header, max=wmax, indent=4)
-for char in afal.character_list:
-    m = afal.get_char_money(char)
+afall.pw(header, max=wmax, indent=4)
+for char in afall.character_list:
+    m = afall.get_char_money(char)
     value_cp = 0
     coins = ''
     pre = ''
@@ -50,7 +50,7 @@ for char in afal.character_list:
         pre = npre
 
     if value_cp > 0:
-        afal.pw(line.format(
- char = char, v = afal.cp_to_str(value_cp), c = coins, report_url = afal_config.report_url), max = wmax, indent=4)
-afal.pw(footer, max = wmax, indent = 4)
-afal.fini()
+        afall.pw(line.format(
+ char = char, v = afall.cp_to_str(value_cp), c = coins, report_url = afal_config.report_url), max = wmax, indent=4)
+afall.pw(footer, max = wmax, indent = 4)
+afall.fini()
