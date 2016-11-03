@@ -18,7 +18,7 @@ date=Mirtul 1 1370
 ,party;name=Mirtul-1a-1370;type=AFAL;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Steve=1;Tristan=1
 ,give;by=Someone;to=Mirtul-1a-1370;cash=8 gems: Nunes 10gp,6gp,37cp,1 gem: Peridot 500gp, 7 gems: Malacons 50gp, 4 gems: Corals 100gp, 8 Gems: Sunstones 10gp, 4gp,377cp,102sp,77ep,51gp
 ,find;found=Mirtul-1a-1370
-,,name=10x +1 Sling Bullet  #1
+,,name=+1 Sling Bullet  #1;note=10x
 ,,name=Cloak of Elvenkind  #2
 ,,name=+1 Studded Leather (half elf)  #1;note=Auction
 ,,name=+1 Shield  #4
@@ -57,13 +57,13 @@ date=Mirtul 1 1370
 ,,name=+1 Splint Mail (dwarf)  #1;note=Auction
 ,,name=+1 Shield  #5
 ,,name=+3 Rapier  #1
-,,name=6x +1 Darts  #1
+,,name=+1 Darts  #1;note=6x
 ,,name=+3 Studded Leather (human)  #1
 ,,name=+2 Shield  #2
 ,,name=+1 (+3 v metal armor) Longsword  #1;note=Auction
 ,,name=+2 Studded Leather (half elf)  #1;note=Auction
 ,,name=+1 Morning Star  #1;note=Auction
-,,name=Potion of Healing  #9
+,,name=Potion of Healing  #11
 ,,name=Magic Potion (Deeeze)  #2;note=Identify
 ,,name=Wand of Negation  #2;note=misid as Healing
 ,,name=+3 Full Plate (elf 5foot)  #1
@@ -95,12 +95,12 @@ date=Mirtul 1 1370
 ,party;name=Mirtul-1c-1370;type=AFAL;Ag=1;Henkles=1;Denyae=1;Staric=1;Dexter=1;Steve=1;Darius=1;Tristan=1;Brogan=1
 ,find;found=Mirtul-1c-1370
 ,,name=Dagger with sticky blade
-,,name=Potion of Healing  #10;note=Darius ID Mirtul 13 1370
+,,name=Potion of Healing  #12;note=Darius ID Mirtul 13 1370
 ,,name=Magic Potion  #mf2;note=Identify, Darius Failed ID Mirtul 13 1370
 ,,name=Potion of Polymorph Self  #4;note=Darius ID Mirtul 13 1370
-,,name=Scroll: Protection from Acid
+,,name=Scroll: Protection from Acid  #1
 ,,name=Scroll: faded  #3
-,,name=Scroll: MU(1) Color Spray
+,,name=Scroll: MU(1)  #1;note=Color Spray
 ,,name=Nonmagic  #11;note=Vial of liquid, Big Axe
 ,,name=Glass Sphere of 8d Fireball  #1;note=Darius ID Mirtul 13 1370;holder=Brogan
 ,,name=Glass Sphere of Wall of Force  #3;note=Darius ID Mirtul 13 1370;holder=Brogan
@@ -124,7 +124,7 @@ date=Mirtul 12 1370
 ,find;found=Mirtul-12-1370
 ,,name=Ring of Water Resistance  #1;note=Darius ID Mirtul 13 1370
 ,,name=Nonmagic  #12;note=50foot rope, grapple, spikes, mallet
-,,name=Scroll (MU) Sleep, Mending, Feather Fall (ff used 12 Mirtul 1370)
+,,name=Scroll (MU) #1;note=Sleep, Mending, Feather Fall (ff used 12 Mirtul 1370)
 ,,name=Rod of Teleportal Control  #1;note=id by Darius Mirtul 17 1370
 ,give;to=AFAL;by=Someone;cash=2500gp,Letter of Credit 1000gp;note=fee for returning the chests
 ,give;to=AFAL;by=Someone;cash=400gp;note=Fee for bringing employers to the teleportal
@@ -138,7 +138,7 @@ date=Mirtul 16 1370
 ,coin;name=Gem{s}: Opal{s} 1000gp;copper_equiv=200000
 ,coin;name=Statue: Hooded man with scimitar 40gp;copper_equiv=8000
 ,party;name=Mirtul-16-1370;type=AFAL;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
-,give;to=destroyed;item=Potion of Fire Breathing
+,give;to=destroyed;item=Potion of Fire Breathing  #1
 ,give;to=Mirtul-16-1370;by=Someone;cash=2 Gems: Jades 100gp, 2 Gems: Shoulong Amethysts 100gp, 1 Gem: Rock Crystal 100gp, 2 Gems: Amber 100gp, 3 Gems: Irtioses 100gp,1 Statue: Raven 500gp
 ,find;found=Mirtul-16-1370
 ,,name=Potion of Flying  #1;note=ID by Darius Mirtul 17 1370
@@ -150,7 +150,7 @@ date=Mirtul 17 1370
 ,lend;item=Wand of Negation  #2;to=Tristan
 date=Mirtul 18 1370
 ,party;name=Mirtul-18-1370;type=AFAL;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Steve=1;Tristan=1
-,give;to=destroyed;item=Chardalyn  #1
+,give;to=destroyed;item=Chardalyn  #4
 ,give;to=Mirtul-18-1370;by=Someone;cash=Statue: Hooded man with scimitar 40gp, 2 Gems: Opals 1000gp
 ,coin;name=Gem{s}: Algae 10gp;copper_equiv=2000
 ,coin;name=Gem{s}: Angi Mani 10gp;copper_equiv=2000
@@ -190,8 +190,8 @@ date=Mirtul 19 1370
 ,coin;name=Gem{s}: Ulvaen{s} 100gp;copper_equiv=20000
 ,give;to=Mirtul-19-20-1370;by=Someone;cash=246cp, 549sp, 89ep, 2 Gems: Lynx Eyes 10gp, 5 Gems: Sheens 10gp, 3 Gems: Wonderstones 10gp, 1 Gem: Skydrop 13gp, 2 Gems: Chalcedonies 25gp, 7 Gems: Fire Agates 30gp, 1 Gem: Orprase 50gp, 1 Gem: Chrysoberyl 100gp, 1 Gem: Ulvaen 100gp
 ,give;to=destroyed;item=Potion of Flying  #1
-,give;to=destroyed;item=Shield with scroll of Summon Mystic Moose
-,give;to=destroyed;item=Potion of Growth
+,give;to=destroyed;item=Shield with scroll of Materialize Mystic Moose  #1
+,give;to=destroyed;item=Potion of Growth  #1
 # 1 used, 1 left now   ,give;to=destroyed;item=Sleep Gas Grenade (M)  #2
 ,coin;name=Gem{s}: Chalcedony{s} 50gp;copper_equiv=10000
 ,coin;name=Gem{s}: Horn Coral{s} 500gp;copper_equiv=100000

@@ -5,19 +5,19 @@ date=9 Hammer 1370
 ,,name=Potion of Polymorph Self  #1
 ,,name=+1 Dagger  #2;owner=Someone;note=Sold
 ,,name=+1 Dagger  #3;owner=Misery;xfrd=9 Hammer 1369
-,,name=Potion of Healing  #5;owner=AFAL
+,,name=Potion of Healing  #7;owner=AFAL
 ,,name=Potion (Maybe of Healing);note=Identify,AgL7Fail;owner=AFAL
 ,,name=Potion of Invisibility  #2
-,,name=Necklace of Light and Darkness;holder=Henkles;owner=AFAL
+,,name=Necklace of Light and Darkness  #1;holder=Henkles;owner=AFAL
 date=13 Hammer 1370
 ,party;type=AFAL;name=Hammer-13-1370;Darius=1;Denyae=.5;Dexter=1;Henkles=1;Misery=1;Steve=1;Theo=1
 ,give;by=Someone;to=Maanamere;cash=1 Gold Earring 20gp
 ,find;found=Hammer-13-1370
-,,name=+1 Glaive;holder=Auction;note=6gp, 8#, 1-6/1-10/L/S/speed 8;value=2700gp
-,,name=+1 Banded Mail;holder=Auction;value=4000gp
+,,name=+1 Glaive  #1;holder=Auction;note=6gp, 8#, 1-6/1-10/L/S/speed 8;value=2700gp
+,,name=+1 Banded Mail  #1;holder=Auction;value=4000gp
 ,,name=+1 Shield  #2
 ,,name=Ring of Water Walking  #2
-,,name=Potion of Healing  #6;owner=AFAL
+,,name=Potion of Healing  #8;owner=AFAL
 date=Hammer 15 1370
 #,writeoff;Theo
 ,party;type=AFAL;name=Hammer-15-1370;Darius=1;Dexter=1;Denyae=.5;Henkles=1;Steve=1;Maanamere=1;Stalker=1;Moogh=1
@@ -42,19 +42,19 @@ date=Hammer 20 1370
 ,party;type=AFAL;name=Hammer-20-1370;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Staric=.5;Stalker=1;Steve=1
 ,find;found=Hammer-20-1370
 ,,name=Dagger of Hurting  #4
-,,name=Chardalyn  #1;note=L4MU Snillics Snowball Swarm;owner=AFAL
+,,name=Chardalyn  #4;note=L4MU Snillics Snowball Swarm;owner=AFAL
 ,,name=Glim Gauntlet  #2;holder=Darius;owner=AFAL
 ,,name=Animal: Heavy War Horse *7;note=1 killed <d Alturiak 6 1370>, sold for approx 182gp, 91cp each
 ,,name=Travelling Spell Book;note=L1: Magic Missile, Unseen Servant, Color Spray, Mending, Charm Person, Detect Illusion, L2: Snilloc's SS, Invisibility, Detect Poison
-,,name=+1/+2(Lawful) Long Sword;holder=Steve
-,,name=+2 Whip;holder=Misery
-,,name=+1 Composite Short Bow;holder=Misery
+,,name=+1/+2(Lawful) Long Sword  #1;holder=Steve
+,,name=+2 Whip  #1;holder=Misery
+,,name=+1 Composite Short Bow  #1;holder=Misery
 ,,name=+1/+3(Cold) Ring of Protection  #1;holder=Maanamere
-,,name=Bracers of Defense AC 6;holder=Ursula;note=Fully id'd by testing on <d Tarsakh 10 1370>
-,,name=+1 Plate Mail (Half Elf)
+,,name=Bracers of Defense AC 6  #1;holder=Ursula;note=Fully id'd by testing on <d Tarsakh 10 1370>
+,,name=+1 Plate Mail (Half Elf)  #1
 ,,holder=Auction
 ,,,name=+1 Dagger  #4;value=1400gp
-,,,name=+1 Heavy Crossbow;note=bolts:1sp,.1#,dmg 1-10/1-10,S,P\; bow: 50gp, 14#, M, speed 11, RoF 1/2, Range 8/16/24;value=2700gp
+,,,name=+1 Heavy Crossbow  #1;note=bolts:1sp,.1#,dmg 1-10/1-10,S,P\; bow: 50gp, 14#, M, speed 11, RoF 1/2, Range 8/16/24;value=2700gp
 ,,holder=Maanamere;owner=AFAL
 ,,,name=+1 Arrow (Sheaf)  #2;note=3x
 ,,,name=Sleep Gas Grenade (M)  #1;note=2x
@@ -138,10 +138,10 @@ date=Alturiak 5 1370
  <i>Ghoulbreaker</i>, Dagger of Fly\
 ;note=Originally Gail's character, played by Andrew and now Alex.\
  Tristan joined the party on <d Alturiak 5 1370>.
-,lend;to=Ag;item=Chardalyn
+,lend;to=Ag;item=Chardalyn  #4
 ,lend;to=Tristan;item=+1 Shield  #2
 ,lend;to=Tristan;item=Dagger of Hurting  #4
-,lend;to=Tristan;item=+1 Plate Mail (Half Elf)
+,lend;to=Tristan;item=+1 Plate Mail (Half Elf)  #1
 ,lend;to=Tristan;item=Sleep Gas Grenade (M)  #3;note=2x
 date=Alturiak 6 1370
 ,meet;name=Morgath the Stable;status=active\
@@ -151,15 +151,16 @@ date=Alturiak 6 1370
  Henkles containing the fully enchanted Silver Strike with a note asking for\
  reports on how it performs under field conditions.  Henkles sent him notes on\
  <d Ches 26 1370>.
+,find;found=Henkles;name=Darts of Giant Hurting;note=different types, 3 usually carried
 ,meet;name=Miss Mireria;race=Human?;gender=Female;status=inactive\
 ;alignment=Very Chaotic Evil;note=Met on <d Alturiak 6 1370>, and again on\
  <d Alturiak 17 1370> when we raided her house looking for missing puppies.
 date=Alturiak 29 1370
 ,party;type=AFAL;name=Alturiak-29-1370;Chusnog=0;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=0;Staric=.5;Steve=1;Tristan=1
-,find;found=Alturiak-29-1370;name=Potion of Love ("Philter");holder=Auction;value=300gp
+,find;found=Alturiak-29-1370;name=Potion of Love ("Philter")  #1;holder=Auction;value=300gp
 date=Ches 3 1370
 ,party;type=AFAL;name=Ches-3a-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Stalker=1;Staric=.5;Steve=1;Tristan=1
-,find;found=Ches-3a-1370;name=Magical Stirrer;owner=AFAL
+,find;found=Ches-3a-1370;name=Magical Stirrer  #1;owner=AFAL
 ,give;by=Someone;to=Maanamere;cash=set silver candlesticks 500gp, 2 finely made gold chain\
  130gp, platinum necklace 700gp
 ,party;type=AFAL;name=Ches-3b-1370;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1;Tristan=1
@@ -177,44 +178,44 @@ date=Ches 3 1370
 ,find;found=Ches-3c-1370
 ,,name=20yd bolt of fine silk *6
 ,,name=Ring of Warmth  #2
-,,name=Carpet of Flying 3x5;holder=Denyae;owner=AFAL
+,,name=Carpet of Flying 3x5  #1;holder=Denyae;owner=AFAL
 ,,holder=Dexter;owner=AFAL
-,,,name=Potion of Healing  #7
-,,,name=Potion of Healing  #8
+,,,name=Potion of Healing  #9
+,,,name=Potion of Healing  #10
 ,,holder=Auction
-,,,name=Potion of Youth ("Elixer");value=10000gp
-,,,name=Potion of Longevitiy;value=1000gp
-,,,name=Potion of Claraudience;value=400gp
-,,,name=Potion of Lust
-,,,name=Dust of Detect Magic;note=10x uses, Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
-,,,name=Dust of Brighten Lamplight;note=10x uses, Green odorless powder: increases lamp oil light by 20'
+,,,name=Potion of Youth ("Elixer")  #1;value=10000gp
+,,,name=Potion of Longevitiy  #1;value=1000gp
+,,,name=Potion of Claraudience  #1;value=400gp
+,,,name=Potion of Lust  #1
+,,,name=Dust of Detect Magic  #1;note=10x uses, Odorless Silver Powder can glow if items are magical, different colors for different types of enc, gives 10% bonus on subsequent id spell
+,,,name=Dust of Brighten Lamplight  #1;note=10x uses, Green odorless powder: increases lamp oil light by 20'
 ,,name=Scroll (MU)  #10;note=5 spells: 5) Zwei's 2nd extension, 6) Sadebreth's reincarnation - id'd, 7) Yong's dissipation, 7) Noanar's delayed fireball - id'd, 8) Lucke's 6th monster summons
 ,,name=Scroll (MU)  #11;note=2 spells: 3) Nalevac's deep sight, 4) Zwei's 1st extension
 ,,name=Scroll (MU)  #12;note=4 spells: 3) Gwynn's vampirism, 8) Lucke's 6th monster summons, 8) Kutson's antipathy/sympathy, 10) Proctiv's move mountain
 ,,name=Scroll (MU)  #13;note=4 spells: 4) Proctiv's dig - id'd, 4) Zwei's 1st extension, 5) Stoca's fauna growth, 7) Toscudlo's bulk invisibility
 ,,name=Scroll (MU)  #14;note=3 spells: 6) Lucke's 4th monster summons, 8) Anglin's wall, 9) Smolyn's foreseer
 ,,name=Scroll (MU)  #15;note=2 spells: 7) Toscudlo's bulk invisibility, 10) Mavin's create volcano
-,,name=Potion of Fire Breathing
-,,name=Potion of Speed
+,,name=Potion of Fire Breathing  #1
+,,name=Potion of Speed  #1
 ,,name=Potion of Polymorph Self  #2
-,,name=Oil of Disenchantment
-,,name=Potion of Stone Giant Strength
+,,name=Oil of Disenchantment  #1
+,,name=Potion of Stone Giant Strength  #1
 ,,name=Magic Potion (3c) #1;note=Identify,TristanL5Fail
 ,,name=Magic Potion (3c) #2;note=Identify,TristanL5Fail
 ,,name=Magic Potion (3c) #3;note=Identify,TristanL5Fail
-,,name=Dust of Detect Invisible;note=10x uses, Grey powder black flecks, smells of rain
-,,name=Dust of Knockout;note=10x uses, Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
-,,name=Dust of Make Insubstantial;note=10x uses, Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
-,,name=Magic Tent;owner=AFAL;note=Sleeps 8, acts as a Ring of Warmth for the inhabitants
-,,name=Magic Cooking Set;owner=AFAL
+,,name=Dust of Detect Invisible  #1;note=10x uses, Grey powder black flecks, smells of rain
+,,name=Dust of Knockout  #1;note=10x uses, Lilac smells like fish, save poison or unk for 2-5 rounds, 30' range
+,,name=Dust of Make Insubstantial  #1;note=10x uses, Blue with Gold glitter, no scent: Makes an areas insubstantial to 1'
+,,name=Magic Tent  #1;owner=AFAL;note=Sleeps 8, acts as a Ring of Warmth for the inhabitants
+,,name=Magic Cooking Set  #1;owner=AFAL
 ,,name=Gem: lots;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 ,,name=Jug of Liquid Magic  #2
 ,,name=Jug of Liquid Magic  #3
 ,party;type=AFAL;name=Ches-3d-1370;Ag=1;Chusnog=1;Darius=1;Denyae=.5;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Oguch=1;Staric=.5;Stalker=1;Steve=1
 ,find;found=Ches-3d-1370
-,,name=Shameful Tome of Dishonerable Attacks;note=Identify
-,,name=Wand of Lightning Fan;holder=Darius;owner=AFAL
-,,name=Dart of Human Slaying;holder=Henkles;owner=AFAL;note=3x, 1x used, so 2x left
+,,name=Shameful Tome of Dishonerable Attacks  #1;note=Identify
+,,name=Wand of Lightning Fan  #1;holder=Darius;owner=AFAL
+,,name=Dart of Human Slaying  #1;holder=Henkles;owner=AFAL;note=3x, 1x used, so 2x left
 ,,name=Ioun Stones;owner=Someone;xfrd=3 Ches 1370;note=Given to Crystalblight
 date=Ches 7 1370
 ,writeoff;Chusnog;Oguch;Stalker;note=because the orc village is nice this time of year
@@ -233,7 +234,7 @@ date=Ches 21 1370
 date=Ches 25 1370
 ,party;type=AFAL;name=Ches-25-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,find;found=Ches-25-1370
-,,name=-1 Cursed Khopesh;owner=AFAL;xfrd=25 Ches 1370
+,,name=-1 Cursed Khopesh  #1;owner=AFAL;xfrd=25 Ches 1370
 ,,name=+1 Shield  #3;holder=Auction;note=(needs new handle), 10gp?, 10#;value=2500gp
 date=Ches 30 1370
 ,party;type=AFAL;name=Ches-30-1370;Ag=1;Darius=1;Denyae=1;Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
@@ -241,11 +242,11 @@ date=Ches 30 1370
 ,find;found=Ches-30-1370
 ,,name=Nonmagic  #1;note=too much to list here
 ,,name=Ring of Fire Resistance  #1
-,,name=Ebony Fly
+,,name=Ebony Fly  #1
 ,,name=Poison: Urds Teeth  #1;note=3x uses
 ,,name=+1/+3(Cold) Ring of Protection  #2;holder=Steve;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1 Ring of Protection  #3;holder=Ag;note=Fully id by testing <d Tarsakh 10 1370>
-,,name=+1/+3(Saves) Ring of Protection;holder=Henkles;note=Fully id by testing <d Tarsakh 10 1370>
+,,name=+1/+3(Saves) Ring of Protection  #1;holder=Henkles;note=Fully id by testing <d Tarsakh 10 1370>
 ,,name=+1 Arrow (Flight)  #6;holder=Denyae;owner=AFAL;note=10x
 ,,name=+1 Arrow (Flight)  #7;holder=Dexter;owner=AFAL;note=6x
 ,,name=+1 Arrow (Flight)  #8;holder=Maanamere;owner=AFAL;note=2x
@@ -254,14 +255,14 @@ date=Ches 30 1370
 ,,name=Sleep Gas Grenade (M)  #5;owner=AFAL;note=2x
 ,,name=Sleep Gas Grenade (M)  #6;holder=Dexter;owner=AFAL;note=2x
 ,,name=Sleep Gas Grenade (M)  #7;holder=Deringa;owner=AFAL;note=2x
-,,name=Wand of Hurting;holder=Deringa;owner=AFAL
+,,name=Wand of Hurting  #1;holder=Deringa;owner=AFAL
 ,,name=Sleep Gas Grenade (M)  #8;holder=Staric;owner=AFAL;note=2x
 ,,holder=Auction
-,,,name=+1 Medium Shield;note=10gp?, 10#;value=2500gp
-,,,name=+1 Footmans Pick;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp
-,,,name=Staff of the Serpent;value=35000gp
-,,,name=Oil of Slipperiness;value=750gp
+,,,name=+1 Medium Shield  #1;note=10gp?, 10#;value=2500gp
+,,,name=+1 Footmans Pick  #1;note=6#, 8gp base, dmg 2-7/2-8 M,P,speed 7;value=2500gp
+,,,name=Staff of the Serpent  #1;value=35000gp
+,,,name=Oil of Slipperiness  #1;value=750gp
 ,,,name=+1 Bastard Sword  #2;value=3200gp
-,,name=Oil of Etherialness;note=Darius id <d Tarsakh 8 1370>
-,,name=+1/+3(Backstab) Long Sword;holder=Ag;note=+10% Hide in Shadows;owner=AFAL
+,,name=Oil of Etherialness  #1;note=Darius id <d Tarsakh 8 1370>
+,,name=+1/+3(Backstab) Long Sword  #1;holder=Ag;note=+10% Hide in Shadows;owner=AFAL
 ,,name=Dagger of Hurting  #5

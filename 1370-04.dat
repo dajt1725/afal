@@ -17,11 +17,11 @@ note=Brogan has been assigned by his superiors in the church of Moradin to keep\
  not restricted.  Also, Brogan is compelled to kiss anything he sees that is\
  composed of silver unless it's on someone's person.  If he fails either\
  condition, he immediately loses all prepared spells.
-,lend;to=Brogan;item=Sleep Gas Grenade (M) *2  #5
+,lend;to=Brogan;item=Sleep Gas Grenade (M)  #5
 ,sell;to=Someone;item=Nonmagic  #1;cash=1908gp, 108sp
 ,give;by=AFAL;to=Someone;amount=300gp;note=pearls for Identify
 ,dividend;by=Ches-30-1370;cash=1908gp, 108sp
-,sell;to=Dexter;item=Ebony Fly;cash=5000gp
+,sell;to=Dexter;item=Ebony Fly  #1;cash=5000gp
 ,sell;to=Henkles;item=Poison: Urds Teeth  #1;cash=105gp
 ,trade;by=Darius;to=Ches-30-1370;for=2 Gems: Chrysoberyls 100gp
 date=2 Tarsakh 1370
@@ -32,7 +32,7 @@ date=2 Tarsakh 1370
 ,,,item=+1 Ring of Protection  #3;cash=10cp;debt=4999gp, 190cp
 ,,,item=Dagger of Hurting  #5;cash=10cp;debt=1399gp, 190cp
 ,,to=Darius
-,,,item=Fanny Pack of Holding;cash=4cp;debt=9499gp, 196cp
+,,,item=Fanny Pack of Holding  #1;cash=4cp;debt=9499gp, 196cp
 ,,,item=Bracers of Defense AC 5  #2;cash=3cp;debt=14999gp, 197cp
 ,,,item=+2 Ring of Protection  #1;cash=5cp;debt=11999gp, 195cp
 ,,to=Denyae
@@ -44,28 +44,28 @@ date=2 Tarsakh 1370
 ,,,item=Ring of Water Walking  #2;cash=1cp;debt=4999gp, 199cp
 ,,,item=Potion of Invisibility  #1;cash=500gp
 ,,to=Henkles
-,,,item=Ring of Projection;debt=5000gp
-,,,item=+1/+3(Saves) Ring of Protection;debt=4999gp, 190cp;cash=5000gp, 10cp\
+,,,item=Ring of Projection  #1;debt=5000gp
+,,,item=+1/+3(Saves) Ring of Protection  #1;debt=4999gp, 190cp;cash=5000gp, 10cp\
 ;virtual
 ,,to=Maanamere
-,,,item=+1 Full Plate Armor;debt=30000gp
+,,,item=+1 Full Plate Armor  #1;debt=30000gp
 ,,,item=+1/+3(Cold) Ring of Protection  #1;cash=7cp;debt=7499gp, 193cp
 # I suspect Maanamere already paid for this.
-#,,,item=+2 Long Sword;debt=5400gp
+#,,,item=+2 Long Sword  #1;debt=5400gp
 ,,to=Misery
-,,,item=+2 Whip;cash=4cp;debt=3499gp, 196cp
-,,,item=+1 Composite Short Bow;cash=4cp;debt=3499gp, 196cp
+,,,item=+2 Whip  #1;cash=4cp;debt=3499gp, 196cp
+,,,item=+1 Composite Short Bow  #1;cash=4cp;debt=3499gp, 196cp
 ,,to=Steve
 ,,,item=Cloak of Elvenkind  #1;cash=9cp;debt=5999gp, 191cp
 ,,,item=+1 Light Crossbow  #1;cash=5cp;debt=2499gp,195cp
-,,,item=+1/+2(Lawful) Long Sword;cash=4cp;debt=4049gp, 196cp
+,,,item=+1/+2(Lawful) Long Sword  #1;cash=4cp;debt=4049gp, 196cp
 ,,,item=+1/+3(Cold) Ring of Protection  #2;cash=6cp;debt=7499gp,194cp
 ,,to=Tristan
 ,,,item=+1 Shield  #2;cash=7cp;debt=2499gp, 193cp
-,,,item=+1/+2(half*)/+3(Humans) Bastard Sword;cash=1cp;debt=4999gp, 199cp
-,,,item=+1 Plate Mail (Half Elf);cash=1cp;debt=4999gp, 199cp
+,,,item=+1/+2(half*)/+3(Humans) Bastard Sword  #1;cash=1cp;debt=4999gp, 199cp
+,,,item=+1 Plate Mail (Half Elf)  #1;cash=1cp;debt=4999gp, 199cp
 ,,,item=Dagger of Hurting  #4;cash=6cp;debt=1399gp, 194cp
-,,to=Ursula;item=Bracers of Defense AC 6;cash=9cp;debt=11999gp, 191cp
+,,to=Ursula;item=Bracers of Defense AC 6  #1;cash=9cp;debt=11999gp, 191cp
 ,cancel;Ag;Darius;Denyae;Dexter;Henkles;Maanamere;Misery;Steve;Tristan;Ursula
 date=3 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-3-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1\
@@ -94,7 +94,7 @@ date=4 Tarsakh 1370
 ,party;type=AFAL;name=Tarsakh-4-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Dexter=1\
 ;Henkles=1;Maanamere=1;Steve=1;Tristan=1
 ,find;found=Tarsakh-4-1370
-,,name=+1 Sling;holder=Deringa
+,,name=+1 Sling  #1;holder=Deringa
 ,,name=+1 Dagger  #5;holder=Auction;value=1400gp
 ,,name=Nonmagic  #3;holder=Sell;note=Glaive, Broadsword, Short Bow, Chainmail,\
  Shield
@@ -107,7 +107,7 @@ date=4 Tarsakh 1370
 date=5 Tarsakh 1370
 ,sell;to=Someone;item=20yd bolt of fine silk *6;cash=20 harbor moon
 ,give;by=AFAL;to=Someone;amount=300gp;note=pearls for Identify
-,sell;to=Deringa;item=+1 Sling;cash=5cp;debt=2499gp, 195cp
+,sell;to=Deringa;item=+1 Sling  #1;cash=5cp;debt=2499gp, 195cp
 ,cancel;Deringa
 # Delete loops
 ,loop
@@ -120,15 +120,15 @@ Deringa=.5;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,,name=Nonmagic  #4;holder=Sell;note=6 composite short bows, 6 spears, arrows
 ,,name=Poison: (Sleep), Pot of;note=2 round onset, 5-10 rounds duration,\
  expires around the 17th or so
-,,name=Shirt of Tackiness;note=Humanoids int >=7 suffer -2th,Darius id\
+,,name=Shirt of Tackiness  #1;note=Humanoids int >=7 suffer -2th,Darius id\
  <d Tarsakh 8 1370>,fully id by testing <d Tarsakh 10 1370>
 ,,name=Dwarven Battle Tankard *2;value=20gp
 ,,name=Settlestone Hardsilver Mead;value=30gp
-,,name=Scarf of Warmth;note=Darius id <d Tarsakh 8 1370>, white with silver\
+,,name=Scarf of Warmth  #1;note=Darius id <d Tarsakh 8 1370>, white with silver\
  threads
-,,name=Droplets of Sobriety;owner=AFAL;note=6 droplets, Darius id\
+,,name=Droplets of Sobriety  #1;owner=AFAL;note=6 droplets, Darius id\
  <d Tarsakh 8 1370>
-,,name=+2/+4 (level draining or negative plane) Mace
+,,name=+2/+4 (level draining or negative plane) Mace  #1
 ,,name=Nonmagic  #5;note=Dagger *2;holder=Sell
 ,give;by=Someone;to=Tarsakh-7-1370;cash=27cp, 16sp, 6ep, 9toals, 3 Gems: Satan\
  Spars 10gp, 1 Gem: Corstal 45gp, 4 Gems: Banded Agates 10gp
@@ -149,12 +149,12 @@ date=8 Tarsakh 1370
 ,pay;by=Darius;to=Misery;cash=2 Letter of Credit 500gp
 ,pay;by=Misery;to=Staric;cash=1 Letter of Credit 500gp
 ,pay;by=Misery;to=Henkles;cash=1 Letter of Credit 500gp
-,lend;to=Staric;item=Wand of Lightning Fan
+,lend;to=Staric;item=Wand of Lightning Fan  #1
 date=11 Tarsakh 1370
-,sell;to=Henkles;item=Ioun Stone of Protection;debt=6000gp
-,sell;to=Henkles;item=Scarf of Warmth;debt=8000gp
-,sell;to=Misery;item=Bracers of Initiative D8;debt=8000gp
-,sell;to=Dexter;item=+2/+4 (level draining or negative plane) Mace;debt=5000gp
+,sell;to=Henkles;item=Ioun Stone of Protection  #1;debt=6000gp
+,sell;to=Henkles;item=Scarf of Warmth  #1;debt=8000gp
+,sell;to=Misery;item=Bracers of Initiative D8  #1;debt=8000gp
+,sell;to=Dexter;item=+2/+4 (level draining or negative plane) Mace  #1;debt=5000gp
 # Shirt of tackyness
 ,cancel;Henkles;Misery;Dexter
 # And we give out some of the money
@@ -184,11 +184,11 @@ Henkles=1;Maanamere=1;Staric=.5
 ,,name=Ring of Shocking Grasp  #1;value=5000gp
 ,,name=Plain Brass Ring *2
 ,,name=Brass Key
-,,name=Scepter of Entrapment
-,,name=Glowing Glass Orb, 2.5' diamater
+,,name=Scepter of Entrapment  #1
+,,name=Glowing Glass Orb, 2.5' diamater  #1
 ,,name=Wyvern head
 ,,name=Wyvern scales
-,give;to=AFAL;item=Glowing Glass Orb, 2.5' diamater
+,give;to=AFAL;item=Glowing Glass Orb, 2.5' diamater  #1
 ,give;by=Someone;to=Tarsakh-12-1370;cash=26 Gems: Carnelians 50gp,\
  4 Gems: Citrines 75gp, 18 Gems: Moonstones 55gp, 33 Gems: Sardonyxes 50gp,\
  24 Gems: Zircons 65gp, 12 Gems: Garnets 500gp, 8 Gems: Spinels 500gp\
@@ -210,7 +210,16 @@ Henkles=1;Maanamere=1;Staric=.5
 ,pay;by=Deringa
 ,trade;by=Ag;to=AFAL;for=148gp, 1ep, 300cp
 ,trade;by=Ag;to=Brogan;for=2ep, 4sp, 160cp
-,pay;by=Ag;percent=90
+,pay;by=Ag;to=Steve;cash=134gp, 5sp, 6cp
+,pay;by=Ag;to=Dexter;cash=84gp, 9sp, 8cp
+,pay;by=Ag;to=Tristan;cash=43gp, 1ep, 3sp, 9cp
+,pay;by=Ag;to=Deringa;cash=4gp, 1ep, 2sp, 36cp
+,pay;by=Ag;to=Maanamere;cash=185gp, 98cp
+,pay;by=Ag;to=Darius;cash=185gp, 98cp
+,pay;by=Ag;to=Henkles;cash=102gp, 39cp
+,pay;by=Ag;to=Denyae;cash=80gp, 91cp
+,pay;by=Ag;to=Misery;cash=141gp, 1ep, 58cp
+,pay;by=Ag;to=Staric;cash=21gp, 1ep, 69cp
 ,trade;by=Tristan;to=Maanamere;for=29sp, 310cp
 #,trade;by=Tristan;to=Brogan;for=2ep, 2sp, 180cp
 ,trade;by=Tristan;to=AFAL;cash=3 harbor moons;for=150gp
@@ -253,7 +262,6 @@ date=13 Tarsakh 1370
 ,pay;by=Darius;to=Denyae;cash=4 Gems: Carnelians 50gp, 4 Gems: Sardonyxes 50gp, 5\
  Harbor Moons, 599gp, 103cp
 ,trade;by=Misery;to=Steve;cash=1gp;for=20sp
-,commit
 ,trade;by=Misery;to=Brogan;for=10cp, 9sp, 1ep
 ,pay;by=Misery
 ,,to=Denyae;cash=Gem: Garnet 500gp,Gem: Carnelian 50gp, 3gp, 100cp
@@ -288,7 +296,7 @@ date=13 Tarsakh 1370
 ,,by=Theo;cash=1 Harbor Moon;for=50gp
 ,,by=Steve;cash=3 Harbor Moons;for=30pp
 ,lend;to=Maanamere;item=Ring of Shocking Grasp  #1
-,lend;to=Denyae;item=Scepter of Entrapment
+,lend;to=Denyae;item=Scepter of Entrapment  #1
 ,give;item=Potion of Shopping  #1;to=destroyed;note=used by Brogan
 ,give;by=Brogan;to=Someone;cash=1 Gem: Spinel 500gp;note=Down payment on ammo
 ,give;by=Brogan;to=Someone;cash=12gp;note=food/drink/etc in Skullport
@@ -298,13 +306,13 @@ date=Tarsakh 20, 1370
 ,party;type=AFAL;name=Tarsakh-20a-1370;Ag=1;Brogan=1;Darius=1;Denyae=1;Deringa=0.5;Dexter=1;Henkles=1;Maanamere=1;Staric=0.5;Steve=1;Tristan=1
 ,find;found=Tarsakh-20a-1370
 ,,name=3x Giant Spider poison sacks
-,,name=Bracers of Defense AC 4;note=Ag (mis-)part ID Tarsakh 24 1370  Henkles identified through testing
+,,name=Bracers of Defense AC 4  #1;note=Ag (mis-)part ID Tarsakh 24 1370  Henkles identified through testing
 ,,name=+2 Ring of Protection  #2;note=Steve ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Invisibility  #1;note=Steve and Staric ID Tarsakh 24 1370;value=7500gp
-,,name=Magic Potion;note=Ag,Tristan,Staric failed Tarsakh 24 1370
-,,name=+2 Broadsword;value=4000gp
-,,name=+1 Sickle;value=2000gp
-,,name=Arquebus
+,,name=Magic Potion  #8;note=Identify, Ag,Tristan,Staric failed Tarsakh 24 1370
+,,name=+2 Broadsword  #1;value=4000gp
+,,name=+1 Sickle  #1;value=2000gp
+,,name=Arquebus  #1
 ,,name=4x throwing dagger
 ,,name=Nonmagic  #6;note=7 longbows, 11 footmans flails, 11 long spears;value=350gp
 ,,name=73x arrows, poisoned
@@ -348,40 +356,40 @@ date=Tarsakh 21, 1370
 ,trade;by=Dexter;to=Denyae;cash=2 Gems: Garnets 500gp, Gem: Zircon 65gp, 6 Gems: Sardonyxes 50gp;for=1365gp
 ,give;to=Someone;by=Dexter;amount=1900gp
 ,give;to=Someone;by=Staric;amount=800gp;note=Loan to Dexter for Nose Ring
-,find;found=Dexter;name=Nose Ring of Load Easement;value=2700gp;holder=Someone
+,find;found=Dexter;name=Nose Ring of Load Easement  #1;value=2700gp;holder=Someone
 ,party;type=AFAL;name=Tarsakh-21-1370;Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Tristan=1
 ,give;to=Someone;by=Henkles;cash=32 Harbor Moons;note=loan to party for Eversmoking Bottle
 ,give;to=Someone;by=AFAL;cash=4 Harbor Moons
-,find;found=Tarsakh-21-1370;name=Eversmoking Bottle;value=1800gp
-,give;to=AFAL;item=Eversmoking Bottle;holder=Dexter
+,find;found=Tarsakh-21-1370;name=Eversmoking Bottle  #1;value=1800gp
+,give;to=AFAL;item=Eversmoking Bottle  #1;holder=Dexter
 ,give;to=Someone;by=AFAL;cash=17 Harbor Moons
 ,give;to=Someone;by=Steve;cash=1150gp;note=loan to party for arrows
 ,find;found=Tarsakh-21-1370;name=+3 Sheaf Arrow  #1;value=2000gp;note=6x
 ,coin;name=virtual copper piece{s};abbrev=vcp;copper_equiv=1;priority=1
-,sell;to=Someone;item=+1 Banded Mail;cash=680000vcp;note=3400gp
+,sell;to=Someone;item=+1 Banded Mail  #1;cash=680000vcp;note=3400gp
 ,sell;to=Someone;item=+1 Dagger  #1;cash=360000vcp;note=1800gp
 ,sell;to=Someone;item=+1 Dagger  #4;cash=388200vcp;note=1941gp
 ,sell;to=Someone;item=+1 Dagger  #5;cash=340000vcp;note=1700gp
-,sell;to=Someone;item=+1 Footmans Pick;cash=600000vcp;note=3000gp
-,sell;to=Someone;item=+1 Glaive;cash=680000vcp;note=3400gp
-,sell;to=Someone;item=+1 Heavy Crossbow;cash=723000vcp;note=3615gp
-,sell;to=Someone;item=+1 Medium Shield;cash=420000vcp;note=2100gp
+,sell;to=Someone;item=+1 Footmans Pick  #1;cash=600000vcp;note=3000gp
+,sell;to=Someone;item=+1 Glaive  #1;cash=680000vcp;note=3400gp
+,sell;to=Someone;item=+1 Heavy Crossbow  #1;cash=723000vcp;note=3615gp
+,sell;to=Someone;item=+1 Medium Shield  #1;cash=420000vcp;note=2100gp
 ,sell;to=Someone;item=+1 Shield  #3;cash=620000vcp;note=3100gp
-,sell;to=Someone;item=+1 Studded Leather Armor;cash=660000vcp;note=3300gp
-,sell;to=Someone;item=Amulet of Turning Resistance;cash=440000vcp;note=2200gp
-,sell;to=Someone;item=Bottle of Breaking;cash=106000vcp;note=530gp
-,sell;to=Someone;item=Dust of Detect Magic;cash=62000vcp;note=310gp
-,sell;to=Someone;item=Oil of Slipperiness;cash=198000vcp;note=990gp
-,sell;to=Someone;item=Potion of Claraudience;cash=122400vcp;note=612gp
-,sell;to=Someone;item=Potion of Enlarge;cash=48000vcp;note=240gp
-,sell;to=Someone;item=Potion of Longevitiy;cash=906800vcp;note=4534gp
-,sell;to=Someone;item=Potion of Love ("Philter");cash=78000vcp;note=390gp
-,sell;to=Someone;item=Potion of Lust;cash=56000vcp;note=280gp
-,sell;to=Someone;item=Potion of Murdoch's Insect Ward;cash=76000vcp;note=380gp
-,sell;to=Someone;item=Potion of Sweet Water;cash=91200vcp;note=456gp
-,sell;to=Someone;item=Potion of Undead Control (Skeleton);cash=580000vcp;note=2900gp
-,sell;to=Someone;item=Potion of Ventriloquism;cash=34000vcp;note=170gp
-,sell;to=Someone;item=Potion of Youth ("Elixer");cash=9033800vcp;note=45169gp
+,sell;to=Someone;item=+1 Studded Leather Armor  #1;cash=660000vcp;note=3300gp
+,sell;to=Someone;item=Amulet of Turning Resistance  #1;cash=440000vcp;note=2200gp
+,sell;to=Someone;item=Bottle of Breaking  #1;cash=106000vcp;note=530gp
+,sell;to=Someone;item=Dust of Detect Magic  #1;cash=62000vcp;note=310gp
+,sell;to=Someone;item=Oil of Slipperiness  #1;cash=198000vcp;note=990gp
+,sell;to=Someone;item=Potion of Claraudience  #1;cash=122400vcp;note=612gp
+,sell;to=Someone;item=Potion of Enlarge  #1;cash=48000vcp;note=240gp
+,sell;to=Someone;item=Potion of Longevitiy  #1;cash=906800vcp;note=4534gp
+,sell;to=Someone;item=Potion of Love ("Philter")  #1;cash=78000vcp;note=390gp
+,sell;to=Someone;item=Potion of Lust  #1;cash=56000vcp;note=280gp
+,sell;to=Someone;item=Potion of Murdoch's Insect Ward  #1;cash=76000vcp;note=380gp
+,sell;to=Someone;item=Potion of Sweet Water  #1;cash=91200vcp;note=456gp
+,sell;to=Someone;item=Potion of Undead Control (Skeleton)  #1;cash=580000vcp;note=2900gp
+,sell;to=Someone;item=Potion of Ventriloquism  #1;cash=34000vcp;note=170gp
+,sell;to=Someone;item=Potion of Youth ("Elixer")  #1;cash=9033800vcp;note=45169gp
 ,sell;to=Someone;item=Scroll (C)  #1;cash=166000vcp;note=830gp
 ,sell;to=Someone;item=Scroll (C)  #2;cash=188000vcp;note=940gp
 ,sell;to=Someone;item=Scroll (C)  #8;cash=440000vcp;note=2200gp
@@ -392,7 +400,7 @@ date=Tarsakh 21, 1370
 ,sell;to=Someone;item=Scroll (MU)  #7;cash=170000vcp;note=850gp
 ,sell;to=Someone;item=Scroll (MU)  #8;cash=460000vcp;note=2300gp
 ,sell;to=Someone;item=Scroll (MU)  #9;cash=160000vcp;note=800gp
-,sell;to=Someone;item=Staff of the Serpent;cash=10360000vcp;note=51800gp
+,sell;to=Someone;item=Staff of the Serpent  #1;cash=10360000vcp;note=51800gp
 ,sell;to=Someone;item=+1 Bastard Sword  #2;cash=541200vcp;note=2706gp
 ,sell;to=Someone;item=+1 Scimitar  #2;cash=460000vcp;note=2300gp
 #  340gp +1 Banded	 180 +1 Dagger  #1	  194gp,2sp #4
@@ -426,23 +434,23 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,give;by=Staric;to=Someone;cash=250gp;note=For Holy Water
 ,find;found=Tarsakh-22-1370
 ,,name=Holy Water  #1
-,,name=Holy Water  #2;holder=Henkles
-,,name=Holy Water  #3;holder=Henkles
-,,name=Holy Water  #4;holder=Henkles
-,,name=Holy Water  #5;holder=Henkles
-,,name=Holy Water  #6;holder=Henkles
-,,name=Holy Water  #7;holder=Henkles
-,,name=Holy Water  #8;holder=Henkles
-,,name=Holy Water  #9;holder=Henkles
-,,name=Holy Water  #10;holder=Henkles
-,,name=Boots of Levitation;note=Steve,Ag,Tristan part ID Tarsakh 24 1370;value=15000gp
+,,name=Holy Water  #2;holder=Henkles;owner=AFAL
+,,name=Holy Water  #3;holder=Henkles;owner=AFAL
+,,name=Holy Water  #4;holder=Henkles;owner=AFAL
+,,name=Holy Water  #5;holder=Henkles;owner=AFAL
+,,name=Holy Water  #6;holder=Henkles;owner=AFAL
+,,name=Holy Water  #7;holder=Henkles;owner=AFAL
+,,name=Holy Water  #8;holder=Henkles;owner=AFAL
+,,name=Holy Water  #9;holder=Henkles;owner=AFAL
+,,name=Holy Water  #10;holder=Henkles;owner=AFAL
+,,name=Boots of Levitation  #1;note=Steve,Ag,Tristan part ID Tarsakh 24 1370;value=15000gp
 ,,name=+2 Ring of Protection  #3;note=Steve failed, Ag ID Tarsakh 24 1370;value=12000gp
 ,,name=Ring of Fire Resistance  #2;note=Steve, Staric id Tarsakh 24 1370;value=5000gp
-,,name=Ring of Telekenisis 25#;note=Steve,Tristan,Staric ID Tarsakh 24 1370;value=10000gp
+,,name=Ring of Telekenisis (25#)  #1;note=Steve,Tristan,Staric ID Tarsakh 24 1370;value=10000gp
 ,,name=Bracers of Defense AC 5  #3;note=Ag, Tristan failed, Staric part ID Tarsakh 24 1370,Auction;value=15000gp
-,,name=+1/+3 (Trolls) Long Sword;note=Tristan id Tarsakh 24 1370;value=3000gp
-,,name=+2/+3 (L) Dagger;note=Tristan ID Tarsakh 24 1370;value=2000gp;
-,,name=Amulet of Proof Against Detection and Location;note=Steve part ID Tarsakh 24 1370;value=15000gp
+,,name=+1/+3 (Trolls) Long Sword  #1;note=Tristan id Tarsakh 24 1370;value=3000gp
+,,name=+2/+3 (L) Dagger  #1;note=Tristan ID Tarsakh 24 1370;value=2000gp;
+,,name=Amulet of Proof Against Detection and Location  #1;note=Steve part ID Tarsakh 24 1370;value=15000gp
 ,give;to=destroyed;item=Holy Water  #1;note=used on Arcturagana
 ,coin;name=mithril piece{s};abbrev=mp;copper_equiv=10000
 ,give;by=Someone;to=Tarsakh-22-1370;cash=3cp,8sp, 21gp, 3 toal, 25 Harbor Moons, 25 mithril pieces;note=Cash on A.
@@ -452,7 +460,7 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,dividend;by=Marpenoth-1-1369;cash=806196vcp;note=4031gp for three items with 4vcp for the party
 ,dividend;by=Marpenoth-23-1369;cash=82080vcp;note=410gp,8sp for Potion of Sweet Water
 ,dividend;by=Marpenoth-26-1369;cash=95400vcp;note=477gp for Bottle of Breaking
-,dividend;by=Uktar-12b-1369;cash=592396vcp;note=2962gp for two potions with 4vcp for the party
+,dividend;by=Uktar-12B-1369;cash=592396vcp;note=2962gp for two potions with 4vcp for the party
 ,dividend;by=Nightal-3-1369;cash=396000vcp;note=1980gp for Amulet of Turning Res
 ,dividend;by=Nightal-12-1369;cash=324000vcp;note=1620gp for +1 Dagger from Staros
 ,dividend;by=Nightal-17-1369;cash=484200vcp;note=2421gp for +1 Scimitar, scroll of Delay Death
@@ -516,13 +524,13 @@ Ag=1;Denyae=1;Dexter=1;Henkles=1;Maanamere=1;Staric=.5;Steve=1;Tristan=1
 ,lend;to=Brogan;item=Glass Sphere of Wall of Force  #2
 ,sell;to=Maanamere;item=Ring of Shocking Grasp  #1;cash=1000000vcp
 ,dividend;by=Tarsakh-12-1370;cash=1000000vcp
-,sell;to=Denyae;item=+1/+3 (Trolls) Long Sword;cash=600000vcp
-,sell;to=Ag;item=+2/+3 (L) Dagger;cash=400000vcp
+,sell;to=Denyae;item=+1/+3 (Trolls) Long Sword  #1;cash=600000vcp
+,sell;to=Ag;item=+2/+3 (L) Dagger  #1;cash=400000vcp
 date=Tarsakh 23, 1370
 ,give;by=AFAL;to=destroyed;cash=2 Gems: pearls 100gp;note=used for identifies
 ,trade;by=Steve;to=Henkles;cash=22 Harbor Moons;for=1100gp
 ,give;by=Henkles;to=Someone;amount=200gp;note=pearls for Identify
-,lend;to=Denyae;item=Amulet of Proof Against Detection and Location
+,lend;to=Denyae;item=Amulet of Proof Against Detection and Location  #1
 ,dividend;by=Tarsakh-22-1370;cash=1000000vcp
 ,sell;to=Ag;item=Ring of Invisibility  #1;debt=7500gp
 ,pay;by=Ag;to=Deringa;cash=9402vcp
@@ -536,30 +544,39 @@ date=Tarsakh 23, 1370
 ,pay;by=Ag;to=Steve;cash=18801vcp
 ,pay;by=Ag;to=Tristan;cash=18801vcp
 date=Tarsakh 24, 1370
-,sell;to=Darius;item=Shirt of Tackiness;debt=5000gp
-,sell;to=Darius;item=Ring of Fire Resistance  #2;debt=5000gp
-,sell;to=Henkles;item=Ring of Telekenisis 25#;debt=10000gp
-,pay;by=Darius;cash=1900000vcp
+,sell;to=Darius;item=Shirt of Tackiness  #1;debt=5000gp
+,sell;to=Darius;item=Ring of Fire Resistance  #2;cash=10cp;debt=4999gp,190cp
+,sell;to=Henkles;item=Ring of Telekenisis (25#)  #1;cash=5cp;debt=9999gp,195cp
+,pay;by=Darius;to=Ag;cash=133332 vcp
+,pay;by=Darius;to=Brogan;cash=100000 vcp
+,pay;by=Darius;to=Denyae;cash=133332 vcp
+,pay;by=Darius;to=Deringa;cash=50000 vcp
+,pay;by=Darius;to=Dexter;cash=100000 vcp
+,pay;by=Darius;to=Henkles;cash=133332 vcp
+,pay;by=Darius;to=Maanamere;cash=100000 vcp
+,pay;by=Darius;to=Steve;cash=133332 vcp
+,pay;by=Darius;to=Staric;cash=66666 vcp
+,pay;by=Darius;to=Tristan;cash=133332 vcp
 ,pay;by=Henkles;cash=1733334vcp
-,lend;to=Staric;item=Ring of Magic Missiles
-,lend;to=Staric;item=Wand of Hurting
+,lend;to=Staric;item=Ring of Magic Missiles  #1
+,lend;to=Staric;item=Wand of Hurting  #1
 ,lend;to=Staric;item=+2 Ring of Protection  #3
-,lend;to=Tristan;item=Wand of Small Fires
+,lend;to=Tristan;item=Wand of Small Fires  #1
 ,lend;to=Brogan;item=+2 Ring of Protection  #2
 date=Tarsakh 25 1370
 ,give;by=AFAL;to=Someone;cash=13 Gems: Violanes 12gp, 14 Gems: Agni Manis 10gp, 10 Gems: Algaes 10gp, 11 Gems: Chrysocollas 10gp, 8 Gems: Eye Agates 10gp, 17 Gems: Sharpstones 10gp, 12 Gems: Silkstones 10gp, 12 Gems: Tiger Eye Agates 10gp, 8ep;note=gems for Lin for getting information
 date=Tarsakh 26 1370
 ,party;type=AFAL;name=Tarsakh-26-1370;Brogan=1;Denyae=1;Dexter=1;Henkles=1;Staric=1;Tristan=1
-,give;to=destroyed;item=Carpet of Flying 3x5
-,give;to=destroyed;item=Amulet of Proof Against Detection and Location
+,give;to=destroyed;item=Carpet of Flying 3x5  #1
+,give;to=destroyed;item=Amulet of Proof Against Detection and Location  #1
 ,find;found=Tarsakh-26-1370;name=Copper Horse Statue 6gp;value=6gp
 ,sell;to=Dexter;item=Copper Horse Statue 6gp;cash=1200vcp
 date=Tarsakh 27 1370
 ,give;to=Someone;by=Henkles;amount=200000vcp;note=Heal on Tristan
-,sell;to=Denyae;item=Boots of Levitation;debt=3000000vcp
+,sell;to=Denyae;item=Boots of Levitation  #1;debt=3000000vcp
 ,pay;by=Denyae;cash=2600000vcp
-,pay;by=Ag;cash=800000vcp
-,lend;to=Henkles;item=Scepter of Entrapment
+,pay;by=Ag;cash=766666vcp
+,lend;to=Henkles;item=Scepter of Entrapment  #1
 date=Tarsakh 28 1370
 ,party;type=AFAL;name=Tarsakh-28a-1370;Ag=1;Brogan=1;Dexter=1;Denyae=1;Henkles=1;Maanamere=1;Staric=1;Steve=1;Tristan=1
 ,give;by=AFAL;to=Someone;amount=9gp
@@ -579,8 +596,8 @@ date=Tarsakh 28 1370
 ,give;by=Someone;to=Tarsakh-28d-1370;cash=236gp
 ,coin;name=Silver Trade Bar{s} (25gp);copper_equiv=5000
 ,give;by=Someone;to=Tarsakh-28d-1370;cash=6 Silver Trade Bars (25gp)
-,sell;to=Henkles;item=Bracers of Defense AC 4;debt=18000gp
-,sell;to=Tristan;item=Ring of Telekenisis 25#;debt=10000gp
+,sell;to=Henkles;item=Bracers of Defense AC 4  #1;debt=18000gp
+,sell;to=Tristan;item=Ring of Telekenisis (25#)  #1;debt=10000gp
 ,sell;to=Henkles;item=Ring of Shocking Grasp  #2;debt=4999gp,199cp;cash=1cp
 ,cancel;Henkles;Tristan
 ,loop
