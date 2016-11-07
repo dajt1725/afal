@@ -547,14 +547,14 @@ date=Tarsakh 24, 1370
 ,sell;to=Darius;item=Shirt of Tackiness  #1;debt=5000gp
 ,sell;to=Darius;item=Ring of Fire Resistance  #2;cash=10cp;debt=4999gp,190cp
 ,sell;to=Henkles;item=Ring of Telekenisis (25#)  #1;cash=5cp;debt=9999gp,195cp
-,pay;by=Darius;to=Ag;cash=133332 vcp
+,pay;by=Darius;to=Ag;cash=233332 vcp
 ,pay;by=Darius;to=Brogan;cash=100000 vcp
-,pay;by=Darius;to=Denyae;cash=133332 vcp
+,pay;by=Darius;to=Denyae;cash=233332 vcp
 ,pay;by=Darius;to=Deringa;cash=50000 vcp
-,pay;by=Darius;to=Dexter;cash=100000 vcp
+,pay;by=Darius;to=Dexter;cash=233332 vcp
 ,pay;by=Darius;to=Henkles;cash=133332 vcp
-,pay;by=Darius;to=Maanamere;cash=100000 vcp
-,pay;by=Darius;to=Steve;cash=133332 vcp
+,pay;by=Darius;to=Maanamere;cash=233332 vcp
+,pay;by=Darius;to=Steve;cash=233332 vcp
 ,pay;by=Darius;to=Staric;cash=66666 vcp
 ,pay;by=Darius;to=Tristan;cash=133332 vcp
 ,pay;by=Henkles;cash=1733334vcp

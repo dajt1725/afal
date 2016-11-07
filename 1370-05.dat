@@ -124,7 +124,7 @@ date=Mirtul 12 1370
 ,find;found=Mirtul-12-1370
 ,,name=Ring of Water Resistance  #1;note=Darius ID Mirtul 13 1370
 ,,name=Nonmagic  #12;note=50foot rope, grapple, spikes, mallet
-,,name=Scroll (MU) #1;note=Sleep, Mending, Feather Fall (ff used 12 Mirtul 1370)
+,,name=Scroll (MU)  #16;note=Sleep, Mending, Feather Fall (ff used 12 Mirtul 1370)
 ,,name=Rod of Teleportal Control  #1;note=id by Darius Mirtul 17 1370
 ,give;to=AFAL;by=Someone;cash=2500gp,Letter of Credit 1000gp;note=fee for returning the chests
 ,give;to=AFAL;by=Someone;cash=400gp;note=Fee for bringing employers to the teleportal
